@@ -1,0 +1,312 @@
+@charset "utf-8";
+/* CSS Document */
+/*通用样式*/
+html,body,div,ul,li{
+	margin:0px;
+	padding:0px;
+	font-family: "Microsoft YaHei";
+}
+body{
+	font-size:16px;
+}
+
+a{text-decoration: none;}
+a:hover{text-decoration:none;}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+ul,li{
+	list-style:none;
+}
+@keyframes first{
+	0%{
+		box-shadow:none;
+		}
+	50%{
+		box-shadow:0 0 10px #0CC;
+		}
+	100%{
+		box-shadow:none;
+		}
+	}
+.activ{
+	border:1px solid rgba(0,204,204,0.3);
+	animation: first 3s infinite ease;
+	}
+/*登录页面*/
+.loginBox{
+	margin:0px auto;
+	margin-top: 50px;
+	width: 430px;
+	vertical-align: bottom;
+}
+.loginbg{
+	width:100%;
+	min-width: 1280px;text-align: center;
+}
+.loginBox .admin{
+	margin-top: 30px;
+	width:380px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 50px;
+	border: 1px solid #9fa0a0;
+	border-radius: 3px;
+	font-size:16px;}
+.loginBox .admincode{
+	margin-top: 30px;
+	width:214px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 50px;
+	border: 1px solid #9fa0a0;
+	border-radius: 3px;
+	font-size:16px;
+}
+
+#code{  
+	font-family:Arial;  
+	font-style:italic;  
+	font-weight:bold;  
+	border:0;  
+	letter-spacing:2px;  
+	color:blue;
+	outline: none;
+	background: #003e8d;
+	color: #fff;
+	height:42px;
+	width: 80px;
+	line-height: 42px;
+	border-radius: 3px;
+	vertical-align: bottom;
+}	
+.change{
+	cursor:pointer;
+}
+.label{
+	background: #003e8d;
+    height: 43px;
+    width: 43px;
+    border-radius: 3px;
+    position: absolute;
+    margin-top: 31px;
+	line-height:43px;
+	text-align: center;
+}
+.label2{
+    height: 43px;
+    width: 43px;
+    border-radius: 3px;
+    position: absolute;
+    margin-top: 31px;
+	line-height:43px;
+	text-align: center;
+}
+.labelimg{
+	margin-top: 8px;
+	height:23px;
+	width: 23px;
+}
+.btnlog{
+	margin-top: 50px;
+	width:100%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background: #003e8d;
+	border-radius: 3px;
+	font-size:28px;
+	color: #ffffff;
+	border: none;
+}
+/*导航界面*/
+.navbody{
+	width: 100%;
+	min-width: 1200px;
+	height: 100vh;
+	background: #011039;
+	background-image:url(../image/navbg.jpg);
+	background-size:100%;
+	background-repeat:no-repeat;
+}
+.navbody .navbox{
+	margin:0px auto;
+	width:530px;
+	height: 168px;
+	text-align: center;
+	background-image:url(../image/mark.png);
+}
+/*
+@keyframes first{
+	0%{
+		box-shadow:none;
+		}
+	50%{
+		box-shadow:0 0 30px #fff;
+		}
+	100%{
+		box-shadow:none;
+		}
+	}
+*/
+.navbody .navbox:hover{
+	margin:0px auto;
+	background-image:url(../image/markA.png);
+	}
+.navbody .navbox .navtitle{
+	color: #fff;
+	font-size: 28px;
+	line-height: 60px;
+}
+.navbody .navbox .navcom{
+	color:#fff;
+	font-size:36px;
+	line-height: 95px;
+}
+#time{
+	position:absolute;
+	right: 100px;
+	top: 60px;
+	color: #fff;
+}
+.back{
+	position:absolute;
+	right: 97px;
+	bottom: 85px;
+	color:#fff;
+	text-align: center;
+	font-size: 15px;
+}
+/*人事可视化界面*/
+.personalbody{
+	width: 100%;
+	min-width: 1200px;
+/*	height: 100vh;*/
+	background: #011039;
+	background-image:url(../image/personbg.jpg);
+	background-size:100%;
+	background-repeat:no-repeat;
+}
+.content{
+	margin: 0px auto;
+	width:97%;
+	padding-top: 20px;
+	-webkit-box-pack:justify;
+	
+}
+.perhead{
+	margin: 0px auto;
+	padding: 10px 0px;
+	text-align: center;
+	background:rgba(0,0,0,0.4);
+/*	border: 1px solid rgba(0,0,0,0.3);*/
+}
+.pertitle{
+	margin: 0px auto;
+	background-image: url(../image/pertitle.png);
+	height: 78px;
+	background-size: contain;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+.perNav{
+	position:absolute;
+	right: 120px;
+	top: 45px;
+}
+.pageTo{
+	margin: 0px 10px;
+	background-image:url(../image/pageto.png);
+	height: 32px;
+	width:94px;
+	color:#0f7ebc;
+	font-size: 16px;
+	display:inline-block;
+	line-height: 28px;
+}
+.pageTo:hover{
+	background-image:url(../image/pagetoA.png);}
+.perctitle{
+	padding: 0px 30px 0px 45px;
+	height:42px;
+	color:#fff;
+	line-height: 42px;
+	font-size: 18px;
+	border-bottom:1px solid rgba(255,255,255,0.3);
+}
+.more{
+	font-size:14px;
+}
+.pertitlespan{font-size:34px;color:#2ea7e0;line-height: 60px;}
+.permain{
+	margin-top:12px;
+	border-radius:5px;
+	height:45px;
+	line-height: 45px;
+	color: #fff;
+	text-align:center;
+	background: rgba(38,156,168,0.6);
+}
+.permain:hover{
+	background:rgba(38,156,168,0.8)!important; 
+}
+.perinform{
+	padding:10px 15px 15px 15px;
+}
+.inform{
+	background: rgba(0,0,0,0.4);
+	border-radius: 10px;
+	margin-top:20px;}
+.gradient{
+	background: -webkit-linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,0.15)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,0.15)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,0.15)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,0.15)); /* 标准的语法（必须放在最后） */
+}
+#talents{
+	padding-top: 45px;
+	text-align: center;
+}
+/*高端人才显示设置*/
+.talentNum{
+	margin-top: -150px;
+    /* margin-left: 200px; */
+    margin-left: 218px;
+	width: 110px;	
+}
+.talentNum li{
+	width: 23px;
+	background: #2574b7;
+	color: #fff;
+	font-size: 21px;
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+	border-radius: 2px;
+}
+/*********************************/
+.btn{
+	margin:20px;
+}
+.noExl{
+	display:none;
+}
+.table2excel{
+	overflow: auto;
+/*	max-width: 90%;*/
+}
+#testTable{
+	min-width: 100%;
+}
+#testTable tr th{
+	padding: 5px 15px;
+	white-space:nowrap;
+}
+#testTable tr td{
+	padding: 5px 15px;
+	white-space:nowrap;
+	text-align: center;
+}
