@@ -10,6 +10,7 @@
     <result column="emp_dept" property="empDept" jdbcType="VARCHAR" />
     <result column="emp_position" property="empPosition" jdbcType="VARCHAR" />
     <result column="emp_hire_startTime" property="empHireStarttime" jdbcType="VARCHAR" />
+    <result column="emp_stat" property="empstat" jdbcType="VARCHAR" />
     <result column="emp_idcard" property="empIdcard" jdbcType="VARCHAR" />
     <result column="emp_idcard_endTime" property="empIdcardEndtime" jdbcType="VARCHAR" />
     <result column="emp_ethnic" property="empEthnic" jdbcType="VARCHAR" />
@@ -38,8 +39,11 @@
     <result column="emp_workType" property="empWorktype" jdbcType="VARCHAR" />
     <result column="emp_compile" property="empCompile" jdbcType="VARCHAR" />
     <result column="emp_inductionTime" property="empInductiontime" jdbcType="VARCHAR" />
+    <result column="emp_departureTime" property="empdepartureTime" jdbcType="VARCHAR" />
     <result column="emp_tryOutEndTime" property="empTryoutendtime" jdbcType="VARCHAR" />
+    <result column="emp_tryStatus" property="empTrystatus" jdbcType="VARCHAR" />
     <result column="emp_contractEndTime" property="empContractendtime" jdbcType="VARCHAR" />
+    <result column="emp_contractStatus" property="empContractstatus" jdbcType="VARCHAR" />
     <result column="emp_contractSignedNum" property="empContractsignednum" jdbcType="INTEGER" />
     <result column="emp_returnee" property="empReturnee" jdbcType="VARCHAR" />
     <result column="emp_foreign" property="empForeign" jdbcType="VARCHAR" />
@@ -546,4 +550,19 @@
       emp_reviewStatus = #{empReviewstatus,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  	<select id="checkbyContract" resultMap="BaseResultMap" parameterType="java.lang.String">
+		SELECT	*FROM	emp_info WHERE	emp_contractStatus = '1'
+		<if test="_parameter!=null">
+			and emp_contractEndTime &lt; #{empContractendtime,jdbcType=VARCHAR}
+		</if>
+	</select>
+	<select id="checkbyTry" resultMap="BaseResultMap" parameterType="java.lang.String">
+		SELECT	*FROM	emp_info WHERE	emp_tryStatus = '1'
+		<if test="_parameter!=null">
+			and emp_tryOutEndTime &lt; #{empTryoutendtime,jdbcType=VARCHAR}
+		</if>
+	</select>
+	<select id="selectbyEntry" resultType="int" parameterType="java.lang.String">
+	
+	</select>
 </mapper>

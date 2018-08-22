@@ -1,5 +1,7 @@
 package com.qaii.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +21,17 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		// TODO Auto-generated method stub
 		return empinfoService.insert(info);
 	}
+	@Override
+	public List<EmpInfo> getcontractmsg(String empContractendtime) {
+		// TODO Auto-generated method stub
+		return empinfoService.checkbyContract(empContractendtime);
+	}
+	@Override
+	public List<EmpInfo> gettrymsg(String empTryoutendtime) {
+		// TODO Auto-generated method stub
+		return empinfoService.checkbyTry(empTryoutendtime);
+	}
+
 	
 	
 }
