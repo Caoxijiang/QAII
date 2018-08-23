@@ -31,6 +31,21 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		// TODO Auto-generated method stub
 		return empinfoService.checkbyTry(empTryoutendtime);
 	}
+	@Override
+	public int countEntry(String lastm, String thism) {
+		// TODO Auto-generated method stub
+		return empinfoService.selectnumbyEntry(lastm, thism);
+	}
+	@Override
+	public int countDepart(String lastm, String thism) {
+		// TODO Auto-generated method stub
+		return empinfoService.selectnumbyDeparture(lastm, thism);
+	}
+	@Override
+	public int countnumofcollege(String lastm, String thism) {
+		// TODO Auto-generated method stub
+		return empinfoService.selectnumofcollege(lastm, thism);
+	}
 
 	
 	

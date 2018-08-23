@@ -82,6 +82,14 @@ public class CountDatetoNowDays {
 		
 	}
 	
+	//将时间戳类型参数转为日期
+	public static String StamptoDate(String date) {
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd");
+		long dt=new Long(date);
+		System.out.println(sdf.format(new Date(dt)));
+		return sdf.format(new Date(dt));
+	}
+	
 	//获取目标当月的时间戳参数以及上个月的时间戳，本月的key值为this，上月的为last
 	public static Map<String,String> getfistDay(Date date) throws ParseException {
 		Map<String, String> map=new HashMap<>();

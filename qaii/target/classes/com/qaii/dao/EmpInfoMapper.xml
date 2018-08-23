@@ -562,7 +562,13 @@
 			and emp_tryOutEndTime &lt; #{empTryoutendtime,jdbcType=VARCHAR}
 		</if>
 	</select>
-	<select id="selectbyEntry" resultType="int" parameterType="java.lang.String">
-	
+	<select id="selectnumbyEntry" resultType="int" parameterType="java.lang.String">
+		SELECT count(*) FROM emp_info WHERE emp_inductionTime &gt;= #{0} AND emp_inductionTime &lt; #{1}
+	</select>
+	<select id="selectnumbyDeparture" resultType="int" parameterType="java.lang.String">
+		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt;= #{0} AND emp_departureTime &lt; #{1}
+	</select>
+	<select id="selectnumofcollege" resultType="int" parameterType="java.lang.String">
+		SELECT COUNT(*) FROM emp_info WHERE emp_inductionTime &lt; #{1} AND emp_departureTime &gt; #{0}
 	</select>
 </mapper>

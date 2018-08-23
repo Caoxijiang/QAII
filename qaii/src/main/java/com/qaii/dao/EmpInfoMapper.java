@@ -22,8 +22,9 @@ public interface EmpInfoMapper {
     
     List<EmpInfo> checkbyTry(String empTryoutendtime);
     
-    int selectnumbyEntry(String date);
+    int selectnumbyEntry(String lastm,String thism);
     
-    int selectnumbyDeparture(String date);
+    int selectnumbyDeparture(String lastm,String thism);
     
+    int selectnumofcollege(String lastm,String thism);
 }
