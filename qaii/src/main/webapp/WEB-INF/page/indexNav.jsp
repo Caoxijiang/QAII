@@ -38,7 +38,7 @@
 		</div>
 		<div class="row" style="margin-top:105px;">
 			<div class="col-6">
-				<a href="${basePath}/page/personnel/indexPersonnel.html">
+				<a href="personal.do">
 					<div class="navbox" style="margin-right: 80px;">
 						<div class="navtitle">科研成果管理系统—人教处</div>
 						<div class="navcom">点击进入</div>

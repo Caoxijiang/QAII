@@ -23,8 +23,8 @@
 					<span class="pertitlespan">人事教育处监测平台</span>
 					<div class="right perNav">
 						<a href="intoPerSys.do"><div class="pageTo">进入系统</div></a>
-						<a href="../indexNav.jsp"><div class="pageTo">返回导航</div></a>
-						<a href="../login.jsp"><div class="pageTo">退出</div></a>
+						<a href="dept.do"><div class="pageTo">返回导航</div></a>
+						<a href="outLogin.do"><div class="pageTo">退出</div></a>
 					</div>
 				</div>	
 				
