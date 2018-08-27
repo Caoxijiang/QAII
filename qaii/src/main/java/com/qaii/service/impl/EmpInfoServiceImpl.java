@@ -46,6 +46,26 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		// TODO Auto-generated method stub
 		return empinfoService.selectnumofcollege(lastm, thism);
 	}
+	@Override
+	public int countnumofIncubationComp(String lasty, String thisy) {
+		// TODO Auto-generated method stub
+		return empinfoService.selectnumofIncubationComp(lasty, thisy);
+	}
+	@Override
+	public int countnumofcollegeComp(String lasty, String thisy) {
+		// TODO Auto-generated method stub
+		return empinfoService.selectnumofcollegeComp(lasty, thisy);
+	}
+	@Override
+	public int countnumfoTalents(String dept) {
+		// TODO Auto-generated method stub
+		return empinfoService.selectnumoftalnets(dept);
+	}
+	@Override
+	public int countHigherTalents(String title) {
+		// TODO Auto-generated method stub
+		return empinfoService.selectnumofHightalents(title);
+	}
 
 	
 	

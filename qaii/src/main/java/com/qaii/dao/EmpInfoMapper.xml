@@ -49,6 +49,7 @@
     <result column="emp_foreign" property="empForeign" jdbcType="VARCHAR" />
     <result column="emp_remarks" property="empRemarks" jdbcType="VARCHAR" />
     <result column="emp_reviewStatus" property="empReviewstatus" jdbcType="VARCHAR" />
+    <result column="emp_title" property="empTitle" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, eid, emp_num, emp_name, emp_gender, emp_dept, emp_position, emp_hire_startTime, 
@@ -551,13 +552,13 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   	<select id="checkbyContract" resultMap="BaseResultMap" parameterType="java.lang.String">
-		SELECT	*FROM	emp_info WHERE	emp_contractStatus = '1'
+		SELECT	*FROM	emp_info WHERE	emp_contractStatus = '1' AND emp_stat='1'
 		<if test="_parameter!=null">
 			and emp_contractEndTime &lt; #{empContractendtime,jdbcType=VARCHAR}
 		</if>
 	</select>
 	<select id="checkbyTry" resultMap="BaseResultMap" parameterType="java.lang.String">
-		SELECT	*FROM	emp_info WHERE	emp_tryStatus = '1'
+		SELECT	*FROM	emp_info WHERE	emp_tryStatus = '1' AND emp_stat='1'
 		<if test="_parameter!=null">
 			and emp_tryOutEndTime &lt; #{empTryoutendtime,jdbcType=VARCHAR}
 		</if>
@@ -569,6 +570,18 @@
 		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt;= #{0} AND emp_departureTime &lt; #{1}
 	</select>
 	<select id="selectnumofcollege" resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_inductionTime &lt; #{1} AND emp_departureTime &gt; #{0}
+		SELECT COUNT(*) FROM emp_info WHERE emp_inductionTime &lt; #{0} AND emp_departureTime &gt; #{1}
+	</select>
+	<select id="selectnumofIncubationComp" resultType="int" parameterType="java.lang.String">
+		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt; #{0} AND emp_inductionTime &lt; #{1} AND emp_dept in ('孵化二','孵化一')
+	</select>
+	<select id="selectnumofcollegeComp" resultType="int" parameterType="java.lang.String">
+		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt; #{0} AND emp_inductionTime &lt; #{1} AND emp_dept in ('财务处','综合管理处','平行工作室')
+	</select>
+	<select id="selectnumoftalnets"  resultType="int" parameterType="java.lang.String">
+		SELECT COUNT(*) FROM emp_info WHERE emp_dept=#{0} AND emp_stat='1'
+	</select>
+	<select id="selectnumofHightalents"  resultType="int" parameterType="java.lang.String">
+		SELECT COUNT(*) FROM emp_info WHERE emp_title=#{0} AND emp_stat='1'
 	</select>
 </mapper>

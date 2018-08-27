@@ -12,6 +12,53 @@
 <script src="${basePath}/js/jquery-3.3.1.min.js"></script> 
 <script src="${basePath}/commen/bootstrap/bootstrap.min.js"> </script>
 <script src="${basePath}/js/echarts.min.js"></script>
+<script type="text/javascript">
+	$().ready(function(){
+		var now=new Date();
+		var nowdate=now.getFullYear()+"/"+(now.getMonth() + 1)+"/"+now.getDate();
+		getContractMsg();
+		getTryMsg();
+		
+		//合同到期人员提醒
+		function getContractMsg(){
+			$.ajax({
+				type:"POST",
+				url:"getContractMsg.do",
+				data:{date:nowdate},
+				success:function(data){
+					data.forEach(function(e){
+						$("#contractremind").append('<li class="permain"><div class="row"><div class="col-3">'+
+								e.empDept+'</div><div class="col-3">'+
+								e.empName+'</div><div class="col-6">'+
+								e.empContractendtime+'</div></div></li>');
+					})
+				}
+			})
+		}
+		
+		//试用期到期提醒
+		function getTryMsg(){
+			$.ajax({
+				type:"POST",
+				url:"getTryMsg.do",
+				data:{date:nowdate},
+				success:function(data){
+					data.forEach(function(e){
+						$("#tryremind").append('<li class="permain"><div class="row"><div class="col-3">'+
+								e.empDept+'</div><div class="col-3">'+
+								e.empName+'</div><div class="col-6">'+
+								e.empTryoutendtime+'</div></div></li>');
+					})
+				}
+			})
+		}
+		
+		//本月人数增长情况
+		function getMonAddPersMsg(){
+			
+		}
+	})
+</script>
 <title>科技管理系统</title>
 </head>
 
@@ -34,49 +81,8 @@
 				<div class="inform">
 					<div class="perctitle"><span>合同到期提醒</span><span class="right more">查看更多+</span></div>
 					<div class="perinform">
-						<ul>
-							<li class="permain activ">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
-							<li class="permain" style="background:rgba(50,146,172,0.6);">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
-							<li class="permain" style="background:rgba(37,114,160,0.6);">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
-							<li class="permain" style="background:rgba(30,82,134,0.6);">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
-							<li class="permain" style="background:rgba(26,76,108,0.6);">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
-							<li class="permain" style="background:rgba(7,88,134,0.6);">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
+						<ul id="contractremind">
+							
 
 						</ul>
 					</div>
@@ -84,42 +90,8 @@
 				<div class="inform">
 					<div class="perctitle"><span>试用期到期提醒</span><span class="right more">查看更多+</span></div>
 					<div class="perinform">
-						<ul>
-							<li class="permain activ">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
-							<li class="permain" style="background:rgba(50,146,172,0.6);">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
-							<li class="permain" style="background:rgba(37,114,160,0.6);">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
-							<li class="permain" style="background:rgba(30,82,134,0.6);">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
-							<li class="permain" style="background:rgba(26,76,108,0.6);">
-								<div class="row">
-									<div class="col-3">科技处</div>
-									<div class="col-3">张三</div>
-									<div class="col-6">2018年8月20日</div>
-								</div>
-							</li>
+						<ul id="tryremind">
+							
 						</ul>
 					</div>
 				</div>
@@ -197,28 +169,42 @@
 		context.shadowOffsetY = 1;
 		//千人计划
 		context.fillStyle="#8fc31f";
-		context.fillText("6人",128*wid/500,49*wid/500);
+		context.fillText(getTitleMsg("千人计划")+"人",128*wid/500,49*wid/500);
 		//百人计划
 		context.fillStyle="#8e1c76";
-		context.fillText("4人",64*wid/500,102*wid/500);
+		context.fillText(getTitleMsg("百人计划")+"人",64*wid/500,102*wid/500);
 		//研究院人员
 		context.fillStyle="#1576bd";
-		context.fillText("172人",131*wid/500,155*wid/500);
+		context.fillText(getTitleMsg("研究院人员")+"人",131*wid/500,155*wid/500);
 		//国家期刊主编
 		context.fillStyle="#f39800";
-		context.fillText("4人",140*wid/500,231*wid/500);
+		context.fillText(getTitleMsg("国家期刊主编")+"人",140*wid/500,231*wid/500);
 		//国家优青
 		context.fillStyle="#2ea7e0";
-		context.fillText("1人",286*wid/500,231*wid/500);
+		context.fillText(getTitleMsg("国家优青")+"人",286*wid/500,231*wid/500);
 		//国家杰青
 		context.fillStyle="#e4007f";
-		context.fillText("4人",358*wid/500,183*wid/500);
+		context.fillText(getTitleMsg("国家杰青")+"人",358*wid/500,183*wid/500);
 		//学科带头人
 		context.fillStyle="#f8b62d";
-		context.fillText("17人",438*wid/500,142*wid/500);
+		context.fillText(getTitleMsg("学科带头人")+"人",438*wid/500,142*wid/500);
 		//博士学历
 		context.fillStyle="#6a2b85";
-		context.fillText("36人",383*wid/500,78*wid/500);
+		context.fillText(getTitleMsg("博士学历")+"人",383*wid/500,78*wid/500);
+		
+		function getTitleMsg(data){
+			var result;
+			$.ajax({
+				async:false,
+				type:"POST",
+				url:"getTitleMsg.do",
+				data:{data:data},
+				success:function(data){
+					result=data;
+				}
+			})
+			return result;
+		}
 	}
 
 //2123111111111111111111111111465555555555555555

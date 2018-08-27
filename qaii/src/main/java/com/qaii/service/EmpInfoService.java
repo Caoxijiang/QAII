@@ -16,4 +16,12 @@ public interface EmpInfoService {
 	int countDepart(String lastm,String thism);
 	
 	int countnumofcollege(String lastm,String thism);
+	
+	int countnumofIncubationComp(String lasty,String thisy);
+	
+	int countnumofcollegeComp(String lasty,String thisy);
+	
+	int countnumfoTalents(String dept);
+	
+	int countHigherTalents(String title);
 }

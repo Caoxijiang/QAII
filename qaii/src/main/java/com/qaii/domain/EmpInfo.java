@@ -94,6 +94,8 @@ public class EmpInfo {
     private String empRemarks;
 
     private String empReviewstatus;
+    
+    private String empTitle;
 
     public Integer getId() {
         return id;
@@ -471,12 +473,20 @@ public class EmpInfo {
         this.empReviewstatus = empReviewstatus == null ? null : empReviewstatus.trim();
     }
 
+	public String getEmpTitle() {
+		return empTitle;
+	}
+
+	public void setEmpTitle(String empTitle) {
+		this.empTitle = empTitle;
+	}
+
 	@Override
 	public String toString() {
 		return "EmpInfo [id=" + id + ", eid=" + eid + ", empNum=" + empNum + ", empName=" + empName + ", empGender="
 				+ empGender + ", empDept=" + empDept + ", empPosition=" + empPosition + ", empHireStarttime="
-				+ empHireStarttime + ", empIdcard=" + empIdcard + ", empIdcardEndtime=" + empIdcardEndtime
-				+ ", empEthnic=" + empEthnic + ", empPoliticallandscape=" + empPoliticallandscape
+				+ empHireStarttime + ", empstat=" + empstat + ", empIdcard=" + empIdcard + ", empIdcardEndtime="
+				+ empIdcardEndtime + ", empEthnic=" + empEthnic + ", empPoliticallandscape=" + empPoliticallandscape
 				+ ", empMaritalstatus=" + empMaritalstatus + ", empFirsteducation=" + empFirsteducation
 				+ ", empSecondeducation=" + empSecondeducation + ", empThirdeducation=" + empThirdeducation
 				+ ", empFirsteducationschool=" + empFirsteducationschool + ", empSecondeducationschool="
@@ -489,12 +499,11 @@ public class EmpInfo {
 				+ ", empPhone=" + empPhone + ", empEmergencycontactandphone=" + empEmergencycontactandphone
 				+ ", empFileaddress=" + empFileaddress + ", empAccountaddress=" + empAccountaddress
 				+ ", empHomeaddress=" + empHomeaddress + ", empWorktype=" + empWorktype + ", empCompile=" + empCompile
-				+ ", empInductiontime=" + empInductiontime + ", empTryoutendtime=" + empTryoutendtime
-				+ ", empTrystatus=" + empTrystatus + ", empContractendtime=" + empContractendtime
-				+ ", empContractstatus=" + empContractstatus + ", empContractsignednum=" + empContractsignednum
-				+ ", empReturnee=" + empReturnee + ", empForeign=" + empForeign + ", empRemarks=" + empRemarks
-				+ ", empReviewstatus=" + empReviewstatus + "]";
+				+ ", empInductiontime=" + empInductiontime + ", empdepartureTime=" + empdepartureTime
+				+ ", empTryoutendtime=" + empTryoutendtime + ", empTrystatus=" + empTrystatus + ", empContractendtime="
+				+ empContractendtime + ", empContractstatus=" + empContractstatus + ", empContractsignednum="
+				+ empContractsignednum + ", empReturnee=" + empReturnee + ", empForeign=" + empForeign + ", empRemarks="
+				+ empRemarks + ", empReviewstatus=" + empReviewstatus + ", empTitle=" + empTitle + "]";
 	}
-
 
 }
