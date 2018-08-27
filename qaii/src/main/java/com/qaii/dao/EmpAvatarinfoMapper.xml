@@ -20,6 +20,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.qaii.domain.EmpAvatarinfo" >
+ 	<selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+    	SELECT LAST_INSERT_ID()
+  </selectKey>
     insert into emp_avatarinfo (id, uid, url)
     values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR})
   </insert>

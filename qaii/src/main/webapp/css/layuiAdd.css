@@ -250,3 +250,60 @@ table{
 	height: 36px;
 	line-height: 36px;
 }
+
+/*********************  添加页面样式  ************************/
+.addBanner{width:100%;height:250px;background-image: url(../image/banner.jpg);background-position: center;}
+.container-fluid{
+	max-width: 1200px;
+	margin-top: 50px;
+}
+h1{
+	padding-left:15px;
+	padding-top:20px;
+	color: #003e8d;
+	font-size:21px;
+}
+.star{
+	color:#F4181C;
+}
+/*表单*/
+.layui-form-label{
+	margin: 0px;
+	display:block;
+	width: 100%;
+    text-align: left;
+	padding: 5px 15px;
+}
+.layui-input-block{
+	margin: 0px auto;
+	padding: 0px 15px;
+}
+.input{
+	width: 100%;
+	border: 1px solid #d7d7d7;
+}
+.inputdisable{
+	border: #eee solid 1px !important;
+    color: #ccc !important;
+}
+.layui-select-title .layui-input{
+	width: 100%;
+	border: 1px solid #d7d7d7;
+}
+.layui-form-select .layui-edge{
+	margin-top: 15px;
+	margin-top: 12px;
+}
+.bgf7f8f8{
+	background: #f7f8f8;
+}
+ @media screen and (max-width: 650px) {
+	 .layui-header .layui-logo{
+		 left: 10px !important;
+		 font-size:16px !important;
+	 }
+	 .layui-header .layui-logo img{
+		 width: 50px;
+		 margin-right: 5px !important;
+	 }
+    }

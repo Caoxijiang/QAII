@@ -20,4 +20,10 @@ public class PersonController {
 		return "page/personnel/addPersonnel";
 	}
 	
+	@RequestMapping("adddetail.do")
+	public String adddetail() {
+		return "page/personnel/adddetail";
+	}
+	
+	
 }
