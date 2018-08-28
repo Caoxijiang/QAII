@@ -151,7 +151,7 @@ public class EmpController {
 	  //  String fileName=file.getOriginalFilename();
 	    int size=(int)file.getSize();
 	    System.out.println(fileName+":---"+size);
-	    String path="E:/File";
+	    String path="D:/File";
 	    File dest =new File(path+"/"+fileName);
 	    if(!dest.getParentFile().exists()) {
 	    	dest.getParentFile().mkdirs();
