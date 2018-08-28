@@ -16,6 +16,8 @@ public class EmpInfo {
     private String empPosition;
 
     private String empHireStarttime;
+    
+    private String empstat;
 
     private String empIdcard;
 
@@ -73,13 +75,13 @@ public class EmpInfo {
 
     private String empInductiontime;
     
-    public String getEmpTitle() {
-		return empTitle;
-	}
 
-	public void setEmpTitle(String empTitle) {
-		this.empTitle = empTitle;
-	}
+    private String empdepartureTime;
+
+    private String empTryoutendtime;
+    
+    private String empTrystatus;
+    
 
 	private String empTitle;
     
@@ -111,59 +113,6 @@ public class EmpInfo {
 		return empContractStatus;
 	}
 
-	@Override
-	public String toString() {
-		return "EmpInfo [id=" + id + ", eid=" + eid + ", empNum=" + empNum + ", empName=" + empName + ", empGender="
-				+ empGender + ", empDept=" + empDept + ", empPosition=" + empPosition + ", empHireStarttime="
-				+ empHireStarttime + ", empIdcard=" + empIdcard + ", empIdcardEndtime=" + empIdcardEndtime
-				+ ", empEthnic=" + empEthnic + ", empPoliticallandscape=" + empPoliticallandscape
-				+ ", empMaritalstatus=" + empMaritalstatus + ", empFirsteducation=" + empFirsteducation
-				+ ", empSecondeducation=" + empSecondeducation + ", empThirdeducation=" + empThirdeducation
-				+ ", empFirsteducationschool=" + empFirsteducationschool + ", empSecondeducationschool="
-				+ empSecondeducationschool + ", empThirdeducationschool=" + empThirdeducationschool
-				+ ", empFirsteducationpro=" + empFirsteducationpro + ", empSecondeducationpro=" + empSecondeducationpro
-				+ ", empThirdeducationpro=" + empThirdeducationpro + ", empFirstgraduationtime="
-				+ empFirstgraduationtime + ", empSecondgraduationtime=" + empSecondgraduationtime
-				+ ", empThirdgraduationtime=" + empThirdgraduationtime + ", empJobtitle=" + empJobtitle
-				+ ", empJobtitlelevel=" + empJobtitlelevel + ", empJobtitleobtaintime=" + empJobtitleobtaintime
-				+ ", empPhone=" + empPhone + ", empEmergencycontactandphone=" + empEmergencycontactandphone
-				+ ", empFileaddress=" + empFileaddress + ", empAccountaddress=" + empAccountaddress
-				+ ", empHomeaddress=" + empHomeaddress + ", empWorktype=" + empWorktype + ", empCompile=" + empCompile
-				+ ", empInductiontime=" + empInductiontime + ", empStat=" + empStat + ", empDepartureTime="
-				+ empDepartureTime + ", empTryStatus=" + empTryStatus + ", empContractStatus=" + empContractStatus
-				+ ", empTryoutendtime=" + empTryoutendtime + ", empContractendtime=" + empContractendtime
-				+ ", empContractsignednum=" + empContractsignednum + ", empReturnee=" + empReturnee + ", empForeign="
-				+ empForeign + ", empRemarks=" + empRemarks + ", empReviewstatus=" + empReviewstatus + ", url=" + url
-				+ ", getEmpStat()=" + getEmpStat() + ", getEmpDepartureTime()=" + getEmpDepartureTime()
-				+ ", getEmpTryStatus()=" + getEmpTryStatus() + ", getEmpContractStatus()=" + getEmpContractStatus()
-				+ ", getEmpInductiontime()=" + getEmpInductiontime() + ", getId()=" + getId() + ", getEid()=" + getEid()
-				+ ", getUrl()=" + getUrl() + ", getEmpNum()=" + getEmpNum() + ", getEmpName()=" + getEmpName()
-				+ ", getEmpGender()=" + getEmpGender() + ", getEmpDept()=" + getEmpDept() + ", getEmpPosition()="
-				+ getEmpPosition() + ", getEmpHireStarttime()=" + getEmpHireStarttime() + ", getEmpIdcard()="
-				+ getEmpIdcard() + ", getEmpIdcardEndtime()=" + getEmpIdcardEndtime() + ", getEmpEthnic()="
-				+ getEmpEthnic() + ", getEmpPoliticallandscape()=" + getEmpPoliticallandscape()
-				+ ", getEmpMaritalstatus()=" + getEmpMaritalstatus() + ", getEmpFirsteducation()="
-				+ getEmpFirsteducation() + ", getEmpSecondeducation()=" + getEmpSecondeducation()
-				+ ", getEmpThirdeducation()=" + getEmpThirdeducation() + ", getEmpFirsteducationschool()="
-				+ getEmpFirsteducationschool() + ", getEmpSecondeducationschool()=" + getEmpSecondeducationschool()
-				+ ", getEmpThirdeducationschool()=" + getEmpThirdeducationschool() + ", getEmpFirsteducationpro()="
-				+ getEmpFirsteducationpro() + ", getEmpSecondeducationpro()=" + getEmpSecondeducationpro()
-				+ ", getEmpThirdeducationpro()=" + getEmpThirdeducationpro() + ", getEmpFirstgraduationtime()="
-				+ getEmpFirstgraduationtime() + ", getEmpSecondgraduationtime()=" + getEmpSecondgraduationtime()
-				+ ", getEmpThirdgraduationtime()=" + getEmpThirdgraduationtime() + ", getEmpJobtitle()="
-				+ getEmpJobtitle() + ", getEmpJobtitlelevel()=" + getEmpJobtitlelevel()
-				+ ", getEmpJobtitleobtaintime()=" + getEmpJobtitleobtaintime() + ", getEmpPhone()=" + getEmpPhone()
-				+ ", getEmpEmergencycontactandphone()=" + getEmpEmergencycontactandphone() + ", getEmpFileaddress()="
-				+ getEmpFileaddress() + ", getEmpAccountaddress()=" + getEmpAccountaddress() + ", getEmpHomeaddress()="
-				+ getEmpHomeaddress() + ", getEmpWorktype()=" + getEmpWorktype() + ", getEmpCompile()="
-				+ getEmpCompile() + ", getEmpTryoutendtime()=" + getEmpTryoutendtime() + ", getEmpContractendtime()="
-				+ getEmpContractendtime() + ", getEmpContractsignednum()=" + getEmpContractsignednum()
-				+ ", getEmpReturnee()=" + getEmpReturnee() + ", getEmpForeign()=" + getEmpForeign()
-				+ ", getEmpRemarks()=" + getEmpRemarks() + ", getEmpReviewstatus()=" + getEmpReviewstatus()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
-	}
-
 	public void setEmpContractStatus(String empContractStatus) {
 		this.empContractStatus = empContractStatus;
 	}
@@ -184,9 +133,10 @@ public class EmpInfo {
 		this.empInductiontime = empInductiontime;
 	}
 
-	private String empTryoutendtime;
 
     private String empContractendtime;
+    
+    private String empContractstatus;
 
     private Integer empContractsignednum;
 
@@ -272,7 +222,15 @@ public class EmpInfo {
         this.empHireStarttime = empHireStarttime == null ? null : empHireStarttime.trim();
     }
 
-    public String getEmpIdcard() {
+    public String getEmpstat() {
+		return empstat;
+	}
+
+	public void setEmpstat(String empstat) {
+		this.empstat = empstat;
+	}
+
+	public String getEmpIdcard() {
         return empIdcard;
     }
 
@@ -490,7 +448,15 @@ public class EmpInfo {
 
 
 
-    public String getEmpTryoutendtime() {
+    public String getEmpdepartureTime() {
+		return empdepartureTime;
+	}
+
+	public void setEmpdepartureTime(String empdepartureTime) {
+		this.empdepartureTime = empdepartureTime;
+	}
+
+	public String getEmpTryoutendtime() {
         return empTryoutendtime;
     }
 
@@ -498,7 +464,15 @@ public class EmpInfo {
         this.empTryoutendtime = empTryoutendtime == null ? null : empTryoutendtime.trim();
     }
 
-    public String getEmpContractendtime() {
+    public String getEmpTrystatus() {
+		return empTrystatus;
+	}
+
+	public void setEmpTrystatus(String empTrystatus) {
+		this.empTrystatus = empTrystatus;
+	}
+
+	public String getEmpContractendtime() {
         return empContractendtime;
     }
 
@@ -506,11 +480,14 @@ public class EmpInfo {
         this.empContractendtime = empContractendtime == null ? null : empContractendtime.trim();
     }
 
-  
-
-    public Integer getEmpContractsignednum() {
-		return empContractsignednum;
+    public String getEmpContractstatus() {
+		return empContractstatus;
 	}
+
+	public void setEmpContractstatus(String empContractstatus) {
+		this.empContractstatus = empContractstatus;
+	}
+
 
 	public void setEmpContractsignednum(Integer empContractsignednum) {
 		this.empContractsignednum = empContractsignednum;
@@ -547,4 +524,38 @@ public class EmpInfo {
     public void setEmpReviewstatus(String empReviewstatus) {
         this.empReviewstatus = empReviewstatus == null ? null : empReviewstatus.trim();
     }
+
+	public String getEmpTitle() {
+		return empTitle;
+	}
+
+	public void setEmpTitle(String empTitle) {
+		this.empTitle = empTitle;
+	}
+
+	@Override
+	public String toString() {
+		return "EmpInfo [id=" + id + ", eid=" + eid + ", empNum=" + empNum + ", empName=" + empName + ", empGender="
+				+ empGender + ", empDept=" + empDept + ", empPosition=" + empPosition + ", empHireStarttime="
+				+ empHireStarttime + ", empstat=" + empstat + ", empIdcard=" + empIdcard + ", empIdcardEndtime="
+				+ empIdcardEndtime + ", empEthnic=" + empEthnic + ", empPoliticallandscape=" + empPoliticallandscape
+				+ ", empMaritalstatus=" + empMaritalstatus + ", empFirsteducation=" + empFirsteducation
+				+ ", empSecondeducation=" + empSecondeducation + ", empThirdeducation=" + empThirdeducation
+				+ ", empFirsteducationschool=" + empFirsteducationschool + ", empSecondeducationschool="
+				+ empSecondeducationschool + ", empThirdeducationschool=" + empThirdeducationschool
+				+ ", empFirsteducationpro=" + empFirsteducationpro + ", empSecondeducationpro=" + empSecondeducationpro
+				+ ", empThirdeducationpro=" + empThirdeducationpro + ", empFirstgraduationtime="
+				+ empFirstgraduationtime + ", empSecondgraduationtime=" + empSecondgraduationtime
+				+ ", empThirdgraduationtime=" + empThirdgraduationtime + ", empJobtitle=" + empJobtitle
+				+ ", empJobtitlelevel=" + empJobtitlelevel + ", empJobtitleobtaintime=" + empJobtitleobtaintime
+				+ ", empPhone=" + empPhone + ", empEmergencycontactandphone=" + empEmergencycontactandphone
+				+ ", empFileaddress=" + empFileaddress + ", empAccountaddress=" + empAccountaddress
+				+ ", empHomeaddress=" + empHomeaddress + ", empWorktype=" + empWorktype + ", empCompile=" + empCompile
+				+ ", empInductiontime=" + empInductiontime + ", empdepartureTime=" + empdepartureTime
+				+ ", empTryoutendtime=" + empTryoutendtime + ", empTrystatus=" + empTrystatus + ", empContractendtime="
+				+ empContractendtime + ", empContractstatus=" + empContractstatus + ", empContractsignednum="
+				+ empContractsignednum + ", empReturnee=" + empReturnee + ", empForeign=" + empForeign + ", empRemarks="
+				+ empRemarks + ", empReviewstatus=" + empReviewstatus + ", empTitle=" + empTitle + "]";
+	}
+
 }
