@@ -511,7 +511,7 @@
   
   <select id="findAllEmpInfo" resultMap="BaseResultMap" parameterType="com.qaii.domain.EmpInfo">
   	select e. *, a.url as url 
-  	from  emp_info e left join  emp_avatarinfo a on e.id=a.uid
+  	from  emp_info e left join  emp_avatarinfo a on e.eid=a.id
   </select>
   
   <update id="updateByPrimaryKey" parameterType="com.qaii.domain.EmpInfo" >
@@ -560,4 +560,8 @@
       emp_reviewStatus = #{empReviewstatus,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+ 	<select id="findEmpinfoAndAvatarByid" resultMap="BaseResultMap" parameterType="com.qaii.domain.EmpInfo">
+ 		select e. *, a.url as url 
+  		from  emp_info e left join  emp_avatarinfo a on e.eid=a.id where e.eid=#{id,jdbcType=INTEGER}
+ 	</select>
 </mapper>

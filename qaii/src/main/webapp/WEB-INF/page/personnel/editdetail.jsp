@@ -28,7 +28,7 @@
   	
 	  <div class="layui-row">
 		<div class="layui-col-md6">
-			<h1>个人基本信息</h1>
+			<h1>个人基本信息${param.userId}</h1>
 		  	<div class="layui-row">
 				<div class="layui-col-md6">
 					<div class="layui-form-item">
@@ -401,7 +401,7 @@
 <!--  表单元素-->
 
 </div>
-<script src="../../commen/layui/layui.js"></script>
+<script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 //JavaScript代码区域
 layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
@@ -472,51 +472,69 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
   });
 	
 	
-
-	//表单初始赋值 从表单中提取数据
-  form.val('example', {
-    "empName": "孙孙",
-	  "empNum":"007",
-	  "empGender":"1",
-	  "empDept":"平行工作室",
-	  "empPosition":"前端开发",
-	  "empHireStarttime":"4年",
-	  "empIdcard":"1234567898745632145",
-	  "empIdcardEndtime":"2018-08-08",
-	  "empEthnic":"汉族",
-	  "empPoliticallandscape":"1",
-	  "empMaritalstatus":"1",
-	  "empFirsteducation":"本科",
-	  "empFirsteducationschool":"本科学校",
-	  "empFirsteducationpro":"计算机1",
-	  "empFirstgraduationtime":"2018-08-09",
-	  "empSecondeducation":"研究生",
-	  "empSecondeducationschool":"研究生学校",
-	  "empSecondeducationpro":"计算机2",
-	  "empSecondgraduationtime":"2018-08-10",
-	  "empThirdeducation":"博士",
-	  "empThirdeducationschool":"博士学校",
-	  "empThirdeducationpro":"计算机3",
-	  "empThirdgraduationtime":"2018-08-11",
-	  "empJobtitle":"系统集成",
-	  "empJobtitlelevel":"中级",
-	  "empJobtitleobtaintime":"2018-08-12",
-	  "empPhone":"12345678987",
-	  "empEmergencycontactandphone":"秋名山-13256478954",
-	  "empFileaddress":"山东青岛",
-	  "empAccountaddress":"山东省青岛市高新区",
-	  "empHomeaddress":"山东省青岛市家庭住址",
-	  "empWorktype":"1",
-	  "empCompile":"1",
-	  "empInductiontime":"2018-09-01",
-	  "empTryoutendtime":"2018-09-02",
-	  "empContractendtime":"2018-09-03",
-	  "empContractsignednum":"2",
-	  "empReturnee":"1",
-  	  "empForeign":"1",
-	  "empRemarks":"备注信息巴拉巴拉"
-    
-  })
+  var id=${param.userId};
+  if(id!=null){
+		$.post({
+			url:"seeEmpInfos.do",
+			data:{
+				userId:id
+			},
+			success:function(data){
+				if(data.data!=null){
+					let empinfo=data.data;
+					console.log("_____:"+JSON.stringify(data.data))
+					//表单初始赋值 从表单中提取数据
+					  form.val('example', {
+					    "empName": empinfo.empName,
+						  "empNum":empinfo.empNum,
+						  "empGender":empinfo.empGender,
+						  "empDept":empinfo.empDept,
+						  "empPosition":empinfo.empPosition,
+						  "empHireStarttime":empinfo.empHireStarttime,
+						  "empIdcard":empinfo.empIdcard,
+						  "empIdcardEndtime":empinfo.empIdcardEndtime,
+						  "empEthnic":empinfo.empEthnic,
+						  "empPoliticallandscape":empinfo.empPoliticallandscape,
+						  "empMaritalstatus":empinfo.empMaritalstatus,
+						  "empFirsteducation":empinfo.empFirsteducation,
+						  "empFirsteducationschool":empinfo.empFirsteducationschool,
+						  "empFirsteducationpro":empinfo.empFirsteducationpro,
+						  "empFirstgraduationtime":empinfo.empFirstgraduationtime,
+						  "empSecondeducation":empinfo.empSecondeducation,
+						  "empSecondeducationschool":empinfo.empSecondeducationschool,
+						  "empSecondeducationpro":empinfo.empSecondeducationpro,
+						  "empSecondgraduationtime":empinfo.empSecondgraduationtime,
+						  "empThirdeducation":empinfo.empThirdeducation,
+						  "empThirdeducationschool":empinfo.empThirdeducationschool,
+						  "empThirdeducationpro":empinfo.empThirdeducationpro,
+						  "empThirdgraduationtime":empinfo.empThirdgraduationtime,
+						  "empJobtitle":empinfo.empJobtitle,
+						  "empJobtitlelevel":empinfo.empJobtitlelevel,
+						  "empJobtitleobtaintime":empinfo.empJobtitleobtaintime,
+						  "empPhone":empinfo.empPhone,
+						  "empEmergencycontactandphone":empinfo.empEmergencycontactandphone,
+						  "empFileaddress":empinfo.empFileaddress,
+						  "empAccountaddress":empinfo.empAccountaddress,
+						  "empHomeaddress":empinfo.empHomeaddress,
+						  "empWorktype":empinfo.empWorktype,
+						  "empCompile":empinfo.empCompile,
+						  "empInductiontime":empinfo.empInductiontime,
+						  "empTryoutendtime":empinfo.empTryoutendtime,
+						  "empContractendtime":empinfo.empContractendtime,
+						  "empContractsignednum":empinfo.empContractsignednum,
+						  "empReturnee":empinfo.empReturnee,
+					  	  "empForeign":empinfo.empForeign,
+						  "empRemarks":empinfo.empRemarks
+					    
+					  })
+				}else{
+					alert("查看详情失败")
+				}
+			}
+		})
+  }else{
+	   alert("请刷新成员管理页面");
+  }
   
   
 });

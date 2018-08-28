@@ -8,4 +8,5 @@ import com.qaii.domain.EmpInfo;
 public interface EmpInfoService {
 	int insert(EmpInfo info);
 	List<EmpInfo> findAllEmpInfo();
+	 EmpInfo findEmpinfoAndAvatarByid(Integer id);
 }

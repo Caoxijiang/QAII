@@ -34,14 +34,22 @@ public class EmpController {
 	private EmpAvatarService empAvatarService; 
 	
 	//修改员工信息页面
-	@RequestMapping("updateEmpInfo.do")
+	@RequestMapping(value="updateEmpInfo.do",produces="application/json;charset=UTF-8")
 	public String updateEmpInfo() {
 		return "page/personnel/editdetail";
 	}
 	
-	@RequestMapping(value="seeEmpInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+
+
+	
+	
+	
+
+	@RequestMapping(value="seeEmpInfo.do",produces="application/json;charset=UTF-8")
 	public String seeEmpInfo() {
+		
 		return "page/personnel/checkdetail";
+		
 	}
 	
 	
@@ -202,6 +210,30 @@ public class EmpController {
 				return Layui.data(count, empInfo);
 			}
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="seeEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public JsonResult seeEmpInfos(EmpInfo emp,HttpServletRequest req) {	
+
+		
+		//emp.setId();
+		emp = empInfoService.findEmpinfoAndAvatarByid(Integer.parseInt(req.getParameter("userId")));
+		if(emp!=null) {
+			return new JsonResult(emp);
+		}else {
+			return new JsonResult();
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

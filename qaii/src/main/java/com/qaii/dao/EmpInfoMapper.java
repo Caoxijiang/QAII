@@ -18,4 +18,6 @@ public interface EmpInfoMapper {
 
     int updateByPrimaryKey(EmpInfo record);
     List <EmpInfo> findAllEmpInfo();
+    
+    EmpInfo findEmpinfoAndAvatarByid(Integer id);
 }

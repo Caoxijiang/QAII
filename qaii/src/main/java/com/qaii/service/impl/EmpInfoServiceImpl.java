@@ -31,6 +31,13 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 	}
 
 
+	@Override
+	public EmpInfo findEmpinfoAndAvatarByid(Integer id) {
+		// TODO Auto-generated method stub
+		return empinfoService.findEmpinfoAndAvatarByid(id);
+	}
+
+
 
 
 
