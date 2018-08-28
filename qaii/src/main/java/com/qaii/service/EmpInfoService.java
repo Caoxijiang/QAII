@@ -2,10 +2,14 @@ package com.qaii.service;
 
 import java.util.List;
 
+import java.util.Map;
+
+
 import com.qaii.domain.EmpInfo;
 
 public interface EmpInfoService {
 	int insert(EmpInfo info);
+
 	
 	List<EmpInfo> getcontractmsg(String empContractendtime);
 	
@@ -24,4 +28,8 @@ public interface EmpInfoService {
 	int countnumfoTalents(String dept);
 	
 	int countHigherTalents(String title);
+
+	List<EmpInfo> findAllEmpInfo();
+	
+	EmpInfo findEmpinfoAndAvatarByid(Integer id);
 }

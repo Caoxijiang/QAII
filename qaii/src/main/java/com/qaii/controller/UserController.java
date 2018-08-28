@@ -68,6 +68,7 @@ public class UserController {
         	//UserRole role2=userRoleService.findUSerRoleByUserId(userid);
         	 //登录成功，将user对象设置到HttpSession作用范围       
         	session.setAttribute("user", user);
+        	
         	Map map2 = new HashMap();
         	map2.put("LOGINSTATUS", "OK");
         	switch (role2.getRid()) {
@@ -96,11 +97,11 @@ public class UserController {
 
 	
     //注销方法
-    @RequestMapping("/outLogin")
+    @RequestMapping("outLogin.do")
     public String outLogin(HttpSession session){
         //通过session.invalidata()方法来注销当前的session
         session.invalidate();
-        return "login";
+        return "page/login";
     }
     
      

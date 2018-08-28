@@ -50,6 +50,11 @@
     <result column="emp_remarks" property="empRemarks" jdbcType="VARCHAR" />
     <result column="emp_reviewStatus" property="empReviewstatus" jdbcType="VARCHAR" />
     <result column="emp_title" property="empTitle" jdbcType="VARCHAR" />
+    <result column="emp_stat" property="empStat" jdbcType="VARCHAR" />
+    <result column="emp_departureTime" property="empDepartureTime" jdbcType="VARCHAR" />
+    <result column="emp_tryStatus" property="empTryStatus" jdbcType="VARCHAR" />
+    <result column="emp_contractStatus" property="empContractStatus" jdbcType="VARCHAR" />
+     <result column="emp_title" property="empTitle" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, eid, emp_num, emp_name, emp_gender, emp_dept, emp_position, emp_hire_startTime, 
@@ -60,7 +65,8 @@
     emp_jobTitle, emp_jobTitleLevel, emp_jobTitleObtainTime, emp_phone, emp_emergencyContactAndPhone, 
     emp_fileAddress, emp_accountAddress, emp_homeAddress, emp_workType, emp_compile, 
     emp_inductionTime, emp_tryOutEndTime, emp_contractEndTime, emp_contractSignedNum, 
-    emp_returnee, emp_foreign, emp_remarks, emp_reviewStatus
+    emp_returnee, emp_foreign, emp_remarks, emp_reviewStatus, emp_stat, emp_departureTime, 
+    emp_tryStatus, emp_contractStatus,emp_title
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -89,7 +95,8 @@
       emp_workType, emp_compile, emp_inductionTime, 
       emp_tryOutEndTime, emp_contractEndTime, emp_contractSignedNum, 
       emp_returnee, emp_foreign, emp_remarks, 
-      emp_reviewStatus)
+      emp_reviewStatus,emp_stat, emp_departureTime, emp_tryStatus, emp_contractStatus,
+      emp_title)
     values (#{id,jdbcType=INTEGER}, #{eid,jdbcType=VARCHAR}, #{empNum,jdbcType=VARCHAR}, 
       #{empName,jdbcType=VARCHAR}, #{empGender,jdbcType=VARCHAR}, #{empDept,jdbcType=VARCHAR}, 
       #{empPosition,jdbcType=VARCHAR}, #{empHireStarttime,jdbcType=VARCHAR}, #{empIdcard,jdbcType=VARCHAR}, 
@@ -106,7 +113,8 @@
       #{empWorktype,jdbcType=VARCHAR}, #{empCompile,jdbcType=VARCHAR}, #{empInductiontime,jdbcType=VARCHAR}, 
       #{empTryoutendtime,jdbcType=VARCHAR}, #{empContractendtime,jdbcType=VARCHAR}, #{empContractsignednum,jdbcType=INTEGER}, 
       #{empReturnee,jdbcType=VARCHAR}, #{empForeign,jdbcType=VARCHAR}, #{empRemarks,jdbcType=VARCHAR}, 
-      #{empReviewstatus,jdbcType=VARCHAR})
+      #{empReviewstatus,jdbcType=VARCHAR}, #{empStat,jdbcType=VARCHAR}, #{empDepartureTime,jdbcType=VARCHAR},
+      #{empTryStatus,jdbcType=VARCHAR}, #{empContractStatus,jdbcType=VARCHAR},#{empTitle,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.EmpInfo" >
     insert into emp_info
@@ -505,6 +513,12 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="findAllEmpInfo" resultMap="BaseResultMap" parameterType="com.qaii.domain.EmpInfo">
+  	select e. *, a.url as url 
+  	from  emp_info e left join  emp_avatarinfo a on e.eid=a.id
+  </select>
+  
   <update id="updateByPrimaryKey" parameterType="com.qaii.domain.EmpInfo" >
     update emp_info
     set eid = #{eid,jdbcType=VARCHAR},
@@ -584,4 +598,8 @@
 	<select id="selectnumofHightalents"  resultType="int" parameterType="java.lang.String">
 		SELECT COUNT(*) FROM emp_info WHERE emp_title=#{0} AND emp_stat='1'
 	</select>
+ 	<select id="findEmpinfoAndAvatarByid" resultMap="BaseResultMap" parameterType="com.qaii.domain.EmpInfo">
+ 		select e. *, a.url as url 
+  		from  emp_info e left join  emp_avatarinfo a on e.eid=a.id where e.eid=#{id,jdbcType=INTEGER}
+ 	</select>
 </mapper>
