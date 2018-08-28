@@ -389,7 +389,7 @@
    	   <div class="layui-col-md6">
 		   <div class="layui-form-item">
 			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" lay-submit="" lay-filter="demo1">提交修改</button>
+			  <button class="layui-btn" lay-submit="" lay-filter="demo1"> 提交修改</button>
 			  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
 			</div>
 		  </div>
@@ -501,7 +501,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 						  "empFirsteducationpro":empinfo.empFirsteducationpro,
 						  "empFirstgraduationtime":empinfo.empFirstgraduationtime,
 						  "empSecondeducation":empinfo.empSecondeducation,
-						  "empSecondeducationschool":empinfo.empSecondeducationschool,
+						  "empSecondeducationsch ool":empinfo.empSecondeducationschool,
 						  "empSecondeducationpro":empinfo.empSecondeducationpro,
 						  "empSecondgraduationtime":empinfo.empSecondgraduationtime,
 						  "empThirdeducation":empinfo.empThirdeducation,

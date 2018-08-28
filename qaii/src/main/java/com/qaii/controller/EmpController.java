@@ -228,6 +228,16 @@ public class EmpController {
 	
 	
 	
+	@ResponseBody
+	@RequestMapping(value="updateEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public JsonResult updateEmpInfos(EmpInfo emp,HttpServletRequest req) {	
+
+		
+		return new JsonResult();
+		
+	}
+	
+	
 	
 	
 	
