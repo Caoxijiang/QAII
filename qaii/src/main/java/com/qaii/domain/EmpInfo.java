@@ -75,11 +75,64 @@ public class EmpInfo {
 
     private String empInductiontime;
     
+
     private String empdepartureTime;
 
     private String empTryoutendtime;
     
     private String empTrystatus;
+    
+
+	private String empTitle;
+    
+    public String getEmpStat() {
+		return empStat;
+	}
+
+	public void setEmpStat(String empStat) {
+		this.empStat = empStat;
+	}
+
+	public String getEmpDepartureTime() {
+		return empDepartureTime;
+	}
+
+	public void setEmpDepartureTime(String empDepartureTime) {
+		this.empDepartureTime = empDepartureTime;
+	}
+
+	public String getEmpTryStatus() {
+		return empTryStatus;
+	}
+
+	public void setEmpTryStatus(String empTryStatus) {
+		this.empTryStatus = empTryStatus;
+	}
+
+	public String getEmpContractStatus() {
+		return empContractStatus;
+	}
+
+	public void setEmpContractStatus(String empContractStatus) {
+		this.empContractStatus = empContractStatus;
+	}
+
+	private String empStat;
+    
+    private String empDepartureTime;
+    
+    private String empTryStatus;
+    
+    private String empContractStatus;
+
+    public String getEmpInductiontime() {
+		return empInductiontime;
+	}
+
+	public void setEmpInductiontime(String empInductiontime) {
+		this.empInductiontime = empInductiontime;
+	}
+
 
     private String empContractendtime;
     
@@ -95,7 +148,7 @@ public class EmpInfo {
 
     private String empReviewstatus;
     
-    private String empTitle;
+    private String url;
 
     public Integer getId() {
         return id;
@@ -109,7 +162,15 @@ public class EmpInfo {
         return eid;
     }
 
-    public void setEid(String eid) {
+    public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public void setEid(String eid) {
         this.eid = eid == null ? null : eid.trim();
     }
 
@@ -385,13 +446,7 @@ public class EmpInfo {
         this.empCompile = empCompile == null ? null : empCompile.trim();
     }
 
-    public String getEmpInductiontime() {
-        return empInductiontime;
-    }
 
-    public void setEmpInductiontime(String empInductiontime) {
-        this.empInductiontime = empInductiontime == null ? null : empInductiontime.trim();
-    }
 
     public String getEmpdepartureTime() {
 		return empdepartureTime;
@@ -433,15 +488,12 @@ public class EmpInfo {
 		this.empContractstatus = empContractstatus;
 	}
 
-	public Integer getEmpContractsignednum() {
-        return empContractsignednum;
-    }
 
-    public void setEmpContractsignednum(Integer empContractsignednum) {
-        this.empContractsignednum = empContractsignednum;
-    }
+	public void setEmpContractsignednum(Integer empContractsignednum) {
+		this.empContractsignednum = empContractsignednum;
+	}
 
-    public String getEmpReturnee() {
+	public String getEmpReturnee() {
         return empReturnee;
     }
 

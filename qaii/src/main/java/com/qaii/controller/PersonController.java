@@ -40,6 +40,11 @@ public class PersonController {
 	}
 	
 	
+	@RequestMapping("adddetail.do")
+	public String adddetail() {
+		return "page/personnel/adddetail";
+	}
+	
 	//取得每个月的新入职、离职、净增长、院总人数
 	public Map<String, Integer> geteachMonthMsg(String date) throws ParseException{
 		Map<String, Integer> result=new HashMap<>();

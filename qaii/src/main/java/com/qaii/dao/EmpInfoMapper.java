@@ -35,4 +35,9 @@ public interface EmpInfoMapper {
     int selectnumoftalnets(String dept);
     
     int selectnumofHightalents(String title);
+    
+    List <EmpInfo> findAllEmpInfo();
+    
+    EmpInfo findEmpinfoAndAvatarByid(Integer id);
+
 }

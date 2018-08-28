@@ -41,5 +41,21 @@
 	    <property name="suffix" value=".jsp" />
 	</bean>
 	
+	<!-- 拦截器 -->
+<!-- 		<mvc:interceptors>
+			<mvc:interceptor>
+			<mvc:mapping path="/*.do" />
+			<mvc:exclude-mapping path="/checkLogin.do"/>
+			<mvc:exclude-mapping path="/indexUI.do"/>
+			<mvc:exclude-mapping path="/adddetail.do"/>
+			<mvc:exclude-mapping path="/addEmpInfo.do"/>
+			<mvc:exclude-mapping path="/EmpAupload.do"/>
+			<bean class="com.qaii.interceptor.MyInterceptor"></bean>
+			</mvc:interceptor>
+		</mvc:interceptors> -->
+	
+	
+	
+	
 	
 </beans>

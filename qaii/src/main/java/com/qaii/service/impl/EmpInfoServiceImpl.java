@@ -1,6 +1,7 @@
 package com.qaii.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -67,6 +68,19 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		return empinfoService.selectnumofHightalents(title);
 	}
 
+	@Override
+	public List<EmpInfo> findAllEmpInfo() {
+		// TODO Auto-generated method stub
+		return empinfoService.findAllEmpInfo();
+	}
 	
+	
+	@Override
+	public EmpInfo findEmpinfoAndAvatarByid(Integer id) {
+		// TODO Auto-generated method stub
+		return empinfoService.findEmpinfoAndAvatarByid(id);
+	}
+
+
 	
 }
