@@ -38,6 +38,12 @@ public class CountDatetoNowDays {
 		return Integer.parseInt(String.valueOf(day));
 	}
 	
+	//将日期类型格式化为yyyy-MM-dd字符串
+	public static String DatetoString(Date date) {
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd");
+		return sdf.format(date);
+	}
+	
 	//目标日期至今日相差的天数，参数为String(yyyy-MM-dd)型
 	public static int Stringtonow(String d2) throws ParseException {
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd");

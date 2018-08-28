@@ -53,10 +53,7 @@
 			})
 		}
 		
-		//本月人数增长情况
-		function getMonAddPersMsg(){
-			
-		}
+
 	})
 </script>
 <title>科技管理系统</title>
@@ -126,6 +123,23 @@
 	</div>
 <script src="${basePath}/js/perchars.js"></script>
 <script>
+
+	function getTitleMsg(data){
+		var result=new Array();
+		$.ajax({
+			async:false,
+			type:"POST",
+			url:"getTitleMsg.do",
+			data:{data:data},
+			success:function(data){
+				result=data;
+			}
+		})
+		return result;
+	}
+	
+	var title=new Array("千人计划","百人计划","研究院人员","国家期刊主编","国家优青","国家杰青","科学带头人","博士学历");
+	var _title=getTitleMsg(title);
 //JavaScript Document
 //绘制高端人才界面
 //获取到canvas元素
@@ -169,42 +183,29 @@
 		context.shadowOffsetY = 1;
 		//千人计划
 		context.fillStyle="#8fc31f";
-		context.fillText(getTitleMsg("千人计划")+"人",128*wid/500,49*wid/500);
+		context.fillText(_title[0]+"人",128*wid/500,49*wid/500);
 		//百人计划
 		context.fillStyle="#8e1c76";
-		context.fillText(getTitleMsg("百人计划")+"人",64*wid/500,102*wid/500);
+		context.fillText(_title[1]+"人",64*wid/500,102*wid/500);
 		//研究院人员
 		context.fillStyle="#1576bd";
-		context.fillText(getTitleMsg("研究院人员")+"人",131*wid/500,155*wid/500);
+		context.fillText(_title[2]+"人",131*wid/500,155*wid/500);
 		//国家期刊主编
 		context.fillStyle="#f39800";
-		context.fillText(getTitleMsg("国家期刊主编")+"人",140*wid/500,231*wid/500);
+		context.fillText(_title[3]+"人",140*wid/500,231*wid/500);
 		//国家优青
 		context.fillStyle="#2ea7e0";
-		context.fillText(getTitleMsg("国家优青")+"人",286*wid/500,231*wid/500);
+		context.fillText(_title[4]+"人",286*wid/500,231*wid/500);
 		//国家杰青
 		context.fillStyle="#e4007f";
-		context.fillText(getTitleMsg("国家杰青")+"人",358*wid/500,183*wid/500);
+		context.fillText(_title[5]+"人",358*wid/500,183*wid/500);
 		//学科带头人
 		context.fillStyle="#f8b62d";
-		context.fillText(getTitleMsg("学科带头人")+"人",438*wid/500,142*wid/500);
+		context.fillText(_title[6]+"人",438*wid/500,142*wid/500);
 		//博士学历
 		context.fillStyle="#6a2b85";
-		context.fillText(getTitleMsg("博士学历")+"人",383*wid/500,78*wid/500);
+		context.fillText(_title[7]+"人",383*wid/500,78*wid/500);
 		
-		function getTitleMsg(data){
-			var result;
-			$.ajax({
-				async:false,
-				type:"POST",
-				url:"getTitleMsg.do",
-				data:{data:data},
-				success:function(data){
-					result=data;
-				}
-			})
-			return result;
-		}
 	}
 
 //2123111111111111111111111111465555555555555555

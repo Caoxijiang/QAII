@@ -1,9 +1,7 @@
 // JavaScript Document
 // 基于准备好的dom，初始化echarts实例
 		//获取包括本月的前12个月日期
-		function get12Month(){
-			var now=new Date();
-			var nowdate=now.getFullYear()+"/"+(now.getMonth() + 1)+"/"+now.getDate();
+		function get12Month(nowdate){
 			var result;
 			$.ajax({
 				async:false,
@@ -16,9 +14,7 @@
 			})
 			return result;
 		}
-		function get8Years(){
-			var now=new Date();
-			var nowdate=now.getFullYear()+"/"+(now.getMonth() + 1)+"/"+now.getDate();
+		function get8Years(nowdate){
 			var result;
 			$.ajax({
 				async:false,
@@ -33,39 +29,52 @@
 		}
 		
 		//获取每个月的相关数据
-		function geteachMonthMsg(data){
+		function geteachMonthMsg(date){
 			var result=new Array();
-			for(var i=0;i<data.length;i++){
-				$.ajax({
-					async:false,
-					type:"POST",
-					url:"geteachMonthMsg.do",
-					data:{date:data[i]},
-					success:function(data){
-						result[i]=data;
-					}
-				})
-			}
+			$.ajax({
+				async:false,
+				type:"POST",
+				url:"geteachMonthMsg.do",
+				data:{date:date},
+				success:function(data){
+					result=data;
+				}
+			})
 			return result;
 		}
 		
 		//获取每年的相关数据
-		function geteachYearMsg(data){
+		function geteachYearMsg(date){
 			var result=new Array();
-			for(var i=0;i<data.length;i++){
-				$.ajax({
-					async:false,
-					type:"POST",
-					url:"gettalentsTeam.do",
-					data:{date:data[i]},
-					success:function(data){
-						result[i]=data;
-					}
-				})
-			}
+			$.ajax({
+				async:false,
+				type:"POST",
+				url:"gettalentsTeam.do",
+				data:{date:date},
+				success:function(data){
+					result=data;
+				}
+			})
 			return result;
 		}
 		
+		//获取饼状图数据
+		function gettalentsdept(data){
+			var result=null;
+			$.ajax({
+				async:false,
+				type:"POST",
+				url:"gettalentsdept.do",
+				data:{data:data},
+				success:function(data){
+					result=data;
+				}
+			})
+			return result;
+		}
+		
+		var dept=new Array("平行工作室","人事教育处","财务处","综合管理处","产业化处");
+		var _dept=gettalentsdept(dept);
 //		function test(){
 //			$.ajax({
 //				type:"POST",
@@ -76,10 +85,12 @@
 //				}
 //			})
 //		}
-		
-		var _12Mon=get12Month();
+		var now=new Date();
+		var nowdate=now.getFullYear()+"/"+(now.getMonth() + 1)+"/"+now.getDate();
+		//设置当前时间为参考时间参数
+		var _12Mon=get12Month(nowdate);
 		var eachMonDate=geteachMonthMsg(_12Mon);
-		var _8Years=get8Years();
+		var _8Years=get8Years(nowdate);
 		var eachYearDate=geteachYearMsg(_8Years);
 		
         var myChart = echarts.init(document.getElementById('main'));
@@ -265,11 +276,11 @@
             type: 'pie',
             radius : '55%',
             data:[
-                {value:335, name:'平行工作室'},
-                {value:310, name:'人事教育处'},
-                {value:234, name:'财务处'},
-                {value:135, name:'综合管理处'},
-                {value:148, name:'产业化处'}
+                {value:_dept[0], name:'平行工作室'},
+                {value:_dept[1], name:'人事教育处'},
+                {value:_dept[2], name:'财务处'},
+                {value:_dept[3], name:'综合管理处'},
+                {value:_dept[4], name:'产业化处'}
             ],
             itemStyle: {
                 emphasis: {
