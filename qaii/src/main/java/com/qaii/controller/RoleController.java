@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
@@ -122,8 +123,10 @@ public class RoleController {
 	
 	@ResponseBody
 	@RequestMapping(value="updateUserRole.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult updateUserRole(@Param("uid") Integer uid) {
-		int row=userroleServivce.updateUserRoleByUid(uid);
+	public JsonResult updateUserRole(HttpServletRequest req, UserRole userrole) {
+		userrole.setRid(Integer.parseInt(req.getParameter("rid")));
+		userrole.setUid(Integer.parseInt(req.getParameter("uid")));
+		int row=userroleServivce.updateUserRoleByUid(userrole);
 		if(row>0) {
 			return new JsonResult(row);
 		}else {

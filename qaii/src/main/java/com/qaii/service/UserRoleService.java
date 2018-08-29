@@ -10,5 +10,5 @@ public interface UserRoleService {
 	UserRole findUSerRoleByUserId(Integer userid);
 	int insert(UserRole userrole);
 	List <Map<String,Object>> findUserRoleList();
-	int updateUserRoleByUid(Integer uid);
+	int updateUserRoleByUid(UserRole r);
 }

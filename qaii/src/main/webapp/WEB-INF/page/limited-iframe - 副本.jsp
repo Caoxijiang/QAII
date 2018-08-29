@@ -30,7 +30,7 @@
 </div>
 
 <!-- 数据展示主表格-->
-<table class="layui-table" id="test" lay-filter="demo" style="width: 100% !important;margin-top:70px;"></table>
+<table class="layui-table" id="test" lay-filter="demo" style="width: 100% !important;"></table>
 <script type="text/html" id="barDemo">
   
   <a class="layui-btn layui-btn-xs" lay-event="edit">角色修改</a>
@@ -46,7 +46,7 @@ layui.config({
 });
 
  
-layui.use(['laydate','layer', 'table'], function(obj){
+layui.use(['laydate', 'laypage', 'layer', 'table'], function(obj){
   var table = layui.table,//表格
 	layer = layui.layer; 
 	
@@ -58,13 +58,14 @@ layui.use(['laydate','layer', 'table'], function(obj){
   //执行一个 table 实例
   table.render({
     elem: '#test',
+    height: 332,
     method:'post',
     url: 'findUserRoleList.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
-    page: false, //开启分页
+    page: true, //开启分页
     cols: [[ //标题栏
 	  {type:'checkbox'},
-      {field: 'id', title: '序号',type:'numbers'},
+      {field: 'id', title: '序号'},
       {field: 'userName', title: '用户名'},
       {field: 'pwd', title: '密码'},
       {field: 'roleName', title: '角色'},
@@ -121,52 +122,14 @@ layui.use(['laydate','layer', 'table'], function(obj){
     					}	
     						
     				})
-    				/* layer.alert( '<div class="layui-form-item">'+
+    				layer.alert( '<div class="layui-form-item">'+
     						'<label class="layui-form-label">角色</label>'+
     						'<div class="layui-input-block">'+
     							'<select name="interest" lay-filter="aihao">'+
     							heml+
     							'</select>'+
     						'</div>'+
-    					'</div>'); */
-    				var edit='<div class="layui-form-item" style="padding:15px;padding-bottom:0px;">'+
-								'<label style="padding:9px 5px;">角色</label>'+
-								'<select id="limit-edit" name="interest" lay-filter="aihao" style="margin-left:10px;height:36px;width:120px;color:#888;border:1px solid #d7d7d7;border-radius:3px;">'+
-								heml+
-								'</select>'+
-								'</div>';
-    				layer.open({
-    					  type: '角色修改', 
-    					  content:edit //这里content是一个普通的String,
-    					  ,btn: ['提交修改', '关闭']
-	    				  ,yes: function(index, layero){
-	    				    //提交修改按钮
-	    				    var data = obj.data;
-    						var uid=data.uid;
-    						var role=$("#limit-edit option:selected").val();
-    						$.post({
-    							url:"updateUserRole.do",
-    							async:false,
-    							data:{
-    								uid:uid,
-    								rid:role
-    							},
-    							success:function(data){
-    								console.log(data)
-    								if (data.data){
-    									alert("修改成功")	
-    								}else{
-    									alert("修改失败")
-    								}
-    							}
-    						}) 
-    						
-	    						
-	    				  }
-	    				  ,'关闭': function(index, layero){
-	    				    //关闭按钮
-	    				  }
-	    			});
+    					'</div>');
     				
     			}else{
     				$("#jiaose").append("--没有可用权限--");
@@ -219,48 +182,6 @@ layui.use(['laydate','layer', 'table'], function(obj){
 
   
 });
-</script>
-
-<!--自动设置主表格可视区域-->
-<script>
-	var ji=$(document).height();
-	var heigt=ji-85;
-	$(".layui-table-box").prop("height",heigt+"px !important");
-	console.log(heigt);
-
-	
-</script>
-<!-- 角色修改 弹窗 提交修改效果 -->
-<script>
-$(document).on('click','#limitEdit',function(){
-	var role=$("#limit-edit option:selected").val();
-	console.log("fds"+role);
-})
-
-/*	var userName=$("#userName").val(); 
-	var pwd=$("#password").val();
-	var role=$("#jiaose option:selected").val();
-	var requestDate = {};
-	requestDate["name"] = userName;
-	requestDate["password"] = pwd;
-	requestDate["role"]=role;
-	var str = JSON.stringify(requestDate);
-	$.post({
-		url:"addRoleuser.do",
-		async:false,
-		data:{
-			"requestDate" : str
-		},
-		success:function(data){
-			console.log(data)
-			if (data.data){
-				alert("添加成功")	
-			}else{
-				alert("添加失败")
-			}
-		}
-	})*/
-
 </script>
 </body>
 </html>        

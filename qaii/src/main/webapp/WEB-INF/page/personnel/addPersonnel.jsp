@@ -104,18 +104,18 @@
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
+ <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank" method="post">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do" target="_blank">修改</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
   <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">离职</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
  
-
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
-	
+	  
 layui.config({
   version: '1531663423583' //为了更新 js 缓存，可忽略
 });
@@ -227,12 +227,39 @@ var $ = layui.$, active = {
     var data = obj.data //获得当前行数据
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
-      layer.msg('用户名：'+JSON.stringify(data.username)+'<br>密码：'+JSON.stringify(data.pas)+'<br>角色：'+JSON.stringify(data.rid));
+		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
+     // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
+          let arr=[data.id];
+          console.log(data) 
+          $.post({
+          	url:"DellempInfo.do",
+          	data:{
+          		"requestDate" : arr
+          	},
+          	success:function(data){
+          		if(data.data){
+          		    //删除对应行（tr）的DOM结构
+          			obj.del();
+          			layer.close(index);
+          		}else{
+          			layer.alert("删除失败")
+          		}
+          		
+          	}
+          }) 
+    	  
+    	  
+    	  
+    	  
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
         //向服务端发送删除指令
+        
+        
+        
+        
       });
     } else if(layEvent === 'edit'){
       layer.alert(
