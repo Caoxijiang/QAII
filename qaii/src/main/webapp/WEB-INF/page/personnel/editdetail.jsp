@@ -23,7 +23,7 @@
   <div class="addBanner"></div><!--banner展示图-->
 <!--  表单元素-->
 <div class="layui-container">
-  <form class="layui-form" action="" lay-filter="example">
+  <form class="layui-form" action="updateEmpInfos.do" method="post" lay-filter="example">
 <!--  第一块内容-->
   	
 	  <div class="layui-row">
@@ -34,6 +34,8 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">姓名&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
+							<input   type="hidden"  name="userId"/>
+							<input name="imageVal" type="hidden"></input>
 							<input type="text" name="empName" autocomplete="off" lay-verify="required" placeholder="请输入姓名" class="layui-input input">
 						</div>
 					</div>
@@ -447,7 +449,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
   //普通图片上传
   var uploadInst = upload.render({
     elem: '#imgload'
-    ,url: '/upload/'
+    ,url: 'EmpAupload.do'
     ,before: function(obj){
       //预读本地文件示例，不支持ie8
       obj.preview(function(index, file, result){
@@ -458,6 +460,13 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
       //如果上传失败
       if(res.code > 0){
         return layer.msg('上传失败');
+      }else{
+    	 $("demoText").attr("imageVal",res.eid)
+    	 var eid=res.eid
+    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
+    	$("input[name='imageVal']").attr("value",eid);
+    	console.log("uuuuuuuuuu"+$("input[name='imageVal']").val());
+    	  return layer.msg(res.msg);
       }
       //上传成功
     }
@@ -471,8 +480,9 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
     }
   });
 	
-	
+
   var id=${param.userId};
+  var eid=$("imageVal").val();
   if(id!=null){
 		$.post({
 			url:"seeEmpInfos.do",
@@ -484,7 +494,16 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					let empinfo=data.data;
 					console.log("_____:"+JSON.stringify(data.data))
 					//表单初始赋值 从表单中提取数据
+					
+					if(eid==undefined){
+						$("input[name='imageVal']").attr("value",empinfo.eid);
+					}else{
+						$("input[name='imageVal']").attr("value",eid);
+					}
+					
+					console.log()
 					  form.val('example', {
+						 "userId":empinfo.id,
 					    "empName": empinfo.empName,
 						  "empNum":empinfo.empNum,
 						  "empGender":empinfo.empGender,
@@ -524,7 +543,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 						  "empContractsignednum":empinfo.empContractsignednum,
 						  "empReturnee":empinfo.empReturnee,
 					  	  "empForeign":empinfo.empForeign,
-						  "empRemarks":empinfo.empRemarks
+						  "empRemarks":empinfo.empRemarks,
 					    
 					  })
 				}else{

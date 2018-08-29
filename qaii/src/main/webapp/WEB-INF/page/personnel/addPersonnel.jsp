@@ -231,9 +231,35 @@ var $ = layui.$, active = {
      // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
+          let arr=[data.id];
+          console.log(data) 
+          $.post({
+          	url:"DellempInfo.do",
+          	data:{
+          		"requestDate" : arr
+          	},
+          	success:function(data){
+          		if(data.data){
+          		    //删除对应行（tr）的DOM结构
+          			obj.del();
+          			layer.close(index);
+          		}else{
+          			layer.alert("删除失败")
+          		}
+          		
+          	}
+          }) 
+    	  
+    	  
+    	  
+    	  
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
         //向服务端发送删除指令
+        
+        
+        
+        
       });
     } else if(layEvent === 'edit'){
       layer.alert(

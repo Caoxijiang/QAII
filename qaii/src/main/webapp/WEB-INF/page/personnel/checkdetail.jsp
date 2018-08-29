@@ -480,6 +480,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					userId:id
 				},
 				success:function(data){
+					console.log(data);
 					if(data.data!=null){
 						let empinfo=data.data;
 						console.log("_____:"+JSON.stringify(data.data))
@@ -528,7 +529,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 						    
 						  })
 					}else{
-						alert("查看详情失败")
+						alert("查看详情失败1321123")
 					}
 				}
 			})

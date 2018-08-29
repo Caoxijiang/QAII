@@ -64,6 +64,193 @@ public class EmpController {
 	     }else {
 	    	 empInfo.setEmpReviewstatus("待审核");
 	     }		
+		EmpInfo(req, empInfo);
+		empInfo.setEmpStat("1");
+		empInfo.setEmpDepartureTime("");
+		empInfo.setEmpTryStatus("1");
+		empInfo.setEmpContractStatus("1");
+		empInfo.setEmpRemarks("1");
+		
+		
+		
+		System.out.println(empInfo.toString());
+		int row = empInfoService.insert(empInfo);
+		if(row>0) {
+			Map<String,String> map=new HashMap<>();
+			 map.put("url","intoPerSys.do");
+			 map.put("data", "提交成功");
+			return new JsonResult();
+		}else {
+			return new JsonResult();
+		}
+		
+	}
+
+
+
+
+
+
+
+		//员工图片上传
+		@ResponseBody
+	 	@RequestMapping("/EmpAupload.do")  
+	    public Map<String,String> upload(@RequestParam("file") MultipartFile file , EmpAvatarinfo EMpA,HttpServletRequest request) throws Exception{  
+	  //  System.out.println(request.getParameter("name"));  
+	    Map<String,String> result=new HashMap<>();
+	    if(file.isEmpty()) {
+	    	result.put("code", "1");
+	    	result.put("msg", "文件为空");
+	    }
+        String uuid = UUID.randomUUID().toString().replaceAll("-","");    
+        //获得文件类型（可以判断如果不是图片，禁止上传）    
+        String contentType=EMpA.getFile().getContentType();    
+        //获得文件后缀名   
+        String suffixName=contentType.substring(contentType.indexOf("/")+1);  
+        //得到 文件名  
+        String fileName=uuid+"."+suffixName; 
+	    
+	  //  String fileName=file.getOriginalFilename();
+	    int size=(int)file.getSize();
+	    System.out.println(fileName+":---"+size);
+	    String path="E:/File";
+	    File dest =new File(path+"/"+fileName);
+	    if(!dest.getParentFile().exists()) {
+	    	dest.getParentFile().mkdirs();
+	    }
+	    try {
+			file.transferTo(dest);//保存文件
+			EMpA.setUrl(dest.getPath());
+			InsertEmpAvator(EMpA, result, dest);
+			result.put("code", "0");
+			result.put("msg", "上传成功");
+			result.put("url", dest.getPath());
+		} catch (IllegalStateException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}catch (IOException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	    
+	    return result;  
+    
+	    }
+
+
+
+
+
+
+
+	
+	
+	//获取员工信息接口
+	@ResponseBody
+	@RequestMapping(value="findAllEmpInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public Layui findAllEmpInfo(HttpServletRequest req) {
+		List<EmpInfo> empInfo=empInfoService.findAllEmpInfo();
+		int count =empInfo.size();
+		System.out.println(count);
+			if(empInfo!=null) {
+				return Layui.data(count, empInfo);
+			}else {
+				return Layui.data(count, empInfo);
+			}
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="seeEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public JsonResult seeEmpInfos(EmpInfo emp,HttpServletRequest req) {	
+		
+		int userid=Integer.parseInt(req.getParameter("userId"));
+		System.out.println("user:"+userid);
+		//emp.setId();
+		emp = empInfoService.findEmpinfoAndAvatarByid(userid);
+		if(emp!=null) {
+			return new JsonResult(emp);
+		}else {
+			return new JsonResult();
+		}
+		
+	}
+	
+	
+	
+	@ResponseBody
+	@RequestMapping(value="updateEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public JsonResult updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) {	
+		EmpInfo(req, empInfo);
+		
+
+		int row =empInfoService.updateByPrimaryKey(empInfo);
+		if(row>=1) {
+			String data="更新成功";
+			return new JsonResult(data);
+		}else {
+			return new JsonResult();
+		}
+		
+		
+	}
+	
+	//删除员工信息
+    @ResponseBody
+    @RequestMapping(value="DellempInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+    public JsonResult DellempInfo(@RequestParam(value = "requestDate[]") Integer[] eid ){
+    	System.out.println(eid);
+    	
+     	int row=empInfoService.delete(eid);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+        
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	private void InsertEmpAvator(EmpAvatarinfo EMpA, Map<String, String> result, File dest) {
+		int row=empAvatarService.insert(EMpA);
+		if(row > 0) {
+			int eid=EMpA.getId();
+			System.out.println(eid);
+			if(eid>=1) {
+				result.put("code", "0");
+				result.put("msg", "上传成功");
+				result.put("eid",EMpA.getId().toString() );
+				result.put("url", dest.getPath());
+				
+			}else {
+				result.put("code", "1");
+		    	result.put("msg", "上传失败");
+			}
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	}  
+	
+	
+	
+
+	private void EmpInfo(HttpServletRequest req, EmpInfo empInfo) {
+		//System.out.println("---------------:"+);
+		empInfo.setId(Integer.parseInt(req.getParameter("userId")));
 		empInfo.setEid(req.getParameter("imageVal"));
 		empInfo.setEmpName(req.getParameter("empName"));
 		empInfo.setEmpGender(req.getParameter("empGender"));
@@ -103,144 +290,9 @@ public class EmpController {
 		empInfo.setEmpContractsignednum(Integer.parseInt(req.getParameter("empContractsignednum")));
 		empInfo.setEmpReturnee(req.getParameter("empReturnee"));
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
-		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
-		
-		
 		empInfo.setEmpTitle(req.getParameter("empTitle"));
-		empInfo.setEmpStat("1");
-		empInfo.setEmpDepartureTime("");
-		empInfo.setEmpTryStatus("1");
-		empInfo.setEmpContractStatus("1");
-		empInfo.setEmpRemarks("1");
-		
-		
-		
-		System.out.println(empInfo.toString());
-		int row = empInfoService.insert(empInfo);
-		if(row>0) {
-			Map<String,String> map=new HashMap<>();
-			 map.put("url","intoPerSys.do");
-			 map.put("data", "提交成功");
-			return new JsonResult();
-		}else {
-			return new JsonResult();
-		}
-		
+		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
 	}
-		//员工图片上传
-		@ResponseBody
-	 	@RequestMapping("/EmpAupload.do")  
-	    public Map<String,String> upload(@RequestParam("file") MultipartFile file , EmpAvatarinfo EMpA,HttpServletRequest request) throws Exception{  
-	  //  System.out.println(request.getParameter("name"));  
-	    Map<String,String> result=new HashMap<>();
-	    if(file.isEmpty()) {
-	    	result.put("code", "1");
-	    	result.put("msg", "文件为空");
-	    }
-        String uuid = UUID.randomUUID().toString().replaceAll("-","");    
-        //获得文件类型（可以判断如果不是图片，禁止上传）    
-        String contentType=EMpA.getFile().getContentType();    
-        //获得文件后缀名   
-        String suffixName=contentType.substring(contentType.indexOf("/")+1);  
-        //得到 文件名  
-        String fileName=uuid+"."+suffixName; 
-	    
-	    
-	    
-	    
-	  //  String fileName=file.getOriginalFilename();
-	    int size=(int)file.getSize();
-	    System.out.println(fileName+":---"+size);
-	    String path="E:/File";
-	    File dest =new File(path+"/"+fileName);
-	    if(!dest.getParentFile().exists()) {
-	    	dest.getParentFile().mkdirs();
-	    }
-	    try {
-			file.transferTo(dest);//保存文件
-			EMpA.setUrl(dest.getPath());
-			int row=empAvatarService.insert(EMpA);
-			if(row > 0) {
-				int eid=EMpA.getId();
-				System.out.println(eid);
-				if(eid>=1) {
-					result.put("code", "0");
-					result.put("msg", "上传成功");
-					result.put("eid",EMpA.getId().toString() );
-					result.put("url", dest.getPath());
-					
-				}else {
-					result.put("code", "1");
-			    	result.put("msg", "上传失败");
-				}
-			}else {
-				result.put("code", "1");
-		    	result.put("msg", "上传失败");
-			}
-			result.put("code", "0");
-			result.put("msg", "上传成功");
-			result.put("url", dest.getPath());
-		} catch (IllegalStateException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-			result.put("code", "1");
-	    	result.put("msg", "上传失败");
-		}catch (IOException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-			result.put("code", "1");
-	    	result.put("msg", "上传失败");
-		}
-	    
-	    return result;  
-    
-	    }  
-	
-	
-	//获取员工信息接口
-	@ResponseBody
-	@RequestMapping(value="findAllEmpInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public Layui findAllEmpInfo(HttpServletRequest req) {
-		List<EmpInfo> empInfo=empInfoService.findAllEmpInfo();
-		int count =empInfo.size();
-		System.out.println(count);
-			if(empInfo!=null) {
-				return Layui.data(count, empInfo);
-			}else {
-				return Layui.data(count, empInfo);
-			}
-	}
-	
-	@ResponseBody
-	@RequestMapping(value="seeEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult seeEmpInfos(EmpInfo emp,HttpServletRequest req) {	
-
-		
-		//emp.setId();
-		emp = empInfoService.findEmpinfoAndAvatarByid(Integer.parseInt(req.getParameter("userId")));
-		if(emp!=null) {
-			return new JsonResult(emp);
-		}else {
-			return new JsonResult();
-		}
-		
-	}
-	
-	
-	
-	@ResponseBody
-	@RequestMapping(value="updateEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult updateEmpInfos(EmpInfo emp,HttpServletRequest req) {	
-
-		
-		return new JsonResult();
-		
-	}
-	
-	
-	
-	
-	
 	
 	
 	
