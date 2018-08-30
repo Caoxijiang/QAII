@@ -86,7 +86,7 @@
 //			})
 //		}
 		var now=new Date();
-		var nowdate=now.getFullYear()+"/"+(now.getMonth() + 1)+"/"+now.getDate();
+		var nowdate=now.getFullYear()+"-"+(now.getMonth() + 1)+"-"+now.getDate();
 		//设置当前时间为参考时间参数
 		var _12Mon=get12Month(nowdate);
 		var eachMonDate=geteachMonthMsg(_12Mon);

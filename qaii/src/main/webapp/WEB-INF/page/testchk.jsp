@@ -17,6 +17,9 @@ $().ready(function(){
 		    data:{date:a},
 			success:function(data){
 				$("#dat2").val(data);
+			},
+			error:function(data){
+				alert(data);
 			}
 		})
 	});

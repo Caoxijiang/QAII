@@ -48,8 +48,7 @@ public class PersonController {
 	//取得每个月的新入职、离职、净增长、院总人数
 	public Map<String, Integer> geteachMonthMsg(String date) throws ParseException{
 		Map<String, Integer> result=new HashMap<>();
-		Date dat=new Date(date);
-		Map<String, String> map=CountDatetoNowDays.SgetfistDay(dat);
+		Map<String, String> map=CountDatetoNowDays.SgetfistDay(date);
 		//取得当月新入职的人数
 		result.put("Entry", empinfoservice.countEntry(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this"))));
 		//获取当月离职的人数
@@ -63,7 +62,7 @@ public class PersonController {
 	}
 	
 	//取得人才队伍柱状图参数
-	public Map<String, Integer> gettalentsTeam(String date){
+	public Map<String, Integer> gettalentsTeam(String date) throws ParseException{
 		Map<String, String> map=new HashMap<>();
 		Map<String, Integer> result=new HashMap<>();
 		map=CountDatetoNowDays.FirstandEndDayofYear(date);
@@ -89,7 +88,7 @@ public class PersonController {
 	//取得所有合同期到期日期小于30天的人员名单	
 	@RequestMapping(value="getContractMsg.do",method=RequestMethod.POST)
 	@ResponseBody
-	public List<EmpInfo> getContractEndtimePerson(@RequestParam("date") String date) {
+	public List<EmpInfo> getContractEndtimePerson(@RequestParam("date") String date) throws ParseException {
 		date=CountDatetoNowDays.DateaddDays(date,30);
 		List<EmpInfo> list=empinfoservice.getcontractmsg(CountDatetoNowDays.SDatetoStamp(date));
 		for(EmpInfo emp:list) {
@@ -101,7 +100,7 @@ public class PersonController {
 	//取得所有试用期到期小于30天的人员名单
 	@RequestMapping(value="getTryMsg.do",method=RequestMethod.POST)
 	@ResponseBody
-	public List<EmpInfo> getTryEndTimePerson(@RequestParam("date") String date){
+	public List<EmpInfo> getTryEndTimePerson(@RequestParam("date") String date) throws ParseException{
 		date=CountDatetoNowDays.DateaddDays(date,30);
 		List<EmpInfo> list=empinfoservice.gettrymsg(CountDatetoNowDays.SDatetoStamp(date));
 		for(EmpInfo emp:list) {
@@ -126,7 +125,7 @@ public class PersonController {
 	@RequestMapping(value="get8Years.do",method=RequestMethod.POST)
 	@ResponseBody
 	public List<String> get8Years(
-			@RequestParam("date")String date) {
+			@RequestParam("date")String date) throws ParseException {
 		List<String> list=new ArrayList<>();
 		list=CountDatetoNowDays.getpreYears(date, 8);
 		return list;
@@ -147,7 +146,7 @@ public class PersonController {
 	//获取人事管理主页柱形图的数据（人才队伍）
 	@RequestMapping(value="gettalentsTeam.do",method=RequestMethod.POST)
 	@ResponseBody
-	public List<Map> getPercolumns(@RequestParam("date[]") List<String> date){
+	public List<Map> getPercolumns(@RequestParam("date[]") List<String> date) throws ParseException{
 		List <Map> result=new ArrayList<>();
 //		list= get8Years(date);
 		for(String str:date) {

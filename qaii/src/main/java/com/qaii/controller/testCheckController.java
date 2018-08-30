@@ -25,6 +25,7 @@ import com.qaii.domain.EmpInfo;
 import com.qaii.service.EmpInfoService;
 import com.qaii.service.impl.EmpInfoServiceImpl;
 import com.qaii.util.CountDatetoNowDays;
+import com.qaii.util.CustomException;
 
 import net.sf.json.JSONObject;
 
@@ -40,7 +41,10 @@ public class testCheckController {
 	@RequestMapping(value="setdata.do",method=RequestMethod.POST)
 	@ResponseBody
 	public String outputStamp(@RequestParam(value="date",required=false)String date
-			) throws ParseException {
+			) throws CustomException, ParseException {
+		if(1==1) {
+			throw new CustomException("it's faild!");
+			}
 		return CountDatetoNowDays.SDatetoStamp(date);
 	}
 	//将时间转为时间戳方法
