@@ -307,3 +307,81 @@ h1{
 		 margin-right: 5px !important;
 	 }
     }
+
+/*********************消息管理************************/
+.messagebox{
+	background: #f7f8f8;
+	border:1px solid #efefef;
+	border-radius: 17px;
+}
+.message{
+	margin-top:70px; 
+	padding: 45px;
+	
+}
+.message .messagebox .messageTitle{
+	padding:15px 40px;
+	color: #036eb8;
+	font-weight: bold;
+	font-size:24px;
+	border-bottom: 1px solid #9fa0a0;
+}
+.message .messagebox .messagecontern{
+	padding:40px;
+	color: #036eb8;
+	font-size:18px;
+}
+.message .messagebox .messagecontern .layui-table-body{
+	height: auto !important;
+}
+
+.layui-btn-details{
+	background: #f2934a;
+}
+.message .messagebox .messagecontern .layui-table th{
+	height: 53px;
+	background: #003e8d;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+}
+.systemBox{
+	margin: 0px auto;
+	margin-top: 100px;
+	width:1200px;
+	border: none;
+}
+/******************************* 系统管理 ******************************/
+.button{
+	border:1px solid #9fa0a0;
+	background: #fff;
+	color:#898989;
+	
+}
+.button:hover{
+	background: #003e8d !important;
+	border:none;
+}
+.department{
+	width:650px;
+	height: 32px;
+	color:#898989;
+	border:1px #f0f1f3 solid;
+	border-radius:3px;
+	font-size: 16px;
+}
+.systemAdd{
+	display: block;
+	margin: 0px auto;
+	margin-top:20px;
+	width: 650px;
+	height:228px;
+	background: none;
+	border:1px solid #dcdddd;
+	vertical-align: middle;
+	text-align: center;
+	
+}
+.layui-table-body{
+	height:auto;
+}
