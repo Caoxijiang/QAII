@@ -41,6 +41,10 @@ public class EmpController {
 	
 
 
+	@RequestMapping(value="delldellEmpInfo.do",produces="application/json;charset=UTF-8")
+	public String dellEmpInfo() {
+		return "page/personnel/delPersonnel";
+	}
 	
 	
 	
@@ -293,6 +297,9 @@ public class EmpController {
 		empInfo.setEmpTitle(req.getParameter("empTitle"));
 		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
 	}
+	
+
+	
 	
 	
 	

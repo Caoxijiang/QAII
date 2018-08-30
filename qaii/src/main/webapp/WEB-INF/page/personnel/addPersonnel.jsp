@@ -48,10 +48,10 @@
 			<option value="empJobtitlelevel">职称等级</option>
 			<option value="empGender">性别</option>
 		</select>
-		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;">
+		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
 		</div>
-		<button class="layui-btn" id="search" data-type="reload" style="height: 36px;line-height: 36px;">搜索</button>
+		<button class="layui-btn" id="search" data-type="reload" style="height: 36px;line-height: 36px;margin-top:1px;">搜索</button>
 	</div>
 		
 	
