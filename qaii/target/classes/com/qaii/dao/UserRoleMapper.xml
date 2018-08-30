@@ -62,8 +62,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qaii.domain.UserRole" >
     update user_role
-    set rid = #{rid,jdbcType=INTEGER},
-    where id = #{uid,jdbcType=INTEGER}
+    set rid = #{rid,jdbcType=INTEGER}
+    where uid = #{uid,jdbcType=INTEGER}
   </update>
   <select id="findUserRoleByUserId" resultMap="BaseResultMap" parameterType="com.qaii.domain.UserRole">
   	select c.*,p.rid,r.role_name from user c left join user_role p on c.user_id=p.uid inner join role r on p.id=r.id 

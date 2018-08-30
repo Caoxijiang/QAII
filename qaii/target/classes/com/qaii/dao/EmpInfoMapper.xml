@@ -519,7 +519,7 @@
   	from  emp_info e left join  emp_avatarinfo a on e.eid=a.id
   </select>
   
-  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.EmpInfo" >
+  <update id="updateByPrimaryKey"   parameterType="com.qaii.domain.EmpInfo" >
     update emp_info
     set eid = #{eid,jdbcType=VARCHAR},
       emp_num = #{empNum,jdbcType=VARCHAR},
@@ -600,6 +600,16 @@
 	</select>
  	<select id="findEmpinfoAndAvatarByid" resultMap="BaseResultMap" parameterType="com.qaii.domain.EmpInfo">
  		select e. *, a.url as url 
-  		from  emp_info e left join  emp_avatarinfo a on e.eid=a.id where e.eid=#{id,jdbcType=INTEGER}
+  		from  emp_info e left join  emp_avatarinfo a on e.eid=a.id where e.id=#{id,jdbcType=INTEGER}
  	</select>
+ 	
+ 	  <delete id="deleteByPrimaryKeys" parameterType="java.lang.Integer" >
+	    delete e,a from emp_info e left join emp_avatarinfo a on e.eid=a.id where 
+	    e.id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
+ 	
+ 	
 </mapper>

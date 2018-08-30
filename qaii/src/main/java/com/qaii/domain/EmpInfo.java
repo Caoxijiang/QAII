@@ -493,6 +493,10 @@ public class EmpInfo {
 		this.empContractsignednum = empContractsignednum;
 	}
 
+	public Integer getEmpContractsignednum() {
+		return empContractsignednum;
+	}
+
 	public String getEmpReturnee() {
         return empReturnee;
     }

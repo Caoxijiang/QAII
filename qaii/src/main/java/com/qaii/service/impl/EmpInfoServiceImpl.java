@@ -80,6 +80,16 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		// TODO Auto-generated method stub
 		return empinfoService.findEmpinfoAndAvatarByid(id);
 	}
+	@Override
+	public int updateByPrimaryKey(EmpInfo emp) {
+		// TODO Auto-generated method stub
+		return empinfoService.updateByPrimaryKey(emp);
+	}
+	@Override
+	public int delete(Integer[] eid) {
+		// TODO Auto-generated method stub
+		return empinfoService.deleteByPrimaryKeys(eid);
+	}
 
 
 	

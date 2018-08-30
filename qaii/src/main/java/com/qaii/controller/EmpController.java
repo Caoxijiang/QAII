@@ -43,6 +43,10 @@ public class EmpController {
 	
 
 
+	@RequestMapping(value="delldellEmpInfo.do",produces="application/json;charset=UTF-8")
+	public String dellEmpInfo() {
+		return "page/personnel/delPersonnel";
+	}
 	
 	
 	
@@ -66,6 +70,7 @@ public class EmpController {
 	     }else {
 	    	 empInfo.setEmpReviewstatus("待审核");
 	     }		
+
 		empInfo.setEid(req.getParameter("imageVal"));
 		empInfo.setEmpName(req.getParameter("empName"));
 		empInfo.setEmpGender(req.getParameter("empGender"));
@@ -105,10 +110,9 @@ public class EmpController {
 		empInfo.setEmpContractsignednum(Integer.parseInt(req.getParameter("empContractsignednum")));
 		empInfo.setEmpReturnee(req.getParameter("empReturnee"));
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
-		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
-		
-		
+		empInfo.setEmpRemarks(req.getParameter("empRemarks"));	
 		empInfo.setEmpTitle(req.getParameter("empTitle"));
+		EmpInfo(req, empInfo);
 		empInfo.setEmpStat("1");
 		empInfo.setEmpDepartureTime("");
 		empInfo.setEmpTryStatus("1");
@@ -129,6 +133,13 @@ public class EmpController {
 		}
 		
 	}
+
+
+
+
+
+
+
 		//员工图片上传
 		@ResponseBody
 	 	@RequestMapping("/EmpAupload.do")  
@@ -147,13 +158,10 @@ public class EmpController {
         //得到 文件名  
         String fileName=uuid+"."+suffixName; 
 	    
-	    
-	    
-	    
 	  //  String fileName=file.getOriginalFilename();
 	    int size=(int)file.getSize();
 	    System.out.println(fileName+":---"+size);
-	    String path="D:/File";
+	    String path="E:/File";
 	    File dest =new File(path+"/"+fileName);
 	    if(!dest.getParentFile().exists()) {
 	    	dest.getParentFile().mkdirs();
@@ -161,24 +169,7 @@ public class EmpController {
 	    try {
 			file.transferTo(dest);//保存文件
 			EMpA.setUrl(dest.getPath());
-			int row=empAvatarService.insert(EMpA);
-			if(row > 0) {
-				int eid=EMpA.getId();
-				System.out.println(eid);
-				if(eid>=1) {
-					result.put("code", "0");
-					result.put("msg", "上传成功");
-					result.put("eid",EMpA.getId().toString() );
-					result.put("url", dest.getPath());
-					
-				}else {
-					result.put("code", "1");
-			    	result.put("msg", "上传失败");
-				}
-			}else {
-				result.put("code", "1");
-		    	result.put("msg", "上传失败");
-			}
+			InsertEmpAvator(EMpA, result, dest);
 			result.put("code", "0");
 			result.put("msg", "上传成功");
 			result.put("url", dest.getPath());
@@ -196,7 +187,14 @@ public class EmpController {
 	    
 	    return result;  
     
-	    }  
+	    }
+
+
+
+
+
+
+
 	
 	
 	//获取员工信息接口
@@ -216,10 +214,11 @@ public class EmpController {
 	@ResponseBody
 	@RequestMapping(value="seeEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public JsonResult seeEmpInfos(EmpInfo emp,HttpServletRequest req) {	
-
 		
+		int userid=Integer.parseInt(req.getParameter("userId"));
+		System.out.println("user:"+userid);
 		//emp.setId();
-		emp = empInfoService.findEmpinfoAndAvatarByid(Integer.parseInt(req.getParameter("userId")));
+		emp = empInfoService.findEmpinfoAndAvatarByid(userid);
 		if(emp!=null) {
 			emp.setEmpTryoutendtime(CountDatetoNowDays.StamptoDate(emp.getEmpTryoutendtime()));
 			emp.setEmpIdcardEndtime(CountDatetoNowDays.StamptoDate(emp.getEmpIdcardEndtime()));
@@ -238,8 +237,120 @@ public class EmpController {
 	
 	
 	
+	@ResponseBody
+	@RequestMapping(value="updateEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public JsonResult updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) {	
+		EmpInfo(req, empInfo);
+		
+
+		int row =empInfoService.updateByPrimaryKey(empInfo);
+		if(row>=1) {
+			String data="更新成功";
+			return new JsonResult(data);
+		}else {
+			return new JsonResult();
+		}
+		
+		
+	}
+	
+	//删除员工信息
+    @ResponseBody
+    @RequestMapping(value="DellempInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+    public JsonResult DellempInfo(@RequestParam(value = "requestDate[]") Integer[] eid ){
+    	System.out.println(eid);
+    	
+     	int row=empInfoService.delete(eid);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+        
+    }
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	private void InsertEmpAvator(EmpAvatarinfo EMpA, Map<String, String> result, File dest) {
+		int row=empAvatarService.insert(EMpA);
+		if(row > 0) {
+			int eid=EMpA.getId();
+			System.out.println(eid);
+			if(eid>=1) {
+				result.put("code", "0");
+				result.put("msg", "上传成功");
+				result.put("eid",EMpA.getId().toString() );
+				result.put("url", dest.getPath());
+				
+			}else {
+				result.put("code", "1");
+		    	result.put("msg", "上传失败");
+			}
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	}  
+	
+	
+	
+
+	private void EmpInfo(HttpServletRequest req, EmpInfo empInfo) {
+		//System.out.println("---------------:"+);
+		empInfo.setId(Integer.parseInt(req.getParameter("userId")));
+		empInfo.setEid(req.getParameter("imageVal"));
+		empInfo.setEmpName(req.getParameter("empName"));
+		empInfo.setEmpGender(req.getParameter("empGender"));
+		empInfo.setEmpDept(req.getParameter("empDept"));
+		empInfo.setEmpPosition(req.getParameter("empPosition"));
+		empInfo.setEmpHireStarttime(req.getParameter("empHireStarttime"));
+		empInfo.setEmpIdcard(req.getParameter("empIdcard"));
+		empInfo.setEmpIdcardEndtime(req.getParameter("empIdcardEndtime"));
+		empInfo.setEmpEthnic(req.getParameter("empEthnic"));
+		empInfo.setEmpPoliticallandscape(req.getParameter("empPoliticallandscape"));
+		empInfo.setEmpMaritalstatus(req.getParameter("empMaritalstatus"));
+		empInfo.setEmpFirsteducation(req.getParameter("empFirsteducation"));
+		empInfo.setEmpSecondeducation(req.getParameter("empSecondeducation"));
+		empInfo.setEmpSecondeducation(req.getParameter("empThirdeducation"));
+		empInfo.setEmpFirsteducationschool(req.getParameter("empFirsteducationschool"));
+		empInfo.setEmpSecondeducationschool(req.getParameter("empSecondeducationschool"));
+		empInfo.setEmpThirdeducationschool(req.getParameter("empThirdeducationschool"));
+		empInfo.setEmpFirsteducationpro(req.getParameter("empFirsteducationpro"));
+		empInfo.setEmpSecondeducationpro(req.getParameter("empSecondeducationpro"));
+		empInfo.setEmpSecondeducationpro(req.getParameter("empThirdeducationpro"));
+		empInfo.setEmpFirstgraduationtime(req.getParameter("empFirstgraduationtime"));
+		empInfo.setEmpSecondgraduationtime(req.getParameter("empSecondgraduationtime"));
+		empInfo.setEmpThirdgraduationtime(req.getParameter("empThirdgraduationtime"));
+		empInfo.setEmpJobtitle(req.getParameter("empJobtitle"));
+		empInfo.setEmpJobtitlelevel(req.getParameter("empJobtitlelevel"));
+		empInfo.setEmpJobtitleobtaintime(req.getParameter("empJobtitleobtaintime"));
+		empInfo.setEmpPhone(req.getParameter("empPhone"));
+		empInfo.setEmpEmergencycontactandphone(req.getParameter("empEmergencycontactandphone"));
+		empInfo.setEmpFileaddress(req.getParameter("empFileaddress"));
+		empInfo.setEmpAccountaddress(req.getParameter("empAccountaddress"));
+		empInfo.setEmpHomeaddress(req.getParameter("empHomeaddress"));
+		empInfo.setEmpWorktype(req.getParameter("empWorktype"));
+		empInfo.setEmpCompile(req.getParameter("empCompile"));
+		empInfo.setEmpInductiontime(req.getParameter("empInductiontime"));
+		empInfo.setEmpTryoutendtime(req.getParameter("empTryoutendtime"));
+		empInfo.setEmpContractendtime(req.getParameter("empContractendtime"));
+		empInfo.setEmpContractsignednum(Integer.parseInt(req.getParameter("empContractsignednum")));
+		empInfo.setEmpReturnee(req.getParameter("empReturnee"));
+		empInfo.setEmpForeign(req.getParameter("empForeign"));
+		empInfo.setEmpTitle(req.getParameter("empTitle"));
+		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
+	}
+	
+
 	
 	
 	

@@ -32,4 +32,8 @@ public interface EmpInfoService {
 	List<EmpInfo> findAllEmpInfo();
 	
 	EmpInfo findEmpinfoAndAvatarByid(Integer id);
+	
+	int updateByPrimaryKey(EmpInfo emp);
+	
+	int delete(Integer[] eid);
 }

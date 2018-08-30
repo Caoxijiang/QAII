@@ -94,6 +94,7 @@
 		var eachYearDate=geteachYearMsg(_8Years);
 		
         var myChart = echarts.init(document.getElementById('main'));
+
         // 指定图表的配置项和数据
         var option = {
 //			title: {
@@ -131,12 +132,7 @@
 						fontSize:'14'
 					}
 				},
-				data: [new Date(_12Mon[11]).getMonth()+1,new Date(_12Mon[10]).getMonth()+1,
-					new Date(_12Mon[9]).getMonth()+1,new Date(_12Mon[8]).getMonth()+1,
-					new Date(_12Mon[7]).getMonth()+1,new Date(_12Mon[6]).getMonth()+1,
-					new Date(_12Mon[5]).getMonth()+1,new Date(_12Mon[4]).getMonth()+1,
-					new Date(_12Mon[3]).getMonth()+1,new Date(_12Mon[2]).getMonth()+1,
-					new Date(_12Mon[1]).getMonth()+1,new Date(_12Mon[0]).getMonth()+1]
+				data: ['1','2','3','4','5','6','7','8','9','10','11','12']
 			},
 			yAxis: {
 				type: 'value',
@@ -153,33 +149,25 @@
 					name:'新入职',
 					type:'line',
 					stack: '总量',
-					data:[eachMonDate[11].Entry, eachMonDate[10].Entry, eachMonDate[9].Entry, eachMonDate[8].Entry,
-						eachMonDate[7].Entry, eachMonDate[6].Entry, eachMonDate[5].Entry,eachMonDate[4].Entry,
-						eachMonDate[3].Entry,eachMonDate[2].Entry,eachMonDate[1].Entry,eachMonDate[0].Entry]
+					data:[12, 13, 18, 14, 9, 23, 21,16,19,20,29,18]
 				},
 				{
 					name:'离职',
 					type:'line',
 					stack: '总量',
-					data:[eachMonDate[11].Departure, eachMonDate[10].Departure, eachMonDate[9].Departure, eachMonDate[8].Departure,
-						eachMonDate[7].Departure, eachMonDate[6].Departure, eachMonDate[5].Departure,eachMonDate[4].Departure,
-						eachMonDate[3].Departure,eachMonDate[2].Departure,eachMonDate[1].Departure,eachMonDate[0].Departure]
+					data:[22, 18, 19, 24, 29, 3, 10,8,10,2,1,3]
 				},
 				{
 					name:'净增长',
 					type:'line',
 					stack: '总量',
-					data:[eachMonDate[11].Growth, eachMonDate[10].Growth, eachMonDate[9].Growth, eachMonDate[8].Growth,
-						eachMonDate[7].Growth, eachMonDate[6].Growth, eachMonDate[5].Growth,eachMonDate[4].Growth,
-						eachMonDate[3].Growth,eachMonDate[2].Growth,eachMonDate[1].Growth,eachMonDate[0].Growth]
+					data:[15, 22, 20, 14, 19, 33, 11,16,23,16,12,19]
 				},
 				{
 					name:'院总人数',
 					type:'line',
 					stack: '总量',
-					data:[eachMonDate[11].Total, eachMonDate[10].Total, eachMonDate[9].Total, eachMonDate[8].Total,
-						eachMonDate[7].Total, eachMonDate[6].Total, eachMonDate[5].Total,eachMonDate[4].Total,
-						eachMonDate[3].Total,eachMonDate[2].Total,eachMonDate[1].Total,eachMonDate[0].Total]
+					data:[32, 32, 31, 34, 30, 35, 32,21,29,28,25,39]
 				}
 			]
 		};
@@ -188,7 +176,7 @@
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
-        
+
 //人才队伍柱形图
  // 基于准备好的dom，初始化echarts实例
         var myChartbar = echarts.init(document.getElementById('mainbar'));
@@ -216,14 +204,14 @@
 			dataset: {
 				dimensions: ['product', '孵化公司人数', '研究院人数','人员总数'],
 				source: [
-					{product: new Date(_8Years[7]).getFullYear(), '孵化公司人数': eachYearDate[7].Incnum, '研究院人数': eachYearDate[7].collegenum, '人员总数': eachYearDate[7].total},
-					{product: new Date(_8Years[6]).getFullYear(), '孵化公司人数': eachYearDate[6].Incnum, '研究院人数': eachYearDate[6].collegenum, '人员总数': eachYearDate[6].total},
-					{product: new Date(_8Years[5]).getFullYear(), '孵化公司人数': eachYearDate[5].Incnum, '研究院人数': eachYearDate[5].collegenum, '人员总数': eachYearDate[5].total},
-					{product: new Date(_8Years[4]).getFullYear(), '孵化公司人数': eachYearDate[4].Incnum, '研究院人数': eachYearDate[4].collegenum, '人员总数': eachYearDate[4].total},
-					{product: new Date(_8Years[3]).getFullYear(), '孵化公司人数': eachYearDate[3].Incnum, '研究院人数': eachYearDate[3].collegenum, '人员总数': eachYearDate[3].total},
-					{product: new Date(_8Years[2]).getFullYear(), '孵化公司人数': eachYearDate[2].Incnum, '研究院人数': eachYearDate[2].collegenum, '人员总数': eachYearDate[2].total},
-					{product: new Date(_8Years[1]).getFullYear(), '孵化公司人数': eachYearDate[1].Incnum, '研究院人数': eachYearDate[1].collegenum, '人员总数': eachYearDate[1].total},
-					{product: new Date(_8Years[0]).getFullYear(), '孵化公司人数': eachYearDate[0].Incnum, '研究院人数': eachYearDate[0].collegenum, '人员总数': eachYearDate[0].total}				
+					{product: '2011', '孵化公司人数': 50, '研究院人数': 105, '人员总数': 135},
+					{product: '2012', '孵化公司人数': 63, '研究院人数': 100, '人员总数': 125},
+					{product: '2013', '孵化公司人数': 53, '研究院人数': 156, '人员总数': 152},
+					{product: '2014', '孵化公司人数': 61, '研究院人数': 150, '人员总数': 149},
+					{product: '2015', '孵化公司人数': 76, '研究院人数': 125, '人员总数': 163},
+					{product: '2016', '孵化公司人数': 65, '研究院人数': 120, '人员总数': 156},
+					{product: '2017', '孵化公司人数': 67, '研究院人数': 110, '人员总数': 164},
+					{product: '2018', '孵化公司人数': 56, '研究院人数': 135, '人员总数': 157}				
 				]
 			},
 			xAxis: {
@@ -276,11 +264,11 @@
             type: 'pie',
             radius : '55%',
             data:[
-                {value:_dept[0], name:'平行工作室'},
-                {value:_dept[1], name:'人事教育处'},
-                {value:_dept[2], name:'财务处'},
-                {value:_dept[3], name:'综合管理处'},
-                {value:_dept[4], name:'产业化处'}
+                {value:335, name:'平行工作室'},
+                {value:310, name:'人事教育处'},
+                {value:234, name:'财务处'},
+                {value:135, name:'综合管理处'},
+                {value:148, name:'产业化处'}
             ],
             itemStyle: {
                 emphasis: {
