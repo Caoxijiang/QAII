@@ -110,8 +110,9 @@ public class EmpController {
 		empInfo.setEmpReturnee(req.getParameter("empReturnee"));
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
 		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
-		
-		
+
+		empInfo.setEmpRemarks(req.getParameter("empRemarks"));	
+
 		empInfo.setEmpTitle(req.getParameter("empTitle"));
 		EmpInfo(req, empInfo);
 		empInfo.setEmpStat("1");

@@ -15,10 +15,5 @@ public class CustomException extends Exception {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	@Override
-	public String toString() {
-		return "CustomException [msg=" + msg + "]";
-	}
-	
-	
+
 }
