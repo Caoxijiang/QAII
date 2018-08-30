@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>科研成果管理系统</title>
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
+  <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 <!--  iframe样式设置-->
   <style>
 	  iframe{
@@ -47,30 +48,31 @@
   </div>
   <!-- 头部区域（可配合layui已有的水平导航） -->
   
-  <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+   <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
   <div class="layui-side layui-bg-black">
     <div class="layui-side-scroll">
       <ul class="layui-nav layui-nav-tree"  lay-filter="test">
         <li class="layui-nav-item layui-nav-itemed">
-			<a class="" href="indexPersonnel.html"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;全局总览</a>
+			<a class="" href="personal.do"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;全局总览</a>
         </li>
         <li class="layui-nav-item layui-this">
-          <a href="javascript:;"><i class="layui-icon layui-icon-group" style="font-size: 22px;"></i>&nbsp;成员管理</a>
+          <a href="javascript:;" onclick="iframechange('intoPerSysadd.do')"><i class="layui-icon layui-icon-group" style="font-size: 22px;"></i>&nbsp;成员管理</a>
         </li>
          <li class="layui-nav-item">
-          <a href="javascript:;"><i class="layui-icon layui-icon-username" style="font-size: 22px;"></i>&nbsp;离职人员</a>
+          <a href="javascript:;" onclick="iframechange('delldellEmpInfo.do')"><i class="layui-icon layui-icon-username" style="font-size: 22px;"></i>&nbsp;离职人员</a>
         </li>
          <li class="layui-nav-item">
-          <a href="javascript:;"><i class="layui-icon layui-icon-set-fill" style="font-size: 22px;"></i>&nbsp;系统管理</a>
+          <a href="javascript:;" onclick="iframechange('sysadmin.do')"><i class="layui-icon layui-icon-set-fill" style="font-size: 22px;"></i>&nbsp;系统管理</a>
         </li>
          <li class="layui-nav-item">
-          <a href="javascript:;"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
+          <a href="javascript:;" onclick="iframechange('newsUI.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
         </li>
        
       </ul>
     </div>
   </div>
    <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+   
    
   <!--  主要数据表格-->
   <div class="layui-body" id="layuiBody">
@@ -91,7 +93,9 @@
 layui.use('element', function(){
   var element = layui.element; 
 });
-
+function iframechange(obj){
+	$('iframe').attr('src',obj);
+}
 
 </script>
 </body>

@@ -48,10 +48,10 @@
 			<option value="empJobtitlelevel">职称等级</option>
 			<option value="empGender">性别</option>
 		</select>
-		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;">
+		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
 		</div>
-		<button class="layui-btn" id="search" data-type="reload" style="height: 36px;line-height: 36px;">搜索</button>
+		<button class="layui-btn" id="search" data-type="reload" style="height: 36px;line-height: 36px;margin-top:1px;">搜索</button>
 	</div>
 		
 	
@@ -231,9 +231,35 @@ var $ = layui.$, active = {
      // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
+          let arr=[data.id];
+          console.log(data) 
+          $.post({
+          	url:"DellempInfo.do",
+          	data:{
+          		"requestDate" : arr
+          	},
+          	success:function(data){
+          		if(data.data){
+          		    //删除对应行（tr）的DOM结构
+          			obj.del();
+          			layer.close(index);
+          		}else{
+          			layer.alert("删除失败")
+          		}
+          		
+          	}
+          }) 
+    	  
+    	  
+    	  
+    	  
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
         //向服务端发送删除指令
+        
+        
+        
+        
       });
     } else if(layEvent === 'edit'){
       layer.alert(

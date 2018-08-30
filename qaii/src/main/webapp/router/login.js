@@ -72,12 +72,13 @@ $().ready(function(){
 			},
 			success:function(data){
 				console.log(JSON.stringify(data))
-			if(data.data.USERROLEURL!=null){
-				document.location.href=data.data.USERROLEURL;
-			}else if(data.USERROLEURL=null && data.data.message=="OK"){
+			var result=data.data;
+			if(result.USERROLEURL!=null){
+				document.location.href=result.USERROLEURL;
+			}else if(result.USERROLEURL==null && result.message=="OK"){
 				alert("无权限账号");
 				document.location.href='indexUI.do';
-			}else{
+			}else if(result==null){
 				alert("账号或密码错误");
 				document.location.href='indexUI.do';
 			}

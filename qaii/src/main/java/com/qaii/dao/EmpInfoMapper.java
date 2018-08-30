@@ -6,7 +6,7 @@ import java.util.Map;
 import com.qaii.domain.EmpInfo;
 
 public interface EmpInfoMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKeys(Integer[] eid);
 
     int insert(EmpInfo record);
 
@@ -39,5 +39,6 @@ public interface EmpInfoMapper {
     List <EmpInfo> findAllEmpInfo();
     
     EmpInfo findEmpinfoAndAvatarByid(Integer id);
-
+    
+    
 }

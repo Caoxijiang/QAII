@@ -35,10 +35,12 @@ public class UserRoleServiceImpl implements UserRoleService{
 	}
 
 	@Override
-	public int updateUserRoleByUid(Integer uid) {
+	public int updateUserRoleByUid(UserRole r) {
 		// TODO Auto-generated method stub
-		return userRoleMapper.deleteByPrimaryKey(uid);
+		return userRoleMapper.updateByPrimaryKey(r) ;
 	}
+
+
 
 	
 
