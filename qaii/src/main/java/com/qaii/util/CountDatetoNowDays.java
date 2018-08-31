@@ -27,15 +27,19 @@ public class CountDatetoNowDays {
 	
 	//将参数日期格式化为时间戳类型
 	public static String SDatetoStamp(String date) throws ParseException {
-		if(date!=null&&date!="") {
+		if(date==null) {
+			return null;
+		}
+		else if(date.equals("")) {
+			return null;
+		}
+		else {
 			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 			Calendar cal1=Calendar.getInstance();
 			cal1.setTime(sdf.parse(date));
 			date=String.valueOf(cal1.getTimeInMillis());
 			return date;
-		}else {
-			return "";
-		}		
+		}	
 	}
 	
 	//将时间戳类型参数转为日期
