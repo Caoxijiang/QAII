@@ -15,7 +15,7 @@
 <script type="text/javascript">
 	$().ready(function(){
 		var now=new Date();
-		var nowdate=now.getFullYear()+"/"+(now.getMonth() + 1)+"/"+now.getDate();
+		var nowdate=now.getFullYear()+"-"+(now.getMonth() + 1)+"-"+now.getDate();
 		getContractMsg();
 		getTryMsg();
 		

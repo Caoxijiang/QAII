@@ -610,6 +610,14 @@
 	    	#{id,jdbcType=INTEGER}
 	    </foreach>
   </delete>
- 	
+ 	<select id="getstatusbyreview" resultMap="BaseResultMap" parameterType="java.lang.String">
+ 		SELECT * from emp_info WHERE emp_stat ='1' AND emp_reviewStatus=#{0}
+ 	</select>
+ 	<select id="getIDexpire" resultMap="BaseResultMap" parameterType="java.lang.String">
+ 		SELECT * from emp_info WHERE emp_idcard_endTime &lt;=#{0}
+ 	</select>
+ 	<update id="updateReview">
+ 		UPDATE emp_info SET  emp_reviewStatus= #{0} WHERE id = #{1}
+ 	</update>
  	
 </mapper>

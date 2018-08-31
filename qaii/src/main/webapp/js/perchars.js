@@ -1,5 +1,99 @@
 // JavaScript Document
 // 基于准备好的dom，初始化echarts实例
+
+		//获取包括本月的前12个月日期
+		function get12Month(nowdate){
+			var result;
+			$.ajax({
+				async:false,
+				type:"POST",
+				url:"get12Month.do",
+				data:{date:nowdate},
+				success:function(data){
+					result=data;
+				}
+			})
+			return result;
+		}
+		function get8Years(nowdate){
+			var result;
+			$.ajax({
+				async:false,
+				type:"POST",
+				url:"get8Years.do",
+				data:{date:nowdate},
+				success:function(data){
+					result=data;
+				}
+			})
+			return result;
+		}
+		
+		//获取每个月的相关数据
+		function geteachMonthMsg(date){
+			var result=new Array();
+			$.ajax({
+				async:false,
+				type:"POST",
+				url:"geteachMonthMsg.do",
+				data:{date:date},
+				success:function(data){
+					result=data;
+				}
+			})
+			return result;
+		}
+		
+		//获取每年的相关数据
+		function geteachYearMsg(date){
+			var result=new Array();
+			$.ajax({
+				async:false,
+				type:"POST",
+				url:"gettalentsTeam.do",
+				data:{date:date},
+				success:function(data){
+					result=data;
+				}
+			})
+			return result;
+		}
+		
+		//获取饼状图数据
+		function gettalentsdept(data){
+			var result=null;
+			$.ajax({
+				async:false,
+				type:"POST",
+				url:"gettalentsdept.do",
+				data:{data:data},
+				success:function(data){
+					result=data;
+				}
+			})
+			return result;
+		}
+		
+		var dept=new Array("平行工作室","人事教育处","财务处","综合管理处","产业化处");
+		var _dept=gettalentsdept(dept);
+//		function test(){
+//			$.ajax({
+//				type:"POST",
+//				url:"setdata.do",
+//				data:{date:"2018/07/27"},
+//				success:function(data){
+//					alert(data);
+//				}
+//			})
+//		}
+		var now=new Date();
+		var nowdate=now.getFullYear()+"-"+(now.getMonth() + 1)+"-"+now.getDate();
+		//设置当前时间为参考时间参数
+		var _12Mon=get12Month(nowdate);
+		var eachMonDate=geteachMonthMsg(_12Mon);
+		var _8Years=get8Years(nowdate);
+		var eachYearDate=geteachYearMsg(_8Years);
+		
         var myChart = echarts.init(document.getElementById('main'));
 
         // 指定图表的配置项和数据
