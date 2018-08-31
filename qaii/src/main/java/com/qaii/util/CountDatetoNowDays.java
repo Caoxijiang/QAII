@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.qaii.domain.EmpInfo;
+
 public class CountDatetoNowDays {
 
 	/*
@@ -38,13 +40,17 @@ public class CountDatetoNowDays {
 	
 	//将时间戳类型参数转为日期
 	public static String StamptoDate(String date) {
-		if(date!=null&date!="") {
+		if(date==null) {
+			return null;
+		}
+		else if(date.equals("")) {
+			return null;
+		}
+		else {
 			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 			long dt=new Long(date);
 			System.out.println(sdf.format(new Date(dt)));
 			return sdf.format(new Date(dt));
-		}else {
-			return "";
 		}
 		
 	}
@@ -200,5 +206,35 @@ public class CountDatetoNowDays {
 			cal.add(cal.YEAR, -1);
 		}
 		return result;
+	}
+	
+	//将bean中的时间类型转换为时间戳类型
+	public static EmpInfo TranstoStamp(EmpInfo emp) throws ParseException {
+		if(emp!=null) {
+			emp.setEmpTryoutendtime(CountDatetoNowDays.SDatetoStamp(emp.getEmpTryoutendtime()));	
+			emp.setEmpIdcardEndtime(CountDatetoNowDays.SDatetoStamp(emp.getEmpIdcardEndtime()));
+			emp.setEmpContractendtime(CountDatetoNowDays.SDatetoStamp(emp.getEmpContractendtime()));
+			emp.setEmpFirstgraduationtime(CountDatetoNowDays.SDatetoStamp(emp.getEmpFirstgraduationtime()));	
+			emp.setEmpSecondgraduationtime(CountDatetoNowDays.SDatetoStamp(emp.getEmpSecondgraduationtime()));	
+			emp.setEmpThirdgraduationtime(CountDatetoNowDays.SDatetoStamp(emp.getEmpThirdgraduationtime()));	
+			emp.setEmpInductiontime(CountDatetoNowDays.SDatetoStamp(emp.getEmpInductiontime()));
+			emp.setEmpJobtitleobtaintime(CountDatetoNowDays.SDatetoStamp(emp.getEmpJobtitleobtaintime()));
+		}
+		return emp;
+	}
+	
+	//将bean中的时间戳类型转换为时间类型
+	public static  EmpInfo TranstoDate(EmpInfo emp) {
+		if(emp!=null) {
+			emp.setEmpTryoutendtime(CountDatetoNowDays.StamptoDate(emp.getEmpTryoutendtime()));
+			emp.setEmpIdcardEndtime(CountDatetoNowDays.StamptoDate(emp.getEmpIdcardEndtime()));
+			emp.setEmpContractendtime(CountDatetoNowDays.StamptoDate(emp.getEmpContractendtime()));
+			emp.setEmpFirstgraduationtime(CountDatetoNowDays.StamptoDate(emp.getEmpFirstgraduationtime()));
+			emp.setEmpSecondgraduationtime(CountDatetoNowDays.StamptoDate(emp.getEmpSecondgraduationtime()));
+			emp.setEmpThirdgraduationtime(CountDatetoNowDays.StamptoDate(emp.getEmpThirdgraduationtime()));
+			emp.setEmpInductiontime(CountDatetoNowDays.StamptoDate(emp.getEmpInductiontime()));
+			emp.setEmpJobtitleobtaintime(CountDatetoNowDays.StamptoDate(emp.getEmpJobtitleobtaintime()));
+		}
+		return emp;
 	}
 }

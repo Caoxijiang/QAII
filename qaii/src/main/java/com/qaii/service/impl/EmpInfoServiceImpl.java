@@ -90,6 +90,21 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		// TODO Auto-generated method stub
 		return empinfoService.deleteByPrimaryKeys(eid);
 	}
+	@Override
+	public List<EmpInfo> getstatusbyreview(String reviewstatus) {
+		// TODO Auto-generated method stub
+		return empinfoService.getstatusbyreview(reviewstatus);
+	}
+	@Override
+	public List<EmpInfo> getIDexpire(String date) {
+		// TODO Auto-generated method stub
+		return empinfoService.getIDexpire(date);
+	}
+	@Override
+	public int updateReview(String msg, int id) {
+		// TODO Auto-generated method stub
+		return empinfoService.updateReview(msg, id);
+	}
 
 
 	

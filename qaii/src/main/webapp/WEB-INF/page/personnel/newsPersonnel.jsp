@@ -42,7 +42,7 @@
 				<script type="text/html" id="barDemo">
 				  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">审核通过</a>
 				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">驳回申请</a>
-				  <a class="layui-btn layui-btn-xs layui-btn-details" href="adddetail.html" target="_blank">查看详情</a>
+				  <a class="layui-btn layui-btn-xs layui-btn-details" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
 				</script>
 			</div>
 		
@@ -57,7 +57,7 @@
 			<div class="messagecontern">
 				<table class="layui-table" id="testTable2" lay-filter="demo2" style="margin-top:5px;width: 100% !important;"></table>
 				<script type="text/html" id="barDemo2">
-				  <a class="layui-btn layui-btn-xs" href="adddetail.html" target="_blank">查看详情</a>
+				  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
 				</script>
 			</div>
 		
@@ -72,7 +72,7 @@
 			<div class="messagecontern">
 				<table class="layui-table" id="testTable3" lay-filter="demo3" style="margin-top:5px;width: 100% !important;"></table>
 				<script type="text/html" id="barDemo3">
-				  <a class="layui-btn layui-btn-xs" href="adddetail.html" target="_blank">查看详情</a>
+				  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
 				</script>
 			</div>
 		
@@ -87,7 +87,7 @@
 			<div class="messagecontern">
 				<table class="layui-table" id="testTable4" lay-filter="demo4" style="margin-top:5px;width: 100% !important;"></table>
 				<script type="text/html" id="barDemo4">
-				  <a class="layui-btn layui-btn-xs" href="adddetail.html" target="_blank">查看详情</a>
+				  <a class="layui-btn layui-btn-xs" lay-event="detail" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
 				</script>
 			</div>
 		
@@ -123,69 +123,91 @@ layui.config({
 });
 
  
-layui.use('table', function(){
+layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
-	
-  
+  function getrevmsg(){
+	  var result=new Array();
+	  $.post({
+		url:"getIDexpire.do",
+		data:{"reviewstatus":"待审核"},
+		async:false,
+		success:function(data){
+			//data.forEach(function(e){
+			//	alert(e.eid);
+			//	})
+			result=data;
+		}
+	  })
+	  return result;
+  }
+  var _revmsg=getrevmsg();
   //执行一个 table 实例
   table.render({
     elem: '#testTable',
 	page: false,
+	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload', 
 //    height: 332,
 //    ,url: '/demo/table/user/' //数据接口
+	url:"getstatusbyreview.do",
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{field: 'id', title: '序号'},
-		{field: 'emp_num', title: '工号'},
-		{field: 'emp_name', title: '姓名'},
-		{field: 'emp_dept', title: '部门',sort: true},
-		{field: 'emp_position', title: '职务',sort: true},
-		{field: 'emp_hire_startTime', title: '聘期',sort: true},
-		{field: 'emp_phone', title: '联系电话'},
-		{field: 'emp_workType', title: '用工形式',sort: true},
-		{field: 'emp_inductionTime', title: '入职时间',sort: true},
+		{field: 'empNum', title: '工号'},
+		{field: 'empName', title: '姓名'},
+		{field: 'empDept', title: '部门',sort: true},
+		{field: 'empPosition', title: '职务',sort: true},
+		{field: 'empHireStarttime', title: '聘期',sort: true},
+		{field: 'empPhone', title: '联系电话'},
+		{field: 'empWorktype', title: '用工形式',sort: true},
+		{field: 'empInductiontime', title: '入职时间',sort: true},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',width:320}
     ]],
 	  //表格数据
-    data: [{
-		"id":'1',
-		"emp_num":'1',
-		"emp_name":'姓名',
-		"emp_gender":'性别',
-		"emp_dept":'部门',
-		"emp_position":'职务',
-		"emp_hire_startTime":'聘期',
-		"emp_idcard":'身份证号',
-		"emp_phone":'手机号',
-		"emp_workType":'用工形式',
-		"emp_inductionTime":'入职时间',
-		 },{
-		"id":'3',
-		"emp_num":'3',
-		"emp_name":'asd',
-		"emp_gender":'女',
-		"emp_dept":'婿',
-		"emp_position":'水电费感受到',
-		"emp_hire_startTime":'身份',
-		"emp_idcard":'20145678952410254278',
-		"emp_phone":'45621862356',
-		"emp_workType":'合同',
-		"emp_inductionTime":'2018-08-08',
-		 }]
+    data:obj.data
   });
-
+  console.log(obj.data);
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'dimission'){
-      layer.msg('审核通过');
+    	layer.confirm("确定要通过审核？",function(){
+    		layer.msg('审核通过');
+    		$.post({
+    			url:"upReview.do",
+    			data:{"msg":"通过","id":data.id},
+    			success:function(count){
+    				if(count!=1){
+    					alert("操作失败，请检查员工审核信息是否准确");
+    				}else{
+    					obj.del();
+    					layer.close(index);
+    				}
+    			}
+    		})
+    	})
+      
     } else if(layEvent === 'del'){
       layer.confirm('确定驳回申请', function(index){
-        layer.close(index);
-        //向服务端发送删除指令
+    	  let arr=[data.id];
+          console.log(data) 
+          $.post({
+          	url:"DellempInfo.do",
+          	data:{
+          		"requestDate" : arr
+          	},
+          	success:function(data){
+          		if(data.data){
+          		    //删除对应行（tr）的DOM结构
+          			obj.del();
+          			layer.close(index);
+          		}else{
+          			layer.alert("删除失败")
+          		}
+          	}
+          }) 	
       });
     } 
   });
@@ -197,60 +219,24 @@ layui.use('table', function(){
 	page: false,
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload2', 
+	method:'post',
 //    height: 332,
 //    ,url: '/demo/table/user/' //数据接口
+	url:'getIDexpire.do',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{field: 'id', title: '序号'},
-		{field: 'emp_num', title: '工号'},
-		{field: 'emp_name', title: '姓名'},
-		{field: 'emp_gender', title: '性别',sort: true},
-		{field: 'emp_dept', title: '部门',sort: true},
-		{field: 'emp_position', title: '职务',sort: true},
-		{field: 'emp_idcard', title: '身份证号'},
-		{field: 'emp_idcard_endTime', title: '身份证到期时间',sort: true},
+		{field: 'empNum', title: '工号'},
+		{field: 'empName', title: '姓名'},
+		{field: 'empGender', title: '性别',sort: true},
+		{field: 'empDept', title: '部门',sort: true},
+		{field: 'empPosition', title: '职务',sort: true},
+		{field: 'empIdcard', title: '身份证号'},
+		{field: 'empIdcardEndtime', title: '身份证到期时间',sort: true},
 		{field: 'sex', title: '操作',toolbar: '#barDemo2'}
     ]],
 	  //表格数据
-    data: [{
-		"id":'1',
-		"emp_num":'1',
-		"emp_name":'姓名',
-		"emp_gender":'性别',
-		"emp_dept":'部门',
-		"emp_position":'职务',
-		"emp_idcard":'身份证号',
-		"emp_idcard_endTime":'身份证到期时间'
-		 },{
-		"id":'2',
-		"emp_num":'2',
-		"emp_name":'李璐萍',
-		"emp_gender":'女',
-		"emp_dept":'平行工作室',
-		"emp_position":'院长助理',
-		"emp_hire_startTime":'3年',
-		"emp_idcard":'370729699784561235',
-		"emp_idcard_endTime":'2018-09-16'
-		 },{
-		"id":'3',
-		"emp_num":'3',
-		"emp_name":'李璐萍',
-		"emp_gender":'女',
-		"emp_dept":'平行工作室',
-		"emp_position":'院长助理',
-		"emp_hire_startTime":'3年',
-		"emp_idcard":'370729699784561235',
-		"emp_idcard_endTime":'2018-09-16'
-		 },{
-		"emp_num":'17',
-		"emp_name":'李璐萍',
-		"emp_gender":'女',
-		"emp_dept":'平行工作室',
-		"emp_position":'院长助理',
-		"emp_hire_startTime":'3年',
-		"emp_idcard":'370729699784561235',
-		"emp_idcard_endTime":'2018-09-16'
-		 }]
+    data:obj.data
   });
 
 
@@ -263,117 +249,23 @@ layui.use('table', function(){
 	id: 'testReload3', 
 //    height: 332,
 //    ,url: '/demo/table/user/' //数据接口
+	url:'getTryemp.do',
+	method:'post',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{field: 'id', title: '序号'},
-		{field: 'emp_num', title: '工号'},
-		{field: 'emp_name', title: '姓名'},
-		{field: 'emp_gender', title: '性别',sort: true},
-		{field: 'emp_dept', title: '部门',sort: true},
-		{field: 'emp_position', title: '职务',sort: true},
-		{field: 'emp_workType', title: '用工形式',sort: true},
-		{field: 'emp_inductionTime', title: '入职时间',sort: true},
-		{field: 'emp_tryOutEndTime', title: '试用期结束日期',sort: true},
+		{field: 'empNum', title: '工号'},
+		{field: 'empName', title: '姓名'},
+		{field: 'empGender', title: '性别',sort: true},
+		{field: 'empDept', title: '部门',sort: true},
+		{field: 'empPosition', title: '职务',sort: true},
+		{field: 'empWorktype', title: '用工形式',sort: true},
+		{field: 'empInductiontime', title: '入职时间',sort: true},
+		{field: 'empTryoutendtime', title: '试用期结束日期',sort: true},
 		{field: 'sex', title: '操作',toolbar: '#barDemo3'}
     ]],
 	  //表格数据
-    data: [{
-		"id":'1',
-		"emp_num":'1',
-		"emp_name":'姓名',
-		"emp_gender":'性别',
-		"emp_dept":'部门',
-		"emp_position":'职务',
-		"emp_hire_startTime":'聘期',
-		"emp_idcard":'身份证号',
-		"emp_idcard_endTime":'身份证到期时间',
-		"emp_ethnic":'名族',
-		"emp_politicalLandscape":'政治面貌',
-		"emp_maritalStatus":'婚姻状态',
-		"emp_workType":'用工形式',
-		"emp_compile":'编制',
-		"emp_inductionTime":'入职时间',
-		"emp_tryOutEndTime":'试用期结束时间',
-		"emp_contractEndTime":'合同期满日期',
-		"emp_contractSignedNum":'合同签订次数',
-		"emp_returnee":'是否归国人员',
-		"emp_foreign":'是否外籍人员',
-		"emp_remarks":'备注'
-		 },{
-		"id":'2',
-		"emp_num":'2',
-		"emp_name":'李璐萍',
-		"emp_gender":'女',
-		"emp_dept":'平行工作室',
-		"emp_position":'院长助理',
-		"emp_hire_startTime":'3年',
-		"emp_idcard":'370729699784561235',
-		"emp_idcard_endTime":'2018-09-16',
-		"emp_ethnic":'汉',
-		"emp_politicalLandscape":'团员',
-		"emp_maritalStatus":'未婚',
-		"emp_firstEducation":'本科',
-		"emp_secondEducation":'研究生',
-		"emp_thirdEducation":'博士',
-		"emp_workType":'合同工',
-		"emp_compile":'是',
-		"emp_inductionTime":'2018-09-16',
-		"emp_tryOutEndTime":'2018-09-16',
-		"emp_contractEndTime":'2018-09-16',
-		"emp_contractSignedNum":'3',
-		"emp_returnee":'否',
-		"emp_foreign":'否',
-		"emp_remarks":'备注备注备注'
-		 },{
-		"id":'3',
-		"emp_num":'3',
-		"emp_name":'李璐萍',
-		"emp_gender":'女',
-		"emp_dept":'平行工作室',
-		"emp_position":'院长助理',
-		"emp_hire_startTime":'3年',
-		"emp_idcard":'370729699784561235',
-		"emp_idcard_endTime":'2018-09-16',
-		"emp_ethnic":'汉',
-		"emp_politicalLandscape":'团员',
-		"emp_maritalStatus":'未婚',
-		"emp_firstEducation":'本科',
-		"emp_secondEducation":'研究生',
-		"emp_thirdEducation":'博士',
-		"emp_workType":'合同工',
-		"emp_compile":'是',
-		"emp_inductionTime":'2018-09-16',
-		"emp_tryOutEndTime":'2018-09-16',
-		"emp_contractEndTime":'2018-09-16',
-		"emp_contractSignedNum":'3',
-		"emp_returnee":'否',
-		"emp_foreign":'否',
-		"emp_remarks":'备注备注备注'
-		 },{
-		"emp_num":'17',
-		"emp_name":'李璐萍',
-		"emp_gender":'女',
-		"emp_dept":'平行工作室',
-		"emp_position":'院长助理',
-		"emp_hire_startTime":'3年',
-		"emp_idcard":'370729699784561235',
-		"emp_idcard_endTime":'2018-09-16',
-		"emp_ethnic":'汉',
-		"emp_politicalLandscape":'团员',
-		"emp_maritalStatus":'未婚',
-		"emp_firstEducation":'本科',
-		"emp_secondEducation":'研究生',
-		"emp_thirdEducation":'博士',
-		"emp_workType":'合同工',
-		"emp_compile":'是',
-		"emp_inductionTime":'2018-09-16',
-		"emp_tryOutEndTime":'2018-09-16',
-		"emp_contractEndTime":'2018-09-16',
-		"emp_contractSignedNum":'3',
-		"emp_returnee":'否',
-		"emp_foreign":'否',
-		"emp_remarks":'备注备注备注'
-		 }]
+    data: obj.data
   });
 
 
@@ -387,125 +279,25 @@ layui.use('table', function(){
 	id: 'testReload4', 
 //    height: 332,
 //    ,url: '/demo/table/user/' //数据接口
+	url:'getConemp.do',
+	method:'post',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
    cols: [[ //标题栏
 		{field: 'id', title: '序号'},
-		{field: 'emp_num', title: '工号'},
-		{field: 'emp_name', title: '姓名'},
-		{field: 'emp_gender', title: '性别',sort: true},
-		{field: 'emp_dept', title: '部门',sort: true},
-		{field: 'emp_position', title: '职务',sort: true},
-		{field: 'emp_hire_startTime', title: '聘期',sort: true},
-		{field: 'emp_workType', title: '用工形式',sort: true},
-		{field: 'emp_inductionTime', title: '入职时间',sort: true},
-		{field: 'emp_contractEndTime', title: '合同期满日期',sort: true},
-		{field: 'emp_contractSignedNum', title: '合同签订次数',sort: true},
+		{field: 'empNum', title: '工号'},
+		{field: 'empName', title: '姓名'},
+		{field: 'empGender', title: '性别',sort: true},
+		{field: 'empDept', title: '部门',sort: true},
+		{field: 'empPosition', title: '职务',sort: true},
+		{field: 'empHireStarttime', title: '聘期',sort: true},
+		{field: 'empWorktype', title: '用工形式',sort: true},
+		{field: 'empInductiontime', title: '入职时间',sort: true},
+		{field: 'empContractendtime', title: '合同期满日期',sort: true},
+		{field: 'empContractsignednum', title: '合同签订次数',sort: true},
 		{field: 'sex', title: '操作',toolbar: '#barDemo4'}
     ]],
 	  //表格数据
-    data: [{
-		"id":'1',
-		"emp_num":'1',
-		"emp_name":'姓名',
-		"emp_gender":'性别',
-		"emp_dept":'部门',
-		"emp_position":'职务',
-		"emp_hire_startTime":'聘期',
-		"emp_idcard":'身份证号',
-		"emp_idcard_endTime":'身份证到期时间',
-		"emp_ethnic":'名族',
-		"emp_politicalLandscape":'政治面貌',
-		"emp_jobTitle":'职称名称',
-		"emp_jobTitleLevel":'职称等级',
-		"emp_jobTitleObtainTime":'获取职称时间',
-		"emp_phone":'手机号',
-		"emp_emergencyContactAndPhone":'紧急联系人姓名以及联系手机号',
-		"emp_fileAddress":'档案所在地',
-		"emp_accountAddress":'户口所在地',
-		"emp_homeAddress":'家庭住址',
-		"emp_workType":'用工形式',
-		"emp_compile":'编制',
-		"emp_inductionTime":'入职时间',
-		"emp_tryOutEndTime":'试用期结束时间',
-		"emp_contractEndTime":'合同期满日期',
-		"emp_contractSignedNum":'合同签订次数',
-		"emp_returnee":'是否归国人员',
-		"emp_foreign":'是否外籍人员',
-		"emp_remarks":'备注'
-		 },{
-		"id":'2',
-		"emp_num":'2',
-		"emp_name":'李璐萍',
-		"emp_gender":'女',
-		"emp_dept":'平行工作室',
-		"emp_position":'院长助理',
-		"emp_hire_startTime":'3年',
-		"emp_idcard":'370729699784561235',
-		"emp_idcard_endTime":'2018-09-16',
-		"emp_ethnic":'汉',
-		"emp_politicalLandscape":'团员',
-		"emp_maritalStatus":'未婚',
-		"emp_firstEducation":'本科',
-		"emp_secondEducation":'研究生',
-		"emp_thirdEducation":'博士',
-		"emp_workType":'合同工',
-		"emp_compile":'是',
-		"emp_inductionTime":'2018-09-16',
-		"emp_tryOutEndTime":'2018-09-16',
-		"emp_contractEndTime":'2018-09-16',
-		"emp_contractSignedNum":'3',
-		"emp_returnee":'否',
-		"emp_foreign":'否',
-		"emp_remarks":'备注备注备注'
-		 },{
-		"id":'3',
-		"emp_num":'3',
-		"emp_name":'李璐萍',
-		"emp_gender":'女',
-		"emp_dept":'平行工作室',
-		"emp_position":'院长助理',
-		"emp_hire_startTime":'3年',
-		"emp_idcard":'370729699784561235',
-		"emp_idcard_endTime":'2018-09-16',
-		"emp_ethnic":'汉',
-		"emp_politicalLandscape":'团员',
-		"emp_maritalStatus":'未婚',
-		"emp_firstEducation":'本科',
-		"emp_secondEducation":'研究生',
-		"emp_workType":'合同工',
-		"emp_compile":'是',
-		"emp_inductionTime":'2018-09-16',
-		"emp_tryOutEndTime":'2018-09-16',
-		"emp_contractEndTime":'2018-09-16',
-		"emp_contractSignedNum":'3',
-		"emp_returnee":'否',
-		"emp_foreign":'否',
-		"emp_remarks":'备注备注备注'
-		 },{
-		"emp_num":'17',
-		"emp_name":'李璐萍',
-		"emp_gender":'女',
-		"emp_dept":'平行工作室',
-		"emp_position":'院长助理',
-		"emp_hire_startTime":'3年',
-		"emp_idcard":'370729699784561235',
-		"emp_idcard_endTime":'2018-09-16',
-		"emp_ethnic":'汉',
-		"emp_politicalLandscape":'团员',
-		"emp_maritalStatus":'未婚',
-		"emp_firstEducation":'本科',
-		"emp_secondEducation":'研究生',
-		"emp_thirdEducation":'博士',
-		"emp_workType":'合同工',
-		"emp_compile":'是',
-		"emp_inductionTime":'2018-09-16',
-		"emp_tryOutEndTime":'2018-09-16',
-		"emp_contractEndTime":'2018-09-16',
-		"emp_contractSignedNum":'3',
-		"emp_returnee":'否',
-		"emp_foreign":'否',
-		"emp_remarks":'备注备注备注'
-		 }]
+    data: obj.data
   });
 
 

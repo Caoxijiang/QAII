@@ -36,4 +36,10 @@ public interface EmpInfoService {
 	int updateByPrimaryKey(EmpInfo emp);
 	
 	int delete(Integer[] eid);
+	
+	List<EmpInfo> getstatusbyreview(String reviewstatus);
+	
+	List<EmpInfo> getIDexpire(String date);
+	
+	int updateReview(String msg,int id);
 }
