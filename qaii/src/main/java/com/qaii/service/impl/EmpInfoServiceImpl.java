@@ -98,7 +98,21 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 	@Override
 	public int updataempStatus(EmpInfo emp) {
 		// TODO Auto-generated method stub
-		return empinfoService.updataempStatus(emp);
+	return empinfoService.updataempStatus(emp);
+	}
+	public List<EmpInfo> getstatusbyreview(String reviewstatus) {
+		// TODO Auto-generated method stub
+		return empinfoService.getstatusbyreview(reviewstatus);
+	}
+	@Override
+	public List<EmpInfo> getIDexpire(String date) {
+		// TODO Auto-generated method stub
+		return empinfoService.getIDexpire(date);
+	}
+	@Override
+	public int updateReview(String msg, int id) {
+		// TODO Auto-generated method stub
+		return empinfoService.updateReview(msg, id);
 	}
 
 

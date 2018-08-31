@@ -44,5 +44,9 @@ public interface EmpInfoMapper {
     
     int updataempStatus(EmpInfo emp);
     
+    List<EmpInfo> getstatusbyreview(String reviewstatus);
     
+    List<EmpInfo> getIDexpire(String date);
+    
+    int updateReview(String msg,int id);
 }
