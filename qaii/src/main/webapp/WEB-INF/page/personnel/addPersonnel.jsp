@@ -197,11 +197,31 @@ layui.use('table', function(obj){
 var $ = layui.$, active = {
     reload: function(){
       var demoReload = $('#demoReload');
+      var options=$("#switch option:selected");
+      console.log(options);
       console.log(demoReload.val());
 	  console.log($('#switch').val());
+	  
+		switch (options) {
+		case all:
+			var url="";
+		break;
+		case empDept:
+			var url="";
+		break;
+		case empJobtitlelevel:
+			var url="";
+		break;
+		case empGender:
+			var url="";
+		break;
+		default:
+		break;
+	}
+		
       //执行重载
       table.reload('testReload', {
-//       url: '/demo/table/user/', /*根据条件重新加载数据*/
+       url: url, /*根据条件重新加载数据*/
         where: {
           key: {
             id: demoReload.val()
@@ -211,7 +231,25 @@ var $ = layui.$, active = {
       });
     }
   };
-  
+	
+//添加筛选功能
+
+/* $('#search').on('click', function(){
+	  var tel='2223';
+	  table.reload('testReload', {
+		  url: 'findAllEmpInfo.do'
+		  , page: {
+	          curr: 1 //重新从第 1 页开始
+	        }
+	        ,where: {
+	          key: {
+	            id: '15'
+	          }
+	        }
+		});
+
+});
+   */
   
   
   $('#search').on('click', function(){
@@ -277,6 +315,30 @@ var $ = layui.$, active = {
 				'</select>'+
 			'</div>'+
 		'</div>')
+    }else if(layEvent==="dimission"){
+    	 layer.confirm('确定离职信息', function(index){
+             let arr=data.id;
+             console.log(data) 
+             $.post({
+             	url:"dellempInfo.do",
+             	data:{
+             		"requestDate" : arr
+             	},
+             	success:function(data){
+             		if(data.data){
+             		    //删除对应行（tr）的DOM结构
+             			layer.alert("离职操作成功");
+             		}else{
+             			layer.alert("离职操作失败");
+             		}
+             		
+             	}
+             }) 
+       	  
+          // obj.del(); //删除对应行（tr）的DOM结构
+          // layer.close(index);
+           //向服务端发送删除指  
+         });
     }
   });
 

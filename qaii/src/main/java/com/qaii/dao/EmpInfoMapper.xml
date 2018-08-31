@@ -611,5 +611,11 @@
 	    </foreach>
   </delete>
  	
+ 	<select id="findDellInfoByStatus" resultMap="BaseResultMap" parameterType="com.qaii.domain.EmpInfo">
+ 		select * from emp_info where emp_stat=1
+ 	</select>
  	
+ 	<update id="updataempStatus" parameterType="com.qaii.domain.EmpInfo">
+ 		update emp_info set emp_stat=1,emp_departureTime=#{empDepartureTime,jdbcType=VARCHAR} where id=#{id,jdbcType=INTEGER}
+ 	</update>
 </mapper>

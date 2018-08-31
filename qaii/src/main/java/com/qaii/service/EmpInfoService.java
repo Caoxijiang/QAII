@@ -36,4 +36,8 @@ public interface EmpInfoService {
 	int updateByPrimaryKey(EmpInfo emp);
 	
 	int delete(Integer[] eid);
+	
+	List <EmpInfo> findDellInfoByStatus();
+	
+	int updataempStatus(EmpInfo emp);
 }

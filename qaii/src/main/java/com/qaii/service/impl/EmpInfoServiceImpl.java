@@ -90,6 +90,16 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		// TODO Auto-generated method stub
 		return empinfoService.deleteByPrimaryKeys(eid);
 	}
+	@Override
+	public List<EmpInfo> findDellInfoByStatus() {
+		// TODO Auto-generated method stub
+		return empinfoService.findDellInfoByStatus();
+	}
+	@Override
+	public int updataempStatus(EmpInfo emp) {
+		// TODO Auto-generated method stub
+		return empinfoService.updataempStatus(emp);
+	}
 
 
 	

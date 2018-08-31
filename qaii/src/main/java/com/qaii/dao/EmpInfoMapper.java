@@ -40,5 +40,9 @@ public interface EmpInfoMapper {
     
     EmpInfo findEmpinfoAndAvatarByid(Integer id);
     
+    List <EmpInfo> findDellInfoByStatus();
+    
+    int updataempStatus(EmpInfo emp);
+    
     
 }

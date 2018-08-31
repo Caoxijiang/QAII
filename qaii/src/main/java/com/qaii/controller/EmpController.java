@@ -2,6 +2,7 @@ package com.qaii.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,7 +74,7 @@ public class EmpController {
 		empInfo.setEmpDepartureTime("");
 		empInfo.setEmpTryStatus("1");
 		empInfo.setEmpContractStatus("1");
-		empInfo.setEmpRemarks("1");
+		
 		
 		
 		
@@ -184,12 +185,12 @@ public class EmpController {
 	}
 	
 	
-	
+	//修改员工信息
 	@ResponseBody
 	@RequestMapping(value="updateEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public JsonResult updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) {	
 		EmpInfo(req, empInfo);
-		
+		empInfo.setId(Integer.parseInt(req.getParameter("userId")));
 
 		int row =empInfoService.updateByPrimaryKey(empInfo);
 		if(row>=1) {
@@ -218,7 +219,43 @@ public class EmpController {
         
     }
 	
-	
+	//离职员工信息
+    @ResponseBody
+    @RequestMapping(value="dellempInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+    public JsonResult dellempInfo(@RequestParam(value = "requestDate") Integer id ){
+    	
+    	System.out.println(id);
+    	long time=System.currentTimeMillis();
+    	 
+    	 
+    	 System.out.println(time);
+    	EmpInfo emp=new EmpInfo();
+    	emp.setId(id);
+    	emp.setEmpDepartureTime(String.valueOf(time));
+     	int row=empInfoService.updataempStatus(emp);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+        
+    }
+    
+    
+	//获取离职员工信息接口
+	@ResponseBody
+	@RequestMapping(value="dellEMpinfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public Layui dellEMpinfo(HttpServletRequest req) {
+		List<EmpInfo> empInfo=empInfoService.findDellInfoByStatus();
+		int count =empInfo.size();
+		System.out.println(count);
+			if(empInfo!=null) {
+				return Layui.data(count, empInfo);
+			}else {
+				return Layui.data(count, empInfo);
+			}
+	}
 	
 	
 	
@@ -254,7 +291,7 @@ public class EmpController {
 
 	private void EmpInfo(HttpServletRequest req, EmpInfo empInfo) {
 		//System.out.println("---------------:"+);
-		empInfo.setId(Integer.parseInt(req.getParameter("userId")));
+		
 		empInfo.setEid(req.getParameter("imageVal"));
 		empInfo.setEmpName(req.getParameter("empName"));
 		empInfo.setEmpGender(req.getParameter("empGender"));
