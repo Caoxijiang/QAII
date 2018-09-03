@@ -106,7 +106,7 @@
 </div>
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank"  >查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="adddetail.html" target="_blank">修改</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank">修改</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
