@@ -546,6 +546,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 						  "empRemarks":empinfo.empRemarks,
 					    
 					  })
+					  $("#demo1").attr("src", JSON.stringify(data.data.url));
 				}else{
 					alert("查看详情失败")
 				}

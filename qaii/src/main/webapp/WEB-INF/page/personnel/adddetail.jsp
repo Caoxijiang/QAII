@@ -168,18 +168,18 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">第一学历&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empFirsteducation" lay-verify="title" autocomplete="off" placeholder="请输入第一学历" class="layui-input input">
+							<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" placeholder="请输入第一学历" class="layui-input input">
 						</div>
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第二学历</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducation" lay-verify="title" autocomplete="off" placeholder="请输入第二学历" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第三学历</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" placeholder="请输入第三学历" class="layui-input input">
 						</div>
@@ -187,19 +187,19 @@
 				</div>
 			    <div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">第一学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第一学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empFirsteducationschool" lay-verify="title" autocomplete="off" placeholder="请输入第一学历毕业学校" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第二学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducationschool" lay-verify="title" autocomplete="off" placeholder="请输入第二学历毕业学校" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第三学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducationschool" lay-verify="title" autocomplete="off" placeholder="请输入第三学历毕业学校" class="layui-input input">
 						</div>
@@ -214,13 +214,13 @@
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历专业&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第二学历专业</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducationpro" lay-verify="title" autocomplete="off" placeholder="请输入第二学历专业" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历专业&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第三学历专业</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducationpro" lay-verify="title" autocomplete="off" placeholder="请输入第三学历专业" class="layui-input input">
 						</div>
@@ -279,17 +279,17 @@
 						  </div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">聘期&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">聘期</label>
 						<div class="layui-input-block">
-							<input type="text" name="empHireStarttime" lay-verify="required" autocomplete="off" placeholder="请输入聘期" class="layui-input input">
+							<input type="text" name="empHireStarttime" autocomplete="off" placeholder="请输入聘期" class="layui-input input">
 						</div>
 					</div>
 					
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">编制&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">编制</label>
 						<div class="layui-input-block">
-							<select name="empCompile" lay-verify="required" lay-search="" class="input">
+							<select name="empCompile" lay-search="" class="input">
 								<option value="">请选择</option>
 								<option value="1">是</option>
 								<option value="2">否</option>
@@ -309,22 +309,22 @@
 						</div>
 					</div>
 			    	<div class="layui-form-item">
-						<label class="layui-form-label">职称名称&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">职称名称</label>
 						<div class="layui-input-block">
-							<input type="text" name="empJobtitle" lay-verify="required" autocomplete="off" placeholder="请选择职称名称" class="layui-input input">
+							<input type="text" name="empJobtitle" autocomplete="off" placeholder="请选择职称名称" class="layui-input input">
 						</div>
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">职称等级&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">职称等级</label>
 						<div class="layui-input-block">
-							<input type="text" name="empJobtitlelevel" lay-verify="required" autocomplete="off" placeholder="请输入职称等级" class="layui-input input">
+							<input type="text" name="empJobtitlelevel" autocomplete="off" placeholder="请输入职称等级" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						  <label class="layui-form-label">职称取得时间</label>
 						  <div class="layui-input-block">
-							<input type="text" name="empJobtitleobtaintime" class="layui-input input" lay-verify="required" id="test1" placeholder="yyyy-MM-dd">
+							<input type="text" name="empJobtitleobtaintime" class="layui-input input" id="test1" placeholder="yyyy-MM-dd">
 						  </div>
 					</div>
 					
@@ -346,9 +346,9 @@
 					
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">是否留学归国人员&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">是否留学归国人员</label>
 						<div class="layui-input-block">
-							<select name="empReturnee" lay-verify="required" lay-search="" class="input">
+							<select name="empReturnee" lay-search="" class="input">
 								<option value="">请选择</option>
 								<option value="1">是</option>
 								<option value="2">否</option>
@@ -357,9 +357,9 @@
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">是否外籍人员&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">是否外籍人员</label>
 						<div class="layui-input-block">
-							<select name="empForeign" lay-verify="required" lay-search="" class="input">
+							<select name="empForeign" lay-search="" class="input">
 								<option value="">请选择</option>
 								<option value="1">是</option>
 								<option value="2">否</option>

@@ -30,7 +30,7 @@
   	
 	  <div class="layui-row">
 		<div class="layui-col-md6">
-			<h1>个人基本信息${param.userId}</h1>
+			<h1>个人基本信息</h1>
 		  	<div class="layui-row">
 				<div class="layui-col-md6">
 					<div class="layui-form-item">
@@ -528,6 +528,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 							  "empRemarks":empinfo.empRemarks
 						    
 						  })
+						  $("#demo1").attr("src", JSON.stringify(data.data.url));
 					}else{
 						alert("查看详情失败1321123")
 					}
@@ -537,16 +538,9 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 		   alert("请刷新成员管理页面");
 	   }
 
-
-
-  
-  
 });
 	
-	
-	
-	
-	
+
 
 </script>
 </body>

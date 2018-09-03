@@ -28,7 +28,8 @@
 	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>科研成果管理系统&nbsp;--&nbsp;权限管理</div>
 		<ul class="layui-nav layui-layout-right">
 		  <li class="layui-nav-item">
-			  <a href="outLogin.do">
+			  <a id="replacep">
+			  
 				  <img src="${basePath}/image/close.png" class="layui-nav-img">
 				  退出系统
 			  </a>
@@ -87,6 +88,12 @@
   </div>
    <!-- 底部固定区域 -->
 </div>
+<script type="text/javascript">
+	$("#replacep").click(function(){
+		window.location.replace('outLogin.do');
+		window.history.back(-1);
+	})
+</script>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 //JavaScript代码区域

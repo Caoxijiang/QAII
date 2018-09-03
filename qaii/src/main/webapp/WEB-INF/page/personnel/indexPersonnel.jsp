@@ -68,7 +68,7 @@
 					<div class="right perNav">
 						<a href="intoPerSys.do"><div class="pageTo">进入系统</div></a>
 						<a href="dept.do"><div class="pageTo">返回导航</div></a>
-						<a href="outLogin.do"><div class="pageTo">退出</div></a>
+						<a id="replacep"><div class="pageTo">退出</div></a>
 					</div>
 				</div>	
 				
@@ -121,6 +121,12 @@
 			</div>
 		</div>
 	</div>
+<script type="text/javascript">
+	$("#replacep").click(function(){
+		window.location.replace('outLogin.do');
+		window.history.back(-1);
+	})
+</script>
 <script src="${basePath}/js/perchars.js"></script>
 <script>
 
