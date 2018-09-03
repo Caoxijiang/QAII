@@ -49,4 +49,6 @@ public interface EmpInfoMapper {
     List<EmpInfo> getIDexpire(String date);
     
     int updateReview(String msg,int id);
+    
+    List <EmpInfo> getallinjobEmp();
 }

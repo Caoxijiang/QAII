@@ -114,6 +114,11 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		// TODO Auto-generated method stub
 		return empinfoService.updateReview(msg, id);
 	}
+	@Override
+	public List<EmpInfo> getallinjobEmp() {
+		// TODO Auto-generated method stub
+		return empinfoService.getallinjobEmp();
+	}
 
 
 	

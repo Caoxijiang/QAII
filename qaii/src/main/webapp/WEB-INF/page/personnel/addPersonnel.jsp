@@ -138,7 +138,7 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'findAllEmpInfo.do', //数据接口
+    url: 'getallinjobEmp.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
