@@ -284,7 +284,7 @@ h1{
 }
 .inputdisable{
 	border: #eee solid 1px !important;
-    color: #ccc !important;
+    color: #444 !important;
 }
 .layui-select-title .layui-input{
 	width: 100%;

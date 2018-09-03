@@ -194,33 +194,101 @@ layui.use('table', function(obj){
   //alert(JSON.stringify(obj.cache.testReload[0]))
   console.log(obj);
 	//添加筛选功能
-var $ = layui.$, active = {
-    reload: function(){
-      var demoReload = $('#demoReload');
-      console.log(demoReload.val());
-	  console.log($('#switch').val());
-      //执行重载
-      table.reload('testReload', {
-//       url: '/demo/table/user/', /*根据条件重新加载数据*/
-        where: {
-          key: {
-            id: demoReload.val()
-          }
-        }
-		
-      });
-    }
-  };
-  
-  
-  
-  $('#search').on('click', function(){
-    var type = $(this).data('type');
-    active[type] ? active[type].call(this) : '';
-	  console.log("dianjishiqin");
-  });
-	
-	
+  var $ = layui.$, active = {
+      reload: function(){
+        var demoReload = $('#demoReload');
+        var key=demoReload.val();/*关键字*/
+  	  var check=$('#switch').val();/*选择提示词*/
+  	  var trlen=($(".layui-table tr").length)/3;/*行数*/
+  	  var num=$(".layui-table tr:eq(0) th").length-1;/*显示的列元素个数*/
+  	  /*判定显示的列元素名*/
+  	 if(check=="all"){
+  		  var val=$(".layui-table tr:eq(0) th:eq(2)").attr('data-field');/*获取制定data-field值*/
+  		  var cellval=$(".layui-table tr:eq(1) td:eq(3)").text();/*获取指定行列元素包含的文本*/
+  		  console.log(num);
+  		//逐个单元格匹配内容
+  		  var myA=new Array();
+  		  for(var i=1;i<trlen;i++){
+  			 $(".layui-table tr:eq("+i+") td").each(function(){
+  				 if($(this).hasClass("noExl")){
+  					 myA[i]=myA[i];
+  				 }else{
+  					  myA[i]=myA[i]+$(this).text();
+  					 }
+  			 })
+  		  }
+  		//全局搜索
+  		  $(".layui-table tr").each(function(){
+  			 $(this).removeClass("noExl");
+  		  });
+  		 for(var i=1;i<trlen;i++){
+  			$(".layui-table tr[data-index="+(i-1)+"]").removeClass("noExl");
+  		 }
+  		 var numb=0;
+  		 for(var i=1;i<trlen;i++){
+  			// var trval=$(".layui-table tr:eq("+i+")").text();
+  			 //判定字符串是否含有指定内容
+  			 if(myA[i].indexOf(key) <= 0 ) {
+  				$(".layui-table tr[data-index="+(i-1)+"]").addClass("noExl");
+  				 
+  			}else{
+  				numb=numb+1;
+  			} 
+  		 }
+  		 alert("搜索'全部'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+       }else {
+  		 	var myA=new Array();
+  		 	  if($(".layui-table tr th[data-field="+check+"]").hasClass("noExl")){
+  				  alert("搜索列当前不显示!");
+  			}else{
+  			  for(var i=1;i<trlen;i++){
+  				 $(".layui-table tr:eq("+i+") td[data-field="+check+"]").each(function(){
+  					 if($(this).hasClass("noExl")){
+  						 myA[i]=myA[i];
+  					 }else{
+  						  myA[i]=myA[i]+$(this).text();
+  						 }
+  				 })
+  				 console.log(myA[i]+"000000000000000");
+  			  }
+  			//全局搜索
+  			  $(".layui-table tr").each(function(){
+  				 $(this).removeClass("noExl");
+  			 });
+  			 for(var i=1;i<trlen;i++){
+  				$(".layui-table tr[data-index="+(i-1)+"]").removeClass("noExl");
+  			 }
+  			 var numb=0;
+  			 for(var i=1;i<trlen;i++){
+  				// var trval=$(".layui-table tr:eq("+i+")").text();
+  				 //判定字符串是否含有指定内容
+  				 if(myA[i].indexOf(key) <= 0 ) {
+  					$(".layui-table tr[data-index="+(i-1)+"]").addClass("noExl");
+  				}else{
+  					numb=numb+1;
+  				}  
+  			 }
+  			if(check=="empDept"){
+  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="empJobtitlelevel"){
+  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="empGender"){
+  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}	
+  		  }
+  	    }//搜索结束
+  	
+      }
+    };
+    
+    
+    
+    $('#search').on('click', function(){
+//  	window.location.reload();//刷新当前页面.
+      var type = $(this).data('type');
+      active[type] ? active[type].call(this) : '';
+  	  console.log("dianjishiqin");
+    });
   
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
@@ -277,6 +345,30 @@ var $ = layui.$, active = {
 				'</select>'+
 			'</div>'+
 		'</div>')
+    }else if(layEvent==="dimission"){
+    	 layer.confirm('确定离职信息', function(index){
+             let arr=data.id;
+             console.log(data) 
+             $.post({
+             	url:"dellempInfo.do",
+             	data:{
+             		"requestDate" : arr
+             	},
+             	success:function(data){
+             		if(data.data){
+             		    //删除对应行（tr）的DOM结构
+             			layer.alert("离职操作成功");
+             		}else{
+             			layer.alert("离职操作失败");
+             		}
+             		
+             	}
+             }) 
+       	  
+          // obj.del(); //删除对应行（tr）的DOM结构
+          // layer.close(index);
+           //向服务端发送删除指  
+         });
     }
   });
 

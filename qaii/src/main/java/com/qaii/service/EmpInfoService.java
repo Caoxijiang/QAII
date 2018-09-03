@@ -9,8 +9,6 @@ import com.qaii.domain.EmpInfo;
 
 public interface EmpInfoService {
 	int insert(EmpInfo info);
-
-	
 	List<EmpInfo> getcontractmsg(String empContractendtime);
 	
 	List<EmpInfo> gettrymsg(String empTryoutendtime);
@@ -36,4 +34,13 @@ public interface EmpInfoService {
 	int updateByPrimaryKey(EmpInfo emp);
 	
 	int delete(Integer[] eid);
+	
+	List <EmpInfo> findDellInfoByStatus();
+	
+	int updataempStatus(EmpInfo emp);
+	List<EmpInfo> getstatusbyreview(String reviewstatus);
+	
+	List<EmpInfo> getIDexpire(String date);
+	
+	int updateReview(String msg,int id);
 }

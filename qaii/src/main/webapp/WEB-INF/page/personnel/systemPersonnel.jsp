@@ -33,7 +33,7 @@
 		<table class="layui-hide" id="systemTest" lay-filter="demo"></table>
 
 		<script type="text/html" id="bar">
-		  <input type="text" class="department" name="department" value="{{d.deparment}}">
+		  <input type="text" class="department" name="deptName" value="{{d.deptName}}">
 		</script>
 		<script type="text/html" id="barDemo">
 			<a class="layui-btn layui-btn-xs button" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
@@ -41,7 +41,7 @@
 		</script>
 		<div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
 			<button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal systemAdd">
-				<img src="../../image/add.png" />
+				<img src="${basePath}/image/add.png" />
 			</button>
 		</div>
 	</div>
@@ -49,38 +49,22 @@
 
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
-layui.use('table', function(){
+layui.use('table', function(obj){
   var table = layui.table
   ,form = layui.form;
   
   table.render({
     elem: '#systemTest',
-//    url:'/demo/table/user/',
+    method:'post',
+    url:'findDeptInfoList.do',
     cellMinWidth: 80,
     cols: [[
       {field:'id', title:'ID', width:220},
-      {field:'deparment', title:'部门', templet: '#bar',width:680},
+      {field:'deptName', title:'部门', templet: '#bar',width:680},
       {field:'sex', title:'operation', templet: '#barDemo',width:220}
     ]],
-	  //数据填充id为部门个数，department为部门名称
-    data:[{
-		"id":"部门一",
-		"deparment":"平行工作室"
-	},{
-		"id":"部门二",
-		"deparment":"平行工作室2"
-	},{
-		"id":"部门三",
-		"deparment":"平行工作室3"
-	},{
-		"id":"部门四",
-		"deparment":"平行工作室4"
-	},{
-		"id":"部门五",
-		"deparment":"平行工作室5"
-	}]
+	  data:obj//数据填充id为部门个数，department为部门名称
   });
-	
  //监听工具条
   table.on('tool(demo)', function(obj){
     var data = obj.data;
@@ -88,8 +72,25 @@ layui.use('table', function(){
       layer.msg('ID：'+ data.id + ' 的查看操作');
     } else if(obj.event === 'del'){
       layer.confirm('真的删除行么', function(index){
-        obj.del();
-        layer.close(index);
+    	  console.log(JSON.stringify(data))
+          let arr=data.id;
+          console.log(data) 
+          $.post({
+          	url:"dellDeptInfo.do",
+          	data:{
+          		"requestDate" : arr
+          	},
+          	success:function(data){
+          		if(data.data){
+          		    //删除对应行（tr）的DOM结构
+          			obj.del();
+          			layer.close(index);
+          		}else{
+          			layer.alert("移除失败")
+          		}
+          		
+          	}
+          }) 
       });
     } else if(obj.event === 'edit'){
       layer.alert('编辑行：<br>'+ JSON.stringify(data))

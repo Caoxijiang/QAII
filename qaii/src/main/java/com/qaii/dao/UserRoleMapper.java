@@ -19,5 +19,7 @@ public interface UserRoleMapper {
     int updateByPrimaryKey(UserRole record);
     
     UserRole findUserRoleByUserId(Integer userid);
+    
     List<Map<String,Object>> findUserRoleList();
+    
 }
