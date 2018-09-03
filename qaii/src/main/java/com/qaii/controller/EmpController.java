@@ -80,7 +80,7 @@ public class EmpController {
 		empInfo.setEmpPosition(req.getParameter("empPosition"));
 		empInfo.setEmpHireStarttime(req.getParameter("empHireStarttime"));
 		empInfo.setEmpIdcard(req.getParameter("empIdcard"));
-		empInfo.setEmpIdcardEndtime(CountDatetoNowDays.SDatetoStamp(req.getParameter("empIdcardEndtime")));
+		empInfo.setEmpIdcardEndtime(req.getParameter("empIdcardEndtime"));
 		empInfo.setEmpEthnic(req.getParameter("empEthnic"));
 		empInfo.setEmpPoliticallandscape(req.getParameter("empPoliticallandscape"));
 		empInfo.setEmpMaritalstatus(req.getParameter("empMaritalstatus"));
@@ -93,12 +93,12 @@ public class EmpController {
 		empInfo.setEmpFirsteducationpro(req.getParameter("empFirsteducationpro"));
 		empInfo.setEmpSecondeducationpro(req.getParameter("empSecondeducationpro"));
 		empInfo.setEmpSecondeducationpro(req.getParameter("empThirdeducationpro"));
-		empInfo.setEmpFirstgraduationtime(CountDatetoNowDays.SDatetoStamp(req.getParameter("empFirstgraduationtime")));
-		empInfo.setEmpSecondgraduationtime(CountDatetoNowDays.SDatetoStamp(req.getParameter("empSecondgraduationtime")));
-		empInfo.setEmpThirdgraduationtime(CountDatetoNowDays.SDatetoStamp(req.getParameter("empThirdgraduationtime")));
+		empInfo.setEmpFirstgraduationtime(req.getParameter("empFirstgraduationtime"));
+		empInfo.setEmpSecondgraduationtime(req.getParameter("empSecondgraduationtime"));
+		empInfo.setEmpThirdgraduationtime(req.getParameter("empThirdgraduationtime"));
 		empInfo.setEmpJobtitle(req.getParameter("empJobtitle"));
 		empInfo.setEmpJobtitlelevel(req.getParameter("empJobtitlelevel"));
-		empInfo.setEmpJobtitleobtaintime(CountDatetoNowDays.SDatetoStamp(req.getParameter("empJobtitleobtaintime")));
+		empInfo.setEmpJobtitleobtaintime(req.getParameter("empJobtitleobtaintime"));
 		empInfo.setEmpPhone(req.getParameter("empPhone"));
 		empInfo.setEmpEmergencycontactandphone(req.getParameter("empEmergencycontactandphone"));
 		empInfo.setEmpFileaddress(req.getParameter("empFileaddress"));
@@ -106,9 +106,9 @@ public class EmpController {
 		empInfo.setEmpHomeaddress(req.getParameter("empHomeaddress"));
 		empInfo.setEmpWorktype(req.getParameter("empWorktype"));
 		empInfo.setEmpCompile(req.getParameter("empCompile"));
-		empInfo.setEmpInductiontime(CountDatetoNowDays.SDatetoStamp(req.getParameter("empInductiontime")));
-		empInfo.setEmpTryoutendtime(CountDatetoNowDays.SDatetoStamp(req.getParameter("empTryoutendtime")));
-		empInfo.setEmpContractendtime(CountDatetoNowDays.SDatetoStamp(req.getParameter("empContractendtime")));
+		empInfo.setEmpInductiontime(req.getParameter("empInductiontime"));
+		empInfo.setEmpTryoutendtime(req.getParameter("empTryoutendtime"));
+		empInfo.setEmpContractendtime(req.getParameter("empContractendtime"));
 		empInfo.setEmpContractsignednum(Integer.parseInt(req.getParameter("empContractsignednum")));
 		empInfo.setEmpReturnee(req.getParameter("empReturnee"));
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
@@ -122,7 +122,7 @@ public class EmpController {
 		empInfo.setEmpDepartureTime("");
 		empInfo.setEmpTryStatus("1");
 		empInfo.setEmpContractStatus("1");
-		
+		CountDatetoNowDays.TranstoStamp(empInfo);
 		
 		
 		
@@ -207,6 +207,9 @@ public class EmpController {
 	@RequestMapping(value="findAllEmpInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public Layui findAllEmpInfo(HttpServletRequest req) {
 		List<EmpInfo> empInfo=empInfoService.findAllEmpInfo();
+		for(EmpInfo emp:empInfo) {
+			CountDatetoNowDays.TranstoDate(emp);
+		}
 		int count =empInfo.size();
 		System.out.println(count);
 			if(empInfo!=null) {
@@ -225,14 +228,7 @@ public class EmpController {
 		//emp.setId();
 		emp = empInfoService.findEmpinfoAndAvatarByid(userid);
 		if(emp!=null) {
-			emp.setEmpTryoutendtime(CountDatetoNowDays.StamptoDate(emp.getEmpTryoutendtime()));
-			emp.setEmpIdcardEndtime(CountDatetoNowDays.StamptoDate(emp.getEmpIdcardEndtime()));
-			emp.setEmpContractendtime(CountDatetoNowDays.StamptoDate(emp.getEmpContractendtime()));
-			emp.setEmpFirstgraduationtime(CountDatetoNowDays.StamptoDate(emp.getEmpFirstgraduationtime()));
-			emp.setEmpSecondgraduationtime(CountDatetoNowDays.StamptoDate(emp.getEmpSecondgraduationtime()));
-			emp.setEmpThirdgraduationtime(CountDatetoNowDays.StamptoDate(emp.getEmpThirdgraduationtime()));
-			emp.setEmpInductiontime(CountDatetoNowDays.StamptoDate(emp.getEmpInductiontime()));
-			emp.setEmpJobtitleobtaintime(CountDatetoNowDays.StamptoDate(emp.getEmpJobtitleobtaintime()));
+			CountDatetoNowDays.TranstoDate(emp);
 			return new JsonResult(emp);
 		}else {
 			return new JsonResult();
@@ -304,6 +300,9 @@ public class EmpController {
 	@RequestMapping(value="dellEMpinfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public Layui dellEMpinfo(HttpServletRequest req) {
 		List<EmpInfo> empInfo=empInfoService.findDellInfoByStatus();
+		for (EmpInfo emp:empInfo) {
+			CountDatetoNowDays.TranstoDate(emp);
+		}
 		int count =empInfo.size();
 		System.out.println(count);
 			if(empInfo!=null) {
