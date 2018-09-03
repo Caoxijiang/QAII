@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
   <script src="${basePath}/commen/bootstrap/bootstrap.min.js"></script>
+  <script type="text/javascript"></script>
 </head>
 <body class="layui-layout-body" style="overflow:scroll">
 <div class="layui-layout layui-layout-admin">
@@ -258,7 +259,11 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empDept" lay-verify="required" autocomplete="off" placeholder="请输入部门" class="layui-input input">
+							<select name="empDept" lay-verify="required" lay-search="" class="input">
+								<option value="">请选择</option>
+								<option value="1">全职</option>
+								<option value="2">兼职</option>
+							</select>
 						</div>
 					</div>
 					<div class="layui-form-item">
