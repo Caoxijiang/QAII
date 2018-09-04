@@ -53,7 +53,6 @@ public class CountDatetoNowDays {
 		else {
 			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 			long dt=new Long(date);
-			System.out.println(sdf.format(new Date(dt)));
 			return sdf.format(new Date(dt));
 		}
 		

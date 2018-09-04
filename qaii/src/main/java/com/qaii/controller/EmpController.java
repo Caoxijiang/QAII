@@ -180,6 +180,24 @@ public class EmpController {
 			}
 	}
 	
+	
+	@RequestMapping(value="getallinjobEmp.do",method=RequestMethod.POST)
+	@ResponseBody
+	public Layui getallinjobEmp(HttpServletRequest req) {
+		List<EmpInfo> empInfo=empInfoService.getallinjobEmp();
+		for(EmpInfo emp:empInfo) {
+			CountDatetoNowDays.TranstoDate(emp);
+		}
+		int count =empInfo.size();
+		System.out.println(count);
+		if(empInfo!=null) {
+			return Layui.data(count, empInfo);
+		}else {
+			return Layui.data(count, empInfo);
+		}
+	}
+	
+	
 	@ResponseBody
 	@RequestMapping(value="seeEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public JsonResult seeEmpInfos(EmpInfo emp,HttpServletRequest req) {	
