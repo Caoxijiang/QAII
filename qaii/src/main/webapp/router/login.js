@@ -55,7 +55,6 @@ $().ready(function(){
 		requestDate["password"] = pwd;
 		var str = JSON.stringify(requestDate);
 		var oValue = document.getElementById('input').value.toUpperCase();
-		alert(oValue)
         if(oValue ==null){
             alert('请输入验证码');
             return;

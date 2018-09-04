@@ -6,6 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>科技管理系统</title>
+<link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
 <link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css" />
 <link rel="stylesheet" href="${basePath}/css/style.css" />
 

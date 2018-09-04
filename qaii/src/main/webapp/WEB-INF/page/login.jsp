@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
 <title>科技管理系统</title>
 <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="${basePath}/css/style.css" />

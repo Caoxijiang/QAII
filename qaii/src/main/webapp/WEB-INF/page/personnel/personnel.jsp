@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>科研成果管理系统</title>
+  <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 <!--  iframe样式设置-->
