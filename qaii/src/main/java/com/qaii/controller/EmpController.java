@@ -134,7 +134,7 @@ public class EmpController {
 	    }
 	    try {
 			file.transferTo(dest);//保存文件
-			EMpA.setUrl(dest.getPath());
+			EMpA.setUrl("/img/"+fileName);
 			InsertEmpAvator(EMpA, result, dest);
 			result.put("code", "0");
 			result.put("msg", "上传成功");
@@ -201,7 +201,7 @@ public class EmpController {
 	//修改员工信息
 	@ResponseBody
 	@RequestMapping(value="updateEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) {	
+	public JsonResult updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) throws ParseException {	
 		EmpInfo(req, empInfo);
 		empInfo.setId(Integer.parseInt(req.getParameter("userId")));
 
@@ -305,7 +305,7 @@ public class EmpController {
 	
 	
 
-	private void EmpInfo(HttpServletRequest req, EmpInfo empInfo) {
+	private void EmpInfo(HttpServletRequest req, EmpInfo empInfo) throws ParseException {
 		//System.out.println("---------------:"+);
 		
 		empInfo.setEid(req.getParameter("imageVal"));
@@ -349,6 +349,7 @@ public class EmpController {
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
 		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
 		empInfo.setEmpTitle(req.getParameter("empTitle"));
+		CountDatetoNowDays.TranstoStamp(empInfo);
 	}
 	
 	//取得每个月的新入职、离职、净增长、院总人数

@@ -259,13 +259,8 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-<<<<<<< HEAD
-							<select name="empDept" lay-verify="required" lay-search="" class="input" id='deptt'>
-						
-=======
 							<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
 								
->>>>>>> 64a00b6ec79c840bb88295673d2d71578e3b4669
 							</select>
 						</div>
 					</div>
