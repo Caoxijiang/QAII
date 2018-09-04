@@ -259,8 +259,13 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
+<<<<<<< HEAD
 							<select name="empDept" lay-verify="required" lay-search="" class="input" id='deptt'>
 						
+=======
+							<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
+								
+>>>>>>> 64a00b6ec79c840bb88295673d2d71578e3b4669
 							</select>
 						</div>
 					</div>
@@ -407,84 +412,106 @@
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
-//JavaScript代码区域
-layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
-  var form = layui.form,
-	element = layui.element,
-	layer = layui.layer,
-	laydate = layui.laydate,
-	upload = layui.upload;
-	//职称取得时间日期选择
-  laydate.render({
-    elem: '#test1'
-  });
-	//入职时间日期选择
-  laydate.render({
-    elem: '#test2'
-  });
-	//第一学历毕业时间日期选择
-  laydate.render({
-    elem: '#test1-1'
-  });
-	//第二学历毕业时间日期选择
-  laydate.render({
-    elem: '#test1-2'
-  });
-	//第三学历毕业时间日期选择
-  laydate.render({
-    elem: '#test1-3'
-  });
-//第一学历毕业时间日期选择
-  laydate.render({
-    elem: '#test2-1'
-  });
-	//第二学历毕业时间日期选择
-  laydate.render({
-    elem: '#test2-2'
-  });
-	//第三学历毕业时间日期选择
-  laydate.render({
-    elem: '#test2-3'
-  });
-  
-	
-  //普通图片上传
-  var uploadInst = upload.render({
-    elem: '#imgload'
-    ,url: 'EmpAupload.do'
-    ,before: function(obj){
-      //预读本地文件示例，不支持ie8
-      obj.preview(function(index, file, result){
-        $('#demo1').attr('src', result); //图片链接（base64）
-      });
-    }
-    ,done: function(res){
-    	console.log(res);
-      //如果上传失败
-      if(res.code > 0){
-        return layer.msg('上传失败');
-      }else{
-    	 $("demoText").attr("imageVal",res.eid)
-    	 var eid=res.eid
-    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
-    	$("input[name='imageVal']").attr("value",eid);
-    	console.log("uuuuuuuuuu"+$("input[name='imageVal']").val());
-    	  return layer.msg(res.msg);
-      }
-      //上传成功
-    }
-    ,error: function(){
-      //演示失败状态，并实现重传
-      var demoText = $('#demoText');
-      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-      demoText.find('.demo-reload').on('click', function(){
-        uploadInst.upload();
-      });
-    }
-  });
-  
-  
-});
+$.post({
+	url:"findDeptInfoList.do",
+	success:function(data){
+		var deptInfo=data.data;
+		console.log(deptInfo);
+		if(deptInfo!=null){
+			$(deptInfo).each(function(index,element){
+				index+=1;
+				//let heml='<dd lay-value="'+element.deptName+'">'+element.deptName+'</dd>';
+				
+				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
+				//$("#deptt").next(".layui-form-select").children("dl").append(heml);
+				$("#deptt").append(heml);
+				console.log(heml);
+			})						
+		
+			//JavaScript代码区域
+			layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
+			  var form = layui.form,
+				element = layui.element,
+				layer = layui.layer,
+				laydate = layui.laydate,
+				upload = layui.upload;
+				//职称取得时间日期选择
+			  laydate.render({
+			    elem: '#test1'
+			  });
+				//入职时间日期选择
+			  laydate.render({
+			    elem: '#test2'
+			  });
+				//第一学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test1-1'
+			  });
+				//第二学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test1-2'
+			  });
+				//第三学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test1-3'
+			  });
+			//第一学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test2-1'
+			  });
+				//第二学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test2-2'
+			  });
+				//第三学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test2-3'
+			  });
+			  
+				
+			  //普通图片上传
+			  var uploadInst = upload.render({
+			    elem: '#imgload'
+			    ,url: 'EmpAupload.do'
+			    ,before: function(obj){
+			      //预读本地文件示例，不支持ie8
+			      obj.preview(function(index, file, result){
+			        $('#demo1').attr('src', result); //图片链接（base64）
+			      });
+			    }
+			    ,done: function(res){
+			    	console.log(res);
+			      //如果上传失败
+			      if(res.code > 0){
+			        return layer.msg('上传失败');
+			      }else{
+			    	 $("demoText").attr("imageVal",res.eid)
+			    	 var eid=res.eid
+			    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
+			    	$("input[name='imageVal']").attr("value",eid);
+			    	console.log("uuuuuuuuuu"+$("input[name='imageVal']").val());
+			    	  return layer.msg(res.msg);
+			      }
+			      //上传成功
+			    }
+			    ,error: function(){
+			      //演示失败状态，并实现重传
+			      var demoText = $('#demoText');
+			      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+			      demoText.find('.demo-reload').on('click', function(){
+			        uploadInst.upload();
+			      });
+			    }
+			  });
+			  
+			  
+			});
+		}else{
+			alert("部门信息显示失败");
+		}
+	}
+})
+
 	
 	
 	
