@@ -483,7 +483,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					console.log(data);
 					if(data.data!=null){
 						let empinfo=data.data;
-						console.log("_____:"+JSON.stringify(data.data))
+						console.log("_____:"+JSON.stringify(data.data));
 						//表单初始赋值 从表单中提取数据
 						  form.val('example', {
 						    "empName": empinfo.empName,
@@ -528,7 +528,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 							  "empRemarks":empinfo.empRemarks
 						    
 						  })
-						  $("#demo1").attr("src", JSON.stringify(data.data.url));
+						  $("#demo1").attr("src",data.data.url);
 					}else{
 						alert("查看详情失败1321123")
 					}
