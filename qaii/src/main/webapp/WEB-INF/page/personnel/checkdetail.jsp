@@ -532,10 +532,9 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 						  var domain = window.location.host;
 						  var url =data.data.url;
 						  var imgpath=domain+url;
-						  alert(imgpath)
-						  $("#demo1").attr("src","http://"+imgpath);
+						  $("#demo1").attr("src","https://"+imgpath);
 					}else{
-						alert("查看详情失败1321123")
+						alert("查看详情失败")
 					}
 				}
 			})

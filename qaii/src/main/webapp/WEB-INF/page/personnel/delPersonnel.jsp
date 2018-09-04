@@ -143,7 +143,7 @@ layui.use('table', function(){
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
     	{type:'checkbox',fixed: 'left'},
-		{field: 'id', title: '序号',fixed: 'left',width:100},
+		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
 		{field: 'empNum', title: '工号',fixed: 'left',width:100},
 		{field: 'empName', title: '姓名',fixed: 'left',width:150},
 		{field: 'empGender', title: '性别',sort: true},
