@@ -7,11 +7,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>科研成果管理系统</title>
+  <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
   <link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
   <script src="${basePath}/commen/bootstrap/bootstrap.min.js"></script>
+  <script src="${basePath}/router/adddetail.js"></script>
 </head>
 <body class="layui-layout-body" style="overflow:scroll">
 <div class="layui-layout layui-layout-admin">
@@ -167,18 +169,18 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">第一学历&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empFirsteducation" lay-verify="title" autocomplete="off" placeholder="请输入第一学历" class="layui-input input">
+							<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" placeholder="请输入第一学历" class="layui-input input">
 						</div>
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第二学历</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducation" lay-verify="title" autocomplete="off" placeholder="请输入第二学历" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第三学历</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" placeholder="请输入第三学历" class="layui-input input">
 						</div>
@@ -186,19 +188,19 @@
 				</div>
 			    <div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">第一学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第一学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empFirsteducationschool" lay-verify="title" autocomplete="off" placeholder="请输入第一学历毕业学校" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第二学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducationschool" lay-verify="title" autocomplete="off" placeholder="请输入第二学历毕业学校" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第三学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducationschool" lay-verify="title" autocomplete="off" placeholder="请输入第三学历毕业学校" class="layui-input input">
 						</div>
@@ -213,13 +215,13 @@
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历专业&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第二学历专业</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducationpro" lay-verify="title" autocomplete="off" placeholder="请输入第二学历专业" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历专业&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第三学历专业</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducationpro" lay-verify="title" autocomplete="off" placeholder="请输入第三学历专业" class="layui-input input">
 						</div>
@@ -258,7 +260,9 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empDept" lay-verify="required" autocomplete="off" placeholder="请输入部门" class="layui-input input">
+							<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
+								
+							</select>
 						</div>
 					</div>
 					<div class="layui-form-item">
@@ -274,17 +278,17 @@
 						  </div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">聘期&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">聘期</label>
 						<div class="layui-input-block">
-							<input type="text" name="empHireStarttime" lay-verify="required" autocomplete="off" placeholder="请输入聘期" class="layui-input input">
+							<input type="text" name="empHireStarttime" autocomplete="off" placeholder="请输入聘期" class="layui-input input">
 						</div>
 					</div>
 					
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">编制&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">编制</label>
 						<div class="layui-input-block">
-							<select name="empCompile" lay-verify="required" lay-search="" class="input">
+							<select name="empCompile" lay-search="" class="input">
 								<option value="">请选择</option>
 								<option value="1">是</option>
 								<option value="2">否</option>
@@ -304,22 +308,22 @@
 						</div>
 					</div>
 			    	<div class="layui-form-item">
-						<label class="layui-form-label">职称名称&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">职称名称</label>
 						<div class="layui-input-block">
-							<input type="text" name="empJobtitle" lay-verify="required" autocomplete="off" placeholder="请选择职称名称" class="layui-input input">
+							<input type="text" name="empJobtitle" autocomplete="off" placeholder="请选择职称名称" class="layui-input input">
 						</div>
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">职称等级&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">职称等级</label>
 						<div class="layui-input-block">
-							<input type="text" name="empJobtitlelevel" lay-verify="required" autocomplete="off" placeholder="请输入职称等级" class="layui-input input">
+							<input type="text" name="empJobtitlelevel" autocomplete="off" placeholder="请输入职称等级" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						  <label class="layui-form-label">职称取得时间</label>
 						  <div class="layui-input-block">
-							<input type="text" name="empJobtitleobtaintime" class="layui-input input" lay-verify="required" id="test1" placeholder="yyyy-MM-dd">
+							<input type="text" name="empJobtitleobtaintime" class="layui-input input" id="test1" placeholder="yyyy-MM-dd">
 						  </div>
 					</div>
 					
@@ -341,9 +345,9 @@
 					
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">是否留学归国人员&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">是否留学归国人员</label>
 						<div class="layui-input-block">
-							<select name="empReturnee" lay-verify="required" lay-search="" class="input">
+							<select name="empReturnee" lay-search="" class="input">
 								<option value="">请选择</option>
 								<option value="1">是</option>
 								<option value="2">否</option>
@@ -352,9 +356,9 @@
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">是否外籍人员&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">是否外籍人员</label>
 						<div class="layui-input-block">
-							<select name="empForeign" lay-verify="required" lay-search="" class="input">
+							<select name="empForeign" lay-search="" class="input">
 								<option value="">请选择</option>
 								<option value="1">是</option>
 								<option value="2">否</option>
@@ -404,84 +408,106 @@
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
-//JavaScript代码区域
-layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
-  var form = layui.form,
-	element = layui.element,
-	layer = layui.layer,
-	laydate = layui.laydate,
-	upload = layui.upload;
-	//职称取得时间日期选择
-  laydate.render({
-    elem: '#test1'
-  });
-	//入职时间日期选择
-  laydate.render({
-    elem: '#test2'
-  });
-	//第一学历毕业时间日期选择
-  laydate.render({
-    elem: '#test1-1'
-  });
-	//第二学历毕业时间日期选择
-  laydate.render({
-    elem: '#test1-2'
-  });
-	//第三学历毕业时间日期选择
-  laydate.render({
-    elem: '#test1-3'
-  });
-//第一学历毕业时间日期选择
-  laydate.render({
-    elem: '#test2-1'
-  });
-	//第二学历毕业时间日期选择
-  laydate.render({
-    elem: '#test2-2'
-  });
-	//第三学历毕业时间日期选择
-  laydate.render({
-    elem: '#test2-3'
-  });
-  
-	
-  //普通图片上传
-  var uploadInst = upload.render({
-    elem: '#imgload'
-    ,url: 'EmpAupload.do'
-    ,before: function(obj){
-      //预读本地文件示例，不支持ie8
-      obj.preview(function(index, file, result){
-        $('#demo1').attr('src', result); //图片链接（base64）
-      });
-    }
-    ,done: function(res){
-    	console.log(res);
-      //如果上传失败
-      if(res.code > 0){
-        return layer.msg('上传失败');
-      }else{
-    	 $("demoText").attr("imageVal",res.eid)
-    	 var eid=res.eid
-    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
-    	$("input[name='imageVal']").attr("value",eid);
-    	console.log("uuuuuuuuuu"+$("input[name='imageVal']").val());
-    	  return layer.msg(res.msg);
-      }
-      //上传成功
-    }
-    ,error: function(){
-      //演示失败状态，并实现重传
-      var demoText = $('#demoText');
-      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-      demoText.find('.demo-reload').on('click', function(){
-        uploadInst.upload();
-      });
-    }
-  });
-  
-  
-});
+$.post({
+	url:"findDeptInfoList.do",
+	success:function(data){
+		var deptInfo=data.data;
+		console.log(deptInfo);
+		if(deptInfo!=null){
+			$(deptInfo).each(function(index,element){
+				index+=1;
+				//let heml='<dd lay-value="'+element.deptName+'">'+element.deptName+'</dd>';
+				
+				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
+				//$("#deptt").next(".layui-form-select").children("dl").append(heml);
+				$("#deptt").append(heml);
+				console.log(heml);
+			})						
+		
+			//JavaScript代码区域
+			layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
+			  var form = layui.form,
+				element = layui.element,
+				layer = layui.layer,
+				laydate = layui.laydate,
+				upload = layui.upload;
+				//职称取得时间日期选择
+			  laydate.render({
+			    elem: '#test1'
+			  });
+				//入职时间日期选择
+			  laydate.render({
+			    elem: '#test2'
+			  });
+				//第一学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test1-1'
+			  });
+				//第二学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test1-2'
+			  });
+				//第三学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test1-3'
+			  });
+			//第一学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test2-1'
+			  });
+				//第二学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test2-2'
+			  });
+				//第三学历毕业时间日期选择
+			  laydate.render({
+			    elem: '#test2-3'
+			  });
+			  
+				
+			  //普通图片上传
+			  var uploadInst = upload.render({
+			    elem: '#imgload'
+			    ,url: 'EmpAupload.do'
+			    ,before: function(obj){
+			      //预读本地文件示例，不支持ie8
+			      obj.preview(function(index, file, result){
+			        $('#demo1').attr('src', result); //图片链接（base64）
+			      });
+			    }
+			    ,done: function(res){
+			    	console.log(res);
+			      //如果上传失败
+			      if(res.code > 0){
+			        return layer.msg('上传失败');
+			      }else{
+			    	 $("demoText").attr("imageVal",res.eid)
+			    	 var eid=res.eid
+			    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
+			    	$("input[name='imageVal']").attr("value",eid);
+			    	console.log("uuuuuuuuuu"+$("input[name='imageVal']").val());
+			    	  return layer.msg(res.msg);
+			      }
+			      //上传成功
+			    }
+			    ,error: function(){
+			      //演示失败状态，并实现重传
+			      var demoText = $('#demoText');
+			      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+			      demoText.find('.demo-reload').on('click', function(){
+			        uploadInst.upload();
+			      });
+			    }
+			  });
+			  
+			  
+			});
+		}else{
+			alert("部门信息显示失败");
+		}
+	}
+})
+
 	
 	
 	
@@ -489,5 +515,6 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 	
 
 </script>
+<script src="${basePath}/router/adddetail.js"></script>
 </body>
 </html>

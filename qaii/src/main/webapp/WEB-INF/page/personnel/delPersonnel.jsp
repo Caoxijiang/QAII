@@ -7,6 +7,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>成员管理</title>
+  <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
+  <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all">
   <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
@@ -32,7 +34,7 @@
 			<i class="layui-icon layui-icon-delete"></i>删除
 		</button>
 		
-		<button class="layui-btn btn" data-type="getCheckLength">
+		<button class="layui-btn btn" id="pelupdate">
 			<i class="layui-icon layui-icon-refresh-3"></i>更新
 		</button>	
 	</div>
@@ -44,9 +46,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="emp_dept">部门</option>
-			<option value="emp_jobTitleLevel">职称等级</option>
-			<option value="emp_gender">性别</option>
+			<option value="empDept">部门</option>
+			<option value="empJobtitlelevel">职称等级</option>
+			<option value="empGender">性别</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -191,33 +193,108 @@ layui.use('table', function(){
     //data:obj.data
   });
 
-	//添加筛选功能
-var $ = layui.$, active = {
-    reload: function(){
-      var demoReload = $('#demoReload');
-      console.log(demoReload.val());
-	  console.log($('#switch').val());
-      //执行重载
-      table.reload('testReload', {
-//       url: '/demo/table/user/', /*根据条件重新加载数据*/
-        where: {
-          key: {
-            id: demoReload.val()
-          }
-        }
-		
+//添加筛选功能
+  var $ = layui.$, active = {
+      reload: function(){
+        var demoReload = $('#demoReload');
+        var key=demoReload.val();/*关键字*/
+  	  var check=$('#switch').val();/*选择提示词*/
+  	  var trlen=($(".layui-table tr").length)/3;/*行数*/
+  	  var num=$(".layui-table tr:eq(0) th").length-1;/*显示的列元素个数*/
+  	  /*判定显示的列元素名*/
+  	 if(check=="all"){
+  		  var val=$(".layui-table tr:eq(0) th:eq(2)").attr('data-field');/*获取制定data-field值*/
+  		  var cellval=$(".layui-table tr:eq(1) td:eq(3)").text();/*获取指定行列元素包含的文本*/
+  		  console.log(num);
+  		//逐个单元格匹配内容
+  		  var myA=new Array();
+  		  for(var i=1;i<trlen;i++){
+  			 $(".layui-table tr:eq("+i+") td").each(function(){
+  				 if($(this).hasClass("noExl")){
+  					 myA[i]=myA[i];
+  				 }else{
+  					  myA[i]=myA[i]+$(this).text();
+  					 }
+  			 })
+  		  }
+  		//全局搜索
+  		  $(".layui-table tr").each(function(){
+  			 $(this).removeClass("noExl");
+  		  });
+  		 for(var i=1;i<trlen;i++){
+  			$(".layui-table tr[data-index="+(i-1)+"]").removeClass("noExl");
+  		 }
+  		 var numb=0;
+  		 for(var i=1;i<trlen;i++){
+  			// var trval=$(".layui-table tr:eq("+i+")").text();
+  			 //判定字符串是否含有指定内容
+  			 if(myA[i].indexOf(key) <= 0 ) {
+  				$(".layui-table tr[data-index="+(i-1)+"]").addClass("noExl");
+  				 
+  			}else{
+  				numb=numb+1;
+  			} 
+  		 }
+  		 alert("搜索'全部'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+       }else {
+  		 	var myA=new Array();
+  		 	  if($(".layui-table tr th[data-field="+check+"]").hasClass("noExl")){
+  				  alert("搜索列当前不显示!");
+  			}else{
+  			  for(var i=1;i<trlen;i++){
+  				 $(".layui-table tr:eq("+i+") td[data-field="+check+"]").each(function(){
+  					 if($(this).hasClass("noExl")){
+  						 myA[i]=myA[i];
+  					 }else{
+  						  myA[i]=myA[i]+$(this).text();
+  						 }
+  				 })
+  				 console.log(myA[i]+"000000000000000");
+  			  }
+  			//全局搜索
+  			  $(".layui-table tr").each(function(){
+  				 $(this).removeClass("noExl");
+  			 });
+  			 for(var i=1;i<trlen;i++){
+  				$(".layui-table tr[data-index="+(i-1)+"]").removeClass("noExl");
+  			 }
+  			 var numb=0;
+  			 for(var i=1;i<trlen;i++){
+  				// var trval=$(".layui-table tr:eq("+i+")").text();
+  				 //判定字符串是否含有指定内容
+  				 if(myA[i].indexOf(key) <= 0 ) {
+  					$(".layui-table tr[data-index="+(i-1)+"]").addClass("noExl");
+  				}else{
+  					numb=numb+1;
+  				}  
+  			 }
+  			if(check=="empDept"){
+  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="empJobtitlelevel"){
+  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="empGender"){
+  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}	
+  		  }
+  	    }//搜索结束
+  	
+      }
+    };
+    
+    
+    
+    $('#search').on('click', function(){
+//  	window.location.reload();//刷新当前页面.
+      var type = $(this).data('type');
+      active[type] ? active[type].call(this) : '';
+  	  console.log("dianjishiqin");
+    });
+  
+  //页面数据刷新
+    $('#pelupdate').on('click', function(){
+    	window.location.reload();
+    	alert("数据更新成功");
       });
-    }
-  };
-  
-  
-  
-  $('#search').on('click', function(){
-    var type = $(this).data('type');
-    active[type] ? active[type].call(this) : '';
-	  console.log("dianjishiqin");
-  });
-	
 	
   
   //监听工具条
@@ -284,13 +361,15 @@ var $ = layui.$, active = {
 <script type="text/javascript">
 	$(function() {
 		$(".export").click(function(){
+			$(".layui-table-fixed tr").addClass("noExl");
+			$(".layui-table-fixed th").addClass("noExl");
 			$(".table2excel").table2excel({
 				// 不被导出的表格行的CSS class类
 				exclude: ".noExl",
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "test",
+				filename: "成员管理",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片
@@ -300,6 +379,7 @@ var $ = layui.$, active = {
 				//是否排除导出输入框中的内容
 				exclude_inputs: false
 			});
+			window.location.reload();
 		}); 
 		$(".layui-form .layui-form-item div span").click(function(){
 			console.log($(this).attr('class')+"5555");

@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>科研成果管理系统</title>
+  <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
   <link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
@@ -500,8 +501,9 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					}else{
 						$("input[name='imageVal']").attr("value",eid);
 					}
+					//var asd="https://www.iv2018.cn/public/images/ieeeImages/me/bg.jpg";
 					
-					console.log()
+					  
 					  form.val('example', {
 						 "userId":empinfo.id,
 					    "empName": empinfo.empName,
@@ -546,6 +548,8 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 						  "empRemarks":empinfo.empRemarks,
 					    
 					  })
+					  $("#demo1").attr("src",data.data.url);
+					 
 				}else{
 					alert("查看详情失败")
 				}

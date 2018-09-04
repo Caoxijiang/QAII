@@ -9,4 +9,8 @@ public interface DeptInfoMapper {
 	List<DeptInfo> findAlldeptInfoList();
 	
 	int dellDeptInfoByid(Integer id);
+	
+	int addDeptinfo(DeptInfo dept);
+	
+	int updateDeptInfoById(DeptInfo dept);
 }

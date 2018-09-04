@@ -14,6 +14,7 @@
 <script src="${basePath}/js/echarts.min.js"></script>
 <script type="text/javascript">
 	$().ready(function(){
+		
 		var now=new Date();
 		var nowdate=now.getFullYear()+"-"+(now.getMonth() + 1)+"-"+now.getDate();
 		getContractMsg();
@@ -27,8 +28,8 @@
 				data:{date:nowdate},
 				success:function(data){
 					data.forEach(function(e){
-						$("#contractremind").append('<li class="permain"><div class="row"><div class="col-3">'+
-								e.empDept+'</div><div class="col-3">'+
+						$("#contractremind").append('<li class="permain"><div class="row"><div class="col-4">'+
+								e.empDept+'</div><div class="col-2 name">'+
 								e.empName+'</div><div class="col-6">'+
 								e.empContractendtime+'</div></div></li>');
 					})
@@ -44,8 +45,8 @@
 				data:{date:nowdate},
 				success:function(data){
 					data.forEach(function(e){
-						$("#tryremind").append('<li class="permain"><div class="row"><div class="col-3">'+
-								e.empDept+'</div><div class="col-3">'+
+						$("#tryremind").append('<li class="permain"><div class="row"><div class="col-4">'+
+								e.empDept+'</div><div class="col-2 name">'+
 								e.empName+'</div><div class="col-6">'+
 								e.empTryoutendtime+'</div></div></li>');
 					})
@@ -59,8 +60,8 @@
 <title>科技管理系统</title>
 </head>
 
-<body>
-	<div class="container-fluid personalbody">
+<body class="personalbody">
+	<div class="container-fluid">
 		<div class="content">
 			<div class="perhead">
 				<div class="pertitle">
@@ -69,6 +70,7 @@
 						<a href="intoPerSys.do"><div class="pageTo">进入系统</div></a>
 						<a href="dept.do"><div class="pageTo">返回导航</div></a>
 						<a href="outLogin.do"><div class="pageTo">退出</div></a>
+						<!-- <a id="replacep"><div class="pageTo">退出</div></a> -->
 					</div>
 				</div>	
 				
@@ -77,7 +79,7 @@
 			<div class="perbox col-3">
 				<div class="inform">
 					<div class="perctitle"><span>合同到期提醒</span><span class="right more">查看更多+</span></div>
-					<div class="perinform">
+					<div class="perinform" style="height:367px !important;overflow:auto">
 						<ul id="contractremind">
 							
 
@@ -86,7 +88,7 @@
 				</div>
 				<div class="inform">
 					<div class="perctitle"><span>试用期到期提醒</span><span class="right more">查看更多+</span></div>
-					<div class="perinform">
+					<div class="perinform" style="height:310px !important;overflow:auto">
 						<ul id="tryremind">
 							
 						</ul>
@@ -121,7 +123,24 @@
 			</div>
 		</div>
 	</div>
+<script type="text/javascript">
+	$("#replacep").click(function(){
+		window.location.replace('outLogin.do');
+		window.history.back(-1);
+	})
+</script>
 <script src="${basePath}/js/perchars.js"></script>
+
+
+<script type="text/javascript">
+	function getRandomNum() {
+	  var min = 1//这里改成你需要的最小值
+	  var max = 100//这里改成你需要的最大值
+	  return Math.floor(Math.random() * (max - min + 1) + min)
+	}
+	var randomNum = getRandomNum()
+</script>
+
 <script>
 
 	function getTitleMsg(data){
@@ -156,6 +175,12 @@
     var img = new Image();
 	var imgbox = new Image();
     //alert(img);
+    //高端人才总数
+    var count=_title[0]+_title[1]+_title[2]+_title[3]+_title[4]+_title[5]+_title[6]+_title[7];
+	var a = parseInt(count % 10); // 个位数
+	var b = parseInt((count % 100) / 10);  // 十位数
+	var c = parseInt((count % 1000) / 100); // 百位数
+	var d = parseInt((count % 10000) / 1000); // 千位数
     //引入图片URL
     img.src = "${basePath}/image/talent.png";
 //	imgbox.src ="bac.png";
@@ -171,46 +196,42 @@
 		context.fillStyle="#fff";
 		context.font="bold 20px Arial";
 		context.textAlign="left";
-		context.fillText("1",204*wid/500,120*wid/500);
-		context.fillText("3",230*wid/500,120*wid/500);
-		context.fillText("5",256*wid/500,120*wid/500);
-		context.fillText("0",282*wid/500,120*wid/500);
+		context.fillText(d,202*wid/500,120*wid/500);
+		context.fillText(c,228*wid/500,120*wid/500);
+		context.fillText(b,254*wid/500,120*wid/500);
+		context.fillText(a,280*wid/500,120*wid/500);
 		
-		context.font="bold 8px Arial";
+		context.font="bold 14px Arial";
 		context.textAlign="center";
 		context.shadowColor="rgba(0,0,0,0.4)";
 		context.shadowOffsetX = 1;
 		context.shadowOffsetY = 1;
 		//千人计划
 		context.fillStyle="#8fc31f";
-		context.fillText(_title[0]+"人",128*wid/500,49*wid/500);
+		context.fillText(_title[0]+"人",128*wid/500,54*wid/500);
 		//百人计划
 		context.fillStyle="#8e1c76";
-		context.fillText(_title[1]+"人",64*wid/500,102*wid/500);
+		context.fillText(_title[1]+"人",64*wid/500,106*wid/500);
 		//研究院人员
 		context.fillStyle="#1576bd";
-		context.fillText(_title[2]+"人",131*wid/500,155*wid/500);
+		context.fillText(_title[2]+"人",131*wid/500,160*wid/500);
 		//国家期刊主编
 		context.fillStyle="#f39800";
-		context.fillText(_title[3]+"人",140*wid/500,231*wid/500);
+		context.fillText(_title[3]+"人",140*wid/500,235*wid/500);
 		//国家优青
 		context.fillStyle="#2ea7e0";
-		context.fillText(_title[4]+"人",286*wid/500,231*wid/500);
+		context.fillText(_title[4]+"人",286*wid/500,235*wid/500);
 		//国家杰青
 		context.fillStyle="#e4007f";
-		context.fillText(_title[5]+"人",358*wid/500,183*wid/500);
+		context.fillText(_title[5]+"人",358*wid/500,185*wid/500);
 		//学科带头人
 		context.fillStyle="#f8b62d";
-		context.fillText(_title[6]+"人",438*wid/500,142*wid/500);
+		context.fillText(_title[6]+"人",438*wid/500,144*wid/500);
 		//博士学历
 		context.fillStyle="#6a2b85";
-		context.fillText(_title[7]+"人",383*wid/500,78*wid/500);
+		context.fillText(_title[7]+"人",383*wid/500,82*wid/500);
 		
 	}
-
-//2123111111111111111111111111465555555555555555
-
-
 </script>
 </body>
 </html>

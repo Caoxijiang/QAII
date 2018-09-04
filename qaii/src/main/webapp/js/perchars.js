@@ -1,4 +1,4 @@
-// JavaScript Document
+
 // 基于准备好的dom，初始化echarts实例
 
 		//获取包括本月的前12个月日期

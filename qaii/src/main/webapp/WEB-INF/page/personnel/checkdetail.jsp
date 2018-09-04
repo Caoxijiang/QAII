@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>科研成果管理系统</title>
+  <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
   <link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
@@ -30,7 +31,7 @@
   	
 	  <div class="layui-row">
 		<div class="layui-col-md6">
-			<h1>个人基本信息${param.userId}</h1>
+			<h1>个人基本信息</h1>
 		  	<div class="layui-row">
 				<div class="layui-col-md6">
 					<div class="layui-form-item">
@@ -483,7 +484,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					console.log(data);
 					if(data.data!=null){
 						let empinfo=data.data;
-						console.log("_____:"+JSON.stringify(data.data))
+						console.log("_____:"+JSON.stringify(data.data));
 						//表单初始赋值 从表单中提取数据
 						  form.val('example', {
 						    "empName": empinfo.empName,
@@ -528,6 +529,11 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 							  "empRemarks":empinfo.empRemarks
 						    
 						  })
+						  var domain = window.location.host;
+						  var url =data.data.url;
+						  var imgpath=domain+url;
+						  alert(imgpath)
+						  $("#demo1").attr("src","http://"+imgpath);
 					}else{
 						alert("查看详情失败1321123")
 					}
@@ -537,16 +543,9 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 		   alert("请刷新成员管理页面");
 	   }
 
-
-
-  
-  
 });
 	
-	
-	
-	
-	
+
 
 </script>
 </body>

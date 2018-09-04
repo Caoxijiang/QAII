@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>所有部门</title>
+  <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all">
   <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
@@ -93,7 +94,46 @@ layui.use('table', function(obj){
           }) 
       });
     } else if(obj.event === 'edit'){
-      layer.alert('编辑行：<br>'+ JSON.stringify(data))
+      //layer.alert('编辑行：<br>'+ JSON.stringify(data.deptName))
+    	var edit='<div class="layui-form-item" style="padding:15px;padding-bottom:0px;">'+
+		'<label style="padding:9px 5px;">部门编辑</label>'+
+		'<input id="sys-edit" name="interest" lay-filter="aihao" value="'+
+		data.deptName+
+		'" style="margin-left:10px;height:36px;width:120px;color:#888;border:1px solid #d7d7d7;border-radius:3px;">'+
+		'</input>'+
+		'</div>';
+		layer.open({
+		  type: '部门编辑', 
+		  content:edit //这里content是一个普通的String,
+		  ,btn: ['提交修改', '关闭']
+		  ,yes: function(index, layero){
+		    //提交修改按钮
+		    var data = obj.data;
+		    console.log(data)
+			var role=$("#sys-edit").val();
+		    var id=data.id;
+		    
+			$.post({
+				url:"uptateDeptInfo.do",
+				data:{
+					deptName:role,
+					id:id
+				},
+				success:function(data){
+					if(data.data){
+						alert("修改成功")
+					}else{
+						alert("修改失败")
+					}
+				}
+			})
+
+	
+		  }
+		  ,'关闭': function(index, layero){
+		    //关闭按钮
+		  }
+		});
     }
   });
   
@@ -106,7 +146,7 @@ layui.use('table', function(obj){
 	
 layui.use('layer', function(){ //独立版的layer无需执行这一句
   var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
-  
+ 
   //触发事件
   var active = {
     setTop: function(){
@@ -115,18 +155,43 @@ layui.use('layer', function(){ //独立版的layer无需执行这一句
     ,offset: function(othis){
       var type = othis.data('type')
       ,text = othis.text();
-      
+      var addedit='<div class="layui-form-item" style="padding:15px;padding-bottom:0px;">'+
+		'<label style="padding:9px 5px;">部门添加</label>'+
+		'<input id="sys-add" name="interest" lay-filter="aihao" style="margin-left:10px;height:36px;width:120px;color:#888;border:1px solid #d7d7d7;border-radius:3px;">'+
+		'</input>'+
+		'</div>';
       layer.open({
         type: 1
         ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
         ,id: 'layerDemo'+type //防止重复弹出
-        ,content: '<div style="padding: 20px 100px;">添加表单</div>'
-        ,btn: '关闭全部'
-        ,btnAlign: 'c' //按钮居中
-        ,shade: 0 //不显示遮罩
-        ,yes: function(){
-          layer.closeAll();
-        }
+        ,content: addedit
+        ,btn: ['提交', '关闭']
+	  	,yes: function(index, layero){
+	    //提交修改按钮
+		var role=$("#sys-add").val();
+	    if(rolr==null){
+	    	alert("请输入内容")
+	    	console.log(role);
+	    }else{
+			$.post({
+				url:"addDeptInfo.do",
+				data:{
+					deptName:role
+				},
+				success:function(data){
+					if(data.data){
+						alert("添加成功")
+					}else{
+						alert("添加失败")
+					}
+				}
+			})
+	    }
+						
+	    }
+	    ,'关闭': function(index, layero){
+	     //关闭按钮
+	    }
       });
     }
   };

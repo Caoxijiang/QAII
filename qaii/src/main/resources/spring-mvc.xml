@@ -42,7 +42,7 @@
 	</bean>
 	
 	<!-- 拦截器 -->
-<!-- 		<mvc:interceptors>
+ 		<mvc:interceptors>
 			<mvc:interceptor>
 			<mvc:mapping path="/*.do" />
 			<mvc:exclude-mapping path="/checkLogin.do"/>
@@ -50,9 +50,10 @@
 			<mvc:exclude-mapping path="/adddetail.do"/>
 			<mvc:exclude-mapping path="/addEmpInfo.do"/>
 			<mvc:exclude-mapping path="/EmpAupload.do"/>
+			<mvc:exclude-mapping path="/findDeptInfoList.do"/>
 			<bean class="com.qaii.interceptor.MyInterceptor"></bean>
 			</mvc:interceptor>
-		</mvc:interceptors> -->
+		</mvc:interceptors> 
 	
 	
 	

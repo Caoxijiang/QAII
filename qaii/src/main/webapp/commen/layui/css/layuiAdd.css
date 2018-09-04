@@ -250,3 +250,28 @@ table{
 	height: 36px;
 	line-height: 36px;
 }
+@media screen and (max-width: 1380px) {
+ 	.layui-input{
+		width: 200px;
+		border: 1px solid #1b274e;
+		height: 36px;
+		line-height: 36px;
+	}
+	.demoTable{
+		margin-right:20px !important;
+	}
+ }
+ @media screen and (max-width: 1200px) {
+ 	.layui-input{
+		width: 100px;
+		border: 1px solid #1b274e;
+		height: 36px;
+		line-height: 36px;
+	}
+	.demoTable{
+		margin-right:10px !important;
+	}
+	.export{
+	margin-right:50px !important;}
+	
+ }

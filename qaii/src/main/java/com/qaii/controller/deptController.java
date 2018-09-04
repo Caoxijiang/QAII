@@ -3,6 +3,8 @@ package com.qaii.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -59,8 +61,35 @@ public class deptController {
         
     }
 	
+	//添加部门信息
+    @ResponseBody
+    @RequestMapping(value="addDeptInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+    public JsonResult addDeptInfo(HttpServletRequest req,DeptInfo dept){
+     	dept.setDeptName(req.getParameter("deptName"));
+     	int row=deptInfoService.addDeptInfo(dept);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+        
+    }
 	
-	
-	
+	//修改部门信息
+    @ResponseBody
+    @RequestMapping(value="uptateDeptInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+    public JsonResult uptateDeptInfo(HttpServletRequest req,DeptInfo dept){
+     	dept.setDeptName(req.getParameter("deptName"));
+     	dept.setId(Integer.parseInt(req.getParameter("id")));
+     	int row=deptInfoService.updateDeptInfoById(dept);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+        
+    }
 	
 }
