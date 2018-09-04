@@ -29,6 +29,8 @@
 		<ul class="layui-nav layui-layout-right">
 		  <li class="layui-nav-item">
 			  <a href="outLogin.do" "event.returnValue=false">
+			  <!-- <a id="replacep"> -->
+			  
 				  <img src="${basePath}/image/close.png" class="layui-nav-img">
 				  退出系统
 			  </a>
@@ -87,6 +89,12 @@
   </div>
    <!-- 底部固定区域 -->
 </div>
+<script type="text/javascript">
+	$("#replacep").click(function(){
+		window.location.replace('outLogin.do');
+		window.history.back(-1);
+	})
+</script>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 //JavaScript代码区域

@@ -30,7 +30,7 @@
   	
 	  <div class="layui-row">
 		<div class="layui-col-md6">
-			<h1>个人基本信息${param.userId}</h1>
+			<h1>个人基本信息</h1>
 		  	<div class="layui-row">
 				<div class="layui-col-md6">
 					<div class="layui-form-item">
@@ -483,7 +483,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					console.log(data);
 					if(data.data!=null){
 						let empinfo=data.data;
-						console.log("_____:"+JSON.stringify(data.data))
+						console.log("_____:"+JSON.stringify(data.data));
 						//表单初始赋值 从表单中提取数据
 						  form.val('example', {
 						    "empName": empinfo.empName,
@@ -528,6 +528,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 							  "empRemarks":empinfo.empRemarks
 						    
 						  })
+						  $("#demo1").attr("src",data.data.url);
 					}else{
 						alert("查看详情失败1321123")
 					}
@@ -537,16 +538,9 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 		   alert("请刷新成员管理页面");
 	   }
 
-
-
-  
-  
 });
 	
-	
-	
-	
-	
+
 
 </script>
 </body>

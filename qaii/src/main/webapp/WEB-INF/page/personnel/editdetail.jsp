@@ -500,8 +500,9 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					}else{
 						$("input[name='imageVal']").attr("value",eid);
 					}
+					//var asd="https://www.iv2018.cn/public/images/ieeeImages/me/bg.jpg";
 					
-					console.log()
+					  
 					  form.val('example', {
 						 "userId":empinfo.id,
 					    "empName": empinfo.empName,
@@ -546,6 +547,8 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 						  "empRemarks":empinfo.empRemarks,
 					    
 					  })
+					  $("#demo1").attr("src",data.data.url);
+					 
 				}else{
 					alert("查看详情失败")
 				}

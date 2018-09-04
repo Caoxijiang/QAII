@@ -32,7 +32,7 @@
 			<i class="layui-icon layui-icon-delete"></i>删除
 		</button>
 		
-		<button class="layui-btn btn" data-type="getCheckLength">
+		<button class="layui-btn btn" id="pelupdate">
 			<i class="layui-icon layui-icon-refresh-3"></i>更新
 		</button>	
 	</div>
@@ -288,6 +288,11 @@ layui.use('table', function(){
   	  console.log("dianjishiqin");
     });
   
+  //页面数据刷新
+    $('#pelupdate').on('click', function(){
+    	window.location.reload();
+    	alert("数据更新成功");
+      });
 	
   
   //监听工具条
@@ -354,13 +359,15 @@ layui.use('table', function(){
 <script type="text/javascript">
 	$(function() {
 		$(".export").click(function(){
+			$(".layui-table-fixed tr").addClass("noExl");
+			$(".layui-table-fixed th").addClass("noExl");
 			$(".table2excel").table2excel({
 				// 不被导出的表格行的CSS class类
 				exclude: ".noExl",
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "test",
+				filename: "成员管理",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片
@@ -370,6 +377,7 @@ layui.use('table', function(){
 				//是否排除导出输入框中的内容
 				exclude_inputs: false
 			});
+			window.location.reload();
 		}); 
 		$(".layui-form .layui-form-item div span").click(function(){
 			console.log($(this).attr('class')+"5555");
