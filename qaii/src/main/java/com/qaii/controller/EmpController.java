@@ -73,50 +73,7 @@ public class EmpController {
 	     }else {
 	    	 empInfo.setEmpReviewstatus("待审核");
 	     }		
-		empInfo.setEid(req.getParameter("imageVal"));
-		empInfo.setEmpName(req.getParameter("empName"));
-		empInfo.setEmpGender(req.getParameter("empGender"));
-		empInfo.setEmpDept(req.getParameter("empDept"));
-		empInfo.setEmpPosition(req.getParameter("empPosition"));
-		empInfo.setEmpHireStarttime(req.getParameter("empHireStarttime"));
-		empInfo.setEmpIdcard(req.getParameter("empIdcard"));
-		empInfo.setEmpIdcardEndtime(req.getParameter("empIdcardEndtime"));
-		empInfo.setEmpEthnic(req.getParameter("empEthnic"));
-		empInfo.setEmpPoliticallandscape(req.getParameter("empPoliticallandscape"));
-		empInfo.setEmpMaritalstatus(req.getParameter("empMaritalstatus"));
-		empInfo.setEmpFirsteducation(req.getParameter("empFirsteducation"));
-		empInfo.setEmpSecondeducation(req.getParameter("empSecondeducation"));
-		empInfo.setEmpSecondeducation(req.getParameter("empThirdeducation"));
-		empInfo.setEmpFirsteducationschool(req.getParameter("empFirsteducationschool"));
-		empInfo.setEmpSecondeducationschool(req.getParameter("empSecondeducationschool"));
-		empInfo.setEmpThirdeducationschool(req.getParameter("empThirdeducationschool"));
-		empInfo.setEmpFirsteducationpro(req.getParameter("empFirsteducationpro"));
-		empInfo.setEmpSecondeducationpro(req.getParameter("empSecondeducationpro"));
-		empInfo.setEmpSecondeducationpro(req.getParameter("empThirdeducationpro"));
-		empInfo.setEmpFirstgraduationtime(req.getParameter("empFirstgraduationtime"));
-		empInfo.setEmpSecondgraduationtime(req.getParameter("empSecondgraduationtime"));
-		empInfo.setEmpThirdgraduationtime(req.getParameter("empThirdgraduationtime"));
-		empInfo.setEmpJobtitle(req.getParameter("empJobtitle"));
-		empInfo.setEmpJobtitlelevel(req.getParameter("empJobtitlelevel"));
-		empInfo.setEmpJobtitleobtaintime(req.getParameter("empJobtitleobtaintime"));
-		empInfo.setEmpPhone(req.getParameter("empPhone"));
-		empInfo.setEmpEmergencycontactandphone(req.getParameter("empEmergencycontactandphone"));
-		empInfo.setEmpFileaddress(req.getParameter("empFileaddress"));
-		empInfo.setEmpAccountaddress(req.getParameter("empAccountaddress"));
-		empInfo.setEmpHomeaddress(req.getParameter("empHomeaddress"));
-		empInfo.setEmpWorktype(req.getParameter("empWorktype"));
-		empInfo.setEmpCompile(req.getParameter("empCompile"));
-		empInfo.setEmpInductiontime(req.getParameter("empInductiontime"));
-		empInfo.setEmpTryoutendtime(req.getParameter("empTryoutendtime"));
-		empInfo.setEmpContractendtime(req.getParameter("empContractendtime"));
-		empInfo.setEmpContractsignednum(Integer.parseInt(req.getParameter("empContractsignednum")));
-		empInfo.setEmpReturnee(req.getParameter("empReturnee"));
-		empInfo.setEmpForeign(req.getParameter("empForeign"));
-		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
 
-		empInfo.setEmpRemarks(req.getParameter("empRemarks"));	
-
-		empInfo.setEmpTitle(req.getParameter("empTitle"));
 		EmpInfo(req, empInfo);
 		empInfo.setEmpStat("1");
 		empInfo.setEmpDepartureTime("");
@@ -166,7 +123,7 @@ public class EmpController {
 	  //  String fileName=file.getOriginalFilename();
 	    int size=(int)file.getSize();
 	    System.out.println(fileName+":---"+size);
-	    String path="E:/File";
+	    String path="C:/File/img";
 	    File dest =new File(path+"/"+fileName);
 	    if(!dest.getParentFile().exists()) {
 	    	dest.getParentFile().mkdirs();
@@ -386,8 +343,8 @@ public class EmpController {
 		empInfo.setEmpContractsignednum(Integer.parseInt(req.getParameter("empContractsignednum")));
 		empInfo.setEmpReturnee(req.getParameter("empReturnee"));
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
-		empInfo.setEmpTitle(req.getParameter("empTitle"));
 		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
+		empInfo.setEmpTitle(req.getParameter("empTitle"));
 	}
 	
 	//取得每个月的新入职、离职、净增长、院总人数

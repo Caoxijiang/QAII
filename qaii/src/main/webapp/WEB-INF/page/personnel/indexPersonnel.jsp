@@ -14,6 +14,7 @@
 <script src="${basePath}/js/echarts.min.js"></script>
 <script type="text/javascript">
 	$().ready(function(){
+		
 		var now=new Date();
 		var nowdate=now.getFullYear()+"-"+(now.getMonth() + 1)+"-"+now.getDate();
 		getContractMsg();
@@ -68,7 +69,7 @@
 					<div class="right perNav">
 						<a href="intoPerSys.do"><div class="pageTo">进入系统</div></a>
 						<a href="dept.do"><div class="pageTo">返回导航</div></a>
-						<a href="outLogin.do"><div class="pageTo">退出</div></a>
+						<a href="outLogin.do"+><div class="pageTo">退出</div></a>
 					</div>
 				</div>	
 				
@@ -122,6 +123,17 @@
 		</div>
 	</div>
 <script src="${basePath}/js/perchars.js"></script>
+
+
+<script type="text/javascript">
+	function getRandomNum() {
+	  var min = 1//这里改成你需要的最小值
+	  var max = 100//这里改成你需要的最大值
+	  return Math.floor(Math.random() * (max - min + 1) + min)
+	}
+	var randomNum = getRandomNum()
+</script>
+
 <script>
 
 	function getTitleMsg(data){

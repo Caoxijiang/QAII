@@ -1,5 +1,6 @@
 package com.qaii.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,6 +9,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
@@ -98,9 +100,16 @@ public class UserController {
 	
     //注销方法
     @RequestMapping("outLogin.do")
-    public String outLogin(HttpSession session){
+    public String outLogin(HttpServletRequest req,HttpServletResponse res,HttpSession session) throws IOException{
         //通过session.invalidata()方法来注销当前的session
-        session.invalidate();
+    	
+        //session=req.getSession();
+    	session.invalidate();
+        //System.out.println(session.getAttribute("user"));
+        //session.removeAttribute("user");
+     
+       // System.out.println(session.getAttribute("user"));
+      //  res.sendRedirect("login.do"); 
         return "page/login";
     }
     
