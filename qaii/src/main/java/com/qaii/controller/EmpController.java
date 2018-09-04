@@ -63,9 +63,9 @@ public class EmpController {
 	
 	
 	//添加员工信息接口
-	@ResponseBody
+	//@ResponseBody
     @RequestMapping(value="addEmpInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult addEmpInfo(HttpServletRequest req, EmpInfo empInfo) throws ParseException {
+	public String addEmpInfo(HttpServletRequest req, EmpInfo empInfo) throws ParseException {
 		 HttpSession session = req.getSession();  
 	     User user = (User)session.getAttribute("user");  
 	     if(user!=null) {
@@ -89,9 +89,13 @@ public class EmpController {
 			Map<String,String> map=new HashMap<>();
 			 map.put("url","intoPerSys.do");
 			 map.put("data", "提交成功");
-			return new JsonResult();
+			 
+			//return new JsonResult();
+			 return "page/science/add-succesd";
 		}else {
-			return new JsonResult();
+			
+			return "page/science/add-faild";
+			//return new JsonResult();
 		}
 		
 	}

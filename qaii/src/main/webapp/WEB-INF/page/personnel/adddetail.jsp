@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
   <script src="${basePath}/commen/bootstrap/bootstrap.min.js"></script>
-  
+  <script src="${basePath}/router/adddetail.js"></script>
 </head>
 <body class="layui-layout-body" style="overflow:scroll">
 <div class="layui-layout layui-layout-admin">

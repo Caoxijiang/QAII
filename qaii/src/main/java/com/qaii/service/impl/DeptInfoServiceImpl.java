@@ -26,4 +26,16 @@ public class DeptInfoServiceImpl implements DeptInfoService{
 		return deptInfoMapper.dellDeptInfoByid(id);
 	}
 
+	@Override
+	public int addDeptInfo(DeptInfo dept) {
+		// TODO Auto-generated method stub
+		return deptInfoMapper.addDeptinfo(dept);
+	}
+
+	@Override
+	public int updateDeptInfoById(DeptInfo dept) {
+		// TODO Auto-generated method stub
+		return deptInfoMapper.updateDeptInfoById(dept) ;
+	}
+
 }
