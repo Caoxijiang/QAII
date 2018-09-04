@@ -6,6 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>权限添加界面</title>
+<link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
 <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all">
 <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 
