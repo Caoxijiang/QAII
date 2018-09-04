@@ -28,11 +28,11 @@
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
 		</a>
-		<button class="layui-btn btn" data-type="getCheckLength" style="margin-right:16px !important">
+		<button class="layui-btn btn" id="dellist" data-type="delmore" style="margin-right:16px !important">
 			<i class="layui-icon layui-icon-delete"></i>删除
 		</button>
 		
-		<button class="layui-btn btn" data-type="getCheckLength">
+		<button class="layui-btn btn" data-type="getCheckLength" id="pelupdate">
 			<i class="layui-icon layui-icon-refresh-3"></i>更新
 		</button>	
 	</div>
@@ -125,11 +125,7 @@ layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
 	 //监听表格复选框选择
 	console.log(obj.data);
-	
-  table.on('checkbox(demo)', function(obj){
-	  console.log("1211212"+JSON.stringify(obj))
-  });
-  
+	  
   //执行一个 table 实例
   table.render({
     elem: '#testTable',
@@ -287,9 +283,13 @@ layui.use('table', function(obj){
 //  	window.location.reload();//刷新当前页面.
       var type = $(this).data('type');
       active[type] ? active[type].call(this) : '';
-  	  console.log("dianjishiqin");
     });
-  
+    //页面数据刷新
+    $('#pelupdate').on('click', function(){
+    	window.location.reload();
+    	alert("数据更新成功");
+      });
+	
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
@@ -373,31 +373,39 @@ layui.use('table', function(obj){
   });
 
 	//监听顶部添加删除操作
+	var arr=[];
+	//var arr=[];
+	table.on('checkbox(demo)', function(obj){
+		 var data = obj.data //获得当前行数据
+		 arr.push(data.id);		 
+		 
+	  });
 	
-//	var $ = layui.$, active = {
-//   	getCheckLength: function(){ //选中批量删除
-//      var checkStatus = table.checkStatus('testTable'),
-//      data = checkStatus.data;
-//		if(data.length==0){
-//			layer.msg("未选中数据！");
-//		}else{
-//			layer.confirm('确定删除'+ data.length + ' 条数据'+JSON.stringify(data), function(index){
-//				obj.del(); //删除对应行（tr）的DOM结构
-//				layer.close(index);
-//				//向服务端发送删除指令
-//			});
-//		}
-//    }
-//  };
-//  
-//  $('.demoTable .layui-btn').on('click', function(){
-//    var type = $(this).data('type');
-//    active[type] ? active[type].call(this) : '';
-//  });
-//	
-// });	
+	$("#dellist").on('click', function(){
+		$.post({
+		  	url:"DellempInfo.do",
+		  	data:{
+		  		"requestDate" : arr
+		  	},
+		  	success:function(data){
+
+		        if(data.status == 1){
+		            alert('删除成功，请刷新查看');
+		            window.location.reload();
+		        } else {
+		            alert('删除成功，请刷新查看'); return false;
+		            window.location.reload();
+		        }
+		    }
+		  }) 
+	});
 
 });
+
+
+
+
+
 
 	
 </script>
@@ -405,13 +413,15 @@ layui.use('table', function(obj){
 <script type="text/javascript">
 	$(function() {
 		$(".export").click(function(){
+			$(".layui-table-fixed tr").addClass("noExl");
+			$(".layui-table-fixed th").addClass("noExl");
 			$(".table2excel").table2excel({
 				// 不被导出的表格行的CSS class类
 				exclude: ".noExl",
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "test",
+				filename: "成员管理",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片
@@ -421,6 +431,7 @@ layui.use('table', function(obj){
 				//是否排除导出输入框中的内容
 				exclude_inputs: false
 			});
+			window.location.reload();
 		}); 
 		$(".layui-form .layui-form-item div span").click(function(){
 			console.log($(this).attr('class')+"5555");
