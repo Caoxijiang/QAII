@@ -382,6 +382,7 @@ layui.use('table', function(obj){
 	  });
 	
 	$("#dellist").on('click', function(){
+		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
 		  	url:"DellempInfo.do",
 		  	data:{
