@@ -57,6 +57,10 @@
 	})
 </script>
 <title>科技管理系统</title>
+<style>
+	a{
+	color:#fff;}
+</style>
 </head>
 
 <body class="personalbody">
@@ -76,7 +80,7 @@
 			<div class="row">
 			<div class="perbox col-3">
 				<div class="inform">
-					<div class="perctitle"><span>合同到期提醒</span><span class="right more">查看更多+</span></div>
+					<div class="perctitle"><span>合同到期提醒</span><span class="right more"><a href="intoPerSys.do">查看更多+</a></span></div>
 					<div class="perinform" style="height:367px !important;overflow:auto">
 						<ul id="contractremind">
 							
@@ -85,7 +89,7 @@
 					</div>
 				</div>
 				<div class="inform">
-					<div class="perctitle"><span>试用期到期提醒</span><span class="right more">查看更多+</span></div>
+					<div class="perctitle"><span>试用期到期提醒</span><span class="right more"><a href="intoPerSys.do">查看更多+</a></span></div>
 					<div class="perinform" style="height:310px !important;overflow:auto">
 						<ul id="tryremind">
 							
