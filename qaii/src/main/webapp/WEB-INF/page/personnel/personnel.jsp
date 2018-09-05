@@ -29,7 +29,8 @@
 	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>科研成果管理系统&nbsp;--&nbsp;权限管理</div>
 		<ul class="layui-nav layui-layout-right">
 		  <li class="layui-nav-item">
-			  <a id="replacep">
+			  <a href="outLogin.do" "event.returnValue=false">
+			  <!-- <a id="replacep"> -->
 			  
 				  <img src="${basePath}/image/close.png" class="layui-nav-img">
 				  退出系统

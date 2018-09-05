@@ -63,9 +63,9 @@ public class EmpController {
 	
 	
 	//添加员工信息接口
-	@ResponseBody
+	//@ResponseBody
     @RequestMapping(value="addEmpInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult addEmpInfo(HttpServletRequest req, EmpInfo empInfo) throws ParseException {
+	public String addEmpInfo(HttpServletRequest req, EmpInfo empInfo) throws ParseException {
 		 HttpSession session = req.getSession();  
 	     User user = (User)session.getAttribute("user");  
 	     if(user!=null) {
@@ -73,50 +73,7 @@ public class EmpController {
 	     }else {
 	    	 empInfo.setEmpReviewstatus("待审核");
 	     }		
-		empInfo.setEid(req.getParameter("imageVal"));
-		empInfo.setEmpName(req.getParameter("empName"));
-		empInfo.setEmpGender(req.getParameter("empGender"));
-		empInfo.setEmpDept(req.getParameter("empDept"));
-		empInfo.setEmpPosition(req.getParameter("empPosition"));
-		empInfo.setEmpHireStarttime(req.getParameter("empHireStarttime"));
-		empInfo.setEmpIdcard(req.getParameter("empIdcard"));
-		empInfo.setEmpIdcardEndtime(req.getParameter("empIdcardEndtime"));
-		empInfo.setEmpEthnic(req.getParameter("empEthnic"));
-		empInfo.setEmpPoliticallandscape(req.getParameter("empPoliticallandscape"));
-		empInfo.setEmpMaritalstatus(req.getParameter("empMaritalstatus"));
-		empInfo.setEmpFirsteducation(req.getParameter("empFirsteducation"));
-		empInfo.setEmpSecondeducation(req.getParameter("empSecondeducation"));
-		empInfo.setEmpSecondeducation(req.getParameter("empThirdeducation"));
-		empInfo.setEmpFirsteducationschool(req.getParameter("empFirsteducationschool"));
-		empInfo.setEmpSecondeducationschool(req.getParameter("empSecondeducationschool"));
-		empInfo.setEmpThirdeducationschool(req.getParameter("empThirdeducationschool"));
-		empInfo.setEmpFirsteducationpro(req.getParameter("empFirsteducationpro"));
-		empInfo.setEmpSecondeducationpro(req.getParameter("empSecondeducationpro"));
-		empInfo.setEmpSecondeducationpro(req.getParameter("empThirdeducationpro"));
-		empInfo.setEmpFirstgraduationtime(req.getParameter("empFirstgraduationtime"));
-		empInfo.setEmpSecondgraduationtime(req.getParameter("empSecondgraduationtime"));
-		empInfo.setEmpThirdgraduationtime(req.getParameter("empThirdgraduationtime"));
-		empInfo.setEmpJobtitle(req.getParameter("empJobtitle"));
-		empInfo.setEmpJobtitlelevel(req.getParameter("empJobtitlelevel"));
-		empInfo.setEmpJobtitleobtaintime(req.getParameter("empJobtitleobtaintime"));
-		empInfo.setEmpPhone(req.getParameter("empPhone"));
-		empInfo.setEmpEmergencycontactandphone(req.getParameter("empEmergencycontactandphone"));
-		empInfo.setEmpFileaddress(req.getParameter("empFileaddress"));
-		empInfo.setEmpAccountaddress(req.getParameter("empAccountaddress"));
-		empInfo.setEmpHomeaddress(req.getParameter("empHomeaddress"));
-		empInfo.setEmpWorktype(req.getParameter("empWorktype"));
-		empInfo.setEmpCompile(req.getParameter("empCompile"));
-		empInfo.setEmpInductiontime(req.getParameter("empInductiontime"));
-		empInfo.setEmpTryoutendtime(req.getParameter("empTryoutendtime"));
-		empInfo.setEmpContractendtime(req.getParameter("empContractendtime"));
-		empInfo.setEmpContractsignednum(Integer.parseInt(req.getParameter("empContractsignednum")));
-		empInfo.setEmpReturnee(req.getParameter("empReturnee"));
-		empInfo.setEmpForeign(req.getParameter("empForeign"));
-		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
 
-		empInfo.setEmpRemarks(req.getParameter("empRemarks"));	
-
-		empInfo.setEmpTitle(req.getParameter("empTitle"));
 		EmpInfo(req, empInfo);
 		empInfo.setEmpStat("1");
 		empInfo.setEmpDepartureTime("");
@@ -132,9 +89,13 @@ public class EmpController {
 			Map<String,String> map=new HashMap<>();
 			 map.put("url","intoPerSys.do");
 			 map.put("data", "提交成功");
-			return new JsonResult();
+			 
+			//return new JsonResult();
+			 return "page/science/add-succesd";
 		}else {
-			return new JsonResult();
+			
+			return "page/science/add-faild";
+			//return new JsonResult();
 		}
 		
 	}
@@ -166,14 +127,14 @@ public class EmpController {
 	  //  String fileName=file.getOriginalFilename();
 	    int size=(int)file.getSize();
 	    System.out.println(fileName+":---"+size);
-	    String path="E:/File";
+	    String path="C:/File/img";
 	    File dest =new File(path+"/"+fileName);
 	    if(!dest.getParentFile().exists()) {
 	    	dest.getParentFile().mkdirs();
 	    }
 	    try {
 			file.transferTo(dest);//保存文件
-			EMpA.setUrl(dest.getPath());
+			EMpA.setUrl("/img/"+fileName);
 			InsertEmpAvator(EMpA, result, dest);
 			result.put("code", "0");
 			result.put("msg", "上传成功");
@@ -210,6 +171,7 @@ public class EmpController {
 		for(EmpInfo emp:empInfo) {
 			CountDatetoNowDays.TranstoDate(emp);
 		}
+	
 		int count =empInfo.size();
 		System.out.println(count);
 			if(empInfo!=null) {
@@ -218,6 +180,24 @@ public class EmpController {
 				return Layui.data(count, empInfo);
 			}
 	}
+	
+	
+	@RequestMapping(value="getallinjobEmp.do",method=RequestMethod.POST)
+	@ResponseBody
+	public Layui getallinjobEmp(HttpServletRequest req) {
+		List<EmpInfo> empInfo=empInfoService.getallinjobEmp();
+		for(EmpInfo emp:empInfo) {
+			CountDatetoNowDays.TranstoDate(emp);
+		}
+		int count =empInfo.size();
+		System.out.println(count);
+		if(empInfo!=null) {
+			return Layui.data(count, empInfo);
+		}else {
+			return Layui.data(count, empInfo);
+		}
+	}
+	
 	
 	@ResponseBody
 	@RequestMapping(value="seeEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
@@ -240,7 +220,7 @@ public class EmpController {
 	//修改员工信息
 	@ResponseBody
 	@RequestMapping(value="updateEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) {	
+	public JsonResult updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) throws ParseException {	
 		EmpInfo(req, empInfo);
 		empInfo.setId(Integer.parseInt(req.getParameter("userId")));
 
@@ -344,7 +324,7 @@ public class EmpController {
 	
 	
 
-	private void EmpInfo(HttpServletRequest req, EmpInfo empInfo) {
+	private void EmpInfo(HttpServletRequest req, EmpInfo empInfo) throws ParseException {
 		//System.out.println("---------------:"+);
 		
 		empInfo.setEid(req.getParameter("imageVal"));
@@ -386,8 +366,9 @@ public class EmpController {
 		empInfo.setEmpContractsignednum(Integer.parseInt(req.getParameter("empContractsignednum")));
 		empInfo.setEmpReturnee(req.getParameter("empReturnee"));
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
-		empInfo.setEmpTitle(req.getParameter("empTitle"));
 		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
+		empInfo.setEmpTitle(req.getParameter("empTitle"));
+		CountDatetoNowDays.TranstoStamp(empInfo);
 	}
 	
 	//取得每个月的新入职、离职、净增长、院总人数

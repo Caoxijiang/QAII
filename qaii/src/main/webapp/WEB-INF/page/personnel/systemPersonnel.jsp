@@ -109,8 +109,25 @@ layui.use('table', function(obj){
 		  ,yes: function(index, layero){
 		    //提交修改按钮
 		    var data = obj.data;
+		    console.log(data)
 			var role=$("#sys-edit").val();
-			console.log(role);
+		    var id=data.id;
+		    
+			$.post({
+				url:"uptateDeptInfo.do",
+				data:{
+					deptName:role,
+					id:id
+				},
+				success:function(data){
+					if(data.data){
+						alert("修改成功")
+					}else{
+						alert("修改失败")
+					}
+				}
+			})
+
 	
 		  }
 		  ,'关闭': function(index, layero){
@@ -152,7 +169,25 @@ layui.use('layer', function(){ //独立版的layer无需执行这一句
 	  	,yes: function(index, layero){
 	    //提交修改按钮
 		var role=$("#sys-add").val();
-			console.log(role);
+	    if(rolr==null){
+	    	alert("请输入内容")
+	    	console.log(role);
+	    }else{
+			$.post({
+				url:"addDeptInfo.do",
+				data:{
+					deptName:role
+				},
+				success:function(data){
+					if(data.data){
+						alert("添加成功")
+					}else{
+						alert("添加失败")
+					}
+				}
+			})
+	    }
+						
 	    }
 	    ,'关闭': function(index, layero){
 	     //关闭按钮

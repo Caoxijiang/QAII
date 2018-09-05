@@ -1,5 +1,13 @@
 $().ready(function(){
 	
+	
+
+    //防止页面后退
+    history.pushState(null, null, document.URL);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.URL);
+    });
+
 	// JavaScript Document
 	//设置一个全局的变量，便于保存验证码
 	
@@ -70,16 +78,16 @@ $().ready(function(){
 				"requestDate" : str
 			},
 			success:function(data){
-				console.log(JSON.stringify(data))
 			var result=data.data;
-			if(result.USERROLEURL!=null){
-				document.location.href=result.USERROLEURL;
+			console.log(result);
+			if(result==null){
+				alert("账号或密码错误");
+				document.location.href='indexUI.do';
 			}else if(result.USERROLEURL==null && result.message=="OK"){
 				alert("无权限账号");
 				document.location.href='indexUI.do';
-			}else if(result==null){
-				alert("账号或密码错误");
-				document.location.href='indexUI.do';
+			}else if(result.USERROLEURL!=null){
+				document.location.href=result.USERROLEURL+"?m="+Math.random();	
 			}
 			}
 		})

@@ -14,5 +14,11 @@
   <delete id="dellDeptInfoByid" parameterType="java.lang.Integer">
   	delete from dept_info where id=#{id,jdbcType=INTEGER}
   </delete>
-  
+  	<insert id="addDeptinfo" parameterType="com.qaii.domain.DeptInfo">
+  		insert into dept_info (dept_name) values(#{deptName,jdbcType=VARCHAR})
+  	</insert>
+  	
+  	<update id="updateDeptInfoById" parameterType="com.qaii.domain.DeptInfo">
+  		update dept_info set dept_name=#{deptName,jdbcType=VARCHAR} where id=#{id,jdbcType=INTEGER}
+  	</update>
 </mapper>

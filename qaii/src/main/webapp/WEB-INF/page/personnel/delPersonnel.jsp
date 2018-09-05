@@ -25,7 +25,7 @@
 <div class="tool">
 	<div class="layui-btn-group demoTable">
   	  <span class="limit">离职人员( <span id="countnum"></span> )</span>
-		<a href="adddetail.html" target="_blank">
+		<a href="adddetail.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -143,7 +143,7 @@ layui.use('table', function(){
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
     	{type:'checkbox',fixed: 'left'},
-		{field: 'id', title: '序号',fixed: 'left',width:100},
+		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
 		{field: 'empNum', title: '工号',fixed: 'left',width:100},
 		{field: 'empName', title: '姓名',fixed: 'left',width:150},
 		{field: 'empGender', title: '性别',sort: true},
@@ -304,6 +304,7 @@ layui.use('table', function(){
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
+    console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
       layer.msg('用户名：'+JSON.stringify(data.username)+'<br>密码：'+JSON.stringify(data.pas)+'<br>角色：'+JSON.stringify(data.rid));

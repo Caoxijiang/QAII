@@ -18,6 +18,8 @@
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  
+
   <context-param>
     <param-name>log4jConfigLocation</param-name>
     <param-value>classpath:log4j.properties</param-value>
@@ -65,4 +67,7 @@
     <error-code>500</error-code>
     <location>/WEB-INF/errorpage/500.html</location>
   </error-page>
+  	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
 </web-app>

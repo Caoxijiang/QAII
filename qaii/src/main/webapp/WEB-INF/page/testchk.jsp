@@ -39,7 +39,7 @@ $().ready(function(){
 </script>
 </head>
 <body>
-	<form action="" method="post">
+	<form action="getfile.do" method="post" enctype="multipart/form-data">
 		输入时间，转换为时间戳;
 		<input type="text" name ="date" id ="dat">
 		<input type="text" name ="date2 " id ="dat2"> 
@@ -48,6 +48,8 @@ $().ready(function(){
 		<input type="text" name ="date3" id ="dat3">
 		<input type="text" name ="date4" id ="dat4"> 
 		<button type="button" id="btn2">StamptoTime</button> <br>
+		<input type="file" name="file"> input file
+		<input type="submit" value="提交">
 	</form>
 </body>
 </html>

@@ -15,4 +15,6 @@ encoding//src/main/webapp/WEB-INF/page/personnel/indexPersonnel.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/page/personnel/newsPersonnel.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/page/personnel/personnel.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/page/personnel/systemPersonnel.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/science/add-faild.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/page/science/add-succesd.jsp=UTF-8
 encoding/<project>=UTF-8

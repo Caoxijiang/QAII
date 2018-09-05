@@ -526,9 +526,12 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 							  "empRemarks":empinfo.empRemarks
 						    
 						  })
-						  $("#demo1").attr("src",data.data.url);
+						  var domain = window.location.host;
+						  var url =data.data.url;
+						  var imgpath=domain+url;
+						  $("#demo1").attr("src","https://"+imgpath);
 					}else{
-						alert("查看详情失败1321123")
+						alert("查看详情失败")
 					}
 				}
 			})

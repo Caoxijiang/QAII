@@ -125,7 +125,7 @@ layui.config({
 layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
 	 //监听表格复选框选择
-	console.log(obj.data);
+	console.log(JSON.stringify(obj.cache));
 	  
   //执行一个 table 实例
   table.render({
@@ -135,11 +135,11 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'findAllEmpInfo.do', //数据接口
+    url: 'getallinjobEmp.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
-		{field: 'id', title: '序号',fixed: 'left',width:100},
+		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
 		{field: 'empNum', title: '工号',fixed: 'left',width:100},
 		{field: 'empName', title: '姓名',fixed: 'left',width:150},
 		{field: 'empGender', title: '性别',sort: true},
@@ -185,6 +185,8 @@ layui.use('table', function(obj){
 		{field: 'empRemarks', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
+    
+    
 	  //表格数据
     data:obj.data,
     done: function(res, curr, count){
@@ -193,7 +195,7 @@ layui.use('table', function(obj){
         }
   });
   //alert(JSON.stringify(obj.cache.testReload[0]))
-  console.log(obj);
+ console.log(obj.cache)
 	//添加筛选功能
 	
   var $ = layui.$, active = {
@@ -207,7 +209,6 @@ layui.use('table', function(obj){
   	 if(check=="all"){
   		  var val=$(".layui-table tr:eq(0) th:eq(2)").attr('data-field');/*获取制定data-field值*/
   		  var cellval=$(".layui-table tr:eq(1) td:eq(3)").text();/*获取指定行列元素包含的文本*/
-  		  console.log(num);
   		//逐个单元格匹配内容
   		  var myA=new Array();
   		  for(var i=1;i<trlen;i++){
@@ -251,7 +252,7 @@ layui.use('table', function(obj){
   						  myA[i]=myA[i]+$(this).text();
   						 }
   				 })
-  				 console.log(myA[i]+"000000000000000");
+  			
   			  }
   			//全局搜索
   			  $(".layui-table tr").each(function(){
@@ -299,6 +300,7 @@ layui.use('table', function(obj){
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
+    console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
 		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
@@ -388,6 +390,7 @@ layui.use('table', function(obj){
 	  });
 	
 	$("#dellist").on('click', function(){
+		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
 		  	url:"DellempInfo.do",
 		  	data:{
