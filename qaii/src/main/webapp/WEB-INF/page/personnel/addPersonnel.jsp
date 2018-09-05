@@ -329,9 +329,8 @@ layui.use('table', function(obj){
     	  
     	  
     	  
-        obj.del(); //删除对应行（tr）的DOM结构
-        layer.close(index);
-        //向服务端发送删除指令
+
+
         
         
         
@@ -366,6 +365,8 @@ layui.use('table', function(obj){
              		if(data.data){
              		    //删除对应行（tr）的DOM结构
              			layer.alert("离职操作成功");
+             	        obj.del(); //删除对应行（tr）的DOM结构
+             	        layer.close(index);
              		}else{
              			layer.alert("离职操作失败");
              		}

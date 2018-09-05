@@ -75,7 +75,7 @@ public class EmpController {
 	     }		
 
 		EmpInfo(req, empInfo);
-		empInfo.setEmpStat("1");
+		empInfo.setEmpStat("0");
 		empInfo.setEmpDepartureTime("");
 		empInfo.setEmpTryStatus("1");
 		empInfo.setEmpContractStatus("1");
@@ -228,7 +228,7 @@ public class EmpController {
 		empInfo.setEmpContractStatus(req.getParameter("empContractStatus"));
 		
 		empInfo.setId(Integer.parseInt(req.getParameter("userId")));
-
+		CountDatetoNowDays.TranstoStamp(empInfo);
 		int row =empInfoService.updateByPrimaryKey(empInfo);
 		if(row>=1) {
 			//String data="更新成功";
@@ -376,7 +376,7 @@ public class EmpController {
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
 		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
 		empInfo.setEmpTitle(req.getParameter("empTitle"));
-		CountDatetoNowDays.TranstoStamp(empInfo);
+		//CountDatetoNowDays.TranstoStamp(empInfo);
 	}
 	
 	//取得每个月的新入职、离职、净增长、院总人数

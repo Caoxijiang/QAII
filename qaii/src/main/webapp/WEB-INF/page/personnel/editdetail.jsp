@@ -406,7 +406,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">审核状态&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<select name="empForeign" lay-search="" lay-verify="required" class="input">
+							<select name="empReviewstatus" lay-search="" lay-verify="required" class="input">
 								<option value="">请选择</option>
 								<option value="通过">通过</option>
 								<option value="待审核">待审核</option>
@@ -618,7 +618,8 @@ $.post({
 								  "empStat":empinfo.empStat,
 								  "empDepartureTime":empinfo.empDepartureTime,
 								  "empTryStatus":empinfo.empTryStatus,
-								  "empContractStatus":empinfo.empContractStatus
+								  "empContractStatus":empinfo.empContractStatus,
+								  "empReviewstatus":empinfo.empReviewstatus
 							  })
 							  $("#demo1").attr("src",data.data.url);
 							 
