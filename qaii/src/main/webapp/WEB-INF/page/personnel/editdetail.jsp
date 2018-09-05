@@ -293,6 +293,17 @@
 							</select>
 						</div>
 					</div>
+					
+					<div class="layui-form-item">
+						<label class="layui-form-label">职工状态</label>
+						<div class="layui-input-block">
+							<select name="empStat" lay-search="" class="input">
+								<option value="">请选择</option>
+								<option value="1">在职</option>
+								<option value="0">离职</option>
+							</select>
+						</div>
+					</div>
 				</div>
 			    <div class="layui-col-md4">
 			    	<div class="layui-form-item">
@@ -324,7 +335,26 @@
 							<input type="text" name="empJobtitleobtaintime" class="layui-input input" lay-verify="required" id="test1" placeholder="yyyy-MM-dd">
 						  </div>
 					</div>
-					
+					<div class="layui-form-item">
+						<label class="layui-form-label">试用期状态</label>
+						<div class="layui-input-block">
+							<select name=empTryStatus lay-search="" class="input">
+								<option value="">请选择</option>
+								<option value="1">试用期期满</option>
+								<option value="0">试用期中</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">合同状态</label>
+						<div class="layui-input-block">
+							<select name="empContractStatus" lay-search="" class="input">
+								<option value="">请选择</option>
+								<option value="1">合同结束</option>
+								<option value="0">合同中</option>
+							</select>
+						</div>
+					</div>
 					
 				</div>
    		 		<div class="layui-col-md4">
@@ -363,6 +393,14 @@
 							</select>
 						</div>
 					</div>
+					
+					<div class="layui-form-item">
+						  <label class="layui-form-label">离职时间</label>
+						  <div class="layui-input-block">
+							<input type="text" name="empDepartureTime" class="layui-input input" lay-verify="required" id="test10" placeholder="yyyy-MM-dd">
+						  </div>
+					</div>
+					
 				</div>
 			<!--   文本框-->
 				<div class="layui-col-md12">
@@ -444,6 +482,10 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 	//第三学历毕业时间日期选择
   laydate.render({
     elem: '#test2-3'
+  });
+//离职时间日期选择
+  laydate.render({
+    elem: '#test10'
   });
   
 	
@@ -546,7 +588,10 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 						  "empReturnee":empinfo.empReturnee,
 					  	  "empForeign":empinfo.empForeign,
 						  "empRemarks":empinfo.empRemarks,
-					    
+						  "empStat":empinfo.empStat,
+						  "empDepartureTime":empinfo.empDepartureTime,
+						  "empTryStatus":empinfo.empTryStatus,
+						  "empContractStatus":empinfo.empContractStatus
 					  })
 					  $("#demo1").attr("src",data.data.url);
 					 
