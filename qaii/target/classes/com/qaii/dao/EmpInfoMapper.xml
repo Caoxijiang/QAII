@@ -587,10 +587,11 @@
 		SELECT COUNT(*) FROM emp_info WHERE emp_inductionTime &lt; #{0} AND emp_departureTime &gt; #{1} 
 	</select>
 	<select id="selectnumofIncubationComp" resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt; #{0} AND emp_inductionTime &lt; #{1} AND emp_dept in ('孵化二','孵化一')
+		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt; #{0} AND emp_inductionTime &lt; #{1} 
 	</select>
 	<select id="selectnumofcollegeComp" resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt; #{0} AND emp_inductionTime &lt; #{1} AND emp_dept in ('财务处','综合管理处','平行工作室')
+		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt; #{0} AND emp_inductionTime &lt; #{1} AND emp_dept in 
+		<foreach collection="list" open="(" close=")" separator="," item="item">#{item,jdbcType=VARCHAR}</foreach>
 	</select>
 	<select id="selectnumoftalnets"  resultType="int" parameterType="java.lang.String">
 		SELECT COUNT(*) FROM emp_info WHERE emp_dept=#{0} AND emp_stat='1' AND emp_reviewStatus='通过'

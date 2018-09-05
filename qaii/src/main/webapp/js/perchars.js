@@ -74,6 +74,19 @@
 			return result;
 		}
 		
+		function getdeptName(){
+			var result=null;
+			$.ajax({
+				async:false,
+				type:"POST",
+				url:"getdeptName.do",
+				success:function(data){
+					result=data;
+				}
+			})
+			return result;
+		}
+		
 		var dept=new Array("平行工作室","人事教育处","财务处","综合管理处","产业化处");
 		var _dept=gettalentsdept(dept);
 //		function test(){

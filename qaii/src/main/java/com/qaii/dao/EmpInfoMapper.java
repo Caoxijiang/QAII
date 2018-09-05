@@ -3,6 +3,8 @@ package com.qaii.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.qaii.domain.EmpInfo;
 
 public interface EmpInfoMapper {
@@ -30,7 +32,7 @@ public interface EmpInfoMapper {
     
     int selectnumofIncubationComp(String lasty,String thisy);
     
-    int selectnumofcollegeComp(String lasty,String thisy);
+    int selectnumofcollegeComp(String lasty,String thisy,@Param("list")List<String> list);
     
     int selectnumoftalnets(String dept);
     
@@ -51,4 +53,5 @@ public interface EmpInfoMapper {
     int updateReview(String msg,int id);
     
     List <EmpInfo> getallinjobEmp();
+    
 }

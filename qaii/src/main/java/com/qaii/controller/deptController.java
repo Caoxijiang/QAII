@@ -1,5 +1,6 @@
 package com.qaii.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -90,6 +91,18 @@ public class deptController {
     		
     	}
         
+    }
+    
+    //chaxun bumen xingming 
+    @RequestMapping(value="getdeptName",method=RequestMethod.POST)
+    @ResponseBody
+    public List<String> getdeptName(){
+    	List<DeptInfo>list=deptInfoService.findAllRoleList();
+		List<String> s=new ArrayList<>();
+		for(DeptInfo s1:list) {
+			s.add(s1.getDeptName());
+		}
+    	return s;
     }
 	
 }

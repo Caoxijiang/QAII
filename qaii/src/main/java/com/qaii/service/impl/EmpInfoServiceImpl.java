@@ -53,9 +53,9 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		return empinfoService.selectnumofIncubationComp(lasty, thisy);
 	}
 	@Override
-	public int countnumofcollegeComp(String lasty, String thisy) {
+	public int countnumofcollegeComp(String lasty, String thisy,List<String> list) {
 		// TODO Auto-generated method stub
-		return empinfoService.selectnumofcollegeComp(lasty, thisy);
+		return empinfoService.selectnumofcollegeComp(lasty, thisy,list);
 	}
 	@Override
 	public int countnumfoTalents(String dept) {

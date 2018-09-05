@@ -22,9 +22,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.qaii.domain.DeptInfo;
 import com.qaii.domain.EmpAvatarinfo;
 import com.qaii.domain.EmpInfo;
 import com.qaii.domain.User;
+import com.qaii.service.DeptInfoService;
 import com.qaii.service.EmpAvatarService;
 import com.qaii.service.EmpInfoService;
 import com.qaii.util.CountDatetoNowDays;
@@ -37,6 +39,8 @@ public class EmpController {
 	private EmpInfoService empInfoService;
 	@Resource
 	private EmpAvatarService empAvatarService; 
+	@Resource
+	private DeptInfoService deptInfoService;
 	
 	//修改员工信息页面
 	@RequestMapping(value="updateEmpInfo.do",produces="application/json;charset=UTF-8")
@@ -368,7 +372,6 @@ public class EmpController {
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
 		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
 		empInfo.setEmpTitle(req.getParameter("empTitle"));
-		CountDatetoNowDays.TranstoStamp(empInfo);
 	}
 	
 	//取得每个月的新入职、离职、净增长、院总人数
@@ -389,13 +392,18 @@ public class EmpController {
 	
 	//取得人才队伍柱状图参数
 	public Map<String, Integer> gettalentsTeam(String date) throws ParseException{
+		List<DeptInfo>list=deptInfoService.findAllRoleList();
+		List<String> s=new ArrayList<>();
+		for(DeptInfo s1:list) {
+			s.add(s1.getDeptName());
+		}
 		Map<String, String> map=new HashMap<>();
 		Map<String, Integer> result=new HashMap<>();
 		map=CountDatetoNowDays.FirstandEndDayofYear(date);
-		result.put("Incnum", empInfoService.countnumofIncubationComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this"))));
-		result.put("collegenum", empInfoService.countnumofcollegeComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this"))));
-		result.put("total", empInfoService.countnumofIncubationComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this")))
-				+empInfoService.countnumofcollegeComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this"))));
+		result.put("total", empInfoService.countnumofIncubationComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this"))));
+		result.put("collegenum", empInfoService.countnumofcollegeComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this")),s));
+		result.put("Incnum", empInfoService.countnumofIncubationComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this")))
+				-empInfoService.countnumofcollegeComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this")),s));
 		return result;
 		
 	}
