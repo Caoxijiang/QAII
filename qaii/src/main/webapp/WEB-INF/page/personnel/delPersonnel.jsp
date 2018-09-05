@@ -24,7 +24,7 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">离职人员 （165）</span>
+  	  <span class="limit">离职人员( <span id="countnum"></span> )</span>
 		<a href="adddetail.html" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
@@ -189,6 +189,10 @@ layui.use('table', function(){
 		{field: 'empRemarks', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
+    done: function(res, curr, count){
+        $("#countnum").html(count);
+          console.log(count+"总数");
+          }
 	  //表格数据
     //data:obj.data
   });
