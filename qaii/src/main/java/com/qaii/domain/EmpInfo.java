@@ -149,8 +149,18 @@ public class EmpInfo {
     private String empReviewstatus;
     
     private String url;
+    
+    private Integer count;
 
-    public Integer getId() {
+    public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public Integer getId() {
         return id;
     }
 
