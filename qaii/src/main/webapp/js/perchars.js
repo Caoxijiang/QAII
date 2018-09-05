@@ -143,7 +143,7 @@
 					show: true,
 					textStyle: {
 						color: '#fff',
-						fontSize:'14'
+						fontSize:'12'
 					}
 				},
 				data: [new Date(_12Mon[11]).getMonth()+1,new Date(_12Mon[10]).getMonth()+1,
@@ -159,7 +159,7 @@
 					show: true,
 					textStyle: {
 						color: '#fff',
-						fontSize:'14'
+						fontSize:'12'
 					}
 				},
 			},
@@ -243,16 +243,23 @@
 			},
 			xAxis: {
 				type: 'category',
-				textStyle: {
-					color: '#fff',
-					fontSize:'14'
-				}
+				axisLabel: {        
+					show: true,
+					textStyle: {
+						color: '#fff',
+						fontSize:'12'
+					}
+				},
 			},
 			yAxis: {
-				textStyle: {
-					color: '#fff',
-					fontSize:'14'
-				}
+				type: 'value',
+				axisLabel: {        
+					show: true,
+					textStyle: {
+						color: '#fff',
+						fontSize:'12'
+					}
+				},
 			},
 			series: [
 				{type: 'bar'},

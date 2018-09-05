@@ -79,7 +79,7 @@ public class EmpController {
 	     }		
 
 		EmpInfo(req, empInfo);
-		empInfo.setEmpStat("1");
+		empInfo.setEmpStat("0");
 		empInfo.setEmpDepartureTime("");
 		empInfo.setEmpTryStatus("1");
 		empInfo.setEmpContractStatus("1");
@@ -222,19 +222,27 @@ public class EmpController {
 	
 	
 	//修改员工信息
-	@ResponseBody
+//	@ResponseBody
 	@RequestMapping(value="updateEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) throws ParseException {	
+	public String updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) throws ParseException {	
 		EmpInfo(req, empInfo);
+		empInfo.setEmpStat(req.getParameter("empStat"));
+		empInfo.setEmpDepartureTime(req.getParameter("empDepartureTime"));
+		empInfo.setEmpTryStatus(req.getParameter("empTryStatus"));
+		empInfo.setEmpContractStatus(req.getParameter("empContractStatus"));
+		
 		empInfo.setId(Integer.parseInt(req.getParameter("userId")));
-
+		CountDatetoNowDays.TranstoStamp(empInfo);
 		int row =empInfoService.updateByPrimaryKey(empInfo);
 		if(row>=1) {
-			String data="更新成功";
-			return new JsonResult(data);
+			//String data="更新成功";
+			 return "page/science/add-succesd";
 		}else {
-			return new JsonResult();
+			
+			return "page/science/add-faild";
+			//return new JsonResult();
 		}
+		
 		
 		
 	}
@@ -372,6 +380,7 @@ public class EmpController {
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
 		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
 		empInfo.setEmpTitle(req.getParameter("empTitle"));
+		//CountDatetoNowDays.TranstoStamp(empInfo);
 	}
 	
 	//取得每个月的新入职、离职、净增长、院总人数

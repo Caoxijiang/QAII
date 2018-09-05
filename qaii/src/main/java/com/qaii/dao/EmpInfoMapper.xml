@@ -613,7 +613,7 @@
   </delete>
  	
  	<select id="findDellInfoByStatus" resultMap="BaseResultMap" parameterType="com.qaii.domain.EmpInfo">
- 		select * from emp_info where emp_stat=1
+ 		select * from emp_info where emp_stat=0
  	</select>
  	<select id="getstatusbyreview" resultMap="BaseResultMap" parameterType="java.lang.String">
  		SELECT * from emp_info WHERE emp_stat ='1' AND emp_reviewStatus=#{0}
@@ -626,7 +626,7 @@
  	</update>
  	
  	<update id="updataempStatus" parameterType="com.qaii.domain.EmpInfo">
- 		update emp_info set emp_stat=1,emp_departureTime=#{empDepartureTime,jdbcType=VARCHAR} where id=#{id,jdbcType=INTEGER}
+ 		update emp_info set emp_stat=0,emp_departureTime=#{empDepartureTime,jdbcType=VARCHAR} where id=#{id,jdbcType=INTEGER}
  	</update>
  	<select id="getallinjobEmp" resultMap="BaseResultMap">
  		SELECT * from emp_info WHERE emp_stat='1' AND emp_reviewStatus='通过'

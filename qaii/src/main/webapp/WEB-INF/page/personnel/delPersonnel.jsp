@@ -10,7 +10,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all">
-  <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
+ <%--  <link rel="stylesheet" href="${basePath}/css/layuiAdd.css"> --%>
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
@@ -30,7 +31,7 @@
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
 		</a>
-		<button class="layui-btn btn" data-type="getCheckLength" style="margin-right:16px !important">
+		<button class="layui-btn btn" id="dellist" data-type="delmore" style="margin-right:16px !important">
 			<i class="layui-icon layui-icon-delete"></i>删除
 		</button>
 		
@@ -200,8 +201,8 @@ layui.use('table', function(){
 //添加筛选功能
   var $ = layui.$, active = {
       reload: function(){
-        var demoReload = $('#demoReload');
-        var key=demoReload.val();/*关键字*/
+      var demoReload = $('#demoReload');
+      var key=demoReload.val();/*关键字*/
   	  var check=$('#switch').val();/*选择提示词*/
   	  var trlen=($(".layui-table tr").length)/3;/*行数*/
   	  var num=$(".layui-table tr:eq(0) th").length-1;/*显示的列元素个数*/
@@ -310,9 +311,25 @@ layui.use('table', function(){
       layer.msg('用户名：'+JSON.stringify(data.username)+'<br>密码：'+JSON.stringify(data.pas)+'<br>角色：'+JSON.stringify(data.rid));
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
-        obj.del(); //删除对应行（tr）的DOM结构
-        layer.close(index);
-        //向服务端发送删除指令
+          let arr=[data.id];
+          console.log(data) 
+          $.post({
+          	url:"DellempInfo.do",
+          	data:{
+          		"requestDate" : arr
+          	},
+          	success:function(data){
+          		if(data.data){
+          		    //删除对应行（tr）的DOM结构
+          			obj.del();
+          			layer.close(index);
+          		}else{
+          			layer.alert("删除失败")
+          		}
+          		
+          	}
+          }) 
+    	  
       });
     } else if(layEvent === 'edit'){
       layer.alert(
@@ -333,30 +350,37 @@ layui.use('table', function(){
     }
   });
 
+
 	//监听顶部添加删除操作
+	var arr=[];
+	//var arr=[];
+	table.on('checkbox(demo)', function(obj){
+		 var data = obj.data //获得当前行数据
+		 arr.push(data.id);		 
+		 
+	  });
 	
-//	var $ = layui.$, active = {
-//   	getCheckLength: function(){ //选中批量删除
-//      var checkStatus = table.checkStatus('testTable'),
-//      data = checkStatus.data;
-//		if(data.length==0){
-//			layer.msg("未选中数据！");
-//		}else{
-//			layer.confirm('确定删除'+ data.length + ' 条数据'+JSON.stringify(data), function(index){
-//				obj.del(); //删除对应行（tr）的DOM结构
-//				layer.close(index);
-//				//向服务端发送删除指令
-//			});
-//		}
-//    }
-//  };
-//  
-//  $('.demoTable .layui-btn').on('click', function(){
-//    var type = $(this).data('type');
-//    active[type] ? active[type].call(this) : '';
-//  });
-//	
-// });	
+	$("#dellist").on('click', function(){
+		alert("请慎重考虑，删除数据不可恢复");
+		$.post({
+		  	url:"DellempInfo.do",
+		  	data:{
+		  		"requestDate" : arr
+		  	},
+		  	success:function(data){
+
+		        if(data.status == 1){
+		            alert('删除成功，请刷新查看');
+		            window.location.reload();
+		        } else {
+		            alert('删除成功，请刷新查看'); return false;
+		            window.location.reload();
+		        }
+		    }
+		  }) 
+	});
+
+
 
 });
 
