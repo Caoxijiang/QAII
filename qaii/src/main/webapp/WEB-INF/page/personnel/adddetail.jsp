@@ -123,7 +123,7 @@
 					<img class="layui-upload-img" id="demo1" style="width:180px;height:252px;background: #f1f7f7;">
 					<p id="demoText"></p>
 				</div>
-				<input name="imageVal" type="hidden"></input>
+				<input name="imageVal" lay-verify="required"  type="hidden"></input>
 				<button type="button" class="layui-btn" id="imgload">上传图片</button>
 			</div> 
 			
