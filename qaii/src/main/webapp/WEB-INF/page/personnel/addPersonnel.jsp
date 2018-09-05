@@ -23,7 +23,7 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit" id="num">成员管理（165）</span>
+  	  <span class="limit">成员管理( <span id="countnum"> </span> )</span>
 		<a href="adddetail.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
@@ -188,11 +188,16 @@ layui.use('table', function(obj){
     
     
 	  //表格数据
-    data:obj.data
+    data:obj.data,
+    done: function(res, curr, count){
+      $("#countnum").html(count);
+        console.log(count+"总数");
+        }
   });
   //alert(JSON.stringify(obj.cache.testReload[0]))
  console.log(obj.cache)
 	//添加筛选功能
+	
   var $ = layui.$, active = {
       reload: function(){
         var demoReload = $('#demoReload');
@@ -452,6 +457,7 @@ layui.use('table', function(obj){
 </script>
 <!--自动设置主表格可视区域-->
 <script>
+
 	var hei=$(".action").height();
 	var ji=$(document).height();
 	var heigt=ji-hei-85;

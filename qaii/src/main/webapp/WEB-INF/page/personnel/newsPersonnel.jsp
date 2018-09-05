@@ -25,7 +25,7 @@
 		<div class="layui-btn-group demoTable">
 		  <span class="limit">消息管理</span>
 
-			<button class="layui-btn btn" data-type="getCheckLength" style="margin-left:40px !important;margin-right:16px !important">
+			<button class="layui-btn btn" id="pelupdate" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-refresh-3"></i>更新
 			</button>	
 		</div>
@@ -306,7 +306,11 @@ layui.use('table', function(obj){
 
 });
 
-	
+//页面数据刷新
+$('#pelupdate').on('click', function(){
+	window.location.reload();
+	alert("数据更新成功");
+  });	
 </script>
 </body>
 </html>        
