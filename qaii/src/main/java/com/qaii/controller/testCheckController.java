@@ -78,8 +78,10 @@ public class testCheckController {
 		List<String> list =new ArrayList<>();
 		String filename=file.getOriginalFilename();
 		Workbook wookbook;
+		//判断是不是excel文件
 		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
-			throw new CustomException("not excel file!");
+			throw new CustomException("This is not an Excel file!");
+		//判断是03版还是07版excel
 		if(filename.endsWith(".xls")) {
 			wookbook=new HSSFWorkbook(file.getInputStream());
 		}else {
@@ -104,7 +106,7 @@ public class testCheckController {
 				}
 				emp=setEmpInfovalue(emp, list);
 				System.out.println(emp);
-//				empinfo.insert(emp);
+				empinfo.insert(emp);
 			}
 		}
 		wookbook.close();
