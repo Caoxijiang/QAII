@@ -123,7 +123,7 @@
 					<img class="layui-upload-img" id="demo1" style="width:180px;height:252px;background: #f1f7f7;">
 					<p id="demoText"></p>
 				</div>
-				<input name="imageVal" type="hidden"></input>
+				<input name="imageVal" lay-verify="required"  type="hidden"></input>
 				<button type="button" class="layui-btn" id="imgload">上传图片</button>
 			</div> 
 			
@@ -188,9 +188,9 @@
 				</div>
 			    <div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">第一学历毕业学校</label>
+						<label class="layui-form-label">第一学历毕业学校&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empFirsteducationschool" lay-verify="title" autocomplete="off" placeholder="请输入第一学历毕业学校" class="layui-input input">
+							<input type="text" name="empFirsteducationschool" lay-verify="required"  lay-verify="title" autocomplete="off" placeholder="请输入第一学历毕业学校" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
@@ -331,9 +331,9 @@
 				</div>
    		 		<div class="layui-col-md4">
    		 			<div class="layui-form-item">
-						<label class="layui-form-label">合同签订次数</label>
+						<label class="layui-form-label">合同签订次数&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empContractsignednum"  autocomplete="off" placeholder="请输入合同签订次数" class="layui-input input">
+							<input type="text" name="empContractsignednum" lay-verify="required"  autocomplete="off" placeholder="请输入合同签订次数" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
