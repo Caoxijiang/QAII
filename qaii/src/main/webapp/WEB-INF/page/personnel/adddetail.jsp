@@ -137,9 +137,9 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">身份证到期时间</label>
+						<label class="layui-form-label">身份证到期时间&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1" placeholder="yyyy-MM-dd">
+							<input type="text" name="empIdcardEndtime" lay-verify="required" class="layui-input input" id="test2-1" placeholder="yyyy-MM-dd">
 						  </div>
 					</div>
 				</div>
@@ -153,7 +153,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">合同期满时间</label>
 						  <div class="layui-input-block">
-							<input type="text" name="empContractendtime" class="layui-input input" id="test2-3" placeholder="yyyy-MM-dd">
+							<input type="number" name="empContractendtime" class="layui-input input" id="test2-3" placeholder="yyyy-MM-dd">
 						  </div>
 					</div>
 				</div>
@@ -169,7 +169,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">第一学历&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" placeholder="请输入第一学历" class="layui-input input">
+							<input type="text" name="empFirsteducation"  lay-verify="required" autocomplete="off" placeholder="请输入第一学历" class="layui-input input">
 						</div>
 					</div>
 					
@@ -188,9 +188,9 @@
 				</div>
 			    <div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">第一学历毕业学校</label>
+						<label class="layui-form-label">第一学历毕业学校&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empFirsteducationschool" lay-verify="title" autocomplete="off" placeholder="请输入第一学历毕业学校" class="layui-input input">
+							<input type="text" name="empFirsteducationschool" lay-verify="required" autocomplete="off" placeholder="请输入第一学历毕业学校" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
@@ -210,7 +210,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">第一学历专业&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empFirsteducationpro" lay-verify="title" autocomplete="off" placeholder="请输入第一学历专业" class="layui-input input">
+							<input type="text" name="empFirsteducationpro" lay-verify="required" autocomplete="off" placeholder="请输入第一学历专业" class="layui-input input">
 						</div>
 					</div>
 					
@@ -229,9 +229,9 @@
 				</div>
    		 		<div class="layui-col-md3">
 					<div class="layui-form-item">
-						  <label class="layui-form-label">第一学历毕业时间</label>
+						  <label class="layui-form-label">第一学历毕业时间&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empFirstgraduationtime" class="layui-input input" id="test1-1" placeholder="yyyy-MM-dd">
+							<input type="text" name="empFirstgraduationtime" lay-verify="required" class="layui-input input" id="test1-1" placeholder="yyyy-MM-dd">
 						  </div>
 					</div>
 					<div class="layui-form-item">
@@ -331,9 +331,9 @@
 				</div>
    		 		<div class="layui-col-md4">
    		 			<div class="layui-form-item">
-						<label class="layui-form-label">合同签订次数</label>
+						<label class="layui-form-label">合同签订次数&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empContractsignednum"  autocomplete="off" placeholder="请输入合同签订次数" class="layui-input input">
+							<input type="number" name="empContractsignednum" lay-verify="required"  autocomplete="off" placeholder="请输入合同签订次数" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
