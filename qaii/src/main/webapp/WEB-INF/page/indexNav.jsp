@@ -57,7 +57,7 @@
 		</div>
 	</div>
 	<div class="back">
-		<a href="login.html">
+		<a href="login.do">
 			<img src="${basePath}/image/back.png" />
 			<div style="color: #fff; ">返回登录</div>
 		</a>

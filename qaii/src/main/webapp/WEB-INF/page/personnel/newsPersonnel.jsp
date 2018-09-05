@@ -25,7 +25,7 @@
 		<div class="layui-btn-group demoTable">
 		  <span class="limit">消息管理</span>
 
-			<button class="layui-btn btn" data-type="getCheckLength" style="margin-left:40px !important;margin-right:16px !important">
+			<button class="layui-btn btn" id="pelupdate" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-refresh-3"></i>更新
 			</button>	
 		</div>
@@ -154,7 +154,7 @@ layui.use('table', function(obj){
 	url:"getstatusbyreview.do",
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{field: 'id', title: '序号'},
+		{field: 'id', title: '序号',type:'numbers'},
 		{field: 'empNum', title: '工号'},
 		{field: 'empName', title: '姓名'},
 		{field: 'empDept', title: '部门',sort: true},
@@ -226,7 +226,7 @@ layui.use('table', function(obj){
 	url:'getiDexpire.do',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{field: 'id', title: '序号'},
+		{field: 'id', title: '序号',type:'numbers'},
 		{field: 'empNum', title: '工号'},
 		{field: 'empName', title: '姓名'},
 		{field: 'empGender', title: '性别',sort: true},
@@ -255,7 +255,7 @@ layui.use('table', function(obj){
 	method:'post',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{field: 'id', title: '序号'},
+		{field: 'id', title: '序号',type:'numbers'},
 		{field: 'empNum', title: '工号'},
 		{field: 'empName', title: '姓名'},
 		{field: 'empGender', title: '性别',sort: true},
@@ -285,7 +285,7 @@ layui.use('table', function(obj){
 	method:'post',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
    cols: [[ //标题栏
-		{field: 'id', title: '序号'},
+		{field: 'id', title: '序号',type:'numbers'},
 		{field: 'empNum', title: '工号'},
 		{field: 'empName', title: '姓名'},
 		{field: 'empGender', title: '性别',sort: true},
@@ -306,7 +306,11 @@ layui.use('table', function(obj){
 
 });
 
-	
+//页面数据刷新
+$('#pelupdate').on('click', function(){
+	window.location.reload();
+	alert("数据更新成功");
+  });	
 </script>
 </body>
 </html>        

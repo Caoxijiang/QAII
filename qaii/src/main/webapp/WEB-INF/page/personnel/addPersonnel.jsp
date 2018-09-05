@@ -23,7 +23,7 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">成员管理（165）</span>
+  	  <span class="limit">成员管理( <span id="countnum"> </span> )</span>
 		<a href="adddetail.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
@@ -125,7 +125,7 @@ layui.config({
 layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
 	 //监听表格复选框选择
-	console.log(JSON.stringify(obj));
+	console.log(JSON.stringify(obj.cache));
 	  
   //执行一个 table 实例
   table.render({
@@ -185,12 +185,19 @@ layui.use('table', function(obj){
 		{field: 'empRemarks', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
+    
+    
 	  //表格数据
-    data:obj.data
+    data:obj.data,
+    done: function(res, curr, count){
+      $("#countnum").html(count);
+        console.log(count+"总数");
+        }
   });
   //alert(JSON.stringify(obj.cache.testReload[0]))
-  console.log(obj);
+ console.log(obj.cache)
 	//添加筛选功能
+	
   var $ = layui.$, active = {
       reload: function(){
         var demoReload = $('#demoReload');
@@ -202,7 +209,6 @@ layui.use('table', function(obj){
   	 if(check=="all"){
   		  var val=$(".layui-table tr:eq(0) th:eq(2)").attr('data-field');/*获取制定data-field值*/
   		  var cellval=$(".layui-table tr:eq(1) td:eq(3)").text();/*获取指定行列元素包含的文本*/
-  		  console.log(num);
   		//逐个单元格匹配内容
   		  var myA=new Array();
   		  for(var i=1;i<trlen;i++){
@@ -246,7 +252,7 @@ layui.use('table', function(obj){
   						  myA[i]=myA[i]+$(this).text();
   						 }
   				 })
-  				 console.log(myA[i]+"000000000000000");
+  			
   			  }
   			//全局搜索
   			  $(".layui-table tr").each(function(){
@@ -294,6 +300,7 @@ layui.use('table', function(obj){
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
+    console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
 		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
@@ -450,6 +457,7 @@ layui.use('table', function(obj){
 </script>
 <!--自动设置主表格可视区域-->
 <script>
+
 	var hei=$(".action").height();
 	var ji=$(document).height();
 	var heigt=ji-hei-85;

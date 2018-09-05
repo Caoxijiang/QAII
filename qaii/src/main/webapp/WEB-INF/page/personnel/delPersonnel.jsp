@@ -24,8 +24,8 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">离职人员 （165）</span>
-		<a href="adddetail.html" target="_blank">
+  	  <span class="limit">离职人员( <span id="countnum"></span> )</span>
+		<a href="adddetail.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -189,6 +189,10 @@ layui.use('table', function(){
 		{field: 'empRemarks', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
+    done: function(res, curr, count){
+        $("#countnum").html(count);
+          console.log(count+"总数");
+          }
 	  //表格数据
     //data:obj.data
   });
@@ -300,6 +304,7 @@ layui.use('table', function(){
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
+    console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
       layer.msg('用户名：'+JSON.stringify(data.username)+'<br>密码：'+JSON.stringify(data.pas)+'<br>角色：'+JSON.stringify(data.rid));
