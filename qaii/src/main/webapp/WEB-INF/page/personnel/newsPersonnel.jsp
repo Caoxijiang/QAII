@@ -154,7 +154,7 @@ layui.use('table', function(obj){
 	url:"getstatusbyreview.do",
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{field: 'id', title: '序号'},
+		{field: 'id', title: '序号',type:'numbers'},
 		{field: 'empNum', title: '工号'},
 		{field: 'empName', title: '姓名'},
 		{field: 'empDept', title: '部门',sort: true},
@@ -226,7 +226,7 @@ layui.use('table', function(obj){
 	url:'getiDexpire.do',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{field: 'id', title: '序号'},
+		{field: 'id', title: '序号',type:'numbers'},
 		{field: 'empNum', title: '工号'},
 		{field: 'empName', title: '姓名'},
 		{field: 'empGender', title: '性别',sort: true},
@@ -255,7 +255,7 @@ layui.use('table', function(obj){
 	method:'post',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{field: 'id', title: '序号'},
+		{field: 'id', title: '序号',type:'numbers'},
 		{field: 'empNum', title: '工号'},
 		{field: 'empName', title: '姓名'},
 		{field: 'empGender', title: '性别',sort: true},
@@ -285,7 +285,7 @@ layui.use('table', function(obj){
 	method:'post',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
    cols: [[ //标题栏
-		{field: 'id', title: '序号'},
+		{field: 'id', title: '序号',type:'numbers'},
 		{field: 'empNum', title: '工号'},
 		{field: 'empName', title: '姓名'},
 		{field: 'empGender', title: '性别',sort: true},

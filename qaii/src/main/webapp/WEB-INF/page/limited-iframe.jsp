@@ -191,7 +191,7 @@ layui.use(['laydate','layer', 'table'], function(obj){
 			}); 
 		});    
     }
-    ,getCheckLength: function(){ //选中批量删除
+    ,getCheckLength: function(obj){ //选中批量删除
      var checkStatus = table.checkStatus('test');
      var arr=[];
      for(var obj of checkStatus.data){
@@ -203,9 +203,23 @@ layui.use(['laydate','layer', 'table'], function(obj){
 			layer.msg("未选中数据！");
 		}else{
 			layer.confirm('确定删除'+ arr.length + ' 条数据'+JSON.stringify(arr), function(index){
-				obj.del(); //删除对应行（tr）的DOM结构
-				layer.close(index);
-				//向服务端发送删除指令
+		        $.post({
+		        	url:"DellUserAccount.do",
+		        	data:{
+		        		"requestDate" : arr
+		        	},
+		        	success:function(data){
+		        		if(data.data){
+		        		    //删除对应行（tr）的DOM结构
+		        			 window.location.reload()
+		        			layer.close(index);
+		        		}else{
+		        			layer.alert("删除失败")
+		        		}
+		        		
+		        	}
+		        }) 
+			
 			});
 		}
     }
