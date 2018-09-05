@@ -51,6 +51,8 @@
 			<mvc:exclude-mapping path="/addEmpInfo.do"/>
 			<mvc:exclude-mapping path="/EmpAupload.do"/>
 			<mvc:exclude-mapping path="/findDeptInfoList.do"/>
+			<mvc:exclude-mapping path="/tstchk.do"/>
+			<mvc:exclude-mapping path="/setdata.do"/>
 			<bean class="com.qaii.interceptor.MyInterceptor"></bean>
 			</mvc:interceptor>
 		</mvc:interceptors> 

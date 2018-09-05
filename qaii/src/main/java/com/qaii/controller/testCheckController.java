@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -38,7 +39,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.qaii.domain.DeptInfo;
 import com.qaii.domain.EmpInfo;
+import com.qaii.service.DeptInfoService;
 import com.qaii.service.EmpInfoService;
 import com.qaii.service.impl.EmpInfoServiceImpl;
 import com.qaii.util.CountDatetoNowDays;
@@ -52,6 +55,9 @@ public class testCheckController {
 
 	@Resource
 	private EmpInfoService empinfo;
+	@Resource
+	private DeptInfoService deptinfo;
+	
 	@RequestMapping("tstchk.do")
 	public String tstest() {
 		
@@ -62,6 +68,7 @@ public class testCheckController {
 	@ResponseBody
 	public String outputStamp(@RequestParam(value="date",required=false)String date
 			) throws CustomException, ParseException, FileNotFoundException, IOException {
+
 		return CountDatetoNowDays.SDatetoStamp(date);
 	}
 	//将时间转为时间戳方法
