@@ -566,25 +566,25 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   	<select id="checkbyContract" resultMap="BaseResultMap" parameterType="java.lang.String">
-		SELECT	*FROM	emp_info WHERE	emp_contractStatus = '1' AND emp_stat='1'
+		SELECT	*FROM	emp_info WHERE	emp_contractStatus = '1' AND emp_stat='1' AND emp_reviewStatus='通过'
 		<if test="_parameter!=null">
 			and emp_contractEndTime &lt; #{empContractendtime,jdbcType=VARCHAR}
 		</if>
 	</select>
 	<select id="checkbyTry" resultMap="BaseResultMap" parameterType="java.lang.String">
-		SELECT	*FROM	emp_info WHERE	emp_tryStatus = '1' AND emp_stat='1'
+		SELECT	*FROM	emp_info WHERE	emp_tryStatus = '1' AND emp_stat='1' AND emp_reviewStatus='通过'
 		<if test="_parameter!=null">
 			and emp_tryOutEndTime &lt; #{empTryoutendtime,jdbcType=VARCHAR}
 		</if>
 	</select>
 	<select id="selectnumbyEntry" resultType="int" parameterType="java.lang.String">
-		SELECT count(*) FROM emp_info WHERE emp_inductionTime &gt;= #{0} AND emp_inductionTime &lt; #{1}
+		SELECT count(*) FROM emp_info WHERE emp_inductionTime &gt;= #{0} AND emp_inductionTime &lt; #{1} 
 	</select>
 	<select id="selectnumbyDeparture" resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt;= #{0} AND emp_departureTime &lt; #{1}
+		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt;= #{0} AND emp_departureTime &lt; #{1} 
 	</select>
 	<select id="selectnumofcollege" resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_inductionTime &lt; #{0} AND emp_departureTime &gt; #{1}
+		SELECT COUNT(*) FROM emp_info WHERE emp_inductionTime &lt; #{0} AND emp_departureTime &gt; #{1} 
 	</select>
 	<select id="selectnumofIncubationComp" resultType="int" parameterType="java.lang.String">
 		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt; #{0} AND emp_inductionTime &lt; #{1} AND emp_dept in ('孵化二','孵化一')
@@ -593,10 +593,10 @@
 		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt; #{0} AND emp_inductionTime &lt; #{1} AND emp_dept in ('财务处','综合管理处','平行工作室')
 	</select>
 	<select id="selectnumoftalnets"  resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_dept=#{0} AND emp_stat='1'
+		SELECT COUNT(*) FROM emp_info WHERE emp_dept=#{0} AND emp_stat='1' AND emp_reviewStatus='通过'
 	</select>
 	<select id="selectnumofHightalents"  resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_title=#{0} AND emp_stat='1'
+		SELECT COUNT(*) FROM emp_info WHERE emp_title=#{0} AND emp_stat='1' AND emp_reviewStatus='通过'
 	</select>
  	<select id="findEmpinfoAndAvatarByid" resultMap="BaseResultMap" parameterType="com.qaii.domain.EmpInfo">
  		select e. *, a.url as url 
@@ -618,7 +618,7 @@
  		SELECT * from emp_info WHERE emp_stat ='1' AND emp_reviewStatus=#{0}
  	</select>
  	<select id="getIDexpire" resultMap="BaseResultMap" parameterType="java.lang.String">
- 		SELECT * from emp_info WHERE emp_idcard_endTime &lt;=#{0}
+ 		SELECT * from emp_info WHERE emp_idcard_endTime &lt;=#{0} AND emp_reviewStatus='通过'
  	</select>
  	<update id="updateReview">
  		UPDATE emp_info SET  emp_reviewStatus= #{0} WHERE id = #{1}
