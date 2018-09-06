@@ -79,15 +79,12 @@ public class EmpController {
 	     }		
 
 		EmpInfo(req, empInfo);
-		empInfo.setEmpStat("0");
+		empInfo.setEmpStat("1");
 		empInfo.setEmpDepartureTime("");
 		empInfo.setEmpTryStatus("1");
 		empInfo.setEmpContractStatus("1");
 		CountDatetoNowDays.TranstoStamp(empInfo);
 		
-		
-		
-		System.out.println(empInfo.toString());
 		int row = empInfoService.insert(empInfo);
 		if(row>0) {
 			Map<String,String> map=new HashMap<>();
@@ -130,7 +127,7 @@ public class EmpController {
 	    
 	  //  String fileName=file.getOriginalFilename();
 	    int size=(int)file.getSize();
-	    System.out.println(fileName+":---"+size);
+	  //  System.out.println(fileName+":---"+size);
 	    String path="C:/File/img";
 	    File dest =new File(path+"/"+fileName);
 	    if(!dest.getParentFile().exists()) {
@@ -177,7 +174,6 @@ public class EmpController {
 		}
 	
 		int count =empInfo.size();
-		System.out.println(count);
 			if(empInfo!=null) {
 				return Layui.data(count, empInfo);
 			}else {
@@ -194,7 +190,6 @@ public class EmpController {
 			CountDatetoNowDays.TranstoDate(emp);
 		}
 		int count =empInfo.size();
-		System.out.println(count);
 		if(empInfo!=null) {
 			return Layui.data(count, empInfo);
 		}else {
@@ -208,7 +203,6 @@ public class EmpController {
 	public JsonResult seeEmpInfos(EmpInfo emp,HttpServletRequest req) {	
 		
 		int userid=Integer.parseInt(req.getParameter("userId"));
-		System.out.println("user:"+userid);
 		//emp.setId();
 		emp = empInfoService.findEmpinfoAndAvatarByid(userid);
 		if(emp!=null) {
@@ -251,7 +245,6 @@ public class EmpController {
     @ResponseBody
     @RequestMapping(value="DellempInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
     public JsonResult DellempInfo(@RequestParam(value = "requestDate[]") Integer[] eid ){
-    	System.out.println(eid);
     	
      	int row=empInfoService.delete(eid);
     	if(row!=0) {
@@ -268,11 +261,7 @@ public class EmpController {
     @RequestMapping(value="dellempInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
     public JsonResult dellempInfo(@RequestParam(value = "requestDate") Integer id ){
     	
-    	System.out.println(id);
     	long time=System.currentTimeMillis();
-    	 
-    	 
-    	 System.out.println(time);
     	EmpInfo emp=new EmpInfo();
     	emp.setId(id);
     	emp.setEmpDepartureTime(String.valueOf(time));
@@ -296,7 +285,6 @@ public class EmpController {
 			CountDatetoNowDays.TranstoDate(emp);
 		}
 		int count =empInfo.size();
-		System.out.println(count);
 			if(empInfo!=null) {
 				return Layui.data(count, empInfo);
 			}else {
@@ -316,7 +304,6 @@ public class EmpController {
 		int row=empAvatarService.insert(EMpA);
 		if(row > 0) {
 			int eid=EMpA.getId();
-			System.out.println(eid);
 			if(eid>=1) {
 				result.put("code", "0");
 				result.put("msg", "上传成功");
