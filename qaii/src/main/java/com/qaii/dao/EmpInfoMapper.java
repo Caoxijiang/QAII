@@ -32,7 +32,7 @@ public interface EmpInfoMapper {
     
     int selectnumofIncubationComp(String lasty,String thisy);
     
-    int selectnumofcollegeComp(String lasty,String thisy,@Param("list")List<String> list);
+    int selectnumofcollegeComp(String lasty,String thisy,@Param("list") List<String> list);
     
     int selectnumoftalnets(String dept);
     
