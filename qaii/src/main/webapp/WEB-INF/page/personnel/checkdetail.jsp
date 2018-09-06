@@ -571,7 +571,8 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 							  "empContractsignednum":empinfo.empContractsignednum,
 							  "empReturnee":empinfo.empReturnee,
 						  	  "empForeign":empinfo.empForeign,
-							  "empRemarks":empinfo.empRemarks
+							  "empRemarks":empinfo.empRemarks,
+							  "empDepartureTime":empinfo.empDepartureTime
 						    
 						  })
 						  var domain = window.location.host;
