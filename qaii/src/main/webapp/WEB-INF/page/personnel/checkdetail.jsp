@@ -337,8 +337,8 @@
 						<div class="layui-input-block">
 							<select name=empTryStatus lay-search="" lay-verify="required"  class="input" disabled="">
 								<option value="">请选择</option>
-								<option value="1">试用期期满</option>
-								<option value="0">试用期中</option>
+								<option value="0">试用期期满</option>
+								<option value="1">试用期中</option>
 							</select>
 						</div>
 					</div>
