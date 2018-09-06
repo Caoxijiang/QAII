@@ -55,9 +55,9 @@
 						<div class="layui-input-block">
 							<select name="empPoliticallandscape" lay-search="" class="input inputdisable" disabled="">
 								<option value="">请选择</option>
-								<option value="1">党员</option>
-								<option value="2">团员</option>
-								<option value="3">群众</option>
+								<option value="党员">党员</option>
+								<option value="团员">团员</option>
+								<option value="群众">群众</option>
 							</select>
 						</div>
 					</div>
@@ -285,8 +285,8 @@
 						<div class="layui-input-block">
 							<select name="empCompile" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
 								<option value="">请选择</option>
-								<option value="1">是</option>
-								<option value="2">否</option>
+								<option value="是">是</option>
+								<option value="否">否</option>
 							</select>
 						</div>
 					</div>
@@ -374,8 +374,8 @@
 						<div class="layui-input-block">
 							<select name="empReturnee" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
 								<option value="">请选择</option>
-								<option value="1">是</option>
-								<option value="2">否</option>
+								<option value="是">是</option>
+								<option value="否">否</option>
 							</select>
 						</div>
 					</div>
@@ -385,8 +385,8 @@
 						<div class="layui-input-block">
 							<select name="empForeign" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
 								<option value="">请选择</option>
-								<option value="1">是</option>
-								<option value="2">否</option>
+								<option value="是">是</option>
+								<option value="否">否</option>
 							</select>
 						</div>
 					</div>
