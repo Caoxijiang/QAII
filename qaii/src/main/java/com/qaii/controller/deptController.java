@@ -94,7 +94,7 @@ public class deptController {
     }
     
     //chaxun bumen xingming 
-    @RequestMapping(value="getdeptName",method=RequestMethod.POST)
+    @RequestMapping(value="getdeptName.do",method=RequestMethod.POST)
     @ResponseBody
     public List<String> getdeptName(){
     	List<DeptInfo>list=deptInfoService.findAllRoleList();
