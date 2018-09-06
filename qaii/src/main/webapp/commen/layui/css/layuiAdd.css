@@ -236,7 +236,7 @@ table{
 .search{
 	width：50px;
 	height:36px;
-	border: 1px solid #1b274e;
+	border: 1px solid #aaa;
 	color:#aaa;
 	line-height:36px;
 	vertical-align: middle;
@@ -246,14 +246,15 @@ table{
 	text-align: center;}
 .layui-input{
 	width: 365px;
-	border: 1px solid #1b274e;
+	/* border: 1px solid #1b274e; */
+	border: 1px solid #aaa;
 	height: 36px;
 	line-height: 36px;
 }
 @media screen and (max-width: 1380px) {
  	.layui-input{
 		width: 200px;
-		border: 1px solid #1b274e;
+		border: 1px solid #aaa;
 		height: 36px;
 		line-height: 36px;
 	}
@@ -264,7 +265,7 @@ table{
  @media screen and (max-width: 1200px) {
  	.layui-input{
 		width: 100px;
-		border: 1px solid #1b274e;
+		border: 1px solid #aaa;
 		height: 36px;
 		line-height: 36px;
 	}
