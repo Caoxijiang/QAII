@@ -112,7 +112,6 @@ public class testCheckController {
 					}
 				}
 				emp=setEmpInfovalue(emp, list);
-				System.out.println(emp);
 				empinfo.insert(emp);
 			}
 		}

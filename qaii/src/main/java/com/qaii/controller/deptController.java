@@ -36,7 +36,6 @@ public class deptController {
 	public Layui findDeptInfoList() {
 		List<DeptInfo> deptInfo=deptInfoService.findAllRoleList();
 		int count =deptInfo.size();
-		System.out.println(count);
 			if(deptInfo!=null) {
 				return Layui.data(count, deptInfo);
 			}else {
@@ -51,7 +50,6 @@ public class deptController {
     @ResponseBody
     @RequestMapping(value="dellDeptInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
     public JsonResult DellempInfo(@RequestParam(value = "requestDate") Integer id ){
-    	System.out.println(id);
      	int row=deptInfoService.dellDeptInfoByid(id);
     	if(row!=0) {
     		return  new JsonResult(row);
