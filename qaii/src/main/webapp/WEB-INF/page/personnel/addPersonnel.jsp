@@ -30,6 +30,9 @@
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
 		</a>
+		<button class="layui-btn btn" data-type="getCheckLength" id="test3" style="margin-right:16px !important">
+			<i class="layui-icon layui-icon-upload-drag"></i>导入
+		</button>
 		<button class="layui-btn btn" id="dellist" data-type="delmore" style="margin-right:16px !important">
 			<i class="layui-icon layui-icon-delete"></i>删除
 		</button>
@@ -413,11 +416,23 @@ layui.use('table', function(obj){
 	});
 
 });
+</script>
+<script src="${basePath}/commen/layui.js" charset="utf-8"></script>
+<script>
+layui.use('upload', function(){
+	  var $ = layui.jquery
+	  ,upload = layui.upload;
+//指定允许上传的文件类型
+upload.render({
+  elem: '#test3'
+  ,url: '/upload/'
+  ,accept: 'file' //普通文件
+  ,done: function(res){
+    console.log(res)
+  }
+})
 
-
-
-
-
+})
 
 	
 </script>
