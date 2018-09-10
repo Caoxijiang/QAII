@@ -247,19 +247,18 @@
 					show: true,
 					textStyle: {
 						color: '#fff',
-						fontSize:'12'
+						fontSize:'14'
 					}
 				},
 			},
 			yAxis: {
-				type: 'value',
 				axisLabel: {        
 					show: true,
 					textStyle: {
 						color: '#fff',
-						fontSize:'12'
+						fontSize:'14'
 					}
-				},
+				}
 			},
 			series: [
 				{type: 'bar'},
