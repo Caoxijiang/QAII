@@ -426,7 +426,7 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: '/upload/'
+  ,url: 'getfile.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
     console.log(res)
