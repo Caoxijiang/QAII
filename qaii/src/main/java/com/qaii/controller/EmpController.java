@@ -224,7 +224,6 @@ public class EmpController {
 		empInfo.setEmpDepartureTime(req.getParameter("empDepartureTime"));
 		empInfo.setEmpTryStatus(req.getParameter("empTryStatus"));
 		empInfo.setEmpContractStatus(req.getParameter("empContractStatus"));
-		
 		empInfo.setId(Integer.parseInt(req.getParameter("userId")));
 		CountDatetoNowDays.TranstoStamp(empInfo);
 		int row =empInfoService.updateByPrimaryKey(empInfo);
@@ -266,7 +265,7 @@ public class EmpController {
     	emp.setId(id);
     	emp.setEmpDepartureTime(String.valueOf(time));
      	int row=empInfoService.updataempStatus(emp);
-    	if(row!=0) {
+    	if(row>=1) {
     		return  new JsonResult(row);
     	}else {
     		return  new JsonResult();

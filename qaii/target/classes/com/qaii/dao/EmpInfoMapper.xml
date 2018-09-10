@@ -562,7 +562,12 @@
       emp_returnee = #{empReturnee,jdbcType=VARCHAR},
       emp_foreign = #{empForeign,jdbcType=VARCHAR},
       emp_remarks = #{empRemarks,jdbcType=VARCHAR},
-      emp_reviewStatus = #{empReviewstatus,jdbcType=VARCHAR}
+      emp_reviewStatus = #{empReviewstatus,jdbcType=VARCHAR},
+      emp_stat= #{empStat,jdbcType=VARCHAR},
+      emp_departureTime= #{empDepartureTime,jdbcType=VARCHAR},
+      emp_tryStatus= #{empTryStatus,jdbcType=VARCHAR}, 
+      emp_contractStatus= #{empContractStatus,jdbcType=VARCHAR},
+      emp_title= #{empTitle,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   	<select id="checkbyContract" resultMap="BaseResultMap" parameterType="java.lang.String">
