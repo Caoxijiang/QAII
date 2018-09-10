@@ -222,6 +222,7 @@ public class CountDatetoNowDays {
 			emp.setEmpThirdgraduationtime(CountDatetoNowDays.SDatetoStamp(emp.getEmpThirdgraduationtime()));	
 			emp.setEmpInductiontime(CountDatetoNowDays.SDatetoStamp(emp.getEmpInductiontime()));
 			emp.setEmpJobtitleobtaintime(CountDatetoNowDays.SDatetoStamp(emp.getEmpJobtitleobtaintime()));
+			emp.setEmpDepartureTime(CountDatetoNowDays.SDatetoStamp(emp.getEmpDepartureTime()));
 		}
 		return emp;
 	}
