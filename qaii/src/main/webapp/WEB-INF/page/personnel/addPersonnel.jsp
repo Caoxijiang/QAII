@@ -10,6 +10,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
@@ -29,6 +30,9 @@
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
 		</a>
+		<button class="layui-btn btn" data-type="getCheckLength" id="test3" style="margin-right:16px !important">
+			<i class="layui-icon layui-icon-upload-drag"></i>导入
+		</button>
 		<button class="layui-btn btn" id="dellist" data-type="delmore" style="margin-right:16px !important">
 			<i class="layui-icon layui-icon-delete"></i>删除
 		</button>
@@ -59,6 +63,7 @@
 </div>
 <!-- 操作-->
 <div class="action"> 
+<div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id=empNum  type="checkbox" value="工号" checked="flase"/><lable>工号</lable></div>
 	<div class="int-inline"><input id="empName"  type="checkbox" value="姓名" checked/><lable>姓名</lable></div>
@@ -100,6 +105,7 @@
 	<div class="int-inline"><input id="empReturnee"  type="checkbox" value="是否留学归国人员" checked/><lable>是否留学归国人员</lable></div>
 	<div class="int-inline"><input id="empForeign"  type="checkbox" value="是否外籍人员" checked/><lable>是否外籍人员</lable></div>
 	<div class="int-inline"><input id="empRemarks"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
+</div>
 </div>  
 <!-- 数据展示主表格-->
 <div class="table2excel">
@@ -411,11 +417,23 @@ layui.use('table', function(obj){
 	});
 
 });
+</script>
+<script src="${basePath}/commen/layui.js" charset="utf-8"></script>
+<script>
+layui.use('upload', function(){
+	  var $ = layui.jquery
+	  ,upload = layui.upload;
+//指定允许上传的文件类型
+upload.render({
+  elem: '#test3'
+  ,url: '/upload/'
+  ,accept: 'file' //普通文件
+  ,done: function(res){
+    console.log(res)
+  }
+})
 
-
-
-
-
+})
 
 	
 </script>

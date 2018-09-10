@@ -247,7 +247,7 @@
 					show: true,
 					textStyle: {
 						color: '#fff',
-						fontSize:'12'
+						fontSize:'14'
 					}
 				},
 			},
@@ -257,9 +257,9 @@
 					show: true,
 					textStyle: {
 						color: '#fff',
-						fontSize:'12'
+						fontSize:'14'
 					}
-				},
+				}
 			},
 			series: [
 				{type: 'bar'},

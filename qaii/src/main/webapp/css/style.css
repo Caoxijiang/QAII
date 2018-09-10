@@ -71,9 +71,10 @@ ul,li{
 	width: 430px;
 	vertical-align: bottom;
 }
+
 .loginbg{
 	width:100%;
-	min-width: 1280px;text-align: center;
+	min-width: 1220px;text-align: center;
 }
 .loginBox .admin{
 	margin-top: 30px;
@@ -209,6 +210,9 @@ ul,li{
 	font-size: 15px;
 }
 /*人事可视化界面*/
+#main{
+	width: 100%;height:400px;
+}
 .personalbody{
 	width: 100%;
 	min-width: 1200px;
@@ -284,7 +288,10 @@ ul,li{
 }
 .perinform{
 	padding:10px 15px 15px 15px;
-	
+	height:367px !important;overflow:auto
+}
+.hei2{
+	height:310px !important;overflow:auto
 }
 .inform{
 	background: rgba(0,0,0,0.4);
@@ -347,3 +354,123 @@ ul,li{
 	 font-size:13px !important;}
 	 .name{padding:0px !important;}
     }
+
+@media screen and (max-width: 1300px){
+	.loginBox{
+	margin:0px auto;
+	margin-top: 0px;
+	width: 430px;
+	vertical-align: bottom;
+	}
+	.label {
+	    background: #003e8d;
+	    height: 43px;
+	    width: 43px;
+	    border-radius: 3px;
+	    position: absolute;
+	    margin-top: 16px;
+	    line-height: 43px;
+	    text-align: center;
+	}
+	.loginBox .admin {
+	    margin-top: 15px;
+	    width: 380px;
+	    height: 40px;
+	    line-height: 40px;
+	    padding-left: 50px;
+	    border: 1px solid #9fa0a0;
+	    border-radius: 3px;
+	    font-size: 16px;
+	}
+	.loginBox .admincode {
+	    margin-top: 15px;
+	    width: 214px;
+	    height: 40px;
+	    line-height: 40px;
+	    padding-left: 50px;
+	    border: 1px solid #9fa0a0;
+	    border-radius: 3px;
+	    font-size: 16px;
+	}
+	.label2 {
+	    height: 43px;
+	    width: 43px;
+	    border-radius: 3px;
+	    position: absolute;
+	    margin-top: 16px;
+	    line-height: 43px;
+	    text-align: center;
+	}
+	.btnlog {
+	    margin-top: 20px;
+	    width: 100%;
+	    height: 40px;
+	    text-align: center;
+	    line-height: 40px;
+	    background: #003e8d;
+	    border-radius: 3px;
+	    font-size: 28px;
+	    color: #ffffff;
+	    border: none;
+	}
+	/**************可视化界面***************/
+	.perNav {
+	    position: absolute;
+	    right: 25px;
+	    top: 45px;
+	}
+	.inform {
+	    background: rgba(0,0,0,0.4);
+	    border-radius: 10px;
+	    margin-top: 10px;
+	}
+	.perctitle {
+	    padding: 0px 15px 0px 20px;
+	    height: 42px;
+	    color: #fff;
+	    line-height: 42px;
+	    font-size: 18px;
+	    border-bottom: 1px solid rgba(255,255,255,0.3);
+	}
+	.permain {
+	    margin-top: 12px;
+	    border-radius: 5px;
+	    height: 30px;
+	    line-height: 30px;
+	    color: #fff;
+	    text-align: center;
+	    background: rgba(38,156,168,0.6);
+	}
+	.perinform {
+	    padding: 8px;
+	    height: 230px !important;
+	    overflow: auto;
+	}
+	.rowbox{
+		margin-right: 0px;
+    	margin-left: 0px;
+	}
+	.textovrt{
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;}
+	#main {
+	    width: 100%;
+	    height: 240px;
+	}
+	#mainbar{
+		width: 100%;height:220px !important;
+	}
+	#maincircle{
+		height:230px !important;
+	}
+	#canvasBox{
+		height:230px !important;
+		overflow:hidden;
+	}
+	#talents {
+	    padding-top: 25px !important;
+	    text-align: center;
+	    overflow:hidden;
+	}
+}

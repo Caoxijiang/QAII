@@ -11,6 +11,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all">
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
+   <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
  <%--  <link rel="stylesheet" href="${basePath}/css/layuiAdd.css"> --%>
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
@@ -61,6 +62,7 @@
 </div>
 <!-- 操作-->
 <div class="action"> 
+	<div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id="emp_num"  type="checkbox" value="工号" checked="flase"/><lable>工号</lable></div>
 	<div class="int-inline"><input id="emp_name"  type="checkbox" value="姓名" checked/><lable>姓名</lable></div>
@@ -102,7 +104,8 @@
 	<div class="int-inline"><input id="emp_returnee"  type="checkbox" value="是否留学归国人员" checked/><lable>是否留学归国人员</lable></div>
 	<div class="int-inline"><input id="emp_foreign"  type="checkbox" value="是否外籍人员" checked/><lable>是否外籍人员</lable></div>
 	<div class="int-inline"><input id="emp_remarks"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
-</div>  
+</div> 
+</div>   
 <!-- 数据展示主表格-->
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>

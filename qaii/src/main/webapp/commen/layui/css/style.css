@@ -1,0 +1,168 @@
+@charset "utf-8";
+/* CSS Document */
+/*******************************/
+/*** 数据可视化根据屏幕相应 ***/
+@media screen and (max-width: 1400px) {
+	 *{font-size:16px !important;}
+    }
+
+@media screen and (max-width: 1300px){
+	
+	.layui-layout-admin .layui-side {
+	    top: 70px;
+	    width: 200px;
+	    overflow-x: hidden;
+	}
+	.layui-side-scroll {
+	    position: relative;
+	    width: 200px;
+	    height: 100%;
+	    overflow-x: hidden;
+	}
+	.layui-nav-tree {
+	    width: 200px;
+	    padding: 0;
+	}
+	.layui-body {
+	    position: absolute;
+	    left: 200px;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 998;
+	    width: auto;
+	    overflow: hidden;
+	    overflow-y: auto;
+	    box-sizing: border-box;
+	}
+	.layui-layout-admin .layui-footer {
+	    position: fixed;
+	    left: 200px;
+	    right: 0;
+	    bottom: 0;
+	    height: 44px;
+	    line-height: 44px;
+	    padding: 0 15px;
+	    background-color: #1b2032;
+	    color: rgba(255,255,255,0.5);
+	}
+	.layui-nav-tree .layui-nav-item a {
+	    position: relative;
+	    height: 50px;
+	    line-height: 50px;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    white-space: nowrap;
+	}
+	.tool {
+	    position: fixed;
+	    top: 0px;
+	    width: 100%;
+	    padding-left: 45px;
+	    background: #1b2032;
+	    height: 50px;
+	    line-height: 50px;
+	    z-index: 100;
+	}
+	.tool .limit {
+	    font-size: 18px;
+	    color: #fff;
+	    vertical-align: middle;
+	}
+	.action {
+	    margin-top: 50px;
+	    padding: 10px 40px 5px 40px;
+	    background: #eef1f4;
+	    /* width: 100%; */
+	    overflow:auto;
+	}
+	.act{
+	width:1570px;}
+	.export {
+		margin-top: 7.5px !important;
+	    background: #64ad30;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 120px;
+	    height: 35px !important;
+	    line-height: 35px !important;
+	    font-size: 22px;
+	    text-align: center;
+	}
+	.search {
+	    height: 33px;
+	    border: 1px solid #aaa;
+	    color: #aaa;
+	    line-height: 36px;
+	    vertical-align: middle;
+	    text-align: center;
+	}
+	.layui-input {
+	    width: 100px;
+	    border: 1px solid #aaa;
+	    height: 33px;
+	    line-height: 33px;
+	}
+	#search{
+		margin-top: 0px !important;
+	    display: inline-block;
+	    height: 33px !important;
+	    line-height: 33px !important;
+	    padding: 0 15px;
+	    background-color: #036eb8;
+	    color: #fff;
+	    white-space: nowrap;
+	    text-align: center;
+	    font-size: 16px;
+	    border: none;
+	    border-radius: 2px;}
+	.layui-inline{
+	    margin-left: -6px !important;
+	    margin-right: -6px !important;
+	    margin-top: 0px !important;
+	}
+	.btn {
+	    border-radius: 3px !important;
+	    height: 35px;
+	    line-height: 35px;
+	    width: 84px;
+	    background: #fff;
+	    color: #1b2032;
+	    vertical-align: middle;
+	}
+	/**********系统管理**********/
+	.systemBox {
+	    margin: 0px auto;
+	    margin-top: 70px;
+	    width: 880px;
+	    border: none;
+	}
+	.department {
+	    width: 400px;
+	    height: 32px;
+	    color: #898989;
+	    border: 1px #f0f1f3 solid;
+	    border-radius: 3px;
+	    font-size: 16px;
+	}
+	.layui-table-cell {
+	    height: 45px;
+	    line-height: 45px;
+	    padding: 0 15px;
+	    position: relative;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    box-sizing: border-box;
+	}
+	/******* 消息管理 ******/
+	.message {
+	    margin-top: 50px;
+	    padding: 20px;
+	}
+	.message .messagebox .messagecontern {
+    padding: 15px;
+    color: #036eb8;
+    font-size: 16px;
+}
+}
