@@ -123,7 +123,7 @@
 					<img class="layui-upload-img" id="demo1" style="width:180px;height:252px;background: #f1f7f7;">
 					<p id="demoText"></p>
 				</div>
-				<input name="imageVal" lay-verify="required"  type="hidden"></input>
+				<input name="imageVal" type="hidden"></input>
 				<button type="button" class="layui-btn" id="imgload">上传图片</button>
 			</div> 
 			
@@ -394,7 +394,7 @@
    	   <div class="layui-col-md6">
 		   <div class="layui-form-item">
 			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+			  <button class="layui-btn" lay-submit="" lay-filter="demo1" onSubmit="imgjudge()">立即提交</button>
 			  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
 			</div>
 		  </div>
@@ -509,7 +509,10 @@ $.post({
 })
 
 	
-	
+function imgjudge(){
+	var img=$("[name=imageVal]").val();
+	alret(img);
+}	
 	
 	
 	

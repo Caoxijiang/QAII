@@ -28,9 +28,9 @@
 				data:{date:nowdate},
 				success:function(data){
 					data.forEach(function(e){
-						$("#contractremind").append('<li class="permain"><div class="row"><div class="col-4">'+
-								e.empDept+'</div><div class="col-2 name">'+
-								e.empName+'</div><div class="col-6">'+
+						$("#contractremind").append('<li class="permain"><div class="row rowbox"><div class="col-4 textovrt">'+
+								e.empDept+'</div><div class="col-2 textovrt name">'+
+								e.empName+'</div><div class="col-6 textovrt">'+
 								e.empContractendtime+'</div></div></li>');
 					})
 				}
@@ -45,9 +45,9 @@
 				data:{date:nowdate},
 				success:function(data){
 					data.forEach(function(e){
-						$("#tryremind").append('<li class="permain"><div class="row"><div class="col-4">'+
-								e.empDept+'</div><div class="col-2 name">'+
-								e.empName+'</div><div class="col-6">'+
+						$("#tryremind").append('<li class="permain"><div class="row rowbox"><div class="col-4 textovrt">'+
+								e.empDept+'</div><div class="col-2 textovrt name">'+
+								e.empName+'</div><div class="col-6 textovrt">'+
 								e.empTryoutendtime+'</div></div></li>');
 					})
 				}
@@ -83,7 +83,7 @@
 			<div class="perbox col-3">
 				<div class="inform">
 					<div class="perctitle"><span>合同到期提醒</span><span class="right more"><a href="intoPerSys.do">查看更多+</a></span></div>
-					<div class="perinform" style="height:367px !important;overflow:auto">
+					<div class="perinform">
 						<ul id="contractremind">
 							
 
@@ -92,7 +92,7 @@
 				</div>
 				<div class="inform">
 					<div class="perctitle"><span>试用期到期提醒</span><span class="right more"><a href="intoPerSys.do">查看更多+</a></span></div>
-					<div class="perinform" style="height:310px !important;overflow:auto">
+					<div class="perinform hei2">
 						<ul id="tryremind">
 							
 						</ul>
@@ -102,7 +102,7 @@
 			<div class="perbox2 col-6">
 				<div class="inform">
 					<div class="perctitle"><span>本月人数增减情况</span></div>
-					<div id="main" style="width: 100%;height:400px;"></div>
+					<div id="main"></div>
 				</div>
 				<div class="inform">
 					<div class="perctitle"><span>人才队伍</span></div>

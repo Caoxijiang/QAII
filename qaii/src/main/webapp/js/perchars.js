@@ -230,15 +230,21 @@
 			},
 			xAxis: {
 				type: 'category',
-				textStyle: {
-					color: '#fff',
-					fontSize:'14'
-				}
+				axisLabel: {        
+					show: true,
+					textStyle: {
+						color: '#fff',
+						fontSize:'14'
+					}
+				},
 			},
 			yAxis: {
-				textStyle: {
-					color: '#fff',
-					fontSize:'14'
+				axisLabel: {        
+					show: true,
+					textStyle: {
+						color: '#fff',
+						fontSize:'14'
+					}
 				}
 			},
 			series: [
