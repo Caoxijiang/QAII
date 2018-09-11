@@ -429,7 +429,9 @@ upload.render({
   ,url: 'getfile.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
-    console.log(res)
+    if(res!=null){
+    	alert("导入成功！");
+    }
   }
 })
 
