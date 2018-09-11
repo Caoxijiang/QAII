@@ -568,7 +568,8 @@ public class EmpController {
 	//通过excel插入数据库数据的接口
 	@RequestMapping(value="getfile.do",method=RequestMethod.POST)
 	@ResponseBody
-	public void test(@RequestParam("file")MultipartFile file) throws FileNotFoundException, IOException, CustomException  {
+	public Layui test(@RequestParam("file")MultipartFile file) throws FileNotFoundException, IOException, CustomException  {
+		Layui result = null;
 		List<String> list =new ArrayList<>();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		String filename=file.getOriginalFilename();
@@ -645,6 +646,7 @@ public class EmpController {
 					System.out.println(emp);
 					CountDatetoNowDays.TranstoStamp(emp);				
 					empInfoService.insert(emp);
+					result=result.data(1, null);
 					
 				}
 			}
@@ -654,6 +656,7 @@ public class EmpController {
 			throw new CustomException("DataBase badcontro!please check the file!");			
 		}
 		wookbook.close();
+		return result;
 		
 	}
 	
