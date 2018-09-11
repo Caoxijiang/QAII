@@ -252,6 +252,7 @@
 				},
 			},
 			yAxis: {
+				type: 'value',
 				axisLabel: {        
 					show: true,
 					textStyle: {
