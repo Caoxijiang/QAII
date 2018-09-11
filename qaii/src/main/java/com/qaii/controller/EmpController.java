@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -569,6 +570,7 @@ public class EmpController {
 	@ResponseBody
 	public void test(@RequestParam("file")MultipartFile file) throws FileNotFoundException, IOException, CustomException  {
 		List<String> list =new ArrayList<>();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		String filename=file.getOriginalFilename();
 		Workbook wookbook;
 		//判断是不是excel文件
@@ -592,19 +594,63 @@ public class EmpController {
 					for (int j=0;j<cells;j++) {
 						Cell cell=row.getCell(j);
 						if(cell!=null){
-							cell.setCellType(Cell.CELL_TYPE_STRING);
+							int cellType=cell.getCellType();
+							switch(cellType) {
+								case Cell.CELL_TYPE_BLANK: 	//单元格式为空白
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+									break;
+								case Cell.CELL_TYPE_BOOLEAN: //布尔
+									cell.setCellType(Cell.CELL_TYPE_BOOLEAN);
+									break;
+								case Cell.CELL_TYPE_ERROR: 	//错误
+									cell.setCellValue("错误");
+									break;
+								case Cell.CELL_TYPE_FORMULA: //公式
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+									break;
+								case Cell.CELL_TYPE_NUMERIC: 	//日期、数字
+									if (DateUtil.isCellDateFormatted(cell))
+										cell.setCellValue(sdf.format(cell.getDateCellValue()));
+									else {
+										cell.setCellType(Cell.CELL_TYPE_STRING);
+									}
+									break;
+								case Cell.CELL_TYPE_STRING:		//文本
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+							}
 							list.add(cell.toString());
 						}else {
 							list.add(null);
 						}
 					}
 					emp=setEmpInfovalue(emp, list);
+					if(emp.getEmpTryoutendtime()!=null)
+					emp.setEmpTryoutendtime(emp.getEmpTryoutendtime().replace("/", "-"));
+					if(emp.getEmpIdcardEndtime()!=null)
+					emp.setEmpIdcardEndtime(emp.getEmpIdcardEndtime().replace("/", "-"));
+					if(emp.getEmpContractendtime()!=null)
+					emp.setEmpContractendtime(emp.getEmpContractendtime().replace("/", "-"));
+					if(emp.getEmpFirstgraduationtime()!=null)
+					emp.setEmpFirstgraduationtime(emp.getEmpFirstgraduationtime().replace("/", "-"));
+					if(emp.getEmpSecondgraduationtime()!=null)
+					emp.setEmpSecondgraduationtime(emp.getEmpSecondgraduationtime().replace("/", "-"));
+					if(emp.getEmpThirdgraduationtime()!=null)
+					emp.setEmpThirdgraduationtime(emp.getEmpThirdgraduationtime().replace("/", "-"));
+					if(emp.getEmpInductiontime()!=null)
+					emp.setEmpInductiontime(emp.getEmpInductiontime().replace("/", "-"));
+					if(emp.getEmpJobtitleobtaintime()!=null)
+					emp.setEmpJobtitleobtaintime(emp.getEmpJobtitleobtaintime().replace("/", "-"));
+					if(emp.getEmpDepartureTime()!=null)
+					emp.setEmpDepartureTime(emp.getEmpDepartureTime().replace("/", "-"));
+					System.out.println(emp);
+					CountDatetoNowDays.TranstoStamp(emp);				
 					empInfoService.insert(emp);
 					
 				}
 			}
-		}catch(Exception e) {
+		}catch(ParseException e) {
 			wookbook.close();
+			e.printStackTrace();
 			throw new CustomException("DataBase badcontro!please check the file!");			
 		}
 		wookbook.close();
