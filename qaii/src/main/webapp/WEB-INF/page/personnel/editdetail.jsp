@@ -278,7 +278,15 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">聘期&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empHireStarttime" lay-verify="required" autocomplete="off" placeholder="请输入聘期" class="layui-input input">
+							<select name="empHireStarttime" lay-verify="required" lay-search="" class="input" lay-verify="required">
+								<option value="">请选择</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+							<!-- <input type="text" name="empHireStarttime" lay-verify="required" autocomplete="off" placeholder="请输入聘期" class="layui-input input"> -->
 						</div>
 					</div>
 					
@@ -331,7 +339,7 @@
    		 			<div class="layui-form-item">
 						<label class="layui-form-label">合同签订次数</label>
 						<div class="layui-input-block">
-							<input type="text" name="empContractsignednum"  autocomplete="off" placeholder="请输入合同签订次数" class="layui-input input">
+							<input type="number" name="empContractsignednum"  autocomplete="off" placeholder="请输入合同签订次数" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
