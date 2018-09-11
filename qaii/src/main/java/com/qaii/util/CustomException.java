@@ -15,5 +15,8 @@ public class CustomException extends Exception {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-
+	public void printStackTrace(String msg) {
+		this.msg=msg;
+		System.out.println(msg);
+	}
 }

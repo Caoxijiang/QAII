@@ -1,5 +1,6 @@
 package com.qaii.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -35,7 +36,6 @@ public class deptController {
 	public Layui findDeptInfoList() {
 		List<DeptInfo> deptInfo=deptInfoService.findAllRoleList();
 		int count =deptInfo.size();
-		System.out.println(count);
 			if(deptInfo!=null) {
 				return Layui.data(count, deptInfo);
 			}else {
@@ -50,7 +50,6 @@ public class deptController {
     @ResponseBody
     @RequestMapping(value="dellDeptInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
     public JsonResult DellempInfo(@RequestParam(value = "requestDate") Integer id ){
-    	System.out.println(id);
      	int row=deptInfoService.dellDeptInfoByid(id);
     	if(row!=0) {
     		return  new JsonResult(row);
@@ -90,6 +89,18 @@ public class deptController {
     		
     	}
         
+    }
+    
+    //chaxun bumen xingming 
+    @RequestMapping(value="getdeptName.do",method=RequestMethod.POST)
+    @ResponseBody
+    public List<String> getdeptName(){
+    	List<DeptInfo>list=deptInfoService.findAllRoleList();
+		List<String> s=new ArrayList<>();
+		for(DeptInfo s1:list) {
+			s.add(s1.getDeptName());
+		}
+    	return s;
     }
 	
 }

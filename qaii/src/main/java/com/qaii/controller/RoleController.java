@@ -75,8 +75,6 @@ public class RoleController {
 			role.setUid(id);
 			int row =userroleServivce.insert(role);
 			if(row!=-1) {
-				//String data="添加成功";
-				System.out.println(new JsonResult(row));
 				return new JsonResult(row);
 			}else {
 				return new JsonResult();
@@ -96,7 +94,6 @@ public class RoleController {
 	@RequestMapping(value="findRoleuser.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public JsonResult findroleList() {
 		List <Role> role= roleServivce.findAllRoleList();
-		System.out.println(role);
 		if(role!=null) {
 			return new JsonResult(role);
 			
@@ -112,7 +109,6 @@ public class RoleController {
 	public Layui findUserRoleList() {
 	List<Map<String,Object>>userrole= userroleServivce.findUserRoleList();
 	int count =userrole.size();
-	System.out.println(count);
 		if(userrole!=null) {
 			return Layui.data(count, userrole);
 		}else {

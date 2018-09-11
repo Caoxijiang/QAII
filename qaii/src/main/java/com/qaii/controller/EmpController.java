@@ -1,6 +1,7 @@
 package com.qaii.controller;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,6 +16,13 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,12 +30,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.qaii.domain.DeptInfo;
 import com.qaii.domain.EmpAvatarinfo;
 import com.qaii.domain.EmpInfo;
 import com.qaii.domain.User;
+import com.qaii.service.DeptInfoService;
 import com.qaii.service.EmpAvatarService;
 import com.qaii.service.EmpInfoService;
 import com.qaii.util.CountDatetoNowDays;
+import com.qaii.util.CustomException;
 import com.qaii.util.JsonResult;
 import com.qaii.util.Layui;
 
@@ -37,6 +48,8 @@ public class EmpController {
 	private EmpInfoService empInfoService;
 	@Resource
 	private EmpAvatarService empAvatarService; 
+	@Resource
+	private DeptInfoService deptInfoService;
 	
 	//修改员工信息页面
 	@RequestMapping(value="updateEmpInfo.do",produces="application/json;charset=UTF-8")
@@ -81,9 +94,6 @@ public class EmpController {
 		empInfo.setEmpContractStatus("1");
 		CountDatetoNowDays.TranstoStamp(empInfo);
 		
-		
-		
-		System.out.println(empInfo.toString());
 		int row = empInfoService.insert(empInfo);
 		if(row>0) {
 			Map<String,String> map=new HashMap<>();
@@ -126,7 +136,7 @@ public class EmpController {
 	    
 	  //  String fileName=file.getOriginalFilename();
 	    int size=(int)file.getSize();
-	    System.out.println(fileName+":---"+size);
+	  //  System.out.println(fileName+":---"+size);
 	    String path="C:/File/img";
 	    File dest =new File(path+"/"+fileName);
 	    if(!dest.getParentFile().exists()) {
@@ -173,7 +183,6 @@ public class EmpController {
 		}
 	
 		int count =empInfo.size();
-		System.out.println(count);
 			if(empInfo!=null) {
 				return Layui.data(count, empInfo);
 			}else {
@@ -190,7 +199,6 @@ public class EmpController {
 			CountDatetoNowDays.TranstoDate(emp);
 		}
 		int count =empInfo.size();
-		System.out.println(count);
 		if(empInfo!=null) {
 			return Layui.data(count, empInfo);
 		}else {
@@ -204,7 +212,6 @@ public class EmpController {
 	public JsonResult seeEmpInfos(EmpInfo emp,HttpServletRequest req) {	
 		
 		int userid=Integer.parseInt(req.getParameter("userId"));
-		System.out.println("user:"+userid);
 		//emp.setId();
 		emp = empInfoService.findEmpinfoAndAvatarByid(userid);
 		if(emp!=null) {
@@ -218,19 +225,26 @@ public class EmpController {
 	
 	
 	//修改员工信息
-	@ResponseBody
+//	@ResponseBody
 	@RequestMapping(value="updateEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) throws ParseException {	
+	public String updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) throws ParseException {	
 		EmpInfo(req, empInfo);
+		empInfo.setEmpStat(req.getParameter("empStat"));
+		empInfo.setEmpDepartureTime(req.getParameter("empDepartureTime"));
+		empInfo.setEmpTryStatus(req.getParameter("empTryStatus"));
+		empInfo.setEmpContractStatus(req.getParameter("empContractStatus"));
 		empInfo.setId(Integer.parseInt(req.getParameter("userId")));
-
+		CountDatetoNowDays.TranstoStamp(empInfo);
 		int row =empInfoService.updateByPrimaryKey(empInfo);
 		if(row>=1) {
-			String data="更新成功";
-			return new JsonResult(data);
+			//String data="更新成功";
+			 return "page/science/add-succesd";
 		}else {
-			return new JsonResult();
+			
+			return "page/science/add-faild";
+			//return new JsonResult();
 		}
+		
 		
 		
 	}
@@ -239,7 +253,6 @@ public class EmpController {
     @ResponseBody
     @RequestMapping(value="DellempInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
     public JsonResult DellempInfo(@RequestParam(value = "requestDate[]") Integer[] eid ){
-    	System.out.println(eid);
     	
      	int row=empInfoService.delete(eid);
     	if(row!=0) {
@@ -256,16 +269,12 @@ public class EmpController {
     @RequestMapping(value="dellempInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
     public JsonResult dellempInfo(@RequestParam(value = "requestDate") Integer id ){
     	
-    	System.out.println(id);
     	long time=System.currentTimeMillis();
-    	 
-    	 
-    	 System.out.println(time);
     	EmpInfo emp=new EmpInfo();
     	emp.setId(id);
     	emp.setEmpDepartureTime(String.valueOf(time));
      	int row=empInfoService.updataempStatus(emp);
-    	if(row!=0) {
+    	if(row>=1) {
     		return  new JsonResult(row);
     	}else {
     		return  new JsonResult();
@@ -284,7 +293,6 @@ public class EmpController {
 			CountDatetoNowDays.TranstoDate(emp);
 		}
 		int count =empInfo.size();
-		System.out.println(count);
 			if(empInfo!=null) {
 				return Layui.data(count, empInfo);
 			}else {
@@ -304,7 +312,6 @@ public class EmpController {
 		int row=empAvatarService.insert(EMpA);
 		if(row > 0) {
 			int eid=EMpA.getId();
-			System.out.println(eid);
 			if(eid>=1) {
 				result.put("code", "0");
 				result.put("msg", "上传成功");
@@ -368,7 +375,7 @@ public class EmpController {
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
 		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
 		empInfo.setEmpTitle(req.getParameter("empTitle"));
-		CountDatetoNowDays.TranstoStamp(empInfo);
+		//CountDatetoNowDays.TranstoStamp(empInfo);
 	}
 	
 	//取得每个月的新入职、离职、净增长、院总人数
@@ -389,13 +396,18 @@ public class EmpController {
 	
 	//取得人才队伍柱状图参数
 	public Map<String, Integer> gettalentsTeam(String date) throws ParseException{
+		List<DeptInfo>list=deptInfoService.findAllRoleList();
+		List<String> s=new ArrayList<>();
+		for(DeptInfo s1:list) {
+			s.add(s1.getDeptName());
+		}
 		Map<String, String> map=new HashMap<>();
 		Map<String, Integer> result=new HashMap<>();
 		map=CountDatetoNowDays.FirstandEndDayofYear(date);
-		result.put("Incnum", empInfoService.countnumofIncubationComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this"))));
-		result.put("collegenum", empInfoService.countnumofcollegeComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this"))));
-		result.put("total", empInfoService.countnumofIncubationComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this")))
-				+empInfoService.countnumofcollegeComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this"))));
+		result.put("total", empInfoService.countnumofIncubationComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this"))));
+		result.put("collegenum", empInfoService.countnumofcollegeComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this")),s));
+		result.put("Incnum", empInfoService.countnumofIncubationComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this")))
+				-empInfoService.countnumofcollegeComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this")),s));
 		return result;
 		
 	}
@@ -553,4 +565,149 @@ public class EmpController {
 		return empInfoService.updateReview(msg, id);
 	}
 	
+	//通过excel插入数据库数据的接口
+	@RequestMapping(value="getfile.do",method=RequestMethod.POST)
+	@ResponseBody
+	public Layui test(@RequestParam("file")MultipartFile file) throws FileNotFoundException, IOException, CustomException  {
+		Layui result = null;
+		List<String> list =new ArrayList<>();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		String filename=file.getOriginalFilename();
+		Workbook wookbook;
+		//判断是不是excel文件
+		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
+			throw new CustomException("This is not an Excel file!");
+		//判断是03版还是07版excel
+		if(filename.endsWith(".xls")) {
+			wookbook=new HSSFWorkbook(file.getInputStream());
+		}else {
+			wookbook=new XSSFWorkbook(file.getInputStream());
+		}
+		try {
+			Sheet sheet=wookbook.getSheet("Sheet1");
+			int rows = sheet.getPhysicalNumberOfRows();
+			for (int i=1;i<rows;i++) {
+				Row row =sheet.getRow(i);
+				int cells=sheet.getRow(0).getPhysicalNumberOfCells();
+				if (row!=null) {
+					list.clear();
+					EmpInfo emp = new EmpInfo();
+					for (int j=0;j<cells;j++) {
+						Cell cell=row.getCell(j);
+						if(cell!=null){
+							int cellType=cell.getCellType();
+							switch(cellType) {
+								case Cell.CELL_TYPE_BLANK: 	//单元格式为空白
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+									break;
+								case Cell.CELL_TYPE_BOOLEAN: //布尔
+									cell.setCellType(Cell.CELL_TYPE_BOOLEAN);
+									break;
+								case Cell.CELL_TYPE_ERROR: 	//错误
+									cell.setCellValue("错误");
+									break;
+								case Cell.CELL_TYPE_FORMULA: //公式
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+									break;
+								case Cell.CELL_TYPE_NUMERIC: 	//日期、数字
+									if (DateUtil.isCellDateFormatted(cell))
+										cell.setCellValue(sdf.format(cell.getDateCellValue()));
+									else {
+										cell.setCellType(Cell.CELL_TYPE_STRING);
+									}
+									break;
+								case Cell.CELL_TYPE_STRING:		//文本
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+							}
+							list.add(cell.toString());
+						}else {
+							list.add(null);
+						}
+					}
+					emp=setEmpInfovalue(emp, list);
+					if(emp.getEmpTryoutendtime()!=null)
+					emp.setEmpTryoutendtime(emp.getEmpTryoutendtime().replace("/", "-"));
+					if(emp.getEmpIdcardEndtime()!=null)
+					emp.setEmpIdcardEndtime(emp.getEmpIdcardEndtime().replace("/", "-"));
+					if(emp.getEmpContractendtime()!=null)
+					emp.setEmpContractendtime(emp.getEmpContractendtime().replace("/", "-"));
+					if(emp.getEmpFirstgraduationtime()!=null)
+					emp.setEmpFirstgraduationtime(emp.getEmpFirstgraduationtime().replace("/", "-"));
+					if(emp.getEmpSecondgraduationtime()!=null)
+					emp.setEmpSecondgraduationtime(emp.getEmpSecondgraduationtime().replace("/", "-"));
+					if(emp.getEmpThirdgraduationtime()!=null)
+					emp.setEmpThirdgraduationtime(emp.getEmpThirdgraduationtime().replace("/", "-"));
+					if(emp.getEmpInductiontime()!=null)
+					emp.setEmpInductiontime(emp.getEmpInductiontime().replace("/", "-"));
+					if(emp.getEmpJobtitleobtaintime()!=null)
+					emp.setEmpJobtitleobtaintime(emp.getEmpJobtitleobtaintime().replace("/", "-"));
+					if(emp.getEmpDepartureTime()!=null)
+					emp.setEmpDepartureTime(emp.getEmpDepartureTime().replace("/", "-"));
+					System.out.println(emp);
+					CountDatetoNowDays.TranstoStamp(emp);				
+					empInfoService.insert(emp);
+					result=result.data(1, null);
+					
+				}
+			}
+		}catch(ParseException e) {
+			wookbook.close();
+			e.printStackTrace();
+			throw new CustomException("DataBase badcontro!please check the file!");			
+		}
+		wookbook.close();
+		return result;
+		
+	}
+	
+	public EmpInfo setEmpInfovalue(EmpInfo empInfo,List<String> value) {
+		empInfo.setEid(value.get(0));
+		empInfo.setEmpNum(value.get(1));
+		empInfo.setEmpName(value.get(2));
+		empInfo.setEmpGender(value.get(3));
+		empInfo.setEmpDept(value.get(4));
+		empInfo.setEmpPosition(value.get(5));
+		empInfo.setEmpHireStarttime(value.get(6));
+		empInfo.setEmpIdcard(value.get(7));
+		empInfo.setEmpIdcardEndtime(value.get(8));
+		empInfo.setEmpEthnic(value.get(9));
+		empInfo.setEmpPoliticallandscape(value.get(10));
+		empInfo.setEmpMaritalstatus(value.get(11));
+		empInfo.setEmpFirsteducation(value.get(12));
+		empInfo.setEmpSecondeducation(value.get(13));
+		empInfo.setEmpThirdeducation(value.get(14));
+		empInfo.setEmpFirsteducationschool(value.get(15));
+		empInfo.setEmpSecondeducationschool(value.get(16));
+		empInfo.setEmpThirdeducationschool(value.get(17));
+		empInfo.setEmpFirsteducationpro(value.get(18));
+		empInfo.setEmpSecondeducationpro(value.get(19));
+		empInfo.setEmpSecondeducationpro(value.get(20));
+		empInfo.setEmpFirstgraduationtime(value.get(21));
+		empInfo.setEmpSecondgraduationtime(value.get(22));
+		empInfo.setEmpThirdgraduationtime(value.get(23));
+		empInfo.setEmpJobtitle(value.get(24));
+		empInfo.setEmpJobtitlelevel(value.get(25));
+		empInfo.setEmpJobtitleobtaintime(value.get(26));
+		empInfo.setEmpPhone(value.get(27));
+		empInfo.setEmpEmergencycontactandphone(value.get(28));
+		empInfo.setEmpFileaddress(value.get(29));
+		empInfo.setEmpAccountaddress(value.get(30));
+		empInfo.setEmpHomeaddress(value.get(31));
+		empInfo.setEmpWorktype(value.get(32));
+		empInfo.setEmpCompile(value.get(33));
+		empInfo.setEmpInductiontime(value.get(34));
+		empInfo.setEmpTryoutendtime(value.get(35));
+		empInfo.setEmpContractendtime(value.get(36));
+		empInfo.setEmpContractsignednum(Integer.parseInt(value.get(37)));
+		empInfo.setEmpReturnee(value.get(38));
+		empInfo.setEmpForeign(value.get(39));
+		empInfo.setEmpRemarks(value.get(40));
+		empInfo.setEmpReviewstatus("通过");
+		empInfo.setEmpStat("1");
+		empInfo.setEmpDepartureTime(value.get(41));
+		empInfo.setEmpTryStatus(value.get(42));
+		empInfo.setEmpContractStatus(value.get(43));
+		empInfo.setEmpTitle(value.get(44));
+		return empInfo;
+	}
 }

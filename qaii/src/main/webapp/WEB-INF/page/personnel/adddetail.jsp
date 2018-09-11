@@ -54,9 +54,9 @@
 						<div class="layui-input-block">
 							<select name="empPoliticallandscape" lay-verify="required" lay-search="" class="input">
 								<option value="">请选择</option>
-								<option value="1">党员</option>
-								<option value="2">团员</option>
-								<option value="3">群众</option>
+								<option value="党员">党员</option>
+								<option value="团员">团员</option>
+								<option value="群众">群众</option>
 							</select>
 						</div>
 					</div>
@@ -73,8 +73,8 @@
 						<div class="layui-input-block">
 							<select name="empGender" lay-verify="required" lay-search="" class="input">
 								<option value="">请选择</option>
-								<option value="1">男</option>
-								<option value="2">女</option>
+								<option value="男">男</option>
+								<option value="女">女</option>
 							</select>
 						</div>
 					</div>
@@ -137,9 +137,9 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">身份证到期时间</label>
+						<label class="layui-form-label">身份证到期时间&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1" placeholder="yyyy-MM-dd">
+							<input type="text" name="empIdcardEndtime" lay-verify="required" class="layui-input input" id="test2-1" placeholder="yyyy-MM-dd">
 						  </div>
 					</div>
 				</div>
@@ -169,7 +169,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">第一学历&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" placeholder="请输入第一学历" class="layui-input input">
+							<input type="text" name="empFirsteducation"  lay-verify="required" autocomplete="off" placeholder="请输入第一学历" class="layui-input input">
 						</div>
 					</div>
 					
@@ -190,7 +190,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">第一学历毕业学校&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empFirsteducationschool" lay-verify="required"  lay-verify="title" autocomplete="off" placeholder="请输入第一学历毕业学校" class="layui-input input">
+							<input type="text" name="empFirsteducationschool" lay-verify="required" autocomplete="off" placeholder="请输入第一学历毕业学校" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
@@ -210,7 +210,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">第一学历专业&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empFirsteducationpro" lay-verify="title" autocomplete="off" placeholder="请输入第一学历专业" class="layui-input input">
+							<input type="text" name="empFirsteducationpro" lay-verify="required" autocomplete="off" placeholder="请输入第一学历专业" class="layui-input input">
 						</div>
 					</div>
 					
@@ -229,9 +229,9 @@
 				</div>
    		 		<div class="layui-col-md3">
 					<div class="layui-form-item">
-						  <label class="layui-form-label">第一学历毕业时间</label>
+						  <label class="layui-form-label">第一学历毕业时间&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empFirstgraduationtime" class="layui-input input" id="test1-1" placeholder="yyyy-MM-dd">
+							<input type="text" name="empFirstgraduationtime" lay-verify="required" class="layui-input input" id="test1-1" placeholder="yyyy-MM-dd">
 						  </div>
 					</div>
 					<div class="layui-form-item">
@@ -280,7 +280,15 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">聘期</label>
 						<div class="layui-input-block">
-							<input type="text" name="empHireStarttime" autocomplete="off" placeholder="请输入聘期" class="layui-input input">
+							<select name="empHireStarttime" lay-search="" class="input">
+								<option value="">请选择</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+							<!-- <input type="text" name="empHireStarttime" autocomplete="off" placeholder="请输入聘期" class="layui-input input"> -->
 						</div>
 					</div>
 					
@@ -290,8 +298,8 @@
 						<div class="layui-input-block">
 							<select name="empCompile" lay-search="" class="input">
 								<option value="">请选择</option>
-								<option value="1">是</option>
-								<option value="2">否</option>
+								<option value="是">是</option>
+								<option value="否">否</option>
 							</select>
 						</div>
 					</div>
@@ -349,8 +357,8 @@
 						<div class="layui-input-block">
 							<select name="empReturnee" lay-search="" class="input">
 								<option value="">请选择</option>
-								<option value="1">是</option>
-								<option value="2">否</option>
+								<option value="是">是</option>
+								<option value="否">否</option>
 							</select>
 						</div>
 					</div>
@@ -360,8 +368,8 @@
 						<div class="layui-input-block">
 							<select name="empForeign" lay-search="" class="input">
 								<option value="">请选择</option>
-								<option value="1">是</option>
-								<option value="2">否</option>
+								<option value="是">是</option>
+								<option value="否">否</option>
 							</select>
 						</div>
 					</div>
@@ -412,7 +420,6 @@ $.post({
 	url:"findDeptInfoList.do",
 	success:function(data){
 		var deptInfo=data.data;
-		console.log(deptInfo);
 		if(deptInfo!=null){
 			$(deptInfo).each(function(index,element){
 				index+=1;
@@ -421,7 +428,6 @@ $.post({
 				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
 				//$("#deptt").next(".layui-form-select").children("dl").append(heml);
 				$("#deptt").append(heml);
-				console.log(heml);
 			})						
 		
 			//JavaScript代码区域
@@ -476,7 +482,6 @@ $.post({
 			      });
 			    }
 			    ,done: function(res){
-			    	console.log(res);
 			      //如果上传失败
 			      if(res.code > 0){
 			        return layer.msg('上传失败');
@@ -485,7 +490,6 @@ $.post({
 			    	 var eid=res.eid
 			    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
 			    	$("input[name='imageVal']").attr("value",eid);
-			    	console.log("uuuuuuuuuu"+$("input[name='imageVal']").val());
 			    	  return layer.msg(res.msg);
 			      }
 			      //上传成功
