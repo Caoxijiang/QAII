@@ -586,16 +586,16 @@
 		SELECT count(*) FROM emp_info WHERE emp_inductionTime &gt;= #{0} AND emp_inductionTime &lt; #{1} 
 	</select>
 	<select id="selectnumbyDeparture" resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt;= #{0} AND emp_departureTime &lt; #{1} 
+		SELECT COUNT(*) FROM emp_info WHERE IFNULL(emp_departureTime,9999999999999 ) &gt;= #{0} AND emp_departureTime &lt; #{1} 
 	</select>
 	<select id="selectnumofcollege" resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_inductionTime &lt; #{0} AND emp_departureTime &gt; #{1} 
+		SELECT COUNT(*) FROM emp_info WHERE emp_inductionTime &lt; #{0} AND IFNULL(emp_departureTime,9999999999999 ) &gt; #{1} 
 	</select>
 	<select id="selectnumofIncubationComp" resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt; #{0} AND emp_inductionTime &lt; #{1} 
+		SELECT COUNT(*) FROM emp_info WHERE IFNULL(emp_departureTime,9999999999999 ) &gt; #{0} AND emp_inductionTime &lt; #{1} 
 	</select>
 	<select id="selectnumofcollegeComp" resultType="int" parameterType="java.lang.String">
-		SELECT COUNT(*) FROM emp_info WHERE emp_departureTime &gt; #{0} AND emp_inductionTime &lt; #{1} AND emp_dept in 
+		SELECT COUNT(*) FROM emp_info WHERE IFNULL(emp_departureTime,9999999999999 ) &gt; #{0} AND emp_inductionTime &lt; #{1} AND emp_dept in 
 		<foreach collection="list" open="(" close=")" separator="," item="item">#{item,jdbcType=VARCHAR}</foreach>
 	</select>
 	<select id="selectnumoftalnets"  resultType="int" parameterType="java.lang.String">

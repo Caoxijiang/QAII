@@ -702,12 +702,12 @@ public class EmpController {
 		empInfo.setEmpReturnee(value.get(38));
 		empInfo.setEmpForeign(value.get(39));
 		empInfo.setEmpRemarks(value.get(40));
-		empInfo.setEmpReviewstatus(value.get(41));
-		empInfo.setEmpStat(value.get(42));
-		empInfo.setEmpDepartureTime(value.get(43));
-		empInfo.setEmpTryStatus(value.get(44));
-		empInfo.setEmpContractStatus(value.get(45));
-		empInfo.setEmpTitle(value.get(46));
+		empInfo.setEmpReviewstatus("通过");
+		empInfo.setEmpStat("1");
+		empInfo.setEmpDepartureTime(value.get(41));
+		empInfo.setEmpTryStatus(value.get(42));
+		empInfo.setEmpContractStatus(value.get(43));
+		empInfo.setEmpTitle(value.get(44));
 		return empInfo;
 	}
 }
