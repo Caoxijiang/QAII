@@ -526,10 +526,8 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					userId:id
 				},
 				success:function(data){
-					console.log(data);
 					if(data.data!=null){
 						let empinfo=data.data;
-						console.log("_____:"+JSON.stringify(data.data));
 						//表单初始赋值 从表单中提取数据
 						  form.val('example', {
 						    "empName": empinfo.empName,

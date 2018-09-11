@@ -280,7 +280,15 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">聘期</label>
 						<div class="layui-input-block">
-							<input type="text" name="empHireStarttime" autocomplete="off" placeholder="请输入聘期" class="layui-input input">
+							<select name="empHireStarttime" lay-search="" class="input">
+								<option value="">请选择</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+							<!-- <input type="text" name="empHireStarttime" autocomplete="off" placeholder="请输入聘期" class="layui-input input"> -->
 						</div>
 					</div>
 					
@@ -460,7 +468,6 @@ $.post({
 	url:"findDeptInfoList.do",
 	success:function(data){
 		var deptInfo=data.data;
-		console.log(deptInfo);
 		if(deptInfo!=null){
 			$(deptInfo).each(function(index,element){
 				index+=1;
@@ -469,7 +476,6 @@ $.post({
 				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
 				//$("#deptt").next(".layui-form-select").children("dl").append(heml);
 				$("#deptt").append(heml);
-				console.log(heml);
 			})
 		//JavaScript代码区域
 		layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
@@ -535,7 +541,6 @@ $.post({
 		    	 var eid=res.eid
 		    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
 		    	$("input[name='imageVal']").attr("value",eid);
-		    	console.log("uuuuuuuuuu"+$("input[name='imageVal']").val());
 		    	  return layer.msg(res.msg);
 		      }
 		      //上传成功
@@ -562,7 +567,6 @@ $.post({
 					success:function(data){
 						if(data.data!=null){
 							let empinfo=data.data;
-							console.log("_____:"+JSON.stringify(data.data))
 							//表单初始赋值 从表单中提取数据
 							
 							if(eid==undefined){

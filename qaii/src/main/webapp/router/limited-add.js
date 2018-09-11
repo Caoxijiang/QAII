@@ -34,7 +34,6 @@ $().ready(function() {
 				"requestDate" : str
 			},
 			success:function(data){
-				console.log(data)
 				if (data.data){
 					alert("添加成功")	
 				}else{

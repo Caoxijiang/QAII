@@ -105,7 +105,6 @@
 			   $(this).removeClass("layui-icon-up");
 			   $(this).addClass("layui-icon-down");
 			  $(this).parent().css("border","none");
-			  console.log("向上");
 		  }else{ //内容显示设置
 			  $(this).removeClass("layui-icon-down");
 			  $(this).addClass("layui-icon-up");
@@ -169,7 +168,6 @@ layui.use('table', function(obj){
 	  //表格数据
     data:obj.data
   });
-  console.log(obj.data);
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
@@ -194,7 +192,6 @@ layui.use('table', function(obj){
     } else if(layEvent === 'del'){
       layer.confirm('确定驳回申请', function(index){
     	  let arr=[data.id];
-          console.log(data) 
           $.post({
           	url:"DellempInfo.do",
           	data:{
@@ -241,7 +238,6 @@ layui.use('table', function(obj){
     data:obj.data
   });
 
-  console.log(obj);
 
 
 //试用期到期

@@ -131,7 +131,6 @@ layui.config({
 layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
 	 //监听表格复选框选择
-	console.log(JSON.stringify(obj.cache));
 	  
   //执行一个 table 实例
   table.render({
@@ -201,7 +200,6 @@ layui.use('table', function(obj){
         }
   });
   //alert(JSON.stringify(obj.cache.testReload[0]))
- console.log(obj.cache)
 	//添加筛选功能
 	
   var $ = layui.$, active = {
@@ -306,7 +304,6 @@ layui.use('table', function(obj){
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
-    console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
 		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
@@ -314,7 +311,6 @@ layui.use('table', function(obj){
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
           let arr=[data.id];
-          console.log(data) 
           $.post({
           	url:"DellempInfo.do",
           	data:{
@@ -361,7 +357,6 @@ layui.use('table', function(obj){
     }else if(layEvent==="dimission"){
     	 layer.confirm('确定离职信息', function(index){
              let arr=data.id;
-             console.log(data) 
              $.post({
              	url:"dellempInfo.do",
              	data:{
@@ -464,7 +459,6 @@ upload.render({
 			window.location.reload();
 		}); 
 		$(".layui-form .layui-form-item div span").click(function(){
-			console.log($(this).attr('class')+"5555");
 		});
 		$(":checkbox").click(function(){
 			var val=$(this).attr("id");
@@ -484,7 +478,6 @@ upload.render({
 	var heigt=ji-hei-85;
 	$(".layui-table-body").prop("height",heigt+"px");
 	
-	console.log(heigt);
 
 	
 </script>

@@ -132,7 +132,6 @@ layui.use('table', function(){
 
 	
   table.on('checkbox(demo)', function(obj){
-    console.log(obj)
   });
   
   //执行一个 table 实例
@@ -195,7 +194,6 @@ layui.use('table', function(){
     ]],
     done: function(res, curr, count){
         $("#countnum").html(count);
-          console.log(count+"总数");
           }
 	  //表格数据
     //data:obj.data
@@ -213,7 +211,6 @@ layui.use('table', function(){
   	 if(check=="all"){
   		  var val=$(".layui-table tr:eq(0) th:eq(2)").attr('data-field');/*获取制定data-field值*/
   		  var cellval=$(".layui-table tr:eq(1) td:eq(3)").text();/*获取指定行列元素包含的文本*/
-  		  console.log(num);
   		//逐个单元格匹配内容
   		  var myA=new Array();
   		  for(var i=1;i<trlen;i++){
@@ -257,7 +254,6 @@ layui.use('table', function(){
   						  myA[i]=myA[i]+$(this).text();
   						 }
   				 })
-  				 console.log(myA[i]+"000000000000000");
   			  }
   			//全局搜索
   			  $(".layui-table tr").each(function(){
@@ -295,7 +291,6 @@ layui.use('table', function(){
 //  	window.location.reload();//刷新当前页面.
       var type = $(this).data('type');
       active[type] ? active[type].call(this) : '';
-  	  console.log("dianjishiqin");
     });
   
   //页面数据刷新
@@ -308,14 +303,12 @@ layui.use('table', function(){
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
-    console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
       layer.msg('用户名：'+JSON.stringify(data.username)+'<br>密码：'+JSON.stringify(data.pas)+'<br>角色：'+JSON.stringify(data.rid));
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
           let arr=[data.id];
-          console.log(data) 
           $.post({
           	url:"DellempInfo.do",
           	data:{
@@ -414,7 +407,6 @@ layui.use('table', function(){
 			window.location.reload();
 		}); 
 		$(".layui-form .layui-form-item div span").click(function(){
-			console.log($(this).attr('class')+"5555");
 		});
 		$(":checkbox").click(function(){
 			var val=$(this).attr("id");
@@ -433,7 +425,6 @@ layui.use('table', function(){
 	var heigt=ji-hei-85;
 	$(".layui-table-body").prop("height",heigt+"px");
 	
-	console.log(heigt);
 
 	
 </script>

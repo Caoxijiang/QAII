@@ -74,9 +74,7 @@ layui.use('table', function(obj){
       layer.msg('ID：'+ data.id + ' 的查看操作');
     } else if(obj.event === 'del'){
       layer.confirm('真的删除行么', function(index){
-    	  console.log(JSON.stringify(data))
           let arr=data.id;
-          console.log(data) 
           $.post({
           	url:"dellDeptInfo.do",
           	data:{
@@ -110,7 +108,6 @@ layui.use('table', function(obj){
 		  ,yes: function(index, layero){
 		    //提交修改按钮
 		    var data = obj.data;
-		    console.log(data)
 			var role=$("#sys-edit").val();
 		    var id=data.id;
 		    
@@ -172,7 +169,6 @@ layui.use('layer', function(){ //独立版的layer无需执行这一句
 		var role=$("#sys-add").val();
 	    if(rolr==null){
 	    	alert("请输入内容")
-	    	console.log(role);
 	    }else{
 			$.post({
 				url:"addDeptInfo.do",
