@@ -20,8 +20,59 @@ import com.qaii.util.Layui;
 
 @Controller
 public class techController {
+	//主框架
 	@RequestMapping("science.do")
 	public String science(){
 		return "page/science/science";
+	}
+	//科技处数据可视化
+	@RequestMapping("indexScience.do")
+	public String indexScience(){
+		return "page/science/indexScience";
+	}
+	//专利
+	@RequestMapping("patent.do")
+	public String patent(){
+		return "page/science/patent";
+	}
+	//软著
+	@RequestMapping("soft.do")
+	public String soft(){
+		return "page/science/soft";
+	}
+	//商标
+	@RequestMapping("brand")
+	public String brand(){
+		return "page/science/brand";
+	}
+	//基金
+	@RequestMapping("fund.do")
+	public String fund(){
+		return "page/science/fund";
+	}
+	//创新平台
+	@RequestMapping("create.do")
+	public String create(){
+		return "page/science/create";
+	}
+	//科研项目
+	@RequestMapping("research.do")
+	public String research(){
+		return "page/science/research";
+	}
+	//科技奖励
+	@RequestMapping("award.do")
+	public String award(){
+		return "page/science/award";
+	}
+	//论文
+	@RequestMapping("paper.do")
+	public String paper(){
+		return "page/science/paper";
+	}
+	//著作
+	@RequestMapping("work.do")
+	public String work(){
+		return "page/science/work";
 	}
 }
