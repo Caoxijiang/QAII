@@ -9,6 +9,8 @@
   <title>科研成果管理系统</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
+  <link rel="stylesheet" href="${basePath}/css/science.css">
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 <!--  iframe样式设置-->
   <style>
@@ -26,7 +28,7 @@
 <div class="layui-layout layui-layout-admin">
 <!-- 头部区域（可配合layui已有的水平导航） -->
   <div class="layui-header">
-	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>科研成果管理系统&nbsp;--&nbsp;权限管理</div>
+	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>科研成果管理系统&nbsp;--&nbsp;科技处</div>
 		<ul class="layui-nav layui-layout-right">
 		  <li class="layui-nav-item">
 			  <a href="outLogin.do" "event.returnValue=false">
@@ -56,19 +58,31 @@
     <div class="layui-side-scroll">
       <ul class="layui-nav layui-nav-tree"  lay-filter="test">
         <li class="layui-nav-item layui-nav-itemed">
-			<a class="" href="personal.do"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;全局总览</a>
+			<a class="" href="indexScience.do"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;全局总览</a>
         </li>
         <li class="layui-nav-item layui-this">
-          <a href="javascript:;" onclick="iframechange('intoPerSysadd.do')"><i class="layui-icon layui-icon-group" style="font-size: 22px;"></i>&nbsp;成员管理</a>
+          <a href="javascript:;" onclick="iframechange('patent.do')"><i class="layui-icon layui-icon-star" style="font-size: 22px;"></i>&nbsp;专利</a>
         </li>
-         <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('delldellEmpInfo.do')"><i class="layui-icon layui-icon-username" style="font-size: 22px;"></i>&nbsp;离职人员</a>
+        <li class="layui-nav-item">
+          <a href="javascript:;" onclick="iframechange('soft.do')"><i class="layui-icon layui-icon-read" style="font-size: 22px;"></i>&nbsp;软著</a>
         </li>
-         <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('sysadmin.do')"><i class="layui-icon layui-icon-set-fill" style="font-size: 22px;"></i>&nbsp;系统管理</a>
+        <li class="layui-nav-item">
+          <a href="javascript:;" onclick="iframechange('brand.do')"><i class="layui-icon layui-icon-note" style="font-size: 22px;"></i>&nbsp;商标</a>
         </li>
-         <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('newsUI.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><i class="layui-icon layui-icon-senior" style="font-size: 22px;"></i>&nbsp;政府资助</a>
+          <dl class="layui-nav-child">
+	          <dd class="navdd"><a onclick="iframechange('fund.do')">基金</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('create.do')">创新平台</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('research.do')">科研项目</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('award.do')">科技奖励</a></dd>
+	      </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;" onclick="iframechange('paper.do')"><i class="layui-icon layui-icon-form" style="font-size: 22px;"></i>&nbsp;论文</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;" onclick="iframechange('work.do')"><i class="layui-icon layui-icon-diamond" style="font-size: 22px;"></i>&nbsp;著作</a>
         </li>
        
       </ul>
@@ -79,7 +93,7 @@
    
   <!--  主要数据表格-->
   <div class="layui-body" id="layuiBody">
-	  <iframe src="intoPerSysadd.do" id="iframe"></iframe>
+	  <iframe src="patent.do" id="iframe"></iframe>
   </div>
   <!--  主要数据表格-->
   
