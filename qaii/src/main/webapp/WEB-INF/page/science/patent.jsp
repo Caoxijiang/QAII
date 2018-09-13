@@ -17,6 +17,11 @@
   <style>
     body{margin: 10px;}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+    .layui-table-body {
+	    height: -moz-calc( 100vh - 215px );
+	    height: -webkit-calc( 100vh - 215px );
+	    height: calc( 100vh - 215 px );
+	}
 	.noExl {
     display: none;
 }
@@ -66,15 +71,22 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=empNum  type="checkbox" value="工号" checked="flase"/><lable>专利类型</lable></div>
-	<div class="int-inline"><input id="empName"  type="checkbox" value="姓名" checked/><lable>专利名称</lable></div>
-	<div class="int-inline"><input id="empGender"  type="checkbox" value="性别" checked/><lable>摘要</lable></div>
-	<div class="int-inline"><input id="empDept"  type="checkbox" value="部门" checked/><lable>发明人</lable></div>
-	<div class="int-inline"><input id="empPosition"  type="checkbox" value="职务" checked/><lable>申请（专利权）人</lable></div>
-	<div class="int-inline"><input id="empHireStarttime"  type="checkbox" value="聘期" checked/><lable>申请号/授权号</lable></div>
-	<div class="int-inline"><input id="empIdcard"  type="checkbox" value="身份证号" checked/><lable>申请日</lable></div>
-	<div class="int-inline"><input id="empIdcardEndtime"  type="checkbox" value="身份证到期时间" checked/><lable>状态</lable></div>
-	<div class="int-inline"><input id="empEthnic"  type="checkbox" value="民族" checked/><lable>所属部门</lable></div>
+	<div class="int-inline"><input id=empNum  type="checkbox" value="工号" checked="flase"/><lable>部门</lable></div>
+	<div class="int-inline"><input id="empName"  type="checkbox" value="姓名" checked/><lable>专利类型</lable></div>
+	<div class="int-inline"><input id="empGender"  type="checkbox" value="性别" checked/><lable>专利名称</lable></div>
+	<div class="int-inline"><input id="empDept"  type="checkbox" value="部门" checked/><lable>摘要</lable></div>
+	<div class="int-inline"><input id="empPosition"  type="checkbox" value="职务" checked/><lable>发明人</lable></div>
+	<div class="int-inline"><input id="empHireStarttime"  type="checkbox" value="聘期" checked/><lable>申请（专利权）人</lable></div>
+	<div class="int-inline"><input id="empIdcard"  type="checkbox" value="身份证号" checked/><lable>交底日期</lable></div>
+	<div class="int-inline"><input id="empIdcardEndtime"  type="checkbox" value="身份证到期时间" checked/><lable>代理机构</lable></div>
+	<div class="int-inline"><input id="empEthnic"  type="checkbox" value="民族" checked/><lable>是否提前公开实审</lable></div>
+	<div class="int-inline"><input id="empPoliticallandscape"  type="checkbox" value="政治面貌" checked/><lable>审查进度</lable></div>
+	<div class="int-inline"><input id="empMaritalstatus"  type="checkbox" value="婚姻状况" checked/><lable>是否减免</lable></div>
+	<div class="int-inline"><input id="empFirsteducation"  type="checkbox" value="第一学历" checked/><lable>申请费用（元）</lable></div>
+	<div class="int-inline"><input id="empFirsteducationschool"  type="checkbox" value="第一学历学校" checked/><lable>发票收据-汇款人</lable></div>
+	<div class="int-inline"><input id="empFirsteducationpro"  type="checkbox" value="第一学历专业" checked/><lable>备注</lable></div>
+	<div class="int-inline"><input id="empFirstgraduationtime"  type="checkbox" value="第一学历毕业时间" checked/><lable>执笔人信息</lable></div>
+	<div class="int-inline"><input id="empSecondeducation"  type="checkbox" value="第二学历" checked/><lable>代理人</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -110,21 +122,28 @@ layui.use('table', function(obj){
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
-//    height: 332,
-    url: 'getallinjobEmp.do', //数据接口
-	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+    /* url: 'getallinjobEmp.do', */ //数据接口
+	cellMinWidth: 80,
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left',width:50},
 		{field: 'id', title: '序号',type:'numbers',width:100},
-		{field: 'empNum', title: '专利类型',width:200},
-		{field: 'empName', title: '专利名称',width:150},
-		{field: 'empGender', title: '摘要'},
-		{field: 'empDept', title: '发明人',width:150},
-		{field: 'empPosition', title: '申请（专利权）人',width:250},
-		{field: 'empHireStarttime', title: '申请号/授权号',sort: true,width:250},
-		{field: 'empIdcard', title: '申请日',width:220},
-		{field: 'empIdcardEndtime', title: '状态',width:450},
-		{field: 'empEthnic', title: '所属部门',width:220},
+		{field: 'empNum', title: '部门',width:200},
+		{field: 'empGender', title: '专利类型',width:200},
+		{field: 'empDept', title: '专利名称',width:150},
+		{field: 'empPosition', title: '摘要',width:250},
+		{field: 'empHireStarttime', title: '发明人',sort: true,width:250},
+		{field: 'empIdcard', title: '申请（专利权）人',width:220},
+		{field: 'empIdcardEndtime', title: '交底日期',sort: true,width:150},
+		{field: 'empEthnic', title: '代理机构',width:180},
+		{field: 'empPoliticallandscape', title: '是否提前公开实审',sort: true,width:200},
+		{field: 'empMaritalstatus', title: '申请号',width:150},
+		{field: 'empFirsteducation', title: '申请日',sort: true,width:200},
+		{field: 'empFirsteducationschool', title: '公开日',sort: true,width:200},
+		{field: 'empFirsteducationpro', title: '授权公告日',width:200},
+		{field: 'empFirstgraduationtime', title: '是否减免',width:230},
+		{field: 'empSecondeducation', title: '申请费用（元）',width:200},
+		{field: 'empSecondeducationschool', title: '发票收据-汇款人',width:200},
+		{field: 'empSecondeducationpro', title: '备注',width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:380}
     ]],
     
