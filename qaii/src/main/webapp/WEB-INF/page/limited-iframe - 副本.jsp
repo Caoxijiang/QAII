@@ -52,7 +52,6 @@ layui.use(['laydate', 'laypage', 'layer', 'table'], function(obj){
 	
 	 //监听表格复选框选择
   table.on('checkbox(demo)', function(obj){
-    console.log("1211212"+JSON.stringify(obj))
   });
   
   //执行一个 table 实例
@@ -74,7 +73,6 @@ layui.use(['laydate', 'laypage', 'layer', 'table'], function(obj){
 	  //表格数据
     data:obj.data,
   });
-  console.log(obj)
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
@@ -84,7 +82,6 @@ layui.use(['laydate', 'laypage', 'layer', 'table'], function(obj){
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){   
         let arr=[data.uid];
-        console.log(arr) 
         $.post({
         	url:"DellUserAccount.do",
         	data:{
@@ -160,7 +157,6 @@ layui.use(['laydate', 'laypage', 'layer', 'table'], function(obj){
     	var data=obj.uid;
     	arr.push(data)    	
     }     
-     console.log(arr)
 		if(arr.length==0){
 			layer.msg("未选中数据！");
 		}else{

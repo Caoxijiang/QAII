@@ -21,7 +21,7 @@ public interface EmpInfoService {
 	
 	int countnumofIncubationComp(String lasty,String thisy);
 	
-	int countnumofcollegeComp(String lasty,String thisy);
+	int countnumofcollegeComp(String lasty,String thisy,List<String> list);
 	
 	int countnumfoTalents(String dept);
 	
@@ -45,4 +45,5 @@ public interface EmpInfoService {
 	int updateReview(String msg,int id);
 	
 	List <EmpInfo> getallinjobEmp();
+	
 }

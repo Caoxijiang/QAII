@@ -79,7 +79,6 @@ $().ready(function(){
 			},
 			success:function(data){
 			var result=data.data;
-			console.log(result);
 			if(result==null){
 				alert("账号或密码错误");
 				document.location.href='indexUI.do';

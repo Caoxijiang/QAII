@@ -137,7 +137,7 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">身份证到期时间</label>
+						<label class="layui-form-label">身份证到期时间&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
 							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1">
 						  </div>
@@ -229,7 +229,7 @@
 				</div>
    		 		<div class="layui-col-md3">
 					<div class="layui-form-item">
-						  <label class="layui-form-label">第一学历毕业时间</label>
+						  <label class="layui-form-label">第一学历毕业时间&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
 							<input type="text" name="empFirstgraduationtime" class="layui-input input" id="test1-1">
 						  </div>
@@ -280,7 +280,14 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">聘期</label>
 						<div class="layui-input-block">
-							<input type="text" name="empHireStarttime" autocomplete="off" class="layui-input input">
+							<select name="empHireStarttime" lay-search="" class="input">
+								<option value="">   </option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
 						</div>
 					</div>
 					
@@ -301,7 +308,7 @@
 						<label class="layui-form-label">用工形式&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<select name="empWorktype" lay-verify="required" lay-search="" class="input">
-								<option value="">请选择</option>
+								<option value="">   </option>
 								<option value="1">全职</option>
 								<option value="2">兼职</option>
 							</select>
@@ -412,7 +419,6 @@ $.post({
 	url:"findDeptInfoList.do",
 	success:function(data){
 		var deptInfo=data.data;
-		console.log(deptInfo);
 		if(deptInfo!=null){
 			$(deptInfo).each(function(index,element){
 				index+=1;
@@ -421,7 +427,6 @@ $.post({
 				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
 				//$("#deptt").next(".layui-form-select").children("dl").append(heml);
 				$("#deptt").append(heml);
-				console.log(heml);
 			})						
 		
 			//JavaScript代码区域
@@ -476,7 +481,6 @@ $.post({
 			      });
 			    }
 			    ,done: function(res){
-			    	console.log(res);
 			      //如果上传失败
 			      if(res.code > 0){
 			        return layer.msg('上传失败');
@@ -485,7 +489,6 @@ $.post({
 			    	 var eid=res.eid
 			    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
 			    	$("input[name='imageVal']").attr("value",eid);
-			    	console.log("uuuuuuuuuu"+$("input[name='imageVal']").val());
 			    	  return layer.msg(res.msg);
 			      }
 			      //上传成功

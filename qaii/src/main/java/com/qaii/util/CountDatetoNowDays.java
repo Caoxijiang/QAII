@@ -222,6 +222,7 @@ public class CountDatetoNowDays {
 			emp.setEmpThirdgraduationtime(CountDatetoNowDays.SDatetoStamp(emp.getEmpThirdgraduationtime()));	
 			emp.setEmpInductiontime(CountDatetoNowDays.SDatetoStamp(emp.getEmpInductiontime()));
 			emp.setEmpJobtitleobtaintime(CountDatetoNowDays.SDatetoStamp(emp.getEmpJobtitleobtaintime()));
+			emp.setEmpDepartureTime(CountDatetoNowDays.SDatetoStamp(emp.getEmpDepartureTime()));
 		}
 		return emp;
 	}
@@ -236,6 +237,7 @@ public class CountDatetoNowDays {
 			emp.setEmpSecondgraduationtime(CountDatetoNowDays.StamptoDate(emp.getEmpSecondgraduationtime()));
 			emp.setEmpThirdgraduationtime(CountDatetoNowDays.StamptoDate(emp.getEmpThirdgraduationtime()));
 			emp.setEmpInductiontime(CountDatetoNowDays.StamptoDate(emp.getEmpInductiontime()));
+			emp.setEmpDepartureTime(CountDatetoNowDays.StamptoDate(emp.getEmpDepartureTime()));
 			emp.setEmpJobtitleobtaintime(CountDatetoNowDays.StamptoDate(emp.getEmpJobtitleobtaintime()));
 		}
 		return emp;

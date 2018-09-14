@@ -32,7 +32,7 @@
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
 		</a>
-		<button class="layui-btn btn" data-type="getCheckLength" style="margin-right:16px !important">
+		<button class="layui-btn btn" id="dellist" data-type="delmore" style="margin-right:16px !important">
 			<i class="layui-icon layui-icon-delete"></i>删除
 		</button>
 		
@@ -132,7 +132,6 @@ layui.use('table', function(){
 
 	
   table.on('checkbox(demo)', function(obj){
-    console.log(obj)
   });
   
   //执行一个 table 实例
@@ -195,7 +194,6 @@ layui.use('table', function(){
     ]],
     done: function(res, curr, count){
         $("#countnum").html(count);
-          console.log(count+"总数");
           }
 	  //表格数据
     //data:obj.data
@@ -204,8 +202,8 @@ layui.use('table', function(){
 //添加筛选功能
   var $ = layui.$, active = {
       reload: function(){
-        var demoReload = $('#demoReload');
-        var key=demoReload.val();/*关键字*/
+      var demoReload = $('#demoReload');
+      var key=demoReload.val();/*关键字*/
   	  var check=$('#switch').val();/*选择提示词*/
   	  var trlen=($(".layui-table tr").length)/3;/*行数*/
   	  var num=$(".layui-table tr:eq(0) th").length-1;/*显示的列元素个数*/
@@ -213,7 +211,6 @@ layui.use('table', function(){
   	 if(check=="all"){
   		  var val=$(".layui-table tr:eq(0) th:eq(2)").attr('data-field');/*获取制定data-field值*/
   		  var cellval=$(".layui-table tr:eq(1) td:eq(3)").text();/*获取指定行列元素包含的文本*/
-  		  console.log(num);
   		//逐个单元格匹配内容
   		  var myA=new Array();
   		  for(var i=1;i<trlen;i++){
@@ -257,7 +254,6 @@ layui.use('table', function(){
   						  myA[i]=myA[i]+$(this).text();
   						 }
   				 })
-  				 console.log(myA[i]+"000000000000000");
   			  }
   			//全局搜索
   			  $(".layui-table tr").each(function(){
@@ -295,7 +291,6 @@ layui.use('table', function(){
 //  	window.location.reload();//刷新当前页面.
       var type = $(this).data('type');
       active[type] ? active[type].call(this) : '';
-  	  console.log("dianjishiqin");
     });
   
   //页面数据刷新
@@ -308,15 +303,29 @@ layui.use('table', function(){
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
-    console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
       layer.msg('用户名：'+JSON.stringify(data.username)+'<br>密码：'+JSON.stringify(data.pas)+'<br>角色：'+JSON.stringify(data.rid));
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
-        obj.del(); //删除对应行（tr）的DOM结构
-        layer.close(index);
-        //向服务端发送删除指令
+          let arr=[data.id];
+          $.post({
+          	url:"DellempInfo.do",
+          	data:{
+          		"requestDate" : arr
+          	},
+          	success:function(data){
+          		if(data.data){
+          		    //删除对应行（tr）的DOM结构
+          			obj.del();
+          			layer.close(index);
+          		}else{
+          			layer.alert("删除失败")
+          		}
+          		
+          	}
+          }) 
+    	  
       });
     } else if(layEvent === 'edit'){
       layer.alert(
@@ -337,30 +346,37 @@ layui.use('table', function(){
     }
   });
 
+
 	//监听顶部添加删除操作
+	var arr=[];
+	//var arr=[];
+	table.on('checkbox(demo)', function(obj){
+		 var data = obj.data //获得当前行数据
+		 arr.push(data.id);		 
+		 
+	  });
 	
-//	var $ = layui.$, active = {
-//   	getCheckLength: function(){ //选中批量删除
-//      var checkStatus = table.checkStatus('testTable'),
-//      data = checkStatus.data;
-//		if(data.length==0){
-//			layer.msg("未选中数据！");
-//		}else{
-//			layer.confirm('确定删除'+ data.length + ' 条数据'+JSON.stringify(data), function(index){
-//				obj.del(); //删除对应行（tr）的DOM结构
-//				layer.close(index);
-//				//向服务端发送删除指令
-//			});
-//		}
-//    }
-//  };
-//  
-//  $('.demoTable .layui-btn').on('click', function(){
-//    var type = $(this).data('type');
-//    active[type] ? active[type].call(this) : '';
-//  });
-//	
-// });	
+	$("#dellist").on('click', function(){
+		alert("请慎重考虑，删除数据不可恢复");
+		$.post({
+		  	url:"DellempInfo.do",
+		  	data:{
+		  		"requestDate" : arr
+		  	},
+		  	success:function(data){
+
+		        if(data.status == 1){
+		            alert('删除成功，请刷新查看');
+		            window.location.reload();
+		        } else {
+		            alert('删除成功，请刷新查看'); return false;
+		            window.location.reload();
+		        }
+		    }
+		  }) 
+	});
+
+
 
 });
 
@@ -391,7 +407,6 @@ layui.use('table', function(){
 			window.location.reload();
 		}); 
 		$(".layui-form .layui-form-item div span").click(function(){
-			console.log($(this).attr('class')+"5555");
 		});
 		$(":checkbox").click(function(){
 			var val=$(this).attr("id");
@@ -410,7 +425,6 @@ layui.use('table', function(){
 	var heigt=ji-hei-85;
 	$(".layui-table-body").prop("height",heigt+"px");
 	
-	console.log(heigt);
 
 	
 </script>

@@ -29,7 +29,7 @@
   	
 	  <div class="layui-row">
 		<div class="layui-col-md6">
-			<h1>个人基本信息${param.userId}</h1>
+			<h1>个人基本信息</h1>
 		  	<div class="layui-row">
 				<div class="layui-col-md6">
 					<div class="layui-form-item">
@@ -44,7 +44,7 @@
 						<label class="layui-form-label">婚姻状况&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
-								<option value="">请选择</option>
+								<option value="">   </option>
 								<option value="1">未婚</option>
 								<option value="2">已婚</option>
 							</select>
@@ -54,10 +54,10 @@
 						<label class="layui-form-label">政治面貌&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<select name="empPoliticallandscape" lay-verify="required" lay-search="" class="input">
-								<option value="">请选择</option>
-								<option value="1">党员</option>
-								<option value="2">团员</option>
-								<option value="3">群众</option>
+								<option value="">   </option>
+								<option value="党员">党员</option>
+								<option value="团员">团员</option>
+								<option value="群众">群众</option>
 							</select>
 						</div>
 					</div>
@@ -73,9 +73,9 @@
 						<label class="layui-form-label">性别&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<select name="empGender" lay-verify="required" lay-search="" class="input">
-								<option value="">请选择</option>
-								<option value="1">男</option>
-								<option value="2">女</option>
+								<option value="">   </option>
+								<option value="男">男</option>
+								<option value="女">女</option>
 							</select>
 						</div>
 					</div>
@@ -137,7 +137,7 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">身份证到期时间</label>
+						<label class="layui-form-label">身份证到期时间 &nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
 							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1">
 						  </div>
@@ -174,13 +174,13 @@
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第二学历</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducation" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第三学历</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
@@ -194,13 +194,13 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第二学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducationschool" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第三学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducationschool" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
@@ -215,13 +215,13 @@
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历专业&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第二学历专业&nbsp;</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历专业&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">第三学历专业</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
@@ -229,7 +229,7 @@
 				</div>
    		 		<div class="layui-col-md3">
 					<div class="layui-form-item">
-						  <label class="layui-form-label">第一学历毕业时间</label>
+						  <label class="layui-form-label">第一学历毕业时间&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
 							<input type="text" name="empFirstgraduationtime" class="layui-input input" id="test1-1">
 						  </div>
@@ -260,7 +260,9 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empDept" lay-verify="required" autocomplete="off" class="layui-input input">
+							<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
+								
+							</select>
 						</div>
 					</div>
 					<div class="layui-form-item">
@@ -276,28 +278,38 @@
 						  </div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">聘期&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">聘期</label>
 						<div class="layui-input-block">
-							<select name="empHireStarttime" lay-verify="required" lay-search="" class="input" lay-verify="required">
-								<option value="">请选择</option>
+							<select name="empHireStarttime" lay-search="" class="input">
+								<option value="">   </option>
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
 								<option value="4">4</option>
 								<option value="5">5</option>
 							</select>
-							<!-- <input type="text" name="empHireStarttime" lay-verify="required" autocomplete="off" placeholder="请输入聘期" class="layui-input input"> -->
 						</div>
 					</div>
 					
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">编制&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">编制</label>
 						<div class="layui-input-block">
-							<select name="empCompile" lay-verify="required" lay-search="" class="input">
-								<option value="">请选择</option>
-								<option value="1">是</option>
-								<option value="2">否</option>
+							<select name="empCompile" lay-search="" class="input">
+								<option value="">   </option>
+								<option value="是">是</option>
+								<option value="否">否</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="layui-form-item">
+						<label class="layui-form-label">职工状态&nbsp;<span class="star">*</span></label>
+						<div class="layui-input-block">
+							<select name="empStat" lay-search="" lay-verify="required" class="input">
+								<option value="">   </option>
+								<option value="1">在职</option>
+								<option value="0">离职</option>
 							</select>
 						</div>
 					</div>
@@ -307,23 +319,24 @@
 						<label class="layui-form-label">用工形式&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<select name="empWorktype" lay-verify="required" lay-search="" class="input">
-								<option value="">请选择</option>
+								<option value="">   </option>
 								<option value="1">全职</option>
 								<option value="2">兼职</option>
 							</select>
 						</div>
 					</div>
 			    	<div class="layui-form-item">
-						<label class="layui-form-label">职称名称&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">职称名称</label>
 						<div class="layui-input-block">
 							<input type="text" name="empJobtitle" lay-verify="required" autocomplete="off"  class="layui-input input">
 						</div>
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">职称等级&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">职称等级</label>
 						<div class="layui-input-block">
 							<input type="text" name="empJobtitlelevel" lay-verify="required" autocomplete="off" class="layui-input input">
+
 						</div>
 					</div>
 					<div class="layui-form-item">
@@ -332,12 +345,31 @@
 							<input type="text" name="empJobtitleobtaintime" class="layui-input input" lay-verify="required" id="test1">
 						  </div>
 					</div>
-					
+					<div class="layui-form-item">
+						<label class="layui-form-label">试用期状态&nbsp;<span class="star">*</span></label>
+						<div class="layui-input-block">
+							<select name=empTryStatus lay-search="" lay-verify="required"  class="input">
+								<option value="">  </option>
+								<option value="0">试用期期满</option>
+								<option value="1">试用期中</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">合同状态 &nbsp;<span class="star">*</span></label>
+						<div class="layui-input-block">
+							<select name="empContractStatus" lay-verify="required" lay-search="" class="input">
+								<option value="">   </option>
+								<option value="1">合同结束</option>
+								<option value="0">合同中</option>
+							</select>
+						</div>
+					</div>
 					
 				</div>
    		 		<div class="layui-col-md4">
    		 			<div class="layui-form-item">
-						<label class="layui-form-label">合同签订次数</label>
+						<label class="layui-form-label">合同签订次数&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<input type="number" name="empContractsignednum"  autocomplete="off" class="layui-input input">
 						</div>
@@ -351,23 +383,41 @@
 					
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">是否留学归国人员&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">是否留学归国人员</label>
 						<div class="layui-input-block">
-							<select name="empReturnee" lay-verify="required" lay-search="" class="input">
-								<option value="">请选择</option>
-								<option value="1">是</option>
-								<option value="2">否</option>
+							<select name="empReturnee" lay-search="" class="input">
+								<option value="">  </option>
+								<option value="是">是</option>
+								<option value="否">否</option>
 							</select>
 						</div>
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">是否外籍人员&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">是否外籍人员</label>
 						<div class="layui-input-block">
-							<select name="empForeign" lay-verify="required" lay-search="" class="input">
-								<option value="">请选择</option>
-								<option value="1">是</option>
-								<option value="2">否</option>
+							<select name="empForeign" lay-search="" class="input">
+								<option value="">  </option>
+								<option value="是">是</option>
+								<option value="否">否</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="layui-form-item">
+						  <label class="layui-form-label">离职时间</label>
+						  <div class="layui-input-block">
+							<input type="text" name="empDepartureTime" class="layui-input input" id="test10">
+						  </div>
+					</div>
+					
+					<div class="layui-form-item">
+						<label class="layui-form-label">审核状态&nbsp;<span class="star">*</span></label>
+						<div class="layui-input-block">
+							<select name="empReviewstatus" lay-search="" lay-verify="required" class="input">
+								<option value="">  </option>
+								<option value="通过">通过</option>
+								<option value="待审核">待审核</option>
 							</select>
 						</div>
 					</div>
@@ -414,163 +464,187 @@
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
-//JavaScript代码区域
-layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
-  var form = layui.form,
-	element = layui.element,
-	layer = layui.layer,
-	laydate = layui.laydate,
-	upload = layui.upload;
-	//职称取得时间日期选择
-  laydate.render({
-    elem: '#test1'
-  });
-	//入职时间日期选择
-  laydate.render({
-    elem: '#test2'
-  });
-	//第一学历毕业时间日期选择
-  laydate.render({
-    elem: '#test1-1'
-  });
-	//第二学历毕业时间日期选择
-  laydate.render({
-    elem: '#test1-2'
-  });
-	//第三学历毕业时间日期选择
-  laydate.render({
-    elem: '#test1-3'
-  });
-//第一学历毕业时间日期选择
-  laydate.render({
-    elem: '#test2-1'
-  });
-	//第二学历毕业时间日期选择
-  laydate.render({
-    elem: '#test2-2'
-  });
-	//第三学历毕业时间日期选择
-  laydate.render({
-    elem: '#test2-3'
-  });
-  
-	
-  //普通图片上传
-  var uploadInst = upload.render({
-    elem: '#imgload'
-    ,url: 'EmpAupload.do'
-    ,before: function(obj){
-      //预读本地文件示例，不支持ie8
-      obj.preview(function(index, file, result){
-        $('#demo1').attr('src', result); //图片链接（base64）
-      });
-    }
-    ,done: function(res){
-      //如果上传失败
-      if(res.code > 0){
-        return layer.msg('上传失败');
-      }else{
-    	 $("demoText").attr("imageVal",res.eid)
-    	 var eid=res.eid
-    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
-    	$("input[name='imageVal']").attr("value",eid);
-    	console.log("uuuuuuuuuu"+$("input[name='imageVal']").val());
-    	  return layer.msg(res.msg);
-      }
-      //上传成功
-    }
-    ,error: function(){
-      //演示失败状态，并实现重传
-      var demoText = $('#demoText');
-      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-      demoText.find('.demo-reload').on('click', function(){
-        uploadInst.upload();
-      });
-    }
-  });
-	
-
-  var id=${param.userId};
-  var eid=$("imageVal").val();
-  if(id!=null){
-		$.post({
-			url:"seeEmpInfos.do",
-			data:{
-				userId:id
-			},
-			success:function(data){
-				if(data.data!=null){
-					let empinfo=data.data;
-					console.log("_____:"+JSON.stringify(data.data))
-					//表单初始赋值 从表单中提取数据
-					
-					if(eid==undefined){
-						$("input[name='imageVal']").attr("value",empinfo.eid);
-					}else{
-						$("input[name='imageVal']").attr("value",eid);
+$.post({
+	url:"findDeptInfoList.do",
+	success:function(data){
+		var deptInfo=data.data;
+		if(deptInfo!=null){
+			$(deptInfo).each(function(index,element){
+				index+=1;
+				//let heml='<dd lay-value="'+element.deptName+'">'+element.deptName+'</dd>';
+				
+				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
+				//$("#deptt").next(".layui-form-select").children("dl").append(heml);
+				$("#deptt").append(heml);
+			})
+		//JavaScript代码区域
+		layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
+		  var form = layui.form,
+			element = layui.element,
+			layer = layui.layer,
+			laydate = layui.laydate,
+			upload = layui.upload;
+			//职称取得时间日期选择
+		  laydate.render({
+		    elem: '#test1'
+		  });
+			//入职时间日期选择
+		  laydate.render({
+		    elem: '#test2'
+		  });
+			//第一学历毕业时间日期选择
+		  laydate.render({
+		    elem: '#test1-1'
+		  });
+			//第二学历毕业时间日期选择
+		  laydate.render({
+		    elem: '#test1-2'
+		  });
+			//第三学历毕业时间日期选择
+		  laydate.render({
+		    elem: '#test1-3'
+		  });
+		//第一学历毕业时间日期选择
+		  laydate.render({
+		    elem: '#test2-1'
+		  });
+			//第二学历毕业时间日期选择
+		  laydate.render({
+		    elem: '#test2-2'
+		  });
+			//第三学历毕业时间日期选择
+		  laydate.render({
+		    elem: '#test2-3'
+		  });
+		//离职时间日期选择
+		  laydate.render({
+		    elem: '#test10'
+		  });
+		  
+			
+		  //普通图片上传
+		  var uploadInst = upload.render({
+		    elem: '#imgload'
+		    ,url: 'EmpAupload.do'
+		    ,before: function(obj){
+		      //预读本地文件示例，不支持ie8
+		      obj.preview(function(index, file, result){
+		        $('#demo1').attr('src', result); //图片链接（base64）
+		      });
+		    }
+		    ,done: function(res){
+		      //如果上传失败
+		      if(res.code > 0){
+		        return layer.msg('上传失败');
+		      }else{
+		    	 $("demoText").attr("imageVal",res.eid)
+		    	 var eid=res.eid
+		    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
+		    	$("input[name='imageVal']").attr("value",eid);
+		    	  return layer.msg(res.msg);
+		      }
+		      //上传成功
+		    }
+		    ,error: function(){
+		      //演示失败状态，并实现重传
+		      var demoText = $('#demoText');
+		      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+		      demoText.find('.demo-reload').on('click', function(){
+		        uploadInst.upload();
+		      });
+		    }
+		  });
+			
+		
+		  var id=${param.userId};
+		  var eid=$("imageVal").val();
+		  if(id!=null){
+				$.post({
+					url:"seeEmpInfos.do",
+					data:{
+						userId:id
+					},
+					success:function(data){
+						if(data.data!=null){
+							let empinfo=data.data;
+							//表单初始赋值 从表单中提取数据
+							
+							if(eid==undefined){
+								$("input[name='imageVal']").attr("value",empinfo.eid);
+							}else{
+								$("input[name='imageVal']").attr("value",eid);
+							}
+							//var asd="https://www.iv2018.cn/public/images/ieeeImages/me/bg.jpg";
+							
+							  
+							  form.val('example', {
+								 "userId":empinfo.id,
+							    "empName": empinfo.empName,
+								  "empNum":empinfo.empNum,
+								  "empGender":empinfo.empGender,
+								  "empDept":empinfo.empDept,
+								  "empPosition":empinfo.empPosition,
+								  "empHireStarttime":empinfo.empHireStarttime,
+								  "empIdcard":empinfo.empIdcard,
+								  "empIdcardEndtime":empinfo.empIdcardEndtime,
+								  "empEthnic":empinfo.empEthnic,
+								  "empPoliticallandscape":empinfo.empPoliticallandscape,
+								  "empMaritalstatus":empinfo.empMaritalstatus,
+								  "empFirsteducation":empinfo.empFirsteducation,
+								  "empFirsteducationschool":empinfo.empFirsteducationschool,
+								  "empFirsteducationpro":empinfo.empFirsteducationpro,
+								  "empFirstgraduationtime":empinfo.empFirstgraduationtime,
+								  "empSecondeducation":empinfo.empSecondeducation,
+								  "empSecondeducationsch ool":empinfo.empSecondeducationschool,
+								  "empSecondeducationpro":empinfo.empSecondeducationpro,
+								  "empSecondgraduationtime":empinfo.empSecondgraduationtime,
+								  "empThirdeducation":empinfo.empThirdeducation,
+								  "empThirdeducationschool":empinfo.empThirdeducationschool,
+								  "empThirdeducationpro":empinfo.empThirdeducationpro,
+								  "empThirdgraduationtime":empinfo.empThirdgraduationtime,
+								  "empJobtitle":empinfo.empJobtitle,
+								  "empJobtitlelevel":empinfo.empJobtitlelevel,
+								  "empJobtitleobtaintime":empinfo.empJobtitleobtaintime,
+								  "empPhone":empinfo.empPhone,
+								  "empEmergencycontactandphone":empinfo.empEmergencycontactandphone,
+								  "empFileaddress":empinfo.empFileaddress,
+								  "empAccountaddress":empinfo.empAccountaddress,
+								  "empHomeaddress":empinfo.empHomeaddress,
+								  "empWorktype":empinfo.empWorktype,
+								  "empCompile":empinfo.empCompile,
+								  "empInductiontime":empinfo.empInductiontime,
+								  "empTryoutendtime":empinfo.empTryoutendtime,
+								  "empContractendtime":empinfo.empContractendtime,
+								  "empContractsignednum":empinfo.empContractsignednum,
+								  "empReturnee":empinfo.empReturnee,
+							  	  "empForeign":empinfo.empForeign,
+								  "empRemarks":empinfo.empRemarks,
+								  "empStat":empinfo.empStat,
+								  "empDepartureTime":empinfo.empDepartureTime,
+								  "empTryStatus":empinfo.empTryStatus,
+								  "empContractStatus":empinfo.empContractStatus,
+								  "empReviewstatus":empinfo.empReviewstatus
+							  })
+							  $("#demo1").attr("src",data.data.url);
+							 
+						}else{
+							alert("查看详情失败")
+						}
 					}
-					//var asd="https://www.iv2018.cn/public/images/ieeeImages/me/bg.jpg";
-					
-					  
-					  form.val('example', {
-						 "userId":empinfo.id,
-					    "empName": empinfo.empName,
-						  "empNum":empinfo.empNum,
-						  "empGender":empinfo.empGender,
-						  "empDept":empinfo.empDept,
-						  "empPosition":empinfo.empPosition,
-						  "empHireStarttime":empinfo.empHireStarttime,
-						  "empIdcard":empinfo.empIdcard,
-						  "empIdcardEndtime":empinfo.empIdcardEndtime,
-						  "empEthnic":empinfo.empEthnic,
-						  "empPoliticallandscape":empinfo.empPoliticallandscape,
-						  "empMaritalstatus":empinfo.empMaritalstatus,
-						  "empFirsteducation":empinfo.empFirsteducation,
-						  "empFirsteducationschool":empinfo.empFirsteducationschool,
-						  "empFirsteducationpro":empinfo.empFirsteducationpro,
-						  "empFirstgraduationtime":empinfo.empFirstgraduationtime,
-						  "empSecondeducation":empinfo.empSecondeducation,
-						  "empSecondeducationsch ool":empinfo.empSecondeducationschool,
-						  "empSecondeducationpro":empinfo.empSecondeducationpro,
-						  "empSecondgraduationtime":empinfo.empSecondgraduationtime,
-						  "empThirdeducation":empinfo.empThirdeducation,
-						  "empThirdeducationschool":empinfo.empThirdeducationschool,
-						  "empThirdeducationpro":empinfo.empThirdeducationpro,
-						  "empThirdgraduationtime":empinfo.empThirdgraduationtime,
-						  "empJobtitle":empinfo.empJobtitle,
-						  "empJobtitlelevel":empinfo.empJobtitlelevel,
-						  "empJobtitleobtaintime":empinfo.empJobtitleobtaintime,
-						  "empPhone":empinfo.empPhone,
-						  "empEmergencycontactandphone":empinfo.empEmergencycontactandphone,
-						  "empFileaddress":empinfo.empFileaddress,
-						  "empAccountaddress":empinfo.empAccountaddress,
-						  "empHomeaddress":empinfo.empHomeaddress,
-						  "empWorktype":empinfo.empWorktype,
-						  "empCompile":empinfo.empCompile,
-						  "empInductiontime":empinfo.empInductiontime,
-						  "empTryoutendtime":empinfo.empTryoutendtime,
-						  "empContractendtime":empinfo.empContractendtime,
-						  "empContractsignednum":empinfo.empContractsignednum,
-						  "empReturnee":empinfo.empReturnee,
-					  	  "empForeign":empinfo.empForeign,
-						  "empRemarks":empinfo.empRemarks,
-					    
-					  })
-					  $("#demo1").attr("src",data.data.url);
-					 
-				}else{
-					alert("查看详情失败")
-				}
-			}
-		})
-  }else{
-	   alert("请刷新成员管理页面");
-  }
-  
-  
-});
+				})
+		  }else{
+			   alert("请刷新成员管理页面");
+		  }
+		  
+		  
+		});
 	
-	
+		}else{
+			alert("部门信息显示失败");
+		}
+	}
+})
+
 	
 	
 	

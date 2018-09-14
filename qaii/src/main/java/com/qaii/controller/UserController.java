@@ -64,7 +64,6 @@ public class UserController {
         	UserRole role= new UserRole();
         	role.setUid(user2.getUserId());
         	
-        	System.out.println(role.getUid());
         	
         	UserRole role2=userRoleService.findUSerRoleByUserId(role.getUid());        	        	
         	//UserRole role2=userRoleService.findUSerRoleByUserId(userid);
@@ -117,7 +116,6 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value="DellUserAccount.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
     public JsonResult DellUserAccount(@RequestParam(value = "requestDate[]") Integer[] userId ){
-    	System.out.println(userId);
     	
      	int row=userServivce.delete(userId);
     	if(row!=0) {

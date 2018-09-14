@@ -12,7 +12,6 @@ public class GlobalExceptionController {
 	@ResponseBody
 	public String CusExceptionhanlder(CustomException e) {
 		e.printStackTrace();
-		System.out.println(e.getMsg());
 		return e.getMsg();
 	}
 
