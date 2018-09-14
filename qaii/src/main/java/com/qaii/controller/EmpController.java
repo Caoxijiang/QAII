@@ -37,6 +37,7 @@ import com.qaii.domain.User;
 import com.qaii.service.DeptInfoService;
 import com.qaii.service.EmpAvatarService;
 import com.qaii.service.EmpInfoService;
+import com.qaii.util.AlertException;
 import com.qaii.util.CountDatetoNowDays;
 import com.qaii.util.CustomException;
 import com.qaii.util.JsonResult;
@@ -568,7 +569,7 @@ public class EmpController {
 	//通过excel插入数据库数据的接口
 	@RequestMapping(value="getfile.do",method=RequestMethod.POST)
 	@ResponseBody
-	public Layui test(@RequestParam("file")MultipartFile file) throws FileNotFoundException, IOException, CustomException  {
+	public Layui test(@RequestParam("file")MultipartFile file) throws FileNotFoundException, IOException, CustomException, AlertException  {
 		Layui result = null;
 		List<String> list =new ArrayList<>();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -576,7 +577,7 @@ public class EmpController {
 		Workbook wookbook;
 		//判断是不是excel文件
 		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
-			throw new CustomException("This is not an Excel file!");
+			throw new AlertException("请选择excel格式的文件！");
 		//判断是03版还是07版excel
 		if(filename.endsWith(".xls")) {
 			wookbook=new HSSFWorkbook(file.getInputStream());
@@ -653,7 +654,7 @@ public class EmpController {
 		}catch(ParseException e) {
 			wookbook.close();
 			e.printStackTrace();
-			throw new CustomException("DataBase badcontro!please check the file!");			
+			throw new CustomException("数据库异常!请检查文件格式!");			
 		}
 		wookbook.close();
 		return result;
