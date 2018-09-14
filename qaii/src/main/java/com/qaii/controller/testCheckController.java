@@ -79,6 +79,10 @@ public class testCheckController {
 		return CountDatetoNowDays.StamptoDate(date);
 	}
 	
+	@RequestMapping("tsterr.do")
+	public void errorpage() throws CustomException {
+		throw new CustomException("测试异常成功！");
+	}
 	
 	
 }
