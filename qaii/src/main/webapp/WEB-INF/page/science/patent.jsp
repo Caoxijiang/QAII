@@ -31,7 +31,7 @@
 <div class="tool">
 	<div class="layui-btn-group demoTable">
   	  <span class="limit">专利 ( <span id="countnum"> </span> )</span>
-		<a href="adddetail.do" target="_blank">
+		<a href="javascript:;" onclick="srchange('patentAdd.do')">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -95,9 +95,9 @@
 </div>
  <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">资料审查</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
+  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="datac">资料审查</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -264,8 +264,8 @@ layui.use('table', function(obj){
     console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
-		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
-     // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
+    	var iframesrc="patentCheck.do?userId='"+data.id+"'";
+    	$("body", parent.document).find('iframe').attr('src',iframesrc);
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
           let arr=[data.id];
@@ -287,57 +287,16 @@ layui.use('table', function(obj){
           	}
           }) 
     	  
-    	  
-    	  
-    	  
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
         //向服务端发送删除指令
-        
-        
-        
-        
       });
     } else if(layEvent === 'edit'){
-      layer.alert(
-		  '<div class="layui-form-item">'+
-
-			'<label class="layui-form-label">角色</label>'+
-			'<div class="layui-input-block">'+
-				'<select name="interest" lay-filter="aihao">'+
-					'<option value=""></option>'+
-					'<option value="0">超级管理员</option>'+
-					'<option value="1" selected="">院级权限</option>'+
-					'<option value="2">人事部门权限</option>'+
-					'<option value="3">产业化处权限</option>'+
-					'<option value="4">科技管理处</option>'+
-				'</select>'+
-			'</div>'+
-		'</div>')
-    }else if(layEvent==="dimission"){
-    	 layer.confirm('确定离职信息', function(index){
-             let arr=data.id;
-             console.log(data) 
-             $.post({
-             	url:"dellempInfo.do",
-             	data:{
-             		"requestDate" : arr
-             	},
-             	success:function(data){
-             		if(data.data){
-             		    //删除对应行（tr）的DOM结构
-             			layer.alert("离职操作成功");
-             		}else{
-             			layer.alert("离职操作失败");
-             		}
-             		
-             	}
-             }) 
-       	  
-          // obj.del(); //删除对应行（tr）的DOM结构
-          // layer.close(index);
-           //向服务端发送删除指  
-         });
+    	var iframesrc="patentEdit.do?userId='"+data.id+"'";
+    	$("body", parent.document).find('iframe').attr('src',iframesrc);
+    }else if(layEvent==="datac"){
+    	var iframesrc="patentData.do?userId='"+data.id+"'";
+    	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }
   });
 
@@ -429,17 +388,7 @@ upload.render({
 	});
 </script>
 <!--自动设置主表格可视区域-->
-<script>
-
-	var hei=$(".action").height();
-	var ji=$(document).height();
-	var heigt=ji-hei-85;
-	$(".layui-table-body").prop("height",heigt+"px");
-	
-	console.log(heigt);
-
-	
-</script>
+<script src="${basePath}/js/iframesrc.js"></script>
 </body>
 </html>        
         
