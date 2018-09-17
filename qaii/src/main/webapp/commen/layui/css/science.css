@@ -4,3 +4,52 @@
     height: -webkit-calc( 100vh - 190px ); 
     height: calc( 100vh - 190 px )
 }
+.conternbox{
+	margin-top:70px;
+}
+/*添加界面*/
+.techadd{
+	font-size:16px;
+	width:250px;
+	display:inline-block;
+	color:#fff;
+	line-height:20px;
+	vertical-align: middle;
+	
+}
+.techadd .home{
+	width:20px;
+	vertical-align: middle;
+}
+.techadd span{
+	vertical-align: middle;
+}
+.blue{
+	color:#1576bd;
+}
+.addtop{
+	margin-top:100px;
+}
+.layui-form-label {
+    margin: 0px;
+    display: block;
+    text-align: left;
+    padding: 5px 15px;
+    float:none;
+    width:100%;
+}
+.star {
+    color: #F4181C;
+}
+.layui-input {
+    width: 100%;
+    /* border: 1px solid #1b274e; */
+    border: 1px solid #ccc;
+    height: 36px;
+    line-height: 36px;
+}
+.layui-input-block {
+    margin: 0px auto;
+    padding: 0px 15px;
+    display:block;
+}
