@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/webapp/WEB-INF/errorpage/Customerror.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/page=UTF-8
 encoding//src/main/webapp/WEB-INF/page/limited-add.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/page/limited-iframe.jsp=UTF-8
