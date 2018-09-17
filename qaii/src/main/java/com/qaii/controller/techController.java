@@ -35,6 +35,11 @@ public class techController {
 	public String patent(){
 		return "page/science/patent";
 	}
+	//专利添加界面
+		@RequestMapping("patentAdd.do")
+		public String patentAdd(){
+			return "page/science/patentAdd";
+		}
 	//软著
 	@RequestMapping("soft.do")
 	public String soft(){

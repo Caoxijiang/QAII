@@ -72,10 +72,10 @@
         <li class="layui-nav-item">
           <a href="javascript:;"><i class="layui-icon layui-icon-senior" style="font-size: 22px;"></i>&nbsp;政府资助</a>
           <dl class="layui-nav-child">
-	          <dd class="navdd"><a onclick="iframechange('fund.do')">基金</a></dd>
-	          <dd class="navdd"><a onclick="iframechange('create.do')">创新平台</a></dd>
-	          <dd class="navdd"><a onclick="iframechange('research.do')">科研项目</a></dd>
-	          <dd class="navdd"><a onclick="iframechange('award.do')">科技奖励</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('research.do')">纵向课题</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('create.do')">平台建设</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('fund.do')">基金管理</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('award.do')">政府奖励</a></dd>
 	      </dl>
         </li>
         <li class="layui-nav-item">
