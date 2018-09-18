@@ -1,5 +1,8 @@
 package com.qaii.dao;
 
+import java.util.List;
+
+import com.qaii.domain.DeptInfo;
 import com.qaii.domain.Patent;
 
 public interface PatentMapper {
@@ -14,4 +17,7 @@ public interface PatentMapper {
     int updateByPrimaryKeySelective(Patent record);
 
     int updateByPrimaryKey(Patent record);
+    
+    List<Patent> findAllPatentInfo();
+    
 }

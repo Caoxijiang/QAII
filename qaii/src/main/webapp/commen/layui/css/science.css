@@ -53,3 +53,13 @@
     padding: 0px 15px;
     display:block;
 }
+.export {
+    background: #64ad30;
+    color: #fff;
+    border-radius: 3px;
+    width: 147px;
+    height: 45px !important;
+    line-height: 45px !important;
+    font-size: 22px;
+    text-align: center;
+}}
