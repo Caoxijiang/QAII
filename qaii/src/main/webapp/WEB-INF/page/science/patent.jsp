@@ -122,7 +122,7 @@ layui.use('table', function(obj){
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
-    /* url: 'getallinjobEmp.do', */ //数据接口
+    url: 'getallinjobEmp.do', //数据接口
 	cellMinWidth: 80,
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left',width:50},
