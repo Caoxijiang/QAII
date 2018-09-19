@@ -16,6 +16,11 @@
   <style>
     body{margin: 10px;}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+    .layui-table-body {
+	    height: -moz-calc( 100vh - 215px );
+	    height: -webkit-calc( 100vh - 215px );
+	    height: calc( 100vh - 215 px );
+	}
 	.noExl {
     display: none;
 }
@@ -119,6 +124,7 @@ layui.use('table', function(obj){
 	id: 'testReload',  
 //    height: 332,
     url: 'getAllFundMsg.do', //数据接口
+    /* url: 'getallinjobEmp.do',  *///数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},

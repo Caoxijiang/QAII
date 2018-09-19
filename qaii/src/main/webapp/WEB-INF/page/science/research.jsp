@@ -15,6 +15,11 @@
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
     body{margin: 10px;}
+    .layui-table-body {
+	    height: -moz-calc( 100vh - 215px );
+	    height: -webkit-calc( 100vh - 215px );
+	    height: calc( 100vh - 215 px );
+	}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
 	.noExl {
     display: none;

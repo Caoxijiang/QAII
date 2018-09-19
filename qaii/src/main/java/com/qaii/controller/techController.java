@@ -35,6 +35,26 @@ public class techController {
 	public String patent(){
 		return "page/science/patent";
 	}
+	//专利添加界面
+	@RequestMapping("patentAdd.do")
+	public String patentAdd(){
+		return "page/science/patentAdd";
+		}
+	//专利查看详情界面
+		@RequestMapping("patentCheck.do")
+		public String patentCheck(){
+			return "page/science/patentCheck";
+	}
+	//专利修改界面
+	@RequestMapping("patentEdit.do")
+	public String patentEdit(){
+		return "page/science/patentEdit";
+	}
+	//专利资料审查界面
+		@RequestMapping("patentData.do")
+		public String patentData(){
+			return "page/science/patentData";
+		}
 	//软著
 	@RequestMapping("soft.do")
 	public String soft(){

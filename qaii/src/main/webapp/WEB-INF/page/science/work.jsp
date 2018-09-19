@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
@@ -74,7 +75,7 @@
 </div>
 </div>  
 <!-- 数据展示主表格-->
-<div class="table2excel">
+<div class="table2excel conternbox">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
  <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.workType}}'" target="_blank" method="post" id="chex">查看详情</a> -->
@@ -119,6 +120,7 @@ layui.use('table', function(obj){
 		{field: 'workPublishtime', title: '出版年份',sort: true,width:150},
 		{field: 'workDept', title: '部门',sort: true},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
+
     ]],
     
     

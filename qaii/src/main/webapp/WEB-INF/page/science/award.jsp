@@ -16,6 +16,11 @@
   <style>
     body{margin: 10px;}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+    .layui-table-body {
+	    height: -moz-calc( 100vh - 215px );
+	    height: -webkit-calc( 100vh - 215px );
+	    height: calc( 100vh - 215 px );
+	}
 	.noExl {
     display: none;
 }
@@ -79,6 +84,7 @@
 	<div class="int-inline"><input id="rewardAwardtime"  type="checkbox" value="获奖时间" checked/><lable>获奖时间</lable></div>
 	<div class="int-inline"><input id="rewardAwardnum"  type="checkbox" value="奖励金额" checked/><lable>奖励金额</lable></div>
 	<div class="int-inline"><input id="rewardFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
+
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -116,6 +122,7 @@ layui.use('table', function(obj){
 	id: 'testReload',  
 //    height: 332,
     url: 'getAllRewardMsg.do', //数据接口
+    /* url: 'getallinjobEmp.do',  *///数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
@@ -134,6 +141,7 @@ layui.use('table', function(obj){
 		{field: 'rewardAwardtime', title: '获奖时间',sort: true,width:200},
 		{field: 'rewardAwardnum', title: '奖励金额',sort: true,width:200},
 		{field: 'rewardFundtime', title: '资金到位时间',sort: true,width:230},
+
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
