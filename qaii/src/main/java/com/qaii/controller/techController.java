@@ -33,34 +33,43 @@ public class techController {
 	//专利
 	@RequestMapping("patent.do")
 	public String patent(){
-		return "page/science/patent";
+		return "page/science/patent/patent";
 	}
 	//专利添加界面
-	@RequestMapping("patentAdd.do")
-	public String patentAdd(){
-		return "page/science/patentAdd";
+		@RequestMapping("patentAdd.do")
+		public String patentAdd(){
+			return "page/science/patent/patentAdd";
 		}
 	//专利查看详情界面
 		@RequestMapping("patentCheck.do")
 		public String patentCheck(){
-			return "page/science/patentCheck";
+			return "page/science/patent/patentCheck";
 	}
 	//专利修改界面
 	@RequestMapping("patentEdit.do")
 	public String patentEdit(){
-		return "page/science/patentEdit";
+		return "page/science/patent/patentEdit";
 	}
 	//专利资料审查界面
 	@RequestMapping("patentProcess.do")
 	public String patentProcess(){
-		return "page/science/patentProcess";
+		return "page/science/patent/patentProcess";
 	}
 	//专利资料审查文件预览界面
 	@RequestMapping("patentData.do")
 	public String patentData(){
-		return "page/science/patentData";
+		return "page/science/patent/patentData";
 	}
-	
+	//专利资料审查文件流程添加界面
+		@RequestMapping("patentDataAdd.do")
+		public String patentDataAdd(){
+			return "page/science/patent/patentDataAdd";
+		}
+	//专利资料审查文件添加界面
+			@RequestMapping("patentDataAddFile.do")
+			public String patentDataAddFile(){
+				return "page/science/patent/patentDataAddFile";
+			}
 	//软著
 	@RequestMapping("soft.do")
 	public String soft(){

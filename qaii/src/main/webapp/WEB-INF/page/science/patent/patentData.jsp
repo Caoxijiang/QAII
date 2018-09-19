@@ -56,6 +56,30 @@
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script src="${basePath}/js/data.js"></script><!-- 添加流程 -->
 <script src="${basePath}/js/iframesrcon.js"></script>
+<script>
+$(function(){
+	$(document).on('click','#test3',function(){
+		layui.use('layer', function(){
+			  var layer = layui.layer; 
+			  layer.open({
+				type: 2, 
+				area: ['350px', '400px'],
+				content: 'patentDataAdd.do'
+			});
+		}); 
+	});
+	$(document).on('click','.patentFile',function(){
+		layui.use('layer', function(){
+			  var layer = layui.layer; 
+			  layer.open({
+				type: 2, 
+				area: ['350px', '400px'],
+				content: 'patentDataAddFile.do'
+			});
+		}); 
+	});
+});
+</script>
 </body>
 </html>        
         
