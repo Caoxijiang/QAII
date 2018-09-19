@@ -37,15 +37,15 @@
 	</button>		
 </div>
 <div class="layui-container addtop"> 
-<input id="param" value='${param.userId}' type="hidden" />
+<input id="param" value='${param.Id}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="" lay-filter="example"> 
+  <form class="layui-form" action="uptatePatentInfo.do" lay-filter="example"> 
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
 				<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patDept" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -53,7 +53,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">专利类型&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patType" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -61,7 +61,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">专利名称&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -71,7 +71,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">发明人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patAuthor" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -79,7 +79,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">申请（专利权）人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patApplyper" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -87,7 +87,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">交底日期&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patTelltime" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -97,7 +97,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patAgency" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -105,7 +105,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">是否提前公开实审&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patPrepublishaudit" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -113,7 +113,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">申请号&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patApplynum" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -123,7 +123,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">申请日&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patApplytime" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -131,7 +131,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">公开日&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patPublishtime" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -139,7 +139,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">授权公告日&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patAuthorzationtime" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -149,7 +149,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">是否减免&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patRemission" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -157,7 +157,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">申请费用（元）&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patCost" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -165,7 +165,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
+					<input type="text" name="patInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -176,7 +176,7 @@
 			<div class="layui-form-item layui-form-text">
 				<label class="layui-form-label">摘要</label>
 				<div class="layui-input-block">
-					<textarea name="empRemarks" class="layui-textarea" disabled=""></textarea>
+					<textarea name="patDigest" class="layui-textarea" disabled=""></textarea>
 				</div>
 			</div>
  	  	</div>
@@ -184,7 +184,7 @@
 			<div class="layui-form-item layui-form-text">
 				<label class="layui-form-label">备注</label>
 				<div class="layui-input-block">
-					<textarea name="empRemarks" class="layui-textarea" disabled=""></textarea>
+					<textarea name="patRemark" class="layui-textarea" disabled=""></textarea>
 				</div>
 			</div>
  	  	</div>
@@ -215,56 +215,32 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
    var id=${param.userId};
    if(id!=null){
 		$.post({
-			url:"seeEmpInfos.do",
+			url:"findPatentInfoById.do",
 			data:{
-				userId:id
+				id:id
 			},
 			success:function(data){
 				if(data.data!=null){
-					let empinfo=data.data;
+					let patentInfo=data.data;
 					//表单初始赋值 从表单中提取数据
 					  form.val('example', {
-					    "empName": empinfo.empName,
-						  "empNum":empinfo.empNum,
-						  "empGender":empinfo.empGender,
-						  "empDept":empinfo.empDept,
-						  "empPosition":empinfo.empPosition,
-						  "empHireStarttime":empinfo.empHireStarttime,
-						  "empIdcard":empinfo.empIdcard,
-						  "empIdcardEndtime":empinfo.empIdcardEndtime,
-						  "empEthnic":empinfo.empEthnic,
-						  "empPoliticallandscape":empinfo.empPoliticallandscape,
-						  "empMaritalstatus":empinfo.empMaritalstatus,
-						  "empFirsteducation":empinfo.empFirsteducation,
-						  "empFirsteducationschool":empinfo.empFirsteducationschool,
-						  "empFirsteducationpro":empinfo.empFirsteducationpro,
-						  "empFirstgraduationtime":empinfo.empFirstgraduationtime,
-						  "empSecondeducation":empinfo.empSecondeducation,
-						  "empSecondeducationschool":empinfo.empSecondeducationschool,
-						  "empSecondeducationpro":empinfo.empSecondeducationpro,
-						  "empSecondgraduationtime":empinfo.empSecondgraduationtime,
-						  "empThirdeducation":empinfo.empThirdeducation,
-						  "empThirdeducationschool":empinfo.empThirdeducationschool,
-						  "empThirdeducationpro":empinfo.empThirdeducationpro,
-						  "empThirdgraduationtime":empinfo.empThirdgraduationtime,
-						  "empJobtitle":empinfo.empJobtitle,
-						  "empJobtitlelevel":empinfo.empJobtitlelevel,
-						  "empJobtitleobtaintime":empinfo.empJobtitleobtaintime,
-						  "empPhone":empinfo.empPhone,
-						  "empEmergencycontactandphone":empinfo.empEmergencycontactandphone,
-						  "empFileaddress":empinfo.empFileaddress,
-						  "empAccountaddress":empinfo.empAccountaddress,
-						  "empHomeaddress":empinfo.empHomeaddress,
-						  "empWorktype":empinfo.empWorktype,
-						  "empCompile":empinfo.empCompile,
-						  "empInductiontime":empinfo.empInductiontime,
-						  "empTryoutendtime":empinfo.empTryoutendtime,
-						  "empContractendtime":empinfo.empContractendtime,
-						  "empContractsignednum":empinfo.empContractsignednum,
-						  "empReturnee":empinfo.empReturnee,
-					  	  "empForeign":empinfo.empForeign,
-						  "empRemarks":empinfo.empRemarks,
-						  "empDepartureTime":empinfo.empDepartureTime
+						"patDept":patentInfo.patDept,
+						"patType":patentInfo.patType,
+						"patName":patentInfo.patName,
+						"patDigest":patentInfo.patDigest,
+						"patAuthor":patentInfo.patAuthor,
+						"patApplyper":patentInfo.patApplyper,
+						"patTelltime":patentInfo.patTelltime,
+						"patAgency":patentInfo.patAgency,
+						"patPrepublishaudit":patentInfo.patPrepublishaudit,
+						"patApplynum":patentInfo.patApplynum,
+						"patApplytime":patentInfo.patApplytime,
+						"patPublishtime":patentInfo.patPublishtime,
+						"patAuthorzationtime":patentInfo.patAuthorzationtime,
+						"patRemission":patentInfo.patRemission,
+						"patCost":patentInfo.patCost,
+						"patInvoiceper":patentInfo.patInvoiceper,
+						"patRemark":patentInfo.patRemark
 					    
 					  })
 				}else{

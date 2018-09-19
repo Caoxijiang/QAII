@@ -516,10 +516,6 @@ function imgjudge(){
 	var img=$("[name=imageVal]").val();
 	alret(img);
 }	
-	
-	
-	
-
 </script>
 <script src="${basePath}/router/adddetail.js"></script>
 </body>

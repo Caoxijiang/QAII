@@ -6,7 +6,7 @@ import com.qaii.domain.DeptInfo;
 import com.qaii.domain.Patent;
 
 public interface PatentMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer[] id);
 
     int insert(Patent record);
 

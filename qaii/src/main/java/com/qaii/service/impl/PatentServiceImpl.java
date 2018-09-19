@@ -27,4 +27,25 @@ public class PatentServiceImpl implements PatentService{
 		return patentMapper.findAllPatentInfo();
 	}
 
+	@Override
+	public Patent selectByPrimaryKey(Integer id) {
+		// TODO Auto-generated method stub
+		return patentMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public int deleteByPrimaryKey(Integer[] id) {
+		// TODO Auto-generated method stub
+		return patentMapper.deleteByPrimaryKey(id);
+	}
+
+	@Override
+	public int updateByPrimaryKey(Patent record) {
+		// TODO Auto-generated method stub
+		return patentMapper.updateByPrimaryKey(record);
+	}
+
+	
+
+
 }

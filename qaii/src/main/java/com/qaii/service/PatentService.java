@@ -9,4 +9,12 @@ public interface PatentService {
     int insert(Patent record);
     
     List<Patent> findAllPatentInfo();
+    
+    Patent selectByPrimaryKey(Integer id);
+    
+    int deleteByPrimaryKey(Integer[] id);
+    
+    int updateByPrimaryKey(Patent record);
+    
 }
+

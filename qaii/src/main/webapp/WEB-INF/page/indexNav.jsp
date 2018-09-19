@@ -47,7 +47,7 @@
 				</a>
 			</div>
 			<div class="col-6">
-				<a href="#">
+				<a href="indexScience.do">
 					<div class="navbox" style="margin-left: 80px;">
 						<div class="navtitle">科研成果管理系统—科技处</div>
 						<div class="navcom">点击进入</div>

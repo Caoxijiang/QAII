@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -34,7 +35,8 @@ public class PatentController {
     	}
 	}
 	
-	
+	//专利列表
+	@ResponseBody
 	@RequestMapping(value="findPatentInfo.do",produces="application/json;charset=UTF-8")
 	public Layui findPatentInfo() {
 		List<Patent> deptInfo=patentService.findAllPatentInfo();
@@ -49,8 +51,54 @@ public class PatentController {
 	
 	
 	
+	//专利详情
+	@ResponseBody
+	@RequestMapping(value="findPatentInfoById.do",produces="application/json;charset=UTF-8")
+	public JsonResult findPatentInfoById(HttpServletRequest req,Patent patent) {
+		patent.setId(Integer.valueOf(req.getParameter("id"))); 
+		Patent row=patentService.selectByPrimaryKey(patent.getId());
+		
+			if(row!=null) {
+				return new JsonResult(row);
+			}else {
+				return new JsonResult();
+			}
+	}
 	
 	
+	//删除专利信息
+    @ResponseBody
+    @RequestMapping(value="dellPatentInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+    public JsonResult dellPatentInfo(@RequestParam(value = "requestDate[]") Integer[] id ){
+     	int row=patentService.deleteByPrimaryKey(id);
+     
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+        
+    }
+    
+    
+    
+	//修改部门信息
+    @ResponseBody
+    @RequestMapping(value="uptatePatentInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+    public JsonResult uptatePatentInfo(HttpServletRequest req,Patent patent){
+    	PatentInfo(req, patent);
+    	patent.setId(Integer.parseInt(req.getParameter("param")));
+     	int row=patentService.updateByPrimaryKey(patent);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+        
+    }
+    
 	
 	
 	
