@@ -38,8 +38,10 @@
 </div>
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
-<input id="param" value='${param.userId}' type="hidden" />
-  <form class="layui-form" action=" " method="post" lay-filter="example"> 
+<input id="param" value='${param.userId}' type="hidden"  name="param"/>
+  <form class="layui-form" action="uptatePatentInfo.do" method="post" lay-filter="example"> 
+  
+  	<input   type="hidden"  name="id"/>
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
@@ -267,6 +269,7 @@ $.post({
 							let patentInfo=data.data;
 							//表单初始赋值 从表单中提取数据
 							  form.val('example', {
+								  	"id":patentInfo.id,
 									"patDept":patentInfo.patDept,
 									"patType":patentInfo.patType,
 									"patName":patentInfo.patName,
