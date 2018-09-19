@@ -51,10 +51,16 @@ public class techController {
 		return "page/science/patentEdit";
 	}
 	//专利资料审查界面
-		@RequestMapping("patentData.do")
-		public String patentData(){
-			return "page/science/patentData";
-		}
+	@RequestMapping("patentProcess.do")
+	public String patentProcess(){
+		return "page/science/patentProcess";
+	}
+	//专利资料审查文件预览界面
+	@RequestMapping("patentData.do")
+	public String patentData(){
+		return "page/science/patentData";
+	}
+	
 	//软著
 	@RequestMapping("soft.do")
 	public String soft(){

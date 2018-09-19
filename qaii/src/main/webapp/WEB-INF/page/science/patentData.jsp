@@ -31,16 +31,31 @@
 		<span>首页&nbsp;>&nbsp;</span>
 		<span class="blue">专利&nbsp;—&nbsp;资料审查</span>
 	</div>
+	<button class="layui-btn btn" data-type="getCheckLength" id="test3" style="width:120px;margin-right:16px !important">
+		<i class="layui-icon layui-icon-add-1"></i>添加流程
+	</button>
 	<!--		导出-->
 	<button onclick="srchange('patent.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
 <div class="layui-container addtop"> 
-<!-- 采用表格内直接行结构  -->
+	<div class="datacontent">
+		<div class="datatitle">
+			<span class="dataname">&nbsp;&nbsp;&nbsp;&nbsp;专利名称《树木胸径预测方法》&nbsp;</span>
+			<span class="inventor">发明人：华净;康孟珍;王秀娟;王浩宇;范兴容;王飞跃</span>
+			<span class="datadate">公开日期：2016-8-8&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		</div>
+		<div id="process">
+			<ul class="layui-timeline" id="processul">
+			</ul>  
+		</div>
+	</div>
   
 </div>
-<script src="${basePath}/js/iframesrc.js"></script>
+<script src="${basePath}/commen/layui/layui.js"></script>
+<script src="${basePath}/js/data.js"></script><!-- 添加流程 -->
+<script src="${basePath}/js/iframesrcon.js"></script>
 </body>
 </html>        
         
