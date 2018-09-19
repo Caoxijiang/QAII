@@ -15,12 +15,12 @@ public class MyInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		//首先进入的方法
-        System.out.println("preHandle");
+//        System.out.println("preHandle");
         //return false表示拦截，不向下执行
          //return true表示放行
         String path=request.getServletPath();
-        System.out.println(request.getServletPath());
-        System.out.println(request.getRequestURI());
+//        System.out.println(request.getServletPath());
+//        System.out.println(request.getRequestURI());
         HttpSession session = request.getSession();
         User u=(User)session.getAttribute("user");
         if(u!=null){

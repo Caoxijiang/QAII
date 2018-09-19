@@ -1,5 +1,7 @@
 package com.qaii.dao;
 
+import java.util.List;
+
 import com.qaii.domain.Thesis;
 
 public interface ThesisMapper {
@@ -14,4 +16,10 @@ public interface ThesisMapper {
     int updateByPrimaryKeySelective(Thesis record);
 
     int updateByPrimaryKey(Thesis record);
+    
+    int selectCountNum();
+    
+    List<Thesis> getAllThesisMsg();
+    
+    int deleteByPrimaryKeys(Integer[] eid);
 }

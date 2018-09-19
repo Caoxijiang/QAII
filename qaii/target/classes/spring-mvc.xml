@@ -53,7 +53,9 @@
 			<mvc:exclude-mapping path="/findDeptInfoList.do"/>
 			<mvc:exclude-mapping path="/tstchk.do"/>
 			<mvc:exclude-mapping path="/setdata.do"/>
+			<mvc:exclude-mapping path="/setdata2.do"/>
 			<mvc:exclude-mapping path="/tsterr.do"/>
+			<mvc:exclude-mapping path="/testinterface.do"/>			
 			<bean class="com.qaii.interceptor.MyInterceptor"></bean>
 			</mvc:interceptor>
 		</mvc:interceptors> 

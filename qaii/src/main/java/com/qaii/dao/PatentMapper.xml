@@ -292,4 +292,7 @@
       pat_Agent = #{patAgent,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectCountbyNum" resultType="int">
+  	select COUNT(*) FROM sci_patent
+  </select>
 </mapper>

@@ -221,4 +221,17 @@
       tradm_UpdateTime = #{tradmUpdatetime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getAllTradeMarkMsg" resultMap="BaseResultMap">
+  	SELECT * from sci_trademark
+  </select>
+  
+  <select id="selectCountNum" resultType="int">
+  	SELECT COUNT(*) FROM sci_trademark
+  </select>
+  <delete id="deleteByPrimaryKeys" parameterType="int">
+  	DELETE  FROM sci_trademark WHERE id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
 </mapper>

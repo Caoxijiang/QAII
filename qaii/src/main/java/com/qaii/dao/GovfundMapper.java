@@ -1,5 +1,7 @@
 package com.qaii.dao;
 
+import java.util.List;
+
 import com.qaii.domain.Govfund;
 
 public interface GovfundMapper {
@@ -14,4 +16,8 @@ public interface GovfundMapper {
     int updateByPrimaryKeySelective(Govfund record);
 
     int updateByPrimaryKey(Govfund record);
+    
+    List<Govfund> getAllFundMsg();
+    
+    int deleteByPrimaryKeys(Integer[] eid);
 }

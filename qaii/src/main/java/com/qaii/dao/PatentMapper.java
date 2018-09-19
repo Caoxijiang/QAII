@@ -14,4 +14,6 @@ public interface PatentMapper {
     int updateByPrimaryKeySelective(Patent record);
 
     int updateByPrimaryKey(Patent record);
+    
+    int selectCountbyNum();
 }
