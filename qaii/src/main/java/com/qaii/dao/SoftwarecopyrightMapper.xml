@@ -210,4 +210,17 @@
       soft_Remark = #{softRemark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getAllSoftWareMsg" resultMap="BaseResultMap">
+  	SELECT * from sci_softwarecopyright
+  </select>
+  
+  <select id="selectCountNum" resultType="int">
+  	SELECT COUNT(*) FROM sci_softwarecopyright
+  </select>
+  <delete id="deleteByPrimaryKeys" parameterType="int">
+  	DELETE  FROM sci_softwarecopyright WHERE id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
 </mapper>

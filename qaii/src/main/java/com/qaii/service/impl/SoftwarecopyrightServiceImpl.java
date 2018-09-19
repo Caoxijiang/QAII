@@ -1,0 +1,37 @@
+package com.qaii.service.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.qaii.dao.SoftwarecopyrightMapper;
+import com.qaii.domain.Softwarecopyright;
+import com.qaii.service.SoftwarecopyrightService;
+
+@Service("softwarecopyright")
+public class SoftwarecopyrightServiceImpl implements SoftwarecopyrightService {
+	
+	@Resource
+	private SoftwarecopyrightMapper softMapper;
+
+	@Override
+	public int getCountNum() {
+		// TODO Auto-generated method stub
+		return softMapper.selectCountNum();
+	}
+
+	@Override
+	public List<Softwarecopyright> getAllSoftwareMsg() {
+		// TODO Auto-generated method stub
+		return softMapper.getAllSoftWareMsg();
+	}
+
+	@Override
+	public int dellsoftMsg(Integer[] eid) {
+		// TODO Auto-generated method stub
+		return softMapper.deleteByPrimaryKeys(eid);
+	}
+
+}

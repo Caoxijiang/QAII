@@ -1,5 +1,7 @@
 package com.qaii.dao;
 
+import java.util.List;
+
 import com.qaii.domain.Work;
 
 public interface WorkMapper {
@@ -14,4 +16,10 @@ public interface WorkMapper {
     int updateByPrimaryKeySelective(Work record);
 
     int updateByPrimaryKey(Work record);
+    
+    int selectCountNum();
+    
+    List<Work> getAllWorkMsg();
+    
+    int deleteByPrimaryKeys(Integer[] eid);
 }

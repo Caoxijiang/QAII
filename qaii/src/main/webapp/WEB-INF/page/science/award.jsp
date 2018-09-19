@@ -70,20 +70,21 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=empNum  type="checkbox" value="工号" checked="flase"/><lable>申报时间</lable></div>
-	<div class="int-inline"><input id="empName"  type="checkbox" value="姓名" checked/><lable>来源</lable></div>
-	<div class="int-inline"><input id="empGender"  type="checkbox" value="性别" checked/><lable>级别</lable></div>
-	<div class="int-inline"><input id="empDept"  type="checkbox" value="部门" checked/><lable>获奖名称</lable></div>
-	<div class="int-inline"><input id="empPosition"  type="checkbox" value="职务" checked/><lable>课题项目名称/人员姓名</lable></div>
-	<div class="int-inline"><input id="empHireStarttime"  type="checkbox" value="聘期" checked/><lable>承担单位/所在单位</lable></div>
-	<div class="int-inline"><input id="empIdcard"  type="checkbox" value="身份证号" checked/><lable>协作单位</lable></div>
-	<div class="int-inline"><input id="empIdcardEndtime"  type="checkbox" value="身份证到期时间" checked/><lable>主管部门</lable></div>
-	<div class="int-inline"><input id="empEthnic"  type="checkbox" value="民族" checked/><lable>申请报送部门</lable></div>
-	<div class="int-inline"><input id="empPoliticallandscape"  type="checkbox" value="政治面貌" checked/><lable>承担部门</lable></div>
-	<div class="int-inline"><input id="empMaritalstatus"  type="checkbox" value="婚姻状况" checked/><lable>是否获奖</lable></div>
-	<div class="int-inline"><input id="empFirsteducation"  type="checkbox" value="第一学历" checked/><lable>获奖时间</lable></div>
-	<div class="int-inline"><input id="empFirsteducationschool"  type="checkbox" value="第一学历学校" checked/><lable>奖励金额</lable></div>
-	<div class="int-inline"><input id="empFirsteducationpro"  type="checkbox" value="第一学历专业" checked/><lable>资金到位时间</lable></div>
+	<div class="int-inline"><input id=rewardApplytime  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
+	<div class="int-inline"><input id="rewardSource"  type="checkbox" value="来源" checked/><lable>来源</lable></div>
+	<div class="int-inline"><input id="rewardLevel"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
+	<div class="int-inline"><input id="rewardName"  type="checkbox" value="获奖名称" checked/><lable>获奖名称</lable></div>
+	<div class="int-inline"><input id="rewardProjectname"  type="checkbox" value="课题项目名称/人员姓名" checked/><lable>课题项目名称/人员姓名</lable></div>
+	<div class="int-inline"><input id="rewardDutyunit"  type="checkbox" value="承担单位/所在单位" checked/><lable>承担单位/所在单位</lable></div>
+	<div class="int-inline"><input id="rewardCooperationunit"  type="checkbox" value="协作单位" checked/><lable>协作单位</lable></div>
+	<div class="int-inline"><input id="rewardManagedepart"  type="checkbox" value="主管部门" checked/><lable>主管部门</lable></div>
+	<div class="int-inline"><input id="rewardApplydepart"  type="checkbox" value="申请报送部门" checked/><lable>申请报送部门</lable></div>
+	<div class="int-inline"><input id="rewardAssumedepart"  type="checkbox" value="承担部门" checked/><lable>承担部门</lable></div>
+	<div class="int-inline"><input id="rewardAward"  type="checkbox" value="是否获奖" checked/><lable>是否获奖</lable></div>
+	<div class="int-inline"><input id="rewardAwardtime"  type="checkbox" value="获奖时间" checked/><lable>获奖时间</lable></div>
+	<div class="int-inline"><input id="rewardAwardnum"  type="checkbox" value="奖励金额" checked/><lable>奖励金额</lable></div>
+	<div class="int-inline"><input id="rewardFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
+
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -94,7 +95,7 @@
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">离职</a>
+  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="review">审查资料</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -119,26 +120,28 @@ layui.use('table', function(obj){
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
+//    height: 332,
+    url: 'getAllRewardMsg.do', //数据接口
     /* url: 'getallinjobEmp.do',  *///数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'empNum', title: '申报时间',fixed: 'left',width:100},
-		{field: 'empName', title: '来源',fixed: 'left',width:150},
-		{field: 'empGender', title: '级别',sort: true},
-		{field: 'empDept', title: '获奖名称',sort: true,width:200},
-		{field: 'empPosition', title: '课题项目名称/人员姓名',sort: true,width:150},
-		{field: 'empHireStarttime', title: '承担单位/所在单位',sort: true},
-		{field: 'empIdcard', title: '协作单位',width:220},
-		{field: 'empIdcardEndtime', title: '主管部门',sort: true,width:200},
-		{field: 'empEthnic', title: '申请报送部门',sort: true},
-		{field: 'empPoliticallandscape', title: '承担部门',sort: true,width:150},
-		{field: 'empMaritalstatus', title: '是否获奖',sort: true,width:150},
-		
-		{field: 'empFirsteducation', title: '获奖时间',sort: true,width:200},
-		{field: 'empFirsteducationschool', title: '奖励金额',sort: true,width:200},
-		{field: 'empFirsteducationpro', title: '资金到位时间',sort: true,width:200},
+		{field: 'rewardApplytime', title: '申报时间',fixed: 'left',width:100},
+		{field: 'rewardSource', title: '来源',fixed: 'left',width:150},
+		{field: 'rewardLevel', title: '级别',sort: true},
+		{field: 'rewardName', title: '获奖名称',sort: true,width:200},
+		{field: 'rewardProjectname', title: '课题项目名称/人员姓名',sort: true,width:150},
+		{field: 'rewardDutyunit', title: '承担单位/所在单位',sort: true},
+		{field: 'rewardCooperationunit', title: '协作单位',width:220},
+		{field: 'rewardManagedepart', title: '主管部门',sort: true,width:200},
+		{field: 'rewardApplydepart', title: '申请报送部门',sort: true},
+		{field: 'rewardAssumedepart', title: '承担部门',sort: true,width:150},
+		{field: 'rewardAward', title: '是否获奖',sort: true,width:200},
+		{field: 'rewardAwardtime', title: '获奖时间',sort: true,width:200},
+		{field: 'rewardAwardnum', title: '奖励金额',sort: true,width:200},
+		{field: 'rewardFundtime', title: '资金到位时间',sort: true,width:230},
+
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
@@ -266,7 +269,7 @@ layui.use('table', function(obj){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"DellempInfo.do",
+          	url:"dellRewardMsg.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -348,7 +351,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"DellempInfo.do",
+		  	url:"dellRewardMsg.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},

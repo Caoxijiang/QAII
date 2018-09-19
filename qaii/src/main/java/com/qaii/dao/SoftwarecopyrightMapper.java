@@ -1,5 +1,7 @@
 package com.qaii.dao;
 
+import java.util.List;
+
 import com.qaii.domain.Softwarecopyright;
 
 public interface SoftwarecopyrightMapper {
@@ -14,4 +16,10 @@ public interface SoftwarecopyrightMapper {
     int updateByPrimaryKeySelective(Softwarecopyright record);
 
     int updateByPrimaryKey(Softwarecopyright record);
+    
+    int selectCountNum();
+    
+    List<Softwarecopyright> getAllSoftWareMsg();
+    
+    int deleteByPrimaryKeys(Integer[] eid);
 }

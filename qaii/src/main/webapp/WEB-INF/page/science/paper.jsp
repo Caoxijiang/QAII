@@ -50,9 +50,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="empDept">部门</option>
+			<option value="sisPublishlocation">期刊/会议/杂志</option>
 			<option value="empJobtitlelevel">职称等级</option>
-			<option value="empGender">性别</option>
+			<option value="sisUnits">署名单位</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -62,16 +62,29 @@
 		
 	
 </div>
- 
+<!-- 操作-->
+<div class="action"> 
+<div class="act">
+	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
+	<div class="int-inline"><input id=sisSubject  type="checkbox" value="题目" checked="flase"/><lable>题目</lable></div>
+	<div class="int-inline"><input id="sisAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
+	<div class="int-inline"><input id="sisUnits"  type="checkbox" value="署名单位" checked/><lable>署名单位</lable></div>
+	<div class="int-inline"><input id="sisPublishlocation"  type="checkbox" value="期刊/会议/杂志" checked/><lable>期刊/会议/杂志</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="发表时间" checked/><lable>发表时间</lable></div>
+	<div class="int-inline"><input id="sisStatus"  type="checkbox" value="状态" checked/><lable>状态</lable></div>
+	<div class="int-inline"><input id="sisDept"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
+	
+</div>
+</div>  
 <!-- 数据展示主表格-->
 <div class="table2excel conternbox">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
- <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
+ <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.sisSubject}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">离职</a>
+  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="review">审查资料</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -96,17 +109,19 @@ layui.use('table', function(obj){
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
-    /* url: 'getallinjobEmp.do', */ //数据接口
+//    height: 332,
+    url: 'getAllThesisMsg.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
-		{field: 'id', title: '题目',type:'numbers',fixed: 'left',width:100},
-		{field: 'empNum', title: '作者',fixed: 'left',width:100},
-		{field: 'empName', title: '署名单位',fixed: 'left',width:150},
-		{field: 'empGender', title: '期刊/会议/杂志（含卷号，页数）',width:300},
-		{field: 'empDept', title: '发表时间',sort: true,width:200},
-		{field: 'empPosition', title: '状态',width:150},
-		{field: 'empHireStarttime', title: '部门',sort: true},
+		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
+		{field: 'sisSubject', title: '题目',fixed: 'left',width:100},
+		{field: 'sisAuthor', title: '作者',fixed: 'left',width:150},
+		{field: 'sisUnits', title: '署名单位',sort: true},
+		{field: 'sisPublishlocation', title: '期刊/会议/杂志',sort: true,width:200},
+		{field: 'sisPublishtime', title: '发表时间',sort: true,width:150},
+		{field: 'sisStatus', title: '状态',sort: true},
+		{field: 'sisDept', title: '部门',width:220},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
@@ -195,12 +210,12 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="empDept"){
+  			if(check=="sisPublishlocation"){
+  				alert("搜索'期刊/会议/杂志'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="sisDept"){
   				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empGender"){
-  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="sisUnits"){
+  				alert("搜索'署名单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -234,7 +249,7 @@ layui.use('table', function(obj){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"DellempInfo.do",
+          	url:"dellThesisMsg.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -316,7 +331,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"DellempInfo.do",
+		  	url:"dellThesisMsg.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},

@@ -282,4 +282,11 @@
       govsub_File = #{govsubFile,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getAllSubjectMsg" resultMap="BaseResultMap">SELECT * from sci_govsubject</select>
+  <delete id="deleteByPrimaryKeys" parameterType="int">
+  	DELETE  FROM sci_govsubject WHERE id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
 </mapper>

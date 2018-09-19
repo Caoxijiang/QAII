@@ -1,5 +1,7 @@
 package com.qaii.service;
 
+
+
 import java.util.List;
 
 import com.qaii.domain.Patent;
@@ -15,6 +17,8 @@ public interface PatentService {
     int deleteByPrimaryKey(Integer[] id);
     
     int updateByPrimaryKey(Patent record);
+    
+    int getPatentCount();
     
 }
 

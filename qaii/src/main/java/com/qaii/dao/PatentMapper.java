@@ -18,6 +18,10 @@ public interface PatentMapper {
 
     int updateByPrimaryKey(Patent record);
     
+
+    int selectCountbyNum();
+
     List<Patent> findAllPatentInfo();
     
+
 }
