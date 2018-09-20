@@ -70,11 +70,7 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['350px', '400px'],
-<<<<<<< HEAD
-				content: 'patentDataAdd.do?userId='+userID
-=======
 				content: "patentDataAdd.do?Id"+'='+${param.userId}
->>>>>>> e0c5b30681a81a1719df4181c80cdc3cb1940bb6
 			});
 		}); 
 	});
