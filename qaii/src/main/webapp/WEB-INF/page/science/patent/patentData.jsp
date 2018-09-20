@@ -81,7 +81,7 @@ $(function(){
 			  var layer = layui.layer; 
 			  layer.open({
 				type: 2, 
-				area: ['350px', '400px'],
+				area: ['600px', '450px'],
 				content: 'patentDataAddFile.do?userId='+userID+"&step='"+stepnum+"'"
 			});
 		}); 
