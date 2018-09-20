@@ -43,9 +43,9 @@
 <div class="layui-container addtop"> 
 	<div class="datacontent">
 		<div class="datatitle">
-			<span class="dataname">&nbsp;&nbsp;&nbsp;&nbsp;专利名称《树木胸径预测方法》&nbsp;</span>
-			<span class="inventor">发明人：华净;康孟珍;王秀娟;王浩宇;范兴容;王飞跃</span>
-			<span class="datadate">公开日期：2016-8-8&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<span class="dataname">&nbsp;&nbsp;&nbsp;&nbsp;专利名称《&nbsp;${param.patName}&nbsp;》</span>
+			<span class="inventor">发明人：${param.patAuthor}</span>
+			<span class="datadate">公开日期：${param.patPublishtime}&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>
 		<div id="process">
 			<ul class="layui-timeline" id="processul">
