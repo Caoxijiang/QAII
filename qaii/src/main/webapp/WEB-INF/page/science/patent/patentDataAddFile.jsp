@@ -26,6 +26,12 @@
 			</div>
 		</div>
 	</form>
-<script src="${basePath}/commen/layui/layui.js"></script>	
+<script src="${basePath}/commen/layui/layui.js"></script>
+<script type="text/javascript">
+/* 获取页面传递过来的值 */
+	var userID=${param.userId};
+	var step=${param.step};
+	console.log(userID+"id与步骤"+step);
+</script>	
 </body>
 </html>

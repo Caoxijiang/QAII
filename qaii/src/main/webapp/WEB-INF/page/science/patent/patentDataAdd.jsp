@@ -40,6 +40,11 @@
 	</form>
 <script src="${basePath}/commen/layui/layui.js"></script>	
 <script type="text/javascript">
+//patentData传递过来的值
+/* 获取页面传递过来的值 */
+	var userID=${param.userId};
+	var step=${param.step};
+	console.log(userID+"id与步骤"+step);
 layui.use(['layer','element','layedit', 'laydate'], function(){
 	  var form = layui.form,
 		element = layui.element,
