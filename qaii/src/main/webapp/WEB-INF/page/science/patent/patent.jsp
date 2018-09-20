@@ -295,7 +295,8 @@ layui.use('table', function(obj){
     	var iframesrc="patentEdit.do?userId='"+data.id+"'";
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }else if(layEvent==="datac"){
-    	var iframesrc="patentData.do?userId='"+data.id+"'";
+    	//userid为当前记录id值，将会传到资料审查界面
+    	var iframesrc="patentData.do?userId='"+data.id+"'&patName="+data.patName+"&patAuthor="+data.patAuthor+"&patPublishtime="+data.patPublishtime;
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }
   });

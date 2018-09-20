@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>添加界面</title>
+  <title>资料审查-文件预览</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
@@ -26,25 +26,27 @@
 </head>
 <body id="bodyHei">
 <div class="tool">
-	<div class="techadd">
+	<div class="techadd" style="width:300px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">专利&nbsp;—&nbsp;添加界面</span>
+		<span>专利&nbsp;—&nbsp;资料审查</span>
+		<span>&nbsp;>&nbsp;</span>
+		<span class="blue">文件预览</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('patent.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('patentData.do?userId=20')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="addPatentInfo.do" method="post"> 
+  <form class="layui-form" action="addEmpInfo.do" method="post"> 
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
 				<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="pat_Dept" lay-verify="required" lay-search="" id="deptt" class="input">
+					<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
 						
 					</select>
 				</div>
@@ -54,7 +56,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">专利类型&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="pat_Type" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
 						<option value="">   </option>
 						<option value="发明专利">发明专利</option>
 						<option value="实用新型专利">实用新型专利</option>
@@ -67,7 +69,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">专利名称&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_Name" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -77,7 +79,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">发明人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_Author" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -85,7 +87,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">申请（专利权）人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_ApplyPer" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -93,7 +95,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">交底日期&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_TellTime" class="layui-input input" id="test1">
+					<input type="text" name="empInductiontime" class="layui-input input" id="test1">
 				</div>
 			</div>
 	    </div>
@@ -103,7 +105,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_Agency" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -111,7 +113,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">是否提前公开实审&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="pat_PrePublishAudit" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
 						<option value="">   </option>
 						<option value="是">是</option>
 						<option value="否">否</option>
@@ -124,7 +126,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">申请号&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_ApplyNum" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -134,7 +136,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">申请日&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_ApplyTime" class="layui-input input" id="test2">
+					<input type="text" name="empInductiontime" class="layui-input input" id="test2">
 				</div>
 			</div>
 	    </div>
@@ -142,7 +144,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">公开日&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_PublishNum" class="layui-input input" id="test3">
+					<input type="text" name="empInductiontime" class="layui-input input" id="test3">
 				</div>
 			</div>
 	    </div>
@@ -150,7 +152,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">授权公告日&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_AuthorzationTime" class="layui-input input" id="test4">
+					<input type="text" name="empInductiontime" class="layui-input input" id="test4">
 				</div>
 			</div>
 	    </div>
@@ -160,7 +162,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">是否减免&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="pat_Remission" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
 						<option value="">   </option>
 						<option value="是">是</option>
 						<option value="否">否</option>
@@ -172,7 +174,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">申请费用（元）&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_Cost" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -180,7 +182,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="pat_InvoicePer" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -191,7 +193,7 @@
 			<div class="layui-form-item layui-form-text">
 				<label class="layui-form-label">摘要</label>
 				<div class="layui-input-block">
-					<textarea name="pat_Digest" class="layui-textarea"></textarea>
+					<textarea name="empRemarks" class="layui-textarea"></textarea>
 				</div>
 			</div>
  	  	</div>
@@ -199,7 +201,7 @@
 			<div class="layui-form-item layui-form-text">
 				<label class="layui-form-label">备注</label>
 				<div class="layui-input-block">
-					<textarea name="pat_Remark" class="layui-textarea"></textarea>
+					<textarea name="empRemarks" class="layui-textarea"></textarea>
 				</div>
 			</div>
  	  	</div>
@@ -219,6 +221,11 @@
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
+/* 获取页面传递过来的值 */
+var userID=${param.userId};
+console.log(userID);
+var step=${param.step}+"";
+console.log("bushu "+step);
 $.post({
 	url:"findDeptInfoList.do",
 	success:function(data){

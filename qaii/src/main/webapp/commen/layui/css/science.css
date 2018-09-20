@@ -28,7 +28,8 @@
 	color:#1576bd;
 }
 .addtop{
-	margin-top:100px;
+	margin-top:90px;
+	width:90%;
 }
 .layui-form-label {
     margin: 0px;
@@ -61,5 +62,138 @@
     height: 45px !important;
     line-height: 45px !important;
     font-size: 22px;
+    text-align: center;}
+/* 资料审查界面 */
+.datacontent{
+	margin:0px auto;
+	color:#666666;
+	font-size:18px;
+	line-height:50px;
+}
+.datatitle{
+	border-bottom:1px dashed #ccc;
+}
+#process{
+	margin-top:15px;
+	max-width:1000px;
+	width:80%;
+	max-width:900px;
+}
+.datadate{
+	float:right;
+	font-size:14px;
+	color:#ccc;
+}
+.datali{
+	width: 50%;
+    margin-right: 5px;
+}
+.layui-text h3{
+	color:#003e8d;
+	font-weight:bold;
+}
+.databor{
+	padding:5px;
+	border-radius:3px;
+    border:1px solid #d7d7d7;
+    background:#f7f7f7;
+}
+.datalileft{
+	margin-left: 5px;
+	position: relative;
+    padding-bottom: 20px;
+    text-align:right;
+}
+.dataname{
+	font-weight:bold;
+}
+.inventor{
+	font-size:14px;
+}
+.datalileft:before {
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 0;
+    z-index: 0;
+    width: 1px;
+    height: 100%;
+}
+.layui-timeline-axis {
+    position: absolute;
+    left: -5px;
+    top: 0;
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    background-color: #fff;
+    color: #2162b6;
+    border-radius: 50%;
     text-align: center;
-}}
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+.layui-timeline-axis:hover {
+	color:#e94620;
+}
+.datalileft .layui-timeline-axisl {
+    position: absolute;
+    right: -5px;
+    top: 0;
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    background-color: #fff;
+    color: #2162b6;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+.datalileft .layui-timeline-axisl:hover {
+	color:#e94620;
+}
+.layui-timeline-contentl {
+    padding-right: 25px;
+}
+.datalileft:first-child:before {
+    display: block;
+}
+.datalileft:before, hr {
+    background-color: #e6e6e6;
+}
+.btncoll{
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-right:10px;
+}
+.btncollr{
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+}
+.databtn{
+	width:80px;
+	border-radius:2px;
+	height:25px;
+	line-height:25px;
+	color:#fff;
+	font-size:12px;
+	text-align:center;
+	background:#ccc;
+	
+}
+.datalidate{
+	float:left;
+	color:#ccc;
+	margin-left:20px;
+}
+.datalidatel{
+	float:right;
+	color:#ccc;
+	margin-right:20px;
+}

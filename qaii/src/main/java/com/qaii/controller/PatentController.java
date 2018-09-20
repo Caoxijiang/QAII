@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.qaii.domain.DeptInfo;
+import com.qaii.domain.PatProcess;
 import com.qaii.domain.Patent;
 import com.qaii.service.PatentService;
+import com.qaii.service.ProcessService;
+import com.qaii.util.CountDatetoNowDays;
 import com.qaii.util.JsonResult;
 import com.qaii.util.Layui;
 
@@ -21,6 +24,8 @@ import com.qaii.util.Layui;
 public class PatentController {
 	@Resource
 	private PatentService patentService;
+	@Resource
+	private ProcessService processService;
 	//增加专利信息
 	@ResponseBody
 	@RequestMapping(value="addPatentInfo.do",produces="application/json;charset=UTF-8")
@@ -88,7 +93,7 @@ public class PatentController {
     @RequestMapping(value="uptatePatentInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
     public JsonResult uptatePatentInfo(HttpServletRequest req,Patent patent){
     	PatentInfo(req, patent);
-    	patent.setId(Integer.parseInt(req.getParameter("param")));
+    	patent.setId(Integer.parseInt(req.getParameter("id")));
      	int row=patentService.updateByPrimaryKey(patent);
     	if(row!=0) {
     		return  new JsonResult(row);
@@ -102,17 +107,58 @@ public class PatentController {
 	
 	
 	
+    //增加专利流程信息
+  	@ResponseBody
+  	@RequestMapping(value="addProcessInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+  	public JsonResult addProcessInfo(HttpServletRequest req,PatProcess patp) {
+  		patp.setPid(Integer.parseInt(req.getParameter("pid")));
+  		patp.setDescription(req.getParameter("description"));
+  		patp.setTitle(req.getParameter("title"));
+  		patp.setTime(req.getParameter("time"));
+  		int row = processService.addProcessInfo(patp);
+      	if(row!=0) {
+      		return  new JsonResult(row);
+      	}else {
+      		return  new JsonResult();
+      		
+      	}
+  	}
+	
+	
+
+	
+    //增加专利流程信息
+  	@ResponseBody
+  	@RequestMapping(value="findAllProcessInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+  	public JsonResult findAllProcessInfo(HttpServletRequest req) {
+  		
+  		Integer pid=Integer.parseInt(req.getParameter("id"));
+  		
+  		List <PatProcess>list=processService.findProcessList(pid);
+      	if(list!=null) {
+      		return  new JsonResult(list);
+      	}else {
+      		return  new JsonResult();
+      		
+      	}
+  	}
 	
 	
 	
 	
 	
-	
-	
-	
-	
-	
-	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
 	
 	
 	
@@ -122,23 +168,23 @@ public class PatentController {
 	
 
 	private void PatentInfo(HttpServletRequest req, Patent patent) {
-		patent.setPatDept(req.getParameter("pat_Dept"));
-		patent.setPatType(req.getParameter("pat_Type"));
-		patent.setPatName(req.getParameter("pat_Name"));
-		patent.setPatAuthor(req.getParameter("pat_Author"));
-		patent.setPatApplyper(req.getParameter("pat_ApplyPer"));
-		patent.setPatTelltime(req.getParameter("pat_TellTime"));
-		patent.setPatAgency(req.getParameter("pat_Agency"));
-		patent.setPatPrepublishaudit(req.getParameter("pat_PrePublishAudit"));
-		patent.setPatApplynum(req.getParameter("pat_ApplyNum"));
-		patent.setPatApplytime(req.getParameter("pat_ApplyTime"));
-		patent.setPatPublishnum(req.getParameter("pat_PublishNum"));
-		patent.setPatAuthorzationtime(req.getParameter("pat_AuthorzationTime"));
-		patent.setPatRemission(req.getParameter("pat_Remission"));
-		patent.setPatCost(req.getParameter("pat_Cost"));
-		patent.setPatInvoiceper(req.getParameter("pat_InvoicePer"));
-		patent.setPatDigest(req.getParameter("pat_Digest"));
-		patent.setPatRemark(req.getParameter("pat_Remark"));
+		patent.setPatDept(req.getParameter("patDept"));
+		patent.setPatType(req.getParameter("patType"));
+		patent.setPatName(req.getParameter("patName"));
+		patent.setPatAuthor(req.getParameter("patAuthor"));
+		patent.setPatApplyper(req.getParameter("patApplyper"));
+		patent.setPatTelltime(req.getParameter("patTelltime"));
+		patent.setPatAgency(req.getParameter("patAgency"));
+		patent.setPatPrepublishaudit(req.getParameter("patPrepublishaudit"));
+		patent.setPatApplynum(req.getParameter("patApplynum"));
+		patent.setPatApplytime(req.getParameter("patApplytime"));
+		patent.setPatPublishnum(req.getParameter("patPublishtime"));
+		patent.setPatAuthorzationtime(req.getParameter("patAuthorzationtime"));
+		patent.setPatRemission(req.getParameter("patRemission"));
+		patent.setPatCost(req.getParameter("patCost"));
+		patent.setPatInvoiceper(req.getParameter("patInvoiceper"));
+		patent.setPatDigest(req.getParameter("patDigest"));
+		patent.setPatRemark(req.getParameter("patRemark"));
 	}
 	
 }

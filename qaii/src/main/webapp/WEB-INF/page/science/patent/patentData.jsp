@@ -29,18 +29,69 @@
 	<div class="techadd">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
+		<input id="ids" hidden="" value="${param.userId}"></input>
 		<span class="blue">专利&nbsp;—&nbsp;资料审查</span>
 	</div>
+	<button class="layui-btn btn" data-type="getCheckLength" id="test3" style="width:120px;margin-right:16px !important">
+		<i class="layui-icon layui-icon-add-1"></i>添加流程
+	</button>
 	<!--		导出-->
 	<button onclick="srchange('patent.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
 <div class="layui-container addtop"> 
-<!-- 采用表格内直接行结构  -->
+	<div class="datacontent">
+		<div class="datatitle">
+			<span class="dataname">&nbsp;&nbsp;&nbsp;&nbsp;专利名称《&nbsp;${param.patName}&nbsp;》</span>
+			<span class="inventor">发明人：${param.patAuthor}</span>
+			<span class="datadate">公开日期：${param.patPublishtime}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		</div>
+		<div id="process">
+			<ul class="layui-timeline" id="processul">
+			</ul>  
+		</div>
+	</div>
   
 </div>
+<script src="${basePath}/commen/layui/layui.js"></script>
+<script src="${basePath}/js/data.js"></script><!-- 添加流程 -->
 <script src="${basePath}/js/iframesrc.js"></script>
+<script src="${basePath}/js/iframesrcon.js"></script>
+<script>
+//获取专利主界面传递过来的数据id
+var userID="";
+userID=${param.userId};
+console.log(userID);
+$(function(){
+	$(document).on('click','#test3',function(){
+		layui.use('layer', function(){
+			  var layer = layui.layer; 
+			  layer.open({
+				type: 2, 
+				area: ['350px', '400px'],
+				content: "patentDataAdd.do?Id"+'='+${param.userId}
+			});
+		}); 
+	});
+	$(document).on('click','.patentFile',function(){
+		//获取当前页面对步骤数的标识，标识放于name中，命名方式为id+_+步骤数，如20_1
+		var stepnum="";
+		stepnum=$(this).attr("name");
+		layui.use('layer', function(){
+			  var layer = layui.layer; 
+			  layer.open({
+				type: 2, 
+				area: ['600px', '450px'],
+				content: 'patentDataAddFile.do?userId='+${param.userId}+"&step='"+stepnum+"'"
+			});
+		}); 
+	});
+	
+	
+	
+});
+</script>
 </body>
 </html>        
         
