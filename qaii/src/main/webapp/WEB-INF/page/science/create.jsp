@@ -54,9 +54,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="empDept">部门</option>
+			<option value="govplatName">平台名称</option>
 			<option value="empJobtitlelevel">职称等级</option>
-			<option value="empGender">性别</option>
+			<option value="govplatLevel">级别</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -70,37 +70,37 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=empNum  type="checkbox" value="工号" checked="flase"/><lable>申报时间</lable></div>
-	<div class="int-inline"><input id="empName"  type="checkbox" value="姓名" checked/><lable>来源</lable></div>
-	<div class="int-inline"><input id="empGender"  type="checkbox" value="性别" checked/><lable>级别</lable></div>
-	<div class="int-inline"><input id="empDept"  type="checkbox" value="部门" checked/><lable>平台名称</lable></div>
-	<div class="int-inline"><input id="empPosition"  type="checkbox" value="职务" checked/><lable>项目实施期</lable></div>
-	<div class="int-inline"><input id="empHireStarttime"  type="checkbox" value="聘期" checked/><lable>承担单位</lable></div>
-	<div class="int-inline"><input id="empIdcard"  type="checkbox" value="身份证号" checked/><lable>协作单位</lable></div>
-	<div class="int-inline"><input id="empIdcardEndtime"  type="checkbox" value="身份证到期时间" checked/><lable>主管部门</lable></div>
-	<div class="int-inline"><input id="empEthnic"  type="checkbox" value="民族" checked/><lable>申请报送部门</lable></div>
-	<div class="int-inline"><input id="empPoliticallandscape"  type="checkbox" value="政治面貌" checked/><lable>承担部门</lable></div>
-	<div class="int-inline"><input id="empMaritalstatus"  type="checkbox" value="婚姻状况" checked/><lable>平台负责人</lable></div>
-	<div class="int-inline"><input id="empFirsteducation"  type="checkbox" value="第一学历" checked/><lable>是否立项</lable></div>
-	<div class="int-inline"><input id="empFirsteducationschool"  type="checkbox" value="第一学历学校" checked/><lable>立项编号及时间</lable></div>
-	<div class="int-inline"><input id="empFirsteducationpro"  type="checkbox" value="第一学历专业" checked/><lable>资助金额（万元）</lable></div>
-	<div class="int-inline"><input id="empFirstgraduationtime"  type="checkbox" value="第一学历毕业时间" checked/><lable>资金到位时间</lable></div>
-	<div class="int-inline"><input id="empSecondeducation"  type="checkbox" value="第二学历" checked/><lable>中期检查考核结果</lable></div>
-	<div class="int-inline"><input id="empSecondeducationschool"  type="checkbox" value="第二学历学校" checked/><lable>年度检查考核结果</lable></div>
-	<div class="int-inline"><input id="empSecondeducationpro"  type="checkbox" value="第二学历专业" checked/><lable>项目结题验收成果</lable></div>
-	<div class="int-inline"><input id="empSecondgraduationtime"  type="checkbox" value="第二学历毕业时间" checked/><lable>备注</lable></div>
-	<div class="int-inline"><input id="empThirdeducation"  type="checkbox" value="第三学历" checked/><lable>附件</lable></div>
+	<div class="int-inline"><input id=govplatApplytime  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
+	<div class="int-inline"><input id="govplatSource"  type="checkbox" value="来源" checked/><lable>来源</lable></div>
+	<div class="int-inline"><input id="govplatLevel"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
+	<div class="int-inline"><input id="govplatName"  type="checkbox" value="平台名称" checked/><lable>平台名称</lable></div>
+	<div class="int-inline"><input id="govplatImplementtime"  type="checkbox" value="项目实施期" checked/><lable>项目实施期</lable></div>
+	<div class="int-inline"><input id="govplatDutyunit"  type="checkbox" value="承担单位" checked/><lable>承担单位</lable></div>
+	<div class="int-inline"><input id="govplatCooperationunit"  type="checkbox" value="协作单位" checked/><lable>协作单位</lable></div>
+	<div class="int-inline"><input id="govplatManagedepart"  type="checkbox" value="主管部门" checked/><lable>主管部门</lable></div>
+	<div class="int-inline"><input id="govplatApplydepart"  type="checkbox" value="申请报送部门" checked/><lable>申请报送部门</lable></div>
+	<div class="int-inline"><input id="govplatAssumedepart"  type="checkbox" value="承担部门" checked/><lable>承担部门</lable></div>
+	<div class="int-inline"><input id="govplatPlatformper"  type="checkbox" value="平台负责人" checked/><lable>平台负责人</lable></div>
+	<div class="int-inline"><input id="govplatProjectapproval"  type="checkbox" value="是否立项" checked/><lable>是否立项</lable></div>
+	<div class="int-inline"><input id="govplatApprovalnum"  type="checkbox" value="立项编号及时间" checked/><lable>立项编号及时间</lable></div>
+	<div class="int-inline"><input id="govplatSubvention"  type="checkbox" value="资助金额（万元）" checked/><lable>资助金额（万元）</lable></div>
+	<div class="int-inline"><input id="govplatFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
+	<div class="int-inline"><input id="govplatMiddleresult"  type="checkbox" value="中期检查考核结果" checked/><lable>中期检查考核结果</lable></div>
+	<div class="int-inline"><input id="govplatYearresult"  type="checkbox" value="年度检查考核结果" checked/><lable>年度检查考核结果</lable></div>
+	<div class="int-inline"><input id="govplatEndresult"  type="checkbox" value="项目结题验收结果" checked/><lable>项目结题验收结果</lable></div>
+	<div class="int-inline"><input id="govplatRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
+	<div class="int-inline"><input id="govplatFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
- <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
+ <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.govplatApplytime}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">离职</a>
+  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="review">审查资料</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -125,32 +125,34 @@ layui.use('table', function(obj){
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
+//    height: 332,
+    url: 'getAllPlatformMsg.do', //数据接口
    /*  url: 'getallinjobEmp.do',  *///数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'empNum', title: '申报时间',fixed: 'left',width:100},
-		{field: 'empName', title: '来源',fixed: 'left',width:150},
-		{field: 'empGender', title: '级别 ',sort: true},
-		{field: 'empDept', title: '平台名称',sort: true,width:200},
-		{field: 'empPosition', title: '项目实施期',sort: true,width:150},
-		{field: 'empHireStarttime', title: '承担单位',sort: true},
-		{field: 'empIdcard', title: '协作单位',width:220},
-		{field: 'empIdcardEndtime', title: '主管部门',sort: true,width:200},
-		{field: 'empEthnic', title: '申请报送部门',sort: true},
-		{field: 'empPoliticallandscape', title: '承担部门',sort: true,width:150},
-		{field: 'empMaritalstatus', title: '平台负责人',sort: true,width:150},
+		{field: 'govplatApplytime', title: '申报时间',fixed: 'left',width:100},
+		{field: 'govplatSource', title: '来源',fixed: 'left',width:150},
+		{field: 'govplatLevel', title: '级别',sort: true},
+		{field: 'govplatName', title: '平台名称',sort: true,width:200},
+		{field: 'govplatImplementtime', title: '项目实施期',sort: true,width:150},
+		{field: 'govplatDutyunit', title: '承担单位',sort: true},
+		{field: 'govplatCooperationunit', title: '协作单位',width:220},
+		{field: 'govplatManagedepart', title: '主管部门',sort: true,width:200},
+		{field: 'govplatApplydepart', title: '申请报送部门',sort: true},
+		{field: 'govplatAssumedepart', title: '承担部门',sort: true,width:150},
+		{field: 'govplatPlatformper', title: '平台负责人',sort: true,width:150},
 		
-		{field: 'empFirsteducation', title: '是否立项',sort: true,width:200},
-		{field: 'empFirsteducationschool', title: '立项编号及时间',sort: true,width:200},
-		{field: 'empFirsteducationpro', title: '资助金额（万元）',sort: true,width:200},
-		{field: 'empFirstgraduationtime', title: '资金到位时间',sort: true,width:230},
-		{field: 'empSecondeducation', title: '中期检查考核结果',sort: true,width:200},
-		{field: 'empSecondeducationschool', title: '年度检查考核结果',sort: true,width:200},
-		{field: 'empSecondeducationpro', title: '项目结题验收结果',sort: true,width:200},
-		{field: 'empSecondgraduationtime', title: '备注',sort: true,width:230},
-		{field: 'empThirdeducation', title: '附件',sort: true,width:200},
+		{field: 'govplatProjectapproval', title: '是否立项',sort: true,width:200},
+		{field: 'govplatApprovalnum', title: '立项编号及时间',sort: true,width:200},
+		{field: 'govplatSubvention', title: '资助金额（万元）',sort: true,width:200},
+		{field: 'govplatFundtime', title: '资金到位时间',sort: true,width:230},
+		{field: 'govplatMiddleresult', title: '中期检查考核结果',sort: true,width:200},
+		{field: 'govplatYearresult', title: '年度检查考核结果',sort: true,width:200},
+		{field: 'govplatEndresult', title: '项目结题验收结果',sort: true,width:200},
+		{field: 'govplatRemark', title: '备注',sort: true,width:230},
+		{field: 'govplatFile', title: '附件',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
@@ -239,12 +241,12 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="empDept"){
-  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="govplatName"){
+  				alert("搜索'平台名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="empJobtitlelevel"){
   				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empGender"){
-  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govplatLevel"){
+  				alert("搜索'级别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -278,7 +280,7 @@ layui.use('table', function(obj){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"DellempInfo.do",
+          	url:"dellPlatformMsg.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -360,7 +362,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"DellempInfo.do",
+		  	url:"dellPlatformMsg.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},

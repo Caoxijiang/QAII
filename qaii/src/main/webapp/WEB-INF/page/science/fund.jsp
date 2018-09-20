@@ -54,9 +54,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="empDept">部门</option>
+			<option value="govfundImplementtime">基金实施期</option>
 			<option value="empJobtitlelevel">职称等级</option>
-			<option value="empGender">性别</option>
+			<option value="govfundName">基金名称</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -70,34 +70,34 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=empNum  type="checkbox" value="工号" checked="flase"/><lable>申报时间</lable></div>
-	<div class="int-inline"><input id="empName"  type="checkbox" value="姓名" checked/><lable>来源</lable></div>
-	<div class="int-inline"><input id="empGender"  type="checkbox" value="性别" checked/><lable>级别</lable></div>
-	<div class="int-inline"><input id="empDept"  type="checkbox" value="部门" checked/><lable>基金名称</lable></div>
-	<div class="int-inline"><input id="empPosition"  type="checkbox" value="职务" checked/><lable>基金实施期</lable></div>
-	<div class="int-inline"><input id="empHireStarttime"  type="checkbox" value="聘期" checked/><lable>基金构成单位</lable></div>
-	<div class="int-inline"><input id="empIdcard"  type="checkbox" value="身份证号" checked/><lable>主管部门</lable></div>
-	<div class="int-inline"><input id="empIdcardEndtime"  type="checkbox" value="身份证到期时间" checked/><lable>申请报送部门</lable></div>
-	<div class="int-inline"><input id="empEthnic"  type="checkbox" value="民族" checked/><lable>是否通过</lable></div>
-	<div class="int-inline"><input id="empPoliticallandscape"  type="checkbox" value="政治面貌" checked/><lable>批复时间</lable></div>
-	<div class="int-inline"><input id="empMaritalstatus"  type="checkbox" value="婚姻状况" checked/><lable>基金资助额度</lable></div>
-	<div class="int-inline"><input id="empFirsteducation"  type="checkbox" value="第一学历" checked/><lable>基金</lable></div>
-	<div class="int-inline"><input id="empFirsteducationschool"  type="checkbox" value="第一学历学校" checked/><lable>资金到位时间</lable></div>
-	<div class="int-inline"><input id="empFirsteducationpro"  type="checkbox" value="第一学历专业" checked/><lable>中期检查考核结果</lable></div>
-	<div class="int-inline"><input id="empFirstgraduationtime"  type="checkbox" value="第一学历毕业时间" checked/><lable>项目结题验收结果</lable></div>
-	<div class="int-inline"><input id="empSecondeducation"  type="checkbox" value="第二学历" checked/><lable>备注</lable></div>
-	<div class="int-inline"><input id="empSecondeducationschool"  type="checkbox" value="第二学历学校" checked/><lable>附件</lable></div>
+	<div class="int-inline"><input id=govfundApplytime  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
+	<div class="int-inline"><input id=govfundSource  type="checkbox" value="来源" checked="flase"/><lable>来源</lable></div>
+	<div class="int-inline"><input id="govfundLevel"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
+	<div class="int-inline"><input id="govfundName"  type="checkbox" value="基金名称" checked/><lable>基金名称</lable></div>
+	<div class="int-inline"><input id="govfundImplementtime"  type="checkbox" value="基金实施期" checked/><lable>基金实施期</lable></div>
+	<div class="int-inline"><input id="govfundConstructunit"  type="checkbox" value="基金构成单位" checked/><lable>基金构成单位</lable></div>
+	<div class="int-inline"><input id="govfundManagedepart"  type="checkbox" value="主管部门" checked/><lable>主管部门</lable></div>
+	<div class="int-inline"><input id="govfundApplydepart"  type="checkbox" value="申请报送部门" checked/><lable>申请报送部门</lable></div>
+	<div class="int-inline"><input id="govfundPass"  type="checkbox" value="是否通过" checked/><lable>是否通过</lable></div>
+	<div class="int-inline"><input id="govfundWrittentime"  type="checkbox" value="批复时间" checked/><lable>批复时间</lable></div>
+	<div class="int-inline"><input id="govfundFundlimit"  type="checkbox" value="基金资助额度" checked/><lable>基金资助额度</lable></div>
+	<div class="int-inline"><input id="govfundFund"  type="checkbox" value="基金" checked/><lable>基金</lable></div>
+	<div class="int-inline"><input id="govfundFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
+	<div class="int-inline"><input id="govfundMiddleresult"  type="checkbox" value="中期检查考核结果" checked/><lable>中期检查考核结果</lable></div>
+	<div class="int-inline"><input id="govfundEndresult"  type="checkbox" value="项目结题验收结果" checked/><lable>项目结题验收结果</lable></div>
+	<div class="int-inline"><input id="govfundRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
+	<div class="int-inline"><input id="govfundFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
- <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
+ <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.govfundSource}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">离职</a>
+  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="review">审查资料</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -122,29 +122,31 @@ layui.use('table', function(obj){
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
+//    height: 332,
+    url: 'getAllFundMsg.do', //数据接口
     /* url: 'getallinjobEmp.do',  *///数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'empNum', title: '申报时间',fixed: 'left',width:100},
-		{field: 'empName', title: '来源',fixed: 'left',width:150},
-		{field: 'empGender', title: '级别',sort: true},
-		{field: 'empDept', title: '基金名称',width:200},
-		{field: 'empPosition', title: '基金实施期',sort: true,width:150},
-		{field: 'empHireStarttime', title: '基金构成单位'},
-		{field: 'empIdcard', title: '主管部门',width:220},
-		{field: 'empIdcardEndtime', title: '申请报送部门',width:200},
-		{field: 'empEthnic', title: '是否通过'},
-		{field: 'empPoliticallandscape', title: '批复时间',sort: true,width:150},
-		{field: 'empMaritalstatus', title: '基金资助额度',sort: true,width:150},
+		{field: 'govfundApplytime', title: '申报时间',fixed: 'left',width:100},
+		{field: 'govfundSource', title: '来源',fixed: 'left',width:100},
+		{field: 'govfundLevel', title: '级别',fixed: 'left',width:150},
+		{field: 'govfundName', title: '基金名称',sort: true},
+		{field: 'govfundImplementtime', title: '基金实施期',sort: true,width:200},
+		{field: 'govfundConstructunit', title: '基金构成单位',sort: true,width:150},
+		{field: 'govfundManagedepart', title: '主管部门',sort: true},
+		{field: 'govfundApplydepart', title: '申请报送部门',width:220},
+		{field: 'govfundPass', title: '是否通过',sort: true},
+		{field: 'govfundWrittentime', title: '批复时间',sort: true,width:150},
+		{field: 'govfundFundlimit', title: '基金资助额度',sort: true,width:150},
 		
-		{field: 'empFirsteducation', title: '基金',sort: true,width:200},
-		{field: 'empFirsteducationschool', title: '资金到位时间',sort: true,width:200},
-		{field: 'empFirsteducationpro', title: '中期检查考核结果',width:200},
-		{field: 'empFirstgraduationtime', title: '项目结题验收结果',width:230},
-		{field: 'empSecondeducation', title: '备注'},
-		{field: 'empSecondeducationschool', title: '附件'},
+		{field: 'govfundFund', title: '基金',sort: true,width:200},
+		{field: 'govfundFundtime', title: '资金到位时间',sort: true,width:200},
+		{field: 'govfundMiddleresult', title: '中期检查考核结果',sort: true,width:200},
+		{field: 'govfundEndresult', title: '项目结题验收结果',sort: true,width:230},
+		{field: 'govfundRemark', title: '备注',sort: true,width:200},
+		{field: 'govfundFile', title: '附件',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
@@ -233,12 +235,12 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="empDept"){
-  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="govfundImplementtime"){
+  				alert("搜索'基金实施期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="empJobtitlelevel"){
   				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empGender"){
-  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govfundName"){
+  				alert("搜索'基金名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -272,7 +274,7 @@ layui.use('table', function(obj){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"DellempInfo.do",
+          	url:"dellFundMsg.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -354,7 +356,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"DellempInfo.do",
+		  	url:"dellFundMsg.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},

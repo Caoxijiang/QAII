@@ -122,28 +122,28 @@ layui.use('table', function(obj){
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
-    url: 'getallinjobEmp.do', //数据接口
+    url: 'findPatentInfo.do',  //数据接口
 	cellMinWidth: 80,
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left',width:50},
 		{field: 'id', title: '序号',type:'numbers',width:100},
-		{field: 'empNum', title: '部门',width:200},
-		{field: 'empGender', title: '专利类型',width:200},
-		{field: 'empDept', title: '专利名称',width:150},
-		{field: 'empPosition', title: '摘要',width:250},
-		{field: 'empHireStarttime', title: '发明人',sort: true,width:250},
-		{field: 'empIdcard', title: '申请（专利权）人',width:220},
-		{field: 'empIdcardEndtime', title: '交底日期',sort: true,width:150},
-		{field: 'empEthnic', title: '代理机构',width:180},
-		{field: 'empPoliticallandscape', title: '是否提前公开实审',sort: true,width:200},
-		{field: 'empMaritalstatus', title: '申请号',width:150},
-		{field: 'empFirsteducation', title: '申请日',sort: true,width:200},
-		{field: 'empFirsteducationschool', title: '公开日',sort: true,width:200},
-		{field: 'empFirsteducationpro', title: '授权公告日',width:200},
-		{field: 'empFirstgraduationtime', title: '是否减免',width:230},
-		{field: 'empSecondeducation', title: '申请费用（元）',width:200},
-		{field: 'empSecondeducationschool', title: '发票收据-汇款人',width:200},
-		{field: 'empSecondeducationpro', title: '备注',width:200},
+		{field: 'patDept', title: '部门',width:200},
+		{field: 'patType', title: '专利类型',width:200},
+		{field: 'patName', title: '专利名称',width:150},
+		{field: 'patDigest', title: '摘要',width:250},
+		{field: 'patAuthor', title: '发明人',sort: true,width:250},
+		{field: 'patApplyper', title: '申请（专利权）人',width:220},
+		{field: 'patTelltime', title: '交底日期',sort: true,width:150},
+		{field: 'patAgency', title: '代理机构',width:180},
+		{field: 'patPrepublishaudit', title: '是否提前公开实审',sort: true,width:200},
+		{field: 'patApplynum', title: '申请号',width:150},
+		{field: 'patApplytime', title: '申请日',sort: true,width:200},
+		{field: 'patPublishtime', title: '公开日',sort: true,width:200},
+		{field: 'patAuthorzationtime', title: '授权公告日',width:200},
+		{field: 'patRemission', title: '是否减免',width:230},
+		{field: 'patCost', title: '申请费用（元）',width:200},
+		{field: 'patInvoiceper', title: '发票收据-汇款人',width:200},
+		{field: 'patRemark', title: '备注',width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:380}
     ]],
     
@@ -269,9 +269,9 @@ layui.use('table', function(obj){
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
           let arr=[data.id];
-          console.log(data) 
+          console.log(arr) 
           $.post({
-          	url:"DellempInfo.do",
+          	url:"dellPatentInfo.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -313,7 +313,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"DellempInfo.do",
+		  	url:"dellPatentInfo.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},

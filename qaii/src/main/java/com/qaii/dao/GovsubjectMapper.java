@@ -1,5 +1,7 @@
 package com.qaii.dao;
 
+import java.util.List;
+
 import com.qaii.domain.Govsubject;
 
 public interface GovsubjectMapper {
@@ -14,4 +16,8 @@ public interface GovsubjectMapper {
     int updateByPrimaryKeySelective(Govsubject record);
 
     int updateByPrimaryKey(Govsubject record);
+    
+    List<Govsubject> getAllSubjectMsg();
+    
+    int deleteByPrimaryKeys(Integer[] eid);
 }

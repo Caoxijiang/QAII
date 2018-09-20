@@ -126,4 +126,12 @@
       sis_Dept = #{sisDept,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getAllThesisMsg" resultMap="BaseResultMap">SELECT * from sci_thesis</select>
+  <select id="selectCountNum" resultType="int">SELECT COUNT(*) FROM sci_thesis</select>
+  <delete id="deleteByPrimaryKeys" parameterType="int">
+  	DELETE  FROM sci_thesis WHERE id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
 </mapper>

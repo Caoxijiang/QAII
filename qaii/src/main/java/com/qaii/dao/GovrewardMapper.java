@@ -1,5 +1,7 @@
 package com.qaii.dao;
 
+import java.util.List;
+
 import com.qaii.domain.Govreward;
 
 public interface GovrewardMapper {
@@ -14,4 +16,8 @@ public interface GovrewardMapper {
     int updateByPrimaryKeySelective(Govreward record);
 
     int updateByPrimaryKey(Govreward record);
+    
+    List<Govreward> getAllrewardMsg();
+    
+    int deleteByPrimaryKeys(Integer[] eid);
 }

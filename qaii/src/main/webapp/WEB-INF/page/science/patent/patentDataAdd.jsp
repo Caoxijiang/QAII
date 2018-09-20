@@ -12,23 +12,24 @@
 </head>
 
 <body>
-	<form class="layui-form layui-form-pane" action="">
+	<form class="layui-form layui-form-pane" action="addProcessInfo.do" method="post">
 		<div class="layui-form-item">
 			<label class="layui-form-label">流程名称</label>
 			<div class="layui-input-block">
 				<input type="text" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input" id="userName">
+				<input  name="pid" value='${param.Id}' type="hidden" />
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">流程说明</label>
 			<div class="layui-input-block">
-				<input type="text" name="title" autocomplete="off" placeholder="请输入说明" class="layui-input" id="password">
+				<input type="text" name="description" autocomplete="off" placeholder="请输入说明" class="layui-input" id="password">
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">选择日期</label>
 			<div class="layui-input-block">
-				<input type="text" name="title" autocomplete="off" placeholder="请选择日期" class="layui-input" id="test1">
+				<input type="text" name="time" autocomplete="off" placeholder="请选择日期" class="layui-input" id="test1">
 			</div>
 		</div>
 		<div class="layui-form-item">
@@ -43,6 +44,7 @@
 //patentData传递过来的值
 /* 获取页面传递过来的值 */	
 layui.use(['layer','element','layedit', 'laydate'], function(){
+	//var id=document.getElementsByName('pid').value;
 	  var form = layui.form,
 		element = layui.element,
 		layer = layui.layer,

@@ -1,5 +1,7 @@
 package com.qaii.dao;
 
+import java.util.List;
+
 import com.qaii.domain.Trademark;
 
 public interface TrademarkMapper {
@@ -14,4 +16,10 @@ public interface TrademarkMapper {
     int updateByPrimaryKeySelective(Trademark record);
 
     int updateByPrimaryKey(Trademark record);
+    
+    int selectCountNum();
+    
+    List<Trademark> getAllTradeMarkMsg();
+    
+    int deleteByPrimaryKeys(Integer[] eid);
 }
