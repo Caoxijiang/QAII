@@ -12,4 +12,10 @@ public interface WorkService {
 	
 	int deleteMsg(Integer[] eid);
 
+	Work selectByPrimaryKey(int id);
+
+	int updateMsg(Work work);
+
+	int insertMsg(Work work);
+
 }

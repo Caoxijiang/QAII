@@ -25,5 +25,20 @@ public class GovFundServiceImpl implements GovFundService {
 		// TODO Auto-generated method stub
 		return govfundmapper.deleteByPrimaryKeys(eid);
 	}
+	@Override
+	public Govfund selectByPrimaryKey(int id) {
+		// TODO Auto-generated method stub
+		return govfundmapper.selectByPrimaryKey(id);
+	}
+	@Override
+	public int updateMsg(Govfund govfund) {
+		// TODO Auto-generated method stub
+		return govfundmapper.updateByPrimaryKey(govfund);
+	}
+	@Override
+	public int insertMsg(Govfund govfund) {
+		// TODO Auto-generated method stub
+		return govfundmapper.insert(govfund);
+	}
 
 }

@@ -24,5 +24,20 @@ public class GovSubjectServiceImpl implements GovSubjectService {
 		// TODO Auto-generated method stub
 		return govsubjectmapper.deleteByPrimaryKeys(eid);
 	}
+	@Override
+	public Govsubject selectByPrimaryKey(int id) {
+		// TODO Auto-generated method stub
+		return govsubjectmapper.selectByPrimaryKey(id);
+	}
+	@Override
+	public int updateMsg(Govsubject govsubject) {
+		// TODO Auto-generated method stub
+		return govsubjectmapper.updateByPrimaryKey(govsubject);
+	}
+	@Override
+	public int insertMsg(Govsubject govsubject) {
+		// TODO Auto-generated method stub
+		return govsubjectmapper.insert(govsubject);
+	}
 
 }

@@ -34,4 +34,22 @@ public class WorkServiceImpl implements WorkService {
 		return workmapper.deleteByPrimaryKeys(eid);
 	}
 
+	@Override
+	public Work selectByPrimaryKey(int id) {
+		// TODO Auto-generated method stub
+		return workmapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public int updateMsg(Work work) {
+		// TODO Auto-generated method stub
+		return workmapper.updateByPrimaryKey(work);
+	}
+
+	@Override
+	public int insertMsg(Work work) {
+		// TODO Auto-generated method stub
+		return workmapper.insert(work);
+	}
+
 }

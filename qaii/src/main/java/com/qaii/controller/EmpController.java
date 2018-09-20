@@ -65,8 +65,6 @@ public class EmpController {
 		return "page/personnel/delPersonnel";
 	}
 	
-	
-	
 
 	@RequestMapping(value="seeEmpInfo.do",produces="application/json;charset=UTF-8")
 	public String seeEmpInfo() {
@@ -644,7 +642,6 @@ public class EmpController {
 					emp.setEmpJobtitleobtaintime(emp.getEmpJobtitleobtaintime().replace("/", "-"));
 					if(emp.getEmpDepartureTime()!=null)
 					emp.setEmpDepartureTime(emp.getEmpDepartureTime().replace("/", "-"));
-					System.out.println(emp);
 					CountDatetoNowDays.TranstoStamp(emp);				
 					empInfoService.insert(emp);
 					result=result.data(1, null);
