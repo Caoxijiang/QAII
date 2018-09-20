@@ -34,7 +34,7 @@
 		<span class="blue">文件预览</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('patentData.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('patentData.do?userId=20')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -221,6 +221,11 @@
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
+/* 获取页面传递过来的值 */
+var userID=${param.userId};
+console.log(userID);
+var step=${param.step}+"";
+console.log("bushu "+step);
 $.post({
 	url:"findDeptInfoList.do",
 	success:function(data){

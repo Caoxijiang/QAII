@@ -15,10 +15,10 @@ $(function(){
 		      	"</div>"+
 		      	"<div class='btncoll'>"+
 		      		"<span class='datalidate'>"+theme[i][3]+"</span>"+
-			      	"<button class='layui-btn btn databtn patentFile'>"+
+			      	"<button class='layui-btn btn databtn patentFile' name="+userID+"."+theme[i][0]+">"+
 						"文件上传"+
 					"</button>"+
-					"<button class='layui-btn btn databtn patentProcess'>"+
+					"<button class='layui-btn btn databtn patentProcess' name="+userID+"."+theme[i][0]+">"+
 						"文件预览"+
 					"</button>"+
 				"</div>"+
@@ -37,10 +37,10 @@ $(function(){
 			  	theme[i][2]+
 		      	"</div>"+
 		      	"<div class='btncollr'>"+
-			      	"<button class='layui-btn btn databtn patentFile'>"+
+			      	"<button class='layui-btn btn databtn patentFile' name="+userID+"."+theme[i][0]+">"+
 						"文件上传"+
 					"</button>"+
-					"<button class='layui-btn btn databtn patentProcess'>"+
+					"<button class='layui-btn btn databtn patentProcess' name="+userID+"."+theme[i][0]+">"+
 						"文件预览"+
 					"</button>"+
 					"<span class='datalidatel'>"+theme[i][3]+"</span>"+
