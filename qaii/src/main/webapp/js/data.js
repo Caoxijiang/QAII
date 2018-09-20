@@ -28,7 +28,7 @@ $().ready(function(){
 				      	"</div>"+
 				      	"<div class='btncoll'>"+
 				      		"<span class='datalidate'>"+theme[i].time+"</span>"+
-					      	"<button class='layui-btn btn databtn patentFile'>"+
+					      	"<button class='layui-btn btn databtn patentFile' name='"+theme[i].id+"'>"+
 								"文件上传"+
 							"</button>"+
 							"<button class='layui-btn btn databtn patentProcess'>"+
@@ -50,7 +50,7 @@ $().ready(function(){
 					  	theme[i].description+
 				      	"</div>"+
 				      	"<div class='btncollr'>"+
-					      	"<button class='layui-btn btn databtn patentFile'>"+
+					      	"<button class='layui-btn btn databtn patentFile' name='"+theme[i].id+"'>"+
 								"文件上传"+
 							"</button>"+
 							"<button class='layui-btn btn databtn patentProcess'>"+

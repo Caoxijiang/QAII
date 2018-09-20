@@ -55,5 +55,9 @@ layui.use(['layer','element','layedit', 'laydate'], function(){
 	  });
 });
 </script>
+<script type="text/javascript">
+	var userID=${param.userId};
+	console.log(userID+"id与步骤");
+</script>
 </body>
 </html>
