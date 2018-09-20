@@ -34,6 +34,17 @@ $().ready(function(){
 			}
 		})
 	});
+	$("#btn3").click(function(){
+		var a=$("#dat3").val();
+		$.ajax({
+			type:"POST",
+			url:"testinterface.do",
+		    data:{date:a},
+			success:function(data){
+				alert("后台输出成功!");
+			}
+		})
+	});
 })
 	
 </script>
@@ -49,7 +60,8 @@ $().ready(function(){
 		<input type="text" name ="date4" id ="dat4"> 
 		<button type="button" id="btn2">StamptoTime</button> <br>
 		<input type="file" name="file"> input file
-		<input type="submit" value="提交">
+		<input type="submit" value="提交"><br><br>
+		<button type="button" id="btn3">测试后台输出</button><br>
 	</form>
 </body>
 </html>

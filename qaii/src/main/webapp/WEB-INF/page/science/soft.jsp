@@ -54,9 +54,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="empDept">部门</option>
-			<option value="empJobtitlelevel">职称等级</option>
-			<option value="empGender">性别</option>
+			<option value="softDept">部门</option>
+			<option value="softName">名称</option>
+			<option value="softAuthor">著作权人</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -70,20 +70,20 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=empNum  type="checkbox" value="工号" checked="flase"/><lable>部门</lable></div>
-	<div class="int-inline"><input id="empName"  type="checkbox" value="姓名" checked/><lable>编号</lable></div>
-	<div class="int-inline"><input id="empGender"  type="checkbox" value="性别" checked/><lable>名称</lable></div>
-	<div class="int-inline"><input id="empDept"  type="checkbox" value="部门" checked/><lable>软件开发者</lable></div>
-	<div class="int-inline"><input id="empPosition"  type="checkbox" value="职务" checked/><lable>著作权人</lable></div>
-	<div class="int-inline"><input id="empHireStarttime"  type="checkbox" value="聘期" checked/><lable>代理机构</lable></div>
-	<div class="int-inline"><input id="empIdcard"  type="checkbox" value="身份证号" checked/><lable>开发完成日期</lable></div>
-	<div class="int-inline"><input id="empIdcardEndtime"  type="checkbox" value="身份证到期时间" checked/><lable>首次发表日期</lable></div>
-	<div class="int-inline"><input id="empEthnic"  type="checkbox" value="民族" checked/><lable>登记号</lable></div>
-	<div class="int-inline"><input id="empPoliticallandscape"  type="checkbox" value="政治面貌" checked/><lable>发证日期</lable></div>
-	<div class="int-inline"><input id="empMaritalstatus"  type="checkbox" value="婚姻状况" checked/><lable>费用（元）</lable></div>
-	<div class="int-inline"><input id="empFirsteducation"  type="checkbox" value="第一学历" checked/><lable>发票收据-汇款人</lable></div>
-	<div class="int-inline"><input id="empFirsteducationschool"  type="checkbox" value="第一学历学校" checked/><lable>状态更新日期</lable></div>
-	<div class="int-inline"><input id="empFirsteducationpro"  type="checkbox" value="第一学历专业" checked/><lable>备注</lable></div>
+	<div class="int-inline"><input id=softDept  type="checkbox" value="部门" checked="flase"/><lable>部门</lable></div>
+	<div class="int-inline"><input id="softCode"  type="checkbox" value="编号" checked/><lable>编号</lable></div>
+	<div class="int-inline"><input id="softName"  type="checkbox" value="名称" checked/><lable>名称</lable></div>
+	<div class="int-inline"><input id="softWriter"  type="checkbox" value="软件开发者" checked/><lable>软件开发者</lable></div>
+	<div class="int-inline"><input id="softAuthor"  type="checkbox" value="著作权人" checked/><lable>著作权人</lable></div>
+	<div class="int-inline"><input id="softAgency"  type="checkbox" value="代理机构" checked/><lable>代理机构</lable></div>
+	<div class="int-inline"><input id="softDevelopendtime"  type="checkbox" value="开发完成日期" checked/><lable>开发完成日期</lable></div>
+	<div class="int-inline"><input id="softFirstpublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发表日期</lable></div>
+	<div class="int-inline"><input id="softNum"  type="checkbox" value="登记号" checked/><lable>登记号</lable></div>
+	<div class="int-inline"><input id="softCertificatetime"  type="checkbox" value="发证日期" checked/><lable>发证日期</lable></div>
+	<div class="int-inline"><input id="softCost"  type="checkbox" value="费用" checked/><lable>费用</lable></div>
+	<div class="int-inline"><input id="softInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
+	<div class="int-inline"><input id="softUpdatetime"  type="checkbox" value="状态更新日期" checked/><lable>状态更新日期</lable></div>
+	<div class="int-inline"><input id="softRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -94,7 +94,7 @@
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">离职</a>
+  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="review">审查资料</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -119,26 +119,26 @@ layui.use('table', function(obj){
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
-   /*  url: 'getallinjobEmp.do', */ //数据接口
+//    height: 332,
+    url: 'getAllSoftwareMsg.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'empNum', title: '部门',fixed: 'left',width:100},
-		{field: 'empName', title: '编号',fixed: 'left',width:150},
-		{field: 'empGender', title: '名称'},
-		{field: 'empDept', title: '软件开发者',width:200},
-		{field: 'empPosition', title: '著作权人',width:150},
-		{field: 'empHireStarttime', title: '代理机构'},
-		{field: 'empIdcard', title: '开发完成日期',width:220},
-		{field: 'empIdcardEndtime', title: '首次发表日期',sort: true,width:200},
-		{field: 'empEthnic', title: '登记号',sort: true},
-		{field: 'empPoliticallandscape', title: '发证日期',sort: true,width:150},
-		{field: 'empMaritalstatus', title: '费用（元）',sort: true,width:150},
-		
-		{field: 'empFirsteducation', title: '发票收据-汇款人',width:200},
-		{field: 'empFirsteducationschool', title: '状态更新日期',sort: true,width:200},
-		{field: 'empFirsteducationpro', title: '备注'},
+		{field: 'softDept', title: '部门',fixed: 'left',width:100},
+		{field: 'softCode', title: '编号',fixed: 'left',width:150},
+		{field: 'softName', title: '名称',sort: true},
+		{field: 'softWriter', title: '软件开发者',sort: true,width:200},
+		{field: 'softAuthor', title: '著作权人',sort: true,width:150},
+		{field: 'softAgency', title: '代理机构',sort: true},
+		{field: 'softDevelopendtime', title: '开发完成日期',width:220},
+		{field: 'softFirstpublishtime', title: '首次发表日期',sort: true,width:200},
+		{field: 'softNum', title: '登记号',sort: true},
+		{field: 'softCertificatetime', title: '发证日期',sort: true,width:150},
+		{field: 'softCost', title: '费用',sort: true,width:150},
+		{field: 'softInvoiceper', title: '发票收据-汇款人',sort: true,width:200},
+		{field: 'softUpdatetime', title: '状态更新日期',sort: true,width:200},
+		{field: 'softRemark', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
@@ -227,12 +227,12 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="empDept"){
+  			if(check=="softDept"){
   				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empGender"){
-  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softName"){
+  				alert("搜索'名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softAuthor"){
+  				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -266,7 +266,7 @@ layui.use('table', function(obj){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"DellempInfo.do",
+          	url:"dellsoftMsg.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -309,7 +309,7 @@ layui.use('table', function(obj){
 				'</select>'+
 			'</div>'+
 		'</div>')
-    }else if(layEvent==="dimission"){
+    }else if(layEvent==="review"){
     	 layer.confirm('确定离职信息', function(index){
              let arr=data.id;
              console.log(data) 
@@ -348,7 +348,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"DellempInfo.do",
+		  	url:"dellsoftMsg.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},

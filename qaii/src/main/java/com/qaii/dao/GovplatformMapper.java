@@ -1,5 +1,7 @@
 package com.qaii.dao;
 
+import java.util.List;
+
 import com.qaii.domain.Govplatform;
 
 public interface GovplatformMapper {
@@ -14,4 +16,8 @@ public interface GovplatformMapper {
     int updateByPrimaryKeySelective(Govplatform record);
 
     int updateByPrimaryKey(Govplatform record);
+    
+    List<Govplatform> getAllPlatformMsg();
+    
+    int deleteByPrimaryKeys(Integer[] eid);
 }
