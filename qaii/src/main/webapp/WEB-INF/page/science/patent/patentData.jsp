@@ -29,6 +29,7 @@
 	<div class="techadd">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
+		<input id="ids" hidden="" value="${param.userId}"></input>
 		<span class="blue">专利&nbsp;—&nbsp;资料审查</span>
 	</div>
 	<button class="layui-btn btn" data-type="getCheckLength" id="test3" style="width:120px;margin-right:16px !important">
@@ -64,7 +65,7 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['350px', '400px'],
-				content: 'patentDataAdd.do'
+				content: "patentDataAdd.do?Id"+'='+${param.userId}
 			});
 		}); 
 	});
@@ -78,6 +79,9 @@ $(function(){
 			});
 		}); 
 	});
+	
+	
+	
 });
 </script>
 </body>

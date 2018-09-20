@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.qaii.domain.DeptInfo;
+import com.qaii.domain.PatProcess;
 import com.qaii.domain.Patent;
 import com.qaii.service.PatentService;
+import com.qaii.service.ProcessService;
+import com.qaii.util.CountDatetoNowDays;
 import com.qaii.util.JsonResult;
 import com.qaii.util.Layui;
 
@@ -21,6 +24,8 @@ import com.qaii.util.Layui;
 public class PatentController {
 	@Resource
 	private PatentService patentService;
+	@Resource
+	private ProcessService processService;
 	//增加专利信息
 	@ResponseBody
 	@RequestMapping(value="addPatentInfo.do",produces="application/json;charset=UTF-8")
@@ -102,12 +107,41 @@ public class PatentController {
 	
 	
 	
+    //增加专利流程信息
+  	@ResponseBody
+  	@RequestMapping(value="addProcessInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+  	public JsonResult addProcessInfo(HttpServletRequest req,PatProcess patp) {
+  		patp.setPid(Integer.parseInt(req.getParameter("pid")));
+  		patp.setDescription(req.getParameter("description"));
+  		patp.setTitle(req.getParameter("title"));
+  		patp.setTime(req.getParameter("time"));
+  		int row = processService.addProcessInfo(patp);
+      	if(row!=0) {
+      		return  new JsonResult(row);
+      	}else {
+      		return  new JsonResult();
+      		
+      	}
+  	}
 	
 	
+
 	
-	
-	
-	
+    //增加专利流程信息
+  	@ResponseBody
+  	@RequestMapping(value="findAllProcessInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+  	public JsonResult findAllProcessInfo(HttpServletRequest req) {
+  		
+  		Integer pid=Integer.parseInt(req.getParameter("id"));
+  		
+  		List <PatProcess>list=processService.findProcessList(pid);
+      	if(list!=null) {
+      		return  new JsonResult(list);
+      	}else {
+      		return  new JsonResult();
+      		
+      	}
+  	}
 	
 	
 	

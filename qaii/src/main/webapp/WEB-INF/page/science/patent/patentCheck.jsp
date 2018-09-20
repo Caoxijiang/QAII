@@ -37,7 +37,7 @@
 	</button>		
 </div>
 <div class="layui-container addtop"> 
-<input id="param" value='${param.Id}' type="hidden" />
+<input id="param" value='${param.userId}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
   <form class="layui-form" action="uptatePatentInfo.do" lay-filter="example"> 
 	  <div class="layui-row">
