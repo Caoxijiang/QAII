@@ -32,6 +32,24 @@ public class ThesisServiceImpl implements ThesisService {
 		// TODO Auto-generated method stub
 		return thesismapper.deleteByPrimaryKeys(eid);
 	}
+
+	@Override
+	public Thesis selectByPrimaryKey(int id) {
+		// TODO Auto-generated method stub
+		return thesismapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public int updateMsg(Thesis thesis) {
+		// TODO Auto-generated method stub
+		return thesismapper.updateByPrimaryKey(thesis);
+	}
+
+	@Override
+	public int insertMsg(Thesis thesis) {
+		// TODO Auto-generated method stub
+		return thesismapper.insert(thesis);
+	}
 	
 
 }

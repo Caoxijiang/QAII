@@ -11,4 +11,10 @@ public interface ThesisService {
 	List<Thesis> getAllThesisMsg();
 
 	int deleteMsg(Integer[] eid);
+
+	Thesis selectByPrimaryKey(int id);
+
+	int updateMsg(Thesis thesis);
+
+	int insertMsg(Thesis thesis);
 }

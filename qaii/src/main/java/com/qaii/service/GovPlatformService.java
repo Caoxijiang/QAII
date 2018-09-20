@@ -9,4 +9,10 @@ public interface GovPlatformService {
 	List<Govplatform> getAllPlatformMsg();
 	
 	int deleteMsg(Integer[] eid);
+
+	Govplatform selectByPrimaryKey(int id);
+
+	int updateMsg(Govplatform govplatform);
+
+	int insertMsg(Govplatform govplatform);
 }
