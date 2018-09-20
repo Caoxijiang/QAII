@@ -41,10 +41,7 @@
 <script src="${basePath}/commen/layui/layui.js"></script>	
 <script type="text/javascript">
 //patentData传递过来的值
-/* 获取页面传递过来的值 */
-	var userID=${param.userId};
-	var step=${param.step};
-	console.log(userID+"id与步骤"+step);
+/* 获取页面传递过来的值 */	
 layui.use(['layer','element','layedit', 'laydate'], function(){
 	  var form = layui.form,
 		element = layui.element,
@@ -55,6 +52,10 @@ layui.use(['layer','element','layedit', 'laydate'], function(){
 	    elem: '#test1'
 	  });
 });
+</script>
+<script type="text/javascript">
+	var userID=${param.userId};
+	console.log(userID+"id与步骤");
 </script>
 </body>
 </html>
