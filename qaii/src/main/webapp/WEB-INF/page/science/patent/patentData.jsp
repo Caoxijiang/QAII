@@ -56,8 +56,13 @@
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script src="${basePath}/js/data.js"></script><!-- 添加流程 -->
+<script src="${basePath}/js/iframesrc.js"></script>
 <script src="${basePath}/js/iframesrcon.js"></script>
 <script>
+//获取专利主界面传递过来的数据id
+var userID="";
+userID=${param.userId};
+console.log(userID);
 $(function(){
 	$(document).on('click','#test3',function(){
 		layui.use('layer', function(){
@@ -70,12 +75,15 @@ $(function(){
 		}); 
 	});
 	$(document).on('click','.patentFile',function(){
+		//获取当前页面对步骤数的标识，标识放于name中，命名方式为id+_+步骤数，如20_1
+		var stepnum="";
+		stepnum=$(this).attr("name");
 		layui.use('layer', function(){
 			  var layer = layui.layer; 
 			  layer.open({
 				type: 2, 
-				area: ['350px', '400px'],
-				content: 'patentDataAddFile.do'
+				area: ['600px', '450px'],
+				content: 'patentDataAddFile.do?userId='+${param.userId}+"&step='"+stepnum+"'"
 			});
 		}); 
 	});

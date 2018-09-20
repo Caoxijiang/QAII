@@ -13,10 +13,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.print.DocFlavor.STRING;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.annotations.Param;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -37,9 +39,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qaii.domain.DeptInfo;
+import com.qaii.domain.EmpAvatarinfo;
 import com.qaii.domain.EmpInfo;
 import com.qaii.domain.Govfund;
 import com.qaii.domain.Govplatform;
@@ -145,7 +149,59 @@ public class testCheckController {
 	
 	
 	
-	
+	//员工图片上传
+			@ResponseBody
+		 	@RequestMapping("/testupload.do")  
+		    public Map<String,String> upload(@RequestParam("file") MultipartFile file , EmpAvatarinfo EMpA,HttpServletRequest request) throws Exception{  
+		  //  System.out.println(request.getParameter("name"));  
+				System.out.println(file);
+		    Map<String,String> result=new HashMap<>();
+		    if(file.isEmpty()) {
+		    	
+		    	System.out.println(file);
+		    	result.put("code", "1");
+		    	result.put("msg", "文件为空");
+		    }
+	        String uuid = UUID.randomUUID().toString().replaceAll("-","");    
+	        //获得文件类型（可以判断如果不是图片，禁止上传）    
+	        String contentType=EMpA.getFile().getContentType();    
+	        //获得文件后缀名   
+	        System.out.println(contentType);
+	        String suffixName=contentType.substring(contentType.indexOf("/")+1);  
+	        //得到 文件名  
+	        String fileName=uuid+"."+suffixName; 
+		    
+		  //  String fileName=file.getOriginalFilename();
+		    int size=(int)file.getSize();
+		  //  System.out.println(fileName+":---"+size);
+		    String path="C:/File/img";
+		    File dest =new File(path+"/"+fileName);
+		    if(!dest.getParentFile().exists()) {
+		    	dest.getParentFile().mkdirs();
+		    }
+		    try {
+				file.transferTo(dest);//保存文件
+				EMpA.setUrl("/img/"+fileName);
+				//InsertEmpAvator(EMpA, result, dest);
+				result.put("code", "0");
+				result.put("msg", "上传成功");
+				result.put("url", dest.getPath());
+			} catch (IllegalStateException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				result.put("code", "1");
+		    	result.put("msg", "上传失败");
+			}catch (IOException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				result.put("code", "1");
+		    	result.put("msg", "上传失败");
+			}
+		    
+		    return result;  
+	    
+		    }
+
 	
 	
 	
