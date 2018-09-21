@@ -11,4 +11,10 @@ public interface SoftwarecopyrightService {
 	List<Softwarecopyright> getAllSoftwareMsg();
 
 	int dellsoftMsg(Integer[] eid);
+	
+	Softwarecopyright selectByPrimaryKey(int id);
+	
+	int updateSoft(Softwarecopyright soft);
+	
+	int insertSoft(Softwarecopyright soft);
 }

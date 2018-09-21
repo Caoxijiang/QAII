@@ -24,5 +24,20 @@ public class GovPlatformServiceImpl implements GovPlatformService {
 		// TODO Auto-generated method stub
 		return govplatformmapper.deleteByPrimaryKeys(eid);
 	}
+	@Override
+	public Govplatform selectByPrimaryKey(int id) {
+		// TODO Auto-generated method stub
+		return govplatformmapper.selectByPrimaryKey(id);
+	}
+	@Override
+	public int updateMsg(Govplatform govplatform) {
+		// TODO Auto-generated method stub
+		return govplatformmapper.updateByPrimaryKey(govplatform);
+	}
+	@Override
+	public int insertMsg(Govplatform govplatform) {
+		// TODO Auto-generated method stub
+		return govplatformmapper.insert(govplatform);
+	}
 
 }
