@@ -37,7 +37,8 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
-console.log(userID+"id与步骤"+step);
+var patName=${param.patName};
+console.log(userID+"id与步骤"+step+"sdfgsdfg"+patName);
 
 layui.use('upload', function(){
   var $ = layui.jquery
@@ -50,6 +51,11 @@ layui.use('upload', function(){
     ,accept: 'file'
     ,multiple: true
     ,auto: false
+    ,data: {
+    	  id: function(){
+    		    return $('#id').val();
+    		  }
+    		}
     ,bindAction: '#testListAction'
     ,choose: function(obj){   
       var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
