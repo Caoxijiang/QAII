@@ -43,7 +43,7 @@
 <div class="layui-container addtop"> 
 	<div class="datacontent">
 		<div class="datatitle">
-			<span class="dataname">&nbsp;&nbsp;&nbsp;&nbsp;专利名称《&nbsp;${param.patName}&nbsp;》</span>
+			<span class="dataname" id="paname" name=${param.patName}>&nbsp;&nbsp;&nbsp;&nbsp;专利名称《&nbsp;${param.patName}&nbsp;》</span>
 			<span class="inventor">发明人：${param.patAuthor}</span>
 			<span class="datadate">公开日期：${param.patPublishtime}&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>
@@ -62,7 +62,8 @@
 //获取专利主界面传递过来的数据id
 var userID="";
 userID=${param.userId};
-console.log(userID);
+var patName="";
+patName=$("#paname").attr("name");
 $(function(){
 	$(document).on('click','#test3',function(){
 		layui.use('layer', function(){
@@ -83,7 +84,7 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['600px', '450px'],
-				content: 'patentDataAddFile.do?userId='+${param.userId}+"&step='"+stepnum+"'"
+				content: 'patentDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&patName='"+patName+"'"
 			});
 		}); 
 	});
