@@ -61,7 +61,7 @@ console.log(userID);
 var step=${param.step}+"";
 console.log("bushu "+step);
 $.post({
-	url:"findDeptInfoList.do",
+	url:"findProessimg.do",
 	success:function(data){
 		var deptInfo=data.data;
 		if(deptInfo!=null){
