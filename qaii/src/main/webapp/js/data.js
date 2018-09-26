@@ -31,7 +31,7 @@ $().ready(function(){
 					      	"<button class='layui-btn btn databtn patentFile' name='"+theme[i].id+"'>"+
 								"文件上传"+
 							"</button>"+
-							"<button class='layui-btn btn databtn patentProcess'>"+
+							"<button class='layui-btn btn databtn patentProcess' name='"+theme[i].id+"'>"+
 								"文件预览"+
 							"</button>"+
 						"</div>"+
@@ -53,7 +53,7 @@ $().ready(function(){
 					      	"<button class='layui-btn btn databtn patentFile' name='"+theme[i].id+"'>"+
 								"文件上传"+
 							"</button>"+
-							"<button class='layui-btn btn databtn patentProcess'>"+
+							"<button class='layui-btn btn databtn patentProcess'> name='"+theme[i].id+"'"+
 								"文件预览"+
 							"</button>"+
 							"<span class='datalidatel'>"+theme[i].time+"</span>"+
