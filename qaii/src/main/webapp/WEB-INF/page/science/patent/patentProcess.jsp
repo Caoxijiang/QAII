@@ -16,14 +16,9 @@
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
     body{margin: 10px;}
-    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
-    .layui-table-body {
-	    height: -moz-calc( 100vh - 215px );
-	    height: -webkit-calc( 100vh - 215px );
-	    height: calc( 100vh - 215 px );
-	}
-	.btnfile{width:100px;height:30px;font-size:14px;line-height:30px;background:#1576bd;color:#fff;}
-	.btnfile:hover{background:#1576bd;color:#fff;}
+	.btnfile{width:100px;height:30px;font-size:14px;line-height:30px;border-radius:2px !important;background: #fff;color: #1b2032;}
+	.btnfile:hover{background: #1576bd;color: #fff;}
+	.layui-btn .layui-icon {margin-right: 3px;font-size: 16px;}
   </style>
 </head>
 <body id="bodyHei">
@@ -35,75 +30,133 @@
 		<span>&nbsp;>&nbsp;</span>
 		<span class="blue">文件预览</span>
 	</div>
-	<button class="layui-btn btn btnfile" data-type="getCheckLength" id="test3" style="margin-left:10px;margin-right:10px !important">
-			图片文件
-	</button>
-	<button class="layui-btn btn btnfile" id="dellist" data-type="delmore" style="margin-right:10px !important">
-		PDF文件
-	</button>
-	<button class="layui-btn btn btnfile" data-type="getCheckLength" id="pelupdate">
-		其他文件
-	</button>	
-	<!--	导出             -->
-	<button onclick="srchange('patentData.do?userId=20')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<div class="layui-btn-group demoTable">
+	  <button class="layui-btn btnfile" data-type="getCheckData" style="margin-left:20px;margin-right:10px !important">
+	  	<i class="layui-icon layui-icon-refresh-3"></i>更新
+	  </button>
+	  <button class="layui-btn btnfile" data-type="getCheckLength" style="margin-right:10px !important">
+	  	<i class="layui-icon layui-icon-delete"></i>删除
+	  </button>
+	  <button class="layui-btn btnfile" data-type="isAll">
+	  	<i class="layui-icon layui-icon-download-circle"></i>下载
+	  </button>
+	</div>
+	<button onclick="srchange('patentData.do?userId=${param.userId}&step=${param.step}&patName=${param.patName}&patPublishtime=${param.patPublishtime}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
 <div class="layui-container addtop"> 
-<!-- 采用表格内直接行结构  -->
-  
+	<table id="demo" lay-filter="test"></table>
+	<script type="text/html" id="barDemo">
+  		<a class="layui-btn layui-btn-tired layui-btn-xs" lay-event="online">在线预览</a>
+  		<a class="layui-btn layui-btn-xs" lay-event="download">下载</a>
+  		<a class="layui-btn layui-btn-edit layui-btn-xs" lay-event="upload">重新上传</a>
+		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+	</script>
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
-console.log(userID);
-var step=${param.step}+"";
-console.log("bushu "+step);
-$.post({
-	url:"findDeptInfoList.do",
-	success:function(data){
-		var deptInfo=data.data;
-		if(deptInfo!=null){
-			$(deptInfo).each(function(index,element){
-				index+=1;
-				//let heml='<dd lay-value="'+element.deptName+'">'+element.deptName+'</dd>';
-				
-				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
-				//$("#deptt").next(".layui-form-select").children("dl").append(heml);
-				$("#deptt").append(heml);
-			})						
-		
-			//JavaScript代码区域
-			layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
-			  var form = layui.form,
-				element = layui.element,
-				layer = layui.layer,
-				laydate = layui.laydate,
-				upload = layui.upload;
-				//交底日期选择
-			  laydate.render({
-			    elem: '#test1'
-			  });
-				//申请日选择
-			  laydate.render({
-			    elem: '#test2'
-			  });
-				//公开日选择
-			  laydate.render({
-			    elem: '#test3'
-			  });
-				//授权公告日日期选择
-			  laydate.render({
-			    elem: '#test4'
-			  });
-			  
+var step=${param.step};
+/* var patName=${param.patName}; */
+console.log(userID+"id与步骤"+step+"sdfgsdfg${param.patName}");
+
+layui.use('table', function(){
+	  var table = layui.table;
+	  table.render({
+	    elem: '#demo'
+	    /* ,url: '/demo/table/user/' //数据接口 */
+	    ,page: false//开启分页
+	    ,cols: [[ //表头
+	    	{type: 'checkbox'}
+	      ,{field: 'id', type:'numbers',title: '序号', width:80}
+	      ,{field: 'filename', title: '文件名'}
+	      ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
+	    ]],
+	    limit: 999999,
+	    data:[{id:"1",filename:"http://localhost:8083/img/11.jpg"},
+	    	{id:"1",filename:"http://localhost:8083/img/222.pdf"},
+	    	{id:"1",filename:"http://localhost:8083/img/444.xlsx"},
+	    	{id:"1",filename:"http://localhost:8083/img/333xls.xls"}
+	    	]
+	  });
+	//监听表格复选框选择
+	  table.on('checkbox(test)', function(obj){
+	    console.log(obj)
+	  }); 
+	//监听头部操作选项
+	  var $ = layui.$, active = {
+	    getCheckData: function(){ //更新数据
+	    	 table.reload('demo',{
+	    	 /* ,url: '/demo/table/user/' //数据接口 */
+	    	 });
+	    }
+	    ,getCheckLength: function(){ //批量删除
+	      var checkStatus = table.checkStatus('demo')
+	      ,data = checkStatus.data;
+	      for(var i=0;i<data.length;i++){
+	    	  console.log(data[i].filename);
+	      }
+	    }
+	    ,isAll: function(){ //批量下载
+	    	 var checkStatus = table.checkStatus('demo')
+		      ,data = checkStatus.data;
+		      for(var i=0;i<data.length;i++){
+		    	  download(data[i].filename);
+		      }
+	    }
+	  };
+	  
+	  $('.demoTable .layui-btn').on('click', function(){
+	    var type = $(this).data('type');
+	    active[type] ? active[type].call(this) : '';
+	  });
+	  
+	  //监听行工具事件
+	  table.on('tool(test)', function(obj){
+	    var data = obj.data;
+	    //console.log(obj)
+	    if(obj.event === 'del'){
+	      layer.confirm('真的删除行么', function(index){
+	        obj.del();
+	        layer.close(index);
+	      });
+	    } else if(obj.event === 'online'){//在线预览，暂支持图片和pdf形式
+	    	var address=data.filename;
+	    	var reg1=new RegExp("jpg","i");
+	    	var reg2=new RegExp("pdf","i");
+	    	var reg3=new RegExp("png","i");
+	    	if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+	    		window.open(address);
+	    	}else{
+	    		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+	    	};
+	    }else if(obj.event === 'download'){//文件下载
+	    	var address=data.filename;
+	    		download(address);
+		}else if(obj.event === 'upload'){//文件重新上传
+			var address=data.filename;
+		    layer.open({
+	    	  type:1,
+			  title:"重新上传文件",
+			  content:'<form action="" method="post">'+
+			  '<input type="file" name="file" id="filename">'+
+			  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 			});
-		}else{
-			alert("部门信息显示失败");
-		}
-	}
-})
+		}//事件监听
+	  })
+	});
+</script>
+<script>
+function download(src) {
+    var $a = document.createElement('a');
+    $a.setAttribute("href", src);
+    $a.setAttribute("download", "");
+    var evObj = document.createEvent('MouseEvents');
+    evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
+    $a.dispatchEvent(evObj);
+};
 
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>
