@@ -43,9 +43,9 @@
 <div class="layui-container addtop"> 
 	<div class="datacontent">
 		<div class="datatitle">
-			<span class="dataname">&nbsp;&nbsp;&nbsp;&nbsp;专利名称《&nbsp;${param.patName}&nbsp;》</span>
-			<span class="inventor">发明人：${param.patAuthor}</span>
-			<span class="datadate">公开日期：${param.patPublishtime}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<span class="dataname">&nbsp;&nbsp;&nbsp;&nbsp;专利所属部门《&nbsp;${param.tradmDept}&nbsp;》</span>
+			<span class="inventor">申请人：${param.tradmApplyper}</span>
+			<span class="datadate">注册日期：${param.tradmRegistertime}&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>
 		<div id="process">
 			<ul class="layui-timeline" id="processul">
