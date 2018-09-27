@@ -9,4 +9,10 @@ public interface GovFundService {
 	List<Govfund> getAllFundMsg();
 	
 	int deleteMsg(Integer[] eid);
+
+	Govfund selectByPrimaryKey(int id);
+
+	int updateMsg(Govfund govfund);
+
+	int insertMsg(Govfund govfund);
 }

@@ -24,5 +24,20 @@ public class GovRewardServiceImpl implements GovRewardService {
 		// TODO Auto-generated method stub
 		return govrewardmapper.deleteByPrimaryKeys(eid);
 	}
+	@Override
+	public Govreward selectByPrimaryKey(int id) {
+		// TODO Auto-generated method stub
+		return govrewardmapper.selectByPrimaryKey(id);
+	}
+	@Override
+	public int updateMsg(Govreward govreward) {
+		// TODO Auto-generated method stub
+		return govrewardmapper.updateByPrimaryKey(govreward);
+	}
+	@Override
+	public int insertMsg(Govreward govreward) {
+		// TODO Auto-generated method stub
+		return govrewardmapper.insert(govreward);
+	}
 
 }

@@ -10,4 +10,10 @@ public interface GovSubjectService {
 	
 	int deleteMsg(Integer[] eid);
 
+	Govsubject selectByPrimaryKey(int id);
+
+	int updateMsg(Govsubject govsubject);
+
+	int insertMsg(Govsubject govsubject);
+
 }

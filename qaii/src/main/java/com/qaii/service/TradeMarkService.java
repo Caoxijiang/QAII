@@ -11,4 +11,10 @@ public interface TradeMarkService {
 	List<Trademark> getAllTradeMarkMsg();
 	
 	int deleteMsg(Integer[] eid);
+	
+	Trademark selectByPrimaryKey(int id);
+	
+	int updatetrademark(Trademark trademark);
+	
+	int insertMsg(Trademark trademark);
 }

@@ -34,4 +34,22 @@ public class SoftwarecopyrightServiceImpl implements SoftwarecopyrightService {
 		return softMapper.deleteByPrimaryKeys(eid);
 	}
 
+	@Override
+	public Softwarecopyright selectByPrimaryKey(int id) {
+		// TODO Auto-generated method stub
+		return softMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public int updateSoft(Softwarecopyright soft) {
+		// TODO Auto-generated method stub
+		return softMapper.updateByPrimaryKey(soft);
+	}
+
+	@Override
+	public int insertSoft(Softwarecopyright soft) {
+		// TODO Auto-generated method stub
+		return softMapper.insert(soft);
+	}
+
 }

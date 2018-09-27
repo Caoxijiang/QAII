@@ -47,14 +47,14 @@ layui.use('upload', function(){
   var demoListView = $('#demoList')
   ,uploadListIns = upload.render({
     elem: '#testList'
-    ,url: '/upload/'//文件上传接口
+    ,url: 'processupload.do'//文件上传接口
     ,accept: 'file'
     ,multiple: true
     ,auto: false
     ,data: {
-    	  id: function(){
-    		    return $('#id').val();
-    		  }
+    	  oid:userID,
+        step:step,
+        patName:patName
     		}
     ,bindAction: '#testListAction'
     ,choose: function(obj){   

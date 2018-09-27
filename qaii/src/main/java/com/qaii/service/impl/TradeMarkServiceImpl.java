@@ -34,4 +34,22 @@ public class TradeMarkServiceImpl implements TradeMarkService {
 		return trademarkmapper.deleteByPrimaryKeys(eid);
 	}
 
+	@Override
+	public Trademark selectByPrimaryKey(int id) {
+		// TODO Auto-generated method stub
+		return trademarkmapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public int updatetrademark(Trademark trademark) {
+		// TODO Auto-generated method stub
+		return trademarkmapper.updateByPrimaryKey(trademark);
+	}
+
+	@Override
+	public int insertMsg(Trademark trademark) {
+		// TODO Auto-generated method stub
+		return trademarkmapper.insert(trademark);
+	}
+
 }

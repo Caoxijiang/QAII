@@ -10,4 +10,10 @@ public interface GovRewardService {
 	
 	int deleteMsg(Integer[] eid);
 
+	Govreward selectByPrimaryKey(int id);
+
+	int updateMsg(Govreward govreward);
+
+	int insertMsg(Govreward govreward);
+
 }
