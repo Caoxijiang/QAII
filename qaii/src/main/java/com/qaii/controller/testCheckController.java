@@ -20,6 +20,7 @@ import javax.print.DocFlavor.STRING;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.ibatis.annotations.Param;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -49,6 +50,8 @@ import com.qaii.domain.Govfund;
 import com.qaii.domain.Govplatform;
 import com.qaii.domain.Govreward;
 import com.qaii.domain.Govsubject;
+import com.qaii.domain.PatProcess;
+import com.qaii.domain.Processimg;
 import com.qaii.domain.Softwarecopyright;
 import com.qaii.domain.Thesis;
 import com.qaii.domain.Trademark;
@@ -60,6 +63,7 @@ import com.qaii.service.GovPlatformService;
 import com.qaii.service.GovRewardService;
 import com.qaii.service.GovSubjectService;
 import com.qaii.service.PatentService;
+import com.qaii.service.ProcessimgService;
 import com.qaii.service.SoftwarecopyrightService;
 import com.qaii.service.ThesisService;
 import com.qaii.service.TradeMarkService;
@@ -98,6 +102,8 @@ public class testCheckController {
 	private GovSubjectService govsubject;
 	@Resource
 	private GovRewardService govreward;
+	@Resource
+	private ProcessimgService processimgService;
 	
 	@RequestMapping("tstchk.do")
 	public String tstest() {
@@ -149,63 +155,77 @@ public class testCheckController {
 	
 	
 	
-	//员工图片上传
-			@ResponseBody
-		 	@RequestMapping("/testupload.do")  
-		    public Map<String,String> upload(@RequestParam("file") MultipartFile file , EmpAvatarinfo EMpA,HttpServletRequest request) throws Exception{  
-		  //  System.out.println(request.getParameter("name"));  
-				System.out.println(file);
-		    Map<String,String> result=new HashMap<>();
-		    if(file.isEmpty()) {
-		    	
-		    	System.out.println(file);
-		    	result.put("code", "1");
-		    	result.put("msg", "文件为空");
-		    }
-	        String uuid = UUID.randomUUID().toString().replaceAll("-","");    
-	        //获得文件类型（可以判断如果不是图片，禁止上传）    
-	        String contentType=EMpA.getFile().getContentType();    
-	        //获得文件后缀名   
-	        System.out.println(contentType);
-	        String suffixName=contentType.substring(contentType.indexOf("/")+1);  
-	        //得到 文件名  
-	        String fileName=uuid+"."+suffixName; 
-		    
-		  //  String fileName=file.getOriginalFilename();
-		    int size=(int)file.getSize();
-		  //  System.out.println(fileName+":---"+size);
-		    String path="C:/File/img";
-		    File dest =new File(path+"/"+fileName);
-		    if(!dest.getParentFile().exists()) {
-		    	dest.getParentFile().mkdirs();
-		    }
-		    try {
-				file.transferTo(dest);//保存文件
-				EMpA.setUrl("/img/"+fileName);
-				//InsertEmpAvator(EMpA, result, dest);
-				result.put("code", "0");
-				result.put("msg", "上传成功");
-				result.put("url", dest.getPath());
-			} catch (IllegalStateException e) {
-				// TODO: handle exception
-				e.printStackTrace();
-				result.put("code", "1");
-		    	result.put("msg", "上传失败");
-			}catch (IOException e) {
-				// TODO: handle exception
-				e.printStackTrace();
-				result.put("code", "1");
-		    	result.put("msg", "上传失败");
-			}
-		    
-		    return result;  
-	    
-		    }
-
+//	// 資料上傳
+//	@ResponseBody
+//	@RequestMapping("/testupload.do")
+//	public Map<String, String> upload(@RequestParam("file") MultipartFile[] files, Processimg img,
+//			HttpServletRequest req) throws Exception {
+//		// System.out.println(request.getParameter("name"));
+//		Integer oid = Integer.parseInt(req.getParameter("oid"));
+//		Integer stepid = Integer.parseInt(req.getParameter("step"));
+//		String patName = req.getParameter("patName");
+//		System.out.println(files);
+//		Map<String, String> result = new HashMap<>();
+//		if (files != null && files.length < 0) {
+//			result.put("code", "1");
+//			result.put("msg", "文件为空");
+//		}
+//
+//		for (int i = 0; i < files.length; i++) {
+//			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
+//			// 取文件格式后缀名
+//			//String type = files[i].getOriginalFilename();
+//			 
+//			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+//			 
+//			String filename = uuid + type;// 取当前时间戳作为文件名
+//
+//			System.out.println("文件名：" + filename);
+//			// String path = request.getSession().getServletContext().getRealPath("/upload/"
+//			// + filename);// 存放位置
+//			String path = "C:/File/img/" + patName + "/" + oid + "/" + stepid;
+//			String dbpath="img/"+patName + "/" + oid + "/" + stepid;
+//			System.out.println("++++++" + path);
+//			File destFile = new File(path + "/" + filename);
+//
+//			if (!destFile.getParentFile().exists()) {
+//				destFile.getParentFile().mkdirs();
+//			}
+//			try {
+//				// FileUtils.copyInputStreamToFile(files[i].getInputStream(), destFile);//
+//				// 复制临时文件到指定目录下
+//				files[i].transferTo(destFile);
+//				img.setSid(stepid);
+//				img.setOid(oid);
+//				img.setPath(dbpath.toString()+"/"+filename.toString());
+//				InsertProcessimg(img,result, destFile);
+//				result.put("code", "0");
+//				result.put("msg", "上传成功");
+//				result.put("url", destFile.getPath());
+//
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//				result.put("code", "1");
+//				result.put("msg", "上传失败");
+//			}
+//		}
+//
+//		return result;
+//
+//	}
 	
 	
 	
-	
+//	private void InsertProcessimg(Processimg img, Map<String, String> result, File dest) {
+//		int row=processimgService.insert(img);
+//		if(row > 0) {
+//			result.put("code", "0");
+//			result.put("msg", "上传成功");
+//		}else {
+//			result.put("code", "1");
+//	    	result.put("msg", "上传失败");
+//		}
+//	}  
 	
 	
 	

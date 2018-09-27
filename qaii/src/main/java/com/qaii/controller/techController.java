@@ -76,9 +76,44 @@ public class techController {
 		return "page/science/soft";
 	}
 	//商标
-	@RequestMapping("brand")
-	public String brand(){
-		return "page/science/brand";
+	@RequestMapping("brand.do")
+	public String brand() {
+		return "page/science/brand/brand";
+	}
+	//商标添加界面
+	@RequestMapping("brandAdd.do")
+	public String brandAdd(){
+		return "page/science/brand/brandAdd";
+	}
+	//商标查看详情界面
+	@RequestMapping("brandCheck.do")
+	public String brandCheck(){
+		return "page/science/brand/brandCheck";
+	}
+	//商标修改界面
+	@RequestMapping("brandEdit.do")
+	public String brandEdit(){
+		return "page/science/brand/brandEdit";
+	}
+	//商标资料审查界面
+	@RequestMapping("brandProcess.do")
+	public String brandProcess(){
+		return "page/science/brand/brandProcess";
+	}
+	//商标资料审查文件预览界面
+	@RequestMapping("brandData.do")
+	public String brandData(){
+		return "page/science/brand/brandData";
+	}
+	//商标资料审查文件流程添加界面
+	@RequestMapping("brandDataAdd.do")
+	public String brandDataAdd(){
+		return "page/science/brand/brandDataAdd";
+	}
+	//商标资料审查文件添加界面
+	@RequestMapping("brandDataAddFile.do")
+	public String brandDataAddFile(){
+		return "page/science/brand/brandDataAddFile";
 	}
 	//基金
 	@RequestMapping("fund.do")

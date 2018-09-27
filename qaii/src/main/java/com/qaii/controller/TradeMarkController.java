@@ -76,7 +76,7 @@ public class TradeMarkController {
 	@ResponseBody
 	public JsonResult showTradeMarkDetails(Trademark trademark,HttpServletRequest req) {	
 		
-		int userid=Integer.parseInt(req.getParameter("userId"));
+		int userid=Integer.parseInt(req.getParameter("id"));
 		//trademark.setId();
 		trademark = trademarkService.selectByPrimaryKey(userid);
 		return new JsonResult(trademark);
@@ -91,6 +91,7 @@ public class TradeMarkController {
 	//修改商标信息功能
 	@RequestMapping(value="updateTrademark.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public String updateTrademarks(Trademark Trademark,HttpServletRequest req){	
+		Trademark.setId(Integer.parseInt(req.getParameter("userId")));
 		loadData(req, Trademark);
 		int row =trademarkService.updatetrademark(Trademark);
 		if(row>=1) {

@@ -22,6 +22,8 @@
 	    height: -webkit-calc( 100vh - 215px );
 	    height: calc( 100vh - 215 px );
 	}
+	.btnfile{width:100px;height:30px;font-size:14px;line-height:30px;background:#1576bd;color:#fff;}
+	.btnfile:hover{background:#1576bd;color:#fff;}
   </style>
 </head>
 <body id="bodyHei">
@@ -33,191 +35,23 @@
 		<span>&nbsp;>&nbsp;</span>
 		<span class="blue">文件预览</span>
 	</div>
-	<!--		导出-->
+	<button class="layui-btn btn btnfile" data-type="getCheckLength" id="test3" style="margin-left:10px;margin-right:10px !important">
+			图片文件
+	</button>
+	<button class="layui-btn btn btnfile" id="dellist" data-type="delmore" style="margin-right:10px !important">
+		PDF文件
+	</button>
+	<button class="layui-btn btn btnfile" data-type="getCheckLength" id="pelupdate">
+		其他文件
+	</button>	
+	<!--	导出             -->
 	<button onclick="srchange('patentData.do?userId=20')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="addEmpInfo.do" method="post"> 
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
-						
-					</select>
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">专利类型&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
-						<option value="">   </option>
-						<option value="发明专利">发明专利</option>
-						<option value="实用新型专利">实用新型专利</option>
-						<option value="外观设计专利">外观设计专利</option>
-					</select>
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">专利名称&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">发明人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">申请（专利权）人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">交底日期&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empInductiontime" class="layui-input input" id="test1">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">是否提前公开实审&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
-						<option value="">   </option>
-						<option value="是">是</option>
-						<option value="否">否</option>
-					</select>
-					<!-- <input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input"> -->
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">申请号&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">申请日&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empInductiontime" class="layui-input input" id="test2">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">公开日&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empInductiontime" class="layui-input input" id="test3">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">授权公告日&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empInductiontime" class="layui-input input" id="test4">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">是否减免&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
-						<option value="">   </option>
-						<option value="是">是</option>
-						<option value="否">否</option>
-					</select>
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">申请费用（元）&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <!--   文本框-->
-	  <div class="layui-row">
-	    <div class="layui-col-xs6 layui-col-md6">
-			<div class="layui-form-item layui-form-text">
-				<label class="layui-form-label">摘要</label>
-				<div class="layui-input-block">
-					<textarea name="empRemarks" class="layui-textarea"></textarea>
-				</div>
-			</div>
- 	  	</div>
- 	  	<div class="layui-col-xs6 layui-col-md6">
-			<div class="layui-form-item layui-form-text">
-				<label class="layui-form-label">备注</label>
-				<div class="layui-input-block">
-					<textarea name="empRemarks" class="layui-textarea"></textarea>
-				</div>
-			</div>
- 	  	</div>
- 	  </div>
-	  <!--   文本框-->
-	  <div class="layui-row">
-   	   <div class="layui-col-md12">
-		   <div class="layui-form-item">
-			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" lay-submit="" lay-filter="demo1" onSubmit="imgjudge()">立即提交</button>
-			  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-			</div>
-		  </div>
-  		</div>
-  	</div>
-  </form>
+  
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
