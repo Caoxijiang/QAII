@@ -26,7 +26,7 @@
 	<div class="techadd" style="width:300px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span>商标&nbsp;—&nbsp;资料审查</span>
+		<span>专利&nbsp;—&nbsp;资料审查</span>
 		<span>&nbsp;>&nbsp;</span>
 		<span class="blue">文件预览</span>
 	</div>
@@ -41,7 +41,7 @@
 	  	<i class="layui-icon layui-icon-download-circle"></i>下载
 	  </button>
 	</div>
-	<button onclick="srchange('brandData.do?userId=${param.userId}&step=${param.step}&tradmRegistertime=${param.tradmRegistertime}&tradmDept=${param.tradmDept}&tradmApplyper=${param.tradmApplyper}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('patentData.do?userId=${param.userId}&step=${param.step}&patName=${param.patName}&patPublishtime=${param.patPublishtime}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -60,7 +60,7 @@
 var userID=${param.userId};
 var step=${param.step};
 /* var patName=${param.patName}; */
-console.log(userID+"id与步骤"+step+"sdfgsdfg${param.tradmRegistertime}");
+console.log(userID+"id与步骤"+step+"sdfgsdfg${param.patName}");
 
 layui.use('table', function(){
 	  var table = layui.table;
