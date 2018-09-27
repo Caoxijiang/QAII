@@ -17,4 +17,15 @@
 	<select id="selectProimgList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
 		select * from sci_processimg where sid=#{sid,jdbcType=INTEGER}
 	</select>
+	<delete id="deleteByPrimaryKey"  parameterType="java.lang.Integer">
+		 delete from  sci_processimg  where id in   
+     <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	  </foreach>
+	</delete>
+	<update id="updataProcessInfo" parameterType="java.lang.Integer">
+		updata from sci_processimg set sid=#{sid,jdbcType=INTEGER},path=#{path,jdbcType=VARCHAR}
+		where id=#{id,jdbcType=INTEGER}
+	</update>
+	
 </mapper>

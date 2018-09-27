@@ -26,4 +26,17 @@ public class ProcessimgServiceImpl implements ProcessimgService{
 		return processimgMapper.selectProimgList(sid);
 	}
 
+	@Override
+	public int deleteByPrimaryKey(Integer[] id) {
+		// TODO Auto-generated method stub
+		return processimgMapper.deleteByPrimaryKey(id);
+	}
+
+	@Override
+	public int updataProcessInfo(Integer id) {
+		// TODO Auto-generated method stub
+		return processimgMapper.updataProcessInfo(id);
+	}
+
+
 }
