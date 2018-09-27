@@ -18,6 +18,7 @@
     <result column="tradm_InvoicePer" jdbcType="VARCHAR" property="tradmInvoiceper" />
     <result column="tradm_StatusFollow" jdbcType="VARCHAR" property="tradmStatusfollow" />
     <result column="tradm_UpdateTime" jdbcType="VARCHAR" property="tradmUpdatetime" />
+    <result column="eid" jdbcType="INTEGER" property="eid" />
   </resultMap>
   <sql id="Base_Column_List">
     id, tradm_Dept, tradm_Code, tradm_PngAndExplain, tradm_ApplyPer, tradm_Agency, tradm_Type, 

@@ -32,6 +32,8 @@ public class Trademark {
     private String tradmStatusfollow;
 
     private String tradmUpdatetime;
+    
+    private Integer eid;
 
     public Integer getId() {
         return id;
@@ -160,4 +162,12 @@ public class Trademark {
     public void setTradmUpdatetime(String tradmUpdatetime) {
         this.tradmUpdatetime = tradmUpdatetime == null ? null : tradmUpdatetime.trim();
     }
+
+	public Integer getEid() {
+		return eid;
+	}
+
+	public void setEid(Integer eid) {
+		this.eid = eid;
+	}
 }

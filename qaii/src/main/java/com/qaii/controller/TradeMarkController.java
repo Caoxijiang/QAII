@@ -1,10 +1,14 @@
 package com.qaii.controller;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -24,8 +28,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.qaii.domain.Trademark;
+import com.qaii.domain.TrademarkImg;
 import com.qaii.domain.Trademark;
 import com.qaii.service.TradeMarkService;
+import com.qaii.service.TrademarkImgService;
 import com.qaii.util.AlertException;
 import com.qaii.util.CustomException;
 import com.qaii.util.JsonResult;
@@ -35,6 +41,8 @@ import com.qaii.util.Layui;
 public class TradeMarkController {
 	@Resource
 	private TradeMarkService trademarkService;
+	
+	private TrademarkImgService tradeimgService;
 	
 	//获取所有商标信息
 	@RequestMapping(value="getAllTradeMarkMsg.do",method=RequestMethod.POST)
@@ -238,5 +246,73 @@ public class TradeMarkController {
 		
 		return Trademark;
 	}
+	
+	//商标图片上传
+	@RequestMapping("/tradeupload.do")  
+    public Map<String,String> upload(@RequestParam("file") MultipartFile file , TrademarkImg trade,HttpServletRequest request) throws Exception{  
+  //  System.out.println(request.getParameter("name"));  
+    Map<String,String> result=new HashMap<>();
+    if(file.isEmpty()) {
+    	result.put("code", "1");
+    	result.put("msg", "文件为空");
+    }
+    String uuid = UUID.randomUUID().toString().replaceAll("-","");    
+    //获得文件类型（可以判断如果不是图片，禁止上传）    
+    String contentType=trade.getFile().getContentType();    
+    //获得文件后缀名   
+    String suffixName=contentType.substring(contentType.indexOf("/")+1);  
+    //得到 文件名  
+    String fileName=uuid+"."+suffixName; 
+    
+  //  String fileName=file.getOriginalFilename();
+    int size=(int)file.getSize();
+  //  System.out.println(fileName+":---"+size);
+    String path="C:/File/img";
+    File dest =new File(path+"/"+fileName);
+    if(!dest.getParentFile().exists()) {
+    	dest.getParentFile().mkdirs();
+    }
+    try {
+		file.transferTo(dest);//保存文件
+		trade.setPath("/img/"+fileName);
+		InserttradeImg(trade, result, dest);
+		result.put("code", "0");
+		result.put("msg", "上传成功");
+		result.put("url", dest.getPath());
+	} catch (IllegalStateException e) {
+		// TODO: handle exception
+		e.printStackTrace();
+		result.put("code", "1");
+    	result.put("msg", "上传失败");
+	}catch (IOException e) {
+		// TODO: handle exception
+		e.printStackTrace();
+		result.put("code", "1");
+    	result.put("msg", "上传失败");
+	}
+    
+    return result;  
+
+    }
+	
+	private void InserttradeImg(TrademarkImg trade, Map<String, String> result, File dest) {
+		int row=tradeimgService.insertmsg(trade);
+		if(row > 0) {
+			int eid=trade.getId();
+			if(eid>=1) {
+				result.put("code", "0");
+				result.put("msg", "上传成功");
+				result.put("eid",trade.getId().toString() );
+				result.put("url", dest.getPath());
+				
+			}else {
+				result.put("code", "1");
+		    	result.put("msg", "上传失败");
+			}
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	}  
 
 }
