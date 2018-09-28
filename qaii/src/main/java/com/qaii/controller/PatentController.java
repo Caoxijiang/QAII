@@ -161,6 +161,7 @@ public class PatentController {
 	public Map<String, String> processupload(@RequestParam("file") MultipartFile[] files, Processimg img,
 			HttpServletRequest req) throws Exception {
 		// System.out.println(request.getParameter("name"));
+		String insertype=req.getParameter("type");
 		Integer oid = Integer.parseInt(req.getParameter("oid"));
 		Integer stepid = Integer.parseInt(req.getParameter("step"));
 		String patName = req.getParameter("patName");
@@ -173,6 +174,8 @@ public class PatentController {
 
 		for (int i = 0; i < files.length; i++) {
 			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
+			 
+			 String name=files[i].getOriginalFilename();
 			// 取文件格式后缀名
 			//String type = files[i].getOriginalFilename();
 			 
@@ -198,10 +201,20 @@ public class PatentController {
 				img.setSid(stepid);
 				img.setOid(oid);
 				img.setPath(dbpath.toString()+"/"+filename.toString());
-				InsertProcessimg(img,result, destFile);
-				result.put("code", "0");
-				result.put("msg", "上传成功");
-				result.put("url", destFile.getPath());
+				img.setName(name);
+				
+				if(insertype.equals("insert")) {
+					InsertProcessimg(img,result, destFile);
+					result.put("code", "0");
+					result.put("msg", "上传成功");
+					result.put("url", destFile.getPath());
+				}else if(insertype.equals("update")) {
+					updataProcessimg(img,result, destFile);
+					result.put("code", "0");
+					result.put("msg", "上传成功");
+					result.put("url", destFile.getPath());
+				}
+				
 
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -244,7 +257,20 @@ public class PatentController {
   	
   	
 	
-	
+ 	//重上传专利信息
+	@ResponseBody
+	@RequestMapping(value="updataProessimg.do",produces="application/json;charset=UTF-8")
+	public JsonResult updataProessimg(@RequestParam(value = "requestDate") Processimg img) {
+		
+		int row=processimgService.updataProcessInfo(img);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+	}
+  	
 	
 	
 	
@@ -283,6 +309,20 @@ public class PatentController {
 	    	result.put("msg", "上传失败");
 		}
 	}  
+	
+	
+	private void updataProcessimg(Processimg img, Map<String, String> result, File dest) {
+		int row=processimgService.updataProcessInfo(img);
+		if(row > 0) {
+			result.put("code", "0");
+			result.put("msg", "上传成功");
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	} 
+	
+	
   	
 	
 }

@@ -55,9 +55,16 @@
   
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
-<script src="${basePath}/js/data.js"></script><!-- 添加流程 -->
-<script src="${basePath}/js/iframesrc.js"></script>
-<script src="${basePath}/js/iframesrcon.js"></script>
+<script src="${basePath}/js/patentdata.js"></script><!-- 添加流程 -->
+<script>
+$(function(){
+	$(document).on('click','.patentProcess',function(){
+		var stepnum="";
+		stepnum=$(this).attr("name");
+		$("body", parent.document).find('iframe').attr('src','patentProcess.do?userId='+userID+'&step='+stepnum+'&patName='+patName+'&patPublishtime='+patPublishtime+'&insertype=update');
+	});
+});
+</script>
 <script>
 //获取专利主界面传递过来的数据id
 var userID="";

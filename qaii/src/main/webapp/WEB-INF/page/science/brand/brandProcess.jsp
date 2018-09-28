@@ -41,7 +41,7 @@
 	  	<i class="layui-icon layui-icon-download-circle"></i>下载
 	  </button>
 	</div>
-	<button onclick="srchange('patentData.do?userId=${param.userId}&step=${param.step}&patName=${param.patName}&patPublishtime=${param.patPublishtime}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('brandData.do?userId=${param.userId}&step=${param.step}&tradmRegistertime=${param.tradmRegistertime}&tradmDept=${param.tradmDept}&tradmApplyper=${param.tradmApplyper}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -60,7 +60,7 @@
 var userID=${param.userId};
 var step=${param.step};
 /* var patName=${param.patName}; */
-console.log(userID+"id与步骤"+step+"sdfgsdfg${param.patName}");
+console.log(userID+"id与步骤"+step+"sdfgsdfg${param.tradmRegistertime}");
 
 layui.use('table', function(){
 	  var table = layui.table;
