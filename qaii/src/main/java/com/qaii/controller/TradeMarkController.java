@@ -41,7 +41,7 @@ import com.qaii.util.Layui;
 public class TradeMarkController {
 	@Resource
 	private TradeMarkService trademarkService;
-	
+	@Resource
 	private TrademarkImgService tradeimgService;
 	
 	//获取所有商标信息
@@ -49,15 +49,8 @@ public class TradeMarkController {
 	@ResponseBody
 	public Layui getAllTradeMarkMsg() {
 		List<Trademark> result=trademarkService.getAllTradeMarkMsg();
-//			for(trademarkwarecopyright trademarkware:result) {
-//				CountDatetoNowDays.TranstoDate(emp);
-//			}
 		int count =result.size();
-		if(result!=null) {
-			return Layui.data(count, result);
-		}else {
-			return Layui.data(count, result);
-		}
+		return Layui.data(count, result);
 	}
 	//删除商标信息
 	@RequestMapping("dellTradeMarkMsg.do")
@@ -112,6 +105,8 @@ public class TradeMarkController {
 	}
 	//绑定请求数据到bean中
 	void loadData(HttpServletRequest req,Trademark Trademark){
+		if(!(req.getParameter("imageVal")==""))
+			Trademark.setEid(Integer.parseInt(req.getParameter("imageVal")));
 		Trademark.setTradmDept(req.getParameter("tradmDept"));
 		Trademark.setTradmCode(req.getParameter("tradmCode"));
 		Trademark.setTradmPngandexplain(req.getParameter("tradmPngandexplain"));
@@ -249,6 +244,7 @@ public class TradeMarkController {
 	
 	//商标图片上传
 	@RequestMapping("/tradeupload.do")  
+	@ResponseBody
     public Map<String,String> upload(@RequestParam("file") MultipartFile file , TrademarkImg trade,HttpServletRequest request) throws Exception{  
   //  System.out.println(request.getParameter("name"));  
     Map<String,String> result=new HashMap<>();
@@ -267,14 +263,14 @@ public class TradeMarkController {
   //  String fileName=file.getOriginalFilename();
     int size=(int)file.getSize();
   //  System.out.println(fileName+":---"+size);
-    String path="C:/File/img";
+    String path="C:/File/img/TradeMark";
     File dest =new File(path+"/"+fileName);
     if(!dest.getParentFile().exists()) {
     	dest.getParentFile().mkdirs();
     }
     try {
 		file.transferTo(dest);//保存文件
-		trade.setPath("/img/"+fileName);
+		trade.setPath("/img/TradeMark/"+fileName);
 		InserttradeImg(trade, result, dest);
 		result.put("code", "0");
 		result.put("msg", "上传成功");

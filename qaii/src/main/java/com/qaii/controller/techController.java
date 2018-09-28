@@ -1,16 +1,21 @@
 package com.qaii.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.qaii.domain.DeptInfo;
 import com.qaii.domain.EmpInfo;
@@ -102,8 +107,13 @@ public class techController {
 	}
 	//商标资料审查文件预览界面
 	@RequestMapping("brandData.do")
-	public String brandData(){
-		return "page/science/brand/brandData";
+	public ModelAndView brandData(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		System.out.println(result);
+		return new ModelAndView("page/science/brand/brandData", "utflist", result);
 	}
 	//商标资料审查文件流程添加界面
 	@RequestMapping("brandDataAdd.do")

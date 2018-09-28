@@ -225,7 +225,42 @@ $.post({
 		  laydate.render({
 		    elem: '#test4'
 		  });
+		  
+		//普通图片上传
+		  var uploadInst = upload.render({
+		    elem: '#imgload'
+		    ,url: 'tradeupload.do'
+		    ,before: function(obj){
+		      //预读本地文件示例，不支持ie8
+		      obj.preview(function(index, file, result){
+		        $('#demo1').attr('src', result); //图片链接（base64）
+		      });
+		    }
+		    ,done: function(res){
+		      //如果上传失败
+		      if(res.code > 0){
+		        return layer.msg('上传失败');
+		      }else{
+		    	 $("demoText").attr("imageVal",res.eid)
+		    	 var eid=res.eid
+		    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
+		    	$("input[name='imageVal']").attr("value",eid);
+		    	  return layer.msg(res.msg);
+		      }
+		      //上传成功
+		    }
+		    ,error: function(){
+		      //演示失败状态，并实现重传
+		      var demoText = $('#demoText');
+		      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+		      demoText.find('.demo-reload').on('click', function(){
+		        uploadInst.upload();
+		      });
+		    }
+		  });
+		
 		   var id=${param.userId};
+		   var eid=$("imageVal").val();
 		   if(id!=null){
 				$.post({
 					url:"showTradeMarkDetails.do",
@@ -234,28 +269,37 @@ $.post({
 					},
 					success:function(data){
 						if(data.data!=null){
-							let patentInfo=data.data;
+							let trademark=data.data;
+							if(eid==undefined){
+								$("input[name='imageVal']").attr("value",trademark.eid);
+							}else{
+								$("input[name='imageVal']").attr("value",eid);
+							}
 							//表单初始赋值 从表单中提取数据
 							  form.val('example', {
-								 "userId":patentInfo.id,
-							  	 "tradmDept":patentInfo.tradmDept,
-								 "tradmCode":patentInfo.tradmCode,
-								 "tradmPngandexplain":patentInfo.tradmPngandexplain,
-								 "tradmApplyper":patentInfo.tradmApplyper,
-								 "tradmAgency":patentInfo.tradmAgency,
-								 "tradmType":patentInfo.tradmType,
-								 "tradmItem":patentInfo.tradmItem,
-								 "tradmApplynum":patentInfo.tradmApplynum,
-								 "tradmApplytime":patentInfo.tradmApplytime,
-								 "tradmRegistertime":patentInfo.tradmRegistertime,
+								 "userId":trademark.id,
+							  	 "tradmDept":trademark.tradmDept,
+								 "tradmCode":trademark.tradmCode,
+								 "tradmPngandexplain":trademark.tradmPngandexplain,
+								 "tradmApplyper":trademark.tradmApplyper,
+								 "tradmAgency":trademark.tradmAgency,
+								 "tradmType":trademark.tradmType,
+								 "tradmItem":trademark.tradmItem,
+								 "tradmApplynum":trademark.tradmApplynum,
+								 "tradmApplytime":trademark.tradmApplytime,
+								 "tradmRegistertime":trademark.tradmRegistertime,
 								
-								 "tradmValidtime":patentInfo.tradmValidtime,
-								 "tradmCost":patentInfo.tradmCost,
-								 "tradmInvoiceper":patentInfo.tradmInvoiceper,
-								 "tradmStatusfollow":patentInfo.tradmStatusfollow,
-								 "tradmUpdatetime":patentInfo.tradmUpdatetime,
+								 "tradmValidtime":trademark.tradmValidtime,
+								 "tradmCost":trademark.tradmCost,
+								 "tradmInvoiceper":trademark.tradmInvoiceper,
+								 "tradmStatusfollow":trademark.tradmStatusfollow,
+								 "tradmUpdatetime":trademark.tradmUpdatetime,
 							    
 							  });
+							  var domain = window.location.host;
+							  var url =data.data.url;
+							  var imgpath=domain+url;
+							  $("#demo1").attr("src","https://"+imgpath);
 						}else{
 							alert("查看详情失败")
 						}

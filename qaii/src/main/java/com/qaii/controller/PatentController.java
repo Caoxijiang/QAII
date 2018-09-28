@@ -218,7 +218,7 @@ public class PatentController {
 	@ResponseBody
 	@RequestMapping(value="findProessimg.do",produces="application/json;charset=UTF-8")
 	public Layui findProessimg(HttpServletRequest req) {
-		Integer sid=Integer.parseInt(req.getParameter("sid'"));
+		Integer sid=Integer.parseInt(req.getParameter("sid"));
 		List<Processimg>img=processimgService.selectProimgList(sid);
 		int count =img.size();
 			if(img!=null) {
@@ -228,7 +228,18 @@ public class PatentController {
 			}
 	}
   	
- 	
+ 	//删除专利信息
+	@ResponseBody
+	@RequestMapping(value="dellProessimg.do",produces="application/json;charset=UTF-8")
+	public JsonResult dellProessimg(@RequestParam(value = "requestDate[]") Integer[] id) {
+		int row=processimgService.deleteByPrimaryKey(id);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+	}
   	
   	
   	

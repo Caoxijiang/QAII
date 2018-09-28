@@ -2,6 +2,7 @@
 <html>
 <%@ page  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <c:set var="basePath" value="${pageContext.request.contextPath}"></c:set>
 <head>
   <meta charset="utf-8">
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
+	
   <style>
     body{margin: 10px;}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
@@ -40,12 +42,13 @@
 		返回
 	</button>		
 </div>
+
 <div class="layui-container addtop"> 
 	<div class="datacontent">
 		<div class="datatitle">
-			<span class="dataname">&nbsp;&nbsp;&nbsp;&nbsp;专利名称《&nbsp;${param.patName}&nbsp;》</span>
-			<span class="inventor">发明人：${param.patAuthor}</span>
-			<span class="datadate">公开日期：${param.patPublishtime}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<span class="dataname">&nbsp;&nbsp;&nbsp;&nbsp;专利所属部门《&nbsp;${requestScope.utflist[0]}&nbsp;》</span>
+			<span class="inventor">申请人：${requestScope.utflist[1]}</span>
+			<span class="datadate">注册日期：${requestScope.utflist[2]}&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>
 		<div id="process">
 			<ul class="layui-timeline" id="processul">
@@ -62,7 +65,15 @@
 //获取专利主界面传递过来的数据id
 var userID="";
 userID=${param.userId};
-console.log(userID);
+
+function getQueryString(name) {
+    var result = window.location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+    if (result == null || result.length < 1) {
+        return "";
+    }
+    return result[1];
+}
+
 $(function(){
 	$(document).on('click','#test3',function(){
 		layui.use('layer', function(){

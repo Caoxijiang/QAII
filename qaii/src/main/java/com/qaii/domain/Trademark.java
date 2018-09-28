@@ -34,6 +34,8 @@ public class Trademark {
     private String tradmUpdatetime;
     
     private Integer eid;
+    
+    private String url;
 
     public Integer getId() {
         return id;
@@ -169,5 +171,13 @@ public class Trademark {
 
 	public void setEid(Integer eid) {
 		this.eid = eid;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 }

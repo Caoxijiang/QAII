@@ -195,6 +195,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 	laydate = layui.laydate,
 	upload = layui.upload;
    var id=${param.userId};
+   var eid=$("imageVal").val();
    if(id!=null){
 		$.post({
 			url:"showTradeMarkDetails.do",
@@ -203,28 +204,37 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 			},
 			success:function(data){
 				if(data.data!=null){
-					let patentInfo=data.data;
-					/* console.log("afd"+JSON.stringify(patentInfo)); */
+					let trademark=data.data;
+					if(eid==undefined){
+						$("input[name='imageVal']").attr("value",trademark.eid);
+					}else{
+						$("input[name='imageVal']").attr("value",eid);
+					}
+					/* console.log("afd"+JSON.stringify(trademark)); */
 					//表单初始赋值 从表单中提取数据
 					  form.val('example', {
-						 "tradmDept":patentInfo.tradmDept,
-						 "tradmCode":patentInfo.tradmCode,
-						 "tradmPngandexplain":patentInfo.tradmPngandexplain,
-						 "tradmApplyper":patentInfo.tradmApplyper,
-						 "tradmAgency":patentInfo.tradmAgency,
-						 "tradmType":patentInfo.tradmType,
-						 "tradmItem":patentInfo.tradmItem,
-						 "tradmApplynum":patentInfo.tradmApplynum,
-						 "tradmApplytime":patentInfo.tradmApplytime,
-						 "tradmRegistertime":patentInfo.tradmRegistertime,
+						 "tradmDept":trademark.tradmDept,
+						 "tradmCode":trademark.tradmCode,
+						 "tradmPngandexplain":trademark.tradmPngandexplain,
+						 "tradmApplyper":trademark.tradmApplyper,
+						 "tradmAgency":trademark.tradmAgency,
+						 "tradmType":trademark.tradmType,
+						 "tradmItem":trademark.tradmItem,
+						 "tradmApplynum":trademark.tradmApplynum,
+						 "tradmApplytime":trademark.tradmApplytime,
+						 "tradmRegistertime":trademark.tradmRegistertime,
 						
-						 "tradmValidtime":patentInfo.tradmValidtime,
-						 "tradmCost":patentInfo.tradmCost,
-						 "tradmInvoiceper":patentInfo.tradmInvoiceper,
-						 "tradmStatusfollow":patentInfo.tradmStatusfollow,
-						 "tradmUpdatetime":patentInfo.tradmUpdatetime,
+						 "tradmValidtime":trademark.tradmValidtime,
+						 "tradmCost":trademark.tradmCost,
+						 "tradmInvoiceper":trademark.tradmInvoiceper,
+						 "tradmStatusfollow":trademark.tradmStatusfollow,
+						 "tradmUpdatetime":trademark.tradmUpdatetime,
 					    
-					  })
+					  });
+					  var domain = window.location.host;
+					  var url =data.data.url;
+					  var imgpath=domain+url;
+					  $("#demo1").attr("src","https://"+imgpath);
 				}else{
 					alert("查看详情失败")
 				}

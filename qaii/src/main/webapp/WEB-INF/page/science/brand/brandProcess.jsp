@@ -16,12 +16,9 @@
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
     body{margin: 10px;}
-    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
-    .layui-table-body {
-	    height: -moz-calc( 100vh - 215px );
-	    height: -webkit-calc( 100vh - 215px );
-	    height: calc( 100vh - 215 px );
-	}
+	.btnfile{width:100px;height:30px;font-size:14px;line-height:30px;border-radius:2px !important;background: #fff;color: #1b2032;}
+	.btnfile:hover{background: #1576bd;color: #fff;}
+	.layui-btn .layui-icon {margin-right: 3px;font-size: 16px;}
   </style>
 </head>
 <body id="bodyHei">
@@ -33,243 +30,133 @@
 		<span>&nbsp;>&nbsp;</span>
 		<span class="blue">文件预览</span>
 	</div>
-	<!--		导出-->
-	<button onclick="srchange('brandData.do?userId=20')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<div class="layui-btn-group demoTable">
+	  <button class="layui-btn btnfile" data-type="getCheckData" style="margin-left:20px;margin-right:10px !important">
+	  	<i class="layui-icon layui-icon-refresh-3"></i>更新
+	  </button>
+	  <button class="layui-btn btnfile" data-type="getCheckLength" style="margin-right:10px !important">
+	  	<i class="layui-icon layui-icon-delete"></i>删除
+	  </button>
+	  <button class="layui-btn btnfile" data-type="isAll">
+	  	<i class="layui-icon layui-icon-download-circle"></i>下载
+	  </button>
+	</div>
+	<button onclick="srchange('patentData.do?userId=${param.userId}&step=${param.step}&patName=${param.patName}&patPublishtime=${param.patPublishtime}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
 <div class="layui-container addtop"> 
-<!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="addEmpInfo.do" method="post"> 
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
-						
-					</select>
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">专利类型&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
-						<option value="">   </option>
-						<option value="发明专利">发明专利</option>
-						<option value="实用新型专利">实用新型专利</option>
-						<option value="外观设计专利">外观设计专利</option>
-					</select>
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">专利名称&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">发明人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">申请（专利权）人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">交底日期&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empInductiontime" class="layui-input input" id="test1">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">是否提前公开实审&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
-						<option value="">   </option>
-						<option value="是">是</option>
-						<option value="否">否</option>
-					</select>
-					<!-- <input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input"> -->
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">申请号&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">申请日&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empInductiontime" class="layui-input input" id="test2">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">公开日&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empInductiontime" class="layui-input input" id="test3">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">授权公告日&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empInductiontime" class="layui-input input" id="test4">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">是否减免&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
-						<option value="">   </option>
-						<option value="是">是</option>
-						<option value="否">否</option>
-					</select>
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">申请费用（元）&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <!--   文本框-->
-	  <div class="layui-row">
-	    <div class="layui-col-xs6 layui-col-md6">
-			<div class="layui-form-item layui-form-text">
-				<label class="layui-form-label">摘要</label>
-				<div class="layui-input-block">
-					<textarea name="empRemarks" class="layui-textarea"></textarea>
-				</div>
-			</div>
- 	  	</div>
- 	  	<div class="layui-col-xs6 layui-col-md6">
-			<div class="layui-form-item layui-form-text">
-				<label class="layui-form-label">备注</label>
-				<div class="layui-input-block">
-					<textarea name="empRemarks" class="layui-textarea"></textarea>
-				</div>
-			</div>
- 	  	</div>
- 	  </div>
-	  <!--   文本框-->
-	  <div class="layui-row">
-   	   <div class="layui-col-md12">
-		   <div class="layui-form-item">
-			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" lay-submit="" lay-filter="demo1" onSubmit="imgjudge()">立即提交</button>
-			  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-			</div>
-		  </div>
-  		</div>
-  	</div>
-  </form>
+	<table id="demo" lay-filter="test"></table>
+	<script type="text/html" id="barDemo">
+  		<a class="layui-btn layui-btn-tired layui-btn-xs" lay-event="online">在线预览</a>
+  		<a class="layui-btn layui-btn-xs" lay-event="download">下载</a>
+  		<a class="layui-btn layui-btn-edit layui-btn-xs" lay-event="upload">重新上传</a>
+		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+	</script>
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
-console.log(userID);
-var step=${param.step}+"";
-console.log("bushu "+step);
-$.post({
-	url:"findDeptInfoList.do",
-	success:function(data){
-		var deptInfo=data.data;
-		if(deptInfo!=null){
-			$(deptInfo).each(function(index,element){
-				index+=1;
-				//let heml='<dd lay-value="'+element.deptName+'">'+element.deptName+'</dd>';
-				
-				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
-				//$("#deptt").next(".layui-form-select").children("dl").append(heml);
-				$("#deptt").append(heml);
-			})						
-		
-			//JavaScript代码区域
-			layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
-			  var form = layui.form,
-				element = layui.element,
-				layer = layui.layer,
-				laydate = layui.laydate,
-				upload = layui.upload;
-				//交底日期选择
-			  laydate.render({
-			    elem: '#test1'
-			  });
-				//申请日选择
-			  laydate.render({
-			    elem: '#test2'
-			  });
-				//公开日选择
-			  laydate.render({
-			    elem: '#test3'
-			  });
-				//授权公告日日期选择
-			  laydate.render({
-			    elem: '#test4'
-			  });
-			  
+var step=${param.step};
+/* var patName=${param.patName}; */
+console.log(userID+"id与步骤"+step+"sdfgsdfg${param.patName}");
+
+layui.use('table', function(){
+	  var table = layui.table;
+	  table.render({
+	    elem: '#demo'
+	    /* ,url: '/demo/table/user/' //数据接口 */
+	    ,page: false//开启分页
+	    ,cols: [[ //表头
+	    	{type: 'checkbox'}
+	      ,{field: 'id', type:'numbers',title: '序号', width:80}
+	      ,{field: 'filename', title: '文件名'}
+	      ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
+	    ]],
+	    limit: 999999,
+	    data:[{id:"1",filename:"http://localhost:8083/img/11.jpg"},
+	    	{id:"1",filename:"http://localhost:8083/img/222.pdf"},
+	    	{id:"1",filename:"http://localhost:8083/img/444.xlsx"},
+	    	{id:"1",filename:"http://localhost:8083/img/333xls.xls"}
+	    	]
+	  });
+	//监听表格复选框选择
+	  table.on('checkbox(test)', function(obj){
+	    console.log(obj)
+	  }); 
+	//监听头部操作选项
+	  var $ = layui.$, active = {
+	    getCheckData: function(){ //更新数据
+	    	 table.reload('demo',{
+	    	 /* ,url: '/demo/table/user/' //数据接口 */
+	    	 });
+	    }
+	    ,getCheckLength: function(){ //批量删除
+	      var checkStatus = table.checkStatus('demo')
+	      ,data = checkStatus.data;
+	      for(var i=0;i<data.length;i++){
+	    	  console.log(data[i].filename);
+	      }
+	    }
+	    ,isAll: function(){ //批量下载
+	    	 var checkStatus = table.checkStatus('demo')
+		      ,data = checkStatus.data;
+		      for(var i=0;i<data.length;i++){
+		    	  download(data[i].filename);
+		      }
+	    }
+	  };
+	  
+	  $('.demoTable .layui-btn').on('click', function(){
+	    var type = $(this).data('type');
+	    active[type] ? active[type].call(this) : '';
+	  });
+	  
+	  //监听行工具事件
+	  table.on('tool(test)', function(obj){
+	    var data = obj.data;
+	    //console.log(obj)
+	    if(obj.event === 'del'){
+	      layer.confirm('真的删除行么', function(index){
+	        obj.del();
+	        layer.close(index);
+	      });
+	    } else if(obj.event === 'online'){//在线预览，暂支持图片和pdf形式
+	    	var address=data.filename;
+	    	var reg1=new RegExp("jpg","i");
+	    	var reg2=new RegExp("pdf","i");
+	    	var reg3=new RegExp("png","i");
+	    	if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+	    		window.open(address);
+	    	}else{
+	    		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+	    	};
+	    }else if(obj.event === 'download'){//文件下载
+	    	var address=data.filename;
+	    		download(address);
+		}else if(obj.event === 'upload'){//文件重新上传
+			var address=data.filename;
+		    layer.open({
+	    	  type:1,
+			  title:"重新上传文件",
+			  content:'<form action="" method="post">'+
+			  '<input type="file" name="file" id="filename">'+
+			  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 			});
-		}else{
-			alert("部门信息显示失败");
-		}
-	}
-})
+		}//事件监听
+	  })
+	});
+</script>
+<script>
+function download(src) {
+    var $a = document.createElement('a');
+    $a.setAttribute("href", src);
+    $a.setAttribute("download", "");
+    var evObj = document.createEvent('MouseEvents');
+    evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
+    $a.dispatchEvent(evObj);
+};
 
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>

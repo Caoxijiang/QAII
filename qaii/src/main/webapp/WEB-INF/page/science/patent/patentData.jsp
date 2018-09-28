@@ -64,6 +64,7 @@ var userID="";
 userID=${param.userId};
 var patName="";
 patName=$("#paname").attr("name");
+var patPublishtime='${param.patPublishtime}';
 $(function(){
 	$(document).on('click','#test3',function(){
 		layui.use('layer', function(){
