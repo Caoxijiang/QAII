@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="${basePath}/css/sciencemain.css" media="all" />
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
+  <script src="${basePath}/js/echarts.min.js"></script>
 </head>
 <body class="sciencebody">
 <div class="main">
@@ -28,31 +29,40 @@
 		  		<div class="itemtitle">
 		  			科研成果总览
 		  		</div>
-		  		<div class="itemcontent"></div>
+		  		<div class="itemcontent">
+		  			<div id="pandect" class="pandect" style="margin:0px auto;margin-top:10px;width:95%;height:250px;"></div>
+		  		</div>
 		  	</div>
 		  	<div class="item">
 		  		<div class="itemtitle">
-		  			科研成果总览
+		  			科研成果信息
 		  		</div>
-		  		<div class="itemcontent"></div>
+		  		<div class="itemcontent">
+		  			<div id="information" class="information" style="margin:0px auto;margin-top:10px;width:95%;height:250px;"></div>
+		  		</div>
 		  	</div>
 		  </div>
 		  <div class="col-md-6">
 		  	<div class="item">
 		  		<div class="itemtitle">
-		  			科研成果总览
+		  			数据总量
 		  		</div>
-		  		<div class="itemcontent"></div>
+		  		<div class="itemcontent">
+		  			<div id="totalData" class="total" style="margin:0px auto;margin-top:10px;width:95%;height:250px;"></div>
+		  		</div>
 		  	</div>
 		  	<div class="item">
 		  		<div class="itemtitle">
-		  			科研成果总览
+		  			政府资助
 		  		</div>
-		  		<div class="itemcontent"></div>
+		  		<div class="itemcontent">
+		  			<div id="government" class="government" style="margin:0px auto;margin-top:10px;width:95%;height:250px;"></div>
+		  		</div>
 		  	</div>
 		  </div>
 		</div>
 	</div>
 </div>
+<script src="${basePath}/js/scichars.js"></script>
 </body>
 </html>

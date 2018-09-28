@@ -59,8 +59,7 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
-/* var patName=${param.patName}; */
-console.log(userID+"id与步骤"+step+"sdfgsdfg${param.patName}");
+console.log(userID+"id与步骤"+step+"sdfgsdfg${param.patName}+上传参数${param.insertype}");
 
 layui.use('table', function(obj){
 	console.log(obj);
