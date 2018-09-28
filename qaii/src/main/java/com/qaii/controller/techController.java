@@ -62,8 +62,13 @@ public class techController {
 	}
 	//专利资料审查文件预览界面
 	@RequestMapping("patentData.do")
-	public String patentData(){
-		return "page/science/patent/patentData";
+	public ModelAndView patentData(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("patName").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("patAuthor").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("patPublishtime").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("userId").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/patent/patentData", "utflist", result);
 	}
 	//专利资料审查文件流程添加界面
 		@RequestMapping("patentDataAdd.do")
@@ -112,7 +117,6 @@ public class techController {
 		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
-		System.out.println(result);
 		return new ModelAndView("page/science/brand/brandData", "utflist", result);
 	}
 	//商标资料审查文件流程添加界面
