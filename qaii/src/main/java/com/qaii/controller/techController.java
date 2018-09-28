@@ -125,10 +125,45 @@ public class techController {
 	public String create(){
 		return "page/science/create";
 	}
-	//科研项目
+	//纵向课题
 	@RequestMapping("research.do")
 	public String research(){
-		return "page/science/research";
+		return "page/science/research/research";
+	}
+	//纵向课题添加界面
+	@RequestMapping("researchAdd.do")
+	public String researchAdd(){
+		return "page/science/research/researchAdd";
+	}
+	//纵向课题查看详情界面
+	@RequestMapping("researchCheck.do")
+	public String researchCheck(){
+		return "page/science/research/researchCheck";
+	}
+	//纵向课题修改界面
+	@RequestMapping("researchEdit.do")
+	public String researchEdit(){
+		return "page/science/research/researchEdit";
+	}
+	//纵向课题资料审查界面
+	@RequestMapping("researchProcess.do")
+	public String researchProcess(){
+		return "page/science/research/researchProcess";
+	}
+	//纵向课题资料审查文件预览界面
+	@RequestMapping("researchData.do")
+	public String researchData(){
+		return "page/science/research/researchData";
+	}
+	//纵向课题资料审查文件流程添加界面
+	@RequestMapping("researchDataAdd.do")
+	public String researchDataAdd(){
+		return "page/science/research/researchDataAdd";
+	}
+	//纵向课题资料审查文件添加界面
+	@RequestMapping("researchDataAddFile.do")
+	public String researchDataAddFile(){
+		return "page/science/research/researchDataAddFile";
 	}
 	//科技奖励
 	@RequestMapping("award.do")
