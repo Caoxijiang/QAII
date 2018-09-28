@@ -33,9 +33,9 @@ public class ProcessimgServiceImpl implements ProcessimgService{
 	}
 
 	@Override
-	public int updataProcessInfo(Integer id) {
+	public int updataProcessInfo(Processimg img) {
 		// TODO Auto-generated method stub
-		return processimgMapper.updataProcessInfo(id);
+		return processimgMapper.updataProcessInfo(img);
 	}
 
 

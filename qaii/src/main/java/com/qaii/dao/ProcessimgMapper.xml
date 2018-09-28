@@ -6,13 +6,14 @@
     <result column="sid" property="sid" jdbcType="INTEGER" />
     <result column="path" property="path" jdbcType="VARCHAR" />
     <result column="oid" property="oid" jdbcType="VARCHAR" />
+     <result column="name" property="name" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id,oid,sid,path
   </sql>
 	<insert id="insert" parameterType="com.qaii.domain.Processimg">
-		insert into sci_processimg(oid,sid,path) 
-			values(#{oid,jdbcType=INTEGER},#{sid,jdbcType=INTEGER},#{path,jdbcType=VARCHAR})
+		insert into sci_processimg(oid,sid,path,name) 
+			values(#{oid,jdbcType=INTEGER},#{sid,jdbcType=INTEGER},#{path,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR})
 	</insert>	
 	<select id="selectProimgList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
 		select * from sci_processimg where sid=#{sid,jdbcType=INTEGER}
@@ -23,8 +24,8 @@
 	    	#{id,jdbcType=INTEGER}
 	  </foreach>
 	</delete>
-	<update id="updataProcessInfo" parameterType="java.lang.Integer">
-		updata from sci_processimg set sid=#{sid,jdbcType=INTEGER},path=#{path,jdbcType=VARCHAR}
+	<update id="updataProcessInfo" parameterType="com.qaii.domain.Processimg">
+		updata from sci_processimg set sid=#{sid,jdbcType=INTEGER},path=#{path,jdbcType=VARCHAR},name=#{name,jdbcType=VARCHAR}
 		where id=#{id,jdbcType=INTEGER}
 	</update>
 	

@@ -71,7 +71,7 @@ layui.use('table', function(obj){
 	    ,cols: [[ //表头
 	    	{type: 'checkbox'}
 	      ,{field: 'id', type:'numbers',title: '序号', width:80}
-	      ,{field: 'path', title: '文件名'}
+	      ,{field: 'name', title: '文件名'}
 	      ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
 	    ]],
 	    limit: 999999,
@@ -154,7 +154,7 @@ layui.use('table', function(obj){
 		    layer.open({
 	    	  type:1,
 			  title:"重新上传文件",
-			  content:'<form action="" method="post">'+
+			  content:'<form action="processupload.do" method="post">'+
 			  '<input type="file" name="file" id="path">'+
 			  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 			});

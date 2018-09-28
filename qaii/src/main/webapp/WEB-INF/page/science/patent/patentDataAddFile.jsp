@@ -52,9 +52,10 @@ layui.use('upload', function(){
     ,multiple: true
     ,auto: false
     ,data: {
-    	  oid:userID,
-        step:step,
-        patName:patName
+	    	oid:userID,
+	        step:step,
+	        patName:patName,
+	        type:"insert"
     		}
     ,bindAction: '#testListAction'
     ,choose: function(obj){   
