@@ -74,7 +74,7 @@ $(function(){
 			});
 		}); 
 	});
-	$(document).on('click','.patentFile',function(){
+	$(document).on('click','.brandFile',function(){
 		//获取当前页面对步骤数的标识，标识放于name中，命名方式为id+_+步骤数，如20_1
 		var stepnum="";
 		stepnum=$(this).attr("name");

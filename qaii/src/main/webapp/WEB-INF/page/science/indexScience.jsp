@@ -30,7 +30,17 @@
 		  			科研成果总览
 		  		</div>
 		  		<div class="itemcontent">
-		  			<div id="pandect" class="pandect" style="margin:0px auto;margin-top:10px;width:95%;height:250px;"></div>
+		  			<div id="pandect" class="charsBox">
+		  				<div class="itemBox" id="PatentBox">
+		  					<canvas id="totalPatent" class="itemCanvas"></canvas>
+		  					<div class="itmeTitle">专利总数</div>
+		  					<div class="line">
+		  						<div class="itmeline"></div>
+		  						<div class="itmelineb"></div>
+		  					</div>
+		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  				</div>
+		  			</div>
 		  		</div>
 		  	</div>
 		  	<div class="item">
@@ -38,7 +48,7 @@
 		  			科研成果信息
 		  		</div>
 		  		<div class="itemcontent">
-		  			<div id="information" class="information" style="margin:0px auto;margin-top:10px;width:95%;height:250px;"></div>
+		  			<div id="information" class="charsBox"></div>
 		  		</div>
 		  	</div>
 		  </div>
@@ -48,7 +58,7 @@
 		  			数据总量
 		  		</div>
 		  		<div class="itemcontent">
-		  			<div id="totalData" class="total" style="margin:0px auto;margin-top:10px;width:95%;height:250px;"></div>
+		  			<div id="totalData" class="charsBox"></div>
 		  		</div>
 		  	</div>
 		  	<div class="item">
@@ -56,7 +66,207 @@
 		  			政府资助
 		  		</div>
 		  		<div class="itemcontent">
-		  			<div id="government" class="government" style="margin:0px auto;margin-top:10px;width:95%;height:250px;"></div>
+		  			<div id="government" class="charsBox">
+		  				<div class="tabbox">
+		  					<ul class="fundingTabUl">
+		  						<li class="fundingTab" name="research">科研项目</li>
+		  						<li class="fundingTab active" name="create">创新平台</li>
+		  						<li class="fundingTab" name="funding">基金</li>
+		  						<li class="fundingTab" name="award">科技奖励</li>
+		  					</ul>
+		  					<a href="science.do"><div class="fundingMor">查看更多+</div></a>
+		  				</div>
+		  				<div>
+			  				<!-- tab-科研项目界面 -->			
+			  				<div id="research" style="display:none;">
+			  					<table class="govTable">
+			  						<tr>
+			  							<th>来源</th>
+			  							<th>课题项目名称</th>
+			  							<th>立项编号及时间</th>
+			  							<th>资助金额（万元）</th>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  					</table>
+			  				</div><!-- tab-科研项目界面  结束-->
+			  				<!-- tab-创新平台界面 -->
+			  				<div id="create">
+			  					<table class="govTable">
+			  						<tr>
+			  							<th>来源</th>
+			  							<th>平台名称</th>
+			  							<th>立项编号及时间</th>
+			  							<th>资助金额（万元）</th>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  					</table>
+			  				</div><!-- tab-创新平台界面  结束-->
+			  				<!-- tab-基金界面 -->
+			  				<div id="funding" style="display:none;">
+			  					<table class="govTable">
+			  						<tr>
+			  							<th>来源</th>
+			  							<th>基金名称</th>
+			  							<th>批复时间</th>
+			  							<th>基金资助额度</th>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  					</table>
+			  				</div><!-- tab-基金界面  结束-->
+			  				<!-- tab-科技奖励界面 -->
+			  				<div id="award" style="display:none;">
+			  					<table class="govTable">
+			  						<tr>
+			  							<th>来源</th>
+			  							<th>获奖名称</th>
+			  							<th>获奖时间</th>
+			  							<th>奖励金额</th>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  						<tr>
+			  							<td>平行工作室</td>
+			  							<td>《智能车科技》</td>
+			  							<td>2018-08-20</td>
+			  							<td>3000</td>
+			  						</tr>
+			  					</table>
+			  				</div><!-- tab-科技奖励界面  结束-->
+			  			</div><!-- 政府资助表格内容集合 -->
+		  			</div>
 		  		</div>
 		  	</div>
 		  </div>
@@ -64,5 +274,9 @@
 	</div>
 </div>
 <script src="${basePath}/js/scichars.js"></script>
+<script type="text/javascript">
+/* circle(boxid,id,color,total,num);//boxid为各个板块id值,id为canvas的id值,color为基本外圆颜色值,total为圆铺满总量,num为数据量 */
+circle("PatentBox","totalPatent","#ea8a27",660,165);
+</script>
 </body>
 </html>
