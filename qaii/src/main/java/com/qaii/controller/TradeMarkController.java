@@ -27,11 +27,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.qaii.domain.PatProcess;
+import com.qaii.domain.Processimg;
+import com.qaii.domain.Trademarkprocessfile;
 import com.qaii.domain.Trademark;
 import com.qaii.domain.TrademarkImg;
+import com.qaii.domain.Trademarkprocess;
+import com.qaii.domain.Trademarkprocessfile;
 import com.qaii.domain.Trademark;
 import com.qaii.service.TradeMarkService;
 import com.qaii.service.TrademarkImgService;
+import com.qaii.service.TrademarkProcessFileService;
+import com.qaii.service.TrademarkProcessService;
 import com.qaii.util.AlertException;
 import com.qaii.util.CustomException;
 import com.qaii.util.JsonResult;
@@ -43,6 +50,10 @@ public class TradeMarkController {
 	private TradeMarkService trademarkService;
 	@Resource
 	private TrademarkImgService tradeimgService;
+	@Resource
+	private TrademarkProcessService processService;
+	@Resource
+	private TrademarkProcessFileService processfileService;
 	
 	//获取所有商标信息
 	@RequestMapping(value="getAllTradeMarkMsg.do",method=RequestMethod.POST)
@@ -310,5 +321,156 @@ public class TradeMarkController {
 	    	result.put("msg", "上传失败");
 		}
 	}  
+	
+	//添加商标资料审核流程信息
+  	@RequestMapping(value="addtradeProcess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+  	@ResponseBody
+  	public JsonResult addProcessInfo(HttpServletRequest req,Trademarkprocess patp) {
+  		patp.setPid(Integer.parseInt(req.getParameter("pid")));
+  		patp.setDescription(req.getParameter("description"));
+  		patp.setTitle(req.getParameter("title"));
+  		patp.setTime(req.getParameter("time"));
+  		int row = processService.addProcess(patp);
+      	if(row!=0) {
+      		return  new JsonResult(row);
+      	}else {
+      		return  new JsonResult();
+      		
+      	}
+  	}
+  	
+  	//显示所有商标审核流程信息
+  	@ResponseBody
+  	@RequestMapping(value="getTradeProcess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+  	public JsonResult findAllProcessInfo(HttpServletRequest req) {
+  		
+  		Integer pid=Integer.parseInt(req.getParameter("id"));
+  		
+  		List<Trademarkprocess>list=processService.getAllMsgBypid(pid);
+      	if(list!=null) {
+      		return  new JsonResult(list);
+      	}else {
+      		return  new JsonResult();
+      		
+      	}
+  	}
+	
+  	//审核资料上传
+  	@ResponseBody
+	@RequestMapping("/tradeprocessupload.do")
+	public Map<String, String> processupload(@RequestParam("file") MultipartFile[] files, Trademarkprocessfile img,
+			HttpServletRequest req) throws Exception {
+		// System.out.println(request.getParameter("name"));
+		String insertype=req.getParameter("type");
+		Integer oid = Integer.parseInt(req.getParameter("oid"));
+		Integer stepid = Integer.parseInt(req.getParameter("step"));
+		String tradmDept = new String(req.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8");
+		tradmDept=tradmDept.toString();
+		Map<String, String> result = new HashMap<>();
+		if (files != null && files.length < 0) {
+			result.put("code", "1");
+			result.put("msg", "文件为空");
+		}
+
+		for (int i = 0; i < files.length; i++) {
+			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
+			 
+			 String name=files[i].getOriginalFilename();
+			// 取文件格式后缀名
+			//String type = files[i].getOriginalFilename();
+			 
+			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+			 
+			String filename = uuid + type;// 取当前时间戳作为文件名
+
+			// String path = request.getSession().getServletContext().getRealPath("/upload/"
+			// + filename);// 存放位置
+			String path = "C:/File/img/TradeMarkFile/" + tradmDept + "/" + oid + "/" + stepid;
+			String dbpath="img/"+tradmDept + "/" + oid + "/" + stepid;
+			System.out.println("++++++" + path);
+			File destFile = new File(path + "/" + filename);
+
+			if (!destFile.getParentFile().exists()) {
+				destFile.getParentFile().mkdirs();
+			}
+			try {
+				// FileUtils.copyInputStreamToFile(files[i].getInputStream(), destFile);//
+				// 复制临时文件到指定目录下
+				files[i].transferTo(destFile);
+				img.setSid(stepid);
+				img.setOid(oid);
+				img.setPath(dbpath.toString()+"/"+filename.toString());
+				img.setName(name);
+				
+				if(insertype.equals("insert")) {
+					InsertTrademarkprocessfile(img,result, destFile);
+					result.put("code", "0");
+					result.put("msg", "上传成功");
+					result.put("url", destFile.getPath());
+				}else if(insertype.equals("update")) {
+					updataTrademarkprocessfile(img,result, destFile);
+					result.put("code", "0");
+					result.put("msg", "上传成功");
+					result.put("url", destFile.getPath());
+				}
+				
+
+			} catch (IOException e) {
+				e.printStackTrace();
+				result.put("code", "1");
+				result.put("msg", "上传失败");
+			}
+		}
+
+		return result;
+
+	}
+  	
+  	private void InsertTrademarkprocessfile(Trademarkprocessfile img, Map<String, String> result, File dest) {
+		int row=processfileService.insertMsg(img);
+		if(row > 0) {
+			result.put("code", "0");
+			result.put("msg", "上传成功");
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	} 
+  	
+  	private void updataTrademarkprocessfile(Trademarkprocessfile img, Map<String, String> result, File dest) {
+		int row=processfileService.updateMsg(img);
+		if(row > 0) {
+			result.put("code", "0");
+			result.put("msg", "上传成功");
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	} 
+  	
+  	//显示流程文件列表
+  	@ResponseBody
+	@RequestMapping(value="gettrademarkfile.do",produces="application/json;charset=UTF-8")
+	public Layui findProessimg(HttpServletRequest req) {
+		Integer sid=Integer.parseInt(req.getParameter("sid"));
+		List<Trademarkprocessfile>img=processfileService.getAllMsg(sid);
+		int count =img.size();
+		
+		return Layui.data(count, img);
+
+	}
+  	
+  	//删除流程文件
+  	@ResponseBody
+	@RequestMapping(value="delltradefile.do",produces="application/json;charset=UTF-8")
+	public JsonResult dellProessimg(@RequestParam(value = "requestDate[]") Integer[] id) {
+		int row=processfileService.deleteByPrimaryKey(id);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+	}
 
 }

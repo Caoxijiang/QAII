@@ -107,8 +107,12 @@ public class techController {
 	}
 	//商标资料审查界面
 	@RequestMapping("brandProcess.do")
-	public String brandProcess(){
-		return "page/science/brand/brandProcess";
+	public ModelAndView brandProcess(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/brand/brandProcess", "utflist", result);
 	}
 	//商标资料审查文件预览界面
 	@RequestMapping("brandData.do")

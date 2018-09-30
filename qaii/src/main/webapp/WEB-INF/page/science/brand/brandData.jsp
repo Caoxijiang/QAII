@@ -46,7 +46,7 @@
 <div class="layui-container addtop"> 
 	<div class="datacontent">
 		<div class="datatitle">
-			<span class="dataname">&nbsp;&nbsp;&nbsp;&nbsp;专利所属部门《&nbsp;${requestScope.utflist[0]}&nbsp;》</span>
+			<span class="dataname"} >&nbsp;&nbsp;&nbsp;&nbsp;商标所属部门《&nbsp;${requestScope.utflist[0]}&nbsp;》</span>
 			<span class="inventor">申请人：${requestScope.utflist[1]}</span>
 			<span class="datadate">注册日期：${requestScope.utflist[2]}&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>
@@ -65,6 +65,7 @@
 //获取专利主界面传递过来的数据id
 var userID="";
 userID=${param.userId};
+var tradmDept="${requestScope.utflist[0]}";
 $(function(){
 	$(document).on('click','#test3',function(){
 		layui.use('layer', function(){
@@ -76,7 +77,7 @@ $(function(){
 			});
 		}); 
 	});
-	$(document).on('click','.patentFile',function(){
+	$(document).on('click','.brandFile',function(){
 		//获取当前页面对步骤数的标识，标识放于name中，命名方式为id+_+步骤数，如20_1
 		var stepnum="";
 		stepnum=$(this).attr("name");
@@ -85,7 +86,7 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['600px', '450px'],
-				content: 'brandDataAddFile.do?userId='+userID+"&step='"+stepnum+"'"
+				content: 'brandDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&tradmDept='"+tradmDept+"'"
 			});
 		}); 
 	});
@@ -99,7 +100,7 @@ $(function(){
 		$(document).on('click','.brandProcess',function(){
 			var stepnum="";
 			stepnum=$(this).attr("name");
-			$("body", parent.document).find('iframe').attr('src','brandProcess.do?userId='+userID+'&step='+stepnum+'&tradmRegistertime=${param.tradmRegistertime}&tradmDept=${param.tradmDept}&tradmApplyper=${param.tradmApplyper}');
+			$("body", parent.document).find('iframe').attr('src','brandProcess.do?userId='+userID+'&step='+stepnum+'&tradmRegistertime=${requestScope.utflist[2]}&tradmDept=${requestScope.utflist[0]}&tradmApplyper=${requestScope.utflist[1]}');
 		});
 	});
 </script>

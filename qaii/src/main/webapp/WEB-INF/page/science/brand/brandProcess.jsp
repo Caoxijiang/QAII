@@ -41,7 +41,7 @@
 	  	<i class="layui-icon layui-icon-download-circle"></i>下载
 	  </button>
 	</div>
-	<button onclick="srchange('brandData.do?userId=${param.userId}&step=${param.step}&tradmRegistertime=${param.tradmRegistertime}&tradmDept=${param.tradmDept}&tradmApplyper=${param.tradmApplyper}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('brandData.do?userId=${param.userId}&step=${param.step}&tradmRegistertime=${requestScope.utflist[2]}&tradmDept=${requestScope.utflist[0]}&tradmApplyper=${requestScope.utflist[1]}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -62,24 +62,21 @@ var step=${param.step};
 /* var patName=${param.patName}; */
 console.log(userID+"id与步骤"+step+"sdfgsdfg${param.tradmRegistertime}");
 
-layui.use('table', function(){
+layui.use('table', function(obj){
 	  var table = layui.table;
 	  table.render({
 	    elem: '#demo'
 	    /* ,url: '/demo/table/user/' //数据接口 */
+	    ,url: 'gettrademarkfile.do?sid'+"="+step
 	    ,page: false//开启分页
 	    ,cols: [[ //表头
 	    	{type: 'checkbox'}
 	      ,{field: 'id', type:'numbers',title: '序号', width:80}
-	      ,{field: 'filename', title: '文件名'}
+	      ,{field: 'name', title: '文件名'}
 	      ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
 	    ]],
 	    limit: 999999,
-	    data:[{id:"1",filename:"http://localhost:8083/img/11.jpg"},
-	    	{id:"1",filename:"http://localhost:8083/img/222.pdf"},
-	    	{id:"1",filename:"http://localhost:8083/img/444.xlsx"},
-	    	{id:"1",filename:"http://localhost:8083/img/333xls.xls"}
-	    	]
+	    data:obj
 	  });
 	//监听表格复选框选择
 	  table.on('checkbox(test)', function(obj){
@@ -119,8 +116,23 @@ layui.use('table', function(){
 	    //console.log(obj)
 	    if(obj.event === 'del'){
 	      layer.confirm('真的删除行么', function(index){
-	        obj.del();
-	        layer.close(index);
+	    	  let arr=[data.id];
+	          $.post({
+	          	url:"delltradefile.do",
+	          	data:{
+	          		"requestDate" : arr
+	          	},
+	          	success:function(data){
+	          		if(data.data){
+	          		    //删除对应行（tr）的DOM结构
+	          			obj.del();
+	          			layer.close(index);
+	          		}else{
+	          			layer.alert("删除失败")
+	          		}
+	          		
+	          	}
+	          }) 
 	      });
 	    } else if(obj.event === 'online'){//在线预览，暂支持图片和pdf形式
 	    	var address=data.filename;

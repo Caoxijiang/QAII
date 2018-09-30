@@ -37,6 +37,7 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
+var tradmDept=${param.tradmDept};
 console.log(userID+"id与步骤"+step);
 
 layui.use('upload', function(){
@@ -46,10 +47,16 @@ layui.use('upload', function(){
   var demoListView = $('#demoList')
   ,uploadListIns = upload.render({
     elem: '#testList'
-    ,url: '/upload/'//文件上传接口
+    ,url: 'tradeprocessupload.do'//文件上传接口
     ,accept: 'file'
     ,multiple: true
     ,auto: false
+    ,data: {
+    	oid:userID,
+        step:step,
+        tradmDept:tradmDept,
+        type:"insert"
+		}
     ,bindAction: '#testListAction'
     ,choose: function(obj){   
       var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列

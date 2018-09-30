@@ -79,7 +79,10 @@
  
  
  
-        <table tableName="sci_trademarkimg" domainObjectName="TrademarkImg" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="sci_trademarkprocess" domainObjectName="Trademarkprocess" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="sci_trademarkprocessfile" domainObjectName="Trademarkprocessfile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         
