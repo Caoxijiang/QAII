@@ -274,14 +274,14 @@ public class TradeMarkController {
   //  String fileName=file.getOriginalFilename();
     int size=(int)file.getSize();
   //  System.out.println(fileName+":---"+size);
-    String path="C:/File/img/TradeMark";
+    String path="C:/File/img/TradeMark/Symbol";
     File dest =new File(path+"/"+fileName);
     if(!dest.getParentFile().exists()) {
     	dest.getParentFile().mkdirs();
     }
     try {
 		file.transferTo(dest);//保存文件
-		trade.setPath("/img/TradeMark/"+fileName);
+		trade.setPath("/img/TradeMark/Symbol/"+fileName);
 		InserttradeImg(trade, result, dest);
 		result.put("code", "0");
 		result.put("msg", "上传成功");
@@ -365,7 +365,6 @@ public class TradeMarkController {
 		Integer oid = Integer.parseInt(req.getParameter("oid"));
 		Integer stepid = Integer.parseInt(req.getParameter("step"));
 		String tradmDept = new String(req.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8");
-		tradmDept=tradmDept.toString();
 		Map<String, String> result = new HashMap<>();
 		if (files != null && files.length < 0) {
 			result.put("code", "1");
@@ -385,8 +384,8 @@ public class TradeMarkController {
 
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
-			String path = "C:/File/img/TradeMarkFile/" + tradmDept + "/" + oid + "/" + stepid;
-			String dbpath="img/"+tradmDept + "/" + oid + "/" + stepid;
+			String path = "C:/File/img/TradeMark/File/" + tradmDept + "/" + oid + "/" + stepid;
+			String dbpath="img/TradeMark/File/"+tradmDept + "/" + oid + "/" + stepid;
 			System.out.println("++++++" + path);
 			File destFile = new File(path + "/" + filename);
 
@@ -473,4 +472,17 @@ public class TradeMarkController {
     	}
 	}
 
+  	//重新上传流程文件
+  	@ResponseBody
+	@RequestMapping(value="uptradefile.do",produces="application/json;charset=UTF-8")
+	public JsonResult updataProessimg(@RequestParam(value = "requestDate") Trademarkprocessfile img) {
+		
+		int row=processfileService.updateMsg(img);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+	}
 }

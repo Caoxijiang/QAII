@@ -162,8 +162,11 @@ public class PatentController {
 			HttpServletRequest req) throws Exception {
 		// System.out.println(request.getParameter("name"));
 		String insertype=req.getParameter("type");
+		//项目id
 		Integer oid = Integer.parseInt(req.getParameter("oid"));
+		//步骤id
 		Integer stepid = Integer.parseInt(req.getParameter("step"));
+		//项目名称
 		String patName = req.getParameter("patName");
 		System.out.println(files);
 		Map<String, String> result = new HashMap<>();
@@ -198,17 +201,20 @@ public class PatentController {
 				// FileUtils.copyInputStreamToFile(files[i].getInputStream(), destFile);//
 				// 复制临时文件到指定目录下
 				files[i].transferTo(destFile);
-				img.setSid(stepid);
-				img.setOid(oid);
-				img.setPath(dbpath.toString()+"/"+filename.toString());
-				img.setName(name);
-				
 				if(insertype.equals("insert")) {
+					img.setSid(stepid);
+					img.setOid(oid);
+					img.setPath(dbpath.toString()+"/"+filename.toString());
+					img.setName(name);
 					InsertProcessimg(img,result, destFile);
 					result.put("code", "0");
 					result.put("msg", "上传成功");
 					result.put("url", destFile.getPath());
 				}else if(insertype.equals("update")) {
+					Integer id=Integer.parseInt(req.getParameter("id"));
+					img.setPath(dbpath.toString()+"/"+filename.toString());
+					img.setName(name);
+					img.setId(id);
 					updataProcessimg(img,result, destFile);
 					result.put("code", "0");
 					result.put("msg", "上传成功");

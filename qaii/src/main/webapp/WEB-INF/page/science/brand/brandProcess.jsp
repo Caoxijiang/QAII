@@ -41,7 +41,7 @@
 	  	<i class="layui-icon layui-icon-download-circle"></i>下载
 	  </button>
 	</div>
-	<button onclick="srchange('brandData.do?userId=${param.userId}&step=${param.step}&tradmRegistertime=${requestScope.utflist[2]}&tradmDept=${requestScope.utflist[0]}&tradmApplyper=${requestScope.utflist[1]}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('brandData.do?userId=${param.userId}&step=${param.step}&tradmRegistertime=${requestScope.utflist[2]}&tradmDept=&tradmApplyper=${requestScope.utflist[1]}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -59,6 +59,7 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
+var tradmDept="${param.tradmDept}";
 /* var patName=${param.patName}; */
 console.log(userID+"id与步骤"+step+"sdfgsdfg${param.tradmRegistertime}");
 
@@ -80,7 +81,6 @@ layui.use('table', function(obj){
 	  });
 	//监听表格复选框选择
 	  table.on('checkbox(test)', function(obj){
-	    console.log(obj)
 	  }); 
 	//监听头部操作选项
 	  var $ = layui.$, active = {
@@ -135,7 +135,7 @@ layui.use('table', function(obj){
 	          }) 
 	      });
 	    } else if(obj.event === 'online'){//在线预览，暂支持图片和pdf形式
-	    	var address=data.filename;
+	    	var address=data.path;
 	    	var reg1=new RegExp("jpg","i");
 	    	var reg2=new RegExp("pdf","i");
 	    	var reg3=new RegExp("png","i");
@@ -145,15 +145,21 @@ layui.use('table', function(obj){
 	    		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
 	    	};
 	    }else if(obj.event === 'download'){//文件下载
-	    	var address=data.filename;
+	    	var address=data.path;
 	    		download(address);
 		}else if(obj.event === 'upload'){//文件重新上传
 			var address=data.filename;
+			var id=data.id;
 		    layer.open({
 	    	  type:1,
 			  title:"重新上传文件",
-			  content:'<form action="" method="post">'+
-			  '<input type="file" name="file" id="filename">'+
+			  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
+			  '<input type="file" name="file" id="path">'+
+			  '<input type="hidden" name="oid" id="oid" value="'+userID+'">'+
+			  '<input type="hidden" name="step" id="id" value="'+step+'">'+
+			  '<input type="hidden" name="type" id="type" value="update">'+
+			  '<input type="hidden" name="tradmDept" id="tradmDept" value="'+tradmDept+'">'+
+			  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 			  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 			});
 		}//事件监听
