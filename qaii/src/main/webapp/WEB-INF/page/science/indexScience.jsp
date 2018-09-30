@@ -40,6 +40,42 @@
 		  					</div>
 		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
 		  				</div>
+		  				<div class="itemBox" id="PatentBox">
+		  					<canvas id="totalSoft" class="itemCanvas"></canvas>
+		  					<div class="itmeTitle">软著总数</div>
+		  					<div class="line">
+		  						<div class="itmeline"></div>
+		  						<div class="itmelineb"></div>
+		  					</div>
+		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  				</div>
+		  				<div class="itemBox" id="PatentBox">
+		  					<canvas id="totalBrand" class="itemCanvas"></canvas>
+		  					<div class="itmeTitle">商标总数</div>
+		  					<div class="line">
+		  						<div class="itmeline"></div>
+		  						<div class="itmelineb"></div>
+		  					</div>
+		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  				</div>
+		  				<div class="itemBox" id="PatentBox">
+		  					<canvas id="totalPaper" class="itemCanvas"></canvas>
+		  					<div class="itmeTitle">论文总数</div>
+		  					<div class="line">
+		  						<div class="itmeline"></div>
+		  						<div class="itmelineb"></div>
+		  					</div>
+		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  				</div>
+		  				<div class="itemBox" id="PatentBox">
+		  					<canvas id="totalWork" class="itemCanvas"></canvas>
+		  					<div class="itmeTitle">著作总数</div>
+		  					<div class="line">
+		  						<div class="itmeline"></div>
+		  						<div class="itmelineb"></div>
+		  					</div>
+		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  				</div>
 		  			</div>
 		  		</div>
 		  	</div>
@@ -277,6 +313,10 @@
 <script type="text/javascript">
 /* circle(boxid,id,color,total,num);//boxid为各个板块id值,id为canvas的id值,color为基本外圆颜色值,total为圆铺满总量,num为数据量 */
 circle("PatentBox","totalPatent","#ea8a27",660,165);
+circle("PatentBox","totalSoft","#ea8a27",660,165);
+circle("PatentBox","totalBrand","#ea8a27",660,165);
+circle("PatentBox","totalPaper","#3db4e3",660,165);
+circle("PatentBox","totalWork","#3db4e3",660,165);
 </script>
 </body>
 </html>
