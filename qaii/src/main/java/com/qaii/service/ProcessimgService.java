@@ -11,5 +11,5 @@ public interface ProcessimgService {
 	
 	int deleteByPrimaryKey(Integer[] id);
 	
-	int updataProcessInfo(Integer id);
+	int updataProcessInfo(Processimg img);
 }

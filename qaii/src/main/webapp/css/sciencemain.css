@@ -3,13 +3,14 @@ body,html,div,li,ul,dt,dd{
 	margin:0px;
 	padding:0px;
 	border:none;
+	font-size:16px;
 }
 ul,li{
 	liststyle:none;
 }
 .sciencebody{
 	width: 100%;
-    min-width: 1200px;
+    min-width: 75em;
     height: 100vh !important;
     background: #011039;
     background-image: url(../image/sciencebg.jpg);
@@ -20,15 +21,15 @@ ul,li{
 .main{
 	background-image: url(../image/science.png);
 	width: 100%;
-    min-width: 1200px;
+    min-width: 75em;
     height: 100vh !important;
     background-size: contain;
     background-repeat: no-repeat;
     background-position:center;
 }
 .sciNav{
-	right:150px;
-	top:20px;
+	right:9.375em;
+	top:1.25em;
 	position: absolute;
 }
 .pageTo {
