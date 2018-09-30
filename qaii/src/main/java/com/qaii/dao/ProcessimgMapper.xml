@@ -25,7 +25,8 @@
 	  </foreach>
 	</delete>
 	<update id="updataProcessInfo" parameterType="com.qaii.domain.Processimg">
-		updata from sci_processimg set sid=#{sid,jdbcType=INTEGER},path=#{path,jdbcType=VARCHAR},name=#{name,jdbcType=VARCHAR}
+		update sci_processimg set path=#{path,jdbcType=VARCHAR}, 
+		name=#{name,jdbcType=VARCHAR} 
 		where id=#{id,jdbcType=INTEGER}
 	</update>
 	
