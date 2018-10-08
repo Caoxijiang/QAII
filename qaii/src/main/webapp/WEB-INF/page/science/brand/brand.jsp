@@ -301,6 +301,10 @@ layui.use('table', function(obj){
     }else if(layEvent==="datac"){
     	//userid为当前记录id值，将会传到资料审查界面
     	var iframesrc="brandData.do?userId='"+data.id+"'&tradmDept="+data.tradmDept+"&tradmApplyper="+data.tradmApplyper+"&tradmRegistertime="+data.tradmRegistertime;
+    	url=encodeURI(iframesrc);
+    	url=encodeURI(url);
+    	
+    	console.log(url);
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }
   });

@@ -6,7 +6,7 @@ $().ready(function(){
 		return;
 	}
 	$.post({
-		url:"findAllProcessInfo.do",
+		url:"getTradeProcess.do",
 		data:{
 			id:id,
 		},
