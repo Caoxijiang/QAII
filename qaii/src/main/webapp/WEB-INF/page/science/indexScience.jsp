@@ -12,8 +12,9 @@
   <link rel="stylesheet" href="${basePath}/css/sciencemain.css" media="all" />
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
   <script src="${basePath}/js/echarts.min.js"></script>
+  <script src="${basePath}/js/main.js"></script>
 </head>
-<body class="sciencebody">
+<body class="mainbody">
 <div class="main">
 	<div class="sciNav">
 		<a href="science.do"><div class="pageTo">进入系统</div></a>
@@ -65,7 +66,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  					<div class="itmeText">论文：XXX篇<br />&nbsp;</div>
 		  				</div>
 		  				<div class="itemBox" id="PatentBox">
 		  					<canvas id="totalWork" class="itemCanvas"></canvas>
@@ -74,7 +75,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  					<div class="itmeText">著作：XXX部<br />&nbsp;</div>
 		  				</div>
 		  			</div>
 		  		</div>
