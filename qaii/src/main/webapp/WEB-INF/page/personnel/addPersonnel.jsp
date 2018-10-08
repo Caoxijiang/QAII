@@ -438,6 +438,14 @@ upload.render({
 <script type="text/javascript">
 	$(function() {
 		$(".export").click(function(){
+			var num=$("[data-field='empIdcard']").length;
+			for(i=1;i<num;i++){
+				var str=$("[data-field='empIdcard']:eq("+i+")").text();
+				str="'"+str;
+				$("[data-field='empIdcard']:eq("+i+")").text(str);
+				
+			}
+			
 			$(".layui-table-fixed tr").addClass("noExl");
 			$(".layui-table-fixed th").addClass("noExl");
 			$(".table2excel").table2excel({

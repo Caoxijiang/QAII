@@ -77,7 +77,7 @@
 </div>
 </div>  
 <!-- 数据展示主表格-->
-<div class="table2excel conternbox">
+<div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
  <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.sisSubject}}'" target="_blank" method="post" id="chex">查看详情</a> -->
