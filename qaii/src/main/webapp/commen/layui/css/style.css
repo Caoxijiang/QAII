@@ -3,11 +3,15 @@
 /*******************************/
 /*** 数据可视化根据屏幕相应 ***/
 @media screen and (max-width: 1400px) {
-	 *{font-size:16px !important;}
+	 *{font-size:14px !important;}
     }
 
 @media screen and (max-width: 1300px){
-	
+	.layui-table-body{
+		height: -moz-calc( 100vh - 205px );
+	    height: -webkit-calc( 100vh - 205px ); 
+	    height: calc( 100vh - 205 px )
+	}
 	.layui-layout-admin .layui-side {
 	    top: 70px;
 	    width: 200px;
@@ -58,26 +62,26 @@
 	    position: fixed;
 	    top: 0px;
 	    width: 100%;
-	    padding-left: 45px;
+	    padding-left: 25px;
 	    background: #1b2032;
 	    height: 50px;
 	    line-height: 50px;
 	    z-index: 100;
 	}
 	.tool .limit {
-	    font-size: 18px;
+	    font-size: 16px;
 	    color: #fff;
 	    vertical-align: middle;
 	}
 	.action {
 	    margin-top: 50px;
-	    padding: 10px 40px 5px 40px;
+	    padding: 10px 20px 5px 20px;
 	    background: #eef1f4;
 	    /* width: 100%; */
 	    overflow:auto;
 	}
 	.act{
-	width:1570px;}
+		width:1570px;}
 	.export {
 		margin-top: 7.5px !important;
 	    background: #64ad30;
@@ -146,8 +150,8 @@
 	    font-size: 16px;
 	}
 	.layui-table-cell {
-	    height: 45px;
-	    line-height: 45px;
+	    height: 20px;
+	    line-height: 20px;
 	    padding: 0 15px;
 	    position: relative;
 	    overflow: hidden;
@@ -161,8 +165,33 @@
 	    padding: 20px;
 	}
 	.message .messagebox .messagecontern {
-    padding: 15px;
-    color: #036eb8;
-    font-size: 16px;
-}
+	    padding: 15px;
+	    color: #036eb8;
+	    font-size: 16px;
+	}
+	/****** 成员管理  ******/
+	.action lable {
+	    padding: 0px 15px 0px 10px;
+	    color: #666;
+	    font-size: 12px !important;
+	    line-height: 20px;
+	    vertical-align: middle;
+	}
+	.layui-table td, .layui-table th {
+	    position: relative;
+	    padding: 9px px;
+	    min-height: 35px;
+	    line-height: 35px;
+	    height:35px;
+	    font-size: 16px;
+	}
+	.layui-nav * {
+	    font-size: 16px !important;
+	}
+	.layui-btn-xs {
+	    height: 20px;
+	    line-height: 20px;
+	    padding: 0 15px;
+	    font-size: 12px !important;
+	}
 }
