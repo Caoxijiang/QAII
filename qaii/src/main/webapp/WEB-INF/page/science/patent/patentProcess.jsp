@@ -59,7 +59,9 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
-console.log(userID+"id与步骤"+step+"sdfgsdfg${param.patName}+上传参数${param.insertype}");
+ var patName="${param.patName}";
+ var pat=patName.replace(/\"/g, "");
+console.log(pat);
 
 layui.use('table', function(obj){
 	console.log(obj);
@@ -151,11 +153,17 @@ layui.use('table', function(obj){
 	    		download(ops+address);
 		}else if(obj.event === 'upload'){//文件重新上传
 			var address=data.path;
+			var id=data.id;
 		    layer.open({
 	    	  type:1,
 			  title:"重新上传文件",
-			  content:'<form action="processupload.do" method="post">'+
+			  content:'<form action="processupload.do" method="post" enctype="multipart/form-data">'+
 			  '<input type="file" name="file" id="path">'+
+			  '<input type="hidden" name="oid" id="oid" value="'+userID+'">'+
+			  '<input type="hidden" name="step" id="id" value="'+step+'">'+
+			  '<input type="hidden" name="type" id="type" value="update">'+
+			  '<input type="hidden" name="patName" id="patName" value="'+pat+'">'+
+			  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 			  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 			});
 		}//事件监听

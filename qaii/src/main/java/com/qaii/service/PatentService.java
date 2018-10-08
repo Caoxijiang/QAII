@@ -20,5 +20,7 @@ public interface PatentService {
     
     int getPatentCount();
     
+    int countAgencyPatent(String firstDay, String endDay);
+    
 }
 

@@ -39,19 +39,20 @@
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
 <input id="param" value='${param.userId}' type="hidden"  name="param"/>
-  <form class="layui-form" action="addEmpInfo.do" method="post">
+  <form class="layui-form" action="updateTrademark.do" method="post" lay-filter="example">
 	  <div class="layui-row">
 		<div class="layui-col-xs4 layui-col-md4">
 			<div class="layui-form-item">
 				<label class="layui-form-label">编号&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					<input   type="hidden"  name="userId"/>
+					<input type="text" name="tradmCode" lay-verify="required" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
+					<select name="tradmDept" lay-verify="required" lay-search="" id="deptt" class="input">
 						
 					</select>
 				</div>
@@ -60,13 +61,13 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">申请人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					<input type="text" name="tradmApplyper" lay-verify="required" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					<input type="text" name="tradmAgency" lay-verify="required" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 		</div>
@@ -74,7 +75,7 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">类别&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="empGender" lay-verify="required" lay-search="" class="input">
+					<select name="tradmType" lay-verify="required" lay-search="" class="input">
 						<option value="">   </option>
 						<option value="1">一级</option>
 						<option value="2">二级</option>
@@ -84,19 +85,19 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">商品/服务项目&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empNum"  lay-verify="required" autocomplete="off"  class="layui-input input">
+					<input type="text" name="tradmItem"  lay-verify="required" autocomplete="off"  class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">申请号&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empEthnic"  lay-verify="required" autocomplete="off"  class="layui-input input">
+					<input type="text" name="tradmApplynum"  lay-verify="required" autocomplete="off"  class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">申请日期</label>
 				  <div class="layui-input-block">
-					<input type="text" name="empTryoutendtime" class="layui-input input" id="test1">
+					<input type="text" name="tradmApplytime" class="layui-input input" id="test1">
 				  </div>
 			</div>
 		</div>	
@@ -118,7 +119,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">注册日期</label>
 				  <div class="layui-input-block">
-					<input type="text" name="empTryoutendtime" class="layui-input input" id="test2">
+					<input type="text" name="tradmRegistertime" class="layui-input input" id="test2">
 				  </div>
 			</div>
 	    </div>
@@ -126,7 +127,7 @@
 	     	<div class="layui-form-item">
 				<label class="layui-form-label">有效期</label>
 				  <div class="layui-input-block">
-					<input type="text" name="empTryoutendtime" class="layui-input input" id="test3">
+					<input type="text" name="tradmValidtime" class="layui-input input" id="test3">
 				  </div>
 			</div>
 	    </div>
@@ -134,7 +135,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">费用&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="patInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="tradmCost" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -142,7 +143,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="patInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="tradmInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -150,7 +151,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">状态跟踪&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="patInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="tradmStatusfollow" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -158,7 +159,7 @@
 	      <div class="layui-form-item">
 			<label class="layui-form-label">状态更新日</label>
 			  <div class="layui-input-block">
-				<input type="text" name="empTryoutendtime" class="layui-input input" id="test4">
+				<input type="text" name="tradmUpdatetime" class="layui-input input" id="test4">
 			  </div>
 			</div>
 	    </div>
@@ -167,7 +168,7 @@
 					<div class="layui-form-item layui-form-text">
 						<label class="layui-form-label">商标说明</label>
 						<div class="layui-input-block">
-							<textarea name="patRemark" class="layui-textarea"></textarea>
+							<textarea name="tradmPngandexplain" class="layui-textarea"></textarea>
 						</div>
 					</div>
 				</div>
@@ -224,38 +225,81 @@ $.post({
 		  laydate.render({
 		    elem: '#test4'
 		  });
+		  
+		//普通图片上传
+		  var uploadInst = upload.render({
+		    elem: '#imgload'
+		    ,url: 'tradeupload.do'
+		    ,before: function(obj){
+		      //预读本地文件示例，不支持ie8
+		      obj.preview(function(index, file, result){
+		        $('#demo1').attr('src', result); //图片链接（base64）
+		      });
+		    }
+		    ,done: function(res){
+		      //如果上传失败
+		      if(res.code > 0){
+		        return layer.msg('上传失败');
+		      }else{
+		    	 $("demoText").attr("imageVal",res.eid)
+		    	 var eid=res.eid
+		    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
+		    	$("input[name='imageVal']").attr("value",eid);
+		    	  return layer.msg(res.msg);
+		      }
+		      //上传成功
+		    }
+		    ,error: function(){
+		      //演示失败状态，并实现重传
+		      var demoText = $('#demoText');
+		      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+		      demoText.find('.demo-reload').on('click', function(){
+		        uploadInst.upload();
+		      });
+		    }
+		  });
+		
 		   var id=${param.userId};
+		   var eid=$("imageVal").val();
 		   if(id!=null){
 				$.post({
-					url:"findPatentInfoById.do",
+					url:"showTradeMarkDetails.do",
 					data:{
 						id:id
 					},
 					success:function(data){
 						if(data.data!=null){
-							let patentInfo=data.data;
+							let trademark=data.data;
+							if(eid==undefined){
+								$("input[name='imageVal']").attr("value",trademark.eid);
+							}else{
+								$("input[name='imageVal']").attr("value",eid);
+							}
 							//表单初始赋值 从表单中提取数据
 							  form.val('example', {
-								  	"id":patentInfo.id,
-									"patDept":patentInfo.patDept,
-									"patType":patentInfo.patType,
-									"patName":patentInfo.patName,
-									"patDigest":patentInfo.patDigest,
-									"patAuthor":patentInfo.patAuthor,
-									"patApplyper":patentInfo.patApplyper,
-									"patTelltime":patentInfo.patTelltime,
-									"patAgency":patentInfo.patAgency,
-									"patPrepublishaudit":patentInfo.patPrepublishaudit,
-									"patApplynum":patentInfo.patApplynum,
-									"patApplytime":patentInfo.patApplytime,
-									"patPublishtime":patentInfo.patPublishtime,
-									"patAuthorzationtime":patentInfo.patAuthorzationtime,
-									"patRemission":patentInfo.patRemission,
-									"patCost":patentInfo.patCost,
-									"patInvoiceper":patentInfo.patInvoiceper,
-									"patRemark":patentInfo.patRemark
+								 "userId":trademark.id,
+							  	 "tradmDept":trademark.tradmDept,
+								 "tradmCode":trademark.tradmCode,
+								 "tradmPngandexplain":trademark.tradmPngandexplain,
+								 "tradmApplyper":trademark.tradmApplyper,
+								 "tradmAgency":trademark.tradmAgency,
+								 "tradmType":trademark.tradmType,
+								 "tradmItem":trademark.tradmItem,
+								 "tradmApplynum":trademark.tradmApplynum,
+								 "tradmApplytime":trademark.tradmApplytime,
+								 "tradmRegistertime":trademark.tradmRegistertime,
+								
+								 "tradmValidtime":trademark.tradmValidtime,
+								 "tradmCost":trademark.tradmCost,
+								 "tradmInvoiceper":trademark.tradmInvoiceper,
+								 "tradmStatusfollow":trademark.tradmStatusfollow,
+								 "tradmUpdatetime":trademark.tradmUpdatetime,
 							    
-							  })
+							  });
+							  var domain = window.location.host;
+							  var url =data.data.url;
+							  var imgpath=domain+url;
+							  $("#demo1").attr("src","https://"+imgpath);
 						}else{
 							alert("查看详情失败")
 						}

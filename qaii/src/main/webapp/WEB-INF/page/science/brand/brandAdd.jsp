@@ -37,19 +37,19 @@
 	</button>		
 </div>
 <div class="layui-container addtop">
-  <form class="layui-form" action="addEmpInfo.do" method="post">
+  <form class="layui-form" action="addTrademark.do" method="post">
 	  <div class="layui-row">
 		<div class="layui-col-xs4 layui-col-md4">
 			<div class="layui-form-item">
 				<label class="layui-form-label">编号&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					<input type="text" name="tradmCode" lay-verify="required" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
+					<select name="tradmDept" lay-verify="required" lay-search="" id="deptt" class="input">
 						
 					</select>
 				</div>
@@ -58,13 +58,13 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">申请人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					<input type="text" name="tradmApplyper" lay-verify="required" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					<input type="text" name="tradmAgency" lay-verify="required" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 		</div>
@@ -72,7 +72,7 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">类别&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="empGender" lay-verify="required" lay-search="" class="input">
+					<select name="tradmType" lay-verify="required" lay-search="" class="input">
 						<option value="">   </option>
 						<option value="1">一级</option>
 						<option value="2">二级</option>
@@ -82,19 +82,19 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">商品/服务项目&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empNum"  lay-verify="required" autocomplete="off"  class="layui-input input">
+					<input type="text" name="tradmItem"  lay-verify="required" autocomplete="off"  class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">申请号&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="empEthnic"  lay-verify="required" autocomplete="off"  class="layui-input input">
+					<input type="text" name="tradmApplynum"  lay-verify="required" autocomplete="off"  class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">申请日期</label>
 				  <div class="layui-input-block">
-					<input type="text" name="empTryoutendtime" class="layui-input input" id="test1">
+					<input type="text" name="tradmApplytime" class="layui-input input" id="test1">
 				  </div>
 			</div>
 		</div>	
@@ -116,7 +116,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">注册日期</label>
 				  <div class="layui-input-block">
-					<input type="text" name="empTryoutendtime" class="layui-input input" id="test2">
+					<input type="text" name="tradmRegistertime" class="layui-input input" id="test2">
 				  </div>
 			</div>
 	    </div>
@@ -124,7 +124,7 @@
 	     	<div class="layui-form-item">
 				<label class="layui-form-label">有效期</label>
 				  <div class="layui-input-block">
-					<input type="text" name="empTryoutendtime" class="layui-input input" id="test3">
+					<input type="text" name="tradmValidtime" class="layui-input input" id="test3">
 				  </div>
 			</div>
 	    </div>
@@ -132,7 +132,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">费用&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="patInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="tradmCost" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -140,7 +140,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="patInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="tradmInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -148,7 +148,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">状态跟踪&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="patInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="tradmStatusfollow" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -156,7 +156,7 @@
 	      <div class="layui-form-item">
 			<label class="layui-form-label">状态更新日</label>
 			  <div class="layui-input-block">
-				<input type="text" name="empTryoutendtime" class="layui-input input" id="test4">
+				<input type="text" name="tradmUpdatetime" class="layui-input input" id="test4">
 			  </div>
 			</div>
 	    </div>
@@ -165,7 +165,7 @@
 					<div class="layui-form-item layui-form-text">
 						<label class="layui-form-label">商标说明</label>
 						<div class="layui-input-block">
-							<textarea name="patRemark" class="layui-textarea"></textarea>
+							<textarea name="tradmPngandexplain" class="layui-textarea"></textarea>
 						</div>
 					</div>
 				</div>
@@ -231,7 +231,7 @@ $.post({
 			  //普通图片上传
 			  var uploadInst = upload.render({
 			    elem: '#imgload'
-			    ,url: 'EmpAupload.do'
+			    ,url: 'tradeupload.do'
 			    ,before: function(obj){
 			      //预读本地文件示例，不支持ie8
 			      obj.preview(function(index, file, result){

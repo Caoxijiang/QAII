@@ -1,16 +1,21 @@
 package com.qaii.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.qaii.domain.DeptInfo;
 import com.qaii.domain.EmpInfo;
@@ -57,8 +62,13 @@ public class techController {
 	}
 	//专利资料审查文件预览界面
 	@RequestMapping("patentData.do")
-	public String patentData(){
-		return "page/science/patent/patentData";
+	public ModelAndView patentData(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("patName").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("patAuthor").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("patPublishtime").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("userId").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/patent/patentData", "utflist", result);
 	}
 	//专利资料审查文件流程添加界面
 		@RequestMapping("patentDataAdd.do")
@@ -97,13 +107,21 @@ public class techController {
 	}
 	//商标资料审查界面
 	@RequestMapping("brandProcess.do")
-	public String brandProcess(){
-		return "page/science/brand/brandProcess";
+	public ModelAndView brandProcess(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/brand/brandProcess", "utflist", result);
 	}
 	//商标资料审查文件预览界面
 	@RequestMapping("brandData.do")
-	public String brandData(){
-		return "page/science/brand/brandData";
+	public ModelAndView brandData(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/brand/brandData", "utflist", result);
 	}
 	//商标资料审查文件流程添加界面
 	@RequestMapping("brandDataAdd.do")
