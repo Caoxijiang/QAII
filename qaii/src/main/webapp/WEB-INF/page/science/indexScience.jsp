@@ -47,7 +47,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  					<div class="itmeText">软著：XXX个<br />&nbsp;</div>
 		  				</div>
 		  				<div class="itemBox" id="PatentBox">
 		  					<canvas id="totalBrand" class="itemCanvas"></canvas>
@@ -65,7 +65,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  					<div class="itmeText">论文：XXX篇<br />&nbsp;</div>
 		  				</div>
 		  				<div class="itemBox" id="PatentBox">
 		  					<canvas id="totalWork" class="itemCanvas"></canvas>
@@ -74,7 +74,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  					<div class="itmeText">著作：XXX部<br />&nbsp;</div>
 		  				</div>
 		  			</div>
 		  		</div>
