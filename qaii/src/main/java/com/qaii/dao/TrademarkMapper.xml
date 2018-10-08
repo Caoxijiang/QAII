@@ -18,17 +18,17 @@
     <result column="tradm_InvoicePer" jdbcType="VARCHAR" property="tradmInvoiceper" />
     <result column="tradm_StatusFollow" jdbcType="VARCHAR" property="tradmStatusfollow" />
     <result column="tradm_UpdateTime" jdbcType="VARCHAR" property="tradmUpdatetime" />
+    <result column="eid" jdbcType="INTEGER" property="eid" />
+    <result column="Path" jdbcType="INTEGER" property="url" />
   </resultMap>
   <sql id="Base_Column_List">
     id, tradm_Dept, tradm_Code, tradm_PngAndExplain, tradm_ApplyPer, tradm_Agency, tradm_Type, 
     tradm_Item, tradm_ApplyNum, tradm_ApplyTime, tradm_RegisterTime, tradm_ValidTime, 
-    tradm_Cost, tradm_InvoicePer, tradm_StatusFollow, tradm_UpdateTime
+    tradm_Cost, tradm_InvoicePer, tradm_StatusFollow, tradm_UpdateTime,eid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from sci_trademark
-    where id = #{id,jdbcType=INTEGER}
+    SELECT a.*,b.Path FROM sci_trademark AS a,sci_trademarkimg AS b
+    where a.id = #{id,jdbcType=INTEGER} AND  a.eid=b.id
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from sci_trademark
@@ -40,13 +40,13 @@
       tradm_Type, tradm_Item, tradm_ApplyNum, 
       tradm_ApplyTime, tradm_RegisterTime, tradm_ValidTime, 
       tradm_Cost, tradm_InvoicePer, tradm_StatusFollow, 
-      tradm_UpdateTime)
+      tradm_UpdateTime,eid)
     values (#{id,jdbcType=INTEGER}, #{tradmDept,jdbcType=VARCHAR}, #{tradmCode,jdbcType=VARCHAR}, 
       #{tradmPngandexplain,jdbcType=VARCHAR}, #{tradmApplyper,jdbcType=VARCHAR}, #{tradmAgency,jdbcType=VARCHAR}, 
       #{tradmType,jdbcType=VARCHAR}, #{tradmItem,jdbcType=VARCHAR}, #{tradmApplynum,jdbcType=VARCHAR}, 
       #{tradmApplytime,jdbcType=VARCHAR}, #{tradmRegistertime,jdbcType=VARCHAR}, #{tradmValidtime,jdbcType=VARCHAR}, 
       #{tradmCost,jdbcType=VARCHAR}, #{tradmInvoiceper,jdbcType=VARCHAR}, #{tradmStatusfollow,jdbcType=VARCHAR}, 
-      #{tradmUpdatetime,jdbcType=VARCHAR})
+      #{tradmUpdatetime,jdbcType=VARCHAR},#{eid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.Trademark">
     insert into sci_trademark
@@ -218,7 +218,8 @@
       tradm_Cost = #{tradmCost,jdbcType=VARCHAR},
       tradm_InvoicePer = #{tradmInvoiceper,jdbcType=VARCHAR},
       tradm_StatusFollow = #{tradmStatusfollow,jdbcType=VARCHAR},
-      tradm_UpdateTime = #{tradmUpdatetime,jdbcType=VARCHAR}
+      tradm_UpdateTime = #{tradmUpdatetime,jdbcType=VARCHAR},
+      eid = #{eid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="getAllTradeMarkMsg" resultMap="BaseResultMap">
