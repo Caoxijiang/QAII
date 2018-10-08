@@ -3,10 +3,14 @@ body,html,div,li,ul,dt,dd{
 	margin:0px;
 	padding:0px;
 	border:none;
+	font-size:16px;
+}
+ul,li{
+	liststyle:none;
 }
 .sciencebody{
 	width: 100%;
-    min-width: 1200px;
+    min-width: 75em;
     height: 100vh !important;
     background: #011039;
     background-image: url(../image/sciencebg.jpg);
@@ -17,15 +21,15 @@ body,html,div,li,ul,dt,dd{
 .main{
 	background-image: url(../image/science.png);
 	width: 100%;
-    min-width: 1200px;
+    min-width: 75em;
     height: 100vh !important;
     background-size: contain;
     background-repeat: no-repeat;
     background-position:center;
 }
 .sciNav{
-	right:150px;
-	top:20px;
+	right:9.375em;
+	top:1.25em;
 	position: absolute;
 }
 .pageTo {
@@ -66,6 +70,9 @@ body,html,div,li,ul,dt,dd{
     text-align:center;
     
 }
+.fundingTabUl{
+	display:inline-block;
+}
 .itemcontent{
 	margin-top:10px;
 	width:100%;
@@ -75,4 +82,79 @@ body,html,div,li,ul,dt,dd{
   	background: -moz-linear-gradient(right, rgba(0,0,31,0.2), rgba(23,28,97,0.2)); /* Firefox 3.6 - 15 */
   	background: linear-gradient(to right, rgba(0,0,31,0.2), rgba(23,28,97,0.2)); /* 标准的语法 */
   border:1px solid rgba(46,167,224,0.2);}
-  
+.charsBox{
+	margin:0px auto;margin-top:10px;width:95%;height:250px;
+}
+.fundingTab{
+	width:77px;
+	height:25px;
+	background-image: url(../image/govfunding.png);
+	background-size: contain;
+    background-repeat: no-repeat;
+    background-position:center;
+    color:#4fafe4;
+    font-size:12px;
+    line-height:25px;
+    text-align:center;
+    display:inline-block;
+}
+.fundingTab:hover{
+	background-image: url(../image/govfundingA.png);
+	color:#fff;
+}
+.fundingMor{
+    color:#4fafe4;
+    font-size:14px;
+    line-height:25px;
+    text-align:center;
+    display:inline-block;
+    float:right;
+}
+.active{
+	background-image: url(../image/govfundingA.png) !important;
+	color:#fff !important;
+}
+.govTable{
+	margin-top:10px;
+	width:100%;
+	color:#fff;
+	font-size:14px;
+	text-align:center;
+	border-left:1px solid #3db4e3;
+	border-top:1px solid #3db4e3;
+}
+.govTable tr th{
+	line-height:30px;
+	font-size:16px;
+	font-weight: normal;
+	background:rgba(61,180,227,0.3);
+	border-right:1px solid #3db4e3;
+	border-bottom:1px solid #3db4e3;
+}
+.govTable tr td{
+	line-height:26px;
+	border-right:1px solid #3db4e3;
+	border-bottom:1px solid #3db4e3;
+}
+/*科研成果总览*/
+.itemBox{
+	width:19%;
+	text-align:center;
+	display:inline-block;
+	color:#fff;
+}
+.line{
+	margin:0px auto;
+	padding:5px 0px;
+	width:80%;
+}
+.itmeline{
+	margin:0px auto;
+	width:100%;
+	border:1px solid #3db4e3;
+}
+.itmelineb{
+	margin-top:-4px;
+	width:20%;
+	border:3px solid #3db4e3;
+}

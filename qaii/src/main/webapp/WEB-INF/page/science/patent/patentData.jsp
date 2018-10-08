@@ -56,6 +56,7 @@
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script src="${basePath}/js/patentdata.js"></script><!-- 添加流程 -->
+<script src="${basePath}/js/iframesrc.js"></script>
 <script>
 $(function(){
 	$(document).on('click','.patentProcess',function(){
