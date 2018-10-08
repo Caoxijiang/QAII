@@ -58,7 +58,6 @@ public class DataOverviewController {
 	}
 	
 	// 十二个月的受理专利信息
-	@RequestMapping("TestPrint.do")
 	List<Integer> listAgencyPatent() throws ParseException{
 		//获取当前时间
 		Date date =new Date();
@@ -71,9 +70,24 @@ public class DataOverviewController {
 			map=CountDatetoNowDays.getBothEnds(str);
 			result.add(patentService.countAgencyPatent(map.get("first"), map.get("end")));
 		}
-		System.out.println(result);
 		return result;
 	} 
 	
 	// 十二个月的授权专利信息
+	@RequestMapping("TestPrint.do")
+	List<Integer> listAuthorizationPatent() throws ParseException{
+		//获取当前时间
+		Date date =new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		List<String> list=new ArrayList<>();
+		Map<String, String> map=new HashMap<>();
+		List<Integer> result =new ArrayList<>();
+		list=CountDatetoNowDays.getpremonth(sdf.format(date), 12);
+		for (String str:list) {
+			map=CountDatetoNowDays.getBothEnds(str);
+			result.add(patentService.countAuthorizationPatent(map.get("first"), map.get("end")));
+		}
+		System.out.println(result);
+		return result;
+	} 
 }
