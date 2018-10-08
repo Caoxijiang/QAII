@@ -56,6 +56,11 @@ public class PatentServiceImpl implements PatentService{
 		// TODO Auto-generated method stub
 		return patentMapper.countAgencyPatent(firstDay, endDay);
 	}
+	@Override
+	public int countAuthorizationPatent(String firstDay, String endDay) {
+		// TODO Auto-generated method stub
+		return patentMapper.countAuthorizationPatent(firstDay, endDay);
+	}
 
 	
 
