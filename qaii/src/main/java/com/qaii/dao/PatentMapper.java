@@ -16,12 +16,14 @@ public interface PatentMapper {
 
     int updateByPrimaryKeySelective(Patent record);
 
-    int updateByPrimaryKey(Patent record);
-    
+    int updateByPrimaryKey(Patent record); 
 
     int selectCountbyNum();
 
     List<Patent> findAllPatentInfo();
     
+    int countAgencyPatent(String firstDay, String endDay);
+    
+    int countAuthorizationPatent(String firstDay, String endDay);
 
 }

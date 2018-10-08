@@ -679,7 +679,7 @@ public class EmpController {
 		empInfo.setEmpThirdeducationschool(value.get(17));
 		empInfo.setEmpFirsteducationpro(value.get(18));
 		empInfo.setEmpSecondeducationpro(value.get(19));
-		empInfo.setEmpSecondeducationpro(value.get(20));
+		empInfo.setEmpThirdeducationpro(value.get(20));
 		empInfo.setEmpFirstgraduationtime(value.get(21));
 		empInfo.setEmpSecondgraduationtime(value.get(22));
 		empInfo.setEmpThirdgraduationtime(value.get(23));

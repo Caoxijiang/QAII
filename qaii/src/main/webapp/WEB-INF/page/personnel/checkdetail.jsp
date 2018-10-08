@@ -285,8 +285,8 @@
 						<div class="layui-input-block">
 							<select name="empCompile" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
 								<option value="">   </option>
-								<option value="是">是</option>
-								<option value="否">否</option>
+								<option value="所编">所编</option>
+								<option value="聘用">聘用</option>
 							</select>
 						</div>
 					</div>
@@ -308,8 +308,8 @@
 						<div class="layui-input-block">
 							<select name="empWorktype" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
 								<option value="">   </option>
-								<option value="1">全职</option>
-								<option value="2">兼职</option>
+								<option value="全职">全职</option>
+								<option value="兼职">兼职</option>
 							</select>
 						</div>
 					</div>

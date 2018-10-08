@@ -13,17 +13,6 @@ import java.util.Map;
 import com.qaii.domain.EmpInfo;
 
 public class CountDatetoNowDays {
-
-	/*
-	 * 计算参数与当前时间相差的天数
-	 * @author wangxin
-	 * @method return int:返回目标日期与当前日期相差的天数,return String:返回目标日期的时间戳
-	 * @param Date d2 Date类型时间
-	 * @param String d2 String类型时间
-	 * @param String s1 时间戳类型时间
-	 * @param String date 要转换为时间戳的date时间
-	 * @param int addDay 要加在date时间上的天数
-	 */
 	
 	//将参数日期格式化为时间戳类型
 	public static String SDatetoStamp(String date) throws ParseException {
@@ -148,25 +137,33 @@ public class CountDatetoNowDays {
 	}
 	
 	//获取目标当月1日的String型日期以及上个月1日的String日期，本月的key值为this，上月的为last
-		public static Map<String,String> SgetfistDay(String date) throws ParseException {
-			Map<String, String> map=new HashMap<>();
-			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-			Calendar cal1=Calendar.getInstance();
-			cal1.setTime(sdf.parse(date));
-			cal1.set(cal1.DATE, 1);
-			map.put("this", sdf.format(cal1.getTime()));
-			cal1.add(cal1.MONTH, -1);
-			map.put("last", sdf.format(cal1.getTime()));
-			return map;
-		}
+	public static Map<String,String> SgetfistDay(String date) throws ParseException {
+		Map<String, String> map=new HashMap<>();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		Calendar cal1=Calendar.getInstance();
+		cal1.setTime(sdf.parse(date));
+		cal1.set(cal1.DATE, 1);
+		map.put("this", sdf.format(cal1.getTime()));
+		cal1.add(cal1.MONTH, -1);
+		map.put("last", sdf.format(cal1.getTime()));
+		return map;
+	}
 	
-	/*
-	 * 取得当前年的时间区间(去年的最后一天以及明年的第一天)
-	 * @author wangxin
-	 * @param example:'1971/01/01'
-	 * 
-	 */
+	// 获取参数日期当前月第一天与最后一天的日期,返回类型为日期类型
+	public static Map<String, String> getBothEnds(String date) throws ParseException{
+		Map<String, String> result =new HashMap<>();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		Calendar cal1=Calendar.getInstance();
+		cal1.setTime(sdf.parse(date));
+		cal1.set(cal1.DATE, 1);
+		result.put("first", sdf.format(cal1.getTime()));
+		cal1.add(cal1.MONTH, +1);
+		cal1.add(cal1.DATE, -1);
+		result.put("end", sdf.format(cal1.getTime()));
+		return result;
+	}
 	
+	 // 取得当前年的时间区间(去年的最后一天以及明年的第一天)
 	public static Map<String , String> FirstandEndDayofYear(String date) throws ParseException {
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		Calendar cal=Calendar.getInstance();
