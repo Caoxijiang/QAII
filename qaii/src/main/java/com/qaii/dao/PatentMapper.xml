@@ -303,6 +303,13 @@
   <select id="findAllPatentInfo"  resultMap="BaseResultMap">
   	select * from sci_patent
   </select>
-  
+  <select id="countAgencyPatent" resultType="int">
+    SELECT COUNT(*) FROM sci_patent WHERE pat_ApplyTime BETWEEN #{0} AND #{1}
+  </select>
+  <select id="countAuthorizationPatent" resultType="int">
+    SELECT COUNT(*) FROM sci_patent WHERE pat_AuthorzationTime IS NOT NULL 
+	    AND pat_AuthorzationTime !="" 
+	    AND pat_AuthorzationTime BETWEEN #{0} AND #{1}
+  </select>
 
 </mapper>

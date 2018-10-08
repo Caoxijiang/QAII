@@ -1,10 +1,14 @@
 package com.qaii.controller;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -23,9 +27,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.qaii.domain.PatProcess;
+import com.qaii.domain.Processimg;
+import com.qaii.domain.Trademarkprocessfile;
 import com.qaii.domain.Trademark;
+import com.qaii.domain.TrademarkImg;
+import com.qaii.domain.Trademarkprocess;
+import com.qaii.domain.Trademarkprocessfile;
 import com.qaii.domain.Trademark;
 import com.qaii.service.TradeMarkService;
+import com.qaii.service.TrademarkImgService;
+import com.qaii.service.TrademarkProcessFileService;
+import com.qaii.service.TrademarkProcessService;
 import com.qaii.util.AlertException;
 import com.qaii.util.CustomException;
 import com.qaii.util.JsonResult;
@@ -35,21 +48,20 @@ import com.qaii.util.Layui;
 public class TradeMarkController {
 	@Resource
 	private TradeMarkService trademarkService;
+	@Resource
+	private TrademarkImgService tradeimgService;
+	@Resource
+	private TrademarkProcessService processService;
+	@Resource
+	private TrademarkProcessFileService processfileService;
 	
 	//获取所有商标信息
 	@RequestMapping(value="getAllTradeMarkMsg.do",method=RequestMethod.POST)
 	@ResponseBody
 	public Layui getAllTradeMarkMsg() {
 		List<Trademark> result=trademarkService.getAllTradeMarkMsg();
-//			for(trademarkwarecopyright trademarkware:result) {
-//				CountDatetoNowDays.TranstoDate(emp);
-//			}
 		int count =result.size();
-		if(result!=null) {
-			return Layui.data(count, result);
-		}else {
-			return Layui.data(count, result);
-		}
+		return Layui.data(count, result);
 	}
 	//删除商标信息
 	@RequestMapping("dellTradeMarkMsg.do")
@@ -76,7 +88,7 @@ public class TradeMarkController {
 	@ResponseBody
 	public JsonResult showTradeMarkDetails(Trademark trademark,HttpServletRequest req) {	
 		
-		int userid=Integer.parseInt(req.getParameter("userId"));
+		int userid=Integer.parseInt(req.getParameter("id"));
 		//trademark.setId();
 		trademark = trademarkService.selectByPrimaryKey(userid);
 		return new JsonResult(trademark);
@@ -91,6 +103,7 @@ public class TradeMarkController {
 	//修改商标信息功能
 	@RequestMapping(value="updateTrademark.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public String updateTrademarks(Trademark Trademark,HttpServletRequest req){	
+		Trademark.setId(Integer.parseInt(req.getParameter("userId")));
 		loadData(req, Trademark);
 		int row =trademarkService.updatetrademark(Trademark);
 		if(row>=1) {
@@ -103,6 +116,8 @@ public class TradeMarkController {
 	}
 	//绑定请求数据到bean中
 	void loadData(HttpServletRequest req,Trademark Trademark){
+		if(!(req.getParameter("imageVal")==""))
+			Trademark.setEid(Integer.parseInt(req.getParameter("imageVal")));
 		Trademark.setTradmDept(req.getParameter("tradmDept"));
 		Trademark.setTradmCode(req.getParameter("tradmCode"));
 		Trademark.setTradmPngandexplain(req.getParameter("tradmPngandexplain"));
@@ -237,5 +252,237 @@ public class TradeMarkController {
 		
 		return Trademark;
 	}
+	
+	//商标图片上传
+	@RequestMapping("/tradeupload.do")  
+	@ResponseBody
+    public Map<String,String> upload(@RequestParam("file") MultipartFile file , TrademarkImg trade,HttpServletRequest request) throws Exception{  
+  //  System.out.println(request.getParameter("name"));  
+    Map<String,String> result=new HashMap<>();
+    if(file.isEmpty()) {
+    	result.put("code", "1");
+    	result.put("msg", "文件为空");
+    }
+    String uuid = UUID.randomUUID().toString().replaceAll("-","");    
+    //获得文件类型（可以判断如果不是图片，禁止上传）    
+    String contentType=trade.getFile().getContentType();    
+    //获得文件后缀名   
+    String suffixName=contentType.substring(contentType.indexOf("/")+1);  
+    //得到 文件名  
+    String fileName=uuid+"."+suffixName; 
+    
+  //  String fileName=file.getOriginalFilename();
+    int size=(int)file.getSize();
+  //  System.out.println(fileName+":---"+size);
+    String path="C:/File/img/TradeMark/Symbol";
+    File dest =new File(path+"/"+fileName);
+    if(!dest.getParentFile().exists()) {
+    	dest.getParentFile().mkdirs();
+    }
+    try {
+		file.transferTo(dest);//保存文件
+		trade.setPath("/img/TradeMark/Symbol/"+fileName);
+		InserttradeImg(trade, result, dest);
+		result.put("code", "0");
+		result.put("msg", "上传成功");
+		result.put("url", dest.getPath());
+	} catch (IllegalStateException e) {
+		// TODO: handle exception
+		e.printStackTrace();
+		result.put("code", "1");
+    	result.put("msg", "上传失败");
+	}catch (IOException e) {
+		// TODO: handle exception
+		e.printStackTrace();
+		result.put("code", "1");
+    	result.put("msg", "上传失败");
+	}
+    
+    return result;  
 
+    }
+	
+	private void InserttradeImg(TrademarkImg trade, Map<String, String> result, File dest) {
+		int row=tradeimgService.insertmsg(trade);
+		if(row > 0) {
+			int eid=trade.getId();
+			if(eid>=1) {
+				result.put("code", "0");
+				result.put("msg", "上传成功");
+				result.put("eid",trade.getId().toString() );
+				result.put("url", dest.getPath());
+				
+			}else {
+				result.put("code", "1");
+		    	result.put("msg", "上传失败");
+			}
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	}  
+	
+	//添加商标资料审核流程信息
+  	@RequestMapping(value="addtradeProcess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+  	@ResponseBody
+  	public JsonResult addProcessInfo(HttpServletRequest req,Trademarkprocess patp) {
+  		patp.setPid(Integer.parseInt(req.getParameter("pid")));
+  		patp.setDescription(req.getParameter("description"));
+  		patp.setTitle(req.getParameter("title"));
+  		patp.setTime(req.getParameter("time"));
+  		int row = processService.addProcess(patp);
+      	if(row!=0) {
+      		return  new JsonResult(row);
+      	}else {
+      		return  new JsonResult();
+      		
+      	}
+  	}
+  	
+  	//显示所有商标审核流程信息
+  	@ResponseBody
+  	@RequestMapping(value="getTradeProcess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+  	public JsonResult findAllProcessInfo(HttpServletRequest req) {
+  		
+  		Integer pid=Integer.parseInt(req.getParameter("id"));
+  		
+  		List<Trademarkprocess>list=processService.getAllMsgBypid(pid);
+      	if(list!=null) {
+      		return  new JsonResult(list);
+      	}else {
+      		return  new JsonResult();
+      		
+      	}
+  	}
+	
+  	//审核资料上传
+  	@ResponseBody
+	@RequestMapping("/tradeprocessupload.do")
+	public Map<String, String> processupload(@RequestParam("file") MultipartFile[] files, Trademarkprocessfile img,
+			HttpServletRequest req) throws Exception {
+		// System.out.println(request.getParameter("name"));
+		String insertype=req.getParameter("type");
+		Integer oid = Integer.parseInt(req.getParameter("oid"));
+		Integer stepid = Integer.parseInt(req.getParameter("step"));
+		String tradmDept = new String(req.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8");
+		Map<String, String> result = new HashMap<>();
+		if (files != null && files.length < 0) {
+			result.put("code", "1");
+			result.put("msg", "文件为空");
+		}
+
+		for (int i = 0; i < files.length; i++) {
+			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
+			 
+			 String name=files[i].getOriginalFilename();
+			// 取文件格式后缀名
+			//String type = files[i].getOriginalFilename();
+			 
+			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+			 
+			String filename = uuid + type;// 取当前时间戳作为文件名
+
+			// String path = request.getSession().getServletContext().getRealPath("/upload/"
+			// + filename);// 存放位置
+			String path = "C:/File/img/TradeMark/File/" + tradmDept + "/" + oid + "/" + stepid;
+			String dbpath="img/TradeMark/File/"+tradmDept + "/" + oid + "/" + stepid;
+			System.out.println("++++++" + path);
+			File destFile = new File(path + "/" + filename);
+
+			if (!destFile.getParentFile().exists()) {
+				destFile.getParentFile().mkdirs();
+			}
+			try {
+				// FileUtils.copyInputStreamToFile(files[i].getInputStream(), destFile);//
+				// 复制临时文件到指定目录下
+				files[i].transferTo(destFile);
+				img.setSid(stepid);
+				img.setOid(oid);
+				img.setPath(dbpath.toString()+"/"+filename.toString());
+				img.setName(name);
+				
+				if(insertype.equals("insert")) {
+					InsertTrademarkprocessfile(img,result, destFile);
+					result.put("code", "0");
+					result.put("msg", "上传成功");
+					result.put("url", destFile.getPath());
+				}else if(insertype.equals("update")) {
+					updataTrademarkprocessfile(img,result, destFile);
+					result.put("code", "0");
+					result.put("msg", "上传成功");
+					result.put("url", destFile.getPath());
+				}
+				
+
+			} catch (IOException e) {
+				e.printStackTrace();
+				result.put("code", "1");
+				result.put("msg", "上传失败");
+			}
+		}
+
+		return result;
+
+	}
+  	
+  	private void InsertTrademarkprocessfile(Trademarkprocessfile img, Map<String, String> result, File dest) {
+		int row=processfileService.insertMsg(img);
+		if(row > 0) {
+			result.put("code", "0");
+			result.put("msg", "上传成功");
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	} 
+  	
+  	private void updataTrademarkprocessfile(Trademarkprocessfile img, Map<String, String> result, File dest) {
+		int row=processfileService.updateMsg(img);
+		if(row > 0) {
+			result.put("code", "0");
+			result.put("msg", "上传成功");
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	} 
+  	
+  	//显示流程文件列表
+  	@ResponseBody
+	@RequestMapping(value="gettrademarkfile.do",produces="application/json;charset=UTF-8")
+	public Layui findProessimg(HttpServletRequest req) {
+		Integer sid=Integer.parseInt(req.getParameter("sid"));
+		List<Trademarkprocessfile>img=processfileService.getAllMsg(sid);
+		int count =img.size();
+		
+		return Layui.data(count, img);
+
+	}
+  	
+  	//删除流程文件
+  	@ResponseBody
+	@RequestMapping(value="delltradefile.do",produces="application/json;charset=UTF-8")
+	public JsonResult dellProessimg(@RequestParam(value = "requestDate[]") Integer[] id) {
+		int row=processfileService.deleteByPrimaryKey(id);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+	}
+
+  	//重新上传流程文件
+  	@ResponseBody
+	@RequestMapping(value="uptradefile.do",produces="application/json;charset=UTF-8")
+	public JsonResult updataProessimg(@RequestParam(value = "requestDate") Trademarkprocessfile img) {
+		
+		int row=processfileService.updateMsg(img);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+	}
 }

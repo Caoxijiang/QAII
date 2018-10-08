@@ -79,32 +79,12 @@
  
  
  
-        <table tableName="sci_thesis" domainObjectName="Thesis" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="sci_trademarkprocess" domainObjectName="Trademarkprocess" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_govfund" domainObjectName="Govfund" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="sci_trademarkprocessfile" domainObjectName="Trademarkprocessfile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_govplatform" domainObjectName="Govplatform" enableCountByExample="false" enableUpdateByExample="false"
-        enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>
-        <table tableName="sci_govreward" domainObjectName="Govreward" enableCountByExample="false" enableUpdateByExample="false"
-        enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>
-        <table tableName="sci_govsubject" domainObjectName="Govsubject" enableCountByExample="false" enableUpdateByExample="false"
-        enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>
-        <table tableName="sci_patent" domainObjectName="Patent" enableCountByExample="false" enableUpdateByExample="false"
-        enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>
-        <table tableName="sci_softwarecopyright" domainObjectName="Softwarecopyright" enableCountByExample="false" enableUpdateByExample="false"
-        enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>
-        <table tableName="sci_trademark" domainObjectName="Trademark" enableCountByExample="false" enableUpdateByExample="false"
-        enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>
-        <table tableName="sci_work" domainObjectName="Work" enableCountByExample="false" enableUpdateByExample="false"
-        enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>
+        
     </context>
 </generatorConfiguration>

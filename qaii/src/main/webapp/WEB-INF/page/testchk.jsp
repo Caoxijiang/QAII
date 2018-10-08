@@ -38,7 +38,7 @@ $().ready(function(){
 		var a=$("#dat3").val();
 		$.ajax({
 			type:"POST",
-			url:"testinterface.do",
+			url:"TestPrint.do",
 		    data:{date:a},
 			success:function(data){
 				alert("后台输出成功!");
