@@ -30,22 +30,22 @@
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
 		<input id="ids" hidden="" value="${param.userId}"></input>
-		<span class="blue">专利&nbsp;—&nbsp;资料审查</span>
+		<span class="blue">纵向课题&nbsp;—&nbsp;资料审查</span>
 	</div>
 	<button class="layui-btn btn" data-type="getCheckLength" id="test3" style="width:120px;margin-right:16px !important">
 		<i class="layui-icon layui-icon-add-1"></i>添加流程
 	</button>
 	<!--		导出-->
-	<button onclick="srchange('patent.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('research.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
 <div class="layui-container addtop"> 
 	<div class="datacontent">
 		<div class="datatitle">
-			<span class="dataname" id="paname" name=${param.patName}>&nbsp;&nbsp;&nbsp;&nbsp;专利名称《&nbsp;${param.patName}&nbsp;》</span>
-			<span class="inventor">发明人：${param.patAuthor}</span>
-			<span class="datadate">公开日期：${param.patPublishtime}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<span class="dataname" id="paname" name=${param.patName}>&nbsp;&nbsp;&nbsp;&nbsp;课程项目名称《&nbsp;${param.govsubName}&nbsp;》</span>
+			<span class="inventor">来源：${param.govsubSource}</span>
+			<span class="datadate">立项时间：${param.govsubApprovalnum}&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>
 		<div id="process">
 			<ul class="layui-timeline" id="processul">
@@ -88,10 +88,7 @@ $(function(){
 				content: 'patentDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&patName='"+patName+"'"
 			});
 		}); 
-	});
-	
-	
-	
+	});	
 });
 </script>
 </body>
