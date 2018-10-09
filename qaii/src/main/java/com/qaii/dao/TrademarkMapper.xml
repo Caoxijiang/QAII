@@ -235,4 +235,12 @@
 	    	#{id,jdbcType=INTEGER}
 	    </foreach>
   </delete>
+  <select id="countAgencyTradeMark" resultType="int">
+    SELECT COUNT(*) FROM sci_trademark WHERE tradm_ApplyTime BETWEEN #{0} AND #{1}
+  </select>
+  <select id="countAuthorizationTradeMark" resultType="int">
+  SELECT COUNT(*) FROM sci_trademark WHERE tradm_RegisterTime IS NOT NULL
+   AND tradm_RegisterTime!="" 
+   AND tradm_RegisterTime BETWEEN #{0} AND #{1}
+  </select>
 </mapper>

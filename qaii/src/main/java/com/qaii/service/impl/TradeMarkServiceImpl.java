@@ -52,4 +52,16 @@ public class TradeMarkServiceImpl implements TradeMarkService {
 		return trademarkmapper.insert(trademark);
 	}
 
+	@Override
+	public int countAgencyTradeMark(String firstDay, String endDay) {
+		// TODO Auto-generated method stub
+		return trademarkmapper.countAgencyTradeMark(firstDay, endDay);
+	}
+
+	@Override
+	public int countAuthorizationTradeMark(String firstDay, String endDay) {
+		// TODO Auto-generated method stub
+		return trademarkmapper.countAuthorizationTradeMark(firstDay, endDay);
+	}
+
 }

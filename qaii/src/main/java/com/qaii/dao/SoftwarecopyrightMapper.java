@@ -22,4 +22,8 @@ public interface SoftwarecopyrightMapper {
     List<Softwarecopyright> getAllSoftWareMsg();
     
     int deleteByPrimaryKeys(Integer[] eid);
+    
+    int countApplycopyright(String firstDay, String endDay);
+    
+    int countAuthorizationcopyright(String firstDay, String endDay);
 }

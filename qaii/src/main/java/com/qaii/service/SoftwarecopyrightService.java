@@ -17,4 +17,8 @@ public interface SoftwarecopyrightService {
 	int updateSoft(Softwarecopyright soft);
 	
 	int insertSoft(Softwarecopyright soft);
+	
+	int countApplycopyright(String firstDay, String endDay);
+	
+	int countAuthorizationcopyright(String firstDay, String endDay);
 }

@@ -22,4 +22,8 @@ public interface TrademarkMapper {
     List<Trademark> getAllTradeMarkMsg();
     
     int deleteByPrimaryKeys(Integer[] eid);
+    
+    int countAgencyTradeMark(String firstDay, String endDay);
+    
+    int countAuthorizationTradeMark(String firstDay, String endDay);
 }
