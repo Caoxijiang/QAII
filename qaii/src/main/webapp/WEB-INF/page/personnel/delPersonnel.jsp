@@ -143,19 +143,19 @@ layui.use('table', function(){
 	id: 'testReload',  
 //    height: 332,
     url: 'dellEMpinfo.do' ,//数据接口
-	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+	cellMinWidth: 60, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
     	{type:'checkbox',fixed: 'left'},
-		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'empNum', title: '工号',fixed: 'left',width:100},
+		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:60},
+		{field: 'empNum', title: '工号',fixed: 'left',width:70},
 		{field: 'empName', title: '姓名',fixed: 'left',width:150},
-		{field: 'empGender', title: '性别',sort: true},
+		{field: 'empGender', title: '性别',sort: true,width:80},
 		{field: 'empDept', title: '部门',sort: true,width:200},
 		{field: 'empPosition', title: '职务',sort: true,width:150},
-		{field: 'empHireStarttime', title: '聘期',sort: true},
+		{field: 'empHireStarttime', title: '聘期',sort: true,width:80},
 		{field: 'empIdcard', title: '身份证号',width:220},
 		{field: 'empIdcardEndtime', title: '身份证到期时间',sort: true,width:200},
-		{field: 'empEthnic', title: '民族',sort: true},
+		{field: 'empEthnic', title: '民族',sort: true,width:80},
 		{field: 'empPoliticallandscape', title: '政治面貌',sort: true,width:150},
 		{field: 'empMaritalstatus', title: '婚姻状况',sort: true,width:150},
 		
