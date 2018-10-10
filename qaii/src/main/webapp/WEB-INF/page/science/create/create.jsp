@@ -29,8 +29,8 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">创新平台( <span id="countnum"> </span> )</span>
-		<a href="adddetail.do" target="_blank">
+  	  <span class="limit">平台建设( <span id="countnum"> </span> )</span>
+		<a href="javascript:;" onclick="srchange('createAdd.do')">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -70,7 +70,7 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=govplatApplytime  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
+	<div class="int-inline"><input id=govplatApplytime"  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
 	<div class="int-inline"><input id="govplatSource"  type="checkbox" value="来源" checked/><lable>来源</lable></div>
 	<div class="int-inline"><input id="govplatLevel"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
 	<div class="int-inline"><input id="govplatName"  type="checkbox" value="平台名称" checked/><lable>平台名称</lable></div>
@@ -98,9 +98,9 @@
 </div>
  <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.govplatApplytime}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="review">审查资料</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
+  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="datac">资料审查</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -267,88 +267,59 @@ layui.use('table', function(obj){
     	alert("数据更新成功");
       });
 	
-  //监听工具条
-  table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-    var data = obj.data //获得当前行数据
-    console.log(data)
-    ,layEvent = obj.event; //获得 lay-event 对应的值
-    if(layEvent === 'detail'){
-		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
-     // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
-    } else if(layEvent === 'del'){
-      layer.confirm('确定删除信息', function(index){
-          let arr=[data.id];
-          console.log(data) 
-          $.post({
-          	url:"dellPlatformMsg.do",
-          	data:{
-          		"requestDate" : arr
-          	},
-          	success:function(data){
-          		if(data.data){
-          		    //删除对应行（tr）的DOM结构
-          			obj.del();
-          			layer.close(index);
-          		}else{
-          			layer.alert("删除失败")
-          		}
-          		
-          	}
-          }) 
-    	  
-    	  
-    	  
-    	  
-        obj.del(); //删除对应行（tr）的DOM结构
-        layer.close(index);
-        //向服务端发送删除指令
-        
-        
-        
-        
-      });
-    } else if(layEvent === 'edit'){
-      layer.alert(
-		  '<div class="layui-form-item">'+
-
-			'<label class="layui-form-label">角色</label>'+
-			'<div class="layui-input-block">'+
-				'<select name="interest" lay-filter="aihao">'+
-					'<option value=""></option>'+
-					'<option value="0">超级管理员</option>'+
-					'<option value="1" selected="">院级权限</option>'+
-					'<option value="2">人事部门权限</option>'+
-					'<option value="3">产业化处权限</option>'+
-					'<option value="4">科技管理处</option>'+
-				'</select>'+
-			'</div>'+
-		'</div>')
-    }else if(layEvent==="dimission"){
-    	 layer.confirm('确定离职信息', function(index){
-             let arr=data.id;
-             console.log(data) 
-             $.post({
-             	url:"dellempInfo.do",
-             	data:{
-             		"requestDate" : arr
-             	},
-             	success:function(data){
-             		if(data.data){
-             		    //删除对应行（tr）的DOM结构
-             			layer.alert("离职操作成功");
-             		}else{
-             			layer.alert("离职操作失败");
-             		}
-             		
-             	}
-             }) 
-       	  
-          // obj.del(); //删除对应行（tr）的DOM结构
-          // layer.close(index);
-           //向服务端发送删除指  
-         });
-    }
-  });
+    //监听工具条
+    table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+      var data = obj.data //获得当前行数据
+      console.log(data)
+      ,layEvent = obj.event; //获得 lay-event 对应的值
+      if(layEvent === 'detail'){
+      	var iframesrc="createCheck.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      } else if(layEvent === 'del'){
+        layer.confirm('确定删除信息', function(index){
+            let arr=[data.id];
+            console.log(data) 
+            $.post({
+            	url:"dellSubjectMsg.do",
+            	data:{
+            		"requestDate" : arr
+            	},
+            	success:function(data){
+            		if(data.data){
+            		    //删除对应行（tr）的DOM结构
+            			obj.del();
+            			layer.close(index);
+            		}else{
+            			layer.alert("删除失败")
+            		}
+            		
+            	}
+            }) 
+      	  
+      	  
+      	  
+      	  
+          obj.del(); //删除对应行（tr）的DOM结构
+          layer.close(index);
+          //向服务端发送删除指令
+          
+          
+          
+          
+        });
+      } else if(layEvent === 'edit'){
+      	var iframesrc="createEdit.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }else if(layEvent==="datac"){
+      	//userid为当前记录id值，将会传到资料审查界面
+      	var iframesrc="createData.do?userId='"+data.id+"'&govplatName="+data.govplatName+"&govplatSource="+data.govplatSource+"&govplatApprovalnum="+data.govplatApprovalnum;
+      	url=encodeURI(iframesrc);
+      	url=encodeURI(url);
+      	
+      	console.log(url);
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }
+    });
 
 	//监听顶部添加删除操作
 	var arr=[];
@@ -439,6 +410,7 @@ upload.render({
 	});
 </script>
 <!--自动设置主表格可视区域-->
+<script src="${basePath}/js/iframesrc.js"></script>
 <script>
 
 	var hei=$(".action").height();

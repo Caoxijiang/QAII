@@ -26,7 +26,7 @@
 	<div class="techadd" style="width:300px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span>专利&nbsp;—&nbsp;资料审查</span>
+		<span>平台建设&nbsp;—&nbsp;资料审查</span>
 		<span>&nbsp;>&nbsp;</span>
 		<span class="blue">文件预览</span>
 	</div>
