@@ -79,12 +79,37 @@
  
  
  
-        <table tableName="sci_trademarkprocess" domainObjectName="Trademarkprocess" enableCountByExample="false" enableUpdateByExample="false"
+        <!-- <table tableName="sci_trademarkprocess" domainObjectName="Trademarkprocess" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         <table tableName="sci_trademarkprocessfile" domainObjectName="Trademarkprocessfile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table> -->
+        <table tableName="sci_govfundprocess" domainObjectName="Govfundprocess" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
+        <table tableName="sci_govfundprocessfile" domainObjectName="Govfundprocessfile" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="sci_govplatformprocess" domainObjectName="Govplatformprocess" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="sci_govplatformprocessfile" domainObjectName="Govplatformprocessfile" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="sci_govrewardprocess" domainObjectName="Govrewardprocess" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="sci_govrewardprocessfile" domainObjectName="Govrewardprocessfile" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="sci_govsubjectprocess" domainObjectName="Govsubjectprocess" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="sci_govsubjectprocessfile" domainObjectName="Govsubjectprocessfile" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        
         
     </context>
 </generatorConfiguration>
