@@ -133,16 +133,105 @@ public class techController {
 	public String brandDataAddFile(){
 		return "page/science/brand/brandDataAddFile";
 	}
+	
 	//基金
 	@RequestMapping("fund.do")
 	public String fund(){
-		return "page/science/fund";
+		return "page/science/fund/fund";
 	}
+	//基金添加界面
+	@RequestMapping("fundAdd.do")
+	public String fundAdd(){
+		return "page/science/fund/fundAdd";
+	}
+	//基金查看详情界面
+	@RequestMapping("fundCheck.do")
+	public String fundCheck(){
+		return "page/science/fund/fundCheck";
+	}
+	//基金修改界面
+	@RequestMapping("fundEdit.do")
+	public String fundEdit(){
+		return "page/science/fund/fundEdit";
+	}
+	//基金资料审查界面
+	@RequestMapping("fundProcess.do")
+	public ModelAndView fundProcess(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/fund/fundProcess", "utflist", result);
+	}
+	//基金资料审查文件预览界面
+	@RequestMapping("fundData.do")
+	public ModelAndView fundData(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/fund/fundData", "utflist", result);
+	}
+	//基金资料审查文件流程添加界面
+	@RequestMapping("fundDataAdd.do")
+	public String fundDataAdd(){
+		return "page/science/fund/fundDataAdd";
+	}
+	//基金资料审查文件添加界面
+	@RequestMapping("fundDataAddFile.do")
+	public String fundDataAddFile(){
+		return "page/science/fund/fundfund/fund/fundDataAddFile";
+	}
+	
 	//创新平台
 	@RequestMapping("create.do")
 	public String create(){
-		return "page/science/create";
+		return "page/science/create/create";
 	}
+	//创新平台添加界面
+	@RequestMapping("createAdd.do")
+	public String createAdd(){
+		return "page/science/create/createAdd";
+	}
+	//创新平台查看详情界面
+	@RequestMapping("createCheck.do")
+	public String createCheck(){
+		return "page/science/create/createCheck";
+	}
+	//创新平台修改界面
+	@RequestMapping("createEdit.do")
+	public String createEdit(){
+		return "page/science/create/createEdit";
+	}
+	//创新平台资料审查界面
+	@RequestMapping("createProcess.do")
+	public ModelAndView createProcess(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/create/createProcess", "utflist", result);
+	}
+	//创新平台资料审查文件预览界面
+	@RequestMapping("createData.do")
+	public ModelAndView createData(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/create/createData", "utflist", result);
+	}
+	//创新平台资料审查文件流程添加界面
+	@RequestMapping("createDataAdd.do")
+	public String createDataAdd(){
+		return "page/science/create/createDataAdd";
+	}
+	//创新平台资料审查文件添加界面
+	@RequestMapping("createDataAddFile.do")
+	public String createDataAddFile(){
+		return "page/science/create/createDataAddFile";
+	}
+		
 	//纵向课题
 	@RequestMapping("research.do")
 	public String research(){
