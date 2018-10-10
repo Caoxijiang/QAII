@@ -249,7 +249,7 @@ public class RewardController {
 		return govreward;
 	}
 	
-	//添加商标资料审核流程信息
+	//添加奖励资料审核流程信息
   	@RequestMapping(value="addGovrewardprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
   	@ResponseBody
   	public JsonResult addProcessInfo(HttpServletRequest req,Govrewardprocess patp) {
@@ -266,7 +266,7 @@ public class RewardController {
       	}
   	}
   	
-  	//显示所有商标审核流程信息
+  	//显示所有奖励审核流程信息
   	@ResponseBody
   	@RequestMapping(value="getGovrewardprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
   	public JsonResult findAllProcessInfo(HttpServletRequest req) {

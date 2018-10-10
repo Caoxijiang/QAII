@@ -258,7 +258,7 @@ public class FundController {
 		return govfund;
 	}
 	
-	//添加商标资料审核流程信息
+	//添加基金资料审核流程信息
   	@RequestMapping(value="addGovfundprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
   	@ResponseBody
   	public JsonResult addProcessInfo(HttpServletRequest req,Govfundprocess patp) {
@@ -275,7 +275,7 @@ public class FundController {
       	}
   	}
   	
-  	//显示所有商标审核流程信息
+  	//显示所有基金审核流程信息
   	@ResponseBody
   	@RequestMapping(value="getGovfundprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
   	public JsonResult findAllProcessInfo(HttpServletRequest req) {

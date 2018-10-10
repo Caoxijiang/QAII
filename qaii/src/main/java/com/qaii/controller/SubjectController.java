@@ -260,7 +260,7 @@ public class SubjectController {
 		return govsubject;
 	}
 	
-	//添加商标资料审核流程信息
+	//添加纵向课题资料审核流程信息
   	@RequestMapping(value="addGovsubjectprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
   	@ResponseBody
   	public JsonResult addProcessInfo(HttpServletRequest req,Govsubjectprocess patp) {
@@ -277,7 +277,7 @@ public class SubjectController {
       	}
   	}
   	
-  	//显示所有商标审核流程信息
+  	//显示所有纵向课题审核流程信息
   	@ResponseBody
   	@RequestMapping(value="getGovsubjectprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
   	public JsonResult findAllProcessInfo(HttpServletRequest req) {

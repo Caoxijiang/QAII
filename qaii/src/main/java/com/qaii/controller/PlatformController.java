@@ -260,7 +260,7 @@ public class PlatformController {
 		return govplatform;
 	}
 	
-	//添加商标资料审核流程信息
+	//添加平台资料审核流程信息
   	@RequestMapping(value="addGovPlatformprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
   	@ResponseBody
   	public JsonResult addProcessInfo(HttpServletRequest req,Govplatformprocess patp) {
@@ -277,7 +277,7 @@ public class PlatformController {
       	}
   	}
   	
-  	//显示所有商标审核流程信息
+  	//显示所有平台审核流程信息
   	@ResponseBody
   	@RequestMapping(value="getGovPlatformprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
   	public JsonResult findAllProcessInfo(HttpServletRequest req) {

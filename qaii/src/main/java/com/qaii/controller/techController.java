@@ -170,8 +170,12 @@ public class techController {
 	}
 	//纵向课题资料审查文件预览界面
 	@RequestMapping("researchData.do")
-	public String researchData(){
-		return "page/science/research/researchData";
+	public ModelAndView researchData(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("govsubName").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govsubSource").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govsubApprovalnum").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/research/researchData", "utflist", result);
 	}
 	//纵向课题资料审查文件流程添加界面
 	@RequestMapping("researchDataAdd.do")
