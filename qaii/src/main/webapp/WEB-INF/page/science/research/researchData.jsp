@@ -72,7 +72,7 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['350px', '400px'],
-				content: "patentDataAdd.do?Id"+'='+${param.userId}
+				content: "researchDataAdd.do?Id"+'='+${param.userId}
 			});
 		}); 
 	});
@@ -85,7 +85,7 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['600px', '450px'],
-				content: 'patentDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&patName='"+patName+"'"
+				content: 'researchDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&patName='"+patName+"'"
 			});
 		}); 
 	});	
