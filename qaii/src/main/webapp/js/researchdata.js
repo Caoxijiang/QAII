@@ -6,7 +6,7 @@ $().ready(function(){
 		return;
 	}
 	$.post({
-		url:"getTradeProcess.do",
+		url:"getGovsubjectprocess.do",
 		data:{
 			id:id,
 		},

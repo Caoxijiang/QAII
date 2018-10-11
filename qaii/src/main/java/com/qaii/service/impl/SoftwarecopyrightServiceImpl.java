@@ -64,4 +64,10 @@ public class SoftwarecopyrightServiceImpl implements SoftwarecopyrightService {
 		return softMapper.countAuthorizationcopyright(firstDay, endDay);
 	}
 
+	@Override
+	public int countAuthorizationcopyrightNum() {
+		// TODO Auto-generated method stub
+		return softMapper.countAuthorizationcopyrightNum();
+	}
+
 }

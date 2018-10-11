@@ -26,4 +26,6 @@ public interface SoftwarecopyrightMapper {
     int countApplycopyright(String firstDay, String endDay);
     
     int countAuthorizationcopyright(String firstDay, String endDay);
+    
+    int countAuthorizationcopyrightNum();
 }

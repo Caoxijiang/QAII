@@ -21,4 +21,6 @@ public interface SoftwarecopyrightService {
 	int countApplycopyright(String firstDay, String endDay);
 	
 	int countAuthorizationcopyright(String firstDay, String endDay);
+	
+	int countAuthorizationcopyrightNum();
 }

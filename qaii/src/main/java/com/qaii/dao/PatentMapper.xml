@@ -311,5 +311,7 @@
 	    AND pat_AuthorzationTime !="" 
 	    AND pat_AuthorzationTime BETWEEN #{0} AND #{1}
   </select>
-
+  <select id="countAuthorizationPatentNum" resultType="int">
+    SELECT COUNT(*) FROM sci_patent WHERE pat_AuthorzationTime IS NOT NULL AND pat_AuthorzationTime !=""
+  </select>
 </mapper>

@@ -85,7 +85,7 @@
         <table tableName="sci_trademarkprocessfile" domainObjectName="Trademarkprocessfile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table> -->
-        <table tableName="sci_govfundprocess" domainObjectName="Govfundprocess" enableCountByExample="false" enableUpdateByExample="false"
+        <!-- <table tableName="sci_govfundprocess" domainObjectName="Govfundprocess" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         <table tableName="sci_govfundprocessfile" domainObjectName="Govfundprocessfile" enableCountByExample="false" enableUpdateByExample="false"
@@ -105,8 +105,8 @@
         selectByExampleQueryId="false"></table>
         <table tableName="sci_govsubjectprocess" domainObjectName="Govsubjectprocess" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>
-        <table tableName="sci_govsubjectprocessfile" domainObjectName="Govsubjectprocessfile" enableCountByExample="false" enableUpdateByExample="false"
+        selectByExampleQueryId="false"></table> -->
+        <table tableName="sci_govsubject" domainObjectName="Govsubject" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         

@@ -26,4 +26,6 @@ public interface TrademarkMapper {
     int countAgencyTradeMark(String firstDay, String endDay);
     
     int countAuthorizationTradeMark(String firstDay, String endDay);
+    
+    int countAuthorizationTradeMarkNum();
 }

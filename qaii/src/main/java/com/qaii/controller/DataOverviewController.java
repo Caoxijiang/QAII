@@ -53,26 +53,7 @@ public class DataOverviewController {
 	 * @description 科技处数据可视化接口
 	 * @time 2018/09/21
 	 */
-	
-	// 科研成果总览区域
-	@ResponseBody
-	Map<String, Integer> scientificPreview() throws ParseException{
-		//获取当前时间
-		Date date =new Date();
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-		List<String> list=new ArrayList<>();
-		list=CountDatetoNowDays.getpremonth(sdf.format(date), 12);
-		Map<String, Integer> result=new HashMap<>();
-		result.put("AgencyPatent", patentService.getPatentCount());
-		result.put("AuthorizationPatent", 2);
-		result.put("Applycopyright", softService.getCountNum());
-		result.put("Authorizationcopyright", 4);
-		result.put("AgencyTradeMark", trademarkService.getCountNum());
-		result.put("AuthorizationTradeMark", 6);
-		result.put("CountThesis", thesisService.getCountNum());
-		result.put("Countwork", workService.getCountNum());
-		return result;		
-	}
+
 	
 	// 政府资助数据接口
 	public Map<String, List> GovernmentFunding(){
@@ -200,6 +181,34 @@ public class DataOverviewController {
 			result.add(workService.countEachMonthwork(map.get("first"), map.get("end")));
 		}
 		return result;
+	}
+	
+	
+	/**
+	 *  @author wangxin
+	 *  @description 数据可视化科研成果总览区域数据接口
+	 *  @date 2018/10/11
+	 * */
+	
+	
+	@RequestMapping("scientificPreview.do")
+	@ResponseBody
+	Map<String, Integer> scientificPreview() throws ParseException{
+		//获取当前时间
+		Date date =new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		List<String> list=new ArrayList<>();
+		list=CountDatetoNowDays.getpremonth(sdf.format(date), 12);
+		Map<String, Integer> result=new HashMap<>();
+		result.put("AgencyPatent", patentService.getPatentCount());
+		result.put("AuthorizationPatent", patentService.countAuthorizationPatentNum());
+		result.put("Applycopyright", softService.getCountNum());
+		result.put("Authorizationcopyright", softService.countAuthorizationcopyrightNum());
+		result.put("AgencyTradeMark", trademarkService.getCountNum());
+		result.put("AuthorizationTradeMark", trademarkService.countAuthorizationTradeMarkNum());
+		result.put("CountThesis", thesisService.getCountNum());
+		result.put("Countwork", workService.getCountNum());
+		return result;		
 	}
 	
 }

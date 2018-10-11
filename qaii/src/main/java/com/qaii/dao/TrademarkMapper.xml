@@ -27,8 +27,8 @@
     tradm_Cost, tradm_InvoicePer, tradm_StatusFollow, tradm_UpdateTime,eid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    SELECT a.*,b.Path FROM sci_trademark AS a,sci_trademarkimg AS b
-    where a.id = #{id,jdbcType=INTEGER} AND  a.eid=b.id
+    SELECT a.*,b.Path FROM sci_trademark AS a LEFT JOIN sci_trademarkimg AS b ON a.eid=b.id
+   where a.id = #{id,jdbcType=INTEGER} 
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from sci_trademark
@@ -242,5 +242,8 @@
   SELECT COUNT(*) FROM sci_trademark WHERE tradm_RegisterTime IS NOT NULL
    AND tradm_RegisterTime!="" 
    AND tradm_RegisterTime BETWEEN #{0} AND #{1}
+  </select>
+  <select id="countAuthorizationTradeMarkNum" resultType="int">
+    SELECT COUNT(*) FROM sci_trademark WHERE tradm_RegisterTime IS NOT NULL AND tradm_RegisterTime !=""
   </select>
 </mapper>

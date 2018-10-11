@@ -64,4 +64,10 @@ public class TradeMarkServiceImpl implements TradeMarkService {
 		return trademarkmapper.countAuthorizationTradeMark(firstDay, endDay);
 	}
 
+	@Override
+	public int countAuthorizationTradeMarkNum() {
+		// TODO Auto-generated method stub
+		return trademarkmapper.countAuthorizationTradeMarkNum();
+	}
+
 }

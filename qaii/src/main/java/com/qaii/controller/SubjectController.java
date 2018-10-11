@@ -295,14 +295,14 @@ public class SubjectController {
 	
   	//审核资料上传
   	@ResponseBody
-	@RequestMapping("/Govsubjectprocessupload.do")
+	@RequestMapping("Govsubjectprocessupload.do")
 	public Map<String, String> processupload(@RequestParam("file") MultipartFile[] files, Govsubjectprocessfile img,
 			HttpServletRequest req) throws Exception {
 		// System.out.println(request.getParameter("name"));
 		String insertype=req.getParameter("type");
 		Integer oid = Integer.parseInt(req.getParameter("oid"));
 		Integer stepid = Integer.parseInt(req.getParameter("step"));
-		String tradmDept = new String(req.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8");
+		String govsubName = new String(req.getParameter("govsubName").getBytes("ISO-8859-1"),"utf-8");
 		Map<String, String> result = new HashMap<>();
 		if (files != null && files.length < 0) {
 			result.put("code", "1");
@@ -322,8 +322,8 @@ public class SubjectController {
 
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
-			String path = "C:/File/img/subject/File/" + tradmDept + "/" + oid + "/" + stepid;
-			String dbpath="img/subject/File/"+tradmDept + "/" + oid + "/" + stepid;
+			String path = "C:/File/img/subject/File/" + govsubName + "/" + oid + "/" + stepid;
+			String dbpath="img/subject/File/"+govsubName + "/" + oid + "/" + stepid;
 			File destFile = new File(path + "/" + filename);
 
 			if (!destFile.getParentFile().exists()) {

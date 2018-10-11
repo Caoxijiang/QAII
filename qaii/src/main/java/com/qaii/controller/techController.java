@@ -254,8 +254,12 @@ public class techController {
 	}
 	//纵向课题资料审查界面
 	@RequestMapping("researchProcess.do")
-	public String researchProcess(){
-		return "page/science/research/researchProcess";
+	public ModelAndView researchProcess(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("govsubName").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govsubSource").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govsubApprovalnum").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/research/researchProcess", "utflist", result);
 	}
 	//纵向课题资料审查文件预览界面
 	@RequestMapping("researchData.do")

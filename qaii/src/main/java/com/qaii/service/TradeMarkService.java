@@ -21,4 +21,6 @@ public interface TradeMarkService {
 	int countAgencyTradeMark(String firstDay, String endDay);
 	
 	int countAuthorizationTradeMark(String firstDay, String endDay);
+	
+	int countAuthorizationTradeMarkNum();
 }
