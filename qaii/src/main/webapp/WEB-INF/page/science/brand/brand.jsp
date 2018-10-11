@@ -282,18 +282,10 @@ layui.use('table', function(obj){
           		}
           		
           	}
-          }) 
-    	  
-    	  
-    	  
-    	  
+          })  	  
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
-        //向服务端发送删除指令
-        
-        
-        
-        
+        //向服务端发送删除指令       
       });
     } else if(layEvent === 'edit'){
     	var iframesrc="brandEdit.do?userId='"+data.id+"'";

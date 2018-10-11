@@ -39,7 +39,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">受理：<span id="">XXX个<br />授权：XXX个</div>
+		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
 		  				</div>
 		  				<div class="itemBox" id="PatentBox">
 		  					<canvas id="totalSoft" class="itemCanvas"></canvas>
@@ -312,9 +312,8 @@
 </div>
 <script src="${basePath}/js/scichars.js"></script>
 <script type="text/javascript">
-
 /* circle(boxid,id,color,total,num);//boxid为各个板块id值,id为canvas的id值,color为基本外圆颜色值,total为圆铺满总量,num为数据量 */
-circle("PatentBox","totalPatent","#ea8a27",100,80);
+circle("PatentBox","totalPatent","#ea8a27",660,165);
 circle("PatentBox","totalSoft","#ea8a27",660,165);
 circle("PatentBox","totalBrand","#ea8a27",660,165);
 circle("PatentBox","totalPaper","#3db4e3",660,165);
