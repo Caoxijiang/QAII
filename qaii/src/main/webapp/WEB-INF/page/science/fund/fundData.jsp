@@ -30,7 +30,7 @@
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
 		<input id="ids" hidden="" value="${param.userId}"></input>
-		<span class="blue">专利&nbsp;—&nbsp;资料审查</span>
+		<span class="blue">基金管理&nbsp;—&nbsp;资料审查</span>
 	</div>
 	<button class="layui-btn btn" data-type="getCheckLength" id="test3" style="width:120px;margin-right:16px !important">
 		<i class="layui-icon layui-icon-add-1"></i>添加流程
@@ -43,9 +43,9 @@
 <div class="layui-container addtop"> 
 	<div class="datacontent">
 		<div class="datatitle">
-			<span class="dataname" id="paname" name=${param.patName}>&nbsp;&nbsp;&nbsp;&nbsp;专利名称《&nbsp;${requestScope.utflist[0]}&nbsp;》</span>
-			<span class="inventor">发明人：${requestScope.utflist[1]}</span>
-			<span class="datadate">公开日期：${requestScope.utflist[2]}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<span class="dataname" id="paname" name=${param.patName}>&nbsp;&nbsp;&nbsp;&nbsp;基金名称《&nbsp;${requestScope.utflist[0]}&nbsp;》</span>
+			<span class="inventor">来源：${requestScope.utflist[1]}</span>
+			<span class="datadate">申报时间：${requestScope.utflist[2]}&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>
 		<div id="process">
 			<ul class="layui-timeline" id="processul">

@@ -83,7 +83,9 @@
 	<div class="int-inline"><input id="govfundFundlimit"  type="checkbox" value="基金资助额度" checked/><lable>基金资助额度</lable></div>
 	<div class="int-inline"><input id="govfundFund"  type="checkbox" value="基金" checked/><lable>基金</lable></div>
 	<div class="int-inline"><input id="govfundFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
+	<div class="int-inline"><input id="govfundMiddleresult"  type="checkbox" value="中期检查考核时间" checked/><lable>中期检查考核时间</lable></div>
 	<div class="int-inline"><input id="govfundMiddleresult"  type="checkbox" value="中期检查考核结果" checked/><lable>中期检查考核结果</lable></div>
+	<div class="int-inline"><input id="govfundEndresult"  type="checkbox" value="项目结题验收时间" checked/><lable>项目结题验收时间</lable></div>
 	<div class="int-inline"><input id="govfundEndresult"  type="checkbox" value="项目结题验收结果" checked/><lable>项目结题验收结果</lable></div>
 	<div class="int-inline"><input id="govfundRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 	<div class="int-inline"><input id="govfundFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div>
@@ -95,9 +97,9 @@
 </div>
  <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.govfundSource}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="review">审查资料</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
+  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="datac">资料审查</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -129,21 +131,23 @@ layui.use('table', function(obj){
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'govfundApplytime', title: '申报时间',fixed: 'left',width:100},
+		{field: 'govfundApplytime', title: '申报时间',fixed: 'left',width:150},
 		{field: 'govfundSource', title: '来源',fixed: 'left',width:100},
 		{field: 'govfundLevel', title: '级别',fixed: 'left',width:150},
-		{field: 'govfundName', title: '基金名称',sort: true},
+		{field: 'govfundName', title: '基金名称',sort: true,width:150},
 		{field: 'govfundImplementtime', title: '基金实施期',sort: true,width:200},
-		{field: 'govfundConstructunit', title: '基金构成单位',sort: true,width:150},
-		{field: 'govfundManagedepart', title: '主管部门',sort: true},
-		{field: 'govfundApplydepart', title: '申请报送部门',width:220},
-		{field: 'govfundPass', title: '是否通过',sort: true},
+		{field: 'govfundConstructunit', title: '基金构成单位',sort: true,width:200},
+		{field: 'govfundManagedepart', title: '主管部门',sort: true,width:150},
+		{field: 'govfundApplydepart', title: '申请报送部门',width:250},
+		{field: 'govfundPass', title: '是否通过',sort: true,width:200},
 		{field: 'govfundWrittentime', title: '批复时间',sort: true,width:150},
-		{field: 'govfundFundlimit', title: '基金资助额度',sort: true,width:150},
+		{field: 'govfundFundlimit', title: '基金资助额度',sort: true,width:200},
 		
 		{field: 'govfundFund', title: '基金',sort: true,width:200},
 		{field: 'govfundFundtime', title: '资金到位时间',sort: true,width:200},
+		{field: 'govfundMiddleresult', title: '中期检查考核时间',sort: true,width:200},
 		{field: 'govfundMiddleresult', title: '中期检查考核结果',sort: true,width:200},
+		{field: 'govfundEndresult', title: '项目结题验收时间',sort: true,width:230},
 		{field: 'govfundEndresult', title: '项目结题验收结果',sort: true,width:230},
 		{field: 'govfundRemark', title: '备注',sort: true,width:200},
 		{field: 'govfundFile', title: '附件',sort: true,width:200},
@@ -262,88 +266,58 @@ layui.use('table', function(obj){
       });
 	
   //监听工具条
-  table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-    var data = obj.data //获得当前行数据
-    console.log(data)
-    ,layEvent = obj.event; //获得 lay-event 对应的值
-    if(layEvent === 'detail'){
-		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
-     // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
-    } else if(layEvent === 'del'){
-      layer.confirm('确定删除信息', function(index){
-          let arr=[data.id];
-          console.log(data) 
-          $.post({
-          	url:"dellFundMsg.do",
-          	data:{
-          		"requestDate" : arr
-          	},
-          	success:function(data){
-          		if(data.data){
-          		    //删除对应行（tr）的DOM结构
-          			obj.del();
-          			layer.close(index);
-          		}else{
-          			layer.alert("删除失败")
-          		}
-          		
-          	}
-          }) 
-    	  
-    	  
-    	  
-    	  
-        obj.del(); //删除对应行（tr）的DOM结构
-        layer.close(index);
-        //向服务端发送删除指令
-        
-        
-        
-        
-      });
-    } else if(layEvent === 'edit'){
-      layer.alert(
-		  '<div class="layui-form-item">'+
-
-			'<label class="layui-form-label">角色</label>'+
-			'<div class="layui-input-block">'+
-				'<select name="interest" lay-filter="aihao">'+
-					'<option value=""></option>'+
-					'<option value="0">超级管理员</option>'+
-					'<option value="1" selected="">院级权限</option>'+
-					'<option value="2">人事部门权限</option>'+
-					'<option value="3">产业化处权限</option>'+
-					'<option value="4">科技管理处</option>'+
-				'</select>'+
-			'</div>'+
-		'</div>')
-    }else if(layEvent==="dimission"){
-    	 layer.confirm('确定离职信息', function(index){
-             let arr=data.id;
-             console.log(data) 
-             $.post({
-             	url:"dellempInfo.do",
-             	data:{
-             		"requestDate" : arr
-             	},
-             	success:function(data){
-             		if(data.data){
-             		    //删除对应行（tr）的DOM结构
-             			layer.alert("离职操作成功");
-             		}else{
-             			layer.alert("离职操作失败");
-             		}
-             		
-             	}
-             }) 
-       	  
-          // obj.del(); //删除对应行（tr）的DOM结构
-          // layer.close(index);
-           //向服务端发送删除指  
-         });
-    }
-  });
-
+    table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+      var data = obj.data //获得当前行数据
+      console.log(data)
+      ,layEvent = obj.event; //获得 lay-event 对应的值
+      if(layEvent === 'detail'){
+      	var iframesrc="fundCheck.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      } else if(layEvent === 'del'){
+        layer.confirm('确定删除信息', function(index){
+            let arr=[data.id];
+            console.log(data) 
+            $.post({
+            	url:"dellTradeMarkMsg.do",
+            	data:{
+            		"requestDate" : arr
+            	},
+            	success:function(data){
+            		if(data.data){
+            		    //删除对应行（tr）的DOM结构
+            			obj.del();
+            			layer.close(index);
+            		}else{
+            			layer.alert("删除失败")
+            		}
+            		
+            	}
+            }) 
+      	  
+      	  
+      	  
+      	  
+          obj.del(); //删除对应行（tr）的DOM结构
+          layer.close(index);
+          //向服务端发送删除指令
+          
+          
+          
+          
+        });
+      } else if(layEvent === 'edit'){
+      	var iframesrc="fundEdit.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }else if(layEvent==="datac"){
+      	//userid为当前记录id值，将会传到资料审查界面
+      	var iframesrc="fundData.do?userId='"+data.id+"'&govfundName="+data.govfundName+"&govfundSource="+data.govfundSource+"&govfundApplytime="+data.govfundApplytime;
+      	url=encodeURI(iframesrc);
+      	url=encodeURI(url);
+      	
+      	console.log(url);
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }
+    });
 	//监听顶部添加删除操作
 	var arr=[];
 	//var arr=[];
