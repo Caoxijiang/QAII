@@ -158,18 +158,18 @@ public class techController {
 	@RequestMapping("fundProcess.do")
 	public ModelAndView fundProcess(HttpServletRequest request) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govfundName").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govfundSource").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govfundApplytime").getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/fund/fundProcess", "utflist", result);
 	}
 	//基金资料审查文件预览界面
 	@RequestMapping("fundData.do")
 	public ModelAndView fundData(HttpServletRequest request) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govfundName").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govfundSource").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govfundApplytime").getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/fund/fundData", "utflist", result);
 	}
 	//基金资料审查文件流程添加界面
