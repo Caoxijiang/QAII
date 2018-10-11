@@ -122,4 +122,7 @@
 	    	#{id,jdbcType=INTEGER}
 	    </foreach>
   </delete>
+  <select id="countEachMonthwork" resultType="int">
+    SELECT COUNT(*) FROM sci_work WHERE work_PublishTime BETWEEN #{0} AND #{1}
+  </select>
 </mapper>

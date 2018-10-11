@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<form class="layui-form layui-form-pane" action="addProcessInfo.do" method="post">
+	<form class="layui-form layui-form-pane" action="addGovsubjectprocess.do" method="post">
 		<div class="layui-form-item">
 			<label class="layui-form-label">流程名称</label>
 			<div class="layui-input-block">

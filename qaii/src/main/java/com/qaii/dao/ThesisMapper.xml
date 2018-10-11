@@ -134,4 +134,7 @@
 	    	#{id,jdbcType=INTEGER}
 	    </foreach>
   </delete>
+  <select id="countEachMonththesis" resultType="int">
+    SELECT COUNT(*) FROM sci_thesis WHERE sis_PublishTime BETWEEN #{0} AND #{1}
+  </select>
 </mapper>

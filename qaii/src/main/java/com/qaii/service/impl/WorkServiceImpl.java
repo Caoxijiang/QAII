@@ -52,4 +52,10 @@ public class WorkServiceImpl implements WorkService {
 		return workmapper.insert(work);
 	}
 
+	@Override
+	public int countEachMonthwork(String firstDay, String endDay) {
+		// TODO Auto-generated method stub
+		return workmapper.countEachMonthwork(firstDay, endDay);
+	}
+
 }
