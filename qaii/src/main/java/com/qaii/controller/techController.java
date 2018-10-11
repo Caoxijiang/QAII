@@ -207,9 +207,9 @@ public class techController {
 	@RequestMapping("createProcess.do")
 	public ModelAndView createProcess(HttpServletRequest request) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govplatName").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govplatSource").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("govplatApprovalnum").getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/create/createProcess", "utflist", result);
 	}
 	//创新平台资料审查文件预览界面

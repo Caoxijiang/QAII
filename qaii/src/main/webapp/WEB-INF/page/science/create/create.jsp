@@ -82,11 +82,15 @@
 	<div class="int-inline"><input id="govplatAssumedepart"  type="checkbox" value="承担部门" checked/><lable>承担部门</lable></div>
 	<div class="int-inline"><input id="govplatPlatformper"  type="checkbox" value="平台负责人" checked/><lable>平台负责人</lable></div>
 	<div class="int-inline"><input id="govplatProjectapproval"  type="checkbox" value="是否立项" checked/><lable>是否立项</lable></div>
-	<div class="int-inline"><input id="govplatApprovalnum"  type="checkbox" value="立项编号及时间" checked/><lable>立项编号及时间</lable></div>
+	<div class="int-inline"><input id="govplatApprovalnum"  type="checkbox" value="立项编号" checked/><lable>立项编号</lable></div>
+	<div class="int-inline"><input id="govplatApprovalnum"  type="checkbox" value="立项时间" checked/><lable>立项时间</lable></div>
 	<div class="int-inline"><input id="govplatSubvention"  type="checkbox" value="资助金额（万元）" checked/><lable>资助金额（万元）</lable></div>
 	<div class="int-inline"><input id="govplatFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
+	<div class="int-inline"><input id="govplatMiddleresult"  type="checkbox" value="中期检查考核时间" checked/><lable>中期检查考核时间</lable></div>
 	<div class="int-inline"><input id="govplatMiddleresult"  type="checkbox" value="中期检查考核结果" checked/><lable>中期检查考核结果</lable></div>
+	<div class="int-inline"><input id="govplatYearresult"  type="checkbox" value="年度检查考核时间" checked/><lable>年度检查考核时间</lable></div>
 	<div class="int-inline"><input id="govplatYearresult"  type="checkbox" value="年度检查考核结果" checked/><lable>年度检查考核结果</lable></div>
+	<div class="int-inline"><input id="govplatEndresult"  type="checkbox" value="项目结题验收时间" checked/><lable>项目结题验收时间</lable></div>
 	<div class="int-inline"><input id="govplatEndresult"  type="checkbox" value="项目结题验收结果" checked/><lable>项目结题验收结果</lable></div>
 	<div class="int-inline"><input id="govplatRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 	<div class="int-inline"><input id="govplatFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div>
@@ -132,24 +136,28 @@ layui.use('table', function(obj){
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'govplatApplytime', title: '申报时间',fixed: 'left',width:100},
+		{field: 'govplatApplytime', title: '申报时间',fixed: 'left',width:150},
 		{field: 'govplatSource', title: '来源',fixed: 'left',width:150},
 		{field: 'govplatLevel', title: '级别',sort: true},
 		{field: 'govplatName', title: '平台名称',sort: true,width:200},
 		{field: 'govplatImplementtime', title: '项目实施期',sort: true,width:150},
-		{field: 'govplatDutyunit', title: '承担单位',sort: true},
+		{field: 'govplatDutyunit', title: '承担单位',sort: true,width:150},
 		{field: 'govplatCooperationunit', title: '协作单位',width:220},
 		{field: 'govplatManagedepart', title: '主管部门',sort: true,width:200},
-		{field: 'govplatApplydepart', title: '申请报送部门',sort: true},
+		{field: 'govplatApplydepart', title: '申请报送部门',sort: true,width:200},
 		{field: 'govplatAssumedepart', title: '承担部门',sort: true,width:150},
 		{field: 'govplatPlatformper', title: '平台负责人',sort: true,width:150},
 		
 		{field: 'govplatProjectapproval', title: '是否立项',sort: true,width:200},
-		{field: 'govplatApprovalnum', title: '立项编号及时间',sort: true,width:200},
+		{field: 'govplatApprovalnum', title: '立项编号',sort: true,width:200},
+		{field: 'govplatApprovalnum', title: '立项时间',sort: true,width:200},
 		{field: 'govplatSubvention', title: '资助金额（万元）',sort: true,width:200},
 		{field: 'govplatFundtime', title: '资金到位时间',sort: true,width:230},
+		{field: 'govplatMiddleresult', title: '中期检查考核时间',sort: true,width:200},
 		{field: 'govplatMiddleresult', title: '中期检查考核结果',sort: true,width:200},
+		{field: 'govplatYearresult', title: '年度检查考核时间',sort: true,width:200},
 		{field: 'govplatYearresult', title: '年度检查考核结果',sort: true,width:200},
+		{field: 'govplatEndresult', title: '项目结题验收时间',sort: true,width:200},
 		{field: 'govplatEndresult', title: '项目结题验收结果',sort: true,width:200},
 		{field: 'govplatRemark', title: '备注',sort: true,width:230},
 		{field: 'govplatFile', title: '附件',sort: true,width:200},
