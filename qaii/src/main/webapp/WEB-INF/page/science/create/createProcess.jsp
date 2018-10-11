@@ -59,7 +59,7 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
-var tradmDept="${param.tradmDept}";
+var govplatName="${param.govplatName}";
 /* var patName=${param.patName}; */
 console.log(userID+"id与步骤"+step+"sdfgsdfg${param.tradmRegistertime}");
 
@@ -68,7 +68,7 @@ layui.use('table', function(obj){
 	  table.render({
 	    elem: '#demo'
 	    /* ,url: '/demo/table/user/' //数据接口 */
-	    ,url: 'gettrademarkfile.do?sid'+"="+step
+	    ,url: 'getplatformfile.do?sid'+"="+step
 	    ,page: false//开启分页
 	    ,cols: [[ //表头
 	    	{type: 'checkbox'}
@@ -118,7 +118,7 @@ layui.use('table', function(obj){
 	      layer.confirm('真的删除行么', function(index){
 	    	  let arr=[data.id];
 	          $.post({
-	          	url:"delltradefile.do",
+	          	url:"dellplatformfile.do",
 	          	data:{
 	          		"requestDate" : arr
 	          	},
@@ -153,12 +153,12 @@ layui.use('table', function(obj){
 		    layer.open({
 	    	  type:1,
 			  title:"重新上传文件",
-			  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
+			  content:'<form action="GovPlatformprocessupload.do" method="post" enctype="multipart/form-data">'+
 			  '<input type="file" name="file" id="path">'+
 			  '<input type="hidden" name="oid" id="oid" value="'+userID+'">'+
 			  '<input type="hidden" name="step" id="id" value="'+step+'">'+
 			  '<input type="hidden" name="type" id="type" value="update">'+
-			  '<input type="hidden" name="tradmDept" id="tradmDept" value="'+tradmDept+'">'+
+			  '<input type="hidden" name="govplatName" id="govplatName" value="'+govplatName+'">'+
 			  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 			  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 			});
