@@ -41,7 +41,7 @@
 	</form>
 <script src="${basePath}/commen/layui/layui.js"></script>	
 <script type="text/javascript">
-//patentData传递过来的值
+//fundData传递过来的值
 /* 获取页面传递过来的值 */
 layui.use(['layer','element','layedit', 'laydate'], function(){
 	//var id=document.getElementsByName('pid').value;

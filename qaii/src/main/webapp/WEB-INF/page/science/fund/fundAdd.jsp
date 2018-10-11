@@ -29,10 +29,10 @@
 	<div class="techadd">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">专利&nbsp;—&nbsp;添加界面</span>
+		<span class="blue">基金管理&nbsp;—&nbsp;添加界面</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('patent.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('fund.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>

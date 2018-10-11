@@ -29,22 +29,90 @@
 	<div class="techadd">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">专利&nbsp;—&nbsp;添加界面</span>
+		<span class="blue">平台建设&nbsp;—&nbsp;添加界面</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('patent.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('create.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="addPatentInfo.do" method="post"> 
+  <form class="layui-form" action="addresearchInfo.do" method="post"> 
+	  <div class="layui-row">
+	    <div class="layui-col-xs4 layui-col-md4">
+	    	<div class="layui-form-item">
+				<label class="layui-form-label">申报时间&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<input type="text" name="govplatApplytime" class="layui-input input" id="test1">
+				</div>
+			</div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	      <div class="layui-form-item">
+				<label class="layui-form-label">来源&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<input type="text" name="govplatSource" autocomplete="off" lay-verify="required" class="layui-input input">
+				</div>
+			</div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	      	<div class="layui-form-item">
+				<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<select name="govplatLevel" lay-verify="required" lay-search="" lay-verify="required" class="input">
+						<option value="">   </option>
+						<option value="国家级">国家级</option>
+						<option value="省级">省级</option>
+						<option value="市级">市级</option>
+						<option value="区级">区级</option>
+						<option value="地方">地方</option>
+						<option value="其他">其他</option>
+					</select>
+				</div>
+			</div>
+	    </div>
+	  </div>
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">平台名称&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="patDept" lay-verify="required" lay-search="" id="deptt" class="input">
+					<input type="text" name="govplatName" autocomplete="off" lay-verify="required" class="layui-input input">
+				</div>
+			</div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	      <div class="layui-form-item">
+				<label class="layui-form-label">项目实施期&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<input type="text" name="govplatImplementtime" autocomplete="off" lay-verify="required" class="layui-input input">
+				</div>
+			</div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	      <div class="layui-form-item">
+				<label class="layui-form-label">承担单位&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<input type="text" name="govplatDutyunit" autocomplete="off" lay-verify="required" class="layui-input input">
+				</div>
+			</div>
+	    </div>
+	  </div>
+	  <div class="layui-row">
+	    <div class="layui-col-xs4 layui-col-md4">
+	       <div class="layui-form-item">
+				<label class="layui-form-label">协作单位&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<input type="text" name="govplatCooperationunit" autocomplete="off" lay-verify="required" class="layui-input input">
+				</div>
+			</div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	       <div class="layui-form-item">
+				<label class="layui-form-label">主管部门&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<select name="govplatManagedepart" lay-verify="required" lay-search="" id="deptt" class="input">
 						
 					</select>
 				</div>
@@ -52,79 +120,68 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">专利类型&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申请报送部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="patType" lay-verify="required" lay-search="" lay-verify="required" class="input">
-						<option value="">   </option>
-						<option value="发明专利">发明专利</option>
-						<option value="实用新型专利">实用新型专利</option>
-						<option value="外观设计专利">外观设计专利</option>
+					<select name="govplatApplydepart" lay-verify="required" lay-search="" id="deptt1" class="input">
+						
+					</select>
+				</div>
+			</div>
+	    </div>
+	  </div>
+	  <div class="layui-row">
+	    <div class="layui-col-xs4 layui-col-md4">
+	       <div class="layui-form-item">
+				<label class="layui-form-label">承担部门&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<select name="govplatAssumedepart" lay-verify="required" lay-search="" id="deptt2" class="input">
+						
 					</select>
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">专利名称&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">平台负责人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="patName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">发明人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patAuthor" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govplatPlatformper" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">申请（专利权）人&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">是否立项&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="patApplyper" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">交底日期&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patTelltime" class="layui-input input" id="test1">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patAgency" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">是否提前公开实审&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="patPrepublishaudit" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="govplatProjectapproval" lay-verify="required" lay-search="" lay-verify="required" class="input">
 						<option value="">   </option>
 						<option value="是">是</option>
 						<option value="否">否</option>
 					</select>
-					<!-- <input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input"> -->
+				</div>			</div>
+	    </div>
+	  </div>
+	  <div class="layui-row">
+	    <div class="layui-col-xs4 layui-col-md4">
+	       <div class="layui-form-item">
+				<label class="layui-form-label">立项编号</label>
+				<div class="layui-input-block">
+					<input type="text" name="govplatApprovalnum" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">申请号&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">立项时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="patApplynum" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govplatApprovalnum" class="layui-input input" id="test2">
+				</div>
+			</div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	      <div class="layui-form-item">
+				<label class="layui-form-label">资助金额（万元）</label>
+				<div class="layui-input-block">
+					<input type="text" name="govplatSubvention" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -132,74 +189,79 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">申请日&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">资金到位时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="patApplytime" class="layui-input input" id="test2">
+					<input type="text" name="govplatFundtime" class="layui-input input" id="test3">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">公开日&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">中期检查考核结果</label>
 				<div class="layui-input-block">
-					<input type="text" name="patPublishtime" class="layui-input input" id="test3">
+					<div class="layui-row">
+						 <div class="layui-col-xs6 layui-col-md6">
+							<input type="text" name="govplatMiddleresult" class="layui-input input" id="test4">
+						 </div>
+						 <div class="layui-col-xs6 layui-col-md6">
+							<select name="govplatMiddleresult" lay-search="" class="input">
+								<option value="">   </option>
+								<option value="通过">通过</option>
+								<option value="不通过">不通过</option>
+							</select>
+						</div>
+					</div>
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">授权公告日&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">年度检查考核结果</label>
 				<div class="layui-input-block">
-					<input type="text" name="patAuthorzationtime" class="layui-input input" id="test4">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">是否减免&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="patRemission" lay-verify="required" lay-search="" lay-verify="required" class="input">
-						<option value="">   </option>
-						<option value="是">是</option>
-						<option value="否">否</option>
-					</select>
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">申请费用（元）&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patCost" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<div class="layui-row">
+						 <div class="layui-col-xs6 layui-col-md6">
+							<input type="text" name="govplatYearresult" class="layui-input input" id="test5">
+						 </div>
+						 <div class="layui-col-xs6 layui-col-md6">
+							<select name="govplatYearresult" lay-search="" class="input">
+								<option value="">   </option>
+								<option value="通过">通过</option>
+								<option value="不通过">不通过</option>
+							</select>
+						</div>
+					</div>
 				</div>
 			</div>
 	    </div>
 	  </div>
 	  <!--   文本框-->
 	  <div class="layui-row">
-	    <div class="layui-col-xs6 layui-col-md6">
-			<div class="layui-form-item layui-form-text">
-				<label class="layui-form-label">摘要</label>
+	    <div class="layui-col-xs4 layui-col-md4">
+			<div class="layui-form-item">
+				<label class="layui-form-label">项目结题验收成果</label>
 				<div class="layui-input-block">
-					<textarea name="patDigest" class="layui-textarea"></textarea>
+					<div class="layui-row">
+						 <div class="layui-col-xs6 layui-col-md6">
+							<input type="text" name="govplatEndresult" class="layui-input input" id="test6">
+						 </div>
+						 <div class="layui-col-xs6 layui-col-md6">
+							<select name="govplatEndresult" lay-search="" class="input">
+								<option value="">   </option>
+								<option value="通过">通过</option>
+								<option value="不通过">不通过</option>
+							</select>
+						</div>
+					</div>
 				</div>
 			</div>
  	  	</div>
- 	  	<div class="layui-col-xs6 layui-col-md6">
+ 	  </div>
+ 	  <div class="layui-row">
+ 	  	<div class="layui-col-xs12 layui-col-md12">
 			<div class="layui-form-item layui-form-text">
 				<label class="layui-form-label">备注</label>
 				<div class="layui-input-block">
-					<textarea name="patRemark" class="layui-textarea"></textarea>
+					<textarea name="govplatRemark" class="layui-textarea"></textarea>
 				</div>
 			</div>
  	  	</div>
@@ -226,11 +288,10 @@ $.post({
 		if(deptInfo!=null){
 			$(deptInfo).each(function(index,element){
 				index+=1;
-				//let heml='<dd lay-value="'+element.deptName+'">'+element.deptName+'</dd>';
-				
 				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
-				//$("#deptt").next(".layui-form-select").children("dl").append(heml);
 				$("#deptt").append(heml);
+				$("#deptt1").append(heml);
+				$("#deptt2").append(heml);
 			})						
 		
 			//JavaScript代码区域
@@ -240,21 +301,29 @@ $.post({
 				layer = layui.layer,
 				laydate = layui.laydate,
 				upload = layui.upload;
-				//交底日期选择
+				//申报时间日期选择
 			  laydate.render({
 			    elem: '#test1'
 			  });
-				//申请日选择
+				//立项时间选择
 			  laydate.render({
 			    elem: '#test2'
 			  });
-				//公开日选择
+				//资金到位时间选择
 			  laydate.render({
 			    elem: '#test3'
 			  });
-				//授权公告日日期选择
+				//中期检查考核结果日期选择
 			  laydate.render({
 			    elem: '#test4'
+			  });
+			//年度检查考核结果日期选择
+			  laydate.render({
+			    elem: '#test5'
+			  });
+			//项目结题验收成果日期选择
+			  laydate.render({
+			    elem: '#test6'
 			  });
 			  
 			});

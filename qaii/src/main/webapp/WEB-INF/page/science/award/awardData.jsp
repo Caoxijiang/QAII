@@ -36,7 +36,7 @@
 		<i class="layui-icon layui-icon-add-1"></i>添加流程
 	</button>
 	<!--		导出-->
-	<button onclick="srchange('patent.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('award.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -55,14 +55,14 @@
   
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
-<script src="${basePath}/js/patentdata.js"></script><!-- 添加流程 -->
+<script src="${basePath}/js/awarddata.js"></script><!-- 添加流程 -->
 <script src="${basePath}/js/iframesrc.js"></script>
 <script>
 $(function(){
-	$(document).on('click','.patentProcess',function(){
+	$(document).on('click','.awardProcess',function(){
 		var stepnum="";
 		stepnum=$(this).attr("name");
-		$("body", parent.document).find('iframe').attr('src','patentProcess.do?userId='+userID+'&step='+stepnum+'&patName='+patName+'&patPublishtime='+patPublishtime+'&insertype=update');
+		$("body", parent.document).find('iframe').attr('src','awardProcess.do?userId='+userID+'&step='+stepnum+'&patName='+patName+'&patPublishtime='+patPublishtime+'&insertype=update');
 	});
 });
 </script>
@@ -80,11 +80,11 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['350px', '400px'],
-				content: "patentDataAdd.do?Id"+'='+${param.userId}
+				content: "awardDataAdd.do?Id"+'='+${param.userId}
 			});
 		}); 
 	});
-	$(document).on('click','.patentFile',function(){
+	$(document).on('click','.awardFile',function(){
 		//获取当前页面对步骤数的标识，标识放于name中，命名方式为id+_+步骤数，如20_1
 		var stepnum="";
 		stepnum=$(this).attr("name");
@@ -93,7 +93,7 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['600px', '450px'],
-				content: 'patentDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&patName='"+patName+"'"
+				content: 'awardDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&patName='"+patName+"'"
 			});
 		}); 
 	});

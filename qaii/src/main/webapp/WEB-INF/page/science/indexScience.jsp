@@ -312,7 +312,9 @@
 </div>
 <script src="${basePath}/js/scichars.js"></script>
 <script type="text/javascript">
+
 /* circle(boxid,id,color,total,num);//boxid为各个板块id值,id为canvas的id值,color为基本外圆颜色值,total为圆铺满总量,num为数据量 */
+
 function getscientificPreview(){
 	var result=null;
     $.ajax({

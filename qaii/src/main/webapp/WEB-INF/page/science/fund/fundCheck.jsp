@@ -32,14 +32,14 @@
 		<span class="blue">专利&nbsp;—&nbsp;查看详情界面</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('patent.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('fund.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
 <div class="layui-container addtop"> 
 <input id="param" value='${param.userId}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="uptatePatentInfo.do" lay-filter="example"> 
+  <form class="layui-form" action="uptatefundInfo.do" lay-filter="example"> 
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
@@ -195,7 +195,7 @@
    	   <div class="layui-col-md12">
 		   <div class="layui-form-item">
 			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" onclick="srchange('patent.do')">返回</button>
+			  <button class="layui-btn" onclick="srchange('fund.do')">返回</button>
 			</div>
 		  </div>
   		</div>
