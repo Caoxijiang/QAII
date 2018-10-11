@@ -135,6 +135,10 @@ public class SubjectController {
 		govsubject.setGovsubEndresult(req.getParameter("govsubEndresult"));
 		govsubject.setGovsubRemark(req.getParameter("govsubRemark"));
 		govsubject.setGovsubFile(req.getParameter("govsubFile"));
+		govsubject.setGovsubApprovaltime(req.getParameter("govsubApprovaltime"));
+		govsubject.setGovsubMiddletime(req.getParameter("govsubMiddletime"));
+		govsubject.setGovsubYeartime(req.getParameter("govsubYeartime"));
+		govsubject.setGovsubEndtime(req.getParameter("govsubEndtime"));
 	}
 	//添加政府项目信息功能
 	@RequestMapping("addGovsubject.do")

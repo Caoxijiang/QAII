@@ -6,7 +6,7 @@ $().ready(function(){
 		return;
 	}
 	$.post({
-		url:"findAllProcessInfo.do",
+		url:"getGovfundprocess.do",
 		data:{
 			id:id,
 		},
