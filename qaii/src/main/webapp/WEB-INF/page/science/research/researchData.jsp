@@ -84,7 +84,7 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['600px', '450px'],
-				content: 'researchDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&patName='"+patName+"'"
+				content: 'researchDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&govsubName=${requestScope.utflist[0]}"
 			});
 		}); 
 	});	
@@ -95,7 +95,7 @@ $(function(){
 		$(document).on('click','.researchProcess',function(){
 			var stepnum="";
 			stepnum=$(this).attr("name");
-			$("body", parent.document).find('iframe').attr('src','researchProcess.do?userId='+userID+'&step='+stepnum+'&tradmRegistertime=${requestScope.utflist[2]}&tradmDept=${requestScope.utflist[0]}&tradmApplyper=${requestScope.utflist[1]}');
+			$("body", parent.document).find('iframe').attr('src','researchProcess.do?userId='+userID+'&step='+stepnum+'&govsubApprovalnum=${requestScope.utflist[2]}&govsubName=${requestScope.utflist[0]}&govsubSource=${requestScope.utflist[1]}');
 		});
 	});
 </script>

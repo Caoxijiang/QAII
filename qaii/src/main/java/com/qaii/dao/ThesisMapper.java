@@ -22,4 +22,6 @@ public interface ThesisMapper {
     List<Thesis> getAllThesisMsg();
     
     int deleteByPrimaryKeys(Integer[] eid);
+    
+    int countEachMonththesis(String firstDay, String endDay);
 }

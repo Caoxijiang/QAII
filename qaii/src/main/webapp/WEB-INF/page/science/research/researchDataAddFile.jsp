@@ -37,8 +37,8 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
-var patName=${param.patName};
-console.log(userID+"id与步骤"+step+"sdfgsdfg"+patName);
+var govsubName=${param.govsubName};
+console.log(userID+"id与步骤"+step+"sdfgsdfg"+govsubName);
 
 layui.use('upload', function(){
   var $ = layui.jquery
@@ -47,14 +47,15 @@ layui.use('upload', function(){
   var demoListView = $('#demoList')
   ,uploadListIns = upload.render({
     elem: '#testList'
-    ,url: '/upload/'//文件上传接口
+    ,url: 'Govsubjectprocessupload.do'//文件上传接口
     ,accept: 'file'
     ,multiple: true
     ,auto: false
     ,data: {
-    	  id: function(){
-    		    return $('#id').val();
-    		  }
+    	oid:userID,
+        step:step,
+        govsubName:govsubName,
+        type:"insert"
     		}
     ,bindAction: '#testListAction'
     ,choose: function(obj){   

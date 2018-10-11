@@ -23,13 +23,18 @@
     <result column="govsub_EndResult" jdbcType="VARCHAR" property="govsubEndresult" />
     <result column="govsub_Remark" jdbcType="VARCHAR" property="govsubRemark" />
     <result column="govsub_File" jdbcType="VARCHAR" property="govsubFile" />
+    <result column="govsub_ApprovalTime" jdbcType="VARCHAR" property="govsubApprovaltime" />
+    <result column="govsub_MiddleTime" jdbcType="VARCHAR" property="govsubMiddletime" />
+    <result column="govsub_YearTime" jdbcType="VARCHAR" property="govsubYeartime" />
+    <result column="govsub_EndTime" jdbcType="VARCHAR" property="govsubEndtime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, govsub_ApplyTime, govsub_Source, govsub_Level, govsub_Name, govsub_ImplementTime, 
     govsub_DutyUnit, govsub_CooperationUnit, govsub_ManageDepart, govsub_ApplyDepart, 
     govsub_AssumeDepart, govsub_ProjectPer, govsub_ProjectApproval, govsub_ApprovalNum, 
     govsub_Subvention, govsub_FundTime, govsub_MiddleResult, govsub_YearResult, govsub_EndResult, 
-    govsub_Remark, govsub_File
+    govsub_Remark, govsub_File, govsub_ApprovalTime, govsub_MiddleTime, govsub_YearTime, 
+    govsub_EndTime
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -49,7 +54,9 @@
       govsub_AssumeDepart, govsub_ProjectPer, govsub_ProjectApproval, 
       govsub_ApprovalNum, govsub_Subvention, govsub_FundTime, 
       govsub_MiddleResult, govsub_YearResult, govsub_EndResult, 
-      govsub_Remark, govsub_File)
+      govsub_Remark, govsub_File, govsub_ApprovalTime, 
+      govsub_MiddleTime, govsub_YearTime, govsub_EndTime
+      )
     values (#{id,jdbcType=INTEGER}, #{govsubApplytime,jdbcType=VARCHAR}, #{govsubSource,jdbcType=VARCHAR}, 
       #{govsubLevel,jdbcType=VARCHAR}, #{govsubName,jdbcType=VARCHAR}, #{govsubImplementtime,jdbcType=VARCHAR}, 
       #{govsubDutyunit,jdbcType=VARCHAR}, #{govsubCooperationunit,jdbcType=VARCHAR}, 
@@ -57,7 +64,9 @@
       #{govsubAssumedepart,jdbcType=VARCHAR}, #{govsubProjectper,jdbcType=VARCHAR}, #{govsubProjectapproval,jdbcType=VARCHAR}, 
       #{govsubApprovalnum,jdbcType=VARCHAR}, #{govsubSubvention,jdbcType=VARCHAR}, #{govsubFundtime,jdbcType=VARCHAR}, 
       #{govsubMiddleresult,jdbcType=VARCHAR}, #{govsubYearresult,jdbcType=VARCHAR}, #{govsubEndresult,jdbcType=VARCHAR}, 
-      #{govsubRemark,jdbcType=VARCHAR}, #{govsubFile,jdbcType=VARCHAR})
+      #{govsubRemark,jdbcType=VARCHAR}, #{govsubFile,jdbcType=VARCHAR}, #{govsubApprovaltime,jdbcType=VARCHAR}, 
+      #{govsubMiddletime,jdbcType=VARCHAR}, #{govsubYeartime,jdbcType=VARCHAR}, #{govsubEndtime,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.Govsubject">
     insert into sci_govsubject
@@ -125,6 +134,18 @@
       <if test="govsubFile != null">
         govsub_File,
       </if>
+      <if test="govsubApprovaltime != null">
+        govsub_ApprovalTime,
+      </if>
+      <if test="govsubMiddletime != null">
+        govsub_MiddleTime,
+      </if>
+      <if test="govsubYeartime != null">
+        govsub_YearTime,
+      </if>
+      <if test="govsubEndtime != null">
+        govsub_EndTime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -189,6 +210,18 @@
       </if>
       <if test="govsubFile != null">
         #{govsubFile,jdbcType=VARCHAR},
+      </if>
+      <if test="govsubApprovaltime != null">
+        #{govsubApprovaltime,jdbcType=VARCHAR},
+      </if>
+      <if test="govsubMiddletime != null">
+        #{govsubMiddletime,jdbcType=VARCHAR},
+      </if>
+      <if test="govsubYeartime != null">
+        #{govsubYeartime,jdbcType=VARCHAR},
+      </if>
+      <if test="govsubEndtime != null">
+        #{govsubEndtime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -255,6 +288,18 @@
       <if test="govsubFile != null">
         govsub_File = #{govsubFile,jdbcType=VARCHAR},
       </if>
+      <if test="govsubApprovaltime != null">
+        govsub_ApprovalTime = #{govsubApprovaltime,jdbcType=VARCHAR},
+      </if>
+      <if test="govsubMiddletime != null">
+        govsub_MiddleTime = #{govsubMiddletime,jdbcType=VARCHAR},
+      </if>
+      <if test="govsubYeartime != null">
+        govsub_YearTime = #{govsubYeartime,jdbcType=VARCHAR},
+      </if>
+      <if test="govsubEndtime != null">
+        govsub_EndTime = #{govsubEndtime,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -279,14 +324,18 @@
       govsub_YearResult = #{govsubYearresult,jdbcType=VARCHAR},
       govsub_EndResult = #{govsubEndresult,jdbcType=VARCHAR},
       govsub_Remark = #{govsubRemark,jdbcType=VARCHAR},
-      govsub_File = #{govsubFile,jdbcType=VARCHAR}
+      govsub_File = #{govsubFile,jdbcType=VARCHAR},
+      govsub_ApprovalTime = #{govsubApprovaltime,jdbcType=VARCHAR},
+      govsub_MiddleTime = #{govsubMiddletime,jdbcType=VARCHAR},
+      govsub_YearTime = #{govsubYeartime,jdbcType=VARCHAR},
+      govsub_EndTime = #{govsubEndtime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="getAllSubjectMsg" resultMap="BaseResultMap">SELECT * from sci_govsubject</select>
   <delete id="deleteByPrimaryKeys" parameterType="int">
-  	DELETE  FROM sci_govsubject WHERE id in
-	    <foreach item="id" collection="array" open="(" separator="," close=")">
-	    	#{id,jdbcType=INTEGER}
-	    </foreach>
+    DELETE  FROM sci_govsubject WHERE id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id,jdbcType=INTEGER}
+        </foreach>
   </delete>
 </mapper>

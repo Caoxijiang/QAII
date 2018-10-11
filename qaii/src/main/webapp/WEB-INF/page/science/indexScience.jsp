@@ -39,7 +39,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">受理：<span id="">XXX个<br />授权：XXX个</div>
+		  					<div class="itmeText"><span id="tPatent">受理：XXX个<br />授权：XXX个</span></div>
 		  				</div>
 		  				<div class="itemBox" id="PatentBox">
 		  					<canvas id="totalSoft" class="itemCanvas"></canvas>
@@ -48,7 +48,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  					<div class="itmeText"><span id="tSoft">受理：XXX个<br />授权：XXX个</span></div>
 		  				</div>
 		  				<div class="itemBox" id="PatentBox">
 		  					<canvas id="totalBrand" class="itemCanvas"></canvas>
@@ -57,7 +57,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">受理：XXX个<br />授权：XXX个</div>
+		  					<div class="itmeText"><span id="tBrand">受理：XXX个<br />授权：XXX个</span></div>
 		  				</div>
 		  				<div class="itemBox" id="PatentBox">
 		  					<canvas id="totalPaper" class="itemCanvas"></canvas>
@@ -66,7 +66,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">论文：XXX篇<br />&nbsp;</div>
+		  					<div class="itmeText"><span id="tPaper">论文：XXX篇</span><br />&nbsp;</div>
 		  				</div>
 		  				<div class="itemBox" id="PatentBox">
 		  					<canvas id="totalWork" class="itemCanvas"></canvas>
@@ -75,7 +75,7 @@
 		  						<div class="itmeline"></div>
 		  						<div class="itmelineb"></div>
 		  					</div>
-		  					<div class="itmeText">著作：XXX部<br />&nbsp;</div>
+		  					<div class="itmeText"><span id="tWork">著作：XXX部</span><br />&nbsp;</div>
 		  				</div>
 		  			</div>
 		  		</div>
@@ -314,11 +314,31 @@
 <script type="text/javascript">
 
 /* circle(boxid,id,color,total,num);//boxid为各个板块id值,id为canvas的id值,color为基本外圆颜色值,total为圆铺满总量,num为数据量 */
-circle("PatentBox","totalPatent","#ea8a27",100,80);
-circle("PatentBox","totalSoft","#ea8a27",660,165);
-circle("PatentBox","totalBrand","#ea8a27",660,165);
-circle("PatentBox","totalPaper","#3db4e3",660,165);
-circle("PatentBox","totalWork","#3db4e3",660,165);
+
+function getscientificPreview(){
+	var result=null;
+    $.ajax({
+        async:false,
+        type:"POST",
+        url:"scientificPreview.do",
+        success:function(data){
+            result=data;
+        }
+    })
+    return result;
+}
+var scientificPreviewData=getscientificPreview();
+$("#tPatent").html("受理：" + scientificPreviewData.AgencyPatent + "个<br />授权：" +scientificPreviewData.AuthorizationPatent+ "个");
+$("#tSoft").html("受理：" +scientificPreviewData.Applycopyright+ "个<br />授权：" +scientificPreviewData.Authorizationcopyright+ "个");
+$("#tBrand").html("受理：" +scientificPreviewData.AgencyTradeMark+ "个<br />授权：" +scientificPreviewData.AuthorizationTradeMark+ "个");
+$("#tPaper").html("论文：" +scientificPreviewData.CountThesis+ "篇");
+$("#tWork").html("著作：" +scientificPreviewData.Countwork+ "篇");
+
+circle("PatentBox","totalPatent","#ea8a27",100, scientificPreviewData.AgencyPatent);
+circle("PatentBox","totalSoft","#ea8a27",100, scientificPreviewData.Applycopyright);
+circle("PatentBox","totalBrand","#ea8a27",100, scientificPreviewData.AgencyTradeMark);
+circle("PatentBox","totalPaper","#3db4e3",100, scientificPreviewData.CountThesis);
+circle("PatentBox","totalWork","#3db4e3",100, scientificPreviewData.Countwork);
 </script>
 </body>
 </html>

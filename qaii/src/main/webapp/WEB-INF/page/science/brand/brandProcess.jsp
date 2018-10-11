@@ -61,7 +61,7 @@ var userID=${param.userId};
 var step=${param.step};
 var tradmDept="${param.tradmDept}";
 /* var patName=${param.patName}; */
-console.log(userID+"id与步骤"+step+"sdfgsdfg${param.tradmRegistertime}");
+
 
 layui.use('table', function(obj){
 	  var table = layui.table;
@@ -79,6 +79,7 @@ layui.use('table', function(obj){
 	    limit: 999999,
 	    data:obj
 	  });
+	  
 	//监听表格复选框选择
 	  table.on('checkbox(test)', function(obj){
 	  }); 
@@ -125,6 +126,7 @@ layui.use('table', function(obj){
 	          	success:function(data){
 	          		if(data.data){
 	          		    //删除对应行（tr）的DOM结构
+	          		    alert("删除成功!");
 	          			obj.del();
 	          			layer.close(index);
 	          		}else{
