@@ -93,9 +93,9 @@
 </div>
  <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="review">审查资料</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
+  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="datac">资料审查</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -127,21 +127,20 @@ layui.use('table', function(obj){
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'rewardApplytime', title: '申报时间',fixed: 'left',width:100},
+		{field: 'rewardApplytime', title: '申报时间',fixed: 'left',width:150},
 		{field: 'rewardSource', title: '来源',fixed: 'left',width:150},
-		{field: 'rewardLevel', title: '级别',sort: true},
+		{field: 'rewardLevel', title: '级别',sort: true,width:100},
 		{field: 'rewardName', title: '获奖名称',sort: true,width:200},
-		{field: 'rewardProjectname', title: '课题项目名称/人员姓名',sort: true,width:150},
-		{field: 'rewardDutyunit', title: '承担单位/所在单位',sort: true},
+		{field: 'rewardProjectname', title: '课题项目名称/人员姓名',sort: true,width:250},
+		{field: 'rewardDutyunit', title: '承担单位/所在单位',sort: true,width:250},
 		{field: 'rewardCooperationunit', title: '协作单位',width:220},
 		{field: 'rewardManagedepart', title: '主管部门',sort: true,width:200},
-		{field: 'rewardApplydepart', title: '申请报送部门',sort: true},
+		{field: 'rewardApplydepart', title: '申请报送部门',sort: true,width:200},
 		{field: 'rewardAssumedepart', title: '承担部门',sort: true,width:150},
 		{field: 'rewardAward', title: '是否获奖',sort: true,width:200},
 		{field: 'rewardAwardtime', title: '获奖时间',sort: true,width:200},
 		{field: 'rewardAwardnum', title: '奖励金额',sort: true,width:200},
 		{field: 'rewardFundtime', title: '资金到位时间',sort: true,width:230},
-
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
@@ -257,88 +256,50 @@ layui.use('table', function(obj){
       });
 	
   //监听工具条
-  table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-    var data = obj.data //获得当前行数据
-    console.log(data)
-    ,layEvent = obj.event; //获得 lay-event 对应的值
-    if(layEvent === 'detail'){
-		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
-     // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
-    } else if(layEvent === 'del'){
-      layer.confirm('确定删除信息', function(index){
-          let arr=[data.id];
-          console.log(data) 
-          $.post({
-          	url:"dellRewardMsg.do",
-          	data:{
-          		"requestDate" : arr
-          	},
-          	success:function(data){
-          		if(data.data){
-          		    //删除对应行（tr）的DOM结构
-          			obj.del();
-          			layer.close(index);
-          		}else{
-          			layer.alert("删除失败")
-          		}
-          		
-          	}
-          }) 
-    	  
-    	  
-    	  
-    	  
-        obj.del(); //删除对应行（tr）的DOM结构
-        layer.close(index);
-        //向服务端发送删除指令
-        
-        
-        
-        
-      });
-    } else if(layEvent === 'edit'){
-      layer.alert(
-		  '<div class="layui-form-item">'+
-
-			'<label class="layui-form-label">角色</label>'+
-			'<div class="layui-input-block">'+
-				'<select name="interest" lay-filter="aihao">'+
-					'<option value=""></option>'+
-					'<option value="0">超级管理员</option>'+
-					'<option value="1" selected="">院级权限</option>'+
-					'<option value="2">人事部门权限</option>'+
-					'<option value="3">产业化处权限</option>'+
-					'<option value="4">科技管理处</option>'+
-				'</select>'+
-			'</div>'+
-		'</div>')
-    }else if(layEvent==="dimission"){
-    	 layer.confirm('确定离职信息', function(index){
-             let arr=data.id;
-             console.log(data) 
-             $.post({
-             	url:"dellempInfo.do",
-             	data:{
-             		"requestDate" : arr
-             	},
-             	success:function(data){
-             		if(data.data){
-             		    //删除对应行（tr）的DOM结构
-             			layer.alert("离职操作成功");
-             		}else{
-             			layer.alert("离职操作失败");
-             		}
-             		
-             	}
-             }) 
-       	  
-          // obj.del(); //删除对应行（tr）的DOM结构
-          // layer.close(index);
-           //向服务端发送删除指  
-         });
-    }
-  });
-
+    table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+      var data = obj.data //获得当前行数据
+      console.log("the data is "+data)
+      ,layEvent = obj.event; //获得 lay-event 对应的值
+      if(layEvent === 'detail'){
+      	var iframesrc="awardCheck.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      } else if(layEvent === 'del'){
+        layer.confirm('确定删除信息', function(index){
+            let arr=[data.id];
+            console.log(data) 
+            $.post({
+            	url:"dellTradeMarkMsg.do",
+            	data:{
+            		"requestDate" : arr
+            	},
+            	success:function(data){
+            		if(data.data){
+            		    //删除对应行（tr）的DOM结构
+            			obj.del();
+            			layer.close(index);
+            		}else{
+            			layer.alert("删除失败")
+            		}
+            		
+            	}
+            })  	  
+          obj.del(); //删除对应行（tr）的DOM结构
+          layer.close(index);
+          //向服务端发送删除指令       
+        });
+      } else if(layEvent === 'edit'){
+      	var iframesrc="awardEdit.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }else if(layEvent==="datac"){
+      	//userid为当前记录id值，将会传到资料审查界面
+      	var iframesrc="awardData.do?userId='"+data.id+"'&rewardName="+data.rewardName+"&rewardSource="+data.rewardSource+"&rewardAwardtime="+data.rewardAwardtime;
+      	url=encodeURI(iframesrc);
+      	url=encodeURI(url);
+      	
+      	console.log(url);
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }
+    });
 	//监听顶部添加删除操作
 	var arr=[];
 	//var arr=[];

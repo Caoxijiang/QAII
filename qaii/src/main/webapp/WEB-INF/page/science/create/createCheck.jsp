@@ -39,7 +39,7 @@
 <div class="layui-container addtop"> 
 <input id="param" value='${param.userId}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="addresearchInfo.do" method="post"> 
+  <form class="layui-form" action="addresearchInfo.do" method="post" lay-filter="example"> 
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	    	<div class="layui-form-item">
