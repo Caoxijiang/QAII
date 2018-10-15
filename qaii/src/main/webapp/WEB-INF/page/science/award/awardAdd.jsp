@@ -42,9 +42,77 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申报时间&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="patDept" lay-verify="required" lay-search="" id="deptt" class="input">
+					<input type="text" name="rewardApplytime" class="layui-input input" id="test1">
+				</div>
+		   </div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	      <div class="layui-form-item">
+				<label class="layui-form-label">来源&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<input type="text" name="rewardSource" autocomplete="off" lay-verify="required" class="layui-input input">
+				</div>
+			</div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	      <div class="layui-form-item">
+				<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<select name="rewardLevel" lay-verify="required" lay-search="" lay-verify="required" class="input">
+						<option value="">   </option>
+						<option value="国家级">国家级</option>
+						<option value="省级">省级</option>
+						<option value="市级">市级</option>
+						<option value="区级">区级</option>
+						<option value="地方">地方</option>
+						<option value="其他">其他</option>
+					</select>
+				</div>
+			</div>
+	    </div>
+	  </div>
+	  <div class="layui-row">
+	    <div class="layui-col-xs4 layui-col-md4">
+	       <div class="layui-form-item">
+				<label class="layui-form-label">获奖名称&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<input type="text" name="rewardName" autocomplete="off" lay-verify="required" class="layui-input input">
+				</div>
+			</div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	      <div class="layui-form-item">
+				<label class="layui-form-label">课题项目名称/人员姓名&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<input type="text" name="rewardProjectname" autocomplete="off" lay-verify="required" class="layui-input input">
+				</div>
+			</div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	      <div class="layui-form-item">
+				<label class="layui-form-label">承担单位/协作单位&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<input type="text" name="rewardDutyunit" autocomplete="off" lay-verify="required" class="layui-input input">
+				</div>
+			</div>
+	    </div>
+	  </div>
+	  <div class="layui-row">
+	    <div class="layui-col-xs4 layui-col-md4">
+	       <div class="layui-form-item">
+				<label class="layui-form-label">协作单位</label>
+				<div class="layui-input-block">
+					<input type="text" name="rewardCooperationunit" autocomplete="off" class="layui-input input">
+				</div>
+			</div>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	    	<div class="layui-form-item">
+				<label class="layui-form-label">主管部门&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<select name="rewardManagedepart" lay-verify="required" lay-search="" id="deptt1" class="input">
 						
 					</select>
 				</div>
@@ -52,158 +120,66 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">专利类型&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申请报送部门</label>
 				<div class="layui-input-block">
-					<select name="patType" lay-verify="required" lay-search="" lay-verify="required" class="input">
-						<option value="">   </option>
-						<option value="发明专利">发明专利</option>
-						<option value="实用新型专利">实用新型专利</option>
-						<option value="外观设计专利">外观设计专利</option>
+					<select name="rewardApplydepart" lay-search="" id="deptt2" class="input">
+						
+					</select>
+				</div>
+			</div>
+	    </div>
+	  </div>
+	  <div class="layui-row">
+	    <div class="layui-col-xs4 layui-col-md4">
+	       <div class="layui-form-item">
+				<label class="layui-form-label">承担部门</label>
+				<div class="layui-input-block">
+					<select name="rewardAssumedepart" lay-search="" id="deptt3" class="input">
+						
 					</select>
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">专利名称&nbsp;<span class="star">*</span></label>
+		    <div class="layui-form-item">
+				<label class="layui-form-label">是否获奖</label>
 				<div class="layui-input-block">
-					<input type="text" name="patName" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">发明人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patAuthor" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">申请（专利权）人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patApplyper" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">交底日期&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patTelltime" class="layui-input input" id="test1">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patAgency" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">是否提前公开实审&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="patPrepublishaudit" lay-verify="required" lay-search="" lay-verify="required" class="input">
-						<option value="">   </option>
-						<option value="是">是</option>
-						<option value="否">否</option>
-					</select>
-					<!-- <input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input"> -->
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">申请号&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patApplynum" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">申请日&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patApplytime" class="layui-input input" id="test2">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">公开日&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patPublishtime" class="layui-input input" id="test3">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">授权公告日&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patAuthorzationtime" class="layui-input input" id="test4">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">是否减免&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="patRemission" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="rewardAward" lay-verify="required" lay-search="" class="input">
 						<option value="">   </option>
 						<option value="是">是</option>
 						<option value="否">否</option>
 					</select>
 				</div>
 			</div>
-	    </div>
+		</div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">申请费用（元）&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">获奖时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="patCost" autocomplete="off" lay-verify="required" class="layui-input input">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="patInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="rewardAwardtime" class="layui-input input" id="test3">
 				</div>
 			</div>
 	    </div>
 	  </div>
-	  <!--   文本框-->
 	  <div class="layui-row">
-	    <div class="layui-col-xs6 layui-col-md6">
-			<div class="layui-form-item layui-form-text">
-				<label class="layui-form-label">摘要</label>
+	    <div class="layui-col-xs4 layui-col-md4">
+	       <div class="layui-form-item">
+				<label class="layui-form-label">奖励金额（元）&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<textarea name="patDigest" class="layui-textarea"></textarea>
+					<input type="text" name="rewardAwardnum" autocomplete="off" lay-verify="required" class="layui-input input">
 				</div>
 			</div>
- 	  	</div>
- 	  	<div class="layui-col-xs6 layui-col-md6">
-			<div class="layui-form-item layui-form-text">
-				<label class="layui-form-label">备注</label>
+	    </div>
+	    <div class="layui-col-xs4 layui-col-md4">
+	      <div class="layui-form-item">
+				<label class="layui-form-label">资金到位时间</label>
 				<div class="layui-input-block">
-					<textarea name="patRemark" class="layui-textarea"></textarea>
+					<input type="text" name="rewardFundtime" class="layui-input input"  id="test4">
 				</div>
 			</div>
- 	  	</div>
- 	  </div>
+	    </div>
+	    
+	  </div>
 	  <!--   文本框-->
 	  <div class="layui-row">
    	   <div class="layui-col-md12">
@@ -230,7 +206,9 @@ $.post({
 				
 				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
 				//$("#deptt").next(".layui-form-select").children("dl").append(heml);
-				$("#deptt").append(heml);
+				$("#deptt1").append(heml);
+				$("#deptt2").append(heml);
+				$("#deptt3").append(heml);
 			})						
 		
 			//JavaScript代码区域

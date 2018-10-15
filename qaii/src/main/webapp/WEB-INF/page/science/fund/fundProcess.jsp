@@ -23,7 +23,7 @@
 </head>
 <body id="bodyHei">
 <div class="tool">
-	<div class="techadd" style="width:300px;">
+	<div class="techadd" style="width:350px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
 		<span>基金管理&nbsp;—&nbsp;资料审查</span>
@@ -41,7 +41,7 @@
 	  	<i class="layui-icon layui-icon-download-circle"></i>下载
 	  </button>
 	</div>
-	<button onclick="srchange('fundData.do?userId=${param.userId}&step=${param.step}&patName=${param.patName}&patPublishtime=${param.patPublishtime}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('fundData.do?userId=${param.userId}&step=${param.step}&govfundName=${requestScope.utflist[0]}&govfundSource=${requestScope.utflist[1]}&govfundApplytime=${requestScope.utflist[2]}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>

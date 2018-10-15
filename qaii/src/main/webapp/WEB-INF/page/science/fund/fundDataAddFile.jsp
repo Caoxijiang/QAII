@@ -37,8 +37,8 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
-var patName=${param.patName};
-console.log(userID+"id与步骤"+step+"sdfgsdfg"+patName);
+var govfundName=${param.govfundName};
+console.log(userID+"id与步骤"+step+"sdfgsdfg"+govfundName);
 
 layui.use('upload', function(){
   var $ = layui.jquery
@@ -54,7 +54,7 @@ layui.use('upload', function(){
     ,data: {
 	    	oid:userID,
 	        step:step,
-	        patName:patName,
+	        govfundName:govfundName,
 	        type:"insert"
     		}
     ,bindAction: '#testListAction'
