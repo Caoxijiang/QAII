@@ -70,6 +70,9 @@
           <a href="javascript:;" onclick="iframechange('brand.do')"><i class="layui-icon layui-icon-note" style="font-size: 22px;"></i>&nbsp;商标</a>
         </li>
         <li class="layui-nav-item">
+          <a href="javascript:;" onclick="iframechange('copyright.do')"><i class="layui-icon layui-icon-auz" style="font-size: 22px;"></i>&nbsp;版权</a>
+        </li>
+        <li class="layui-nav-item">
           <a href="javascript:;"><i class="layui-icon layui-icon-senior" style="font-size: 22px;"></i>&nbsp;政府资助</a>
           <dl class="layui-nav-child">
 	          <dd class="navdd"><a onclick="iframechange('research.do')">纵向课题</a></dd>

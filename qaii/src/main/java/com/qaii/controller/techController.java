@@ -83,7 +83,22 @@ public class techController {
 	//软著
 	@RequestMapping("soft.do")
 	public String soft(){
-		return "page/science/soft";
+		return "page/science/soft/soft";
+	}
+	//软著添加
+	@RequestMapping("softAdd.do")
+	public String softAdd(){
+		return "page/science/soft/softAdd";
+	}
+	//软著修改
+	@RequestMapping("softEdit.do")
+	public String softEdit(){
+		return "page/science/soft/softEdit";
+	}
+	//软著查看
+	@RequestMapping("softCheck.do")
+	public String softCheck(){
+		return "page/science/soft/softCheck";
 	}
 	//商标
 	@RequestMapping("brand.do")
@@ -133,7 +148,26 @@ public class techController {
 	public String brandDataAddFile(){
 		return "page/science/brand/brandDataAddFile";
 	}
-	
+	//版权
+	@RequestMapping("copyright.do")
+	public String copyright() {
+		return "page/science/copyright/copyright";
+	}
+	//版权添加
+	@RequestMapping("copyrightAdd.do")
+	public String copyrightAdd() {
+		return "page/science/copyright/copyrightAdd";
+	}
+	//版权查看详情
+	@RequestMapping("copyrightCheck.do")
+	public String copyrightCheck() {
+		return "page/science/copyright/copyrightCheck";
+	}
+	//版权修改
+	@RequestMapping("copyrightEdit.do")
+	public String copyrightEdit() {
+		return "page/science/copyright/copyrightEdit";
+	}
 	//基金
 	@RequestMapping("fund.do")
 	public String fund(){

@@ -50,17 +50,17 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">来源&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">来源</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundSource" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govfundSource" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      	<div class="layui-form-item">
-				<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">级别</label>
 				<div class="layui-input-block">
-					<select name="govfundLevel" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="govfundLevel" lay-search="" class="input">
 						<option value="">   </option>
 						<option value="国家级">国家级</option>
 						<option value="省级">省级</option>
@@ -76,25 +76,25 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">基金名称&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">基金名称</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundName" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govfundName" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">基金实施期&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">基金实施期</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundImplementtime" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govfundImplementtime" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">基金构成单位&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">基金构成单位</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundConstructunit" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govfundConstructunit" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -102,9 +102,9 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">主管部门&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">主管部门</label>
 				<div class="layui-input-block">
-					<select name="govfundManagedepart" lay-verify="required" lay-search="" id="deptt" class="input">
+					<select name="govfundManagedepart" lay-search="" id="deptt" class="input">
 						
 					</select>
 				</div>
@@ -112,9 +112,9 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">申请报送部门&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申请报送部门</label>
 				<div class="layui-input-block">
-					<select name="govfundApplydepart" lay-verify="required" lay-search="" id="deptt1" class="input">
+					<select name="govfundApplydepart" lay-search="" id="deptt1" class="input">
 						
 					</select>
 				</div>
@@ -122,9 +122,9 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 		    <div class="layui-form-item">
-					<label class="layui-form-label">是否通过&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">是否通过</label>
 					<div class="layui-input-block">
-						<select name="govfundPass" lay-verify="required" lay-search="" lay-verify="required" class="input">
+						<select name="govfundPass" lay-search="" class="input">
 							<option value="">   </option>
 							<option value="是">是</option>
 							<option value="否">否</option>
@@ -152,9 +152,9 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">基金&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">基金</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundFund" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govfundFund" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
