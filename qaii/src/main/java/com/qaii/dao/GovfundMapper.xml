@@ -253,4 +253,7 @@
 	    	#{id,jdbcType=INTEGER}
 	    </foreach>
   </delete>
+  <select id="listByNum" resultMap="BaseResultMap" parameterType="int">
+    SELECT  * from sci_govfund ORDER BY govfund_Fund DESC LIMIT #{0}
+  </select>
 </mapper>

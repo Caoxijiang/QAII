@@ -15,5 +15,7 @@ public interface GovSubjectService {
 	int updateMsg(Govsubject govsubject);
 
 	int insertMsg(Govsubject govsubject);
+	
+	List<Govsubject> listByNum(int num);
 
 }

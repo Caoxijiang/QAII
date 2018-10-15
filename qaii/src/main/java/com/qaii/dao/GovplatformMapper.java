@@ -20,4 +20,6 @@ public interface GovplatformMapper {
     List<Govplatform> getAllPlatformMsg();
     
     int deleteByPrimaryKeys(Integer[] eid);
+    
+    List<Govplatform> listByNum(int num);
 }

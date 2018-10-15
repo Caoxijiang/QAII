@@ -40,5 +40,10 @@ public class GovFundServiceImpl implements GovFundService {
 		// TODO Auto-generated method stub
 		return govfundmapper.insert(govfund);
 	}
+	@Override
+	public List<Govfund> listByNum(int num) {
+		// TODO Auto-generated method stub
+		return govfundmapper.listByNum(num);
+	}
 
 }

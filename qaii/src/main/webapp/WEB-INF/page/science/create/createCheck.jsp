@@ -174,7 +174,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">立项时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govplatApprovalnum" class="layui-input input" id="test2">
+					<input type="text" name="govplatApprovaltime" class="layui-input input" id="test2">
 				</div>
 			</div>
 	    </div>
@@ -202,7 +202,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govplatMiddleresult" class="layui-input input" id="test4">
+							<input type="text" name="govplatMiddletime" class="layui-input input" id="test4">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govplatMiddleresult" lay-search="" class="input">
@@ -221,7 +221,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govplatYearresult" class="layui-input input" id="test5">
+							<input type="text" name="govplatYeartime" class="layui-input input" id="test5">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govplatYearresult" lay-search="" class="input">
@@ -243,7 +243,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govplatEndresult" class="layui-input input" id="test6">
+							<input type="text" name="govplatEndtime" class="layui-input input" id="test6">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govplatEndresult" lay-search="" class="input">
@@ -303,7 +303,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
    var id=${param.userId};
    if(id!=null){
 		$.post({
-			url:"findResearchInfoById.do",
+			url:"showGovplatformDetails.do",
 			data:{
 				id:id
 			},
@@ -312,24 +312,31 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					let researchInfo=data.data;
 					//表单初始赋值 从表单中提取数据
 					  form.val('example', {
-						"patDept":researchInfo.patDept,
-						"patType":researchInfo.patType,
-						"patName":researchInfo.patName,
-						"patDigest":researchInfo.patDigest,
-						"patAuthor":researchInfo.patAuthor,
-						"patApplyper":researchInfo.patApplyper,
-						"patTelltime":researchInfo.patTelltime,
-						"patAgency":researchInfo.patAgency,
-						"patPrepublishaudit":researchInfo.patPrepublishaudit,
-						"patApplynum":researchInfo.patApplynum,
-						"patApplytime":researchInfo.patApplytime,
-						"patPublishtime":researchInfo.patPublishtime,
-						"patAuthorzationtime":researchInfo.patAuthorzationtime,
-						"patRemission":researchInfo.patRemission,
-						"patCost":researchInfo.patCost,
-						"patInvoiceper":researchInfo.patInvoiceper,
-						"patRemark":researchInfo.patRemark
-					    
+						"govplatApplytime":researchInfo.govplatApplytime,
+						"govplatSource":researchInfo.govplatSource,
+						"govplatLevel":researchInfo.govplatLevel,
+						"govplatName":researchInfo.govplatName,
+						"govplatImplementtime":researchInfo.govplatImplementtime,
+						"govplatDutyunit":researchInfo.govplatDutyunit,
+						"govplatCooperationunit":researchInfo.govplatCooperationunit,
+						"govplatManagedepart":researchInfo.govplatManagedepart,
+						"govplatApplydepart":researchInfo.govplatApplydepart,
+						"govplatAssumedepart":researchInfo.govplatAssumedepart,
+						"govplatPlatformper":researchInfo.govplatPlatformper,
+						"govplatProjectapproval":researchInfo.govplatProjectapproval,
+						"govplatApprovalnum":researchInfo.govplatApprovalnum,
+						"govplatApprovaltime":researchInfo.govplatApprovaltime,
+						"govplatSubvention":researchInfo.govplatSubvention,
+						"govplatFundtime":researchInfo.govplatFundtime,
+						"govplatMiddletime":researchInfo.govplatMiddletime,
+						"govplatMiddleresult":researchInfo.govplatMiddleresult,
+						"govplatYeartime":researchInfo.govplatYeartime,
+						"govplatYearresult":researchInfo.govplatYearresult,
+						"govplatEndtime":researchInfo.govplatEndtime,
+						"govplatEndresult":researchInfo.govplatEndresult,
+						"govplatRemark":researchInfo.govplatRemark,
+						"govplatFile":researchInfo.govplatFile
+						
 					  })
 				}else{
 					alert("查看详情失败")

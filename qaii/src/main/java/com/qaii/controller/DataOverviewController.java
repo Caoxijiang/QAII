@@ -56,12 +56,15 @@ public class DataOverviewController {
 
 	
 	// 政府资助数据接口
+	@RequestMapping("TestPrint.do")
+	@ResponseBody
 	public Map<String, List> GovernmentFunding(){
+		int num = 6;
 		Map<String, List> result =new HashMap<>();
-		result.put("fund", govfundservice.getAllFundMsg());
-		result.put("platform", govplatformservice.getAllPlatformMsg());
-		result.put("subject", govsubjectservice.getAllSubjectMsg());
-		result.put("reward", govrewardservice.getAllRewardMsg());
+		result.put("fund", govfundservice.listByNum(num));
+		result.put("platform", govplatformservice.listByNum(num));
+		result.put("subject", govsubjectservice.listByNum(num));
+		result.put("reward", govrewardservice.listByNum(num));
 		return result;
 	}
 	

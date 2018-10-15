@@ -293,7 +293,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
    var id=${param.userId};
    if(id!=null){
 		$.post({
-			url:"findResearchInfoById.do",
+			url:"showGovsubjectDetails.do",
 			data:{
 				id:id
 			},
@@ -302,23 +302,30 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					let researchInfo=data.data;
 					//表单初始赋值 从表单中提取数据
 					  form.val('example', {
-						"patDept":researchInfo.patDept,
-						"patType":researchInfo.patType,
-						"patName":researchInfo.patName,
-						"patDigest":researchInfo.patDigest,
-						"patAuthor":researchInfo.patAuthor,
-						"patApplyper":researchInfo.patApplyper,
-						"patTelltime":researchInfo.patTelltime,
-						"patAgency":researchInfo.patAgency,
-						"patPrepublishaudit":researchInfo.patPrepublishaudit,
-						"patApplynum":researchInfo.patApplynum,
-						"patApplytime":researchInfo.patApplytime,
-						"patPublishtime":researchInfo.patPublishtime,
-						"patAuthorzationtime":researchInfo.patAuthorzationtime,
-						"patRemission":researchInfo.patRemission,
-						"patCost":researchInfo.patCost,
-						"patInvoiceper":researchInfo.patInvoiceper,
-						"patRemark":researchInfo.patRemark
+						"govsubApplytime":researchInfo.govsubApplytime,
+						"govsubSource":researchInfo.govsubSource,
+						"govsubLevel":researchInfo.govsubLevel,
+						"govsubName":researchInfo.govsubName,
+						"govsubImplementtime":researchInfo.govsubImplementtime,
+						"govsubDutyunit":researchInfo.govsubDutyunit,
+						"govsubCooperationunit":researchInfo.govsubCooperationunit,
+						"govsubManagedepart":researchInfo.govsubManagedepart,
+						"govsubApplydepart":researchInfo.govsubApplydepart,
+						"govsubAssumedepart":researchInfo.govsubAssumedepart,
+						"govsubProjectper":researchInfo.govsubProjectper,
+						"govsubProjectapproval":researchInfo.govsubProjectapproval,
+						"govsubApprovalnum":researchInfo.govsubApprovalnum,
+						"govsubSubvention":researchInfo.govsubSubvention,
+						"govsubFundtime":researchInfo.govsubFundtime,
+						"govsubMiddleresult":researchInfo.govsubMiddleresult,
+						"govsubYearresult":researchInfo.govsubYearresult,
+						"govsubEndresult":researchInfo.govsubEndresult,
+						"govsubRemark":researchInfo.govsubRemark,
+						"govsubFile":researchInfo.govsubFile,
+						"govsubApprovaltime":researchInfo.govsubApprovaltime,
+						"govsubMiddletime":researchInfo.govsubMiddletime,
+						"govsubYeartime":researchInfo.govsubYeartime,
+						"govsubEndtime":researchInfo.govsubEndtime
 					    
 					  })
 				}else{

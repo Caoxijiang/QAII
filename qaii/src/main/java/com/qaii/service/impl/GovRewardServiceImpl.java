@@ -39,5 +39,10 @@ public class GovRewardServiceImpl implements GovRewardService {
 		// TODO Auto-generated method stub
 		return govrewardmapper.insert(govreward);
 	}
+	@Override
+	public List<Govreward> listByNum(int num) {
+		// TODO Auto-generated method stub
+		return govrewardmapper.listByNum(num);
+	}
 
 }
