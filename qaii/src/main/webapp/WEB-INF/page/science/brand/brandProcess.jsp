@@ -41,7 +41,7 @@
 	  	<i class="layui-icon layui-icon-download-circle"></i>下载
 	  </button>
 	</div>
-	<button onclick="srchange('brandData.do?userId=${param.userId}&step=${param.step}&tradmRegistertime=${requestScope.utflist[2]}&tradmDept=&tradmApplyper=${requestScope.utflist[1]}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('brandData.do?userId=${param.userId}&step=${param.step}&tradmRegistertime=${requestScope.utflist[2]}&tradmDept=${requestScope.utflist[0]}&tradmApplyper=${requestScope.utflist[1]}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>

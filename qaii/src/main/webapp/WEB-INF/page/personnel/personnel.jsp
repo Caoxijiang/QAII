@@ -27,7 +27,7 @@
 <div class="layui-layout layui-layout-admin">
 <!-- 头部区域（可配合layui已有的水平导航） -->
   <div class="layui-header">
-	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>科研成果管理系统&nbsp;--&nbsp;权限管理</div>
+	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧人事管理系统 </div>
 		<ul class="layui-nav layui-layout-right">
 		  <li class="layui-nav-item">
 			  <a href="outLogin.do" "event.returnValue=false">
@@ -87,7 +87,7 @@
    <!-- 底部固定区域 -->
   <div class="layui-footer">
    
-    © 青岛智能产业研究院&nbsp;版权所有
+    © 青岛智铭智能科技有限公司&nbsp;版权所有
   </div>
    <!-- 底部固定区域 -->
 </div>

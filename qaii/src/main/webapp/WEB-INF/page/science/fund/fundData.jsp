@@ -2,6 +2,7 @@
 <html>
 <%@ page  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <c:set var="basePath" value="${pageContext.request.contextPath}"></c:set>
 <head>
   <meta charset="utf-8">
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
+	
   <style>
     body{margin: 10px;}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
@@ -40,12 +42,13 @@
 		返回
 	</button>		
 </div>
+
 <div class="layui-container addtop"> 
 	<div class="datacontent">
 		<div class="datatitle">
-			<span class="dataname" id="paname" name=${param.patName}>&nbsp;&nbsp;&nbsp;&nbsp;基金名称《&nbsp;${requestScope.utflist[0]}&nbsp;》</span>
-			<span class="inventor">来源：${requestScope.utflist[1]}</span>
-			<span class="datadate">申报时间：${requestScope.utflist[2]}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<span class="dataname"} >&nbsp;&nbsp;&nbsp;&nbsp;基金名称&nbsp;-&nbsp;${requestScope.utflist[0]}&nbsp;</span>
+			<span class="inventor">申请人：${requestScope.utflist[1]}</span>
+			<span class="datadate">注册日期：${requestScope.utflist[2]}&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>
 		<div id="process">
 			<ul class="layui-timeline" id="processul">
@@ -57,22 +60,12 @@
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script src="${basePath}/js/funddata.js"></script><!-- 添加流程 -->
 <script src="${basePath}/js/iframesrc.js"></script>
-<script>
-$(function(){
-	$(document).on('click','.fundProcess',function(){
-		var stepnum="";
-		stepnum=$(this).attr("name");
-		$("body", parent.document).find('iframe').attr('src','fundProcess.do?userId='+userID+'&step='+stepnum+'&patName='+patName+'&patPublishtime='+patPublishtime+'&insertype=update');
-	});
-});
-</script>
+
 <script>
 //获取专利主界面传递过来的数据id
 var userID="";
 userID=${param.userId};
-var patName="";
-patName=$("#paname").attr("name");
-var patPublishtime='${param.patPublishtime}';
+var govfundName="${requestScope.utflist[0]}";
 $(function(){
 	$(document).on('click','#test3',function(){
 		layui.use('layer', function(){
@@ -93,7 +86,7 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['600px', '450px'],
-				content: 'fundDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&patName='"+patName+"'"
+				content: 'fundDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&govfundName='"+govfundName+"'"
 			});
 		}); 
 	});
@@ -101,6 +94,15 @@ $(function(){
 	
 	
 });
+</script>
+<script>
+	$(function(){
+		$(document).on('click','.fundProcess',function(){
+			var stepnum="";
+			stepnum=$(this).attr("name");
+			$("body", parent.document).find('iframe').attr('src','fundProcess.do?userId='+userID+'&step='+stepnum+'&govfundApplytime=${requestScope.utflist[2]}&govfundName=${requestScope.utflist[0]}&govfundSource=${requestScope.utflist[1]}');
+		});
+	});
 </script>
 </body>
 </html>        

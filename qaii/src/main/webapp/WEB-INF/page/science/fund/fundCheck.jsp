@@ -251,26 +251,27 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 			},
 			success:function(data){
 				if(data.data!=null){
-					let patentInfo=data.data;
+					let fundInfo=data.data;
 					//表单初始赋值 从表单中提取数据
 					  form.val('example', {
-						"patDept":patentInfo.patDept,
-						"patType":patentInfo.patType,
-						"patName":patentInfo.patName,
-						"patDigest":patentInfo.patDigest,
-						"patAuthor":patentInfo.patAuthor,
-						"patApplyper":patentInfo.patApplyper,
-						"patTelltime":patentInfo.patTelltime,
-						"patAgency":patentInfo.patAgency,
-						"patPrepublishaudit":patentInfo.patPrepublishaudit,
-						"patApplynum":patentInfo.patApplynum,
-						"patApplytime":patentInfo.patApplytime,
-						"patPublishtime":patentInfo.patPublishtime,
-						"patAuthorzationtime":patentInfo.patAuthorzationtime,
-						"patRemission":patentInfo.patRemission,
-						"patCost":patentInfo.patCost,
-						"patInvoiceper":patentInfo.patInvoiceper,
-						"patRemark":patentInfo.patRemark
+						"govfundApplytime":fundInfo.govfundApplytime,
+						"govfundSource":fundInfo.govfundSource,
+						"govfundLevel":fundInfo.govfundLevel,
+						"govfundName":fundInfo.govfundName,
+						"govfundImplementtime":fundInfo.govfundImplementtime,
+						"govfundConstructunit":fundInfo.govfundConstructunit,
+						"govfundManagedepart":fundInfo.govfundManagedepart,
+						"govfundApplydepart":fundInfo.govfundApplydepart,
+						"govfundPass":fundInfo.govfundPass,
+						"govfundWrittentime":fundInfo.govfundWrittentime,
+						"govfundFundlimit":fundInfo.govfundFundlimit,
+						"govfundFund":fundInfo.govfundFund,
+						"govfundFundtime":fundInfo.govfundFundtime,
+						"govfundMiddleresult":fundInfo.govfundMiddleresult,
+						"govfundMiddleresult":fundInfo.govfundMiddleresult,
+						"govfundEndresult":fundInfo.govfundEndresult,
+						"govfundEndresult":fundInfo.govfundEndresult,
+						"govfundRemark":fundInfo.govfundRemark
 					    
 					  })
 				}else{

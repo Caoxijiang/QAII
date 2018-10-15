@@ -23,10 +23,10 @@
 </head>
 <body id="bodyHei">
 <div class="tool">
-	<div class="techadd" style="width:300px;">
+	<div class="techadd" style="width:350px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span>专利&nbsp;—&nbsp;资料审查</span>
+		<span>政府奖励&nbsp;—&nbsp;资料审查</span>
 		<span>&nbsp;>&nbsp;</span>
 		<span class="blue">文件预览</span>
 	</div>
@@ -41,7 +41,7 @@
 	  	<i class="layui-icon layui-icon-download-circle"></i>下载
 	  </button>
 	</div>
-	<button onclick="srchange('awardData.do?userId=${param.userId}&step=${param.step}&patName=${param.patName}&patPublishtime=${param.patPublishtime}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('awardData.do?userId=${param.userId}&step=${param.step}&rewardName=${requestScope.utflist[0]}&rewardSource=${requestScope.utflist[1]}&rewardAwardtime=${requestScope.utflist[2]}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>

@@ -120,7 +120,7 @@ layui.use('table', function(obj){
 		{field: 'sisUnits', title: '署名单位',sort: true},
 		{field: 'sisPublishlocation', title: '期刊/会议/杂志',sort: true,width:200},
 		{field: 'sisPublishtime', title: '发表时间',sort: true,width:150},
-		{field: 'sisStatus', title: '状态',sort: true},
+		{field: 'sisStatus', title: '级别 ',sort: true},
 		{field: 'sisDept', title: '部门',width:220},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],

@@ -180,7 +180,7 @@ public class techController {
 	//基金资料审查文件添加界面
 	@RequestMapping("fundDataAddFile.do")
 	public String fundDataAddFile(){
-		return "page/science/fund/fundfund/fund/fundDataAddFile";
+		return "page/science/fund/fundDataAddFile";
 	}
 	
 	//创新平台
@@ -304,18 +304,18 @@ public class techController {
 	@RequestMapping("awardProcess.do")
 	public ModelAndView awardProcess(HttpServletRequest request) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("rewardName").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("rewardSource").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("rewardAwardtime").getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/award/awardProcess", "utflist", result);
 	}
 	//科技奖励资料审查文件预览界面
 	@RequestMapping("awardData.do")
 	public ModelAndView awardData(HttpServletRequest request) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("tradmApplyper").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("tradmRegistertime").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("rewardName").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("rewardSource").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("rewardAwardtime").getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/award/awardData", "utflist", result);
 	}
 	//科技奖励资料审查文件流程添加界面
@@ -326,7 +326,7 @@ public class techController {
 	//科技奖励资料审查文件添加界面
 	@RequestMapping("awardDataAddFile.do")
 	public String awardDataAddFile(){
-		return "page/science/award/awardAddFile";
+		return "page/science/award/awardDataAddFile";
 	}
 		
 	//论文
