@@ -15,4 +15,6 @@ public interface GovFundService {
 	int updateMsg(Govfund govfund);
 
 	int insertMsg(Govfund govfund);
+	
+	List<Govfund> listByNum(int num);
 }

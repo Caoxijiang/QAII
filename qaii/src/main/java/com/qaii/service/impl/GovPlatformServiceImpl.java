@@ -39,5 +39,10 @@ public class GovPlatformServiceImpl implements GovPlatformService {
 		// TODO Auto-generated method stub
 		return govplatformmapper.insert(govplatform);
 	}
+	@Override
+	public List<Govplatform> listByNum(int num) {
+		// TODO Auto-generated method stub
+		return govplatformmapper.listByNum(num);
+	}
 
 }

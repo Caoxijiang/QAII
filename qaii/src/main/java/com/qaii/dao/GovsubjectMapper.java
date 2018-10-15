@@ -20,4 +20,6 @@ public interface GovsubjectMapper {
     List<Govsubject> getAllSubjectMsg();
     
     int deleteByPrimaryKeys(Integer[] eid);
+    
+    List<Govsubject> listByNum(int num);
 }

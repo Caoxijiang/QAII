@@ -20,4 +20,6 @@ public interface GovrewardMapper {
     List<Govreward> getAllrewardMsg();
     
     int deleteByPrimaryKeys(Integer[] eid);
+    
+    List<Govreward> listByNum(int num);
 }

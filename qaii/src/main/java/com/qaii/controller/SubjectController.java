@@ -88,7 +88,7 @@ public class SubjectController {
 	@ResponseBody
 	public JsonResult showGovsubjectDetails(Govsubject govsubject,HttpServletRequest req) {	
 		
-		int userid=Integer.parseInt(req.getParameter("userId"));
+		int userid=Integer.parseInt(req.getParameter("id"));
 		//Govsubject.setId();
 		govsubject = govsubjectService.selectByPrimaryKey(userid);
 		return new JsonResult(govsubject);

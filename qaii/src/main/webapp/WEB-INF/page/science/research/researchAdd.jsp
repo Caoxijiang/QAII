@@ -38,7 +38,7 @@
 </div>
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="addresearchInfo.do" method="post"> 
+  <form class="layui-form" action="addGovsubject.do" method="post"> 
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	    	<div class="layui-form-item">
