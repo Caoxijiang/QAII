@@ -23,10 +23,10 @@
 </head>
 <body id="bodyHei">
 <div class="tool">
-	<div class="techadd" style="width:300px;">
+	<div class="techadd" style="width:350px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span>专利&nbsp;—&nbsp;资料审查</span>
+		<span>纵向课题&nbsp;—&nbsp;资料审查</span>
 		<span>&nbsp;>&nbsp;</span>
 		<span class="blue">文件预览</span>
 	</div>
@@ -41,7 +41,7 @@
 	  	<i class="layui-icon layui-icon-download-circle"></i>下载
 	  </button>
 	</div>
-	<button onclick="srchange('patentData.do?userId=${param.userId}&step=${param.step}&patName=${param.patName}&patPublishtime=${param.patPublishtime}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('researchData.do?userId=${param.userId}&step=${param.step}&govsubApprovalnum=${requestScope.utflist[2]}&govsubName=${requestScope.utflist[0]}&govsubSource=${requestScope.utflist[1]}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -59,27 +59,24 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
+var govsubName="${param.govsubName}";
 /* var patName=${param.patName}; */
-console.log(userID+"id与步骤"+step+"sdfgsdfg${param.patName}");
 
-layui.use('table', function(){
+layui.use('table', function(obj){
 	  var table = layui.table;
 	  table.render({
 	    elem: '#demo'
 	    /* ,url: '/demo/table/user/' //数据接口 */
+	    ,url: 'getsubjectfile.do?sid'+"="+step
 	    ,page: false//开启分页
 	    ,cols: [[ //表头
 	    	{type: 'checkbox'}
 	      ,{field: 'id', type:'numbers',title: '序号', width:80}
-	      ,{field: 'filename', title: '文件名'}
+	      ,{field: 'name', title: '文件名'}
 	      ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
 	    ]],
 	    limit: 999999,
-	    data:[{id:"1",filename:"http://localhost:8083/img/11.jpg"},
-	    	{id:"1",filename:"http://localhost:8083/img/222.pdf"},
-	    	{id:"1",filename:"http://localhost:8083/img/444.xlsx"},
-	    	{id:"1",filename:"http://localhost:8083/img/333xls.xls"}
-	    	]
+	    data:obj
 	  });
 	//监听表格复选框选择
 	  table.on('checkbox(test)', function(obj){
@@ -119,8 +116,24 @@ layui.use('table', function(){
 	    //console.log(obj)
 	    if(obj.event === 'del'){
 	      layer.confirm('真的删除行么', function(index){
-	        obj.del();
-	        layer.close(index);
+	    	  let arr=[data.id];
+              $.post({
+                url:"dellsubjectfile.do",
+                data:{
+                    "requestDate" : arr
+                },
+                success:function(data){
+                    if(data.data){
+                        //删除对应行（tr）的DOM结构
+                        alert("删除成功!");
+                        obj.del();
+                        layer.close(index);
+                    }else{
+                        layer.alert("删除失败")
+                    }
+                    
+                }
+              }) 
 	      });
 	    } else if(obj.event === 'online'){//在线预览，暂支持图片和pdf形式
 	    	var address=data.filename;
@@ -137,11 +150,17 @@ layui.use('table', function(){
 	    		download(address);
 		}else if(obj.event === 'upload'){//文件重新上传
 			var address=data.filename;
+			var id=data.id;
 		    layer.open({
 	    	  type:1,
 			  title:"重新上传文件",
-			  content:'<form action="" method="post">'+
-			  '<input type="file" name="file" id="filename">'+
+			  content:'<form action="Govsubjectprocessupload.do" method="post" enctype="multipart/form-data">'+
+			  '<input type="file" name="file" id="path">'+
+			  '<input type="hidden" name="oid" id="oid" value="'+userID+'">'+
+              '<input type="hidden" name="step" id="id" value="'+step+'">'+
+              '<input type="hidden" name="type" id="type" value="update">'+
+              '<input type="hidden" name="govsubName" id="govsubName" value="'+govsubName+'">'+
+              '<input type="hidden" name="id" id="id" value="'+id+'">'+
 			  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 			});
 		}//事件监听

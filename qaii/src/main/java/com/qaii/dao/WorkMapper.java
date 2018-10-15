@@ -22,4 +22,6 @@ public interface WorkMapper {
     List<Work> getAllWorkMsg();
     
     int deleteByPrimaryKeys(Integer[] eid);
+    
+    int countEachMonthwork(String firstDay, String endDay);
 }

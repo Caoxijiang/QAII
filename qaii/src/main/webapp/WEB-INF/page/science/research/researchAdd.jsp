@@ -173,7 +173,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">立项时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubApprovalnum" class="layui-input input" id="test2">
+					<input type="text" name="govsubApprovaltime" class="layui-input input" id="test2">
 				</div>
 			</div>
 	    </div>
@@ -201,7 +201,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govsubMiddleresult" class="layui-input input" id="test4">
+							<input type="text" name="govsubMiddletime" class="layui-input input" id="test4">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govsubMiddleresult" lay-search="" class="input">
@@ -220,7 +220,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govsubYearresult" class="layui-input input" id="test5">
+							<input type="text" name="govsubYeartime" class="layui-input input" id="test5">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govsubYearresult" lay-search="" class="input">
@@ -242,7 +242,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govsubEndresult" class="layui-input input" id="test6">
+							<input type="text" name="govsubEndtime" class="layui-input input" id="test6">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govsubEndresult" lay-search="" class="input">

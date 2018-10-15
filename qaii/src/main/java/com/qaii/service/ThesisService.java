@@ -17,4 +17,6 @@ public interface ThesisService {
 	int updateMsg(Thesis thesis);
 
 	int insertMsg(Thesis thesis);
+	
+	int countEachMonththesis(String firstDay, String endDay);
 }

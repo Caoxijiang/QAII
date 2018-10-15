@@ -25,5 +25,7 @@ public interface PatentMapper {
     int countAgencyPatent(String firstDay, String endDay);
     
     int countAuthorizationPatent(String firstDay, String endDay);
+    
+    int countAuthorizationPatentNum();
 
 }

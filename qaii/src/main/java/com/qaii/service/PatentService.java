@@ -24,5 +24,6 @@ public interface PatentService {
     
     int countAuthorizationPatent(String firstDay, String endDay);
     
+    int countAuthorizationPatentNum();
 }
 

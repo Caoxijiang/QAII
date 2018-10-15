@@ -223,4 +223,15 @@
 	    	#{id,jdbcType=INTEGER}
 	    </foreach>
   </delete>
+  <select id="countApplycopyright" resultType="int" parameterType="String">
+    SELECT COUNT(*) FROM sci_softwarecopyright WHERE soft_DevelopEndTime BETWEEN #{0} AND #{1}
+  </select>
+  <select id="countAuthorizationcopyright" resultType="int">
+    SELECT COUNT(*) FROM sci_softwarecopyright WHERE soft_CertificateTime IS NOT NULL
+     AND soft_CertificateTime != "" 
+     AND soft_CertificateTime BETWEEN #{0} AND #{1}
+  </select>
+  <select id="countAuthorizationcopyrightNum" resultType="int">
+    SELECT COUNT(*) FROM sci_softwarecopyright WHERE soft_CertificateTime IS NOT NULL AND soft_CertificateTime!=""
+  </select>
 </mapper>

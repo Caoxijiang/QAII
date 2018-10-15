@@ -17,4 +17,10 @@ public interface TradeMarkService {
 	int updatetrademark(Trademark trademark);
 	
 	int insertMsg(Trademark trademark);
+	
+	int countAgencyTradeMark(String firstDay, String endDay);
+	
+	int countAuthorizationTradeMark(String firstDay, String endDay);
+	
+	int countAuthorizationTradeMarkNum();
 }
