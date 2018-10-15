@@ -6,22 +6,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>专利</title>
+  <title>版权</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
-  <link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
     body{margin: 10px;}
-    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
     .layui-table-body {
-	    height: -moz-calc( 100vh - 215px );
-	    height: -webkit-calc( 100vh - 215px );
-	    height: calc( 100vh - 215 px );
+	    height: -moz-calc( 100vh - 190px );
+	    height: -webkit-calc( 100vh - 190px );
+	    height: calc( 100vh - 190px );
 	}
+    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
 	.noExl {
     display: none;
 }
@@ -30,8 +29,8 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">专利 ( <span id="countnum"> </span> )</span>
-		<a href="javascript:;" onclick="srchange('patentAdd.do')">
+  	  <span class="limit">版权( <span id="countnum"> </span> )</span>
+		<a href="adddetail.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -55,10 +54,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="empDept">部门</option>
-			<option value="empJobtitlelevel">申请人</option>
-			<option value="empGender">申请号</option>
-			<option value="empGender">申请日期</option>
+			<option value="softDept">部门</option>
+			<option value="softName">名称</option>
+			<option value="softAuthor">著作权人</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -72,22 +70,18 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=empNum  type="checkbox" value="工号" checked="flase"/><lable>部门</lable></div>
-	<div class="int-inline"><input id="empName"  type="checkbox" value="姓名" checked/><lable>专利类型</lable></div>
-	<div class="int-inline"><input id="empGender"  type="checkbox" value="性别" checked/><lable>专利名称</lable></div>
-	<div class="int-inline"><input id="empDept"  type="checkbox" value="部门" checked/><lable>摘要</lable></div>
-	<div class="int-inline"><input id="empPosition"  type="checkbox" value="职务" checked/><lable>发明人</lable></div>
-	<div class="int-inline"><input id="empHireStarttime"  type="checkbox" value="聘期" checked/><lable>申请（专利权）人</lable></div>
-	<div class="int-inline"><input id="empIdcard"  type="checkbox" value="身份证号" checked/><lable>交底日期</lable></div>
-	<div class="int-inline"><input id="empIdcardEndtime"  type="checkbox" value="身份证到期时间" checked/><lable>代理机构</lable></div>
-	<div class="int-inline"><input id="empEthnic"  type="checkbox" value="民族" checked/><lable>是否提前公开实审</lable></div>
-	<div class="int-inline"><input id="empPoliticallandscape"  type="checkbox" value="政治面貌" checked/><lable>审查进度</lable></div>
-	<div class="int-inline"><input id="empMaritalstatus"  type="checkbox" value="婚姻状况" checked/><lable>是否减免</lable></div>
-	<div class="int-inline"><input id="empFirsteducation"  type="checkbox" value="第一学历" checked/><lable>申请费用（元）</lable></div>
-	<div class="int-inline"><input id="empFirsteducationschool"  type="checkbox" value="第一学历学校" checked/><lable>发票收据-汇款人</lable></div>
-	<div class="int-inline"><input id="empFirsteducationpro"  type="checkbox" value="第一学历专业" checked/><lable>备注</lable></div>
-	<div class="int-inline"><input id="empFirstgraduationtime"  type="checkbox" value="第一学历毕业时间" checked/><lable>执笔人信息</lable></div>
-	<div class="int-inline"><input id="empSecondeducation"  type="checkbox" value="第二学历" checked/><lable>代理人</lable></div>
+	<div class="int-inline"><input id=softDept  type="checkbox" value="作品图样" checked="flase"/><lable>作品图样</lable></div>
+	<div class="int-inline"><input id="softCode"  type="checkbox" value="作品名称" checked/><lable>作品名称</lable></div>
+	<div class="int-inline"><input id="softName"  type="checkbox" value="登记号" checked/><lable>登记号</lable></div>
+	<div class="int-inline"><input id="softWriter"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
+	<div class="int-inline"><input id="softAuthor"  type="checkbox" value="著作权人" checked/><lable>著作权人</lable></div>
+	<div class="int-inline"><input id="softAgency"  type="checkbox" value="代理机构" checked/><lable>代理机构</lable></div>
+	<div class="int-inline"><input id="softDevelopendtime"  type="checkbox" value="创作完成日期" checked/><lable>创作完成日期</lable></div>
+	<div class="int-inline"><input id="softFirstpublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发表日期</lable></div>
+	<div class="int-inline"><input id="softNum"  type="checkbox" value="登记日期" checked/><lable>登记日期</lable></div>
+	<div class="int-inline"><input id="softCertificatetime"  type="checkbox" value="费用（元）" checked/><lable>费用（元）</lable></div>
+	<div class="int-inline"><input id="softInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
+	<div class="int-inline"><input id="softUpdatetime"  type="checkbox" value="状态" checked/><lable>状态</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -96,9 +90,8 @@
 </div>
  <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail" lay-event="detail">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="datac">资料审查</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -123,29 +116,25 @@ layui.use('table', function(obj){
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
-    url: 'findPatentInfo.do',  //数据接口
-	cellMinWidth: 80,
+//    height: 332,
+    url: 'getAllSoftwareMsg.do', //数据接口
+	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{type:'checkbox',fixed: 'left',width:50},
-		{field: 'id', title: '序号',type:'numbers',width:100},
-		{field: 'patDept', title: '部门',width:200},
-		{field: 'patType', title: '专利类型',width:200},
-		{field: 'patName', title: '专利名称',width:150},
-		{field: 'patDigest', title: '摘要',width:250},
-		{field: 'patAuthor', title: '发明人',sort: true,width:250},
-		{field: 'patApplyper', title: '申请（专利权）人',width:220},
-		{field: 'patTelltime', title: '交底日期',sort: true,width:150},
-		{field: 'patAgency', title: '代理机构',width:180},
-		{field: 'patPrepublishaudit', title: '是否提前公开实审',sort: true,width:200},
-		{field: 'patApplynum', title: '申请号',width:150},
-		{field: 'patApplytime', title: '申请日',sort: true,width:200},
-		{field: 'patPublishtime', title: '公开日',sort: true,width:200},
-		{field: 'patAuthorzationtime', title: '授权公告日',width:200},
-		{field: 'patRemission', title: '是否减免',width:230},
-		{field: 'patCost', title: '申请费用（元）',width:200},
-		{field: 'patInvoiceper', title: '发票收据-汇款人',width:200},
-		{field: 'patRemark', title: '备注',width:200},
-		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:380}
+		{type:'checkbox',fixed: 'left'},
+		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
+		{field: 'softDept', title: '作品图样',fixed: 'left',width:150},
+		{field: 'softCode', title: '作品名称',fixed: 'left',width:150},
+		{field: 'softName', title: '登记号',sort: true,width:120},
+		{field: 'softWriter', title: '作者',sort: true,width:100},
+		{field: 'softAuthor', title: '著作权人',sort: true,width:150},
+		{field: 'softAgency', title: '代理机构',sort: true,width:150},
+		{field: 'softDevelopendtime', title: '创作完成日期',width:220},
+		{field: 'softFirstpublishtime', title: '首次发布日期',sort: true,width:200},
+		{field: 'softNum', title: '登记日期',sort: true,width:150},
+		{field: 'softCost', title: '费用',sort: true,width:150},
+		{field: 'softInvoiceper', title: '发票收据-汇款人',sort: true,width:200},
+		{field: 'softUpdatetime', title: '状态',sort: true,width:200},
+		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
     ]],
     
     
@@ -233,12 +222,12 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="empDept"){
+  			if(check=="softDept"){
   				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empGender"){
-  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softName"){
+  				alert("搜索'名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softAuthor"){
+  				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -265,14 +254,14 @@ layui.use('table', function(obj){
     console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
-    	var iframesrc="patentCheck.do?userId='"+data.id+"'";
-    	$("body", parent.document).find('iframe').attr('src',iframesrc);
+		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
+     // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
           let arr=[data.id];
-          console.log(arr) 
+          console.log(data) 
           $.post({
-          	url:"dellPatentInfo.do",
+          	url:"dellsoftMsg.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -288,19 +277,57 @@ layui.use('table', function(obj){
           	}
           }) 
     	  
+    	  
+    	  
+    	  
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
         //向服务端发送删除指令
+        
+        
+        
+        
       });
     } else if(layEvent === 'edit'){
-    	var iframesrc="patentEdit.do?userId='"+data.id+"'";
-    	$("body", parent.document).find('iframe').attr('src',iframesrc);
-    }else if(layEvent==="datac"){
-    	//userid为当前记录id值，将会传到资料审查界面
-    	var iframesrc="patentData.do?userId='"+data.id+"'&patName="+data.patName+"&patAuthor="+data.patAuthor+"&patPublishtime="+data.patPublishtime;
-    	iframesrc=encodeURI(iframesrc);
-    	iframesrc=encodeURI(iframesrc);
-    	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      layer.alert(
+		  '<div class="layui-form-item">'+
+
+			'<label class="layui-form-label">角色</label>'+
+			'<div class="layui-input-block">'+
+				'<select name="interest" lay-filter="aihao">'+
+					'<option value=""></option>'+
+					'<option value="0">超级管理员</option>'+
+					'<option value="1" selected="">院级权限</option>'+
+					'<option value="2">人事部门权限</option>'+
+					'<option value="3">产业化处权限</option>'+
+					'<option value="4">科技管理处</option>'+
+				'</select>'+
+			'</div>'+
+		'</div>')
+    }else if(layEvent==="review"){
+    	 layer.confirm('确定离职信息', function(index){
+             let arr=data.id;
+             console.log(data) 
+             $.post({
+             	url:"dellempInfo.do",
+             	data:{
+             		"requestDate" : arr
+             	},
+             	success:function(data){
+             		if(data.data){
+             		    //删除对应行（tr）的DOM结构
+             			layer.alert("离职操作成功");
+             		}else{
+             			layer.alert("离职操作失败");
+             		}
+             		
+             	}
+             }) 
+       	  
+          // obj.del(); //删除对应行（tr）的DOM结构
+          // layer.close(index);
+           //向服务端发送删除指  
+         });
     }
   });
 
@@ -316,7 +343,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"dellPatentInfo.do",
+		  	url:"dellsoftMsg.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},
@@ -343,9 +370,10 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: '/upload/'
+  ,url: 'insertSoftDatabyexcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
+	  alert("上传成功！请更新数据！");
     console.log(res)
   }
 })
@@ -366,7 +394,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "成员管理",
+				filename: "软著管理",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片
@@ -392,7 +420,17 @@ upload.render({
 	});
 </script>
 <!--自动设置主表格可视区域-->
-<script src="${basePath}/js/iframesrc.js"></script>
+<script>
+
+	var hei=$(".action").height();
+	var ji=$(document).height();
+	var heigt=ji-hei-85;
+	$(".layui-table-body").prop("height",heigt+"px");
+	
+	console.log(heigt);
+
+	
+</script>
 </body>
 </html>        
         
