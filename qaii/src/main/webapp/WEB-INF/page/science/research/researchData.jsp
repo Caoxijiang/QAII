@@ -55,9 +55,8 @@
   
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
-<script src="${basePath}/js/data.js"></script><!-- 添加流程 -->
+<script src="${basePath}/js/researchdata.js"></script><!-- 添加流程 -->
 <script src="${basePath}/js/iframesrc.js"></script>
-<script src="${basePath}/js/iframesrcon.js"></script>
 <script>
 //获取专利主界面传递过来的数据id
 var userID="";
@@ -72,11 +71,11 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['350px', '400px'],
-				content: "patentDataAdd.do?Id"+'='+${param.userId}
+				content: "researchDataAdd.do?Id"+'='+${param.userId}
 			});
 		}); 
 	});
-	$(document).on('click','.patentFile',function(){
+	$(document).on('click','.researchFile',function(){
 		//获取当前页面对步骤数的标识，标识放于name中，命名方式为id+_+步骤数，如20_1
 		var stepnum="";
 		stepnum=$(this).attr("name");
@@ -85,11 +84,20 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['600px', '450px'],
-				content: 'patentDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&patName='"+patName+"'"
+				content: 'researchDataAddFile.do?userId='+userID+"&step='"+stepnum+"'&govsubName=${requestScope.utflist[0]}"
 			});
 		}); 
 	});	
 });
+</script>
+<script>
+	$(function(){
+		$(document).on('click','.researchProcess',function(){
+			var stepnum="";
+			stepnum=$(this).attr("name");
+			$("body", parent.document).find('iframe').attr('src','researchProcess.do?userId='+userID+'&step='+stepnum+'&govsubApprovalnum=${requestScope.utflist[2]}&govsubName=${requestScope.utflist[0]}&govsubSource=${requestScope.utflist[1]}');
+		});
+	});
 </script>
 </body>
 </html>        

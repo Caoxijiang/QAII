@@ -43,6 +43,14 @@ public class Govsubject {
 
     private String govsubFile;
 
+    private String govsubApprovaltime;
+
+    private String govsubMiddletime;
+
+    private String govsubYeartime;
+
+    private String govsubEndtime;
+
     public Integer getId() {
         return id;
     }
@@ -209,5 +217,37 @@ public class Govsubject {
 
     public void setGovsubFile(String govsubFile) {
         this.govsubFile = govsubFile == null ? null : govsubFile.trim();
+    }
+
+    public String getGovsubApprovaltime() {
+        return govsubApprovaltime;
+    }
+
+    public void setGovsubApprovaltime(String govsubApprovaltime) {
+        this.govsubApprovaltime = govsubApprovaltime == null ? null : govsubApprovaltime.trim();
+    }
+
+    public String getGovsubMiddletime() {
+        return govsubMiddletime;
+    }
+
+    public void setGovsubMiddletime(String govsubMiddletime) {
+        this.govsubMiddletime = govsubMiddletime == null ? null : govsubMiddletime.trim();
+    }
+
+    public String getGovsubYeartime() {
+        return govsubYeartime;
+    }
+
+    public void setGovsubYeartime(String govsubYeartime) {
+        this.govsubYeartime = govsubYeartime == null ? null : govsubYeartime.trim();
+    }
+
+    public String getGovsubEndtime() {
+        return govsubEndtime;
+    }
+
+    public void setGovsubEndtime(String govsubEndtime) {
+        this.govsubEndtime = govsubEndtime == null ? null : govsubEndtime.trim();
     }
 }

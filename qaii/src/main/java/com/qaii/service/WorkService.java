@@ -17,5 +17,7 @@ public interface WorkService {
 	int updateMsg(Work work);
 
 	int insertMsg(Work work);
+	
+	int countEachMonthwork(String firstDay, String endDay);
 
 }
