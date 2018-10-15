@@ -50,6 +50,12 @@ public class ThesisServiceImpl implements ThesisService {
 		// TODO Auto-generated method stub
 		return thesismapper.insert(thesis);
 	}
+
+	@Override
+	public int countEachMonththesis(String firstDay, String endDay) {
+		// TODO Auto-generated method stub
+		return thesismapper.countEachMonththesis(firstDay, endDay);
+	}
 	
 
 }

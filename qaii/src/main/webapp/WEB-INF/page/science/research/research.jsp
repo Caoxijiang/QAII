@@ -80,13 +80,17 @@
 	<div class="int-inline"><input id="govsubManagedepart"  type="checkbox" value="主管部门" checked/><lable>主管部门</lable></div>
 	<div class="int-inline"><input id="govsubApplydepart"  type="checkbox" value="申请报送部门" checked/><lable>申请报送部门</lable></div>
 	<div class="int-inline"><input id="govsubAssumedepart"  type="checkbox" value="承担部门" checked/><lable>承担部门</lable></div>
-	<div class="int-inline"><input id="govsubPlatformper"  type="checkbox" value="课题项目负责人" checked/><lable>课题项目负责人</lable></div>
+	<div class="int-inline"><input id="govsubProjectper"  type="checkbox" value="课题项目负责人" checked/><lable>课题项目负责人</lable></div>
 	<div class="int-inline"><input id="govsubProjectapproval"  type="checkbox" value="是否立项" checked/><lable>是否立项</lable></div>
-	<div class="int-inline"><input id="govsubApprovalnum"  type="checkbox" value="立项编号及时间" checked/><lable>立项编号及时间</lable></div>
+	<div class="int-inline"><input id="govsubApprovalnum"  type="checkbox" value="立项编号" checked/><lable>立项编号</lable></div>
+	<div class="int-inline"><input id="govsubApprovaltime"  type="checkbox" value="立项时间" checked/><lable>立项时间</lable></div>
 	<div class="int-inline"><input id="govsubSubvention"  type="checkbox" value="资助金额（万元）" checked/><lable>资助金额（万元）</lable></div>
 	<div class="int-inline"><input id="govsubFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
+	<div class="int-inline"><input id="govsubMiddletime"  type="checkbox" value="中期检查考核时间" checked/><lable>中期检查考核时间</lable></div>
 	<div class="int-inline"><input id="govsubMiddleresult"  type="checkbox" value="中期检查考核结果" checked/><lable>中期检查考核结果</lable></div>
+	<div class="int-inline"><input id="govsubYeartime"  type="checkbox" value="年度检查考核时间" checked/><lable>年度检查考核时间</lable></div>
 	<div class="int-inline"><input id="govsubYearresult"  type="checkbox" value="年度检查考核结果" checked/><lable>年度检查考核结果</lable></div>
+	<div class="int-inline"><input id="govsubEndtime"  type="checkbox" value="项目结题验收时间" checked/><lable>项目结题验收时间</lable></div>
 	<div class="int-inline"><input id="govsubEndresult"  type="checkbox" value="项目结题验收结果" checked/><lable>项目结题验收结果</lable></div>
 	<div class="int-inline"><input id="govsubRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 	<div class="int-inline"><input id="govsubFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div>
@@ -131,24 +135,28 @@ layui.use('table', function(obj){
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'govsubApplytime', title: '申报时间',fixed: 'left',width:100},
+		{field: 'govsubApplytime', title: '申报时间',fixed: 'left',width:150},
 		{field: 'govsubSource', title: '来源',fixed: 'left',width:150},
 		{field: 'govsubLevel', title: '级别',sort: true},
 		{field: 'govsubName', title: '课题项目名称',sort: true,width:200},
 		{field: 'govsubImplementtime', title: '项目实施期',sort: true,width:150},
-		{field: 'govsubDutyunit', title: '承担单位',sort: true},
+		{field: 'govsubDutyunit', title: '承担单位',sort: true,width:120},
 		{field: 'govsubCooperationunit', title: '协作单位',width:220},
 		{field: 'govsubManagedepart', title: '主管部门',sort: true,width:200},
-		{field: 'govsubApplydepart', title: '申请报送部门',sort: true},
+		{field: 'govsubApplydepart', title: '申请报送部门',sort: true,width:200},
 		{field: 'govsubAssumedepart', title: '承担部门',sort: true,width:150},
-		{field: 'govsubProjectper', title: '课题项目负责人',sort: true,width:150},
+		{field: 'govsubProjectper', title: '课题项目负责人',sort: true,width:200},
 		
 		{field: 'govsubProjectapproval', title: '是否立项',sort: true,width:200},
-		{field: 'govsubApprovalnum', title: '立项编号及时间',sort: true,width:200},
+		{field: 'govsubApprovalnum', title: '立项编号',sort: true,width:200},
+		{field: 'govsubApprovaltime', title: '立项时间',sort: true,width:200},
 		{field: 'govsubSubvention', title: '资助金额（万元）',sort: true,width:200},
 		{field: 'govsubFundtime', title: '资金到位时间',sort: true,width:230},
+		{field: 'govsubMiddletime', title: '中期检查考核时间',sort: true,width:200},
 		{field: 'govsubMiddleresult', title: '中期检查考核结果',sort: true,width:200},
+		{field: 'govsubYeartime', title: '年度检查考核时间',sort: true,width:200},
 		{field: 'govsubYearresult', title: '年度检查考核结果',sort: true,width:200},
+		{field: 'govsubEndtime', title: '项目结题验收时间',sort: true,width:200},
 		{field: 'govsubEndresult', title: '项目结题验收结果',sort: true,width:200},
 		{field: 'govsubRemark', title: '备注',sort: true,width:230},
 		{field: 'govsubFile', title: '附件',sort: true,width:200},

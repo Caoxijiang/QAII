@@ -1,10 +1,14 @@
 package com.qaii.controller;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +28,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.qaii.domain.Govsubject;
-import com.qaii.domain.Govsubject;
+import com.qaii.domain.Govsubjectprocessfile;
+import com.qaii.domain.Govsubjectprocess;
+import com.qaii.service.GovSubjectProcessFileService;
+import com.qaii.service.GovSubjectProcessService;
 import com.qaii.service.GovSubjectService;
 import com.qaii.util.AlertException;
 import com.qaii.util.CustomException;
@@ -36,6 +43,11 @@ public class SubjectController {
 	
 	@Resource
 	private GovSubjectService govsubjectService;
+	@Resource
+	private GovSubjectProcessService processService;
+	@Resource
+	private GovSubjectProcessFileService processfileService;
+	
 	//获取所有政府项目信息
 	@RequestMapping(value="getAllSubjectMsg.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -123,6 +135,10 @@ public class SubjectController {
 		govsubject.setGovsubEndresult(req.getParameter("govsubEndresult"));
 		govsubject.setGovsubRemark(req.getParameter("govsubRemark"));
 		govsubject.setGovsubFile(req.getParameter("govsubFile"));
+		govsubject.setGovsubApprovaltime(req.getParameter("govsubApprovaltime"));
+		govsubject.setGovsubMiddletime(req.getParameter("govsubMiddletime"));
+		govsubject.setGovsubYeartime(req.getParameter("govsubYeartime"));
+		govsubject.setGovsubEndtime(req.getParameter("govsubEndtime"));
 	}
 	//添加政府项目信息功能
 	@RequestMapping("addGovsubject.do")
@@ -246,6 +262,169 @@ public class SubjectController {
 		govsubject.setGovsubFile(value.get(19));
 		
 		return govsubject;
+	}
+	
+	//添加纵向课题资料审核流程信息
+  	@RequestMapping(value="addGovsubjectprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+  	@ResponseBody
+  	public JsonResult addProcessInfo(HttpServletRequest req,Govsubjectprocess patp) {
+  		patp.setPid(Integer.parseInt(req.getParameter("pid")));
+  		patp.setDescription(req.getParameter("description"));
+  		patp.setTitle(req.getParameter("title"));
+  		patp.setTime(req.getParameter("time"));
+  		int row = processService.addProcess(patp);
+      	if(row!=0) {
+      		return  new JsonResult(row);
+      	}else {
+      		return  new JsonResult();
+      		
+      	}
+  	}
+  	
+  	//显示所有纵向课题审核流程信息
+  	@ResponseBody
+  	@RequestMapping(value="getGovsubjectprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+  	public JsonResult findAllProcessInfo(HttpServletRequest req) {
+  		
+  		Integer pid=Integer.parseInt(req.getParameter("id"));
+  		
+  		List<Govsubjectprocess>list=processService.getAllMsgBypid(pid);
+      	if(list!=null) {
+      		return  new JsonResult(list);
+      	}else {
+      		return  new JsonResult();
+      		
+      	}
+  	}
+	
+  	//审核资料上传
+  	@ResponseBody
+	@RequestMapping("Govsubjectprocessupload.do")
+	public Map<String, String> processupload(@RequestParam("file") MultipartFile[] files, Govsubjectprocessfile img,
+			HttpServletRequest req) throws Exception {
+		// System.out.println(request.getParameter("name"));
+		String insertype=req.getParameter("type");
+		Integer oid = Integer.parseInt(req.getParameter("oid"));
+		Integer stepid = Integer.parseInt(req.getParameter("step"));
+		String govsubName = new String(req.getParameter("govsubName").getBytes("ISO-8859-1"),"utf-8");
+		Map<String, String> result = new HashMap<>();
+		if (files != null && files.length < 0) {
+			result.put("code", "1");
+			result.put("msg", "文件为空");
+		}
+
+		for (int i = 0; i < files.length; i++) {
+			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
+			 
+			 String name=files[i].getOriginalFilename();
+			// 取文件格式后缀名
+			//String type = files[i].getOriginalFilename();
+			 
+			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+			 
+			String filename = uuid + type;// 取当前时间戳作为文件名
+
+			// String path = request.getSession().getServletContext().getRealPath("/upload/"
+			// + filename);// 存放位置
+			String path = "C:/File/img/subject/File/" + govsubName + "/" + oid + "/" + stepid;
+			String dbpath="img/subject/File/"+govsubName + "/" + oid + "/" + stepid;
+			File destFile = new File(path + "/" + filename);
+
+			if (!destFile.getParentFile().exists()) {
+				destFile.getParentFile().mkdirs();
+			}
+			try {
+				// FileUtils.copyInputStreamToFile(files[i].getInputStream(), destFile);//
+				// 复制临时文件到指定目录下
+				files[i].transferTo(destFile);
+				img.setSid(stepid);
+				img.setOid(oid);
+				img.setPath(dbpath.toString()+"/"+filename.toString());
+				img.setName(name);
+				
+				if(insertype.equals("insert")) {
+					InsertGovsubjectprocessfile(img,result, destFile);
+					result.put("code", "0");
+					result.put("msg", "上传成功");
+					result.put("url", destFile.getPath());
+				}else if(insertype.equals("update")) {
+					updataGovsubjectprocessfile(img,result, destFile);
+					result.put("code", "0");
+					result.put("msg", "上传成功");
+					result.put("url", destFile.getPath());
+				}
+				
+
+			} catch (IOException e) {
+				e.printStackTrace();
+				result.put("code", "1");
+				result.put("msg", "上传失败");
+			}
+		}
+
+		return result;
+
+	}
+  	
+  	private void InsertGovsubjectprocessfile(Govsubjectprocessfile img, Map<String, String> result, File dest) {
+		int row=processfileService.insertMsg(img);
+		if(row > 0) {
+			result.put("code", "0");
+			result.put("msg", "上传成功");
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	} 
+  	
+  	private void updataGovsubjectprocessfile(Govsubjectprocessfile img, Map<String, String> result, File dest) {
+		int row=processfileService.updateMsg(img);
+		if(row > 0) {
+			result.put("code", "0");
+			result.put("msg", "上传成功");
+		}else {
+			result.put("code", "1");
+	    	result.put("msg", "上传失败");
+		}
+	} 
+  	
+  	//显示流程文件列表
+  	@ResponseBody
+	@RequestMapping(value="getsubjectfile.do",produces="application/json;charset=UTF-8")
+	public Layui findProessimg(HttpServletRequest req) {
+		Integer sid=Integer.parseInt(req.getParameter("sid"));
+		List<Govsubjectprocessfile>img=processfileService.getAllMsg(sid);
+		int count =img.size();
+		
+		return Layui.data(count, img);
+
+	}
+  	
+  	//删除流程文件
+  	@ResponseBody
+	@RequestMapping(value="dellsubjectfile.do",produces="application/json;charset=UTF-8")
+	public JsonResult dellProessimg(@RequestParam(value = "requestDate[]") Integer[] id) {
+		int row=processfileService.deleteByPrimaryKey(id);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
+	}
+
+  	//重新上传流程文件
+  	@ResponseBody
+	@RequestMapping(value="upsubjectfile.do",produces="application/json;charset=UTF-8")
+	public JsonResult updataProessimg(@RequestParam(value = "requestDate") Govsubjectprocessfile img) {
+		
+		int row=processfileService.updateMsg(img);
+    	if(row!=0) {
+    		return  new JsonResult(row);
+    	}else {
+    		return  new JsonResult();
+    		
+    	}
 	}
 
 }
