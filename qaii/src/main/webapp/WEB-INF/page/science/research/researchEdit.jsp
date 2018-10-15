@@ -39,7 +39,7 @@
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
 <input id="param" value='${param.userId}' type="hidden"  name="param"/>
-  <form class="layui-form" action="uptateresearchInfo.do" method="post" lay-filter="example"> 
+  <form class="layui-form" action="updateGovsubject.do" method="post" lay-filter="example"> 
   
   	<input   type="hidden"  name="id"/>
 	  <div class="layui-row">
@@ -176,7 +176,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">立项时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubApprovalnum" class="layui-input input" id="test2">
+					<input type="text" name="govsubApprovaltime" class="layui-input input" id="test2">
 				</div>
 			</div>
 	    </div>
@@ -204,7 +204,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govsubMiddleresult" class="layui-input input" id="test4">
+							<input type="text" name="govsubMiddletime" class="layui-input input" id="test4">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govsubMiddleresult" lay-search="" class="input">
@@ -223,7 +223,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govsubYearresult" class="layui-input input" id="test5">
+							<input type="text" name="govsubYeartime" class="layui-input input" id="test5">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govsubYearresult" lay-search="" class="input">
@@ -245,7 +245,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govsubEndresult" class="layui-input input" id="test6">
+							<input type="text" name="govsubEndtime" class="layui-input input" id="test6">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govsubEndresult" lay-search="" class="input">
@@ -334,33 +334,40 @@ $.post({
 		   var id=${param.userId};
 		   if(id!=null){
 				$.post({
-					url:"findPatentInfoById.do",
+					url:"showGovsubjectDetails.do",
 					data:{
 						id:id
 					},
 					success:function(data){
 						if(data.data!=null){
-							let patentInfo=data.data;
+							let researchInfo=data.data;
 							//表单初始赋值 从表单中提取数据
 							  form.val('example', {
-								  	"id":patentInfo.id,
-									"patDept":patentInfo.patDept,
-									"patType":patentInfo.patType,
-									"patName":patentInfo.patName,
-									"patDigest":patentInfo.patDigest,
-									"patAuthor":patentInfo.patAuthor,
-									"patApplyper":patentInfo.patApplyper,
-									"patTelltime":patentInfo.patTelltime,
-									"patAgency":patentInfo.patAgency,
-									"patPrepublishaudit":patentInfo.patPrepublishaudit,
-									"patApplynum":patentInfo.patApplynum,
-									"patApplytime":patentInfo.patApplytime,
-									"patPublishtime":patentInfo.patPublishtime,
-									"patAuthorzationtime":patentInfo.patAuthorzationtime,
-									"patRemission":patentInfo.patRemission,
-									"patCost":patentInfo.patCost,
-									"patInvoiceper":patentInfo.patInvoiceper,
-									"patRemark":patentInfo.patRemark
+								  	"id":id,
+								  	"govsubApplytime":researchInfo.govsubApplytime,
+			                        "govsubSource":researchInfo.govsubSource,
+			                        "govsubLevel":researchInfo.govsubLevel,
+			                        "govsubName":researchInfo.govsubName,
+			                        "govsubImplementtime":researchInfo.govsubImplementtime,
+			                        "govsubDutyunit":researchInfo.govsubDutyunit,
+			                        "govsubCooperationunit":researchInfo.govsubCooperationunit,
+			                        "govsubManagedepart":researchInfo.govsubManagedepart,
+			                        "govsubApplydepart":researchInfo.govsubApplydepart,
+			                        "govsubAssumedepart":researchInfo.govsubAssumedepart,
+			                        "govsubProjectper":researchInfo.govsubProjectper,
+			                        "govsubProjectapproval":researchInfo.govsubProjectapproval,
+			                        "govsubApprovalnum":researchInfo.govsubApprovalnum,
+			                        "govsubSubvention":researchInfo.govsubSubvention,
+			                        "govsubFundtime":researchInfo.govsubFundtime,
+			                        "govsubMiddleresult":researchInfo.govsubMiddleresult,
+			                        "govsubYearresult":researchInfo.govsubYearresult,
+			                        "govsubEndresult":researchInfo.govsubEndresult,
+			                        "govsubRemark":researchInfo.govsubRemark,
+			                        "govsubFile":researchInfo.govsubFile,
+			                        "govsubApprovaltime":researchInfo.govsubApprovaltime,
+			                        "govsubMiddletime":researchInfo.govsubMiddletime,
+			                        "govsubYeartime":researchInfo.govsubYeartime,
+			                        "govsubEndtime":researchInfo.govsubEndtime
 							    
 							  })
 						}else{

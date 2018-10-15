@@ -38,7 +38,7 @@
 </div>
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="addresearchInfo.do" method="post"> 
+  <form class="layui-form" action="addGovplatform.do" method="post"> 
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	    	<div class="layui-form-item">
@@ -173,7 +173,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">立项时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govplatApprovalnum" class="layui-input input" id="test2">
+					<input type="text" name="govplatApprovaltime" class="layui-input input" id="test2">
 				</div>
 			</div>
 	    </div>
@@ -201,7 +201,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govplatMiddleresult" class="layui-input input" id="test4">
+							<input type="text" name="govplatMiddletime" class="layui-input input" id="test4">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govplatMiddleresult" lay-search="" class="input">
@@ -220,7 +220,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govplatYearresult" class="layui-input input" id="test5">
+							<input type="text" name="govplatYeartime" class="layui-input input" id="test5">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govplatYearresult" lay-search="" class="input">
@@ -242,7 +242,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govplatEndresult" class="layui-input input" id="test6">
+							<input type="text" name="govplatEndtime" class="layui-input input" id="test6">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govplatEndresult" lay-search="" class="input">

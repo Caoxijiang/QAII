@@ -39,5 +39,10 @@ public class GovSubjectServiceImpl implements GovSubjectService {
 		// TODO Auto-generated method stub
 		return govsubjectmapper.insert(govsubject);
 	}
+	@Override
+	public List<Govsubject> listByNum(int num) {
+		// TODO Auto-generated method stub
+		return govsubjectmapper.listByNum(num);
+	}
 
 }

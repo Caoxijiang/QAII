@@ -20,4 +20,6 @@ public interface GovfundMapper {
     List<Govfund> getAllFundMsg();
     
     int deleteByPrimaryKeys(Integer[] eid);
+    
+    List<Govfund> listByNum(int num);
 }

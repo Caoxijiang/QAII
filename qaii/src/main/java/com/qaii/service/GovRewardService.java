@@ -15,5 +15,7 @@ public interface GovRewardService {
 	int updateMsg(Govreward govreward);
 
 	int insertMsg(Govreward govreward);
+	
+	List<Govreward> listByNum(int num);
 
 }

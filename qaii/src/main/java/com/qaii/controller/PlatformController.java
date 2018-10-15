@@ -76,29 +76,17 @@ public class PlatformController {
     	}
 	}
 	
-	//跳转到资助平台详情页面
-	@RequestMapping("toGovplatformDetails.do")
-	public String toGovplatformDetail() {
-		
-		return "page/science/";
-	}
-	
 	//资助平台查看详情
 	@RequestMapping(value="showGovplatformDetails.do",method=RequestMethod.POST)
 	@ResponseBody
 	public JsonResult showGovplatformDetails(Govplatform govplatform,HttpServletRequest req) {	
 		
-		int userid=Integer.parseInt(req.getParameter("userId"));
+		int userid=Integer.parseInt(req.getParameter("id"));
 		//Govplatform.setId();
 		govplatform = govplatformService.selectByPrimaryKey(userid);
 		return new JsonResult(govplatform);
 	}
 	
-	//跳转到修改资助平台详情页面
-	@RequestMapping("UpdateGovplatform.do")
-	public String toUpdateGovplatform() {
-		return "page/science";
-	}
 	
 	//修改资助平台信息功能
 	@RequestMapping(value="updateGovplatform.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
@@ -135,6 +123,10 @@ public class PlatformController {
 		govplatform.setGovplatEndresult(req.getParameter("govplatEndresult"));
 		govplatform.setGovplatRemark(req.getParameter("govplatRemark"));
 		govplatform.setGovplatFile(req.getParameter("govplatFile"));
+		govplatform.setGovplatApprovaltime(req.getParameter("govplatApprovaltime"));
+		govplatform.setGovplatMiddletime(req.getParameter("govplatMiddletime"));
+		govplatform.setGovplatYeartime(req.getParameter("govplatYeartime"));
+		govplatform.setGovplatEndtime(req.getParameter("govplatEndtime"));
 	}
 	//添加资助平台信息功能
 	@RequestMapping("addGovplatform.do")

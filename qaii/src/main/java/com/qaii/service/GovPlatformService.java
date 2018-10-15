@@ -15,4 +15,6 @@ public interface GovPlatformService {
 	int updateMsg(Govplatform govplatform);
 
 	int insertMsg(Govplatform govplatform);
+	
+	List<Govplatform> listByNum(int num);
 }
