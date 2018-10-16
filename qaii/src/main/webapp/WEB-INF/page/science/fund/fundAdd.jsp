@@ -38,7 +38,7 @@
 </div>
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="addresearchInfo.do" method="post"> 
+  <form class="layui-form" action="addGovfund.do" method="post"> 
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	    	<div class="layui-form-item">
@@ -174,7 +174,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govfundMiddleresult" class="layui-input input" id="test4">
+							<input type="text" name="govfundMiddletime" class="layui-input input" id="test4">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govfundMiddleresult" lay-search="" class="input">
@@ -193,7 +193,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govfundEndresult" class="layui-input input" id="test5">
+							<input type="text" name="govfundEndtime" class="layui-input input" id="test5">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govfundEndresult" lay-search="" class="input">

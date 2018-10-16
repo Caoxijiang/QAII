@@ -175,7 +175,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govfundMiddleresult" class="layui-input input" id="test4">
+							<input type="text" name="govfundMiddletime" class="layui-input input" id="test4">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govfundMiddleresult" lay-search="" class="input">
@@ -194,7 +194,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govfundEndresult" class="layui-input input" id="test5">
+							<input type="text" name="govfundEndtime" class="layui-input input" id="test5">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govfundEndresult" lay-search="" class="input">
@@ -245,7 +245,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
    var id=${param.userId};
    if(id!=null){
 		$.post({
-			url:"findPatentInfoById.do",
+			url:"showGovfundDetails.do",
 			data:{
 				id:id
 			},
@@ -267,9 +267,9 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 						"govfundFundlimit":fundInfo.govfundFundlimit,
 						"govfundFund":fundInfo.govfundFund,
 						"govfundFundtime":fundInfo.govfundFundtime,
+						"govfundMiddletime":fundInfo.govfundMiddletime,
 						"govfundMiddleresult":fundInfo.govfundMiddleresult,
-						"govfundMiddleresult":fundInfo.govfundMiddleresult,
-						"govfundEndresult":fundInfo.govfundEndresult,
+						"govfundEndtime":fundInfo.govfundEndtime,
 						"govfundEndresult":fundInfo.govfundEndresult,
 						"govfundRemark":fundInfo.govfundRemark
 					    

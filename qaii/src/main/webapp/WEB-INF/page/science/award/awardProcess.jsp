@@ -59,16 +59,15 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
- var patName="${param.patName}";
- var pat=patName.replace(/\"/g, "");
-console.log(pat);
+ var rewardName="${param.rewardName}";
+ var pat=rewardName.replace(/\"/g, "");
 
 layui.use('table', function(obj){
 	console.log(obj);
 	  var table = layui.table;
 	  table.render({
 	    elem: '#demo'
-	    ,url: 'findProessimg.do?sid'+"="+step //数据接口 */
+	    ,url: 'getrewardfile.do?sid'+"="+step //数据接口 */
 	    ,page: false//开启分页
 	    ,cols: [[ //表头
 	    	{type: 'checkbox'}
@@ -122,7 +121,7 @@ layui.use('table', function(obj){
 	          let arr=[data.id];
 	          alert(arr)
 	          $.post({
-	          	url:"dellProessimg.do",
+	          	url:"dellrewardfile.do",
 	          	data:{
 	          		"requestDate" : arr
 	          	},
@@ -157,12 +156,12 @@ layui.use('table', function(obj){
 		    layer.open({
 	    	  type:1,
 			  title:"重新上传文件",
-			  content:'<form action="processupload.do" method="post" enctype="multipart/form-data">'+
+			  content:'<form action="Govrewardprocessupload.do" method="post" enctype="multipart/form-data">'+
 			  '<input type="file" name="file" id="path">'+
 			  '<input type="hidden" name="oid" id="oid" value="'+userID+'">'+
 			  '<input type="hidden" name="step" id="id" value="'+step+'">'+
 			  '<input type="hidden" name="type" id="type" value="update">'+
-			  '<input type="hidden" name="patName" id="patName" value="'+pat+'">'+
+			  '<input type="hidden" name="rewardName" id="rewardName" value="'+pat+'">'+
 			  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 			  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 			});

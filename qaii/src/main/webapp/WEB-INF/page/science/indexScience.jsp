@@ -116,7 +116,7 @@
 		  				<div>
 			  				<!-- tab-科研项目界面 -->			
 			  				<div id="research" style="display:none;">
-			  					<table class="govTable">
+			  					<table class="govTable" id="govTable1">
 			  						<tr>
 			  							<th>来源</th>
 			  							<th>课题项目名称</th>
@@ -124,53 +124,11 @@
 			  							<th>立项时间</th>
 			  							<th>资助金额（万元）</th>
 			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
 			  					</table>
 			  				</div><!-- tab-科研项目界面  结束-->
 			  				<!-- tab-创新平台界面 -->
 			  				<div id="create">
-			  					<table class="govTable">
+			  					<table class="govTable" id="govTable2">
 			  						<tr>
 			  							<th>来源</th>
 			  							<th>平台名称</th>
@@ -178,53 +136,11 @@
 			  							<th>立项时间</th>
 			  							<th>资助金额（万元）</th>
 			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>00120180820</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
 			  					</table>
 			  				</div><!-- tab-创新平台界面  结束-->
 			  				<!-- tab-基金界面 -->
 			  				<div id="funding" style="display:none;">
-			  					<table class="govTable">
+			  					<table class="govTable" id="govTable3">
 			  						<tr>
 			  							<th>来源</th>
 			  							<th>基金名称</th>
@@ -232,94 +148,16 @@
 			  							<th>批复时间</th>
 			  							<th>基金资助额度</th>
 			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018.9-2018.10</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018.9-2018.10</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018.9-2018.10</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018.9-2018.10</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018.9-2018.10</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018.9-2018.10</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
 			  					</table>
 			  				</div><!-- tab-基金界面  结束-->
 			  				<!-- tab-科技奖励界面 -->
 			  				<div id="award" style="display:none;">
-			  					<table class="govTable">
+			  					<table class="govTable" id="govTable4">
 			  						<tr>
 			  							<th>来源</th>
 			  							<th>获奖名称</th>
 			  							<th>获奖时间</th>
 			  							<th>奖励金额</th>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
-			  						</tr>
-			  						<tr>
-			  							<td>平行工作室</td>
-			  							<td>《智能车科技》</td>
-			  							<td>2018-08-20</td>
-			  							<td>3000</td>
 			  						</tr>
 			  					</table>
 			  				</div><!-- tab-科技奖励界面  结束-->
@@ -334,7 +172,7 @@
 <script src="${basePath}/js/scichars.js"></script>
 <script type="text/javascript">
 /* circle(boxid,id,color,total,num);//boxid为各个板块id值,id为canvas的id值,color为基本外圆颜色值,total为圆铺满总量,num为数据量 */
-
+//科研成果总览
 function getscientificPreview(){
 	var result=null;
     $.ajax({
@@ -359,6 +197,52 @@ circle("PatentBox","totalSoft","#ea8a27",100, scientificPreviewData.Applycopyrig
 circle("PatentBox","totalBrand","#ea8a27",100, scientificPreviewData.AgencyTradeMark);
 circle("PatentBox","totalPaper","#3db4e3",100, scientificPreviewData.CountThesis);
 circle("PatentBox","totalWork","#3db4e3",100, scientificPreviewData.Countwork);
+
+//政府资助
+function getGovernmentFunding(){
+    var result=null;
+    $.ajax({
+        async:false,
+        type:"POST",
+        url:"GovernmentFunding.do",
+        success:function(data){
+            data.subject.forEach(function(e){
+            	$("<tr><td>"+e.govsubSource+"</td>"+
+            		    "<td>"+e.govsubName+"</td>"+
+            		    "<td>"+e.govsubApprovalnum+"</td>"+
+            		    "<td>"+e.govsubApprovaltime+"</td>"+
+            		    "<td>"+e.govsubSubvention+"</td>"+
+            		    "</tr>").insertAfter($("#govTable1 tr:eq(0)"));
+            });
+            data.platform.forEach(function(e){
+                $("<tr><td>"+e.govplatSource+"</td>"+
+                        "<td>"+e.govplatName+"</td>"+
+                        "<td>"+e.govplatApprovalnum+"</td>"+
+                        "<td>"+e.govplatApprovaltime+"</td>"+
+                        "<td>"+e.govplatSubvention+"</td>"+
+                        "</tr>").insertAfter($("#govTable2 tr:eq(0)"));
+            });
+            data.fund.forEach(function(e){
+                $("<tr><td>"+e.govfundSource+"</td>"+
+                        "<td>"+e.govfundName+"</td>"+
+                        "<td>"+e.govfundImplementtime+"</td>"+
+                        "<td>"+e.govfundWrittentime+"</td>"+
+                        "<td>"+e.govfundFundlimit+"</td>"+
+                        "</tr>").insertAfter($("#govTable3 tr:eq(0)"));
+            });
+            data.reward.forEach(function(e){
+                $("<tr><td>"+e.rewardSource+"</td>"+
+                        "<td>"+e.rewardName+"</td>"+
+                        "<td>"+e.rewardAwardtime+"</td>"+
+                        "<td>"+e.rewardAwardnum+"</td>"+
+                        "</tr>").insertAfter($("#govTable4 tr:eq(0)"));
+            });
+        }
+    })
+    return result;
+}
+var GovernmentFunding=getGovernmentFunding();
+
 </script>
 </body>
 </html>

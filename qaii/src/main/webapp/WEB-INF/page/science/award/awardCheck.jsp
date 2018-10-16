@@ -39,7 +39,7 @@
 <div class="layui-container addtop"> 
 <input id="param" value='${param.userId}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="uptatePatentInfo.do" lay-filter="example"> 
+  <form class="layui-form" action="uptateawardInfo.do" lay-filter="example"> 
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
@@ -206,7 +206,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
    var id=${param.userId};
    if(id!=null){
 		$.post({
-			url:"findPatentInfoById.do",
+			url:"showGovrewardDetails.do",
 			data:{
 				id:id
 			},
@@ -215,7 +215,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					let awardInfo=data.data;
 					//表单初始赋值 从表单中提取数据
 					  form.val('example', {
-						"patDept":patentInfo.patDept,
+						"patDept":awardInfo.patDept,
 						"rewardApplytime":awardInfo.rewardApplytime,
 						"rewardSource":awardInfo.rewardSource,
 						"rewardLevel":awardInfo.rewardLevel,
