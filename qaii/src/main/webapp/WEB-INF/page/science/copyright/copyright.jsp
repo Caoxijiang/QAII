@@ -54,9 +54,12 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="softDept">部门</option>
-			<option value="softName">名称</option>
+			<option value="softDept">作品名称</option>
+			<option value="softName">登记号</option>
+			<option value="softWriter">作者</option>
 			<option value="softAuthor">著作权人</option>
+			<option value="softDevelopendtime">创作完成日期</option>
+			<option value="softFirstpublishtime">首次发表日期</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">

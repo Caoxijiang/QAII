@@ -55,10 +55,15 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="empDept">部门</option>
-			<option value="empJobtitlelevel">申请人</option>
-			<option value="empGender">申请号</option>
-			<option value="empGender">申请日期</option>
+			<option value="patDept">部门</option>
+			<option value="patType">专利类型</option>
+			<option value="patName">专利名称</option>
+			<option value="patAuthor">发明人</option>
+			<option value="patApplyper">申请（专利权）人</option>
+			<option value="patAgency">代理机构</option>
+			<option value="patApplynum">申请号</option>
+			<option value="patApplytime">申请日</option>
+			<option value="patAuthorzationtime">授权公告日</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -72,22 +77,23 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=empNum  type="checkbox" value="工号" checked="flase"/><lable>部门</lable></div>
-	<div class="int-inline"><input id="empName"  type="checkbox" value="姓名" checked/><lable>专利类型</lable></div>
-	<div class="int-inline"><input id="empGender"  type="checkbox" value="性别" checked/><lable>专利名称</lable></div>
-	<div class="int-inline"><input id="empDept"  type="checkbox" value="部门" checked/><lable>摘要</lable></div>
-	<div class="int-inline"><input id="empPosition"  type="checkbox" value="职务" checked/><lable>发明人</lable></div>
-	<div class="int-inline"><input id="empHireStarttime"  type="checkbox" value="聘期" checked/><lable>申请（专利权）人</lable></div>
-	<div class="int-inline"><input id="empIdcard"  type="checkbox" value="身份证号" checked/><lable>交底日期</lable></div>
-	<div class="int-inline"><input id="empIdcardEndtime"  type="checkbox" value="身份证到期时间" checked/><lable>代理机构</lable></div>
-	<div class="int-inline"><input id="empEthnic"  type="checkbox" value="民族" checked/><lable>是否提前公开实审</lable></div>
-	<div class="int-inline"><input id="empPoliticallandscape"  type="checkbox" value="政治面貌" checked/><lable>审查进度</lable></div>
-	<div class="int-inline"><input id="empMaritalstatus"  type="checkbox" value="婚姻状况" checked/><lable>是否减免</lable></div>
-	<div class="int-inline"><input id="empFirsteducation"  type="checkbox" value="第一学历" checked/><lable>申请费用（元）</lable></div>
-	<div class="int-inline"><input id="empFirsteducationschool"  type="checkbox" value="第一学历学校" checked/><lable>发票收据-汇款人</lable></div>
-	<div class="int-inline"><input id="empFirsteducationpro"  type="checkbox" value="第一学历专业" checked/><lable>备注</lable></div>
-	<div class="int-inline"><input id="empFirstgraduationtime"  type="checkbox" value="第一学历毕业时间" checked/><lable>执笔人信息</lable></div>
-	<div class="int-inline"><input id="empSecondeducation"  type="checkbox" value="第二学历" checked/><lable>代理人</lable></div>
+	<div class="int-inline"><input id="patDept"  type="checkbox" value="部门" checked="flase"/><lable>部门</lable></div>
+	<div class="int-inline"><input id="patType"  type="checkbox" value="专利类型" checked/><lable>专利类型</lable></div>
+	<div class="int-inline"><input id="patName"  type="checkbox" value="专利名称" checked/><lable>专利名称</lable></div>
+	<div class="int-inline"><input id="patDigest"  type="checkbox" value="摘要" checked/><lable>摘要</lable></div>
+	<div class="int-inline"><input id="patAuthor"  type="checkbox" value="发明人" checked/><lable>发明人</lable></div>
+	<div class="int-inline"><input id="patApplyper"  type="checkbox" value="申请（专利权）人" checked/><lable>申请（专利权）人</lable></div>
+	<div class="int-inline"><input id="patTelltime"  type="checkbox" value="交底日期" checked/><lable>交底日期</lable></div>
+	<div class="int-inline"><input id="patAgency"  type="checkbox" value="代理机构" checked/><lable>代理机构</lable></div>
+	<div class="int-inline"><input id="patPrepublishaudit"  type="checkbox" value="是否提前公开实审" checked/><lable>是否提前公开实审</lable></div>
+	<div class="int-inline"><input id="patApplynum"  type="checkbox" value="申请号" checked/><lable>申请号</lable></div>
+	<div class="int-inline"><input id="patApplytime"  type="checkbox" value="申请日" checked/><lable>申请日</lable></div>
+	<div class="int-inline"><input id="patPublishtime"  type="checkbox" value="公开日" checked/><lable>公开日</lable></div>
+	<div class="int-inline"><input id="patAuthorzationtime"  type="checkbox" value="授权公告日" checked/><lable>授权公告日</lable></div>
+	<div class="int-inline"><input id="patRemission"  type="checkbox" value="授权公告日" checked/><lable>是否减免</lable></div>
+	<div class="int-inline"><input id="patCost"  type="checkbox" value="申请费用（元）" checked/><lable>申请费用（元）</lable></div>
+	<div class="int-inline"><input id="patInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
+	<div class="int-inline"><input id="patRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -233,12 +239,24 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="empDept"){
+  			if(check=="patDept"){
   				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empGender"){
-  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="patType"){
+  				alert("搜索'专利类型'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="patName"){
+  				alert("搜索'专利名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="patAuthor"){
+  				alert("搜索'发明人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="patApplyper"){
+  				alert("搜索'申请（专利权）人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="patAgency"){
+  				alert("搜索'代理机构'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="patApplynum"){
+  				alert("搜索'申请号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="patApplytime"){
+  				alert("搜索'申请日'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="patAuthorzationtime"){
+  				alert("搜索'授权公告日'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
