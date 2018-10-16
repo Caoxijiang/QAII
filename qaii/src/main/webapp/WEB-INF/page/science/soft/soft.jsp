@@ -30,7 +30,7 @@
 <div class="tool">
 	<div class="layui-btn-group demoTable">
   	  <span class="limit">软著( <span id="countnum"> </span> )</span>
-		<a href="adddetail.do" target="_blank">
+		<a href="softAdd.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -57,6 +57,8 @@
 			<option value="softDept">部门</option>
 			<option value="softName">名称</option>
 			<option value="softAuthor">著作权人</option>
+			<option value="softNum">登记号</option>
+			<option value="softCertificatetime">发证日期</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -92,8 +94,8 @@
 </div>
  <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="softCheck.do?userId='{{d.id}}'" target="_blank">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" href="softEdit.do?userId='{{d.id}}'" target="_blank" >修改</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -232,6 +234,10 @@ layui.use('table', function(obj){
   				alert("搜索'名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="softAuthor"){
   				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softNum"){
+  				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softCertificatetime"){
+  				alert("搜索'发证日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
