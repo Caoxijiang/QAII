@@ -45,7 +45,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">申报时间&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="rewardApplytime" class="layui-input input" id="test1">
+					<input type="text" name="rewardApplytime" class="layui-input input" id="test1" disabled="">
 				</div>
 		   </div>
 	    </div>
@@ -53,7 +53,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">来源&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="rewardSource" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="rewardSource" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -61,7 +61,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="rewardLevel" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="rewardLevel" lay-verify="required" lay-search="" lay-verify="required" class="input" disabled="">
 						<option value="">   </option>
 						<option value="国家级">国家级</option>
 						<option value="省级">省级</option>
@@ -79,7 +79,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">获奖名称&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="rewardName" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="rewardName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -87,7 +87,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">课题项目名称/人员姓名&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="rewardProjectname" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="rewardProjectname" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -95,7 +95,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">承担单位/协作单位&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="rewardDutyunit" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="rewardDutyunit" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -105,7 +105,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">协作单位</label>
 				<div class="layui-input-block">
-					<input type="text" name="rewardCooperationunit" autocomplete="off" class="layui-input input">
+					<input type="text" name="rewardCooperationunit" autocomplete="off" class="layui-input input" disabled=""> 
 				</div>
 			</div>
 	    </div>
@@ -113,7 +113,7 @@
 	    	<div class="layui-form-item">
 				<label class="layui-form-label">主管部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="rewardManagedepart" lay-verify="required" lay-search="" id="deptt1" class="input">
+					<select name="rewardManagedepart" lay-verify="required" lay-search="" id="deptt1" class="input" disabled="">
 						
 					</select>
 				</div>
@@ -123,7 +123,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">申请报送部门</label>
 				<div class="layui-input-block">
-					<select name="rewardApplydepart" lay-search="" id="deptt2" class="input">
+					<select name="rewardApplydepart" lay-search="" id="deptt2" class="input" disabled="">
 						
 					</select>
 				</div>
@@ -135,7 +135,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">承担部门</label>
 				<div class="layui-input-block">
-					<select name="rewardAssumedepart" lay-search="" id="deptt3" class="input">
+					<select name="rewardAssumedepart" lay-search="" id="deptt3" class="input" disabled="">
 						
 					</select>
 				</div>
@@ -145,7 +145,7 @@
 		    <div class="layui-form-item">
 				<label class="layui-form-label">是否获奖</label>
 				<div class="layui-input-block">
-					<select name="rewardAward" lay-verify="required" lay-search="" class="input">
+					<select name="rewardAward" lay-verify="required" lay-search="" class="input" disabled="">
 						<option value="">   </option>
 						<option value="是">是</option>
 						<option value="否">否</option>
@@ -157,7 +157,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">获奖时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="rewardAwardtime" class="layui-input input" id="test3">
+					<input type="text" name="rewardAwardtime" class="layui-input input" id="test3" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -167,7 +167,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">奖励金额（元）&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="rewardAwardnum" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="rewardAwardnum" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -175,7 +175,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">资金到位时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="rewardFundtime" class="layui-input input"  id="test4">
+					<input type="text" name="rewardFundtime" class="layui-input input"  id="test4" disabled=""> 
 				</div>
 			</div>
 	    </div>

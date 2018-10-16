@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>添加界面</title>
+  <title>查看详情界面</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
@@ -29,7 +29,7 @@
 	<div class="techadd">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">基金管理&nbsp;—&nbsp;添加界面</span>
+		<span class="blue">基金管理&nbsp;—&nbsp;查看详情界面</span>
 	</div>
 	<!--		导出-->
 	<button onclick="srchange('fund.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
@@ -37,30 +37,31 @@
 	</button>		
 </div>
 <div class="layui-container addtop"> 
+<input id="param" value='${param.userId}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="addGovfund.do" method="post"> 
-	  <div class="layui-row">
+  <form class="layui-form" action="uptatefundInfo.do" lay-filter="example"> 
+	    <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	    	<div class="layui-form-item">
 				<label class="layui-form-label">申报时间&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundApplytime" class="layui-input input" id="test1">
+					<input type="text" name="govfundApplytime" class="layui-input input" id="test1" disabled="">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">来源</label>
+				<label class="layui-form-label">来源&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundSource" autocomplete="off" class="layui-input input">
+					<input type="text" name="govfundSource" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      	<div class="layui-form-item">
-				<label class="layui-form-label">级别</label>
+				<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govfundLevel" lay-search="" class="input">
+					<select name="govfundLevel" lay-verify="required" lay-search="" lay-verify="required" class="input" disabled="">
 						<option value="">   </option>
 						<option value="国家级">国家级</option>
 						<option value="省级">省级</option>
@@ -76,25 +77,25 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">基金名称</label>
+				<label class="layui-form-label">基金名称&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundName" autocomplete="off" class="layui-input input">
+					<input type="text" name="govfundName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">基金实施期</label>
+				<label class="layui-form-label">基金实施期&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundImplementtime" autocomplete="off" class="layui-input input">
+					<input type="text" name="govfundImplementtime" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">基金构成单位</label>
+				<label class="layui-form-label">基金构成单位&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundConstructunit" autocomplete="off" class="layui-input input">
+					<input type="text" name="govfundConstructunit" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -102,9 +103,9 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">主管部门</label>
+				<label class="layui-form-label">主管部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govfundManagedepart" lay-search="" id="deptt" class="input">
+					<select name="govfundManagedepart" lay-verify="required" lay-search="" id="deptt" class="input" disabled="">
 						
 					</select>
 				</div>
@@ -112,9 +113,9 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">申请报送部门</label>
+				<label class="layui-form-label">申请报送部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govfundApplydepart" lay-search="" id="deptt1" class="input">
+					<select name="govfundApplydepart" lay-verify="required" lay-search="" id="deptt1" class="input" disabled="">
 						
 					</select>
 				</div>
@@ -122,9 +123,9 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 		    <div class="layui-form-item">
-					<label class="layui-form-label">是否通过</label>
+					<label class="layui-form-label">是否通过&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="govfundPass" lay-search="" class="input">
+						<select name="govfundPass" lay-verify="required" lay-search="" lay-verify="required" class="input" disabled="">
 							<option value="">   </option>
 							<option value="是">是</option>
 							<option value="否">否</option>
@@ -138,7 +139,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">批复时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundWrittentime" class="layui-input input" id="test2">
+					<input type="text" name="govfundWrittentime" class="layui-input input" id="test2" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -146,15 +147,15 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">基金扶助额度</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundFundlimit" autocomplete="off" class="layui-input input">
+					<input type="text" name="govfundFundlimit" autocomplete="off" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">基金</label>
+				<label class="layui-form-label">基金&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundFund" autocomplete="off" class="layui-input input">
+					<input type="text" name="govfundFund" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -164,7 +165,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">资金到位时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundFundtime" class="layui-input input" id="test3">
+					<input type="text" name="govfundFundtime" class="layui-input input" id="test3" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -174,10 +175,10 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govfundMiddletime" class="layui-input input" id="test4">
+							<input type="text" name="govfundMiddleresult" class="layui-input input" id="test4" disabled="">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
-							<select name="govfundMiddleresult" lay-search="" class="input">
+							<select name="govfundMiddleresult" lay-search="" class="input" disabled="">
 								<option value="">   </option>
 								<option value="通过">通过</option>
 								<option value="不通过">不通过</option>
@@ -193,10 +194,10 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govfundEndtime" class="layui-input input" id="test5">
+							<input type="text" name="govfundEndresult" class="layui-input input" id="test5" disabled="">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
-							<select name="govfundEndresult" lay-search="" class="input">
+							<select name="govfundEndresult" lay-search="" class="input" disabled="">
 								<option value="">   </option>
 								<option value="通过">通过</option>
 								<option value="不通过">不通过</option>
@@ -213,80 +214,78 @@
 			<div class="layui-form-item layui-form-text">
 				<label class="layui-form-label">备注</label>
 				<div class="layui-input-block">
-					<textarea name="govfundRemark" class="layui-textarea"></textarea>
+					<textarea name="govfundRemark" class="layui-textarea" disabled=""></textarea>
 				</div>
 			</div>
  	  	</div>
  	  </div>
 	  <!--   文本框-->
-	  <div class="layui-row">
+  </form>
+  <div class="layui-row">
    	   <div class="layui-col-md12">
 		   <div class="layui-form-item">
 			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" lay-submit="" lay-filter="demo1" onSubmit="imgjudge()">立即提交</button>
-			  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			  <button class="layui-btn" onclick="srchange('fund.do')">返回</button>
 			</div>
 		  </div>
   		</div>
   	</div>
-  </form>
 </div>
+<script src="${basePath}/js/iframesrc.js"></script>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
-$.post({
-	url:"findDeptInfoList.do",
-	success:function(data){
-		var deptInfo=data.data;
-		if(deptInfo!=null){
-			$(deptInfo).each(function(index,element){
-				index+=1;
-				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
-				$("#deptt").append(heml);
-				$("#deptt1").append(heml);
-				$("#deptt2").append(heml);
-			})						
-		
-			//JavaScript代码区域
-			layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
-			  var form = layui.form,
-				element = layui.element,
-				layer = layui.layer,
-				laydate = layui.laydate,
-				upload = layui.upload;
-				//申报时间日期选择
-			  laydate.render({
-			    elem: '#test1'
-			  });
-				//立项时间选择
-			  laydate.render({
-			    elem: '#test2'
-			  });
-				//资金到位时间选择
-			  laydate.render({
-			    elem: '#test3'
-			  });
-				//中期检查考核结果日期选择
-			  laydate.render({
-			    elem: '#test4'
-			  });
-			//年度检查考核结果日期选择
-			  laydate.render({
-			    elem: '#test5'
-			  });
-			//项目结题验收成果日期选择
-			  laydate.render({
-			    elem: '#test6'
-			  });
-			  
-			});
-		}else{
-			alert("部门信息显示失败");
-		}
-	}
-})
+//JavaScript代码区域
 
+layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
+  var form = layui.form,
+	element = layui.element,
+	layer = layui.layer,
+	laydate = layui.laydate,
+	upload = layui.upload;
+   var id=${param.userId};
+   if(id!=null){
+		$.post({
+			url:"findPatentInfoById.do",
+			data:{
+				id:id
+			},
+			success:function(data){
+				if(data.data!=null){
+					let fundInfo=data.data;
+					//表单初始赋值 从表单中提取数据
+					  form.val('example', {
+						"govfundApplytime":fundInfo.govfundApplytime,
+						"govfundSource":fundInfo.govfundSource,
+						"govfundLevel":fundInfo.govfundLevel,
+						"govfundName":fundInfo.govfundName,
+						"govfundImplementtime":fundInfo.govfundImplementtime,
+						"govfundConstructunit":fundInfo.govfundConstructunit,
+						"govfundManagedepart":fundInfo.govfundManagedepart,
+						"govfundApplydepart":fundInfo.govfundApplydepart,
+						"govfundPass":fundInfo.govfundPass,
+						"govfundWrittentime":fundInfo.govfundWrittentime,
+						"govfundFundlimit":fundInfo.govfundFundlimit,
+						"govfundFund":fundInfo.govfundFund,
+						"govfundFundtime":fundInfo.govfundFundtime,
+						"govfundMiddleresult":fundInfo.govfundMiddleresult,
+						"govfundMiddleresult":fundInfo.govfundMiddleresult,
+						"govfundEndresult":fundInfo.govfundEndresult,
+						"govfundEndresult":fundInfo.govfundEndresult,
+						"govfundRemark":fundInfo.govfundRemark
+					    
+					  })
+				}else{
+					alert("查看详情失败")
+				}
+			}
+		})
+   }else{
+	   alert("请刷新页面");
+   }
+
+});
+	
 </script>
-<script src="${basePath}/js/iframesrc.js"></script>
 </body>
 </html>        
         

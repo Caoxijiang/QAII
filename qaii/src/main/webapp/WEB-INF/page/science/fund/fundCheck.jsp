@@ -45,7 +45,7 @@
 	    	<div class="layui-form-item">
 				<label class="layui-form-label">申报时间&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundApplytime" class="layui-input input" id="test1">
+					<input type="text" name="govfundApplytime" class="layui-input input" id="test1" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -53,7 +53,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">来源&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundSource" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govfundSource" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -61,7 +61,7 @@
 	      	<div class="layui-form-item">
 				<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govfundLevel" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="govfundLevel" lay-verify="required" lay-search="" lay-verify="required" class="input" disabled="">
 						<option value="">   </option>
 						<option value="国家级">国家级</option>
 						<option value="省级">省级</option>
@@ -79,7 +79,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">基金名称&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundName" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govfundName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -87,7 +87,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">基金实施期&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundImplementtime" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govfundImplementtime" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -95,7 +95,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">基金构成单位&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundConstructunit" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govfundConstructunit" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -105,7 +105,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">主管部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govfundManagedepart" lay-verify="required" lay-search="" id="deptt" class="input">
+					<select name="govfundManagedepart" lay-verify="required" lay-search="" id="deptt" class="input" disabled="">
 						
 					</select>
 				</div>
@@ -115,7 +115,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">申请报送部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govfundApplydepart" lay-verify="required" lay-search="" id="deptt1" class="input">
+					<select name="govfundApplydepart" lay-verify="required" lay-search="" id="deptt1" class="input" disabled="">
 						
 					</select>
 				</div>
@@ -125,7 +125,7 @@
 		    <div class="layui-form-item">
 					<label class="layui-form-label">是否通过&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="govfundPass" lay-verify="required" lay-search="" lay-verify="required" class="input">
+						<select name="govfundPass" lay-verify="required" lay-search="" lay-verify="required" class="input" disabled="">
 							<option value="">   </option>
 							<option value="是">是</option>
 							<option value="否">否</option>
@@ -139,7 +139,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">批复时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundWrittentime" class="layui-input input" id="test2">
+					<input type="text" name="govfundWrittentime" class="layui-input input" id="test2" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -147,7 +147,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">基金扶助额度</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundFundlimit" autocomplete="off" class="layui-input input">
+					<input type="text" name="govfundFundlimit" autocomplete="off" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -155,7 +155,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">基金&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundFund" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govfundFund" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -165,7 +165,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">资金到位时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govfundFundtime" class="layui-input input" id="test3">
+					<input type="text" name="govfundFundtime" class="layui-input input" id="test3" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -178,7 +178,7 @@
 							<input type="text" name="govfundMiddletime" class="layui-input input" id="test4">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
-							<select name="govfundMiddleresult" lay-search="" class="input">
+							<select name="govfundMiddleresult" lay-search="" class="input" disabled="">
 								<option value="">   </option>
 								<option value="通过">通过</option>
 								<option value="不通过">不通过</option>
@@ -197,7 +197,7 @@
 							<input type="text" name="govfundEndtime" class="layui-input input" id="test5">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
-							<select name="govfundEndresult" lay-search="" class="input">
+							<select name="govfundEndresult" lay-search="" class="input" disabled="">
 								<option value="">   </option>
 								<option value="通过">通过</option>
 								<option value="不通过">不通过</option>
@@ -214,7 +214,7 @@
 			<div class="layui-form-item layui-form-text">
 				<label class="layui-form-label">备注</label>
 				<div class="layui-input-block">
-					<textarea name="govfundRemark" class="layui-textarea"></textarea>
+					<textarea name="govfundRemark" class="layui-textarea" disabled=""></textarea>
 				</div>
 			</div>
  	  	</div>

@@ -94,7 +94,6 @@
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="review">审查资料</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -127,13 +126,13 @@ layui.use('table', function(obj){
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
 		{field: 'softDept', title: '部门',fixed: 'left',width:100},
 		{field: 'softCode', title: '编号',fixed: 'left',width:150},
-		{field: 'softName', title: '名称',sort: true},
+		{field: 'softName', title: '名称',sort: true,width:200},
 		{field: 'softWriter', title: '软件开发者',sort: true,width:200},
 		{field: 'softAuthor', title: '著作权人',sort: true,width:150},
-		{field: 'softAgency', title: '代理机构',sort: true},
+		{field: 'softAgency', title: '代理机构',sort: true,width:150},
 		{field: 'softDevelopendtime', title: '开发完成日期',width:220},
 		{field: 'softFirstpublishtime', title: '首次发表日期',sort: true,width:200},
-		{field: 'softNum', title: '登记号',sort: true},
+		{field: 'softNum', title: '登记号',sort: true,width:150},
 		{field: 'softCertificatetime', title: '发证日期',sort: true,width:150},
 		{field: 'softCost', title: '费用',sort: true,width:150},
 		{field: 'softInvoiceper', title: '发票收据-汇款人',sort: true,width:200},

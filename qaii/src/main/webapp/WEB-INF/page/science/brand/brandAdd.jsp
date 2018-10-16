@@ -41,38 +41,38 @@
 	  <div class="layui-row">
 		<div class="layui-col-xs4 layui-col-md4">
 			<div class="layui-form-item">
-				<label class="layui-form-label">编号&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">编号</label>
 				<div class="layui-input-block">
-					<input type="text" name="tradmCode" lay-verify="required" autocomplete="off" class="layui-input input">
+					<input type="text" name="tradmCode" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
-				<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">部门</label>
 				<div class="layui-input-block">
-					<select name="tradmDept" lay-verify="required" lay-search="" id="deptt" class="input">
+					<select name="tradmDept" lay-search="" id="deptt" class="input">
 						
 					</select>
 				</div>
 			</div>
 			
 			<div class="layui-form-item">
-				<label class="layui-form-label">申请人&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申请人</label>
 				<div class="layui-input-block">
-					<input type="text" name="tradmApplyper" lay-verify="required" autocomplete="off" class="layui-input input">
+					<input type="text" name="tradmApplyper" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
-				<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">代理机构</label>
 				<div class="layui-input-block">
-					<input type="text" name="tradmAgency" lay-verify="required" autocomplete="off" class="layui-input input">
+					<input type="text" name="tradmAgency" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 		</div>
 	    <div class="layui-col-xs4 layui-col-md4">
 			<div class="layui-form-item">
-				<label class="layui-form-label">类别&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">类别</label>
 				<div class="layui-input-block">
-					<select name="tradmType" lay-verify="required" lay-search="" class="input">
+					<select name="tradmType" lay-search="" class="input">
 						<option value="">   </option>
 						<option value="1">一级</option>
 						<option value="2">二级</option>
@@ -80,15 +80,15 @@
 				</div>
 			</div>
 			<div class="layui-form-item">
-				<label class="layui-form-label">商品/服务项目&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">商品/服务项目</label>
 				<div class="layui-input-block">
-					<input type="text" name="tradmItem"  lay-verify="required" autocomplete="off"  class="layui-input input">
+					<input type="text" name="tradmItem" autocomplete="off"  class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
-				<label class="layui-form-label">申请号&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申请号</label>
 				<div class="layui-input-block">
-					<input type="text" name="tradmApplynum"  lay-verify="required" autocomplete="off"  class="layui-input input">
+					<input type="text" name="tradmApplynum" autocomplete="off"  class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">
@@ -130,25 +130,25 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">费用&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">费用</label>
 				<div class="layui-input-block">
-					<input type="text" name="tradmCost" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="tradmCost" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">发票收据-汇款人</label>
 				<div class="layui-input-block">
-					<input type="text" name="tradmInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="tradmInvoiceper" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">状态跟踪&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">状态跟踪</label>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 				<div class="layui-input-block">
-					<input type="text" name="tradmStatusfollow" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="tradmStatusfollow" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>

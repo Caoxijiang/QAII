@@ -18,7 +18,7 @@
 <div class="main">
 	<div class="sciNav">
 		<a href="science.do"><div class="pageTo">进入系统</div></a>
-		<a href="dept.do"><div class="pageTo">返回导航</div></a>
+		<!-- <a href="dept.do"><div class="pageTo">返回导航</div></a> -->
 		<a href="outLogin.do"><div class="pageTo">退出</div></a>
 		<!-- <a id="replacep"><div class="pageTo">退出</div></a> -->
 	</div>

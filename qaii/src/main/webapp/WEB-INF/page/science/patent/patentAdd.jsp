@@ -42,9 +42,9 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">部门</label>
 				<div class="layui-input-block">
-					<select name="patDept" lay-verify="required" lay-search="" id="deptt" class="input">
+					<select name="patDept" lay-search="" id="deptt" class="input">
 						
 					</select>
 				</div>
@@ -52,9 +52,9 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">专利类型&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">专利类型</label>
 				<div class="layui-input-block">
-					<select name="patType" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="patType" lay-search="" class="input">
 						<option value="">   </option>
 						<option value="发明专利">发明专利</option>
 						<option value="实用新型专利">实用新型专利</option>
@@ -65,9 +65,9 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">专利名称&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">专利名称</label>
 				<div class="layui-input-block">
-					<input type="text" name="patName" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="patName" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -75,17 +75,17 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">发明人&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">发明人</label>
 				<div class="layui-input-block">
-					<input type="text" name="patAuthor" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="patAuthor" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">申请（专利权）人&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申请（专利权）人</label>
 				<div class="layui-input-block">
-					<input type="text" name="patApplyper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="patApplyper" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -101,30 +101,29 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">代理机构</label>
 				<div class="layui-input-block">
-					<input type="text" name="patAgency" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="patAgency" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">是否提前公开实审&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">是否提前公开实审</label>
 				<div class="layui-input-block">
-					<select name="patPrepublishaudit" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="patPrepublishaudit" lay-search="" class="input">
 						<option value="">   </option>
 						<option value="是">是</option>
 						<option value="否">否</option>
 					</select>
-					<!-- <input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input"> -->
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">申请号&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申请号</label>
 				<div class="layui-input-block">
-					<input type="text" name="patApplynum" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="patApplynum" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -132,7 +131,7 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">申请日&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申请日</label>
 				<div class="layui-input-block">
 					<input type="text" name="patApplytime" class="layui-input input" id="test2">
 				</div>
@@ -158,9 +157,9 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">是否减免&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">是否减免</label>
 				<div class="layui-input-block">
-					<select name="patRemission" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="patRemission" lay-search="" class="input">
 						<option value="">   </option>
 						<option value="是">是</option>
 						<option value="否">否</option>
@@ -170,17 +169,17 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">申请费用（元）&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申请费用（元</label>
 				<div class="layui-input-block">
-					<input type="text" name="patCost" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="patCost" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">发票收据-汇款人</label>
 				<div class="layui-input-block">
-					<input type="text" name="patInvoiceper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="patInvoiceper" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
