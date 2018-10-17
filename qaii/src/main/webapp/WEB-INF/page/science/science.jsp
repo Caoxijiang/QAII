@@ -87,7 +87,9 @@
         <li class="layui-nav-item">
           <a href="javascript:;" onclick="iframechange('work.do')"><i class="layui-icon layui-icon-diamond" style="font-size: 22px;"></i>&nbsp;著作</a>
         </li>
-       
+       	<li class="layui-nav-item">
+          <a href="javascript:;" onclick="iframechange('newsUI.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
+        </li>
       </ul>
     </div>
   </div>

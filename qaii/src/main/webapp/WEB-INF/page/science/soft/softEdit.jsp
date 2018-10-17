@@ -5,31 +5,39 @@
 <c:set var="basePath" value="${pageContext.request.contextPath}"></c:set>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>科研成果管理系统</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>查看详情界面</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
-  <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
-  <link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css" />
-  <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
-  <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
-  <script src="${basePath}/commen/bootstrap/bootstrap.min.js"></script>
-  <script src="${basePath}/router/adddetail.js"></script>
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
+	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
+	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
-  	.layui-table th{
-  	height:30px;
-  	min-height: 30px;
-    line-height: 30px;}
+    body{margin: 10px;}
+    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+    .layui-table-body {
+	    height:auto;
+	}
   </style>
 </head>
-<body class="layui-layout-body" style="overflow:scroll">
-<div class="layui-layout layui-layout-admin">
-  <div class="layui-header">
-	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>科研成果管理系统&nbsp;--&nbsp;软著信息添加页面</div>
-  </div>
-  <div class="addBanner"></div><!--banner展示图-->
-<!--  表单元素-->
-<div class="layui-container">
-  <form class="layui-form" action="addEmpInfo.do" method="post">
+<body id="bodyHei">
+<div class="tool">
+	<div class="techadd">
+		<img src="${basePath}/image/home.png"  class="home"/>
+		<span>首页&nbsp;>&nbsp;</span>
+		<span class="blue">软著&nbsp;—&nbsp;修改界面</span>
+	</div>
+	<!--		导出-->
+	<button onclick="srchange('soft.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+		返回
+	</button>		
+</div>
+<div class="layui-container addtop"> 
+<input id="param" value='${param.userId}' type="hidden" />
+<!-- 采用表格内直接行结构  -->
+ <form class="layui-form" action="addEmpInfo.do" method="post" lay-filter="example">
 <!--  第一块内容-->
 	  <div class="layui-row">
 		<h1>软著基本信息</h1>
@@ -38,7 +46,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
+						<select name="softDept" lay-verify="required" lay-search="" id="deptt" class="input">
 							
 						</select>
 					</div>
@@ -46,25 +54,25 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">编号&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="softCode" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">名称&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="softName" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">软件开发者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="softWriter" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="softAuthor" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -72,25 +80,25 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="softAgency" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">开发完成日期&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test1">
+						<input type="text" name="softDevelopendtime" class="layui-input input" id="test1">
 					  </div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">首次发表日期&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2">
+						<input type="text" name="softFirstpublishtime" class="layui-input input" id="test2">
 					  </div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empEmergencycontactandphone" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -98,25 +106,25 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">发证日期&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test3">
+						<input type="text" name="softCertificatetime" class="layui-input input" id="test3">
 					  </div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">费用&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empHomeaddress" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empHomeaddress" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="softInvoiceper" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">状态更新日期&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test4">
+						<input type="text" name="softUpdatetime" class="layui-input input" id="test4">
 					  </div>
 				</div>
 		   </div>
@@ -131,15 +139,24 @@
 				<label class="layui-form-label">证明文件&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
-					  <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
-					  <button type="button" class="layui-btn" id="test9">开始上传</button>
+						<input type="text" name="softfile" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
+						<a class="layui-btn layui-btn-tired layui-btn-xs" id="softOnline">在线预览</a>
+ 						<a class="layui-btn layui-btn-xs" id="softDownload">下载</a>
+ 						<a class="layui-btn layui-btn-edit layui-btn-xs" id="upload">重新上传</a>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div><table id="demo" lay-filter="test"></table>
+					<script type="text/html" id="barDemo">
+  						<a class="layui-btn layui-btn-edit layui-btn-xs" lay-event="online">在线预览</a>
+  						<a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="download">下载</a>
+					</script>
 	    <div class="layui-col-md12">
 			<div class="layui-form-item">
 				<label class="layui-form-label">其他文件</label>
+				<div class="layui-input-block">
+					
+				</div>
 				<div class="layui-input-block">
 					<div class="layui-upload">
 					  <div class="layui-upload-list">
@@ -150,8 +167,14 @@
 					        <th>状态</th>
 					        <th>操作</th>
 					      </tr></thead>
-					      <tbody id="demoList"></tbody>
+					      <tbody id="demo"></tbody>
 					    </table>
+						<script type="text/html" id="barDemo">
+  							<a class="layui-btn layui-btn-tired layui-btn-xs" lay-event="online">在线预览</a>
+  							<a class="layui-btn layui-btn-xs" lay-event="download">下载</a>
+  							<a class="layui-btn layui-btn-edit layui-btn-xs" lay-event="upload">重新上传</a>
+							<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+						</script>
 					  </div>
 					  <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button> 
 					  <button type="button" class="layui-btn" id="testListAction">开始上传</button>
@@ -167,21 +190,14 @@
 			<div class="layui-form-item layui-form-text">
 				<!-- <label class="layui-form-label">备注</label> -->
 				<div class="layui-input-block">
-					<textarea name="empRemarks" class="layui-textarea"></textarea>
+					<textarea name="softRemark" class="layui-textarea"></textarea>
 				</div>
 			</div>
   		</div>		 
 	</div>	 
    <!--  第三块内容-->
    <div class="layui-row">
-		<div class="layui-col-md6">
-		   <div class="layui-form-item" pane="">
-			<div class="layui-input-block">
-			  <input type="checkbox" name="like1[write]" lay-skin="primary" title="保证以上填写的信息真实有效" checked="">
-			</div>
-		  </div>
-	   </div>
-   	   <div class="layui-col-md6">
+   	   <div class="layui-col-md12">
 		   <div class="layui-form-item">
 			<div class="layui-input-block" style="text-align: right;">
 			  <button class="layui-btn" lay-submit="" lay-filter="demo1" onSubmit="imgjudge()">立即提交</button>
@@ -190,12 +206,9 @@
 		  </div>
   		</div>
   </div>
-  
  </form>
 </div>
-<!--  表单元素-->
-
-</div>
+<script src="${basePath}/js/iframesrc.js"></script>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 $.post({
@@ -210,9 +223,10 @@ $.post({
 			})						
 		
 			//JavaScript代码区域
-			layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
+			layui.use(['form', 'layedit', 'laydate','table','element','upload'], function(){
 			  var form = layui.form,
 				element = layui.element,
+				table=layui.table,
 				layer = layui.layer,
 				laydate = layui.laydate,
 				upload = layui.upload;
@@ -232,6 +246,8 @@ $.post({
 			  laydate.render({
 			    elem: '#test4'
 			  });
+			//文件表格展示
+			   
 			//文件上传
 			  upload.render({
 			    elem: '#test8'
@@ -243,8 +259,43 @@ $.post({
 			      console.log(res)
 			    }
 			  });
+			//文件表格展示
+			  form.val('example', {
+				/* "softDept":trademark.softDept,
+				"softCode":trademark.softCode,
+				"softName":trademark.softName,
+				"softWriter":trademark.softWriter,
+				"softAuthor":trademark.softAuthor,
+				"softAgency":trademark.softAgency,
+				"softDevelopendtime":trademark.softDevelopendtime,
+				"softFirstpublishtime":trademark.softFirstpublishtime,
+				"softNum":trademark.softNum,
+				"softCertificatetime":trademark.softCertificatetime,
+				"softCost":trademark.softCost,
+				"softInvoiceper":trademark.softInvoiceper,
+				"softUpdatetime":trademark.softUpdatetime,
+				"softRemark":trademark.softRemark,
+				"softfile":"https://www.iv2018.cn/public/images/guestsImage/static/guste.jpg" */
+				"softDept":"sfgsdf",
+				"softCode":"sfgsdf",
+				"softName":"sfgsdf",
+				"softWriter":"sfgsdf",
+				"softAuthor":"sfgsdf",
+				"softAgency":"sfgsdf",
+				"softDevelopendtime":"sfgsdf",
+				"softFirstpublishtime":"sfgsdf",
+				"softNum":"sfgsdf",
+				"softCertificatetime":"sfgsdf",
+				"softCost":"sfgsdf",
+				"softInvoiceper":"sfgsdf",
+				"softUpdatetime":"sfgsdf",
+				"softRemark":"sfgsdf",
+				"softfile":"https://www.iv2018.cn/public/images/guestsImage/static/guste.jpg"
+				// 修改此输入框的value值，此value为测试值 softfile为测试自定义值，证明文件值
+			  });
+			
 			  //多文件列表示例
-			  var demoListView = $('#demoList')
+			  var demoListView = $('#demo')
 			  ,uploadListIns = upload.render({
 			    elem: '#testList'
 			    ,url: '/upload/'
@@ -307,5 +358,47 @@ $.post({
 })
 
 </script>
+<script type="text/javascript">
+//证明文件点击事件-在线预览
+$("#softOnline").click(function(){
+	/* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
+	var address=$('input[name="softfile"]').val();
+	var reg1=new RegExp("jpg","i");
+	var reg2=new RegExp("pdf","i");
+	var reg3=new RegExp("png","i");
+	if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+		/* window.open(ops+address); */
+		window.open(address);
+	}else{
+		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+	};
+})
+//证明文件点击事件-下载
+$("#softDownload").click(function(){
+	var address=$('input[name="softfile"]').val();
+	/* download(ops+address); */
+	download(address);
+})
+//证明文件点击事件-重新上传
+$("#upload").click(function(){
+	layer.open({
+  	  type:1,
+		  title:"重新上传文件",
+		  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
+		  '<input type="file" name="file" id="path">'+
+		 /*  '<input type="hidden" name="id" id="id" value="'+id+'">'+ */
+		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
+		});
+})
+function download(src) {
+    var $a = document.createElement('a');
+    $a.setAttribute("href", src);
+    $a.setAttribute("download", "");
+    var evObj = document.createEvent('MouseEvents');
+    evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
+    $a.dispatchEvent(evObj);
+};
+</script>
 </body>
-</html>
+</html>        
+        
