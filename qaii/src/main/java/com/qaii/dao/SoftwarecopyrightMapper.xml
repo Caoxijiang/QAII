@@ -234,4 +234,102 @@
   <select id="countAuthorizationcopyrightNum" resultType="int">
     SELECT COUNT(*) FROM sci_softwarecopyright WHERE soft_CertificateTime IS NOT NULL AND soft_CertificateTime!=""
   </select>
+  <insert id="insertreturnId" parameterType="com.qaii.domain.Softwarecopyright" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    insert into sci_softwarecopyright
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="softDept != null">
+        soft_Dept,
+      </if>
+      <if test="softCode != null">
+        soft_Code,
+      </if>
+      <if test="softName != null">
+        soft_Name,
+      </if>
+      <if test="softWriter != null">
+        soft_Writer,
+      </if>
+      <if test="softAuthor != null">
+        soft_Author,
+      </if>
+      <if test="softAgency != null">
+        soft_Agency,
+      </if>
+      <if test="softDevelopendtime != null">
+        soft_DevelopEndTime,
+      </if>
+      <if test="softFirstpublishtime != null">
+        soft_FirstPublishTime,
+      </if>
+      <if test="softNum != null">
+        soft_Num,
+      </if>
+      <if test="softCertificatetime != null">
+        soft_CertificateTime,
+      </if>
+      <if test="softCost != null">
+        soft_Cost,
+      </if>
+      <if test="softInvoiceper != null">
+        soft_InvoicePer,
+      </if>
+      <if test="softUpdatetime != null">
+        soft_UpdateTime,
+      </if>
+      <if test="softRemark != null">
+        soft_Remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="softDept != null">
+        #{softDept,jdbcType=VARCHAR},
+      </if>
+      <if test="softCode != null">
+        #{softCode,jdbcType=VARCHAR},
+      </if>
+      <if test="softName != null">
+        #{softName,jdbcType=VARCHAR},
+      </if>
+      <if test="softWriter != null">
+        #{softWriter,jdbcType=VARCHAR},
+      </if>
+      <if test="softAuthor != null">
+        #{softAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="softAgency != null">
+        #{softAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="softDevelopendtime != null">
+        #{softDevelopendtime,jdbcType=VARCHAR},
+      </if>
+      <if test="softFirstpublishtime != null">
+        #{softFirstpublishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="softNum != null">
+        #{softNum,jdbcType=VARCHAR},
+      </if>
+      <if test="softCertificatetime != null">
+        #{softCertificatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="softCost != null">
+        #{softCost,jdbcType=VARCHAR},
+      </if>
+      <if test="softInvoiceper != null">
+        #{softInvoiceper,jdbcType=VARCHAR},
+      </if>
+      <if test="softUpdatetime != null">
+        #{softUpdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="softRemark != null">
+        #{softRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
 </mapper>

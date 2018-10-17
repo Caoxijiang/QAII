@@ -55,7 +55,9 @@
 		<select class="search" id="switch">
 			<option value="all">全部</option>
 			<option value="tradmApplyper">申请人</option>
-			<option value="tradmPngandexplain">商标图样及说明</option>
+			<option value="tradmApplynum">申请号</option>
+			<option value="tradmApplytime">申请日</option>
+			<option value="tradmRegistertime">注册日期</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -128,22 +130,21 @@ layui.use('table', function(obj){
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
 		{field: 'tradmDept', title: '部门',fixed: 'left',width:100},
 		{field: 'tradmCode', title: '编号',fixed: 'left',width:150},
-		{field: 'tradmPngandexplain', title: '商标图样及说明',sort: true},
+		{field: 'tradmPngandexplain', title: '商标图样及说明',sort: true,width:200},
 		{field: 'tradmApplyper', title: '申请人',sort: true,width:200},
 		{field: 'tradmAgency', title: '代理机构',sort: true,width:150},
-		{field: 'tradmType', title: '类别',sort: true},
+		{field: 'tradmType', title: '类别',sort: true,width:120},
 		{field: 'tradmItem', title: '商品/服务项目',width:220},
-		{field: 'tradmApplynum', title: '申请号',sort: true},
+		{field: 'tradmApplynum', title: '申请号',sort: true,width:150},
 		{field: 'tradmApplytime', title: '申请日期',sort: true,width:150},
 		{field: 'tradmRegistertime', title: '注册日期',sort: true,width:150},
-		
 		{field: 'tradmValidtime', title: '有效期',sort: true,width:200},
 		{field: 'tradmCost', title: '费用（元）',sort: true,width:200},
 		{field: 'tradmInvoiceper', title: '发票收据-汇款人',sort: true,width:200},
 		{field: 'tradmStatusfollow', title: '状态跟踪',sort: true,width:230},
 		{field: 'tradmUpdatetime', title: '状态更新日',sort: true,width:200},
 
-		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
+		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:380}
     ]],
     
     
@@ -233,9 +234,13 @@ layui.use('table', function(obj){
   			 }
   			if(check=="tradmApplyper"){
   				alert("搜索'申请人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="tradmPngandexplain"){
-  				alert("搜索'商标图样及说明'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}	
+  			}else if(check=="tradmApplynum"){
+  				alert("搜索'申请号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="tradmApplytime"){
+  				alert("搜索'申请日'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="tradmRegistertime"){
+  				alert("搜索'注册日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}			
   		  }
   	    }//搜索结束
   	

@@ -28,4 +28,6 @@ public interface SoftwarecopyrightMapper {
     int countAuthorizationcopyright(String firstDay, String endDay);
     
     int countAuthorizationcopyrightNum();
+    
+    int insertreturnId(Softwarecopyright record);
 }

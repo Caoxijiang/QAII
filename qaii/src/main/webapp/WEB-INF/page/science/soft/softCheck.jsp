@@ -5,287 +5,307 @@
 <c:set var="basePath" value="${pageContext.request.contextPath}"></c:set>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>查看详情界面</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>科研成果管理系统</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
-  <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
-  <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
-  <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
-  <link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
-	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
-	<script src="${basePath}/js/jquery.table2excel.js"></script>
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
+  <link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
+  <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
+  <script src="${basePath}/commen/bootstrap/bootstrap.min.js"></script>
+  <script src="${basePath}/router/adddetail.js"></script>
   <style>
-    body{margin: 10px;}
-    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
-    .layui-table-body {
-	    height: -moz-calc( 100vh - 215px );
-	    height: -webkit-calc( 100vh - 215px );
-	    height: calc( 100vh - 215 px );
-	}
+  	.layui-table th{
+  	height:30px;
+  	min-height: 30px;
+    line-height: 30px;}
   </style>
 </head>
-<body id="bodyHei">
-<div class="tool">
-	<div class="techadd">
-		<img src="${basePath}/image/home.png"  class="home"/>
-		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">基金管理&nbsp;—&nbsp;查看详情界面</span>
-	</div>
-	<!--		导出-->
-	<button onclick="srchange('fund.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
-		返回
-	</button>		
-</div>
-<div class="layui-container addtop"> 
-<input id="param" value='${param.userId}' type="hidden" />
-<!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="uptatefundInfo.do" lay-filter="example"> 
-	    <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	    	<div class="layui-form-item">
-				<label class="layui-form-label">申报时间&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="govfundApplytime" class="layui-input input" id="test1" disabled="">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">来源&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="govfundSource" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      	<div class="layui-form-item">
-				<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="govfundLevel" lay-verify="required" lay-search="" lay-verify="required" class="input" disabled="">
-						<option value="">   </option>
-						<option value="国家级">国家级</option>
-						<option value="省级">省级</option>
-						<option value="市级">市级</option>
-						<option value="区级">区级</option>
-						<option value="地方">地方</option>
-						<option value="其他">其他</option>
-					</select>
-				</div>
-			</div>
-	    </div>
-	  </div>
+<body class="layui-layout-body" style="overflow:scroll">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>科研成果管理系统&nbsp;--&nbsp;软著信息添加页面</div>
+  </div>
+  <div class="addBanner"></div><!--banner展示图-->
+<!--  表单元素-->
+<div class="layui-container">
+  <form class="layui-form" action="addEmpInfo.do" method="post">
+<!--  第一块内容-->
 	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">基金名称&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="govfundName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">基金实施期&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="govfundImplementtime" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">基金构成单位&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="govfundConstructunit" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">主管部门&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="govfundManagedepart" lay-verify="required" lay-search="" id="deptt" class="input" disabled="">
-						
-					</select>
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">申请报送部门&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<select name="govfundApplydepart" lay-verify="required" lay-search="" id="deptt1" class="input" disabled="">
-						
-					</select>
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-		    <div class="layui-form-item">
-					<label class="layui-form-label">是否通过&nbsp;<span class="star">*</span></label>
+		<h1>软著基本信息</h1>
+	  	<div class="layui-row">
+			<div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="govfundPass" lay-verify="required" lay-search="" lay-verify="required" class="input" disabled="">
-							<option value="">   </option>
-							<option value="是">是</option>
-							<option value="否">否</option>
+						<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
+							
 						</select>
-					</div>			
-			 </div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">编号&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">名称&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">软件开发者&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					</div>
+				</div>
+			</div>
+		    <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">开发完成日期&nbsp;<span class="star">*</span></label>
+					  <div class="layui-input-block">
+						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test1">
+					  </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">首次发表日期&nbsp;<span class="star">*</span></label>
+					  <div class="layui-input-block">
+						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2">
+					  </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="empEmergencycontactandphone" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+			</div>
+    		<div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">发证日期&nbsp;<span class="star">*</span></label>
+					  <div class="layui-input-block">
+						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test3">
+					  </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">费用&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="empHomeaddress" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="empHomeaddress" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">状态更新日期&nbsp;<span class="star">*</span></label>
+					  <div class="layui-input-block">
+						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test4">
+					  </div>
+				</div>
+		   </div>
+	    </div>		 
+	  </div>
+   <!--  第一块内容-->
+   <!--  第二块内容-->
+   <h1>软著相关文件</h1>
+	  <div class="layui-row bgf7f8f8">	
+		<div class="layui-col-md12">
+			<div class="layui-form-item">
+				<label class="layui-form-label">证明文件&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<div class="layui-upload">
+					  <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
+					  <button type="button" class="layui-btn" id="test9">开始上传</button>
+					</div>
+				</div>
+			</div>
 		</div>
-	  </div>
+	    <div class="layui-col-md12">
+			<div class="layui-form-item">
+				<label class="layui-form-label">其他文件</label>
+				<div class="layui-input-block">
+					<div class="layui-upload">
+					  <div class="layui-upload-list">
+					    <table class="layui-table">
+					      <thead>
+					        <tr><th>文件名</th>
+					        <th>大小</th>
+					        <th>状态</th>
+					        <th>操作</th>
+					      </tr></thead>
+					      <tbody id="demoList"></tbody>
+					    </table>
+					  </div>
+					  <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button> 
+					  <button type="button" class="layui-btn" id="testListAction">开始上传</button>
+					</div> 
+				</div>
+			</div>
+		</div>
+    </div>	 
+     <!--  第三块内容-->
+     <h1>备注信息</h1>
 	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">批复时间</label>
-				<div class="layui-input-block">
-					<input type="text" name="govfundWrittentime" class="layui-input input" id="test2" disabled="">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">基金扶助额度</label>
-				<div class="layui-input-block">
-					<input type="text" name="govfundFundlimit" autocomplete="off" class="layui-input input" disabled="">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">基金&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<input type="text" name="govfundFund" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <div class="layui-row">
-	    <div class="layui-col-xs4 layui-col-md4">
-	       <div class="layui-form-item">
-				<label class="layui-form-label">资金到位时间</label>
-				<div class="layui-input-block">
-					<input type="text" name="govfundFundtime" class="layui-input input" id="test3" disabled="">
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">中期检查考核结果</label>
-				<div class="layui-input-block">
-					<div class="layui-row">
-						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govfundMiddleresult" class="layui-input input" id="test4" disabled="">
-						 </div>
-						 <div class="layui-col-xs6 layui-col-md6">
-							<select name="govfundMiddleresult" lay-search="" class="input" disabled="">
-								<option value="">   </option>
-								<option value="通过">通过</option>
-								<option value="不通过">不通过</option>
-							</select>
-						</div>
-					</div>
-				</div>
-			</div>
-	    </div>
-	    <div class="layui-col-xs4 layui-col-md4">
-	      <div class="layui-form-item">
-				<label class="layui-form-label">项目结题验收结果</label>
-				<div class="layui-input-block">
-					<div class="layui-row">
-						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govfundEndresult" class="layui-input input" id="test5" disabled="">
-						 </div>
-						 <div class="layui-col-xs6 layui-col-md6">
-							<select name="govfundEndresult" lay-search="" class="input" disabled="">
-								<option value="">   </option>
-								<option value="通过">通过</option>
-								<option value="不通过">不通过</option>
-							</select>
-						</div>
-					</div>
-				</div>
-			</div>
-	    </div>
-	  </div>
-	  <!--   文本框-->
- 	  <div class="layui-row">
- 	  	<div class="layui-col-xs12 layui-col-md12">
+		<div class="layui-col-md12">
 			<div class="layui-form-item layui-form-text">
-				<label class="layui-form-label">备注</label>
+				<!-- <label class="layui-form-label">备注</label> -->
 				<div class="layui-input-block">
-					<textarea name="govfundRemark" class="layui-textarea" disabled=""></textarea>
+					<textarea name="empRemarks" class="layui-textarea"></textarea>
 				</div>
 			</div>
- 	  	</div>
- 	  </div>
-	  <!--   文本框-->
-  </form>
-  <div class="layui-row">
-   	   <div class="layui-col-md12">
+  		</div>		 
+	</div>	 
+   <!--  第三块内容-->
+   <div class="layui-row">
+		<div class="layui-col-md6">
+		   <div class="layui-form-item" pane="">
+			<div class="layui-input-block">
+			  <input type="checkbox" name="like1[write]" lay-skin="primary" title="保证以上填写的信息真实有效" checked="">
+			</div>
+		  </div>
+	   </div>
+   	   <div class="layui-col-md6">
 		   <div class="layui-form-item">
 			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" onclick="srchange('fund.do')">返回</button>
+			  <button class="layui-btn" lay-submit="" lay-filter="demo1" onSubmit="imgjudge()">立即提交</button>
+			  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
 			</div>
 		  </div>
   		</div>
-  	</div>
+  </div>
+  
+ </form>
 </div>
-<script src="${basePath}/js/iframesrc.js"></script>
+<!--  表单元素-->
+
+</div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
-//JavaScript代码区域
+$.post({
+	url:"findDeptInfoList.do",
+	success:function(data){
+		var deptInfo=data.data;
+		if(deptInfo!=null){
+			$(deptInfo).each(function(index,element){
+				index+=1;
+				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
+				$("#deptt").append(heml);
+			})						
+		
+			//JavaScript代码区域
+			layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
+			  var form = layui.form,
+				element = layui.element,
+				layer = layui.layer,
+				laydate = layui.laydate,
+				upload = layui.upload;
+				//开发完成日期
+			  laydate.render({
+			    elem: '#test1'
+			  });
+				//首次发表日期
+			  laydate.render({
+			    elem: '#test2'
+			  });
+				//发证日期
+			  laydate.render({
+			    elem: '#test3'
+			  });
+				//状态更新日期
+			  laydate.render({
+			    elem: '#test4'
+			  });
+			//文件上传
+			  upload.render({
+			    elem: '#test8'
+			    ,url: '/upload/'
+			    ,auto: false
+			    ,accept: 'file' //普通文件
+			    ,bindAction: '#test9'
+			    ,done: function(res){
+			      console.log(res)
+			    }
+			  });
+			  //多文件列表示例
+			  var demoListView = $('#demoList')
+			  ,uploadListIns = upload.render({
+			    elem: '#testList'
+			    ,url: '/upload/'
+			    ,accept: 'file'
+			    ,multiple: true
+			    ,auto: false
+			    ,bindAction: '#testListAction'
+			    ,choose: function(obj){   
+			      var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+			      //读取本地文件
+			      obj.preview(function(index, file, result){
+			        var tr = $(['<tr id="upload-'+ index +'">'
+			          ,'<td>'+ file.name +'</td>'
+			          ,'<td>'+ (file.size/1014).toFixed(1) +'kb</td>'
+			          ,'<td>等待上传</td>'
+			          ,'<td>'
+			            ,'<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
+			            ,'<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+			          ,'</td>'
+			        ,'</tr>'].join(''));
+			        
+			        //单个重传
+			        tr.find('.demo-reload').on('click', function(){
+			          obj.upload(index, file);
+			        });
+			        
+			        //删除
+			        tr.find('.demo-delete').on('click', function(){
+			          delete files[index]; //删除对应的文件
+			          tr.remove();
+			          uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+			        });
+			        
+			        demoListView.append(tr);
+			      });
+			    }
+			    ,done: function(res, index, upload){
+			      if(res.code == 0){ //上传成功
+			        var tr = demoListView.find('tr#upload-'+ index)
+			        ,tds = tr.children();
+			        tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+			        tds.eq(3).html(''); //清空操作
+			        return delete this.files[index]; //删除文件队列已经上传成功的文件
+			      }
+			      this.error(index, upload);
+			    }
+			    ,error: function(index, upload){
+			      var tr = demoListView.find('tr#upload-'+ index)
+			      ,tds = tr.children();
+			      tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+			      tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
+			    }
+			  });
+			  
+			});
+		}else{
+			alert("部门信息显示失败");
+		}
+	}
+})
 
-layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
-  var form = layui.form,
-	element = layui.element,
-	layer = layui.layer,
-	laydate = layui.laydate,
-	upload = layui.upload;
-   var id=${param.userId};
-   if(id!=null){
-		$.post({
-			url:"findPatentInfoById.do",
-			data:{
-				id:id
-			},
-			success:function(data){
-				if(data.data!=null){
-					let fundInfo=data.data;
-					//表单初始赋值 从表单中提取数据
-					  form.val('example', {
-						"govfundApplytime":fundInfo.govfundApplytime,
-						"govfundSource":fundInfo.govfundSource,
-						"govfundLevel":fundInfo.govfundLevel,
-						"govfundName":fundInfo.govfundName,
-						"govfundImplementtime":fundInfo.govfundImplementtime,
-						"govfundConstructunit":fundInfo.govfundConstructunit,
-						"govfundManagedepart":fundInfo.govfundManagedepart,
-						"govfundApplydepart":fundInfo.govfundApplydepart,
-						"govfundPass":fundInfo.govfundPass,
-						"govfundWrittentime":fundInfo.govfundWrittentime,
-						"govfundFundlimit":fundInfo.govfundFundlimit,
-						"govfundFund":fundInfo.govfundFund,
-						"govfundFundtime":fundInfo.govfundFundtime,
-						"govfundMiddleresult":fundInfo.govfundMiddleresult,
-						"govfundMiddleresult":fundInfo.govfundMiddleresult,
-						"govfundEndresult":fundInfo.govfundEndresult,
-						"govfundEndresult":fundInfo.govfundEndresult,
-						"govfundRemark":fundInfo.govfundRemark
-					    
-					  })
-				}else{
-					alert("查看详情失败")
-				}
-			}
-		})
-   }else{
-	   alert("请刷新页面");
-   }
-
-});
-	
 </script>
 </body>
-</html>        
-        
+</html>
