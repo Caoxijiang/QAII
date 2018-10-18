@@ -26,14 +26,14 @@
 	<div class="layui-btn-group demoTable">
   	  <span class="limit">成员管理( <span id="countnum"> </span> )</span>
 		<a href="adddetail.do" target="_blank">
-			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
+			<button class="btnRight btnLeft layui-btn btn">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
 		</a>
-		<button class="layui-btn btn" data-type="getCheckLength" id="test3" style="margin-right:16px !important">
+		<button class="btnRight layui-btn btn" data-type="getCheckLength" id="test3">
 			<i class="layui-icon layui-icon-upload-drag"></i>导入
 		</button>
-		<button class="layui-btn btn" id="dellist" data-type="delmore" style="margin-right:16px !important">
+		<button class="btnRight layui-btn btn" id="dellist" data-type="delmore">
 			<i class="layui-icon layui-icon-delete"></i>删除
 		</button>
 		
@@ -46,7 +46,17 @@
 		导出
 	</button>
 	<!--		搜索-->
-	<div class="demoTable" style="float: right;margin-right: 115px;">
+	<div class="demoTable" style="float: right;margin-right: 50px;display:none;" id="timeQuantum">
+		<div class="layui-inline timeKey">
+			 <input type="text" class="timeinput" id="timeKey1" placeholder="yyyy-MM-dd">
+		</div>
+		<span style="color:#fff;">&nbsp;&nbsp;—&nbsp;&nbsp;</span>
+		<div class="layui-inline timeKey">
+			<input class="timeinput" id="timeKey2" autocomplete="off" placeholder="yyyy-MM-dd">
+		</div>
+		<button class="layui-btn" id="searchtime" data-type="reload">查询</button>
+	</div>
+	<div class="demoTable" style="float: right;margin-right: 50px;" id="intelligentInquiry">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
 			<option value="empDept">部门</option>
@@ -58,7 +68,10 @@
 		</div>
 		<button class="layui-btn" id="search" data-type="reload" style="height: 36px;line-height: 36px;margin-top:1px;">搜索</button>
 	</div>
-		
+	<select class="condition" id="condition">
+		<option value="intelligentInquiry">智能查询</option>
+		<option value="timeQuantum">时间段查询</option>	
+	</select>	
 	
 </div>
 <!-- 操作-->
@@ -129,10 +142,15 @@ layui.config({
 });
 
  
-layui.use('table', function(obj){
-  var table = layui.table,form = layui.form;
+layui.use(['table','laydate'], function(obj){
+  var table = layui.table,form = layui.form,laydate = layui.laydate;;
 	 //监听表格复选框选择
-	  
+	laydate.render({
+	    elem: '#timeKey1'
+	  });
+	 laydate.render({
+	    elem: '#timeKey2'
+	  });  
   //执行一个 table 实例
   table.render({
     elem: '#testTable',
@@ -289,8 +307,6 @@ layui.use('table', function(obj){
       }
     };
     
-    
-    
     $('#search').on('click', function(){
 //  	window.location.reload();//刷新当前页面.
       var type = $(this).data('type');
@@ -324,20 +340,9 @@ layui.use('table', function(obj){
           			layer.close(index);
           		}else{
           			layer.alert("删除失败")
-          		}
-          		
+          		}	
           	}
-          }) 
-    	  
-    	  
-    	  
-    	  
-
-
-        
-        
-        
-        
+          })   
       });
     } else if(layEvent === 'edit'){
       layer.alert(
@@ -499,15 +504,24 @@ upload.render({
 		});//显示设置
 	});
 </script>
-<!--自动设置主表格可视区域-->
+<!--查询方式获取-->
 <script>
-
-	var hei=$(".action").height();
-	var ji=$(document).height();
-	var heigt=ji-hei-85;
-	$(".layui-table-body").prop("height",heigt+"px");
-	
-
+$("#condition").change(function(){
+	var selval=$("#condition").val();
+	if(selval=='intelligentInquiry'){
+		$("#timeQuantum").css("display","none");
+		$("#intelligentInquiry").css("display","block");
+	}else if(selval=='timeQuantum'){
+		$("#intelligentInquiry").css("display","none");
+		$("#timeQuantum").css("display","block");
+	}
+})
+//时间段选择
+$("#searchtime").click(function(){
+	var time1=$("#timeKey1").val();
+	var time2=$("#timeKey2").val();
+	alert(time1+"fffff"+time2);
+})
 	
 </script>
 </body>
