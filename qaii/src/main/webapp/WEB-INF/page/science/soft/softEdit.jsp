@@ -323,7 +323,7 @@ $.post({
 				    	var address=data.path;
 				    		download(address);
 					}else if(obj.event === 'upload'){//文件重新上传
-						var address=data.filename;
+						var address=data.path;
 						var id=data.id;
 					    layer.open({
 				    	  type:1,
@@ -331,6 +331,7 @@ $.post({
 						  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
 						  '<input type="file" name="file" id="path">'+
 						  '<input type="hidden" name="id" id="id" value="'+id+'">'+
+						  '<input type="hidden" name="address" id="address" value="'+address+'">'+
 						  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 						});
 					}//事件监听
@@ -440,7 +441,7 @@ $("#upload").click(function(){
 		  title:"重新上传文件",
 		  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
 		  '<input type="file" name="file" id="path">'+
-		 /*  '<input type="hidden" name="id" id="id" value="'+id+'">'+ */
+		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })
