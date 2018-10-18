@@ -31,7 +31,7 @@ import com.qaii.util.CountDatetoNowDays;
 public class DataOverviewController {
 	@Resource
 	private GovFundService govfundservice;
-	@Resource
+	@Resource 
 	private GovPlatformService govplatformservice;
 	@Resource
 	private GovSubjectService govsubjectservice;
@@ -50,6 +50,7 @@ public class DataOverviewController {
 	
 	/**
 	 * @author wangxin 
+	 * 
 	 * @description 科技处数据可视化接口
 	 * @time 2018/09/21
 	 */
