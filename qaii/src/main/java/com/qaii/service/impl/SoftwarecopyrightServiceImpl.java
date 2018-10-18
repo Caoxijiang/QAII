@@ -70,4 +70,10 @@ public class SoftwarecopyrightServiceImpl implements SoftwarecopyrightService {
 		return softMapper.countAuthorizationcopyrightNum();
 	}
 
+	@Override
+	public Softwarecopyright selectFileMsg(int id) {
+		// TODO Auto-generated method stub
+		return softMapper.selectFileMsg(id);
+	}
+
 }

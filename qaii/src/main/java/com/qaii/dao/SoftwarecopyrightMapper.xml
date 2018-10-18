@@ -331,5 +331,31 @@
       </if>
     </trim>
   </insert>
-  
+  <resultMap type="com.qaii.domain.Softwarecopyright" id="MultiTableResultMap">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="soft_Dept" jdbcType="VARCHAR" property="softDept" />
+    <result column="soft_Code" jdbcType="VARCHAR" property="softCode" />
+    <result column="soft_Name" jdbcType="VARCHAR" property="softName" />
+    <result column="soft_Writer" jdbcType="VARCHAR" property="softWriter" />
+    <result column="soft_Author" jdbcType="VARCHAR" property="softAuthor" />
+    <result column="soft_Agency" jdbcType="VARCHAR" property="softAgency" />
+    <result column="soft_DevelopEndTime" jdbcType="VARCHAR" property="softDevelopendtime" />
+    <result column="soft_FirstPublishTime" jdbcType="VARCHAR" property="softFirstpublishtime" />
+    <result column="soft_Num" jdbcType="VARCHAR" property="softNum" />
+    <result column="soft_CertificateTime" jdbcType="VARCHAR" property="softCertificatetime" />
+    <result column="soft_Cost" jdbcType="VARCHAR" property="softCost" />
+    <result column="soft_InvoicePer" jdbcType="VARCHAR" property="softInvoiceper" />
+    <result column="soft_UpdateTime" jdbcType="VARCHAR" property="softUpdatetime" />
+    <result column="soft_Remark" jdbcType="VARCHAR" property="softRemark" />
+    <collection property="softFile" javaType="java.util.List" ofType="com.qaii.domain.Softcopyrightfile">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <id column="sid" property="sid" jdbcType="INTEGER"/>
+        <id column="style" property="style" jdbcType="VARCHAR"/>
+        <id column="filename" property="filename" jdbcType="VARCHAR"/>
+        <id column="path" property="path" jdbcType="VARCHAR"/>
+    </collection>
+  </resultMap>
+  <select id="selectFileMsg" resultMap="MultiTableResultMap" parameterType="int">
+    SELECT a.*, b.* FROM sci_softwarecopyright AS a LEFT JOIN sci_softwarecopyrightfile AS b ON b.sid = a.id WHERE a.id=#{0}
+  </select>
 </mapper>
