@@ -105,8 +105,14 @@
         selectByExampleQueryId="false"></table>
         <table tableName="sci_govsubjectprocess" domainObjectName="Govsubjectprocess" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table> -->
-        <table tableName="sci_govfund" domainObjectName="Govfund" enableCountByExample="false" enableUpdateByExample="false"
+        selectByExampleQueryId="false"></table> 
+        <table tableName="sci_softwarecopyrightfile" domainObjectName="Softcopyrightfile" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="sci_copyright" domainObjectName="Copyright" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>-->
+        <table tableName="sci_copyrightimg" domainObjectName="Copyrightimg" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         

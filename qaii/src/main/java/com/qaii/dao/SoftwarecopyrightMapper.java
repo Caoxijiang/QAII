@@ -30,4 +30,6 @@ public interface SoftwarecopyrightMapper {
     int countAuthorizationcopyrightNum();
     
     int insertreturnId(Softwarecopyright record);
+    
+    Softwarecopyright selectFileMsg(int id);
 }

@@ -52,6 +52,7 @@
 			<mvc:exclude-mapping path="/EmpAupload.do"/>
 			<mvc:exclude-mapping path="/findDeptInfoList.do"/>
 			<mvc:exclude-mapping path="/tstchk.do"/>
+			<mvc:exclude-mapping path="/TestPrint.do"/>
 			<mvc:exclude-mapping path="/setdata.do"/>
 			<mvc:exclude-mapping path="/setdata2.do"/>
 			<mvc:exclude-mapping path="/tsterr.do"/>
