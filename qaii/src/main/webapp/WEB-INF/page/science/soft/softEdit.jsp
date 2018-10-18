@@ -146,16 +146,18 @@
 					</div>
 				</div>
 			</div>
-		</div><table id="demo" lay-filter="test"></table>
-					<script type="text/html" id="barDemo">
-  						<a class="layui-btn layui-btn-edit layui-btn-xs" lay-event="online">在线预览</a>
-  						<a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="download">下载</a>
-					</script>
+		</div>
 	    <div class="layui-col-md12">
 			<div class="layui-form-item">
 				<label class="layui-form-label">其他文件</label>
 				<div class="layui-input-block">
-					
+					<table id="demo" lay-filter="test"></table>
+					<script type="text/html" id="barDemo">
+  						<a class="layui-btn layui-btn-tired layui-btn-xs" lay-event="online">在线预览</a>
+  						<a class="layui-btn layui-btn-xs" lay-event="download">下载</a>
+  						<a class="layui-btn layui-btn-edit layui-btn-xs" lay-event="upload">重新上传</a>
+						<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+					</script>
 				</div>
 				<div class="layui-input-block">
 					<div class="layui-upload">
@@ -167,14 +169,8 @@
 					        <th>状态</th>
 					        <th>操作</th>
 					      </tr></thead>
-					      <tbody id="demo"></tbody>
+					      <tbody id="demoList"></tbody>
 					    </table>
-						<script type="text/html" id="barDemo">
-  							<a class="layui-btn layui-btn-tired layui-btn-xs" lay-event="online">在线预览</a>
-  							<a class="layui-btn layui-btn-xs" lay-event="download">下载</a>
-  							<a class="layui-btn layui-btn-edit layui-btn-xs" lay-event="upload">重新上传</a>
-							<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-						</script>
 					  </div>
 					  <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button> 
 					  <button type="button" class="layui-btn" id="testListAction">开始上传</button>
@@ -246,8 +242,73 @@ $.post({
 			  laydate.render({
 			    elem: '#test4'
 			  });
-			//文件表格展示
-			   
+			  //文件表格展示
+			   table.render({
+			    elem: '#demo'
+			    /* ,url: 'findProessimg.do?'//数据接口 */ 
+			    ,page: false//开启分页
+			    ,cols: [[ //表头
+			      {field: 'id', type:'numbers',title: '序号', width:80}
+			      ,{field: 'path', title: '文件名'}
+			      ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
+			    ]],
+			    limit: 999999,
+			    /* data:obj */
+			    data:[
+			    	{"id":"1","path":"https://www.iv2018.cn/public/images/guestsImage/static/guste.jpg"},
+			    	]
+			  });
+			   //监听行工具事件
+				  table.on('tool(test)', function(obj){
+				    var data = obj.data;
+				    //console.log(obj)
+				    if(obj.event === 'del'){
+				      layer.confirm('真的删除行么', function(index){
+				    	  let arr=[data.id];
+				          $.post({
+				          	url:"delltradefile.do",
+				          	data:{
+				          		"requestDate" : arr
+				          	},
+				          	success:function(data){
+				          		if(data.data){
+				          		    //删除对应行（tr）的DOM结构
+				          		    alert("删除成功!");
+				          			obj.del();
+				          			layer.close(index);
+				          		}else{
+				          			layer.alert("删除失败")
+				          		}
+				          		
+				          	}
+				          }) 
+				      });
+				    } else if(obj.event === 'online'){//在线预览，暂支持图片和pdf形式
+				    	var address=data.path;
+				    	var reg1=new RegExp("jpg","i");
+				    	var reg2=new RegExp("pdf","i");
+				    	var reg3=new RegExp("png","i");
+				    	if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+				    		window.open(address);
+				    	}else{
+				    		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+				    	};
+				    }else if(obj.event === 'download'){//文件下载
+				    	var address=data.path;
+				    		download(address);
+					}else if(obj.event === 'upload'){//文件重新上传
+						var address=data.filename;
+						var id=data.id;
+					    layer.open({
+				    	  type:1,
+						  title:"重新上传文件",
+						  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
+						  '<input type="file" name="file" id="path">'+
+						  '<input type="hidden" name="id" id="id" value="'+id+'">'+
+						  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
+						});
+					}//事件监听
+				  })
 			//文件上传
 			  upload.render({
 			    elem: '#test8'
@@ -295,7 +356,7 @@ $.post({
 			  });
 			
 			  //多文件列表示例
-			  var demoListView = $('#demo')
+			  var demoListView = $('#demoList')
 			  ,uploadListIns = upload.render({
 			    elem: '#testList'
 			    ,url: '/upload/'
