@@ -39,7 +39,7 @@
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
 <input id="param" value='${param.userId}' type="hidden"  name="param"/>
-  <form class="layui-form" action="uptatePatentInfo.do" method="post" lay-filter="example"> 
+  <form class="layui-form" action="updateGovreward.do" method="post" lay-filter="example"> 
   
   	<input   type="hidden"  name="id"/>
 	<div class="layui-row">
@@ -237,16 +237,17 @@ $.post({
 		   var id=${param.userId};
 		   if(id!=null){
 				$.post({
-					url:"findPatentInfoById.do",
+					url:"showGovrewardDetails.do",
 					data:{
 						id:id
 					},
 					success:function(data){
 						if(data.data!=null){
-							let patentInfo=data.data;
+							let awardInfo=data.data;
 							//表单初始赋值 从表单中提取数据
 							  form.val('example', {
-								"patDept":patentInfo.patDept,
+								 "id":awardInfo.id,
+								"patDept":awardInfo.patDept,
 								"rewardApplytime":awardInfo.rewardApplytime,
 								"rewardSource":awardInfo.rewardSource,
 								"rewardLevel":awardInfo.rewardLevel,

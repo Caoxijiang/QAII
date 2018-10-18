@@ -49,7 +49,7 @@ public class SoftwarecopyrightServiceImpl implements SoftwarecopyrightService {
 	@Override
 	public int insertSoft(Softwarecopyright soft) {
 		// TODO Auto-generated method stub
-		return softMapper.insert(soft);
+		return softMapper.insertreturnId(soft);
 	}
 
 	@Override

@@ -241,13 +241,17 @@ public class PlatformController {
 		govplatform.setGovplatPlatformper(value.get(10));
 		govplatform.setGovplatProjectapproval(value.get(11));
 		govplatform.setGovplatApprovalnum(value.get(12));
-		govplatform.setGovplatSubvention(value.get(13));
-		govplatform.setGovplatFundtime(value.get(14));
-		govplatform.setGovplatMiddleresult(value.get(15));
-		govplatform.setGovplatYearresult(value.get(16));
-		govplatform.setGovplatEndresult(value.get(17));
-		govplatform.setGovplatRemark(value.get(18));
-		govplatform.setGovplatFile(value.get(19));
+		govplatform.setGovplatApprovaltime(value.get(13));
+		govplatform.setGovplatSubvention(value.get(14));
+		govplatform.setGovplatFundtime(value.get(15));
+		govplatform.setGovplatMiddletime(value.get(16));
+		govplatform.setGovplatMiddleresult(value.get(17));
+		govplatform.setGovplatYeartime(value.get(18));
+		govplatform.setGovplatYearresult(value.get(19));
+		govplatform.setGovplatEndtime(value.get(20));
+		govplatform.setGovplatEndresult(value.get(21));
+		govplatform.setGovplatRemark(value.get(22));
+		govplatform.setGovplatFile(value.get(23));
 		
 		return govplatform;
 	}

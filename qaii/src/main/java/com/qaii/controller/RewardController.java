@@ -76,28 +76,16 @@ public class RewardController {
     	}
 	}
 	
-	//跳转到政府奖励详情页面
-	@RequestMapping("toGovrewardDetails.do")
-	public String toGovrewardDetail() {
-		
-		return "page/science/";
-	}
 	
 	//政府奖励查看详情
 	@RequestMapping(value="showGovrewardDetails.do",method=RequestMethod.POST)
 	@ResponseBody
 	public JsonResult showGovrewardDetails(Govreward govreward,HttpServletRequest req) {	
 		
-		int userid=Integer.parseInt(req.getParameter("userId"));
+		int userid=Integer.parseInt(req.getParameter("id"));
 		//Govreward.setId();
 		govreward = govrewardService.selectByPrimaryKey(userid);
 		return new JsonResult(govreward);
-	}
-	
-	//跳转到修改政府奖励详情页面
-	@RequestMapping("UpdateGovreward.do")
-	public String toUpdateGovreward() {
-		return "page/science";
 	}
 	
 	//修改政府奖励信息功能
@@ -291,7 +279,7 @@ public class RewardController {
 		String insertype=req.getParameter("type");
 		Integer oid = Integer.parseInt(req.getParameter("oid"));
 		Integer stepid = Integer.parseInt(req.getParameter("step"));
-		String tradmDept = new String(req.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8");
+		String rewardName = new String(req.getParameter("rewardName").getBytes("ISO-8859-1"),"utf-8");
 		Map<String, String> result = new HashMap<>();
 		if (files != null && files.length < 0) {
 			result.put("code", "1");
@@ -311,8 +299,8 @@ public class RewardController {
 
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
-			String path = "C:/File/img/reward/File/" + tradmDept + "/" + oid + "/" + stepid;
-			String dbpath="img/reward/File/"+tradmDept + "/" + oid + "/" + stepid;
+			String path = "C:/File/img/reward/File/" + rewardName + "/" + oid + "/" + stepid;
+			String dbpath="img/reward/File/"+rewardName + "/" + oid + "/" + stepid;
 			File destFile = new File(path + "/" + filename);
 
 			if (!destFile.getParentFile().exists()) {

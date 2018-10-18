@@ -47,7 +47,7 @@ layui.use('upload', function(){
   var demoListView = $('#demoList')
   ,uploadListIns = upload.render({
     elem: '#testList'
-    ,url: 'processupload.do'//文件上传接口
+    ,url: 'Govrewardprocessupload.do'//文件上传接口
     ,accept: 'file'
     ,multiple: true
     ,auto: false

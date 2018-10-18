@@ -29,7 +29,7 @@
   <div class="addBanner"></div><!--banner展示图-->
 <!--  表单元素-->
 <div class="layui-container">
-  <form class="layui-form" action="addEmpInfo.do" method="post">
+  <form class="layui-form" action="addSoft.do" method="post" enctype="multipart/form-data">
 <!--  第一块内容-->
 	  <div class="layui-row">
 		<h1>软著基本信息</h1>
@@ -38,7 +38,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
+						<select name="softDept" lay-verify="required" lay-search="" id="deptt" class="input">
 							
 						</select>
 					</div>
@@ -46,25 +46,25 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">编号&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="softCode" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">名称&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="softName" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">软件开发者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="softWriter" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="softAuthor" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -72,25 +72,25 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="softAgency" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">开发完成日期&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test1">
+						<input type="text" name="softDevelopendtime" class="layui-input input" id="test1">
 					  </div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">首次发表日期&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2">
+						<input type="text" name="softFirstpublishtime" class="layui-input input" id="test2">
 					  </div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empEmergencycontactandphone" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -98,25 +98,25 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">发证日期&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test3">
+						<input type="text" name="softCertificatetime" class="layui-input input" id="test3">
 					  </div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">费用&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empHomeaddress" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empHomeaddress" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="softInvoiceper" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">状态更新日期&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="empIdcardEndtime" class="layui-input input" id="test4">
+						<input type="text" name="softUpdatetime" class="layui-input input" id="test4">
 					  </div>
 				</div>
 		   </div>
@@ -167,7 +167,7 @@
 			<div class="layui-form-item layui-form-text">
 				<!-- <label class="layui-form-label">备注</label> -->
 				<div class="layui-input-block">
-					<textarea name="empRemarks" class="layui-textarea"></textarea>
+					<textarea name="softRemark" class="layui-textarea"></textarea>
 				</div>
 			</div>
   		</div>		 
