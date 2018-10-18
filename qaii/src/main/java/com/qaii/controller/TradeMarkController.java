@@ -76,13 +76,7 @@ public class TradeMarkController {
     	}
 	}
 	
-	//跳转到商标详情页面
-	@RequestMapping("toTradeMarkDetails.do")
-	public String toTradeMarkDetail() {
-		
-		return "page/science/";
-	}
-	
+
 	//商标查看详情
 	@RequestMapping(value="showTradeMarkDetails.do",method=RequestMethod.POST)
 	@ResponseBody

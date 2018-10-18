@@ -88,7 +88,7 @@ public class SubjectController {
 	@ResponseBody
 	public JsonResult showGovsubjectDetails(Govsubject govsubject,HttpServletRequest req) {	
 		
-		int userid=Integer.parseInt(req.getParameter("userId"));
+		int userid=Integer.parseInt(req.getParameter("id"));
 		//Govsubject.setId();
 		govsubject = govsubjectService.selectByPrimaryKey(userid);
 		return new JsonResult(govsubject);
@@ -253,13 +253,17 @@ public class SubjectController {
 		govsubject.setGovsubProjectper(value.get(10));
 		govsubject.setGovsubProjectapproval(value.get(11));
 		govsubject.setGovsubApprovalnum(value.get(12));
-		govsubject.setGovsubSubvention(value.get(13));
-		govsubject.setGovsubFundtime(value.get(14));
-		govsubject.setGovsubMiddleresult(value.get(15));
-		govsubject.setGovsubYearresult(value.get(16));
-		govsubject.setGovsubEndresult(value.get(17));
-		govsubject.setGovsubRemark(value.get(18));
-		govsubject.setGovsubFile(value.get(19));
+		govsubject.setGovsubApprovaltime(value.get(13));
+		govsubject.setGovsubSubvention(value.get(14));
+		govsubject.setGovsubFundtime(value.get(15));
+		govsubject.setGovsubMiddletime(value.get(16));
+		govsubject.setGovsubMiddleresult(value.get(17));
+		govsubject.setGovsubYeartime(value.get(18));
+		govsubject.setGovsubYearresult(value.get(19));
+		govsubject.setGovsubEndtime(value.get(20));
+		govsubject.setGovsubEndresult(value.get(21));
+		govsubject.setGovsubRemark(value.get(22));
+		govsubject.setGovsubFile(value.get(23));
 		
 		return govsubject;
 	}

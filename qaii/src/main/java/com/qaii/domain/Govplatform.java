@@ -43,6 +43,14 @@ public class Govplatform {
 
     private String govplatFile;
 
+    private String govplatApprovaltime;
+
+    private String govplatMiddletime;
+
+    private String govplatYeartime;
+
+    private String govplatEndtime;
+
     public Integer getId() {
         return id;
     }
@@ -209,5 +217,37 @@ public class Govplatform {
 
     public void setGovplatFile(String govplatFile) {
         this.govplatFile = govplatFile == null ? null : govplatFile.trim();
+    }
+
+    public String getGovplatApprovaltime() {
+        return govplatApprovaltime;
+    }
+
+    public void setGovplatApprovaltime(String govplatApprovaltime) {
+        this.govplatApprovaltime = govplatApprovaltime == null ? null : govplatApprovaltime.trim();
+    }
+
+    public String getGovplatMiddletime() {
+        return govplatMiddletime;
+    }
+
+    public void setGovplatMiddletime(String govplatMiddletime) {
+        this.govplatMiddletime = govplatMiddletime == null ? null : govplatMiddletime.trim();
+    }
+
+    public String getGovplatYeartime() {
+        return govplatYeartime;
+    }
+
+    public void setGovplatYeartime(String govplatYeartime) {
+        this.govplatYeartime = govplatYeartime == null ? null : govplatYeartime.trim();
+    }
+
+    public String getGovplatEndtime() {
+        return govplatEndtime;
+    }
+
+    public void setGovplatEndtime(String govplatEndtime) {
+        this.govplatEndtime = govplatEndtime == null ? null : govplatEndtime.trim();
     }
 }

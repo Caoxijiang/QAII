@@ -273,6 +273,20 @@ table{
 		margin-right:10px !important;
 	}
 	.export{
-	margin-right:50px !important;}
+	margin-right:40px !important;}
 	
  }
+ h1 {
+    padding-left: 15px;
+    padding-top: 20px;
+    color: #003e8d;
+    font-size: 21px;
+}
+.layui-table th {
+    height: 30px;
+    min-height: 30px;
+    line-height: 30px;
+}
+.bgf7f8f8 {
+    background: #f7f8f8;
+}

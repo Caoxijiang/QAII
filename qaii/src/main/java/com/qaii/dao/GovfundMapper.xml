@@ -20,12 +20,14 @@
     <result column="govfund_EndResult" jdbcType="VARCHAR" property="govfundEndresult" />
     <result column="govfund_Remark" jdbcType="VARCHAR" property="govfundRemark" />
     <result column="govfund_File" jdbcType="VARCHAR" property="govfundFile" />
+    <result column="govfund_MiddleTime" jdbcType="VARCHAR" property="govfundMiddletime" />
+    <result column="govfund_EndTime" jdbcType="VARCHAR" property="govfundEndtime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, govfund_ApplyTime, govfund_Source, govfund_Level, govfund_Name, govfund_ImplementTime, 
     govfund_ConstructUnit, govfund_ManageDepart, govfund_ApplyDepart, govfund_Pass, govfund_WrittenTime, 
     govfund_FundLimit, govfund_Fund, govfund_FundTime, govfund_MiddleResult, govfund_EndResult, 
-    govfund_Remark, govfund_File
+    govfund_Remark, govfund_File, govfund_MiddleTime, govfund_EndTime
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -44,14 +46,16 @@
       govfund_ApplyDepart, govfund_Pass, govfund_WrittenTime, 
       govfund_FundLimit, govfund_Fund, govfund_FundTime, 
       govfund_MiddleResult, govfund_EndResult, 
-      govfund_Remark, govfund_File)
+      govfund_Remark, govfund_File, govfund_MiddleTime, 
+      govfund_EndTime)
     values (#{id,jdbcType=INTEGER}, #{govfundApplytime,jdbcType=VARCHAR}, #{govfundSource,jdbcType=VARCHAR}, 
       #{govfundLevel,jdbcType=VARCHAR}, #{govfundName,jdbcType=VARCHAR}, #{govfundImplementtime,jdbcType=VARCHAR}, 
       #{govfundConstructunit,jdbcType=VARCHAR}, #{govfundManagedepart,jdbcType=VARCHAR}, 
       #{govfundApplydepart,jdbcType=VARCHAR}, #{govfundPass,jdbcType=VARCHAR}, #{govfundWrittentime,jdbcType=VARCHAR}, 
       #{govfundFundlimit,jdbcType=VARCHAR}, #{govfundFund,jdbcType=VARCHAR}, #{govfundFundtime,jdbcType=VARCHAR}, 
       #{govfundMiddleresult,jdbcType=VARCHAR}, #{govfundEndresult,jdbcType=VARCHAR}, 
-      #{govfundRemark,jdbcType=VARCHAR}, #{govfundFile,jdbcType=VARCHAR})
+      #{govfundRemark,jdbcType=VARCHAR}, #{govfundFile,jdbcType=VARCHAR}, #{govfundMiddletime,jdbcType=VARCHAR}, 
+      #{govfundEndtime,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.Govfund">
     insert into sci_govfund
@@ -110,6 +114,12 @@
       <if test="govfundFile != null">
         govfund_File,
       </if>
+      <if test="govfundMiddletime != null">
+        govfund_MiddleTime,
+      </if>
+      <if test="govfundEndtime != null">
+        govfund_EndTime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -165,6 +175,12 @@
       </if>
       <if test="govfundFile != null">
         #{govfundFile,jdbcType=VARCHAR},
+      </if>
+      <if test="govfundMiddletime != null">
+        #{govfundMiddletime,jdbcType=VARCHAR},
+      </if>
+      <if test="govfundEndtime != null">
+        #{govfundEndtime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -222,6 +238,12 @@
       <if test="govfundFile != null">
         govfund_File = #{govfundFile,jdbcType=VARCHAR},
       </if>
+      <if test="govfundMiddletime != null">
+        govfund_MiddleTime = #{govfundMiddletime,jdbcType=VARCHAR},
+      </if>
+      <if test="govfundEndtime != null">
+        govfund_EndTime = #{govfundEndtime,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -243,14 +265,19 @@
       govfund_MiddleResult = #{govfundMiddleresult,jdbcType=VARCHAR},
       govfund_EndResult = #{govfundEndresult,jdbcType=VARCHAR},
       govfund_Remark = #{govfundRemark,jdbcType=VARCHAR},
-      govfund_File = #{govfundFile,jdbcType=VARCHAR}
+      govfund_File = #{govfundFile,jdbcType=VARCHAR},
+      govfund_MiddleTime = #{govfundMiddletime,jdbcType=VARCHAR},
+      govfund_EndTime = #{govfundEndtime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="getAllFundMsg" resultMap="BaseResultMap">SELECT * from sci_govfund</select>
   <delete id="deleteByPrimaryKeys" parameterType="int">
-  	DELETE  FROM sci_govfund WHERE id in
-	    <foreach item="id" collection="array" open="(" separator="," close=")">
-	    	#{id,jdbcType=INTEGER}
-	    </foreach>
+    DELETE  FROM sci_govfund WHERE id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id,jdbcType=INTEGER}
+        </foreach>
   </delete>
+  <select id="listByNum" resultMap="BaseResultMap" parameterType="int">
+    SELECT  * from sci_govfund ORDER BY govfund_FundLimit DESC LIMIT #{0}
+  </select>
 </mapper>

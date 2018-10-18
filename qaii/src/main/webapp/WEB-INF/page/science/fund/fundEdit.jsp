@@ -39,7 +39,7 @@
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
 <input id="param" value='${param.userId}' type="hidden"  name="param"/>
-  <form class="layui-form" action="uptatePatentInfo.do" method="post" lay-filter="example"> 
+  <form class="layui-form" action="updateGovfund.do" method="post" lay-filter="example"> 
   
   	<input   type="hidden"  name="id"/>
 	    <div class="layui-row">
@@ -177,7 +177,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govfundMiddleresult" class="layui-input input" id="test4">
+							<input type="text" name="govfundMiddletime" class="layui-input input" id="test4">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govfundMiddleresult" lay-search="" class="input">
@@ -196,7 +196,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govfundEndresult" class="layui-input input" id="test5">
+							<input type="text" name="govfundEndtime" class="layui-input input" id="test5">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govfundEndresult" lay-search="" class="input">
@@ -275,7 +275,7 @@ $.post({
 		   var id=${param.userId};
 		   if(id!=null){
 				$.post({
-					url:"findPatentInfoById.do",
+					url:"showGovfundDetails.do",
 					data:{
 						id:id
 					},
@@ -284,7 +284,8 @@ $.post({
 							let fundInfo=data.data;
 							//表单初始赋值 从表单中提取数据
 							  form.val('example', {
-								  "govfundApplytime":fundInfo.govfundApplytime,
+								    "id":id,
+								    "govfundApplytime":fundInfo.govfundApplytime,
 									"govfundSource":fundInfo.govfundSource,
 									"govfundLevel":fundInfo.govfundLevel,
 									"govfundName":fundInfo.govfundName,
@@ -297,9 +298,9 @@ $.post({
 									"govfundFundlimit":fundInfo.govfundFundlimit,
 									"govfundFund":fundInfo.govfundFund,
 									"govfundFundtime":fundInfo.govfundFundtime,
+									"govfundMiddletime":fundInfo.govfundMiddleresult,
 									"govfundMiddleresult":fundInfo.govfundMiddleresult,
-									"govfundMiddleresult":fundInfo.govfundMiddleresult,
-									"govfundEndresult":fundInfo.govfundEndresult,
+									"govfundEndtime":fundInfo.govfundEndresult,
 									"govfundEndresult":fundInfo.govfundEndresult,
 									"govfundRemark":fundInfo.govfundRemark
 							  })

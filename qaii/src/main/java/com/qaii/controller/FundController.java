@@ -89,7 +89,7 @@ public class FundController {
 	@ResponseBody
 	public JsonResult showGovfundDetails(Govfund govfund,HttpServletRequest req) {	
 		
-		int userid=Integer.parseInt(req.getParameter("userId"));
+		int userid=Integer.parseInt(req.getParameter("id"));
 		//Govfund.setId();
 		govfund = govfundService.selectByPrimaryKey(userid);
 		return new JsonResult(govfund);
@@ -133,6 +133,8 @@ public class FundController {
 		govfund.setGovfundEndresult(req.getParameter("govfundEndresult"));
 		govfund.setGovfundRemark(req.getParameter("govfundRemark"));
 		govfund.setGovfundFile(req.getParameter("govfundFile"));
+		govfund.setGovfundMiddletime(req.getParameter("govfundMiddletime"));
+		govfund.setGovfundEndtime(req.getParameter("govfundEndtime"));
 	}
 	//添加基金信息功能
 	@RequestMapping("addGovfund.do")
@@ -249,10 +251,12 @@ public class FundController {
 		govfund.setGovfundFundlimit(value.get(10));
 		govfund.setGovfundFund(value.get(11));
 		govfund.setGovfundFundtime(value.get(12));
-		govfund.setGovfundMiddleresult(value.get(13));
-		govfund.setGovfundEndresult(value.get(14));
-		govfund.setGovfundRemark(value.get(15));
-		govfund.setGovfundFile(value.get(16));
+		govfund.setGovfundMiddletime(value.get(13));
+		govfund.setGovfundMiddleresult(value.get(14));
+		govfund.setGovfundEndtime(value.get(15));
+		govfund.setGovfundEndresult(value.get(16));
+		govfund.setGovfundRemark(value.get(17));
+		govfund.setGovfundFile(value.get(18));
 
 		
 		return govfund;
@@ -300,7 +304,7 @@ public class FundController {
 		String insertype=req.getParameter("type");
 		Integer oid = Integer.parseInt(req.getParameter("oid"));
 		Integer stepid = Integer.parseInt(req.getParameter("step"));
-		String tradmDept = new String(req.getParameter("tradmDept").getBytes("ISO-8859-1"),"utf-8");
+		String govfundName = new String(req.getParameter("govfundName").getBytes("ISO-8859-1"),"utf-8");
 		Map<String, String> result = new HashMap<>();
 		if (files != null && files.length < 0) {
 			result.put("code", "1");
@@ -320,8 +324,8 @@ public class FundController {
 
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
-			String path = "C:/File/img/fund/File/" + tradmDept + "/" + oid + "/" + stepid;
-			String dbpath="img/fund/File/"+tradmDept + "/" + oid + "/" + stepid;
+			String path = "C:/File/img/fund/File/" + govfundName + "/" + oid + "/" + stepid;
+			String dbpath="img/fund/File/"+govfundName + "/" + oid + "/" + stepid;
 			File destFile = new File(path + "/" + filename);
 
 			if (!destFile.getParentFile().exists()) {

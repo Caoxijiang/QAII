@@ -1,6 +1,35 @@
 @charset "utf-8";
 /* CSS Document */
 /*******************************/
+.layui-btn-group .btnLeft{
+	margin-left:40px !important;
+}
+.layui-btn-group .btnRight{
+	margin-right:16px !important	
+}
+.timeKey{
+	width:130px;
+}
+.condition{
+	height:36px;
+	float:right;
+	margin-top:18px;
+	border: 1px solid #aaa;
+	margin-right:15px;
+}
+.timeinput {
+    width: 100%;
+    border: 1px solid #aaa;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+ }
+ #searchtime{
+ 	height: 30px;
+ 	line-height: 30px;
+ 	font-size:0.8rem;
+ 	margin-left:15px;
+ }
 /*** 数据可视化根据屏幕相应 ***/
 @media screen and (max-width: 1400px) {
 	 *{font-size:14px !important;}
@@ -14,22 +43,22 @@
 	}
 	.layui-layout-admin .layui-side {
 	    top: 70px;
-	    width: 200px;
+	    width: 160px;
 	    overflow-x: hidden;
 	}
 	.layui-side-scroll {
 	    position: relative;
-	    width: 200px;
+	    width: 160px;
 	    height: 100%;
 	    overflow-x: hidden;
 	}
 	.layui-nav-tree {
-	    width: 200px;
+	    width: 160px;
 	    padding: 0;
 	}
 	.layui-body {
 	    position: absolute;
-	    left: 200px;
+	    left: 160px;
 	    right: 0;
 	    top: 0;
 	    bottom: 0;
@@ -41,7 +70,7 @@
 	}
 	.layui-layout-admin .layui-footer {
 	    position: fixed;
-	    left: 200px;
+	    left: 160px;
 	    right: 0;
 	    bottom: 0;
 	    height: 44px;
@@ -127,8 +156,8 @@
 	}
 	.btn {
 	    border-radius: 3px !important;
-	    height: 35px;
-	    line-height: 35px;
+	    height: 30px;
+	    line-height: 30px;
 	    width: 84px;
 	    background: #fff;
 	    color: #1b2032;
@@ -193,5 +222,34 @@
 	    line-height: 20px;
 	    padding: 0 15px;
 	    font-size: 12px !important;
+	}
+	/*****成员管理头部*****/
+	.layui-btn-group .btnLeft{
+		margin-left:20px !important;
+	}
+	.layui-btn-group .btnRight{
+		margin-right:5px !important	
+	}
+	.timeKey {
+	    width: 80px;
+	}
+	.timeinput {
+	    width: 100%;
+	    height: 20px;
+	    line-height: 20px;
+	    text-align: center;
+	    font-size: 12px !important;
+	    border-width: 1px;
+	    border-style: solid;
+	    border-color: rgb(170, 170, 170);
+	    border-image: initial;
+	}
+	.condition {
+	    height: 30px;
+	    float: right;
+	    font-size:12px;
+	    margin-top: 10px;
+	    border: 1px solid #aaa;
+	    margin-right: 15px;
 	}
 }

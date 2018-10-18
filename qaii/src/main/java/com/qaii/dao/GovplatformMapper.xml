@@ -23,13 +23,18 @@
     <result column="govplat_EndResult" jdbcType="VARCHAR" property="govplatEndresult" />
     <result column="govplat_Remark" jdbcType="VARCHAR" property="govplatRemark" />
     <result column="govplat_File" jdbcType="VARCHAR" property="govplatFile" />
+    <result column="govplat_ApprovalTime" jdbcType="VARCHAR" property="govplatApprovaltime" />
+    <result column="govplat_MiddleTime" jdbcType="VARCHAR" property="govplatMiddletime" />
+    <result column="govplat_YearTime" jdbcType="VARCHAR" property="govplatYeartime" />
+    <result column="govplat_EndTime" jdbcType="VARCHAR" property="govplatEndtime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, govplat_ApplyTime, govplat_Source, govplat_Level, govplat_Name, govplat_ImplementTime, 
     govplat_DutyUnit, govplat_CooperationUnit, govplat_ManageDepart, govplat_ApplyDepart, 
     govplat_AssumeDepart, govplat_PlatformPer, govplat_ProjectApproval, govplat_ApprovalNum, 
     govplat_Subvention, govplat_FundTime, govplat_MiddleResult, govplat_YearResult, govplat_EndResult, 
-    govplat_Remark, govplat_File
+    govplat_Remark, govplat_File, govplat_ApprovalTime, govplat_MiddleTime, govplat_YearTime, 
+    govplat_EndTime
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -50,7 +55,8 @@
       govplat_ProjectApproval, govplat_ApprovalNum, 
       govplat_Subvention, govplat_FundTime, govplat_MiddleResult, 
       govplat_YearResult, govplat_EndResult, govplat_Remark, 
-      govplat_File)
+      govplat_File, govplat_ApprovalTime, govplat_MiddleTime, 
+      govplat_YearTime, govplat_EndTime)
     values (#{id,jdbcType=INTEGER}, #{govplatApplytime,jdbcType=VARCHAR}, #{govplatSource,jdbcType=VARCHAR}, 
       #{govplatLevel,jdbcType=VARCHAR}, #{govplatName,jdbcType=VARCHAR}, #{govplatImplementtime,jdbcType=VARCHAR}, 
       #{govplatDutyunit,jdbcType=VARCHAR}, #{govplatCooperationunit,jdbcType=VARCHAR}, 
@@ -59,7 +65,8 @@
       #{govplatProjectapproval,jdbcType=VARCHAR}, #{govplatApprovalnum,jdbcType=VARCHAR}, 
       #{govplatSubvention,jdbcType=VARCHAR}, #{govplatFundtime,jdbcType=VARCHAR}, #{govplatMiddleresult,jdbcType=VARCHAR}, 
       #{govplatYearresult,jdbcType=VARCHAR}, #{govplatEndresult,jdbcType=VARCHAR}, #{govplatRemark,jdbcType=VARCHAR}, 
-      #{govplatFile,jdbcType=VARCHAR})
+      #{govplatFile,jdbcType=VARCHAR}, #{govplatApprovaltime,jdbcType=VARCHAR}, #{govplatMiddletime,jdbcType=VARCHAR}, 
+      #{govplatYeartime,jdbcType=VARCHAR}, #{govplatEndtime,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.Govplatform">
     insert into sci_govplatform
@@ -127,6 +134,18 @@
       <if test="govplatFile != null">
         govplat_File,
       </if>
+      <if test="govplatApprovaltime != null">
+        govplat_ApprovalTime,
+      </if>
+      <if test="govplatMiddletime != null">
+        govplat_MiddleTime,
+      </if>
+      <if test="govplatYeartime != null">
+        govplat_YearTime,
+      </if>
+      <if test="govplatEndtime != null">
+        govplat_EndTime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -191,6 +210,18 @@
       </if>
       <if test="govplatFile != null">
         #{govplatFile,jdbcType=VARCHAR},
+      </if>
+      <if test="govplatApprovaltime != null">
+        #{govplatApprovaltime,jdbcType=VARCHAR},
+      </if>
+      <if test="govplatMiddletime != null">
+        #{govplatMiddletime,jdbcType=VARCHAR},
+      </if>
+      <if test="govplatYeartime != null">
+        #{govplatYeartime,jdbcType=VARCHAR},
+      </if>
+      <if test="govplatEndtime != null">
+        #{govplatEndtime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -257,6 +288,18 @@
       <if test="govplatFile != null">
         govplat_File = #{govplatFile,jdbcType=VARCHAR},
       </if>
+      <if test="govplatApprovaltime != null">
+        govplat_ApprovalTime = #{govplatApprovaltime,jdbcType=VARCHAR},
+      </if>
+      <if test="govplatMiddletime != null">
+        govplat_MiddleTime = #{govplatMiddletime,jdbcType=VARCHAR},
+      </if>
+      <if test="govplatYeartime != null">
+        govplat_YearTime = #{govplatYeartime,jdbcType=VARCHAR},
+      </if>
+      <if test="govplatEndtime != null">
+        govplat_EndTime = #{govplatEndtime,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -281,14 +324,21 @@
       govplat_YearResult = #{govplatYearresult,jdbcType=VARCHAR},
       govplat_EndResult = #{govplatEndresult,jdbcType=VARCHAR},
       govplat_Remark = #{govplatRemark,jdbcType=VARCHAR},
-      govplat_File = #{govplatFile,jdbcType=VARCHAR}
+      govplat_File = #{govplatFile,jdbcType=VARCHAR},
+      govplat_ApprovalTime = #{govplatApprovaltime,jdbcType=VARCHAR},
+      govplat_MiddleTime = #{govplatMiddletime,jdbcType=VARCHAR},
+      govplat_YearTime = #{govplatYeartime,jdbcType=VARCHAR},
+      govplat_EndTime = #{govplatEndtime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="getAllPlatformMsg" resultMap="BaseResultMap">SELECT * from sci_govplatform</select>
   <delete id="deleteByPrimaryKeys" parameterType="int">
-  	DELETE  FROM sci_govplatform WHERE id in
-	    <foreach item="id" collection="array" open="(" separator="," close=")">
-	    	#{id,jdbcType=INTEGER}
-	    </foreach>
+    DELETE  FROM sci_govplatform WHERE id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id,jdbcType=INTEGER}
+        </foreach>
   </delete>
+  <select id="listByNum" resultMap="BaseResultMap" parameterType="int">
+    SELECT * FROM sci_govplatform ORDER BY govplat_Subvention DESC LIMIT #{0}
+  </select>
 </mapper>

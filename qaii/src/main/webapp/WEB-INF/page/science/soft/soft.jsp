@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>基金</title>
+  <title>软著</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
@@ -15,12 +15,12 @@
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
     body{margin: 10px;}
-    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
     .layui-table-body {
-	    height: -moz-calc( 100vh - 215px );
-	    height: -webkit-calc( 100vh - 215px );
-	    height: calc( 100vh - 215 px );
+	    height: -moz-calc( 100vh - 190px );
+	    height: -webkit-calc( 100vh - 190px );
+	    height: calc( 100vh - 190px );
 	}
+    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
 	.noExl {
     display: none;
 }
@@ -29,8 +29,8 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">基金( <span id="countnum"> </span> )</span>
-		<a href="javascript:;" onclick="srchange('fundAdd.do')">
+  	  <span class="limit">软著( <span id="countnum"> </span> )</span>
+		<a href="softAdd.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -54,9 +54,11 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="govfundImplementtime">基金实施期</option>
-			<option value="empJobtitlelevel">职称等级</option>
-			<option value="govfundName">基金名称</option>
+			<option value="softDept">部门</option>
+			<option value="softName">名称</option>
+			<option value="softAuthor">著作权人</option>
+			<option value="softNum">登记号</option>
+			<option value="softCertificatetime">发证日期</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -70,36 +72,30 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=govfundApplytime  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
-	<div class="int-inline"><input id=govfundSource  type="checkbox" value="来源" checked="flase"/><lable>来源</lable></div>
-	<div class="int-inline"><input id="govfundLevel"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
-	<div class="int-inline"><input id="govfundName"  type="checkbox" value="基金名称" checked/><lable>基金名称</lable></div>
-	<div class="int-inline"><input id="govfundImplementtime"  type="checkbox" value="基金实施期" checked/><lable>基金实施期</lable></div>
-	<div class="int-inline"><input id="govfundConstructunit"  type="checkbox" value="基金构成单位" checked/><lable>基金构成单位</lable></div>
-	<div class="int-inline"><input id="govfundManagedepart"  type="checkbox" value="主管部门" checked/><lable>主管部门</lable></div>
-	<div class="int-inline"><input id="govfundApplydepart"  type="checkbox" value="申请报送部门" checked/><lable>申请报送部门</lable></div>
-	<div class="int-inline"><input id="govfundPass"  type="checkbox" value="是否通过" checked/><lable>是否通过</lable></div>
-	<div class="int-inline"><input id="govfundWrittentime"  type="checkbox" value="批复时间" checked/><lable>批复时间</lable></div>
-	<div class="int-inline"><input id="govfundFundlimit"  type="checkbox" value="基金资助额度" checked/><lable>基金资助额度</lable></div>
-	<div class="int-inline"><input id="govfundFund"  type="checkbox" value="基金" checked/><lable>基金</lable></div>
-	<div class="int-inline"><input id="govfundFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
-	<div class="int-inline"><input id="govfundMiddletime"  type="checkbox" value="中期检查考核时间" checked/><lable>中期检查考核时间</lable></div>
-	<div class="int-inline"><input id="govfundMiddleresult"  type="checkbox" value="中期检查考核结果" checked/><lable>中期检查考核结果</lable></div>
-	<div class="int-inline"><input id="govfundEndtime"  type="checkbox" value="项目结题验收时间" checked/><lable>项目结题验收时间</lable></div>
-	<div class="int-inline"><input id="govfundEndresult"  type="checkbox" value="项目结题验收结果" checked/><lable>项目结题验收结果</lable></div>
-	<div class="int-inline"><input id="govfundRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
-	<div class="int-inline"><input id="govfundFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div>
+	<div class="int-inline"><input id=softDept  type="checkbox" value="部门" checked="flase"/><lable>部门</lable></div>
+	<div class="int-inline"><input id="softCode"  type="checkbox" value="编号" checked/><lable>编号</lable></div>
+	<div class="int-inline"><input id="softName"  type="checkbox" value="名称" checked/><lable>名称</lable></div>
+	<div class="int-inline"><input id="softWriter"  type="checkbox" value="软件开发者" checked/><lable>软件开发者</lable></div>
+	<div class="int-inline"><input id="softAuthor"  type="checkbox" value="著作权人" checked/><lable>著作权人</lable></div>
+	<div class="int-inline"><input id="softAgency"  type="checkbox" value="代理机构" checked/><lable>代理机构</lable></div>
+	<div class="int-inline"><input id="softDevelopendtime"  type="checkbox" value="开发完成日期" checked/><lable>开发完成日期</lable></div>
+	<div class="int-inline"><input id="softFirstpublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发表日期</lable></div>
+	<div class="int-inline"><input id="softNum"  type="checkbox" value="登记号" checked/><lable>登记号</lable></div>
+	<div class="int-inline"><input id="softCertificatetime"  type="checkbox" value="发证日期" checked/><lable>发证日期</lable></div>
+	<div class="int-inline"><input id="softCost"  type="checkbox" value="费用" checked/><lable>费用</lable></div>
+	<div class="int-inline"><input id="softInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
+	<div class="int-inline"><input id="softUpdatetime"  type="checkbox" value="状态更新日期" checked/><lable>状态更新日期</lable></div>
+	<div class="int-inline"><input id="softRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
- <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.govfundSource}}'" target="_blank" method="post" id="chex">查看详情</a> -->
+ <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="datac">资料审查</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -125,32 +121,25 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'getAllFundMsg.do', //数据接口
-    /* url: 'getallinjobEmp.do',  *///数据接口
+    url: 'getAllSoftwareMsg.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'govfundApplytime', title: '申报时间',fixed: 'left',width:150},
-		{field: 'govfundSource', title: '来源',fixed: 'left',width:100},
-		{field: 'govfundLevel', title: '级别',fixed: 'left',width:150},
-		{field: 'govfundName', title: '基金名称',sort: true,width:150},
-		{field: 'govfundImplementtime', title: '基金实施期',sort: true,width:200},
-		{field: 'govfundConstructunit', title: '基金构成单位',sort: true,width:200},
-		{field: 'govfundManagedepart', title: '主管部门',sort: true,width:150},
-		{field: 'govfundApplydepart', title: '申请报送部门',width:250},
-		{field: 'govfundPass', title: '是否通过',sort: true,width:200},
-		{field: 'govfundWrittentime', title: '批复时间',sort: true,width:150},
-		{field: 'govfundFundlimit', title: '基金资助额度',sort: true,width:200},
-		
-		{field: 'govfundFund', title: '基金',sort: true,width:200},
-		{field: 'govfundFundtime', title: '资金到位时间',sort: true,width:200},
-		{field: 'govfundMiddletime', title: '中期检查考核时间',sort: true,width:200},
-		{field: 'govfundMiddleresult', title: '中期检查考核结果',sort: true,width:200},
-		{field: 'govfundEndtime', title: '项目结题验收时间',sort: true,width:230},
-		{field: 'govfundEndresult', title: '项目结题验收结果',sort: true,width:230},
-		{field: 'govfundRemark', title: '备注',sort: true,width:200},
-		{field: 'govfundFile', title: '附件',sort: true,width:200},
+		{field: 'softDept', title: '部门',fixed: 'left',width:100},
+		{field: 'softCode', title: '编号',fixed: 'left',width:150},
+		{field: 'softName', title: '名称',sort: true,width:200},
+		{field: 'softWriter', title: '软件开发者',sort: true,width:200},
+		{field: 'softAuthor', title: '著作权人',sort: true,width:150},
+		{field: 'softAgency', title: '代理机构',sort: true,width:150},
+		{field: 'softDevelopendtime', title: '开发完成日期',width:220},
+		{field: 'softFirstpublishtime', title: '首次发表日期',sort: true,width:200},
+		{field: 'softNum', title: '登记号',sort: true,width:150},
+		{field: 'softCertificatetime', title: '发证日期',sort: true,width:150},
+		{field: 'softCost', title: '费用',sort: true,width:150},
+		{field: 'softInvoiceper', title: '发票收据-汇款人',sort: true,width:200},
+		{field: 'softUpdatetime', title: '状态更新日期',sort: true,width:200},
+		{field: 'softRemark', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
@@ -239,12 +228,16 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="govfundImplementtime"){
-  				alert("搜索'基金实施期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govfundName"){
-  				alert("搜索'基金名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="softDept"){
+  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softName"){
+  				alert("搜索'名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softAuthor"){
+  				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softNum"){
+  				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softCertificatetime"){
+  				alert("搜索'发证日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -266,59 +259,42 @@ layui.use('table', function(obj){
       });
 	
   //监听工具条
-    table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-      var data = obj.data //获得当前行数据
-      console.log(data)
-      ,layEvent = obj.event; //获得 lay-event 对应的值
-      if(layEvent === 'detail'){
-      	var iframesrc="fundCheck.do?userId='"+data.id+"'";
-      	$("body", parent.document).find('iframe').attr('src',iframesrc);
-      } else if(layEvent === 'del'){
-        layer.confirm('确定删除信息', function(index){
-            let arr=[data.id];
-            console.log(data) 
-            $.post({
-            	url:"dellFundMsg.do",
-            	data:{
-            		"requestDate" : arr
-            	},
-            	success:function(data){
-            		if(data.data){
-            		    //删除对应行（tr）的DOM结构
-            			obj.del();
-            		    layer.alert("删除成功");
-            			layer.close(index);
-            		}else{
-            			layer.alert("删除失败")
-            		}
-            		
-            	}
-            }) 
-      	  
-      	  
-      	  
-      	  
-          obj.del(); //删除对应行（tr）的DOM结构
-          layer.close(index);
-          //向服务端发送删除指令
-          
-          
-          
-          
-        });
-      } else if(layEvent === 'edit'){
-      	var iframesrc="fundEdit.do?userId='"+data.id+"'";
-      	$("body", parent.document).find('iframe').attr('src',iframesrc);
-      }else if(layEvent==="datac"){
-      	//userid为当前记录id值，将会传到资料审查界面
-      	var iframesrc="fundData.do?userId='"+data.id+"'&govfundName="+data.govfundName+"&govfundSource="+data.govfundSource+"&govfundApplytime="+data.govfundApplytime;
-      	url=encodeURI(iframesrc);
-      	url=encodeURI(url);
-      	
-      	console.log(url);
-      	$("body", parent.document).find('iframe').attr('src',iframesrc);
-      }
-    });
+  table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+    var data = obj.data //获得当前行数据
+    console.log(data)
+    ,layEvent = obj.event; //获得 lay-event 对应的值
+    if(layEvent === 'detail'){
+    	var iframesrc="softCheck.do?userId='"+data.id+"'";
+    	$("body", parent.document).find('iframe').attr('src',iframesrc);
+    } else if(layEvent === 'del'){
+      layer.confirm('确定删除信息', function(index){
+          let arr=[data.id];
+          console.log(data) 
+          $.post({
+          	url:"dellsoftMsg.do",
+          	data:{
+          		"requestDate" : arr
+          	},
+          	success:function(data){
+          		if(data.data){
+          		    //删除对应行（tr）的DOM结构
+          			obj.del();
+          			layer.close(index);
+          		}else{
+          			layer.alert("删除失败")
+          		}
+          	}
+          }) 
+        obj.del(); //删除对应行（tr）的DOM结构
+        layer.close(index);
+        //向服务端发送删除指令
+      });
+    } else if(layEvent === 'edit'){
+    	var iframesrc="softEdit.do?userId='"+data.id+"'";
+    	$("body", parent.document).find('iframe').attr('src',iframesrc);
+    }
+  });
+
 	//监听顶部添加删除操作
 	var arr=[];
 	//var arr=[];
@@ -331,7 +307,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"dellFundMsg.do",
+		  	url:"dellsoftMsg.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},
@@ -358,7 +334,7 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: 'insertGovfundDatabyexcel.do'
+  ,url: 'insertSoftDatabyexcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
 	  alert("上传成功！请更新数据！");
@@ -382,7 +358,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "基金管理",
+				filename: "软著管理",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片
@@ -408,7 +384,6 @@ upload.render({
 	});
 </script>
 <!--自动设置主表格可视区域-->
-<script src="${basePath}/js/iframesrc.js"></script>
 <script>
 
 	var hei=$(".action").height();

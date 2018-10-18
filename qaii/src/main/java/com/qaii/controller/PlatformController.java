@@ -76,29 +76,17 @@ public class PlatformController {
     	}
 	}
 	
-	//跳转到资助平台详情页面
-	@RequestMapping("toGovplatformDetails.do")
-	public String toGovplatformDetail() {
-		
-		return "page/science/";
-	}
-	
 	//资助平台查看详情
 	@RequestMapping(value="showGovplatformDetails.do",method=RequestMethod.POST)
 	@ResponseBody
 	public JsonResult showGovplatformDetails(Govplatform govplatform,HttpServletRequest req) {	
 		
-		int userid=Integer.parseInt(req.getParameter("userId"));
+		int userid=Integer.parseInt(req.getParameter("id"));
 		//Govplatform.setId();
 		govplatform = govplatformService.selectByPrimaryKey(userid);
 		return new JsonResult(govplatform);
 	}
 	
-	//跳转到修改资助平台详情页面
-	@RequestMapping("UpdateGovplatform.do")
-	public String toUpdateGovplatform() {
-		return "page/science";
-	}
 	
 	//修改资助平台信息功能
 	@RequestMapping(value="updateGovplatform.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
@@ -135,6 +123,10 @@ public class PlatformController {
 		govplatform.setGovplatEndresult(req.getParameter("govplatEndresult"));
 		govplatform.setGovplatRemark(req.getParameter("govplatRemark"));
 		govplatform.setGovplatFile(req.getParameter("govplatFile"));
+		govplatform.setGovplatApprovaltime(req.getParameter("govplatApprovaltime"));
+		govplatform.setGovplatMiddletime(req.getParameter("govplatMiddletime"));
+		govplatform.setGovplatYeartime(req.getParameter("govplatYeartime"));
+		govplatform.setGovplatEndtime(req.getParameter("govplatEndtime"));
 	}
 	//添加资助平台信息功能
 	@RequestMapping("addGovplatform.do")
@@ -249,13 +241,17 @@ public class PlatformController {
 		govplatform.setGovplatPlatformper(value.get(10));
 		govplatform.setGovplatProjectapproval(value.get(11));
 		govplatform.setGovplatApprovalnum(value.get(12));
-		govplatform.setGovplatSubvention(value.get(13));
-		govplatform.setGovplatFundtime(value.get(14));
-		govplatform.setGovplatMiddleresult(value.get(15));
-		govplatform.setGovplatYearresult(value.get(16));
-		govplatform.setGovplatEndresult(value.get(17));
-		govplatform.setGovplatRemark(value.get(18));
-		govplatform.setGovplatFile(value.get(19));
+		govplatform.setGovplatApprovaltime(value.get(13));
+		govplatform.setGovplatSubvention(value.get(14));
+		govplatform.setGovplatFundtime(value.get(15));
+		govplatform.setGovplatMiddletime(value.get(16));
+		govplatform.setGovplatMiddleresult(value.get(17));
+		govplatform.setGovplatYeartime(value.get(18));
+		govplatform.setGovplatYearresult(value.get(19));
+		govplatform.setGovplatEndtime(value.get(20));
+		govplatform.setGovplatEndresult(value.get(21));
+		govplatform.setGovplatRemark(value.get(22));
+		govplatform.setGovplatFile(value.get(23));
 		
 		return govplatform;
 	}

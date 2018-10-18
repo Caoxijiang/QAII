@@ -4,6 +4,7 @@ import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +16,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.qaii.domain.Govfund;
+import com.qaii.domain.Govplatform;
+import com.qaii.domain.Govreward;
+import com.qaii.domain.Govsubject;
 import com.qaii.service.GovFundService;
 import com.qaii.service.GovPlatformService;
 import com.qaii.service.GovRewardService;
@@ -57,12 +62,23 @@ public class DataOverviewController {
 
 	
 	// 政府资助数据接口
+	@RequestMapping("GovernmentFunding.do")
+	@ResponseBody
 	public Map<String, List> GovernmentFunding(){
+		int num = 6;
 		Map<String, List> result =new HashMap<>();
-		result.put("fund", govfundservice.getAllFundMsg());
-		result.put("platform", govplatformservice.getAllPlatformMsg());
-		result.put("subject", govsubjectservice.getAllSubjectMsg());
-		result.put("reward", govrewardservice.getAllRewardMsg());
+		List<Govfund> fundList=govfundservice.listByNum(num);
+		List<Govplatform> platList=govplatformservice.listByNum(num);
+		List<Govsubject> subList=govsubjectservice.listByNum(num);
+		List<Govreward> rewardList=govrewardservice.listByNum(num);
+		Collections.reverse(fundList);			//反向排序数组 
+		Collections.reverse(platList);
+		Collections.reverse(subList);
+		Collections.reverse(rewardList);
+		result.put("fund",  fundList);
+		result.put("platform", platList);
+		result.put("subject", subList);
+		result.put("reward", rewardList);
 		return result;
 	}
 	

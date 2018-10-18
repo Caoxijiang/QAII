@@ -39,7 +39,7 @@
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
   <input id="param" value='${param.userId}' type="hidden"  name="param"/>
-  <form class="layui-form" action="addresearchInfo.do" method="post"> 
+  <form class="layui-form" action="updateGovplatform.do" method="post" lay-filter="example"> 
   <input   type="hidden"  name="id"/>
   <div class="layui-row">
     <div class="layui-col-xs4 layui-col-md4">
@@ -175,7 +175,7 @@
       <div class="layui-form-item">
 			<label class="layui-form-label">立项时间</label>
 			<div class="layui-input-block">
-				<input type="text" name="govplatApprovalnum" class="layui-input input" id="test2">
+				<input type="text" name="govplatApprovaltime" class="layui-input input" id="test2">
 			</div>
 		</div>
     </div>
@@ -203,7 +203,7 @@
 			<div class="layui-input-block">
 				<div class="layui-row">
 					 <div class="layui-col-xs6 layui-col-md6">
-						<input type="text" name="govplatMiddleresult" class="layui-input input" id="test4">
+						<input type="text" name="govplatMiddletime" class="layui-input input" id="test4">
 					 </div>
 					 <div class="layui-col-xs6 layui-col-md6">
 						<select name="govplatMiddleresult" lay-search="" class="input">
@@ -222,7 +222,7 @@
 			<div class="layui-input-block">
 				<div class="layui-row">
 					 <div class="layui-col-xs6 layui-col-md6">
-						<input type="text" name="govplatYearresult" class="layui-input input" id="test5">
+						<input type="text" name="govplatYeartime" class="layui-input input" id="test5">
 					 </div>
 					 <div class="layui-col-xs6 layui-col-md6">
 						<select name="govplatYearresult" lay-search="" class="input">
@@ -244,7 +244,7 @@
 			<div class="layui-input-block">
 				<div class="layui-row">
 					 <div class="layui-col-xs6 layui-col-md6">
-						<input type="text" name="govplatEndresult" class="layui-input input" id="test6">
+						<input type="text" name="govplatEndtime" class="layui-input input" id="test6">
 					 </div>
 					 <div class="layui-col-xs6 layui-col-md6">
 						<select name="govplatEndresult" lay-search="" class="input">
@@ -333,33 +333,40 @@ $.post({
 		   var id=${param.userId};
 		   if(id!=null){
 				$.post({
-					url:"findPatentInfoById.do",
+					url:"showGovplatformDetails.do",
 					data:{
 						id:id
 					},
 					success:function(data){
 						if(data.data!=null){
-							let patentInfo=data.data;
+							let researchInfo=data.data;
 							//表单初始赋值 从表单中提取数据
 							  form.val('example', {
-								  	"id":patentInfo.id,
-									"patDept":patentInfo.patDept,
-									"patType":patentInfo.patType,
-									"patName":patentInfo.patName,
-									"patDigest":patentInfo.patDigest,
-									"patAuthor":patentInfo.patAuthor,
-									"patApplyper":patentInfo.patApplyper,
-									"patTelltime":patentInfo.patTelltime,
-									"patAgency":patentInfo.patAgency,
-									"patPrepublishaudit":patentInfo.patPrepublishaudit,
-									"patApplynum":patentInfo.patApplynum,
-									"patApplytime":patentInfo.patApplytime,
-									"patPublishtime":patentInfo.patPublishtime,
-									"patAuthorzationtime":patentInfo.patAuthorzationtime,
-									"patRemission":patentInfo.patRemission,
-									"patCost":patentInfo.patCost,
-									"patInvoiceper":patentInfo.patInvoiceper,
-									"patRemark":patentInfo.patRemark
+								    "id":id,
+								    "govplatApplytime":researchInfo.govplatApplytime,
+			                        "govplatSource":researchInfo.govplatSource,
+			                        "govplatLevel":researchInfo.govplatLevel,
+			                        "govplatName":researchInfo.govplatName,
+			                        "govplatImplementtime":researchInfo.govplatImplementtime,
+			                        "govplatDutyunit":researchInfo.govplatDutyunit,
+			                        "govplatCooperationunit":researchInfo.govplatCooperationunit,
+			                        "govplatManagedepart":researchInfo.govplatManagedepart,
+			                        "govplatApplydepart":researchInfo.govplatApplydepart,
+			                        "govplatAssumedepart":researchInfo.govplatAssumedepart,
+			                        "govplatPlatformper":researchInfo.govplatPlatformper,
+			                        "govplatProjectapproval":researchInfo.govplatProjectapproval,
+			                        "govplatApprovalnum":researchInfo.govplatApprovalnum,
+			                        "govplatApprovaltime":researchInfo.govplatApprovaltime,
+			                        "govplatSubvention":researchInfo.govplatSubvention,
+			                        "govplatFundtime":researchInfo.govplatFundtime,
+			                        "govplatMiddletime":researchInfo.govplatMiddletime,
+			                        "govplatMiddleresult":researchInfo.govplatMiddleresult,
+			                        "govplatYeartime":researchInfo.govplatYeartime,
+			                        "govplatYearresult":researchInfo.govplatYearresult,
+			                        "govplatEndtime":researchInfo.govplatEndtime,
+			                        "govplatEndresult":researchInfo.govplatEndresult,
+			                        "govplatRemark":researchInfo.govplatRemark,
+			                        "govplatFile":researchInfo.govplatFile
 							    
 							  })
 						}else{

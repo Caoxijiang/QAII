@@ -37,6 +37,10 @@ public class Govfund {
 
     private String govfundFile;
 
+    private String govfundMiddletime;
+
+    private String govfundEndtime;
+
     public Integer getId() {
         return id;
     }
@@ -179,5 +183,21 @@ public class Govfund {
 
     public void setGovfundFile(String govfundFile) {
         this.govfundFile = govfundFile == null ? null : govfundFile.trim();
+    }
+
+    public String getGovfundMiddletime() {
+        return govfundMiddletime;
+    }
+
+    public void setGovfundMiddletime(String govfundMiddletime) {
+        this.govfundMiddletime = govfundMiddletime == null ? null : govfundMiddletime.trim();
+    }
+
+    public String getGovfundEndtime() {
+        return govfundEndtime;
+    }
+
+    public void setGovfundEndtime(String govfundEndtime) {
+        this.govfundEndtime = govfundEndtime == null ? null : govfundEndtime.trim();
     }
 }

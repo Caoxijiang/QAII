@@ -45,7 +45,7 @@
 	    	<div class="layui-form-item">
 				<label class="layui-form-label">申报时间&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubApplytime" class="layui-input input" id="test1">
+					<input type="text" name="govsubApplytime" class="layui-input input" id="test1" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -53,7 +53,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">来源&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubSource" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govsubSource" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -61,7 +61,7 @@
 	      	<div class="layui-form-item">
 				<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govsubLevel" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="govsubLevel" lay-verify="required" lay-search="" lay-verify="required" class="input" disabled="">
 						<option value="">   </option>
 						<option value="国家级">国家级</option>
 						<option value="省级">省级</option>
@@ -79,7 +79,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">课题项目名称&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubName" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govsubName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -87,7 +87,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">项目实施期&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubImplementtime" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govsubImplementtime" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -95,7 +95,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">承担单位&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubDutyunit" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govsubDutyunit" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -105,7 +105,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">协作单位&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubCooperationunit" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govsubCooperationunit" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -113,7 +113,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">主管部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govsubManagedepart" lay-verify="required" lay-search="" id="deptt" class="input">
+					<select name="govsubManagedepart" lay-verify="required" lay-search="" id="deptt" class="input" disabled="">
 						
 					</select>
 				</div>
@@ -123,7 +123,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">申请报送部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govsubApplydepart" lay-verify="required" lay-search="" id="deptt1" class="input">
+					<select name="govsubApplydepart" lay-verify="required" lay-search="" id="deptt1" class="input" disabled="">
 						
 					</select>
 				</div>
@@ -135,7 +135,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">承担部门&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govsubAssumedepart" lay-verify="required" lay-search="" id="deptt2" class="input">
+					<select name="govsubAssumedepart" lay-verify="required" lay-search="" id="deptt2" class="input" disabled="">
 						
 					</select>
 				</div>
@@ -145,7 +145,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">课题项目负责人&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubProjectper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govsubProjectper" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -153,7 +153,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">是否立项&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="govsubProjectapproval" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="govsubProjectapproval" lay-verify="required" lay-search="" lay-verify="required" class="input" disabled="">
 						<option value="">   </option>
 						<option value="是">是</option>
 						<option value="否">否</option>
@@ -166,7 +166,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">立项编号</label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubApprovalnum" autocomplete="off" class="layui-input input">
+					<input type="text" name="govsubApprovalnum" autocomplete="off" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -174,7 +174,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">立项时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubApprovalnum" class="layui-input input" id="test2">
+					<input type="text" name="govsubApprovalnum" class="layui-input input" id="test2" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -182,7 +182,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">资助金额（万元）</label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubSubvention" autocomplete="off" class="layui-input input">
+					<input type="text" name="govsubSubvention" autocomplete="off" class="layui-input input" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -192,7 +192,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">资金到位时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govsubFundtime" class="layui-input input" id="test3">
+					<input type="text" name="govsubFundtime" class="layui-input input" id="test3" disabled="">
 				</div>
 			</div>
 	    </div>
@@ -202,10 +202,10 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govsubMiddleresult" class="layui-input input" id="test4">
+							<input type="text" name="govsubMiddleresult" class="layui-input input" id="test4" disabled="">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
-							<select name="govsubMiddleresult" lay-search="" class="input">
+							<select name="govsubMiddleresult" lay-search="" class="input" disabled="">
 								<option value="">   </option>
 								<option value="通过">通过</option>
 								<option value="不通过">不通过</option>
@@ -221,10 +221,10 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govsubYearresult" class="layui-input input" id="test5">
+							<input type="text" name="govsubYearresult" class="layui-input input" id="test5" disabled="">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
-							<select name="govsubYearresult" lay-search="" class="input">
+							<select name="govsubYearresult" lay-search="" class="input" disabled="">
 								<option value="">   </option>
 								<option value="通过">通过</option>
 								<option value="不通过">不通过</option>
@@ -243,10 +243,10 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govsubEndresult" class="layui-input input" id="test6">
+							<input type="text" name="govsubEndresult" class="layui-input input" id="test6" disabled="">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
-							<select name="govsubEndresult" lay-search="" class="input">
+							<select name="govsubEndresult" lay-search="" class="input" disabled="">
 								<option value="">   </option>
 								<option value="通过">通过</option>
 								<option value="不通过">不通过</option>
@@ -262,7 +262,7 @@
 			<div class="layui-form-item layui-form-text">
 				<label class="layui-form-label">备注</label>
 				<div class="layui-input-block">
-					<textarea name="govsubRemark" class="layui-textarea"></textarea>
+					<textarea name="govsubRemark" class="layui-textarea" disabled=""></textarea>
 				</div>
 			</div>
  	  	</div>
@@ -293,7 +293,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
    var id=${param.userId};
    if(id!=null){
 		$.post({
-			url:"findResearchInfoById.do",
+			url:"showGovsubjectDetails.do",
 			data:{
 				id:id
 			},
@@ -302,23 +302,30 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					let researchInfo=data.data;
 					//表单初始赋值 从表单中提取数据
 					  form.val('example', {
-						"patDept":researchInfo.patDept,
-						"patType":researchInfo.patType,
-						"patName":researchInfo.patName,
-						"patDigest":researchInfo.patDigest,
-						"patAuthor":researchInfo.patAuthor,
-						"patApplyper":researchInfo.patApplyper,
-						"patTelltime":researchInfo.patTelltime,
-						"patAgency":researchInfo.patAgency,
-						"patPrepublishaudit":researchInfo.patPrepublishaudit,
-						"patApplynum":researchInfo.patApplynum,
-						"patApplytime":researchInfo.patApplytime,
-						"patPublishtime":researchInfo.patPublishtime,
-						"patAuthorzationtime":researchInfo.patAuthorzationtime,
-						"patRemission":researchInfo.patRemission,
-						"patCost":researchInfo.patCost,
-						"patInvoiceper":researchInfo.patInvoiceper,
-						"patRemark":researchInfo.patRemark
+						"govsubApplytime":researchInfo.govsubApplytime,
+						"govsubSource":researchInfo.govsubSource,
+						"govsubLevel":researchInfo.govsubLevel,
+						"govsubName":researchInfo.govsubName,
+						"govsubImplementtime":researchInfo.govsubImplementtime,
+						"govsubDutyunit":researchInfo.govsubDutyunit,
+						"govsubCooperationunit":researchInfo.govsubCooperationunit,
+						"govsubManagedepart":researchInfo.govsubManagedepart,
+						"govsubApplydepart":researchInfo.govsubApplydepart,
+						"govsubAssumedepart":researchInfo.govsubAssumedepart,
+						"govsubProjectper":researchInfo.govsubProjectper,
+						"govsubProjectapproval":researchInfo.govsubProjectapproval,
+						"govsubApprovalnum":researchInfo.govsubApprovalnum,
+						"govsubSubvention":researchInfo.govsubSubvention,
+						"govsubFundtime":researchInfo.govsubFundtime,
+						"govsubMiddleresult":researchInfo.govsubMiddleresult,
+						"govsubYearresult":researchInfo.govsubYearresult,
+						"govsubEndresult":researchInfo.govsubEndresult,
+						"govsubRemark":researchInfo.govsubRemark,
+						"govsubFile":researchInfo.govsubFile,
+						"govsubApprovaltime":researchInfo.govsubApprovaltime,
+						"govsubMiddletime":researchInfo.govsubMiddletime,
+						"govsubYeartime":researchInfo.govsubYeartime,
+						"govsubEndtime":researchInfo.govsubEndtime
 					    
 					  })
 				}else{

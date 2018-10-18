@@ -38,7 +38,7 @@
 </div>
 <div class="layui-container addtop"> 
 <!-- 采用表格内直接行结构  -->
-  <form class="layui-form" action="addresearchInfo.do" method="post"> 
+  <form class="layui-form" action="addGovplatform.do" method="post"> 
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	    	<div class="layui-form-item">
@@ -50,17 +50,17 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">来源&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">来源</label>
 				<div class="layui-input-block">
-					<input type="text" name="govplatSource" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govplatSource" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      	<div class="layui-form-item">
-				<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">级别</label>
 				<div class="layui-input-block">
-					<select name="govplatLevel" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="govplatLevel" lay-search="" class="input">
 						<option value="">   </option>
 						<option value="国家级">国家级</option>
 						<option value="省级">省级</option>
@@ -76,25 +76,25 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">平台名称&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">平台名称</label>
 				<div class="layui-input-block">
-					<input type="text" name="govplatName" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govplatName" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">项目实施期&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">项目实施期</label>
 				<div class="layui-input-block">
-					<input type="text" name="govplatImplementtime" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govplatImplementtime" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">承担单位&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">承担单位</label>
 				<div class="layui-input-block">
-					<input type="text" name="govplatDutyunit" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govplatDutyunit" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
@@ -102,17 +102,17 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">协作单位&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">协作单位</label>
 				<div class="layui-input-block">
-					<input type="text" name="govplatCooperationunit" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govplatCooperationunit" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">主管部门&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">主管部门</label>
 				<div class="layui-input-block">
-					<select name="govplatManagedepart" lay-verify="required" lay-search="" id="deptt" class="input">
+					<select name="govplatManagedepart" lay-search="" id="deptt" class="input">
 						
 					</select>
 				</div>
@@ -120,9 +120,9 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">申请报送部门&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">申请报送部门</label>
 				<div class="layui-input-block">
-					<select name="govplatApplydepart" lay-verify="required" lay-search="" id="deptt1" class="input">
+					<select name="govplatApplydepart" lay-search="" id="deptt1" class="input">
 						
 					</select>
 				</div>
@@ -132,9 +132,9 @@
 	  <div class="layui-row">
 	    <div class="layui-col-xs4 layui-col-md4">
 	       <div class="layui-form-item">
-				<label class="layui-form-label">承担部门&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">承担部门</label>
 				<div class="layui-input-block">
-					<select name="govplatAssumedepart" lay-verify="required" lay-search="" id="deptt2" class="input">
+					<select name="govplatAssumedepart" lay-search="" id="deptt2" class="input">
 						
 					</select>
 				</div>
@@ -142,17 +142,17 @@
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">平台负责人&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">平台负责人</label>
 				<div class="layui-input-block">
-					<input type="text" name="govplatPlatformper" autocomplete="off" lay-verify="required" class="layui-input input">
+					<input type="text" name="govplatPlatformper" autocomplete="off" class="layui-input input">
 				</div>
 			</div>
 	    </div>
 	    <div class="layui-col-xs4 layui-col-md4">
 	      <div class="layui-form-item">
-				<label class="layui-form-label">是否立项&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">是否立项</label>
 				<div class="layui-input-block">
-					<select name="govplatProjectapproval" lay-verify="required" lay-search="" lay-verify="required" class="input">
+					<select name="govplatProjectapproval" lay-search="" class="input">
 						<option value="">   </option>
 						<option value="是">是</option>
 						<option value="否">否</option>
@@ -173,7 +173,7 @@
 	      <div class="layui-form-item">
 				<label class="layui-form-label">立项时间</label>
 				<div class="layui-input-block">
-					<input type="text" name="govplatApprovalnum" class="layui-input input" id="test2">
+					<input type="text" name="govplatApprovaltime" class="layui-input input" id="test2">
 				</div>
 			</div>
 	    </div>
@@ -201,7 +201,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govplatMiddleresult" class="layui-input input" id="test4">
+							<input type="text" name="govplatMiddletime" class="layui-input input" id="test4">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govplatMiddleresult" lay-search="" class="input">
@@ -220,7 +220,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govplatYearresult" class="layui-input input" id="test5">
+							<input type="text" name="govplatYeartime" class="layui-input input" id="test5">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govplatYearresult" lay-search="" class="input">
@@ -242,7 +242,7 @@
 				<div class="layui-input-block">
 					<div class="layui-row">
 						 <div class="layui-col-xs6 layui-col-md6">
-							<input type="text" name="govplatEndresult" class="layui-input input" id="test6">
+							<input type="text" name="govplatEndtime" class="layui-input input" id="test6">
 						 </div>
 						 <div class="layui-col-xs6 layui-col-md6">
 							<select name="govplatEndresult" lay-search="" class="input">
