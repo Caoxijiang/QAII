@@ -1,5 +1,6 @@
 package com.qaii.controller;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -42,6 +44,11 @@ public class SoftwareController {
 	
 	@Resource
 	private SoftwarecopyrightService softwareService;
+	
+	//文件路径
+	public final static String FILE_PATH= "C:/File/Software/";
+	//数据库中记录的路径
+	public final static String DATABASE_PATH="File/Software/";
 
 	//获取所有软著信息
 	@RequestMapping(value="getAllSoftwareMsg.do",method=RequestMethod.POST)
@@ -72,13 +79,6 @@ public class SoftwareController {
     	}
 	}
 	
-	//跳转到软著详情页面
-	@RequestMapping("toSoftDetails.do")
-	public String toSoftDetail() {
-		
-		return "page/science/";
-	}
-	
 	//软著查看详情
 	@RequestMapping(value="showSoftDetails.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -88,12 +88,6 @@ public class SoftwareController {
 		//soft.setId();
 		soft = softwareService.selectByPrimaryKey(userid);
 		return new JsonResult(soft);
-	}
-	
-	//跳转到修改软著详情页面
-	@RequestMapping("UpdateSoft.do")
-	public String toUpdateSoft() {
-		return "page/science";
 	}
 	
 	//修改软著信息功能
@@ -127,9 +121,13 @@ public class SoftwareController {
 	}
 	//添加软著信息功能
 	@RequestMapping("addSoft.do")
-	public String AddSoft(HttpServletRequest req,Softwarecopyright soft) {
+	public String AddSoft(HttpServletRequest req,
+			Softwarecopyright soft,
+			@RequestParam("file") MultipartFile[] files) throws CustomException {
 		loadData(req, soft);		
+		//插入软著信息
 		int row = softwareService.insertSoft(soft);
+		updateSoftwarefile(files,soft);
 		if(row>0) {
 //			Map<String,String> map=new HashMap<>();
 //			 map.put("url","intoPerSys.do");
@@ -243,5 +241,58 @@ public class SoftwareController {
 		Softwarecopyright.setSoftRemark(value.get(13));
 		
 		return Softwarecopyright;
+	}
+	
+	//插入软著文件信息
+	void updateSoftwarefile(MultipartFile[] files,Softwarecopyright soft) throws CustomException {
+		if (files != null && files.length < 0) {
+			throw new CustomException("请至少插入一个文件!");
+		}
+		for (int i = 0; i < files.length; i++) {
+			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
+			 
+			 String name=files[i].getOriginalFilename();
+			// 取文件格式后缀名
+			//String type = files[i].getOriginalFilename();
+			 
+			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+			 
+			String filename = uuid + type;// 取当前时间戳作为文件名
+
+			// String path = request.getSession().getServletContext().getRealPath("/upload/"
+			// + filename);// 存放位置
+			String path = (i>0?(FILE_PATH + soft.getSoftName() + "/master/"):(FILE_PATH + soft.getSoftName() + "/other/"));
+			String dbpath=(i>0?(DATABASE_PATH + soft.getSoftName() + "/master/"):(DATABASE_PATH + soft.getSoftName() + "/other/"));
+			File destFile = new File(path + "/" + filename);
+
+			if (!destFile.getParentFile().exists()) {
+				destFile.getParentFile().mkdirs();
+			}
+			try {
+				// FileUtils.copyInputStreamToFile(files[i].getInputStream(), destFile);//
+				// 复制临时文件到指定目录下
+//				files[i].transferTo(destFile);
+//				img.setSid(stepid);
+//				img.setOid(oid);
+//				img.setPath(dbpath.toString()+"/"+filename.toString());
+//				img.setName(name);
+//				
+//				if(insertype.equals("insert")) {
+//					InsertGovfundprocessfile(img,result, destFile);
+//					result.put("code", "0");
+//					result.put("msg", "上传成功");
+//					result.put("url", destFile.getPath());
+//				}else if(insertype.equals("update")) {
+//					updataGovfundprocessfile(img,result, destFile);
+//					result.put("code", "0");
+//					result.put("msg", "上传成功");
+//					result.put("url", destFile.getPath());
+//				}
+				
+
+			} catch (Exception e) {
+				throw new CustomException("插入失败!");
+			}
+		}
 	}
 }

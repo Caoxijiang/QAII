@@ -83,9 +83,9 @@
 	<div class="int-inline"><input id="govfundFundlimit"  type="checkbox" value="基金资助额度" checked/><lable>基金资助额度</lable></div>
 	<div class="int-inline"><input id="govfundFund"  type="checkbox" value="基金" checked/><lable>基金</lable></div>
 	<div class="int-inline"><input id="govfundFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
-	<div class="int-inline"><input id="govfundMiddleresult"  type="checkbox" value="中期检查考核时间" checked/><lable>中期检查考核时间</lable></div>
+	<div class="int-inline"><input id="govfundMiddletime"  type="checkbox" value="中期检查考核时间" checked/><lable>中期检查考核时间</lable></div>
 	<div class="int-inline"><input id="govfundMiddleresult"  type="checkbox" value="中期检查考核结果" checked/><lable>中期检查考核结果</lable></div>
-	<div class="int-inline"><input id="govfundEndresult"  type="checkbox" value="项目结题验收时间" checked/><lable>项目结题验收时间</lable></div>
+	<div class="int-inline"><input id="govfundEndtime"  type="checkbox" value="项目结题验收时间" checked/><lable>项目结题验收时间</lable></div>
 	<div class="int-inline"><input id="govfundEndresult"  type="checkbox" value="项目结题验收结果" checked/><lable>项目结题验收结果</lable></div>
 	<div class="int-inline"><input id="govfundRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 	<div class="int-inline"><input id="govfundFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div>
@@ -145,9 +145,9 @@ layui.use('table', function(obj){
 		
 		{field: 'govfundFund', title: '基金',sort: true,width:200},
 		{field: 'govfundFundtime', title: '资金到位时间',sort: true,width:200},
-		{field: 'govfundMiddleresult', title: '中期检查考核时间',sort: true,width:200},
+		{field: 'govfundMiddletime', title: '中期检查考核时间',sort: true,width:200},
 		{field: 'govfundMiddleresult', title: '中期检查考核结果',sort: true,width:200},
-		{field: 'govfundEndresult', title: '项目结题验收时间',sort: true,width:230},
+		{field: 'govfundEndtime', title: '项目结题验收时间',sort: true,width:230},
 		{field: 'govfundEndresult', title: '项目结题验收结果',sort: true,width:230},
 		{field: 'govfundRemark', title: '备注',sort: true,width:200},
 		{field: 'govfundFile', title: '附件',sort: true,width:200},
@@ -278,7 +278,7 @@ layui.use('table', function(obj){
             let arr=[data.id];
             console.log(data) 
             $.post({
-            	url:"dellTradeMarkMsg.do",
+            	url:"dellFundMsg.do",
             	data:{
             		"requestDate" : arr
             	},
@@ -286,6 +286,7 @@ layui.use('table', function(obj){
             		if(data.data){
             		    //删除对应行（tr）的DOM结构
             			obj.del();
+            		    layer.alert("删除成功");
             			layer.close(index);
             		}else{
             			layer.alert("删除失败")

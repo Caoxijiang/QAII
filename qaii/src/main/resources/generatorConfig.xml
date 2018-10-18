@@ -106,7 +106,7 @@
         <table tableName="sci_govsubjectprocess" domainObjectName="Govsubjectprocess" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table> -->
-        <table tableName="sci_govplatform" domainObjectName="Govplatform" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="sci_govfund" domainObjectName="Govfund" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         

@@ -367,10 +367,10 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: '/upload/'
+  ,url: 'insertGovsubjectDatabyexcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
-    console.log(res)
+    alert("导入成功");
   }
 })
 
@@ -390,7 +390,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "成员管理",
+				filename: "纵向课题管理",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片
