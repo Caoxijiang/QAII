@@ -227,4 +227,15 @@ public class DataOverviewController {
 		return result;		
 	}
 	
+	/**
+	 *  @author wangxin
+	 *  @description 数据可视化数据总量部分
+	 *  @date 2018/10/11
+	 * */
+	
+	Map<String, List> DataTotal(){
+		return null;
+		
+	}
+	
 }
