@@ -54,4 +54,6 @@ public interface EmpInfoMapper {
     
     List <EmpInfo> getallinjobEmp();
     
+    List<EmpInfo> findTimpEMpinfo(String startTime,String endTime);
+    
 }

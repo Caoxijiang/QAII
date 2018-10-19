@@ -300,6 +300,29 @@ public class EmpController {
 	}
 	
 	
+	//根据时间段查询员工列表
+	@ResponseBody
+	@RequestMapping(value="findTimpEMpinfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public Layui findTimpEMpinfo(HttpServletRequest req) throws ParseException {
+		//EmpInfo emp=new EmpInfo();
+		
+		
+		String startTime=req.getParameter("startTime");
+		String endTime=req.getParameter("endTime");	
+		 
+		
+		List<EmpInfo> empInfo=empInfoService.findTimpEMpinfo(CountDatetoNowDays.SDatetoStamp(startTime), CountDatetoNowDays.SDatetoStamp(endTime));
+		for (EmpInfo emps:empInfo) {
+			CountDatetoNowDays.TranstoDate(emps);
+			System.out.println(emps.getEmpName());
+		}
+		int count =empInfo.size();
+			if(empInfo!=null) {
+				return Layui.data(count, empInfo);
+			}else {
+				return Layui.data(count, empInfo);
+			}
+	}
 	
 	
 	

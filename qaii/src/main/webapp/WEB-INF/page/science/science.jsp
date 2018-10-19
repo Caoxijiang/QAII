@@ -28,7 +28,7 @@
 <div class="layui-layout layui-layout-admin">
 <!-- 头部区域（可配合layui已有的水平导航） -->
   <div class="layui-header">
-	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>科研成果管理系统&nbsp;--&nbsp;科技处</div>
+	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧科技管理系统</div>
 		<ul class="layui-nav layui-layout-right">
 		  <li class="layui-nav-item">
 			  <a href="outLogin.do" "event.returnValue=false">

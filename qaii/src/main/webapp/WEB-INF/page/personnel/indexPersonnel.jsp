@@ -57,7 +57,7 @@
 
 	})
 </script>
-<title>科技管理系统</title>
+<title>QAII智慧管理平台</title>
 <style>
 	a{
 	color:#fff;}
@@ -69,7 +69,7 @@
 		<div class="content">
 			<div class="perhead">
 				<div class="pertitle">
-					<span class="pertitlespan">人事教育处监测平台</span>
+					<span class="pertitlespan">QAII智慧人事管理平台</span>
 					<div class="right perNav">
 						<a href="intoPerSys.do"><div class="pageTo">进入系统</div></a>
 						<!-- <a href="dept.do"><div class="pageTo">返回导航</div></a> -->

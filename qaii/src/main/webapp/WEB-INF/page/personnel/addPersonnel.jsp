@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>成员管理</title>
+  <title>QAII智慧管理平台</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
@@ -520,7 +520,17 @@ $("#condition").change(function(){
 $("#searchtime").click(function(){
 	var time1=$("#timeKey1").val();
 	var time2=$("#timeKey2").val();
-	alert(time1+"fffff"+time2);
+	$.post({
+		url:"findTimpEMpinfo.do",
+		data:{
+			startTime:time1,
+			endTime:time2
+		},
+		success:function(data){
+			console.log("lllll"+JSON.stringify(data))
+		}
+	})
+	
 })
 	
 </script>
