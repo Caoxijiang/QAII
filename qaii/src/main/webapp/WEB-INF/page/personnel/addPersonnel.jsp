@@ -520,7 +520,17 @@ $("#condition").change(function(){
 $("#searchtime").click(function(){
 	var time1=$("#timeKey1").val();
 	var time2=$("#timeKey2").val();
-	alert(time1+"fffff"+time2);
+	$.post({
+		url:"findTimpEMpinfo.do",
+		data:{
+			startTime:time1,
+			endTime:time2
+		},
+		success:function(data){
+			console.log("lllll"+JSON.stringify(data))
+		}
+	})
+	
 })
 	
 </script>

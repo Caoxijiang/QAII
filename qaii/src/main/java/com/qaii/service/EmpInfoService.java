@@ -46,4 +46,5 @@ public interface EmpInfoService {
 	
 	List <EmpInfo> getallinjobEmp();
 	
+	List<EmpInfo> findTimpEMpinfo(String startTime,String endTime);
 }
