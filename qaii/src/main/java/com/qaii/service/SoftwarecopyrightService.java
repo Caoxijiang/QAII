@@ -23,4 +23,6 @@ public interface SoftwarecopyrightService {
 	int countAuthorizationcopyright(String firstDay, String endDay);
 	
 	int countAuthorizationcopyrightNum();
+	
+	Softwarecopyright selectFileMsg(int id);
 }

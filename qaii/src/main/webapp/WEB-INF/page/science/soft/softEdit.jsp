@@ -207,8 +207,12 @@
 <script src="${basePath}/js/iframesrc.js"></script>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
+var id=${param.userId};
 $.post({
-	url:"findDeptInfoList.do",
+	url:"showSoftDetails.do",
+	data:{
+        id:id
+    },
 	success:function(data){
 		var deptInfo=data.data;
 		if(deptInfo!=null){
@@ -242,6 +246,29 @@ $.post({
 			  laydate.render({
 			    elem: '#test4'
 			  });
+				
+			//文件表格展示
+            let trademark=data.data;
+              form.val('example', {
+                  "softDept":trademark.softDept,
+                  "softCode":trademark.softCode,
+                  "softName":trademark.softName,
+                  "softWriter":trademark.softWriter,
+                  "softAuthor":trademark.softAuthor,
+                  "softAgency":trademark.softAgency,
+                  "softDevelopendtime":trademark.softDevelopendtime,
+                  "softFirstpublishtime":trademark.softFirstpublishtime,
+                  "softNum":trademark.softNum,
+                  "softCertificatetime":trademark.softCertificatetime,
+                  "softCost":trademark.softCost,
+                  "softInvoiceper":trademark.softInvoiceper,
+                  "softUpdatetime":trademark.softUpdatetime,
+                  "softRemark":trademark.softRemark,
+                  "softfile":trademark.softFile[0].path
+                // 修改此输入框的value值，此value为测试值 softfile为测试自定义值，证明文件值
+              });
+              var otherfile=trademark.softFile;
+              otherfile.splice(0,1);
 			  //文件表格展示
 			   table.render({
 			    elem: '#demo'
@@ -249,14 +276,13 @@ $.post({
 			    ,page: false//开启分页
 			    ,cols: [[ //表头
 			      {field: 'id', type:'numbers',title: '序号', width:80}
+			      ,{field: 'filename', title: '文件名'}
 			      ,{field: 'path', title: '文件名'}
 			      ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
 			    ]],
 			    limit: 999999,
 			    /* data:obj */
-			    data:[
-			    	{"id":"1","path":"https://www.iv2018.cn/public/images/guestsImage/static/guste.jpg"},
-			    	]
+			    data:otherfile
 			  });
 			   //监听行工具事件
 				  table.on('tool(test)', function(obj){
@@ -297,7 +323,7 @@ $.post({
 				    	var address=data.path;
 				    		download(address);
 					}else if(obj.event === 'upload'){//文件重新上传
-						var address=data.filename;
+						var address=data.path;
 						var id=data.id;
 					    layer.open({
 				    	  type:1,
@@ -305,6 +331,7 @@ $.post({
 						  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
 						  '<input type="file" name="file" id="path">'+
 						  '<input type="hidden" name="id" id="id" value="'+id+'">'+
+						  '<input type="hidden" name="address" id="address" value="'+address+'">'+
 						  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 						});
 					}//事件监听
@@ -320,40 +347,7 @@ $.post({
 			      console.log(res)
 			    }
 			  });
-			//文件表格展示
-			  form.val('example', {
-				/* "softDept":trademark.softDept,
-				"softCode":trademark.softCode,
-				"softName":trademark.softName,
-				"softWriter":trademark.softWriter,
-				"softAuthor":trademark.softAuthor,
-				"softAgency":trademark.softAgency,
-				"softDevelopendtime":trademark.softDevelopendtime,
-				"softFirstpublishtime":trademark.softFirstpublishtime,
-				"softNum":trademark.softNum,
-				"softCertificatetime":trademark.softCertificatetime,
-				"softCost":trademark.softCost,
-				"softInvoiceper":trademark.softInvoiceper,
-				"softUpdatetime":trademark.softUpdatetime,
-				"softRemark":trademark.softRemark,
-				"softfile":"https://www.iv2018.cn/public/images/guestsImage/static/guste.jpg" */
-				"softDept":"sfgsdf",
-				"softCode":"sfgsdf",
-				"softName":"sfgsdf",
-				"softWriter":"sfgsdf",
-				"softAuthor":"sfgsdf",
-				"softAgency":"sfgsdf",
-				"softDevelopendtime":"sfgsdf",
-				"softFirstpublishtime":"sfgsdf",
-				"softNum":"sfgsdf",
-				"softCertificatetime":"sfgsdf",
-				"softCost":"sfgsdf",
-				"softInvoiceper":"sfgsdf",
-				"softUpdatetime":"sfgsdf",
-				"softRemark":"sfgsdf",
-				"softfile":"https://www.iv2018.cn/public/images/guestsImage/static/guste.jpg"
-				// 修改此输入框的value值，此value为测试值 softfile为测试自定义值，证明文件值
-			  });
+			
 			
 			  //多文件列表示例
 			  var demoListView = $('#demoList')
@@ -447,7 +441,7 @@ $("#upload").click(function(){
 		  title:"重新上传文件",
 		  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
 		  '<input type="file" name="file" id="path">'+
-		 /*  '<input type="hidden" name="id" id="id" value="'+id+'">'+ */
+		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })

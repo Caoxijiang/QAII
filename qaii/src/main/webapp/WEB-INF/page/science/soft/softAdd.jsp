@@ -24,7 +24,7 @@
 <body class="layui-layout-body" style="overflow:scroll">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
-	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>科研成果管理系统&nbsp;--&nbsp;软著信息添加页面</div>
+	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧科技管理系统&nbsp;--&nbsp;软著信息添加页面</div>
   </div>
   <div class="addBanner"></div><!--banner展示图-->
 <!--  表单元素-->

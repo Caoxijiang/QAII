@@ -1,5 +1,7 @@
 package com.qaii.domain;
 
+import java.util.List;
+
 public class Softwarecopyright {
     private Integer id;
 
@@ -30,8 +32,10 @@ public class Softwarecopyright {
     private String softUpdatetime;
 
     private String softRemark;
+    
+    private List<Softcopyrightfile> softFile;
 
-    public Integer getId() {
+	public Integer getId() {
         return id;
     }
 
@@ -150,4 +154,14 @@ public class Softwarecopyright {
     public void setSoftRemark(String softRemark) {
         this.softRemark = softRemark == null ? null : softRemark.trim();
     }
+
+	public List<Softcopyrightfile> getSoftFile() {
+		return softFile;
+	}
+
+	public void setSoftFile(List<Softcopyrightfile> softFile) {
+		this.softFile = softFile;
+	}
+    
+    
 }

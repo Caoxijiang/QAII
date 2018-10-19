@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>版权</title>
+  <title>软著</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
@@ -30,7 +30,7 @@
 <div class="tool">
 	<div class="layui-btn-group demoTable">
   	  <span class="limit">版权( <span id="countnum"> </span> )</span>
-		<a href="adddetail.do" target="_blank">
+		<a href="copyrightAdd.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -80,7 +80,7 @@
 	<div class="int-inline"><input id="softAuthor"  type="checkbox" value="著作权人" checked/><lable>著作权人</lable></div>
 	<div class="int-inline"><input id="softAgency"  type="checkbox" value="代理机构" checked/><lable>代理机构</lable></div>
 	<div class="int-inline"><input id="softDevelopendtime"  type="checkbox" value="创作完成日期" checked/><lable>创作完成日期</lable></div>
-	<div class="int-inline"><input id="softFirstpublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发表日期</lable></div>
+	<div class="int-inline"><input id="softFirstpublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发布日期</lable></div>
 	<div class="int-inline"><input id="softNum"  type="checkbox" value="登记日期" checked/><lable>登记日期</lable></div>
 	<div class="int-inline"><input id="softCertificatetime"  type="checkbox" value="费用（元）" checked/><lable>费用（元）</lable></div>
 	<div class="int-inline"><input id="softInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
@@ -91,10 +91,9 @@
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
- <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -110,7 +109,7 @@ layui.config({
 layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
 	 //监听表格复选框选择
-	console.log(JSON.stringify(obj.cache));
+	console.log("The obj data is "+JSON.stringify(obj.cache));
 	  
   //执行一个 table 实例
   table.render({
@@ -123,7 +122,7 @@ layui.use('table', function(obj){
     url: 'getAllSoftwareMsg.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{type:'checkbox',fixed: 'left'},
+    	{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
 		{field: 'softDept', title: '作品图样',fixed: 'left',width:150},
 		{field: 'softCode', title: '作品名称',fixed: 'left',width:150},
@@ -138,9 +137,7 @@ layui.use('table', function(obj){
 		{field: 'softInvoiceper', title: '发票收据-汇款人',sort: true,width:200},
 		{field: 'softUpdatetime', title: '状态',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
-    ]],
-    
-    
+    ]], 
 	  //表格数据
     data:obj.data,
     done: function(res, curr, count){
@@ -148,7 +145,6 @@ layui.use('table', function(obj){
         console.log(count+"总数");
         }
   });
-  //alert(JSON.stringify(obj.cache.testReload[0]))
  console.log(obj.cache)
 	//添加筛选功能
 	
@@ -231,6 +227,10 @@ layui.use('table', function(obj){
   				alert("搜索'名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="softAuthor"){
   				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softNum"){
+  				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="softCertificatetime"){
+  				alert("搜索'发证日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -257,14 +257,14 @@ layui.use('table', function(obj){
     console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
-		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
-     // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
+    	var iframesrc="copyrightCheck.do?userId='"+data.id+"'";
+    	$("body", parent.document).find('iframe').attr('src',iframesrc);
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"dellsoftMsg.do",
+          	url:"dellcopyrightMsg.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -276,61 +276,15 @@ layui.use('table', function(obj){
           		}else{
           			layer.alert("删除失败")
           		}
-          		
           	}
           }) 
-    	  
-    	  
-    	  
-    	  
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
         //向服务端发送删除指令
-        
-        
-        
-        
       });
     } else if(layEvent === 'edit'){
-      layer.alert(
-		  '<div class="layui-form-item">'+
-
-			'<label class="layui-form-label">角色</label>'+
-			'<div class="layui-input-block">'+
-				'<select name="interest" lay-filter="aihao">'+
-					'<option value=""></option>'+
-					'<option value="0">超级管理员</option>'+
-					'<option value="1" selected="">院级权限</option>'+
-					'<option value="2">人事部门权限</option>'+
-					'<option value="3">产业化处权限</option>'+
-					'<option value="4">科技管理处</option>'+
-				'</select>'+
-			'</div>'+
-		'</div>')
-    }else if(layEvent==="review"){
-    	 layer.confirm('确定离职信息', function(index){
-             let arr=data.id;
-             console.log(data) 
-             $.post({
-             	url:"dellempInfo.do",
-             	data:{
-             		"requestDate" : arr
-             	},
-             	success:function(data){
-             		if(data.data){
-             		    //删除对应行（tr）的DOM结构
-             			layer.alert("离职操作成功");
-             		}else{
-             			layer.alert("离职操作失败");
-             		}
-             		
-             	}
-             }) 
-       	  
-          // obj.del(); //删除对应行（tr）的DOM结构
-          // layer.close(index);
-           //向服务端发送删除指  
-         });
+    	var iframesrc="copyrightEdit.do?userId='"+data.id+"'";
+    	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }
   });
 
@@ -346,7 +300,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"dellsoftMsg.do",
+		  	url:"dellcopyrightMsg.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},

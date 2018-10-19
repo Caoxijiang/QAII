@@ -3,17 +3,13 @@ package com.qaii.controller;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -29,12 +25,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.qaii.domain.Softcopyrightfile;
 import com.qaii.domain.Softwarecopyright;
-import com.qaii.domain.Softwarecopyright;
-import com.qaii.domain.User;
+import com.qaii.service.SoftcopyrightfileService;
 import com.qaii.service.SoftwarecopyrightService;
 import com.qaii.util.AlertException;
-import com.qaii.util.CountDatetoNowDays;
 import com.qaii.util.CustomException;
 import com.qaii.util.JsonResult;
 import com.qaii.util.Layui;
@@ -44,7 +39,8 @@ public class SoftwareController {
 	
 	@Resource
 	private SoftwarecopyrightService softwareService;
-	
+	@Resource
+	private SoftcopyrightfileService softcopyrightfileService;
 	//文件路径
 	public final static String FILE_PATH= "C:/File/Software/";
 	//数据库中记录的路径
@@ -84,11 +80,23 @@ public class SoftwareController {
 	@ResponseBody
 	public JsonResult showSoftDetails(Softwarecopyright soft,HttpServletRequest req) {	
 		
-		int userid=Integer.parseInt(req.getParameter("userId"));
+		int userid=Integer.parseInt(req.getParameter("id"));
 		//soft.setId();
-		soft = softwareService.selectByPrimaryKey(userid);
+		soft = softwareService.selectFileMsg(userid);
 		return new JsonResult(soft);
 	}
+	
+//	//软著查看文件
+//	@RequestMapping(value="showSoftfileDetails.do",method=RequestMethod.POST)
+//	@ResponseBody
+//	public JsonResult showSoftfileDetails(List<Softcopyrightfile> soft,HttpServletRequest req) {	
+//		
+//		int userid=Integer.parseInt(req.getParameter("id"));
+//		//soft.setId();
+//		soft = softcopyrightfileService.listBysid(userid);
+//		soft.remove(0);
+//		return new JsonResult(soft);
+//	} 
 	
 	//修改软著信息功能
 	@RequestMapping(value="updatesofts.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
@@ -248,6 +256,7 @@ public class SoftwareController {
 		if (files != null && files.length < 0) {
 			throw new CustomException("请至少插入一个文件!");
 		}
+		Softcopyrightfile softfile=new Softcopyrightfile();
 		for (int i = 0; i < files.length; i++) {
 			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
 			 
@@ -261,22 +270,22 @@ public class SoftwareController {
 
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
-			String path = (i>0?(FILE_PATH + soft.getSoftName() + "/master/"):(FILE_PATH + soft.getSoftName() + "/other/"));
-			String dbpath=(i>0?(DATABASE_PATH + soft.getSoftName() + "/master/"):(DATABASE_PATH + soft.getSoftName() + "/other/"));
-			File destFile = new File(path + "/" + filename);
-
+			String path = (i>0?(FILE_PATH + soft.getSoftName() + "/other/"):(FILE_PATH + soft.getSoftName() + "/master/"));
+			String dbpath=(i>0?(DATABASE_PATH + soft.getSoftName() + "/other/"):(DATABASE_PATH + soft.getSoftName() + "/master/"));
+			File destFile = new File(path + filename);
+			softfile.setSid(soft.getId());
+			softfile.setStyle(i>0?"other":"master");
+			softfile.setFilename(name);
+			softfile.setPath(dbpath + filename);
+			
 			if (!destFile.getParentFile().exists()) {
 				destFile.getParentFile().mkdirs();
 			}
 			try {
 				// FileUtils.copyInputStreamToFile(files[i].getInputStream(), destFile);//
 				// 复制临时文件到指定目录下
-//				files[i].transferTo(destFile);
-//				img.setSid(stepid);
-//				img.setOid(oid);
-//				img.setPath(dbpath.toString()+"/"+filename.toString());
-//				img.setName(name);
-//				
+				files[i].transferTo(destFile);
+				softcopyrightfileService.insert(softfile);
 //				if(insertype.equals("insert")) {
 //					InsertGovfundprocessfile(img,result, destFile);
 //					result.put("code", "0");

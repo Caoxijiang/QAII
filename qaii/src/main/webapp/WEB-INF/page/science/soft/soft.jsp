@@ -111,7 +111,7 @@ layui.config({
 layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
 	 //监听表格复选框选择
-	console.log(JSON.stringify(obj.cache));
+	console.log("The obj data is "+JSON.stringify(obj.cache));
 	  
   //执行一个 table 实例
   table.render({
