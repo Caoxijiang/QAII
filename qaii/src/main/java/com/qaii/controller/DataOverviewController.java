@@ -234,8 +234,31 @@ public class DataOverviewController {
 	 *  @date 2018/10/11
 	 * */
 	
-	Map<String, List> DataTotal(){
-		return null;
+	@RequestMapping("DataTotal.do")
+	@ResponseBody
+	Map<String, List<Integer>> DataTotal(){
+		Map<String, List<Integer>> result = new HashMap<>();
+		List<Integer> applyList=new ArrayList<>();
+		List<Integer> rejectList=new ArrayList<>();
+		List<Integer> agencyList=new ArrayList<>();
+		List<Integer> authorizationList=new ArrayList<>();
+		applyList.add(patentService.countApplyNumber("外观设计专利"));
+		applyList.add(patentService.countApplyNumber("实用新型专利"));
+		applyList.add(patentService.countApplyNumber("发明专利"));
+		rejectList.add(patentService.countRejectNumber("外观设计专利"));
+		rejectList.add(patentService.countRejectNumber("实用新型专利"));
+		rejectList.add(patentService.countRejectNumber("发明专利"));
+		agencyList.add(patentService.countAgencyPatentByKey("外观设计专利"));
+		agencyList.add(patentService.countAgencyPatentByKey("实用新型专利"));
+		agencyList.add(patentService.countAgencyPatentByKey("发明专利"));
+		authorizationList.add(patentService.countAuthorizationPatentByKey("外观设计专利"));
+		authorizationList.add(patentService.countAuthorizationPatentByKey("实用新型专利"));
+		authorizationList.add(patentService.countAuthorizationPatentByKey("发明专利"));
+		result.put("apply", applyList);
+		result.put("reject", rejectList);
+		result.put("agency", agencyList);
+		result.put("authorization", authorizationList);
+		return result;
 		
 	}
 	

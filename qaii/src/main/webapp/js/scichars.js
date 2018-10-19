@@ -206,6 +206,19 @@ myChart.setOption(option);
 
 //数据总量
 var myChart2 = echarts.init(document.getElementById('totalData'));
+function gettotalData(){
+	var result=null;
+	$.ajax({
+		async:false,
+		type:"POST",
+		url:"DataTotal.do",
+		success:function(data){
+			result=data;
+		}
+	})
+	return result;
+}
+var totalData=gettotalData();
 var option2 = {
 	    tooltip : {
 	        trigger: 'axis',
@@ -285,7 +298,7 @@ var option2 = {
 	                    position: 'insideRight'
 	                }
 	            },
-	            data: [320, 302, 301, 334]
+	            data: [totalData.apply[0], totalData.agency[0], totalData.authorization[0], totalData.reject[0]]
 	        },
 	        {
 	            name: '实用新型专利',
@@ -297,7 +310,7 @@ var option2 = {
 	                    position: 'insideRight'
 	                }
 	            },
-	            data: [120, 132, 101, 134]
+	            data: [totalData.apply[1], totalData.agency[1], totalData.authorization[1], totalData.reject[1]]
 	        },
 	        {
 	            name: '发明专利',
@@ -309,7 +322,7 @@ var option2 = {
 	                    position: 'insideRight'
 	                }
 	            },
-	            data: [220, 182, 191, 234]
+	            data: [totalData.apply[2], totalData.agency[2], totalData.authorization[2], totalData.reject[2]]
 	        }
 	    ]
 	};
