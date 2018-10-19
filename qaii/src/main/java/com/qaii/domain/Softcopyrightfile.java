@@ -11,7 +11,13 @@ public class Softcopyrightfile {
 
     private String path;
 
-    public Integer getId() {
+    @Override
+	public String toString() {
+		return "Softcopyrightfile [id=" + id + ", sid=" + sid + ", style=" + style + ", filename=" + filename
+				+ ", path=" + path + "]";
+	}
+
+	public Integer getId() {
         return id;
     }
 

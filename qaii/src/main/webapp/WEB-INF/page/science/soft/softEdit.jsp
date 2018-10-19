@@ -37,7 +37,7 @@
 <div class="layui-container addtop"> 
 <input id="param" value='${param.userId}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
- <form class="layui-form" action="addEmpInfo.do" method="post" lay-filter="example">
+ <form class="layui-form" action="updatesofts.do" method="post" lay-filter="example">
 <!--  第一块内容-->
 	  <div class="layui-row">
 		<h1>软著基本信息</h1>
@@ -140,6 +140,7 @@
 				<div class="layui-input-block">
 					<div class="layui-upload">
 						<input type="text" name="softfile" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
+						<input id="fid" name='fid' type="hidden" />
 						<a class="layui-btn layui-btn-tired layui-btn-xs" id="softOnline">在线预览</a>
  						<a class="layui-btn layui-btn-xs" id="softDownload">下载</a>
  						<a class="layui-btn layui-btn-edit layui-btn-xs" id="upload">重新上传</a>
@@ -264,7 +265,8 @@ $.post({
                   "softInvoiceper":trademark.softInvoiceper,
                   "softUpdatetime":trademark.softUpdatetime,
                   "softRemark":trademark.softRemark,
-                  "softfile":trademark.softFile[0].path
+                  "softfile":trademark.softFile[0].path,
+                  "fid":trademark.softFile[0].id
                 // 修改此输入框的value值，此value为测试值 softfile为测试自定义值，证明文件值
               });
               var otherfile=trademark.softFile;
@@ -325,13 +327,15 @@ $.post({
 					}else if(obj.event === 'upload'){//文件重新上传
 						var address=data.path;
 						var id=data.id;
+						var softName=trademark.softName;
 					    layer.open({
 				    	  type:1,
 						  title:"重新上传文件",
-						  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
+						  content:'<form action="reUpOthersoftfile.do" method="post" enctype="multipart/form-data">'+
 						  '<input type="file" name="file" id="path">'+
 						  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 						  '<input type="hidden" name="address" id="address" value="'+address+'">'+
+						  '<input type="hidden" name="softName" id="softName" value="'+softName+'">'+
 						  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 						});
 					}//事件监听
@@ -436,12 +440,17 @@ $("#softDownload").click(function(){
 })
 //证明文件点击事件-重新上传
 $("#upload").click(function(){
+	var address=$('input[name="softfile"]').val();
+	var id=$('input[name="fid"]').val();
+	var softName=$('input[name="softName"]').val();
 	layer.open({
   	  type:1,
 		  title:"重新上传文件",
-		  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
+		  content:'<form action="reUpMastersoftfile.do" method="post" enctype="multipart/form-data">'+
 		  '<input type="file" name="file" id="path">'+
 		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
+		  '<input type="hidden" name="softName" id="softName" value="'+softName+'">'+
+		  '<input type="hidden" name="address" id="address" value="'+address+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })

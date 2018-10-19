@@ -18,4 +18,8 @@ public interface SoftcopyrightfileMapper {
     int updateByPrimaryKey(Softcopyrightfile record);
     
     List<Softcopyrightfile> listBysid(int sid);
+    
+    int updatePrimaryfile(Softcopyrightfile record);
+    
+    int updateOtherfileById(Softcopyrightfile record);
 }
