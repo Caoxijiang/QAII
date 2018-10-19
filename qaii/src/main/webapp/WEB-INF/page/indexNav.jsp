@@ -31,7 +31,7 @@
 			<div class="col-12">
 				<a href="#">
 					<div class="navbox">
-						<div class="navtitle">科研成果管理系统—青岛智能院</div>
+						<div class="navtitle">QAII智慧管理系统</div>
 						<div class="navcom">点击进入</div>
 					</div>
 				</a>
@@ -41,7 +41,7 @@
 			<div class="col-6">
 				<a href="personal.do">
 					<div class="navbox" style="margin-right: 80px;">
-						<div class="navtitle">科研成果管理系统—人教处</div>
+						<div class="navtitle">QAII智慧人事管理系统</div>
 						<div class="navcom">点击进入</div>
 					</div>
 				</a>
@@ -49,7 +49,7 @@
 			<div class="col-6">
 				<a href="indexScience.do">
 					<div class="navbox" style="margin-left: 80px;">
-						<div class="navtitle">科研成果管理系统—科技处</div>
+						<div class="navtitle">QAII智慧科技管理系统</div>
 						<div class="navcom">点击进入</div>
 					</div>
 				</a>

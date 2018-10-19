@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>科研成果管理系统</title>
+  <title>QAII智慧管理平台</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
   <link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css" />
@@ -19,7 +19,7 @@
 <div class="layui-layout layui-layout-admin">
 <!-- 头部区域（可配合layui已有的水平导航） -->
   <div class="layui-header">
-	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>科研成果管理系统&nbsp;--&nbsp;人员信息添加页面</div>
+	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧人事管理系统&nbsp;--&nbsp;版权信息添加页面</div>
   </div>
   <!-- 头部区域（可配合layui已有的水平导航） -->
   <div class="addBanner"></div><!--banner展示图-->
@@ -30,7 +30,7 @@
   	
 	  <div class="layui-row">
 		<div class="layui-col-md6">
-			<h1>个人基本信息</h1>
+			<h1>版权基本信息</h1>
 		  	<div class="layui-row">
 				<div class="layui-col-md6">
 					<div class="layui-form-item">
