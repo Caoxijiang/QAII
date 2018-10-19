@@ -100,9 +100,13 @@ public class SoftwareController {
 	
 	//修改软著信息功能
 	@RequestMapping(value="updatesofts.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public String updatesofts(Softwarecopyright soft,HttpServletRequest req){	
+	@ResponseBody
+	public String updatesofts(Softwarecopyright soft,
+			HttpServletRequest req,
+			@RequestParam("file") MultipartFile[] files) throws CustomException{	
 		loadData(req, soft);
 		int row =softwareService.updateSoft(soft);
+		updateSoftwarefile(files,soft);
 		if(row>=1) {
 			//String data="更新成功";
 			 return "page/science/add-succesd";
@@ -304,4 +308,77 @@ public class SoftwareController {
 			}
 		}
 	}
+	
+	//其他文件重新上传文件信息
+	@RequestMapping(value="reUpOthersoftfile.do")
+	@ResponseBody
+	void reUpOthersoftfile(HttpServletRequest req,
+			Softcopyrightfile softfile,
+			@RequestParam("file") MultipartFile files) throws CustomException {
+		String softName=req.getParameter("softName");
+		softfile.setId(Integer.parseInt(req.getParameter("id")));
+		softfile.setFilename(files.getOriginalFilename());
+		try {
+			File file = new File(FILE_PATH+req.getParameter("address"));
+			if (file.exists()) {
+				file.delete();
+			}
+			//文件后缀
+			String type = files.getOriginalFilename().substring(files.getOriginalFilename().lastIndexOf("."));
+			//新的文件名
+			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+			String filename = uuid + type;
+			//文件的本地绝对路径
+			String filepath=FILE_PATH + softName + "/other/" + filename;
+			//文件存放于数据库中的相对路径
+			String dbpath=DATABASE_PATH + softName + "/other/" + filename;
+			softfile.setPath(dbpath);
+			file=new File(filepath);
+			if (!file.getParentFile().exists()) {
+				file.getParentFile().mkdirs();
+			}
+			files.transferTo(file);
+			softcopyrightfileService.updateOtherfileById(softfile);
+			
+		}catch(Exception e){
+			throw new CustomException("重新上传失败!");
+		}	
+	}
+	
+	//证明文件重新上传
+	@RequestMapping(value="reUpMastersoftfile.do")
+	@ResponseBody
+	void reUpMastersoftfile(HttpServletRequest req,
+			Softcopyrightfile softfile,
+			@RequestParam("file") MultipartFile files) throws CustomException {
+		String softName=req.getParameter("softName");
+		softfile.setId(Integer.parseInt(req.getParameter("id")));
+		softfile.setFilename(files.getOriginalFilename());
+		try {
+			File file = new File(FILE_PATH+req.getParameter("address"));
+			if (file.exists()) {
+				file.delete();
+			}
+			//文件后缀
+			String type = files.getOriginalFilename().substring(files.getOriginalFilename().lastIndexOf("."));
+			//新的文件名
+			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+			String filename = uuid + type;
+			//文件的本地绝对路径
+			String filepath=FILE_PATH + softName + "/master/" + filename;
+			//文件存放于数据库中的相对路径
+			String dbpath=DATABASE_PATH + softName + "/master/" + filename;
+			softfile.setPath(dbpath);
+			file=new File(filepath);
+			if (!file.getParentFile().exists()) {
+				file.getParentFile().mkdirs();
+			}
+			files.transferTo(file);
+			softcopyrightfileService.updateOtherfileById(softfile);
+			
+		}catch(Exception e){
+			throw new CustomException("重新上传失败!");
+		}	
+	}
+	
 }

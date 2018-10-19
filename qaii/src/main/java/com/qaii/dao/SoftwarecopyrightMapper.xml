@@ -348,7 +348,7 @@
     <result column="soft_UpdateTime" jdbcType="VARCHAR" property="softUpdatetime" />
     <result column="soft_Remark" jdbcType="VARCHAR" property="softRemark" />
     <collection property="softFile" javaType="java.util.List" ofType="com.qaii.domain.Softcopyrightfile">
-        <id column="id" property="id" jdbcType="INTEGER" />
+        <id column="fid" property="id" jdbcType="INTEGER" />
         <id column="sid" property="sid" jdbcType="INTEGER"/>
         <id column="style" property="style" jdbcType="VARCHAR"/>
         <id column="filename" property="filename" jdbcType="VARCHAR"/>
@@ -356,6 +356,6 @@
     </collection>
   </resultMap>
   <select id="selectFileMsg" resultMap="MultiTableResultMap" parameterType="int">
-    SELECT a.*, b.* FROM sci_softwarecopyright AS a LEFT JOIN sci_softwarecopyrightfile AS b ON b.sid = a.id WHERE a.id=#{0}
+    SELECT a.*, b.id AS fid ,b.sid,b.style,b.filename,b.path FROM sci_softwarecopyright AS a LEFT JOIN sci_softwarecopyrightfile AS b ON b.sid = a.id WHERE a.id=#{0}
   </select>
 </mapper>

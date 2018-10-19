@@ -27,4 +27,10 @@ public class SoftcopyrightfileServiceImpl implements SoftcopyrightfileService {
 		return mapper.listBysid(sid);
 	}
 
+	@Override
+	public int updateOtherfileById(Softcopyrightfile record) {
+		// TODO Auto-generated method stub
+		return mapper.updateOtherfileById(record);
+	}
+
 }
