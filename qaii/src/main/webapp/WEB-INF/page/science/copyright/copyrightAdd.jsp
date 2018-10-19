@@ -27,41 +27,31 @@
 <div class="layui-container">
   <form class="layui-form" action="addEmpInfo.do" method="post">
 <!--  第一块内容-->
-  	
 	  <div class="layui-row">
 		<div class="layui-col-md6">
 			<h1>版权基本信息</h1>
 		  	<div class="layui-row">
 				<div class="layui-col-md6">
 					<div class="layui-form-item">
-						<label class="layui-form-label">姓名&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">作品名称&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">婚姻状况&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
-								<option value="">   </option>
-								<option value="1">未婚</option>
-								<option value="2">已婚</option>
-							</select>
+						<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
+						<div class="layui-input-block"> 
+							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">政治面貌&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<select name="empPoliticallandscape" lay-verify="required" lay-search="" class="input">
-								<option value="">   </option>
-								<option value="1">党员</option>
-								<option value="2">团员</option>
-								<option value="3">群众</option>
-							</select>
+							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">联系电话&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
 						</div>
@@ -69,53 +59,32 @@
 				</div>
 			    <div class="layui-col-md6">
 					<div class="layui-form-item">
-						<label class="layui-form-label">性别&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<select name="empGender" lay-verify="required" lay-search="" class="input">
-								<option value="">   </option>
-								<option value="1">男</option>
-								<option value="2">女</option>
-							</select>
+							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">工号&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empNum"  lay-verify="required" autocomplete="off"  class="layui-input input">
-						</div>
+						<label class="layui-form-label">创作完成日期&nbsp;<span class="star">*</span></label>
+						  <div class="layui-input-block">
+							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1">
+						  </div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">民族&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empEthnic"  lay-verify="required" autocomplete="off"  class="layui-input input">
-						</div>
+						<label class="layui-form-label">首次发布日期&nbsp;<span class="star">*</span></label>
+						  <div class="layui-input-block">
+							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-2">
+						  </div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">紧急联系人及联系方式&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empEmergencycontactandphone" lay-verify="required" autocomplete="off"  class="layui-input input">
-						</div>
-					</div>
-				</div>
-	    		 <div class="layui-col-md12">
-					<div class="layui-form-item">
-						<label class="layui-form-label">户口所在地&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empAccountaddress"  lay-verify="required" autocomplete="off"  class="layui-input input">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">家庭住址&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empHomeaddress" lay-verify="required" autocomplete="off"  class="layui-input input">
-						</div>
+						<label class="layui-form-label">登记日期&nbsp;<span class="star">*</span></label>
+						  <div class="layui-input-block">
+							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-3">
+						  </div>
 					</div>
 				</div>
 		    </div>
-		  	
-		 
 		</div>
-		
 		<div class="layui-col-md6">
 <!--	  图片上传-->
 			<div class="layui-upload" style="text-align: center;padding-top:10px;">
@@ -126,268 +95,38 @@
 				<input name="imageVal" type="hidden"></input>
 				<button type="button" class="layui-btn" id="imgload">上传图片</button>
 			</div> 
-			
-			 <h1>信息备注</h1> 
-			 <div class="layui-row">
-				<div class="layui-col-md6">
-					<div class="layui-form-item">
-						<label class="layui-form-label">身份证号&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empIdcard" lay-verify="required" autocomplete="off"  class="layui-input input">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">身份证到期时间&nbsp;<span class="star">*</span></label>
-						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1">
-						  </div>
-					</div>
-				</div>
-				<div class="layui-col-md6">
-					<div class="layui-form-item">
-						<label class="layui-form-label">试用期结束日期</label>
-						  <div class="layui-input-block">
-							<input type="text" name="empTryoutendtime" class="layui-input input" id="test2-2">
-						  </div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">合同期满时间</label>
-						  <div class="layui-input-block">
-							<input type="text" name="empContractendtime" class="layui-input input" id="test2-3">
-						  </div>
-					</div>
-				</div>
-			</div>
 		</div>
 	  </div>
    <!--  第一块内容-->
    <!--  第二块内容-->
-   <h1>教育背景</h1>
+   <h1>版权费用信息</h1>
 	  <div class="layui-row bgf7f8f8">
-			
-				<div class="layui-col-md3">
-					<div class="layui-form-item">
-						<label class="layui-form-label">第一学历&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					
-					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历</label>
-						<div class="layui-input-block">
-							<input type="text" name="empSecondeducation" lay-verify="title" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历</label>
-						<div class="layui-input-block">
-							<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" class="layui-input input">
-						</div>
+			<div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">费用（元）&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
-			    <div class="layui-col-md3">
-					<div class="layui-form-item">
-						<label class="layui-form-label">第一学历毕业学校&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empFirsteducationschool" lay-verify="required"  lay-verify="title" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历毕业学校</label>
-						<div class="layui-input-block">
-							<input type="text" name="empSecondeducationschool" lay-verify="title" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历毕业学校</label>
-						<div class="layui-input-block">
-							<input type="text" name="empThirdeducationschool" lay-verify="title" autocomplete="off" class="layui-input input">
-						</div>
+			</div>
+			<div class="layui-col-md4">	
+				<div class="layui-form-item">
+					<label class="layui-form-label">发票收据-汇款人</label>
+					<div class="layui-input-block">
+						<input type="text" name="empSecondeducation" lay-verify="title" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
-   		 		<div class="layui-col-md3">
-					<div class="layui-form-item">
-						<label class="layui-form-label">第一学历专业&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empFirsteducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					
-					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历专业</label>
-						<div class="layui-input-block">
-							<input type="text" name="empSecondeducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历专业</label>
-						<div class="layui-input-block">
-							<input type="text" name="empThirdeducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
-						</div>
+			</div>
+			<div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">状态</label>
+					<div class="layui-input-block">
+						<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
-   		 		<div class="layui-col-md3">
-					<div class="layui-form-item">
-						  <label class="layui-form-label">第一学历毕业时间&nbsp;<span class="star">*</span></label>
-						  <div class="layui-input-block">
-							<input type="text" name="empFirstgraduationtime" class="layui-input input" id="test1-1">
-						  </div>
-					</div>
-					<div class="layui-form-item">
-						  <label class="layui-form-label">第二学历毕业时间</label>
-						  <div class="layui-input-block">
-							<input type="text" name="empSecondgraduationtime" class="layui-input input" id="test1-2">
-						  </div>
-					</div>
-					<div class="layui-form-item">
-						  <label class="layui-form-label">第三学历毕业时间</label>
-						  <div class="layui-input-block">
-							<input type="text" name="empThirdgraduationtime" class="layui-input input" id="test1-3">
-						  </div>
-					</div>
-				</div>
-    		 
-	    		 
-		    </div>
-		  	
-		 
-   <!--  第二块内容-->
-     <!--  第三块内容-->
-     <h1>工作信息</h1>
-	  <div class="layui-row">
-				<div class="layui-col-md4">
-					<div class="layui-form-item">
-						<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<select name="empDept" lay-verify="required" lay-search="" id="deptt" class="input">
-								
-							</select>
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">职务&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empPosition" lay-verify="required" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						  <label class="layui-form-label">入职时间</label>
-						  <div class="layui-input-block">
-							<input type="text" name="empInductiontime" class="layui-input input" id="test2">
-						  </div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">聘期</label>
-						<div class="layui-input-block">
-							<select name="empHireStarttime" lay-search="" class="input">
-								<option value="">   </option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select>
-						</div>
-					</div>
-					
-					
-					<div class="layui-form-item">
-						<label class="layui-form-label">编制</label>
-						<div class="layui-input-block">
-							<select name="empCompile" lay-search="" class="input">
-								<option value="">  </option>
-								<option value="1">是</option>
-								<option value="2">否</option>
-							</select>
-						</div>
-					</div>
-				</div>
-			    <div class="layui-col-md4">
-			    	<div class="layui-form-item">
-						<label class="layui-form-label">用工形式&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<select name="empWorktype" lay-verify="required" lay-search="" class="input">
-								<option value="">   </option>
-								<option value="1">全职</option>
-								<option value="2">兼职</option>
-							</select>
-						</div>
-					</div>
-			    	<div class="layui-form-item">
-						<label class="layui-form-label">职称名称</label>
-						<div class="layui-input-block">
-							<input type="text" name="empJobtitle" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					
-					<div class="layui-form-item">
-						<label class="layui-form-label">职称等级</label>
-						<div class="layui-input-block">
-							<input type="text" name="empJobtitlelevel" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						  <label class="layui-form-label">职称取得时间</label>
-						  <div class="layui-input-block">
-							<input type="text" name="empJobtitleobtaintime" class="layui-input input" id="test1">
-						  </div>
-					</div>
-					
-					
-				</div>
-   		 		<div class="layui-col-md4">
-   		 			<div class="layui-form-item">
-						<label class="layui-form-label">合同签订次数&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="number" name="empContractsignednum" lay-verify="required"  autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">档案所在地&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="empFileaddress" lay-verify="required" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
-					
-					
-					<div class="layui-form-item">
-						<label class="layui-form-label">是否留学归国人员</label>
-						<div class="layui-input-block">
-							<select name="empReturnee" lay-search="" class="input">
-								<option value="">   </option>
-								<option value="1">是</option>
-								<option value="2">否</option>
-							</select>
-						</div>
-					</div>
-					
-					<div class="layui-form-item">
-						<label class="layui-form-label">是否外籍人员</label>
-						<div class="layui-input-block">
-							<select name="empForeign" lay-search="" class="input">
-								<option value="">  </option>
-								<option value="1">是</option>
-								<option value="2">否</option>
-							</select>
-						</div>
-					</div>
-				</div>
-			<!--   文本框-->
-				<div class="layui-col-md12">
-					<div class="layui-form-item layui-form-text">
-						<label class="layui-form-label">备注</label>
-						<div class="layui-input-block">
-							<textarea name="empRemarks" class="layui-textarea"></textarea>
-						</div>
-					</div>
-		  		</div>
-			<!--   文本框-->
-					
-	    		 
-		    </div>
-		  	
-		 
+			</div> 
+	</div>
+	 
    <!--  第三块内容-->
 
    <div class="layui-row">
