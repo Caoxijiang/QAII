@@ -119,6 +119,11 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		// TODO Auto-generated method stub
 		return empinfoService.getallinjobEmp();
 	}
+	@Override
+	public List<EmpInfo> findTimpEMpinfo(String startTime, String endTime) {
+		// TODO Auto-generated method stub
+		return empinfoService.findTimpEMpinfo(startTime, endTime);
+	}
 
 
 

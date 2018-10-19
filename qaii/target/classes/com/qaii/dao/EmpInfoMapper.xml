@@ -638,4 +638,7 @@
  	<select id="getallinjobEmp" resultMap="BaseResultMap">
  		SELECT * from emp_info WHERE emp_stat='1' AND emp_reviewStatus='通过'
  	</select>
+ 	<select id="findTimpEMpinfo" resultMap="BaseResultMap" parameterType="java.lang.String">
+ 		select * from emp_info WHERE emp_inductionTime &gt;=#{0} and emp_inductionTime &lt;=#{1} and emp_stat='1' AND emp_reviewStatus='通过'
+ 	</select>
 </mapper>
