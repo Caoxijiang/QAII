@@ -259,7 +259,6 @@ public class DataOverviewController {
 		result.put("agency", agencyList);
 		result.put("authorization", authorizationList);
 		return result;
-		
 	}
 	
 }
