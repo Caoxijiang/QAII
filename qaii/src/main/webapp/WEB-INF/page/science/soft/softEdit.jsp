@@ -35,15 +35,15 @@
 	</button>		
 </div>
 <div class="layui-container addtop"> 
-<input id="param" value='${param.userId}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
- <form class="layui-form" action="updatesofts.do" method="post" lay-filter="example">
+ <form class="layui-form" action="updatesofts.do" method="post" lay-filter="example" enctype="multipart/form-data">
 <!--  第一块内容-->
 	  <div class="layui-row">
 		<h1>软著基本信息</h1>
 	  	<div class="layui-row">
 			<div class="layui-col-md4">
 				<div class="layui-form-item">
+				<input id="id" value='${param.id}' name="id" type="hidden" />
 					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<select name="softDept" lay-verify="required" lay-search="" id="deptt" class="input">
@@ -251,6 +251,7 @@ $.post({
 			//文件表格展示
             let trademark=data.data;
               form.val('example', {
+            	  "id":trademark.id,
                   "softDept":trademark.softDept,
                   "softCode":trademark.softCode,
                   "softName":trademark.softName,
