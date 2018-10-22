@@ -527,7 +527,75 @@ $("#searchtime").click(function(){
 			endTime:time2
 		},
 		success:function(data){
-			console.log("lllll"+JSON.stringify(data))
+			console.log("lllll"+JSON.stringify(data));
+			layui.use('table', function(){
+				  var table = layui.table;
+				  //第一个实例
+				  table.render({
+				   elem: '#testTable',
+					page: false,
+					method:'post',
+					limit:9999999,//不设置分页，最大数据量为9999999
+					id: 'testReload'
+				    /* ,height: 312 */
+				    ,url: 'findTimpEMpinfo.do?startTime='+time1+'&endTime='+time2
+				    ,cellMinWidth: 60 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+				    ,cols: [[ //标题栏
+						{type:'checkbox',fixed: 'left'},
+						{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:60},
+						{field: 'empNum', title: '工号',fixed: 'left',width:70},
+						{field: 'empName', title: '姓名',fixed: 'left',width:150},
+						{field: 'empGender', title: '性别',sort: true,width:80},
+						{field: 'empDept', title: '部门',sort: true,width:200},
+						{field: 'empPosition', title: '职务',sort: true,width:150},
+						{field: 'empHireStarttime', title: '聘期',sort: true,width:80},
+						{field: 'empIdcard', title: '身份证号',width:220},
+						{field: 'empIdcardEndtime', title: '身份证到期时间',sort: true,width:200},
+						{field: 'empEthnic', title: '民族',sort: true,width:80},
+						{field: 'empPoliticallandscape', title: '政治面貌',sort: true,width:150},
+						{field: 'empMaritalstatus', title: '婚姻状况',sort: true,width:150},
+						
+						{field: 'empFirsteducation', title: '第一学历',sort: true,width:200},
+						{field: 'empFirsteducationschool', title: '第一学历学校',sort: true,width:200},
+						{field: 'empFirsteducationpro', title: '第一学历专业',sort: true,width:200},
+						{field: 'empFirstgraduationtime', title: '第一学历毕业时间',sort: true,width:230},
+						{field: 'empSecondeducation', title: '第二学历',sort: true,width:200},
+						{field: 'empSecondeducationschool', title: '第二学历学校',sort: true,width:200},
+						{field: 'empSecondeducationpro', title: '第二学历专业',sort: true,width:200},
+						{field: 'empSecondgraduationtime', title: '第二学历毕业时间',sort: true,width:230},
+						{field: 'empThirdeducation', title: '第三学历',sort: true,width:200},
+						{field: 'empThirdeducationschool', title: '第三学历学校',sort: true,width:200},
+						{field: 'empThirdeducationpro', title: '第三学历专业',sort: true,width:200},
+						{field: 'empThirdgraduationtime', title: '第三学历毕业时间',sort: true,width:230},
+
+						{field: 'empJobtitle', title: '职称名称',sort: true,width:200},
+						{field: 'empJobtitlelevel', title: '职称等级',sort: true,width:200},
+						{field: 'empJobtitleobtaintime', title: '职称取得时间',sort: true,width:200},
+						
+						{field: 'empPhone', title: '联系电话',width:200},
+						{field: 'empEmergencycontactandphone', title: '紧急联系人及联系方式',width:250},
+						{field: 'empFileaddress', title: '档案所在地',sort: true,width:200},
+						{field: 'empAccountaddress', title: '户口所在地',sort: true,width:200},
+						{field: 'empHomeaddress', title: '家庭住址',sort: true,width:250},
+						{field: 'empWorktype', title: '用工形式',sort: true,width:200},
+						{field: 'empCompile', title: '编制',sort: true,width:100},
+						{field: 'empInductiontime', title: '入职时间',sort: true,width:200},
+						{field: 'empTryoutendtime', title: '试用期结束日期',sort: true,width:200},
+						{field: 'empContractendtime', title: '合同期满日期',sort: true,width:200},
+						{field: 'empContractsignednum', title: '合同签订次数',sort: true,width:200},
+						{field: 'empReturnee', title: '是否留学归国人员',sort: true,width:230},
+						{field: 'empForeign', title: '是否外籍人员',sort: true,width:200},
+						{field: 'empRemarks', title: '备注',sort: true,width:200},
+						{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
+				    ]],
+				  data:data,
+				    done: function(res, curr, count){
+				      $("#countnum").html(count);
+				        console.log(count+"总数");
+				        }
+				  });
+				  
+				});
 		}
 	})
 	

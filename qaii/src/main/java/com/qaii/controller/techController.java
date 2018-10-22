@@ -366,7 +366,22 @@ public class techController {
 	//论文
 	@RequestMapping("paper.do")
 	public String paper(){
-		return "page/science/paper";
+		return "page/science/paper/paper";
+	}
+	//论文添加
+	@RequestMapping("paperAdd.do")
+	public String paperAddr(){
+		return "page/science/paper/paperAdd";
+	}
+	//论文修改
+	@RequestMapping("paperEdit.do")
+	public String paperEdit(){
+		return "page/science/paper/paperEdit";
+	}
+	//论文查看详情
+	@RequestMapping("paperCheck.do")
+	public String paperCheck(){
+		return "page/science/paper/paperCheck";
 	}
 	//著作
 	@RequestMapping("work.do")
