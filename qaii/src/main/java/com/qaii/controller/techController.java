@@ -386,6 +386,21 @@ public class techController {
 	//著作
 	@RequestMapping("work.do")
 	public String work(){
-		return "page/science/work";
+		return "page/science/work/work";
+	}
+	//著作添加
+	@RequestMapping("workAdd.do")
+	public String workAdd(){
+		return "page/science/work/workAdd";
+	}
+	//著作查看详情
+	@RequestMapping("workCheck.do")
+	public String workCheck(){
+		return "page/science/work/workCheck";
+	}
+	//著作修改
+	@RequestMapping("workEdit.do")
+	public String workEdit(){
+		return "page/science/work/workEdit";
 	}
 }
