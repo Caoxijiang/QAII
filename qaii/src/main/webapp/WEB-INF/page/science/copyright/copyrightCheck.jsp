@@ -38,7 +38,8 @@
 <input id="param" value='${param.userId}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
  <form class="layui-form" action="addEmpInfo.do" method="post" lay-filter="example">
-<div class="layui-row">
+<!--  第一块内容-->
+	  <div class="layui-row">
 		<div class="layui-col-md6">
 			<h1>版权基本信息</h1>
 		  	<div class="layui-row">
@@ -46,25 +47,25 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">作品名称&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block"> 
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+							<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
 						</div>
 					</div>
 				</div>
@@ -72,25 +73,25 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">创作完成日期&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1">
+							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1" disabled="">
 						  </div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">首次发布日期&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-2">
+							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-2" disabled="">
 						  </div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">登记日期&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-3">
+							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-3" disabled="">
 						  </div>
 					</div>
 				</div>
@@ -104,7 +105,6 @@
 					<p id="demoText"></p>
 				</div>
 				<input name="imageVal" type="hidden"></input>
-				<button type="button" class="layui-btn" id="imgload">上传图片</button>
 			</div> 
 		</div>
 	  </div>
@@ -116,7 +116,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">费用（元）&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" class="layui-input input">
+						<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -124,7 +124,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">发票收据-汇款人</label>
 					<div class="layui-input-block">
-						<input type="text" name="empSecondeducation" lay-verify="title" autocomplete="off" class="layui-input input">
+						<input type="text" name="empSecondeducation" lay-verify="title" autocomplete="off" class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -132,13 +132,11 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">状态</label>
 					<div class="layui-input-block">
-						<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" class="layui-input input">
+						<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div> 
 	</div>
-	 
-   <!--  第三块内容-->
  </form>
   <div class="layui-row">
    	   <div class="layui-col-md12">
@@ -257,9 +255,9 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
 	
 
 //证明文件点击事件-在线预览
-$("#softOnline").click(function(){
+$("#copyrightOnline").click(function(){
 	/* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
-	var address=$('input[name="softfile"]').val();
+	var address=$('input[name="copyrightfile"]').val();
 	var reg1=new RegExp("jpg","i");
 	var reg2=new RegExp("pdf","i");
 	var reg3=new RegExp("png","i");
@@ -271,8 +269,8 @@ $("#softOnline").click(function(){
 	};
 })
 //证明文件点击事件-下载
-$("#softDownload").click(function(){
-	var address=$('input[name="softfile"]').val();
+$("#copyrightDownload").click(function(){
+	var address=$('input[name="copyrightfile"]').val();
 	/* download(ops+address); */
 	download(address);
 })

@@ -537,7 +537,7 @@ $("#searchtime").click(function(){
 					method:'post',
 					limit:9999999,//不设置分页，最大数据量为9999999
 					id: 'testReload'
-				    ,height: 312
+				    /* ,height: 312 */
 				    ,url: 'findTimpEMpinfo.do?startTime='+time1+'&endTime='+time2
 				    ,cellMinWidth: 60 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
 				    ,cols: [[ //标题栏
