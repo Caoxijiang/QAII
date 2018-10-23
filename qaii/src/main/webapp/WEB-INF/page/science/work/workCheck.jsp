@@ -27,10 +27,10 @@
 	<div class="techadd">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">软著&nbsp;—&nbsp;查看详情界面</span>
+		<span class="blue">著作&nbsp;—&nbsp;查看详情界面</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('soft.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('work.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -39,109 +39,97 @@
 <!-- 采用表格内直接行结构  -->
  <form class="layui-form" action="addEmpInfo.do" method="post" lay-filter="example">
 <!--  第一块内容-->
-	  <div class="layui-row">
-		<h1>软著基本信息</h1>
+	 <div class="layui-row">
+		<h1>著作基本信息</h1>
 	  	<div class="layui-row">
-			<div class="layui-col-md4">
+			<div class="layui-col-md12">
 				<div class="layui-form-item">
-					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">题目&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="softDept" lay-verify="required" lay-search="" id="deptt" class="input" disabled="">
-							
-						</select>
+						<input type="text" name="workCode" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
 					</div>
 				</div>
+			</div>
+		    <div class="layui-col-md8">
 				<div class="layui-form-item">
-					<label class="layui-form-label">编号&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCode" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">名称&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softName" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">软件开发者&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softWriter" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softAuthor" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
+						<input type="text" name="workAgency" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div>
 		    <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softAgency" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">开发完成日期&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">类型&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="softDevelopendtime" class="layui-input input" id="test1" disabled="">
+						<input type="text" name="workDevelopendtime" class="layui-input input" id="test1" disabled="">
 					  </div>
 				</div>
+			</div>
+		    <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">首次发表日期&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">出版社&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="softFirstpublishtime" class="layui-input input" id="test2" disabled="">
+						<input type="text" name="workFirstpublishtime" class="layui-input input" id="test2" disabled="">
 					  </div>
 				</div>
+			</div>
+		    <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">ISBN&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+						<input type="text" name="workNum" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div>
     		<div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">发证日期&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="softCertificatetime" class="layui-input input" id="test3" disabled="">
-					  </div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">费用&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+						<select name="workDept" lay-verify="required" lay-search="" id="deptt" class="input" disabled="">
+							
+						</select>
 					</div>
 				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softInvoiceper" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">状态更新日期&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="softUpdatetime" class="layui-input input" id="test4" disabled="">
-					  </div>
-				</div>
-		   </div>
+			</div>
 	    </div>		 
 	  </div>
    <!--  第一块内容-->
    <!--  第二块内容-->
-   <h1>软著相关文件</h1>
+   <h1>著作相关文件</h1>
 	  <div class="layui-row bgf7f8f8">	
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
-				<label class="layui-form-label">证明文件&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">封面&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
-						<input type="text" name="softfile" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
-						<a class="layui-btn layui-btn-edit layui-btn-xs" id="softOnline">在线预览</a>
-				  		<a class="layui-btn layui-btn-xs layui-btn-tired" id="softDownload" >下载</a>
+						<input type="text" name="workfile" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
+						<a class="layui-btn layui-btn-edit layui-btn-xs" id="workOnline">在线预览</a>
+				  		<a class="layui-btn layui-btn-xs layui-btn-tired" id="workDownload" >下载</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-col-md12">
+			<div class="layui-form-item">
+				<label class="layui-form-label">目录&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<div class="layui-upload">
+						<input type="text" name="workfile2" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
+						<a class="layui-btn layui-btn-edit layui-btn-xs" id="workOnline2">在线预览</a>
+				  		<a class="layui-btn layui-btn-xs layui-btn-tired" id="workDownload2" >下载</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-col-md12">
+			<div class="layui-form-item">
+				<label class="layui-form-label">首页&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<div class="layui-upload">
+						<input type="text" name="workfile3" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
+						<a class="layui-btn layui-btn-edit layui-btn-xs" id="workOnline3">在线预览</a>
+				  		<a class="layui-btn layui-btn-xs layui-btn-tired" id="workDownload3" >下载</a>
 					</div>
 				</div>
 			</div>
@@ -160,25 +148,13 @@
 				</div>
 			</div>
 		</div>
-    </div>	 
-     <!--  第三块内容-->
-     <h1>备注信息</h1>
-	  <div class="layui-row">
-		<div class="layui-col-md12">
-			<div class="layui-form-item layui-form-text">
-				<!-- <label class="layui-form-label">备注</label> -->
-				<div class="layui-input-block">
-					<textarea name="softRemark" class="layui-textarea" disabled=""></textarea>
-				</div>
-			</div>
-  		</div>		 
-	</div>	 
+    </div>	 	 
  </form>
   <div class="layui-row">
    	   <div class="layui-col-md12">
 		   <div class="layui-form-item">
 			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" onclick="srchange('soft.do')">返回</button>
+			  <button class="layui-btn" onclick="srchange('work.do')">返回</button>
 			</div>
 		  </div>
   		</div>
@@ -199,7 +175,7 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
 	 //文件表格展示
        if(id!=null){
             $.post({
-                url:"showSoftDetails.do",
+                url:"showworkDetails.do",
                 data:{
                     id:id
                 },
@@ -214,33 +190,33 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                         /* console.log("afd"+JSON.stringify(trademark)); */
                         //表单初始赋值 从表单中提取数据
                           form.val('example', {
-                            "softDept":trademark.softDept,
-                            "softCode":trademark.softCode,
-                            "softName":trademark.softName,
-                            "softWriter":trademark.softWriter,
-                            "softAuthor":trademark.softAuthor,
-                            "softAgency":trademark.softAgency,
-                            "softDevelopendtime":trademark.softDevelopendtime,
-                            "softFirstpublishtime":trademark.softFirstpublishtime,
-                            "softNum":trademark.softNum,
-                            "softCertificatetime":trademark.softCertificatetime,
-                            "softCost":trademark.softCost,
-                            "softInvoiceper":trademark.softInvoiceper,
-                            "softUpdatetime":trademark.softUpdatetime,
-                            "softRemark":trademark.softRemark,
-                            "softfile":trademark.softFile[0].path
-                            // 修改此输入框的value值，此value为测试值 softfile为测试自定义值，证明文件值
+                            "workDept":trademark.workDept,
+                            "workCode":trademark.workCode,
+                            "workName":trademark.workName,
+                            "workWriter":trademark.workWriter,
+                            "workAuthor":trademark.workAuthor,
+                            "workAgency":trademark.workAgency,
+                            "workDevelopendtime":trademark.workDevelopendtime,
+                            "workFirstpublishtime":trademark.workFirstpublishtime,
+                            "workNum":trademark.workNum,
+                            "workCertificatetime":trademark.workCertificatetime,
+                            "workCost":trademark.workCost,
+                            "workInvoiceper":trademark.workInvoiceper,
+                            "workUpdatetime":trademark.workUpdatetime,
+                            "workRemark":trademark.workRemark,
+                            "workfile":trademark.workFile[0].path
+                            // 修改此输入框的value值，此value为测试值 workfile为测试自定义值，证明文件值
                           });
                           var domain = window.location.host;
                           var url =data.data.url;
                           var imgpath=domain+url;
-                          var otherfile=trademark.softFile;
+                          var otherfile=trademark.workFile;
                           otherfile.splice(0,1);
                           $("#demo1").attr("src","https://"+imgpath);
                         //文件表格展示
                           table.render({
                            elem: '#demo'
-                           //,url: 'showSoftfileDetails.do'
+                           //,url: 'showworkfileDetails.do'
                                /*  //数据接口 */ 
                            ,page: false//开启分页
                            ,cols: [[ //表头
@@ -290,10 +266,10 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
 	});
 	
 
-//证明文件点击事件-在线预览
-$("#softOnline").click(function(){
+//封面文件点击事件-在线预览
+$("#workOnline").click(function(){
 	/* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
-	var address=$('input[name="softfile"]').val();
+	var address=$('input[name="workfile"]').val();
 	var reg1=new RegExp("jpg","i");
 	var reg2=new RegExp("pdf","i");
 	var reg3=new RegExp("png","i");
@@ -304,9 +280,49 @@ $("#softOnline").click(function(){
 		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
 	};
 })
-//证明文件点击事件-下载
-$("#softDownload").click(function(){
-	var address=$('input[name="softfile"]').val();
+//封面文件点击事件-下载
+$("#workDownload").click(function(){
+	var address=$('input[name="workfile"]').val();
+	/* download(ops+address); */
+	download(address);
+})
+//目录文件点击事件-在线预览
+$("#workOnline2").click(function(){
+	/* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
+	var address=$('input[name="workfile2"]').val();
+	var reg1=new RegExp("jpg","i");
+	var reg2=new RegExp("pdf","i");
+	var reg3=new RegExp("png","i");
+	if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+		/* window.open(ops+address); */
+		window.open(address);
+	}else{
+		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+	};
+})
+//目录文件点击事件-下载
+$("#workDownload2").click(function(){
+	var address=$('input[name="workfile2"]').val();
+	/* download(ops+address); */
+	download(address);
+})
+//首页文件点击事件-在线预览
+$("#workOnline3").click(function(){
+	/* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
+	var address=$('input[name="workfile3"]').val();
+	var reg1=new RegExp("jpg","i");
+	var reg2=new RegExp("pdf","i");
+	var reg3=new RegExp("png","i");
+	if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+		/* window.open(ops+address); */
+		window.open(address);
+	}else{
+		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+	};
+})
+//首页文件点击事件-下载
+$("#workDownload3").click(function(){
+	var address=$('input[name="workfile3"]').val();
 	/* download(ops+address); */
 	download(address);
 })
