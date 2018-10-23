@@ -66,6 +66,26 @@ public class PatentServiceImpl implements PatentService{
 		// TODO Auto-generated method stub
 		return patentMapper.countAuthorizationPatentNum();
 	}
+	@Override
+	public Integer countApplyNumber(String Key) {
+		// TODO Auto-generated method stub
+		return patentMapper.countApplyNumber(Key);
+	}
+	@Override
+	public Integer countRejectNumber(String Key) {
+		// TODO Auto-generated method stub
+		return patentMapper.countRejectNumber(Key);
+	}
+	@Override
+	public Integer countAgencyPatentByKey(String key) {
+		// TODO Auto-generated method stub
+		return patentMapper.countAgencyPatentByKey(key);
+	}
+	@Override
+	public Integer countAuthorizationPatentByKey(String key) {
+		// TODO Auto-generated method stub
+		return patentMapper.countAuthorizationPatentByKey(key);
+	}
 
 	
 

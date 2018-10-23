@@ -100,9 +100,14 @@ public class SoftwareController {
 	
 	//修改软著信息功能
 	@RequestMapping(value="updatesofts.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public String updatesofts(Softwarecopyright soft,HttpServletRequest req){	
+	@ResponseBody
+	public String updatesofts(Softwarecopyright soft,
+			HttpServletRequest req,
+			@RequestParam("file") MultipartFile[] files) throws CustomException{	
 		loadData(req, soft);
+		soft.setId(Integer.parseInt(req.getParameter("id")));
 		int row =softwareService.updateSoft(soft);
+		int stat=updatewithSoftwarefile(files,soft);
 		if(row>=1) {
 			//String data="更新成功";
 			 return "page/science/add-succesd";
@@ -111,6 +116,51 @@ public class SoftwareController {
 			//return new JsonResult();
 		}
 	}
+	
+
+	//更新软著操作时的插入软著文件信息
+	int updatewithSoftwarefile(MultipartFile[] files,Softwarecopyright soft) throws CustomException {
+		if (files.equals(null) && files.length < 0) {
+			throw new CustomException("请至少插入一个文件!");
+		}
+		if(files[0].getSize()==0)
+			return 0;
+		Softcopyrightfile softfile=new Softcopyrightfile();
+		for (int i = 0; i < files.length; i++) {
+			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
+			 
+			 String name=files[i].getOriginalFilename();
+			// 取文件格式后缀名
+			//String type = files[i].getOriginalFilename();
+			 
+			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+			 
+			String filename = uuid + type;// 取当前时间戳作为文件名
+
+			// String path = request.getSession().getServletContext().getRealPath("/upload/"
+			// + filename);// 存放位置
+			String path = (FILE_PATH + soft.getSoftName() + "/other/");
+			String dbpath=(DATABASE_PATH + soft.getSoftName() + "/other/");
+			File destFile = new File(path + filename);
+			softfile.setSid(soft.getId());
+			softfile.setStyle("other");
+			softfile.setFilename(name);
+			softfile.setPath(dbpath + filename);
+			
+			if (!destFile.getParentFile().exists()) {
+				destFile.getParentFile().mkdirs();
+			}
+			try {
+				files[i].transferTo(destFile);
+				softcopyrightfileService.insert(softfile);
+			} catch (Exception e) {
+				throw new CustomException("插入失败!");
+			}
+			
+		}
+		return 1;
+	}
+	
 	void loadData(HttpServletRequest req,Softwarecopyright soft){
 		soft.setSoftDept(req.getParameter("softDept"));
 		soft.setSoftCode(req.getParameter("softCode"));
@@ -253,7 +303,7 @@ public class SoftwareController {
 	
 	//插入软著文件信息
 	void updateSoftwarefile(MultipartFile[] files,Softwarecopyright soft) throws CustomException {
-		if (files != null && files.length < 0) {
+		if (files.equals(null) && files.length < 0) {
 			throw new CustomException("请至少插入一个文件!");
 		}
 		Softcopyrightfile softfile=new Softcopyrightfile();
@@ -286,22 +336,101 @@ public class SoftwareController {
 				// 复制临时文件到指定目录下
 				files[i].transferTo(destFile);
 				softcopyrightfileService.insert(softfile);
-//				if(insertype.equals("insert")) {
-//					InsertGovfundprocessfile(img,result, destFile);
-//					result.put("code", "0");
-//					result.put("msg", "上传成功");
-//					result.put("url", destFile.getPath());
-//				}else if(insertype.equals("update")) {
-//					updataGovfundprocessfile(img,result, destFile);
-//					result.put("code", "0");
-//					result.put("msg", "上传成功");
-//					result.put("url", destFile.getPath());
-//				}
-				
 
 			} catch (Exception e) {
 				throw new CustomException("插入失败!");
 			}
 		}
 	}
+	
+	//其他文件重新上传文件信息
+	@RequestMapping(value="reUpOthersoftfile.do")
+	@ResponseBody
+	void reUpOthersoftfile(HttpServletRequest req,
+			Softcopyrightfile softfile,
+			@RequestParam("file") MultipartFile files) throws CustomException {
+		String softName=req.getParameter("softName");
+		softfile.setId(Integer.parseInt(req.getParameter("id")));
+		softfile.setFilename(files.getOriginalFilename());
+		try {
+			File file = new File(FILE_PATH+req.getParameter("address"));
+			if (file.exists()) {
+				file.delete();
+			}
+			//文件后缀
+			String type = files.getOriginalFilename().substring(files.getOriginalFilename().lastIndexOf("."));
+			//新的文件名
+			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+			String filename = uuid + type;
+			//文件的本地绝对路径
+			String filepath=FILE_PATH + softName + "/other/" + filename;
+			//文件存放于数据库中的相对路径
+			String dbpath=DATABASE_PATH + softName + "/other/" + filename;
+			softfile.setPath(dbpath);
+			file=new File(filepath);
+			if (!file.getParentFile().exists()) {
+				file.getParentFile().mkdirs();
+			}
+			files.transferTo(file);
+			softcopyrightfileService.updateOtherfileById(softfile);
+			
+		}catch(Exception e){
+			throw new CustomException("重新上传失败!");
+		}	
+	}
+	
+	//证明文件重新上传
+	@RequestMapping(value="reUpMastersoftfile.do")
+	@ResponseBody
+	void reUpMastersoftfile(HttpServletRequest req,
+			Softcopyrightfile softfile,
+			@RequestParam("file") MultipartFile files) throws CustomException {
+		String softName=req.getParameter("softName");
+		softfile.setId(Integer.parseInt(req.getParameter("id")));
+		softfile.setFilename(files.getOriginalFilename());
+		try {
+			File file = new File(FILE_PATH+req.getParameter("address"));
+			if (file.exists()) {
+				file.delete();
+			}
+			//文件后缀
+			String type = files.getOriginalFilename().substring(files.getOriginalFilename().lastIndexOf("."));
+			//新的文件名
+			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+			String filename = uuid + type;
+			//文件的本地绝对路径
+			String filepath=FILE_PATH + softName + "/master/" + filename;
+			//文件存放于数据库中的相对路径
+			String dbpath=DATABASE_PATH + softName + "/master/" + filename;
+			softfile.setPath(dbpath);
+			file=new File(filepath);
+			if (!file.getParentFile().exists()) {
+				file.getParentFile().mkdirs();
+			}
+			files.transferTo(file);
+			softcopyrightfileService.updateOtherfileById(softfile);
+			
+		}catch(Exception e){
+			throw new CustomException("重新上传失败!");
+		}	
+	}
+	
+	//删除其他文件接口
+	@RequestMapping(value="removeOthersoftfile.do")
+	@ResponseBody
+	JsonResult removeOthersoftfile(HttpServletRequest req,@RequestParam("id") int id,@RequestParam("address") String address) throws CustomException {
+		try {
+			File file = new File(FILE_PATH+address);
+			if (file.exists()) {
+				file.delete();
+			}
+			Object obj= softcopyrightfileService.deleteByPrimaryKey(id);
+			return new JsonResult(obj);
+			
+		}catch(Exception e){
+			throw new CustomException("重新上传失败!");
+		}
+			
+	}
+	
 }

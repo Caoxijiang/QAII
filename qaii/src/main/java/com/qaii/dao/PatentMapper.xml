@@ -314,4 +314,16 @@
   <select id="countAuthorizationPatentNum" resultType="int">
     SELECT COUNT(*) FROM sci_patent WHERE pat_AuthorzationTime IS NOT NULL AND pat_AuthorzationTime !=""
   </select>
+  <select id="countApplyNumber" resultType="Integer" parameterType="String">
+    select COUNT(distinct p.pid)  from sci_process p left join  sci_patent pt on pt.id =p.pid where p.title NOT LIKE '%驳回%' AND pt.pat_Type=#{0} order by time desc;
+  </select>
+  <select id="countRejectNumber" resultType="Integer" parameterType="String">
+    select COUNT(distinct p.pid)  from sci_process p left join  sci_patent pt on pt.id =p.pid where p.title LIKE '%驳回%' AND pt.pat_Type=#{0} order by time desc;
+  </select>
+  <select id="countAgencyPatentByKey" resultType="Integer" parameterType="String">
+    SELECT COUNT(*) FROM sci_patent WHERE pat_Type =#{0}
+  </select>
+  <select id="countAuthorizationPatentByKey" resultType="Integer" parameterType="String">
+    SELECT COUNT(*) FROM sci_patent WHERE pat_AuthorzationTime IS NOT NULL AND pat_AuthorzationTime !="" AND pat_Type =#{0}
+  </select>
 </mapper>

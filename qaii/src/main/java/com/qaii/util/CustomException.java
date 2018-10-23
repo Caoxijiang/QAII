@@ -8,6 +8,7 @@ public class CustomException extends Exception {
 	public CustomException(String msg){
 		super(msg);
 		this.msg=msg;
+		this.printStackTrace();
 	}
 	public String getMsg() {
 		return msg;

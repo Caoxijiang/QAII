@@ -197,4 +197,45 @@
       eid = #{eid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="listCopyright" resultMap="BaseResultMap">
+  	select * from sci_copyright
+  </select>
+  <insert id="insertReturnid" parameterType="com.qaii.domain.Copyright" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+  	 insert into sci_copyright (id, copy_picture, copy_name, 
+      copy_code, copy_author, copy_copyrightPerson, 
+      copy_agency, copy_endTime, copy_publishTime, 
+      copy_registTime, copy_cost, copy_InvoicePer, 
+      copy_status, eid)
+    values (#{id,jdbcType=INTEGER}, #{copyPicture,jdbcType=VARCHAR}, #{copyName,jdbcType=VARCHAR}, 
+      #{copyCode,jdbcType=VARCHAR}, #{copyAuthor,jdbcType=VARCHAR}, #{copyCopyrightperson,jdbcType=VARCHAR}, 
+      #{copyAgency,jdbcType=VARCHAR}, #{copyEndtime,jdbcType=VARCHAR}, #{copyPublishtime,jdbcType=VARCHAR}, 
+      #{copyRegisttime,jdbcType=VARCHAR}, #{copyCost,jdbcType=VARCHAR}, #{copyInvoiceper,jdbcType=VARCHAR}, 
+      #{copyStatus,jdbcType=VARCHAR}, #{eid,jdbcType=INTEGER})
+  </insert>
+  <resultMap id="CustomResultMap" type="com.qaii.domain.Copyright">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="copy_picture" jdbcType="VARCHAR" property="copyPicture" />
+    <result column="copy_name" jdbcType="VARCHAR" property="copyName" />
+    <result column="copy_code" jdbcType="VARCHAR" property="copyCode" />
+    <result column="copy_author" jdbcType="VARCHAR" property="copyAuthor" />
+    <result column="copy_copyrightPerson" jdbcType="VARCHAR" property="copyCopyrightperson" />
+    <result column="copy_agency" jdbcType="VARCHAR" property="copyAgency" />
+    <result column="copy_endTime" jdbcType="VARCHAR" property="copyEndtime" />
+    <result column="copy_publishTime" jdbcType="VARCHAR" property="copyPublishtime" />
+    <result column="copy_registTime" jdbcType="VARCHAR" property="copyRegisttime" />
+    <result column="copy_cost" jdbcType="VARCHAR" property="copyCost" />
+    <result column="copy_InvoicePer" jdbcType="VARCHAR" property="copyInvoiceper" />
+    <result column="copy_status" jdbcType="VARCHAR" property="copyStatus" />
+    <result column="eid" jdbcType="INTEGER" property="eid" />
+    <result column="Path" jdbcType="VARCHAR" property="url" />
+  </resultMap>
+  <select id="selectWithUrl" resultMap="CustomResultMap">
+  	SELECT a.*,b.Path FROM sci_copyright AS a LEFT JOIN sci_copyrightimg AS b ON a.eid = b.id WHERE a.id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKeys">
+  	DELETE  FROM sci_copyright WHERE id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
 </mapper>

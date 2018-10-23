@@ -35,6 +35,16 @@ public class Softwarecopyright {
     
     private List<Softcopyrightfile> softFile;
 
+	@Override
+	public String toString() {
+		return "Softwarecopyright [id=" + id + ", softDept=" + softDept + ", softCode=" + softCode + ", softName="
+				+ softName + ", softWriter=" + softWriter + ", softAuthor=" + softAuthor + ", softAgency=" + softAgency
+				+ ", softDevelopendtime=" + softDevelopendtime + ", softFirstpublishtime=" + softFirstpublishtime
+				+ ", softNum=" + softNum + ", softCertificatetime=" + softCertificatetime + ", softCost=" + softCost
+				+ ", softInvoiceper=" + softInvoiceper + ", softUpdatetime=" + softUpdatetime + ", softRemark="
+				+ softRemark + ", softFile=" + softFile + "]";
+	}
+
 	public Integer getId() {
         return id;
     }

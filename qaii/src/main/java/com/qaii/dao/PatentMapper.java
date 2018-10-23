@@ -28,4 +28,11 @@ public interface PatentMapper {
     
     int countAuthorizationPatentNum();
 
+    Integer countApplyNumber(String Key);
+    
+    Integer countRejectNumber(String Key);
+    
+    Integer countAgencyPatentByKey(String key);
+    
+    Integer countAuthorizationPatentByKey(String key);
 }

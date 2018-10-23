@@ -9,4 +9,8 @@ public interface SoftcopyrightfileService {
 	int insert(Softcopyrightfile record);
 	
 	List<Softcopyrightfile> listBysid(int sid);
+	
+	int updateOtherfileById(Softcopyrightfile record);
+	
+	int deleteByPrimaryKey(Integer id);
 }

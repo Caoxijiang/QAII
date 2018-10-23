@@ -25,7 +25,7 @@
   <div class="addBanner"></div><!--banner展示图-->
 <!--  表单元素-->
 <div class="layui-container">
-  <form class="layui-form" action="addEmpInfo.do" method="post">
+  <form class="layui-form" action="insertCopyright.do" method="post">
 <!--  第一块内容-->
 	  <div class="layui-row">
 		<div class="layui-col-md6">
@@ -35,25 +35,25 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">作品名称&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="copyName" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block"> 
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="copyCode" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="copyAuthor" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+							<input type="text" name="copyCopyrightperson" lay-verify="required" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 				</div>
@@ -61,25 +61,25 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="copyAgency" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">创作完成日期&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1">
+							<input type="text" name="copyEndtime" class="layui-input input" id="test2-1">
 						  </div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">首次发布日期&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-2">
+							<input type="text" name="copyPublishtime" class="layui-input input" id="test2-2">
 						  </div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">登记日期&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-3">
+							<input type="text" name="copyRegisttime" class="layui-input input" id="test2-3">
 						  </div>
 					</div>
 				</div>
@@ -105,7 +105,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">费用（元）&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" class="layui-input input">
+						<input type="text" name="copyCost"  lay-verify="title" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -113,7 +113,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">发票收据-汇款人</label>
 					<div class="layui-input-block">
-						<input type="text" name="empSecondeducation" lay-verify="title" autocomplete="off" class="layui-input input">
+						<input type="text" name="copyInvoiceper" lay-verify="title" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -121,7 +121,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">状态</label>
 					<div class="layui-input-block">
-						<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" class="layui-input input">
+						<input type="text" name="copyStatus" lay-verify="title" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div> 
@@ -212,7 +212,7 @@ $.post({
 			  //普通图片上传
 			  var uploadInst = upload.render({
 			    elem: '#imgload'
-			    ,url: 'EmpAupload.do'
+			    ,url: 'uploadCopyrightimg.do'
 			    ,before: function(obj){
 			      //预读本地文件示例，不支持ie8
 			      obj.preview(function(index, file, result){

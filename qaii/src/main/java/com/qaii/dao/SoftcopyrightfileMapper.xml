@@ -93,4 +93,10 @@
   <select id="listBysid" resultMap="BaseResultMap" parameterType="int">
     SELECT * FROM sci_softwarecopyrightfile WHERE sid =#{0}
   </select>
+  <update id="updateOtherfileById" parameterType="com.qaii.domain.Softcopyrightfile">
+    update sci_softwarecopyrightfile
+    set filename = #{filename,jdbcType=VARCHAR},
+        path = #{path,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>
