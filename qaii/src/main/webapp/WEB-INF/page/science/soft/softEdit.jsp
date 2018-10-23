@@ -292,14 +292,19 @@ $.post({
 				    var data = obj.data;
 				    //console.log(obj)
 				    if(obj.event === 'del'){
+				    	var address=data.path;
+						var id=data.id;
+						var softName=trademark.softName;
 				      layer.confirm('真的删除行么', function(index){
 				    	  let arr=[data.id];
 				          $.post({
-				          	url:"delltradefile.do",
+				          	url:"removeOthersoftfile.do",
 				          	data:{
-				          		"requestDate" : arr
+				          		"id" : id,
+				          		"address" : address
 				          	},
 				          	success:function(data){
+				          		console.log(data);
 				          		if(data.data){
 				          		    //删除对应行（tr）的DOM结构
 				          		    alert("删除成功!");

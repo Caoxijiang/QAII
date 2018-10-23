@@ -35,36 +35,36 @@
 	</button>		
 </div>
 <div class="layui-container addtop"> 
-<input id="param" value='${param.userId}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
- <form class="layui-form" action="addEmpInfo.do" method="post" lay-filter="example">
+ <form class="layui-form" action="copyrightChanged.do" method="post" lay-filter="example">
 <div class="layui-row">
 		<div class="layui-col-md6">
+		<input id="id" value='${param.userId}' name="id" type="hidden" />
 			<h1>版权基本信息</h1>
 		  	<div class="layui-row">
 				<div class="layui-col-md6">
 					<div class="layui-form-item">
 						<label class="layui-form-label">作品名称&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="copyName" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block"> 
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="copyCode" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="copyAuthor" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empPhone" lay-verify="required" autocomplete="off" class="layui-input input">
+							<input type="text" name="copyCopyrightperson" lay-verify="required" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 				</div>
@@ -72,25 +72,25 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<input type="text" name="empName" autocomplete="off" lay-verify="required" class="layui-input input">
+							<input type="text" name="copyAgency" autocomplete="off" lay-verify="required" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">创作完成日期&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1">
+							<input type="text" name="copyEndtime" class="layui-input input" id="test2-1">
 						  </div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">首次发布日期&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-2">
+							<input type="text" name="copyPublishtime" class="layui-input input" id="test2-2">
 						  </div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">登记日期&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
-							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-3">
+							<input type="text" name="copyRegisttime" class="layui-input input" id="test2-3">
 						  </div>
 					</div>
 				</div>
@@ -116,7 +116,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">费用（元）&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" class="layui-input input">
+						<input type="text" name="copyCost"  lay-verify="title" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -124,7 +124,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">发票收据-汇款人</label>
 					<div class="layui-input-block">
-						<input type="text" name="empSecondeducation" lay-verify="title" autocomplete="off" class="layui-input input">
+						<input type="text" name="copyInvoiceper" lay-verify="title" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -132,7 +132,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">状态</label>
 					<div class="layui-input-block">
-						<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" class="layui-input input">
+						<input type="text" name="copyStatus" lay-verify="title" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div> 
@@ -174,7 +174,7 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
 	 //文件表格展示
        if(id!=null){
             $.post({
-                url:"showSoftDetails.do",
+                url:"copyrightDetail.do",
                 data:{
                     id:id
                 },
@@ -189,21 +189,18 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                         /* console.log("afd"+JSON.stringify(trademark)); */
                         //表单初始赋值 从表单中提取数据
                           form.val('example', {
-                            "softDept":trademark.softDept,
-                            "softCode":trademark.softCode,
-                            "softName":trademark.softName,
-                            "softWriter":trademark.softWriter,
-                            "softAuthor":trademark.softAuthor,
-                            "softAgency":trademark.softAgency,
-                            "softDevelopendtime":trademark.softDevelopendtime,
-                            "softFirstpublishtime":trademark.softFirstpublishtime,
-                            "softNum":trademark.softNum,
-                            "softCertificatetime":trademark.softCertificatetime,
-                            "softCost":trademark.softCost,
-                            "softInvoiceper":trademark.softInvoiceper,
-                            "softUpdatetime":trademark.softUpdatetime,
-                            "softRemark":trademark.softRemark,
-                            "softfile":trademark.softFile[0].path
+                        	  "id":trademark.id,
+                        	  "copyName":trademark.copyName,
+                              "copyCode":trademark.copyCode,
+                              "copyAuthor":trademark.copyAuthor,
+                              "copyCopyrightperson":trademark.copyCopyrightperson,
+                              "copyAgency":trademark.copyAgency,
+                              "copyEndtime":trademark.copyEndtime,
+                              "copyPublishtime":trademark.copyPublishtime,
+                              "copyRegisttime":trademark.copyRegisttime,
+                              "copyCost":trademark.copyCost,
+                              "copyInvoiceper":trademark.copyInvoiceper,
+                              "copyStatus":trademark.copyStatus
                             // 修改此输入框的value值，此value为测试值 softfile为测试自定义值，证明文件值
                           });
                           var domain = window.location.host;
@@ -238,6 +235,39 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
            alert("请刷新页面");
        }
 	   
+     //普通图片上传
+	  var uploadInst = upload.render({
+	    elem: '#imgload'
+	    ,url: 'uploadCopyrightimg.do'
+	    ,before: function(obj){
+	      //预读本地文件示例，不支持ie8
+	      obj.preview(function(index, file, result){
+	        $('#demo1').attr('src', result); //图片链接（base64）
+	      });
+	    }
+	    ,done: function(res){
+	      //如果上传失败
+	      if(res.code > 0){
+	        return layer.msg('上传失败');
+	      }else{
+	    	 $("demoText").attr("imageVal",res.eid)
+	    	 var eid=res.eid
+	    	/*  console.log( $("demoText").attr("imageVal",JSON.stringify(eid))); */
+	    	$("input[name='imageVal']").attr("value",eid);
+	    	  return layer.msg(res.msg);
+	      }
+	      //上传成功
+	    }
+	    ,error: function(){
+	      //演示失败状态，并实现重传
+	      var demoText = $('#demoText');
+	      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+	      demoText.find('.demo-reload').on('click', function(){
+	        uploadInst.upload();
+	      });
+	    }
+	  });
+	 
 	 //监听行工具事件
 		  table.on('tool(test)', function(obj){
 		    var data = obj.data;

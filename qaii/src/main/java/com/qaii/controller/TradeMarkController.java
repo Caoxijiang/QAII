@@ -88,12 +88,6 @@ public class TradeMarkController {
 		return new JsonResult(trademark);
 	}
 	
-	//跳转到修改商标详情页面
-	@RequestMapping("UpdateTradeMark.do")
-	public String toUpdateTrademark() {
-		return "page/science";
-	}
-	
 	//修改商标信息功能
 	@RequestMapping(value="updateTrademark.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public String updateTrademarks(Trademark Trademark,HttpServletRequest req){	

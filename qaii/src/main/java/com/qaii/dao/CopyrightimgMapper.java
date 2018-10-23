@@ -14,4 +14,6 @@ public interface CopyrightimgMapper {
     int updateByPrimaryKeySelective(Copyrightimg record);
 
     int updateByPrimaryKey(Copyrightimg record);
+    
+    int insertReturnId(Copyrightimg record);
 }

@@ -28,6 +28,8 @@ public class Copyright {
     private String copyStatus;
 
     private Integer eid;
+    
+    private String url;
 
     public Integer getId() {
         return id;
@@ -140,4 +142,13 @@ public class Copyright {
     public void setEid(Integer eid) {
         this.eid = eid;
     }
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+    
 }

@@ -336,18 +336,6 @@ public class SoftwareController {
 				// 复制临时文件到指定目录下
 				files[i].transferTo(destFile);
 				softcopyrightfileService.insert(softfile);
-//				if(insertype.equals("insert")) {
-//					InsertGovfundprocessfile(img,result, destFile);
-//					result.put("code", "0");
-//					result.put("msg", "上传成功");
-//					result.put("url", destFile.getPath());
-//				}else if(insertype.equals("update")) {
-//					updataGovfundprocessfile(img,result, destFile);
-//					result.put("code", "0");
-//					result.put("msg", "上传成功");
-//					result.put("url", destFile.getPath());
-//				}
-				
 
 			} catch (Exception e) {
 				throw new CustomException("插入失败!");
@@ -428,37 +416,21 @@ public class SoftwareController {
 	}
 	
 	//删除其他文件接口
-	void removeOthersoftfile(HttpServletRequest req,
-			Softcopyrightfile softfile,
-			@RequestParam("file") MultipartFile files) throws CustomException {
-		String softName=req.getParameter("softName");
-		softfile.setId(Integer.parseInt(req.getParameter("id")));
-		softfile.setFilename(files.getOriginalFilename());
+	@RequestMapping(value="removeOthersoftfile.do")
+	@ResponseBody
+	JsonResult removeOthersoftfile(HttpServletRequest req,@RequestParam("id") int id,@RequestParam("address") String address) throws CustomException {
 		try {
-			File file = new File(FILE_PATH+req.getParameter("address"));
+			File file = new File(FILE_PATH+address);
 			if (file.exists()) {
 				file.delete();
 			}
-			//文件后缀
-			String type = files.getOriginalFilename().substring(files.getOriginalFilename().lastIndexOf("."));
-			//新的文件名
-			String uuid = UUID.randomUUID().toString().replaceAll("-","");
-			String filename = uuid + type;
-			//文件的本地绝对路径
-			String filepath=FILE_PATH + softName + "/master/" + filename;
-			//文件存放于数据库中的相对路径
-			String dbpath=DATABASE_PATH + softName + "/master/" + filename;
-			softfile.setPath(dbpath);
-			file=new File(filepath);
-			if (!file.getParentFile().exists()) {
-				file.getParentFile().mkdirs();
-			}
-			files.transferTo(file);
-			softcopyrightfileService.updateOtherfileById(softfile);
+			Object obj= softcopyrightfileService.deleteByPrimaryKey(id);
+			return new JsonResult(obj);
 			
 		}catch(Exception e){
 			throw new CustomException("重新上传失败!");
-		}	
+		}
+			
 	}
 	
 }

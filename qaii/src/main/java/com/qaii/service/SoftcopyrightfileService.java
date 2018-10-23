@@ -11,4 +11,6 @@ public interface SoftcopyrightfileService {
 	List<Softcopyrightfile> listBysid(int sid);
 	
 	int updateOtherfileById(Softcopyrightfile record);
+	
+	int deleteByPrimaryKey(Integer id);
 }
