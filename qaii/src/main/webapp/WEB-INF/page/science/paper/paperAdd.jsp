@@ -24,7 +24,7 @@
 <body class="layui-layout-body" style="overflow:scroll">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
-	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧科技管理系统&nbsp;--&nbsp;软著信息添加页面</div>
+	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧科技管理系统&nbsp;--&nbsp;期刊论文信息添加页面</div>
   </div>
   <div class="addBanner"></div><!--banner展示图-->
 <!--  表单元素-->
@@ -32,9 +32,81 @@
   <form class="layui-form" action="addSoft.do" method="post" enctype="multipart/form-data">
 <!--  第一块内容-->
 	  <div class="layui-row">
-		<h1>软著基本信息</h1>
+		<h1>期刊论文基本信息</h1>
 	  	<div class="layui-row">
+			<div class="layui-col-md12">
+				<div class="layui-form-item">
+					<label class="layui-form-label">题目&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCode" lay-verify="required" autocomplete="off" class="layui-input input">
+					</div>
+				</div>
+			</div>
+		    <div class="layui-col-md8">
+				<div class="layui-form-item">
+					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softAgency" lay-verify="required" autocomplete="off" class="layui-input input">
+					</div>
+				</div>
+			</div>
+		    <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">作者单位&nbsp;<span class="star">*</span></label>
+					  <div class="layui-input-block">
+						<input type="text" name="softDevelopendtime" class="layui-input input" id="test1">
+					  </div>
+				</div>
+			</div>
+		    <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">出版时间&nbsp;<span class="star">*</span></label>
+					  <div class="layui-input-block">
+						<input type="text" name="softFirstpublishtime" class="layui-input input" id="test2">
+					  </div>
+				</div>
+			</div>
+		    <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">刊名&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+			</div>
 			<div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">卷号，期号，页码&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+		   </div>
+		   <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">内容类型&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+		   </div>
+		   <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">收录类别&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+		   </div>
+		   <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+		   </div>
+    		<div class="layui-col-md4">
 				<div class="layui-form-item">
 					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
@@ -43,96 +115,39 @@
 						</select>
 					</div>
 				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">编号&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softCode" lay-verify="required" autocomplete="off" class="layui-input input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">名称&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softName" lay-verify="required" autocomplete="off" class="layui-input input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">软件开发者&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softWriter" lay-verify="required" autocomplete="off" class="layui-input input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softAuthor" lay-verify="required" autocomplete="off" class="layui-input input">
-					</div>
-				</div>
-			</div>
-		    <div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softAgency" lay-verify="required" autocomplete="off" class="layui-input input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">开发完成日期&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="softDevelopendtime" class="layui-input input" id="test1">
-					  </div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">首次发表日期&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="softFirstpublishtime" class="layui-input input" id="test2">
-					  </div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input">
-					</div>
-				</div>
 			</div>
     		<div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">发证日期&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="softCertificatetime" class="layui-input input" id="test3">
-					  </div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">费用&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">关键词&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="softInvoiceper" lay-verify="required" autocomplete="off"  class="layui-input input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">状态更新日期&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="softUpdatetime" class="layui-input input" id="test4">
-					  </div>
 				</div>
 		   </div>
 	    </div>		 
 	  </div>
    <!--  第一块内容-->
    <!--  第二块内容-->
-   <h1>软著相关文件</h1>
+   <h1>期刊论文相关文件</h1>
 	  <div class="layui-row bgf7f8f8">	
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
-				<label class="layui-form-label">证明文件&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">发表电子版&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
 					  <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
 					  <button type="button" class="layui-btn" id="test9">开始上传</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-col-md12">
+			<div class="layui-form-item">
+				<label class="layui-form-label">检索证明&nbsp;<span class="star">*</span></label>
+				<div class="layui-input-block">
+					<div class="layui-upload">
+					  <button type="button" class="layui-btn layui-btn-normal" id="test10">选择文件</button>
+					  <button type="button" class="layui-btn" id="test11">开始上传</button>
 					</div>
 				</div>
 			</div>
@@ -161,7 +176,7 @@
 		</div>
     </div>	 
      <!--  第三块内容-->
-     <h1>备注信息</h1>
+     <h1>英文摘要</h1>
 	  <div class="layui-row">
 		<div class="layui-col-md12">
 			<div class="layui-form-item layui-form-text">
@@ -216,29 +231,28 @@ $.post({
 				layer = layui.layer,
 				laydate = layui.laydate,
 				upload = layui.upload;
-				//开发完成日期
-			  laydate.render({
-			    elem: '#test1'
-			  });
-				//首次发表日期
+				//出版时间
 			  laydate.render({
 			    elem: '#test2'
 			  });
-				//发证日期
-			  laydate.render({
-			    elem: '#test3'
-			  });
-				//状态更新日期
-			  laydate.render({
-			    elem: '#test4'
-			  });
-			//文件上传
+			//发表电子版
 			  upload.render({
 			    elem: '#test8'
 			    ,url: '/upload/'
 			    ,auto: false
 			    ,accept: 'file' //普通文件
 			    ,bindAction: '#test9'
+			    ,done: function(res){
+			      console.log(res)
+			    }
+			  });
+			//检索证明
+			  upload.render({
+			    elem: '#test10'
+			    ,url: '/upload/'
+			    ,auto: false
+			    ,accept: 'file' //普通文件
+			    ,bindAction: '#test11'
 			    ,done: function(res){
 			      console.log(res)
 			    }

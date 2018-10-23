@@ -6,20 +6,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>纵向课题</title>
+  <title>论文</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
     body{margin: 10px;}
-    .layui-table-body {
-	    height: -moz-calc( 100vh - 215px );
-	    height: -webkit-calc( 100vh - 215px );
-	    height: calc( 100vh - 215 px );
-	}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
 	.noExl {
     display: none;
@@ -29,8 +25,8 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">科研项目( <span id="countnum"> </span> )</span>
-		<a href="javascript:;" onclick="srchange('researchAdd.do')">
+  	  <span class="limit">会议论文( <span id="countnum"> </span> )</span>
+		<a href="papermeetingAdd.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -54,9 +50,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="empDept">部门</option>
+			<option value="sisPublishlocation">期刊/会议/杂志</option>
 			<option value="empJobtitlelevel">职称等级</option>
-			<option value="empGender">性别</option>
+			<option value="sisUnits">署名单位</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -70,42 +66,26 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=govsubApplytime  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
-	<div class="int-inline"><input id="govsubSource"  type="checkbox" value="来源" checked/><lable>来源</lable></div>
-	<div class="int-inline"><input id="govsubLevel"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
-	<div class="int-inline"><input id="govsubName"  type="checkbox" value="课题项目名称" checked/><lable>课题项目名称</lable></div>
-	<div class="int-inline"><input id="govsubImplementtime"  type="checkbox" value="项目实施期" checked/><lable>项目实施期</lable></div>
-	<div class="int-inline"><input id="govsubDutyunit"  type="checkbox" value="承担单位" checked/><lable>承担单位</lable></div>
-	<div class="int-inline"><input id="govsubCooperationunit"  type="checkbox" value="协作单位" checked/><lable>协作单位</lable></div>
-	<div class="int-inline"><input id="govsubManagedepart"  type="checkbox" value="主管部门" checked/><lable>主管部门</lable></div>
-	<div class="int-inline"><input id="govsubApplydepart"  type="checkbox" value="申请报送部门" checked/><lable>申请报送部门</lable></div>
-	<div class="int-inline"><input id="govsubAssumedepart"  type="checkbox" value="承担部门" checked/><lable>承担部门</lable></div>
-	<div class="int-inline"><input id="govsubProjectper"  type="checkbox" value="课题项目负责人" checked/><lable>课题项目负责人</lable></div>
-	<div class="int-inline"><input id="govsubProjectapproval"  type="checkbox" value="是否立项" checked/><lable>是否立项</lable></div>
-	<div class="int-inline"><input id="govsubApprovalnum"  type="checkbox" value="立项编号" checked/><lable>立项编号</lable></div>
-	<div class="int-inline"><input id="govsubApprovaltime"  type="checkbox" value="立项时间" checked/><lable>立项时间</lable></div>
-	<div class="int-inline"><input id="govsubSubvention"  type="checkbox" value="资助金额（万元）" checked/><lable>资助金额（万元）</lable></div>
-	<div class="int-inline"><input id="govsubFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
-	<div class="int-inline"><input id="govsubMiddletime"  type="checkbox" value="中期检查考核时间" checked/><lable>中期检查考核时间</lable></div>
-	<div class="int-inline"><input id="govsubMiddleresult"  type="checkbox" value="中期检查考核结果" checked/><lable>中期检查考核结果</lable></div>
-	<div class="int-inline"><input id="govsubYeartime"  type="checkbox" value="年度检查考核时间" checked/><lable>年度检查考核时间</lable></div>
-	<div class="int-inline"><input id="govsubYearresult"  type="checkbox" value="年度检查考核结果" checked/><lable>年度检查考核结果</lable></div>
-	<div class="int-inline"><input id="govsubEndtime"  type="checkbox" value="项目结题验收时间" checked/><lable>项目结题验收时间</lable></div>
-	<div class="int-inline"><input id="govsubEndresult"  type="checkbox" value="项目结题验收结果" checked/><lable>项目结题验收结果</lable></div>
-	<div class="int-inline"><input id="govsubRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
-	<div class="int-inline"><input id="govsubFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div>
+	<div class="int-inline"><input id=sisSubject  type="checkbox" value="题目" checked="flase"/><lable>题目</lable></div>
+	<div class="int-inline"><input id="sisAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
+	<div class="int-inline"><input id="sisUnits"  type="checkbox" value="署名单位" checked/><lable>署名单位</lable></div>
+	<div class="int-inline"><input id="sisPublishlocation"  type="checkbox" value="期刊/会议/杂志" checked/><lable>期刊/会议/杂志</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="发表时间" checked/><lable>发表时间</lable></div>
+	<div class="int-inline"><input id="sisStatus"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
+	<div class="int-inline"><input id="sisDept"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
+	
 </div>
 </div>  
 <!-- 数据展示主表格-->
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
- <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
+ <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.sisSubject}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="datac">资料审查</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
 </script>
 <!-- 数据展示主表格-->
  
@@ -130,36 +110,23 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'getAllSubjectMsg.do', //数据接口
+    url: 'getAllThesisMsg.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'govsubApplytime', title: '申报时间',fixed: 'left',width:150},
-		{field: 'govsubSource', title: '来源',fixed: 'left',width:150},
-		{field: 'govsubLevel', title: '级别',sort: true},
-		{field: 'govsubName', title: '课题项目名称',sort: true,width:200},
-		{field: 'govsubImplementtime', title: '项目实施期',sort: true,width:150},
-		{field: 'govsubDutyunit', title: '承担单位',sort: true,width:120},
-		{field: 'govsubCooperationunit', title: '协作单位',width:220},
-		{field: 'govsubManagedepart', title: '主管部门',sort: true,width:200},
-		{field: 'govsubApplydepart', title: '申请报送部门',sort: true,width:200},
-		{field: 'govsubAssumedepart', title: '承担部门',sort: true,width:150},
-		{field: 'govsubProjectper', title: '课题项目负责人',sort: true,width:200},
-		
-		{field: 'govsubProjectapproval', title: '是否立项',sort: true,width:200},
-		{field: 'govsubApprovalnum', title: '立项编号',sort: true,width:200},
-		{field: 'govsubApprovaltime', title: '立项时间',sort: true,width:200},
-		{field: 'govsubSubvention', title: '资助金额（万元）',sort: true,width:200},
-		{field: 'govsubFundtime', title: '资金到位时间',sort: true,width:230},
-		{field: 'govsubMiddletime', title: '中期检查考核时间',sort: true,width:200},
-		{field: 'govsubMiddleresult', title: '中期检查考核结果',sort: true,width:200},
-		{field: 'govsubYeartime', title: '年度检查考核时间',sort: true,width:200},
-		{field: 'govsubYearresult', title: '年度检查考核结果',sort: true,width:200},
-		{field: 'govsubEndtime', title: '项目结题验收时间',sort: true,width:200},
-		{field: 'govsubEndresult', title: '项目结题验收结果',sort: true,width:200},
-		{field: 'govsubRemark', title: '备注',sort: true,width:230},
-		{field: 'govsubFile', title: '附件',sort: true,width:200},
+		{field: 'sisSubject', title: '题名',fixed: 'left',width:100},
+		{field: 'sisAuthor', title: '作者',fixed: 'left',width:150},
+		{field: 'sisUnits', title: '作者单位',sort: true,width:150},
+		{field: 'sisPublishlocation', title: '出版时间',sort: true,width:200},
+		{field: 'sisPublishtime', title: '会议名称',sort: true,width:150},
+		{field: 'sisPublishtime', title: '会议地点',sort: true,width:150},
+		{field: 'sisPublishtime', title: '关键词',sort: true,width:150},
+		{field: 'sisPublishtime', title: '通讯作者',sort: true,width:150},
+		{field: 'sisPublishtime', title: '英文摘要',sort: true,width:150},
+		{field: 'sisStatus', title: '会议录 ',sort: true,width:150},
+		{field: 'sisPublishtime', title: '内容类型',sort: true,width:150},
+		{field: 'sisDept', title: '部门',width:220},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
@@ -248,12 +215,12 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="empDept"){
+  			if(check=="sisPublishlocation"){
+  				alert("搜索'期刊/会议/杂志'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="sisDept"){
   				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empGender"){
-  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="sisUnits"){
+  				alert("搜索'署名单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -275,58 +242,41 @@ layui.use('table', function(obj){
       });
 	
   //监听工具条
-  table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-    var data = obj.data //获得当前行数据
-    console.log(data)
-    ,layEvent = obj.event; //获得 lay-event 对应的值
-    if(layEvent === 'detail'){
-    	var iframesrc="researchCheck.do?userId='"+data.id+"'";
-    	$("body", parent.document).find('iframe').attr('src',iframesrc);
-    } else if(layEvent === 'del'){
-      layer.confirm('确定删除信息', function(index){
-          let arr=[data.id];
-          console.log(data) 
-          $.post({
-          	url:"dellSubjectMsg.do",
-          	data:{
-          		"requestDate" : arr
-          	},
-          	success:function(data){
-          		if(data.data){
-          		    //删除对应行（tr）的DOM结构
-          			obj.del();
-          			layer.close(index);
-          		}else{
-          			layer.alert("删除失败")
-          		}
-          		
-          	}
-          }) 
-    	  
-    	  
-    	  
-    	  
-        obj.del(); //删除对应行（tr）的DOM结构
-        layer.close(index);
-        //向服务端发送删除指令
-        
-        
-        
-        
-      });
-    } else if(layEvent === 'edit'){
-    	var iframesrc="researchEdit.do?userId='"+data.id+"'";
-    	$("body", parent.document).find('iframe').attr('src',iframesrc);
-    }else if(layEvent==="datac"){
-    	//userid为当前记录id值，将会传到资料审查界面
-    	var iframesrc="researchData.do?userId='"+data.id+"'&govsubName="+data.govsubName+"&govsubSource="+data.govsubSource+"&govsubApprovalnum="+data.govsubApprovalnum;
-    	url=encodeURI(iframesrc);
-    	url=encodeURI(url);
-    	
-    	console.log(url);
-    	$("body", parent.document).find('iframe').attr('src',iframesrc);
-    }
-  });
+    table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+      var data = obj.data //获得当前行数据
+      console.log(data)
+      ,layEvent = obj.event; //获得 lay-event 对应的值
+      if(layEvent === 'detail'){
+      	var iframesrc="papermeetingCheck.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      } else if(layEvent === 'del'){
+        layer.confirm('确定删除信息', function(index){
+            let arr=[data.id];
+            console.log(data) 
+            $.post({
+            	url:"dellsoftMsg.do",
+            	data:{
+            		"requestDate" : arr
+            	},
+            	success:function(data){
+            		if(data.data){
+            		    //删除对应行（tr）的DOM结构
+            			obj.del();
+            			layer.close(index);
+            		}else{
+            			layer.alert("删除失败")
+            		}
+            	}
+            }) 
+          obj.del(); //删除对应行（tr）的DOM结构
+          layer.close(index);
+          //向服务端发送删除指令
+        });
+      } else if(layEvent === 'edit'){
+      	var iframesrc="papermeetingEdit.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }
+    });
 
 	//监听顶部添加删除操作
 	var arr=[];
@@ -340,7 +290,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"dellSubjectMsg.do",
+		  	url:"dellThesisMsg.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},
@@ -367,10 +317,11 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: 'insertGovsubjectDatabyexcel.do'
+  ,url: 'insertThesisDatabyexcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
-    alert("导入成功");
+	  alert("上传成功！请更新数据！");
+    console.log(res)
   }
 })
 
@@ -390,7 +341,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "纵向课题管理",
+				filename: "论文管理",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片
@@ -416,7 +367,6 @@ upload.render({
 	});
 </script>
 <!--自动设置主表格可视区域-->
-<script src="${basePath}/js/iframesrc.js"></script>
 <script>
 
 	var hei=$(".action").height();

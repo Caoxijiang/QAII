@@ -26,7 +26,7 @@
 <div class="tool">
 	<div class="layui-btn-group demoTable">
   	  <span class="limit">著作( <span id="countnum"> </span> )</span>
-		<a href="adddetail.do" target="_blank">
+		<a href="workAdd.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -116,7 +116,8 @@ layui.use('table', function(obj){
 		{field: 'workTopic', title: '题目',fixed: 'left',width:150},
 		{field: 'workAuthor', title: '作者',sort: true},
 		{field: 'workPublishhouse', title: '出版社',sort: true,width:200},
-		{field: 'workPublishtime', title: '出版年份',sort: true,width:150},
+		{field: 'workPublishtime', title: '出版日期',sort: true,width:150},
+		{field: 'workPublishtime', title: 'ISBN',sort: true,width:150},
 		{field: 'workDept', title: '部门',sort: true},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
 

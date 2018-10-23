@@ -24,7 +24,7 @@
 <body class="layui-layout-body" style="overflow:scroll">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
-	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧科技管理系统&nbsp;--&nbsp;著作信息添加页面</div>
+	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧科技管理系统&nbsp;--&nbsp;会议论文信息添加页面</div>
   </div>
   <div class="addBanner"></div><!--banner展示图-->
 <!--  表单元素-->
@@ -32,7 +32,7 @@
   <form class="layui-form" action="addSoft.do" method="post" enctype="multipart/form-data">
 <!--  第一块内容-->
 	  <div class="layui-row">
-		<h1>著作基本信息</h1>
+		<h1>会议论文基本信息</h1>
 	  	<div class="layui-row">
 			<div class="layui-col-md12">
 				<div class="layui-form-item">
@@ -52,7 +52,7 @@
 			</div>
 		    <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">类型&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">作者单位&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
 						<input type="text" name="softDevelopendtime" class="layui-input input" id="test1">
 					  </div>
@@ -60,7 +60,7 @@
 			</div>
 		    <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">出版社&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">出版时间&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
 						<input type="text" name="softFirstpublishtime" class="layui-input input" id="test2">
 					  </div>
@@ -68,12 +68,44 @@
 			</div>
 		    <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">ISBN&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">会议名称&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 			</div>
+			<div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">会议地点&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+		   </div>
+		   <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">关键词&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+		   </div>
+		   <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">通讯作者&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+		   </div>
+		   <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">会议录&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+		   </div>
     		<div class="layui-col-md4">
 				<div class="layui-form-item">
 					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
@@ -84,15 +116,23 @@
 					</div>
 				</div>
 			</div>
+    		<div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">内容类型&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+					</div>
+				</div>
+		   </div>
 	    </div>		 
 	  </div>
    <!--  第一块内容-->
    <!--  第二块内容-->
-   <h1>著作相关文件</h1>
+   <h1>会议论文相关文件</h1>
 	  <div class="layui-row bgf7f8f8">	
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
-				<label class="layui-form-label">封面&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">发表电子版&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
 					  <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
@@ -103,22 +143,11 @@
 		</div>
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
-				<label class="layui-form-label">目录&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">检索证明&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
 					  <button type="button" class="layui-btn layui-btn-normal" id="test10">选择文件</button>
 					  <button type="button" class="layui-btn" id="test11">开始上传</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="layui-col-md12">
-			<div class="layui-form-item">
-				<label class="layui-form-label">首页&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<div class="layui-upload">
-					  <button type="button" class="layui-btn layui-btn-normal" id="test12">选择文件</button>
-					  <button type="button" class="layui-btn" id="test13">开始上传</button>
 					</div>
 				</div>
 			</div>
@@ -146,6 +175,19 @@
 			</div>
 		</div>
     </div>	 
+     <!--  第三块内容-->
+     <h1>英文摘要</h1>
+	  <div class="layui-row">
+		<div class="layui-col-md12">
+			<div class="layui-form-item layui-form-text">
+				<!-- <label class="layui-form-label">备注</label> -->
+				<div class="layui-input-block">
+					<textarea name="softRemark" class="layui-textarea"></textarea>
+				</div>
+			</div>
+  		</div>		 
+	</div>	 
+   <!--  第三块内容-->
    <div class="layui-row">
 		<div class="layui-col-md6">
 		   <div class="layui-form-item" pane="">
@@ -193,7 +235,7 @@ $.post({
 			  laydate.render({
 			    elem: '#test2'
 			  });
-			//封面
+			//发表电子版
 			  upload.render({
 			    elem: '#test8'
 			    ,url: '/upload/'
@@ -204,24 +246,13 @@ $.post({
 			      console.log(res)
 			    }
 			  });
-			//目录
+			//检索证明
 			  upload.render({
 			    elem: '#test10'
 			    ,url: '/upload/'
 			    ,auto: false
 			    ,accept: 'file' //普通文件
 			    ,bindAction: '#test11'
-			    ,done: function(res){
-			      console.log(res)
-			    }
-			  });
-			//首页
-			  upload.render({
-			    elem: '#test12'
-			    ,url: '/upload/'
-			    ,auto: false
-			    ,accept: 'file' //普通文件
-			    ,bindAction: '#test13'
 			    ,done: function(res){
 			      console.log(res)
 			    }

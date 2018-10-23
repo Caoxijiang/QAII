@@ -25,8 +25,8 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">论文( <span id="countnum"> </span> )</span>
-		<a href="adddetail.do" target="_blank">
+  	  <span class="limit">期刊论文( <span id="countnum"> </span> )</span>
+		<a href="paperAdd.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -82,9 +82,10 @@
 </div>
  <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.sisSubject}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
 </script>
 <!-- 数据展示主表格-->
  
@@ -116,10 +117,15 @@ layui.use('table', function(obj){
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
 		{field: 'sisSubject', title: '题目',fixed: 'left',width:100},
 		{field: 'sisAuthor', title: '作者',fixed: 'left',width:150},
-		{field: 'sisUnits', title: '署名单位',sort: true},
-		{field: 'sisPublishlocation', title: '期刊/会议/杂志',sort: true,width:200},
-		{field: 'sisPublishtime', title: '发表时间',sort: true,width:150},
-		{field: 'sisStatus', title: '级别 ',sort: true},
+		{field: 'sisUnits', title: '作者单位',sort: true,width:150},
+		{field: 'sisPublishtime', title: '出版时间',sort: true,width:150},
+		{field: 'sisPublishtime', title: '刊名',sort: true,width:150},
+		{field: 'sisPublishtime', title: '卷号，期名，页码',width:400},
+		{field: 'sisPublishtime', title: '关键词',sort: true,width:150},
+		{field: 'sisPublishtime', title: '英文摘要',sort: true,width:150},
+		{field: 'sisPublishtime', title: '内容类型',sort: true,width:150},
+		{field: 'sisPublishtime', title: '收录类别',sort: true,width:150},
+		{field: 'sisStatus', title: '级别 ',sort: true,width:150},
 		{field: 'sisDept', title: '部门',width:220},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
@@ -236,87 +242,41 @@ layui.use('table', function(obj){
       });
 	
   //监听工具条
-  table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-    var data = obj.data //获得当前行数据
-    console.log(data)
-    ,layEvent = obj.event; //获得 lay-event 对应的值
-    if(layEvent === 'detail'){
-		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
-     // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
-    } else if(layEvent === 'del'){
-      layer.confirm('确定删除信息', function(index){
-          let arr=[data.id];
-          console.log(data) 
-          $.post({
-          	url:"dellThesisMsg.do",
-          	data:{
-          		"requestDate" : arr
-          	},
-          	success:function(data){
-          		if(data.data){
-          		    //删除对应行（tr）的DOM结构
-          			obj.del();
-          			layer.close(index);
-          		}else{
-          			layer.alert("删除失败")
-          		}
-          		
-          	}
-          }) 
-    	  
-    	  
-    	  
-    	  
-        obj.del(); //删除对应行（tr）的DOM结构
-        layer.close(index);
-        //向服务端发送删除指令
-        
-        
-        
-        
-      });
-    } else if(layEvent === 'edit'){
-      layer.alert(
-		  '<div class="layui-form-item">'+
-
-			'<label class="layui-form-label">角色</label>'+
-			'<div class="layui-input-block">'+
-				'<select name="interest" lay-filter="aihao">'+
-					'<option value=""></option>'+
-					'<option value="0">超级管理员</option>'+
-					'<option value="1" selected="">院级权限</option>'+
-					'<option value="2">人事部门权限</option>'+
-					'<option value="3">产业化处权限</option>'+
-					'<option value="4">科技管理处</option>'+
-				'</select>'+
-			'</div>'+
-		'</div>')
-    }else if(layEvent==="dimission"){
-    	 layer.confirm('确定离职信息', function(index){
-             let arr=data.id;
-             console.log(data) 
-             $.post({
-             	url:"dellempInfo.do",
-             	data:{
-             		"requestDate" : arr
-             	},
-             	success:function(data){
-             		if(data.data){
-             		    //删除对应行（tr）的DOM结构
-             			layer.alert("离职操作成功");
-             		}else{
-             			layer.alert("离职操作失败");
-             		}
-             		
-             	}
-             }) 
-       	  
-          // obj.del(); //删除对应行（tr）的DOM结构
-          // layer.close(index);
-           //向服务端发送删除指  
-         });
-    }
-  });
+    table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+      var data = obj.data //获得当前行数据
+      console.log(data)
+      ,layEvent = obj.event; //获得 lay-event 对应的值
+      if(layEvent === 'detail'){
+      	var iframesrc="paperCheck.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      } else if(layEvent === 'del'){
+        layer.confirm('确定删除信息', function(index){
+            let arr=[data.id];
+            console.log(data) 
+            $.post({
+            	url:"dellpaperMsg.do",
+            	data:{
+            		"requestDate" : arr
+            	},
+            	success:function(data){
+            		if(data.data){
+            		    //删除对应行（tr）的DOM结构
+            			obj.del();
+            			layer.close(index);
+            		}else{
+            			layer.alert("删除失败")
+            		}
+            	}
+            }) 
+          obj.del(); //删除对应行（tr）的DOM结构
+          layer.close(index);
+          //向服务端发送删除指令
+        });
+      } else if(layEvent === 'edit'){
+      	var iframesrc="paperEdit.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }
+    });
 
 	//监听顶部添加删除操作
 	var arr=[];

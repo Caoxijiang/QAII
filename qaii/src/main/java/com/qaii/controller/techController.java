@@ -383,6 +383,26 @@ public class techController {
 	public String paperCheck(){
 		return "page/science/paper/paperCheck";
 	}
+	//会议论文
+	@RequestMapping("papermeeting.do")
+	public String papermeeting(){
+		return "page/science/papermeeting/papermeeting";
+	}
+	//会议论文添加
+	@RequestMapping("papermeetingAdd.do")
+	public String papermeetingAddr(){
+		return "page/science/papermeeting/papermeetingAdd";
+	}
+	//会议论文修改
+	@RequestMapping("papermeetingEdit.do")
+	public String papermeetingEdit(){
+		return "page/science/papermeeting/papermeetingEdit";
+	}
+	//会议论文查看详情
+	@RequestMapping("papermeetingCheck.do")
+	public String papermeetingCheck(){
+		return "page/science/papermeeting/papermeetingCheck";
+	}
 	//著作
 	@RequestMapping("work.do")
 	public String work(){
@@ -402,5 +422,10 @@ public class techController {
 	@RequestMapping("workEdit.do")
 	public String workEdit(){
 		return "page/science/work/workEdit";
+	}
+	//消息管理
+	@RequestMapping("newsScience.do")
+	public String newsScience(){
+		return "page/science/newsScience";
 	}
 }

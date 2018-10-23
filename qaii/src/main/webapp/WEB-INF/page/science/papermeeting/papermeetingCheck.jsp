@@ -27,7 +27,7 @@
 	<div class="techadd">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">期刊论文&nbsp;—&nbsp;查看详情界面</span>
+		<span class="blue">会议论文&nbsp;—&nbsp;查看详情界面</span>
 	</div>
 	<!--		导出-->
 	<button onclick="srchange('paper.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
@@ -40,7 +40,7 @@
  <form class="layui-form" action="addEmpInfo.do" method="post" lay-filter="example">
 <!--  第一块内容-->
 	 <div class="layui-row">
-		<h1>期刊论文基本信息</h1>
+		<h1>会议论文基本信息</h1>
 	  	<div class="layui-row">
 			<div class="layui-col-md12">
 				<div class="layui-form-item">
@@ -76,7 +76,7 @@
 			</div>
 		    <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">刊名&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">会议名称&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="paperNum" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
@@ -84,7 +84,7 @@
 			</div>
 			<div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">卷号，期号，页码&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">会议地点&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
@@ -92,7 +92,7 @@
 		   </div>
 		   <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">内容类型&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">关键词&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
@@ -100,7 +100,7 @@
 		   </div>
 		   <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">收录类别&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">通讯作者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
@@ -108,7 +108,7 @@
 		   </div>
 		   <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">会议录&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
@@ -126,7 +126,7 @@
 			</div>
     		<div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">关键词&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">内容类型&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
@@ -136,7 +136,7 @@
 	  </div>
    <!--  第一块内容-->
    <!--  第二块内容-->
-   <h1>期刊论文相关文件</h1>
+   <h1>会议论文相关文件</h1>
 	  <div class="layui-row bgf7f8f8">	
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
