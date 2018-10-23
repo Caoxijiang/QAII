@@ -27,10 +27,10 @@
 	<div class="techadd">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">期刊论文&nbsp;—&nbsp;查看详情界面</span>
+		<span class="blue">软著&nbsp;—&nbsp;查看详情界面</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('paper.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('soft.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -39,125 +39,109 @@
 <!-- 采用表格内直接行结构  -->
  <form class="layui-form" action="addEmpInfo.do" method="post" lay-filter="example">
 <!--  第一块内容-->
-	 <div class="layui-row">
-		<h1>期刊论文基本信息</h1>
+	  <div class="layui-row">
+		<h1>软著基本信息</h1>
 	  	<div class="layui-row">
-			<div class="layui-col-md12">
-				<div class="layui-form-item">
-					<label class="layui-form-label">题目&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="paperCode" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
-					</div>
-				</div>
-			</div>
-		    <div class="layui-col-md8">
-				<div class="layui-form-item">
-					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="paperAgency" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
-					</div>
-				</div>
-			</div>
-		    <div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">作者单位&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="paperDevelopendtime" class="layui-input input" id="test1" disabled="">
-					  </div>
-				</div>
-			</div>
-		    <div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">出版时间&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="paperFirstpublishtime" class="layui-input input" id="test2" disabled="">
-					  </div>
-				</div>
-			</div>
-		    <div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">刊名&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="paperNum" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
-					</div>
-				</div>
-			</div>
 			<div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">卷号，期号，页码&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
-					</div>
-				</div>
-		   </div>
-		   <div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">内容类型&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
-					</div>
-				</div>
-		   </div>
-		   <div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">收录类别&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
-					</div>
-				</div>
-		   </div>
-		   <div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
-					</div>
-				</div>
-		   </div>
-    		<div class="layui-col-md4">
 				<div class="layui-form-item">
 					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="paperDept" lay-verify="required" lay-search="" id="deptt" class="input" disabled="">
+						<select name="softDept" lay-verify="required" lay-search="" id="deptt" class="input" disabled="">
 							
 						</select>
 					</div>
 				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">编号&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softCode" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">名称&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softName" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">软件开发者&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softWriter" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softAuthor" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
+					</div>
+				</div>
+			</div>
+		    <div class="layui-col-md4">
+				<div class="layui-form-item">
+					<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softAgency" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">开发完成日期&nbsp;<span class="star">*</span></label>
+					  <div class="layui-input-block">
+						<input type="text" name="softDevelopendtime" class="layui-input input" id="test1" disabled="">
+					  </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">首次发表日期&nbsp;<span class="star">*</span></label>
+					  <div class="layui-input-block">
+						<input type="text" name="softFirstpublishtime" class="layui-input input" id="test2" disabled="">
+					  </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+					</div>
+				</div>
 			</div>
     		<div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">关键词&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">发证日期&nbsp;<span class="star">*</span></label>
+					  <div class="layui-input-block">
+						<input type="text" name="softCertificatetime" class="layui-input input" id="test3" disabled="">
+					  </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">费用&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">发票收据-汇款人&nbsp;<span class="star">*</span></label>
+					<div class="layui-input-block">
+						<input type="text" name="softInvoiceper" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">状态更新日期&nbsp;<span class="star">*</span></label>
+					  <div class="layui-input-block">
+						<input type="text" name="softUpdatetime" class="layui-input input" id="test4" disabled="">
+					  </div>
 				</div>
 		   </div>
 	    </div>		 
 	  </div>
    <!--  第一块内容-->
    <!--  第二块内容-->
-   <h1>期刊论文相关文件</h1>
+   <h1>软著相关文件</h1>
 	  <div class="layui-row bgf7f8f8">	
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
-				<label class="layui-form-label">发表电子版&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">证明文件&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
-						<input type="text" name="paperfile" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
-						<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline">在线预览</a>
-				  		<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload" >下载</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="layui-col-md12">
-			<div class="layui-form-item">
-				<label class="layui-form-label">检索证明&nbsp;<span class="star">*</span></label>
-				<div class="layui-input-block">
-					<div class="layui-upload">
-						<input type="text" name="paperfile2" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
-						<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline2">在线预览</a>
-				  		<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload2" >下载</a>
+						<input type="text" name="softfile" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
+						<a class="layui-btn layui-btn-edit layui-btn-xs" id="softOnline">在线预览</a>
+				  		<a class="layui-btn layui-btn-xs layui-btn-tired" id="softDownload" >下载</a>
 					</div>
 				</div>
 			</div>
@@ -178,13 +162,13 @@
 		</div>
     </div>	 
      <!--  第三块内容-->
-     <h1>英文摘要</h1>
+     <h1>备注信息</h1>
 	  <div class="layui-row">
 		<div class="layui-col-md12">
 			<div class="layui-form-item layui-form-text">
 				<!-- <label class="layui-form-label">备注</label> -->
 				<div class="layui-input-block">
-					<textarea name="paperRemark" class="layui-textarea" disabled=""></textarea>
+					<textarea name="softRemark" class="layui-textarea" disabled=""></textarea>
 				</div>
 			</div>
   		</div>		 
@@ -194,7 +178,7 @@
    	   <div class="layui-col-md12">
 		   <div class="layui-form-item">
 			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" onclick="srchange('paper.do')">返回</button>
+			  <button class="layui-btn" onclick="srchange('soft.do')">返回</button>
 			</div>
 		  </div>
   		</div>
@@ -215,7 +199,7 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
 	 //文件表格展示
        if(id!=null){
             $.post({
-                url:"showpaperDetails.do",
+                url:"showSoftDetails.do",
                 data:{
                     id:id
                 },
@@ -230,33 +214,33 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                         /* console.log("afd"+JSON.stringify(trademark)); */
                         //表单初始赋值 从表单中提取数据
                           form.val('example', {
-                            "paperDept":trademark.paperDept,
-                            "paperCode":trademark.paperCode,
-                            "paperName":trademark.paperName,
-                            "paperWriter":trademark.paperWriter,
-                            "paperAuthor":trademark.paperAuthor,
-                            "paperAgency":trademark.paperAgency,
-                            "paperDevelopendtime":trademark.paperDevelopendtime,
-                            "paperFirstpublishtime":trademark.paperFirstpublishtime,
-                            "paperNum":trademark.paperNum,
-                            "paperCertificatetime":trademark.paperCertificatetime,
-                            "paperCost":trademark.paperCost,
-                            "paperInvoiceper":trademark.paperInvoiceper,
-                            "paperUpdatetime":trademark.paperUpdatetime,
-                            "paperRemark":trademark.paperRemark,
-                            "paperfile":trademark.paperFile[0].path
-                            // 修改此输入框的value值，此value为测试值 paperfile为测试自定义值，证明文件值
+                            "softDept":trademark.softDept,
+                            "softCode":trademark.softCode,
+                            "softName":trademark.softName,
+                            "softWriter":trademark.softWriter,
+                            "softAuthor":trademark.softAuthor,
+                            "softAgency":trademark.softAgency,
+                            "softDevelopendtime":trademark.softDevelopendtime,
+                            "softFirstpublishtime":trademark.softFirstpublishtime,
+                            "softNum":trademark.softNum,
+                            "softCertificatetime":trademark.softCertificatetime,
+                            "softCost":trademark.softCost,
+                            "softInvoiceper":trademark.softInvoiceper,
+                            "softUpdatetime":trademark.softUpdatetime,
+                            "softRemark":trademark.softRemark,
+                            "softfile":trademark.softFile[0].path
+                            // 修改此输入框的value值，此value为测试值 softfile为测试自定义值，证明文件值
                           });
                           var domain = window.location.host;
                           var url =data.data.url;
                           var imgpath=domain+url;
-                          var otherfile=trademark.paperFile;
+                          var otherfile=trademark.softFile;
                           otherfile.splice(0,1);
                           $("#demo1").attr("src","https://"+imgpath);
                         //文件表格展示
                           table.render({
                            elem: '#demo'
-                           //,url: 'showpaperfileDetails.do'
+                           //,url: 'showSoftfileDetails.do'
                                /*  //数据接口 */ 
                            ,page: false//开启分页
                            ,cols: [[ //表头
@@ -306,30 +290,10 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
 	});
 	
 
-//发表电子版文件点击事件-在线预览
-$("#paperOnline").click(function(){
+//证明文件点击事件-在线预览
+$("#softOnline").click(function(){
 	/* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
-	var address=$('input[name="paperfile"]').val();
-	var reg1=new RegExp("jpg","i");
-	var reg2=new RegExp("pdf","i");
-	var reg3=new RegExp("png","i");
-	if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
-		/* window.open(ops+address); */
-		window.open(address);
-	}else{
-		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
-	};
-})
-//发表电子版文件点击事件-下载
-$("#paperDownload").click(function(){
-	var address=$('input[name="paperfile"]').val();
-	/* download(ops+address); */
-	download(address);
-})
-//证明文件文件点击事件-在线预览
-$("#paperOnline2").click(function(){
-	/* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
-	var address=$('input[name="paperfile2"]').val();
+	var address=$('input[name="softfile"]').val();
 	var reg1=new RegExp("jpg","i");
 	var reg2=new RegExp("pdf","i");
 	var reg3=new RegExp("png","i");
@@ -341,8 +305,8 @@ $("#paperOnline2").click(function(){
 	};
 })
 //证明文件点击事件-下载
-$("#paperDownload2").click(function(){
-	var address=$('input[name="paperfile2"]').val();
+$("#softDownload").click(function(){
+	var address=$('input[name="softfile"]').val();
 	/* download(ops+address); */
 	download(address);
 })

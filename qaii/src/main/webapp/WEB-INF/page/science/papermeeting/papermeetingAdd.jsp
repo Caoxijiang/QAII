@@ -24,7 +24,7 @@
 <body class="layui-layout-body" style="overflow:scroll">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
-	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧科技管理系统&nbsp;--&nbsp;期刊论文信息添加页面</div>
+	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧科技管理系统&nbsp;--&nbsp;会议论文信息添加页面</div>
   </div>
   <div class="addBanner"></div><!--banner展示图-->
 <!--  表单元素-->
@@ -32,7 +32,7 @@
   <form class="layui-form" action="addSoft.do" method="post" enctype="multipart/form-data">
 <!--  第一块内容-->
 	  <div class="layui-row">
-		<h1>期刊论文基本信息</h1>
+		<h1>会议论文基本信息</h1>
 	  	<div class="layui-row">
 			<div class="layui-col-md12">
 				<div class="layui-form-item">
@@ -68,7 +68,7 @@
 			</div>
 		    <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">刊名&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">会议名称&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
@@ -76,7 +76,7 @@
 			</div>
 			<div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">卷号，期号，页码&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">会议地点&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
@@ -84,7 +84,7 @@
 		   </div>
 		   <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">内容类型&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">关键词&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
@@ -92,7 +92,7 @@
 		   </div>
 		   <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">收录类别&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">通讯作者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
@@ -100,7 +100,7 @@
 		   </div>
 		   <div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">会议录&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
@@ -118,7 +118,7 @@
 			</div>
     		<div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">关键词&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">内容类型&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
 						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
@@ -128,7 +128,7 @@
 	  </div>
    <!--  第一块内容-->
    <!--  第二块内容-->
-   <h1>期刊论文相关文件</h1>
+   <h1>会议论文相关文件</h1>
 	  <div class="layui-row bgf7f8f8">	
 		<div class="layui-col-md12">
 			<div class="layui-form-item">

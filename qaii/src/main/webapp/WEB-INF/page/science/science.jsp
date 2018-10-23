@@ -82,13 +82,17 @@
 	      </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('paper.do')"><i class="layui-icon layui-icon-form" style="font-size: 22px;"></i>&nbsp;论文</a>
+          <a href="javascript:;"><i class="layui-icon layui-icon-senior" style="font-size: 22px;"></i>&nbsp;论文</a>
+          <dl class="layui-nav-child">
+	          <dd class="navdd"><a onclick="iframechange('paper.do')">期刊论文</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('papermeeting.do')">会议论文</a></dd>
+	      </dl>
         </li>
         <li class="layui-nav-item">
           <a href="javascript:;" onclick="iframechange('work.do')"><i class="layui-icon layui-icon-diamond" style="font-size: 22px;"></i>&nbsp;著作</a>
         </li>
        	<li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('newsUI.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
+          <a href="javascript:;" onclick="iframechange('newsScience.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
         </li>
       </ul>
     </div>
