@@ -102,6 +102,10 @@
 	<div class="int-inline"><input id="empThirdeducationschool"  type="checkbox" value="博士学历学校" checked/><lable>博士学历学校</lable></div>
 	<div class="int-inline"><input id="empThirdeducationpro"  type="checkbox" value="博士学历专业" checked/><lable>博士学历专业</lable></div>
 	<div class="int-inline"><input id="empThirdgraduationtime"  type="checkbox" value="博士学历毕业时间" checked/><lable>博士学历毕业时间</lable></div>
+	<div class="int-inline"><input id="empOthereducation"  type="checkbox" value="其他学历" checked/><lable>其他学历</lable></div>
+	<div class="int-inline"><input id="empOthereducationschool"  type="checkbox" value="其他学历学校" checked/><lable>其他学历学校</lable></div>
+	<div class="int-inline"><input id="empOthereducationpro"  type="checkbox" value="其他学历专业" checked/><lable>其他学历专业</lable></div>
+	<div class="int-inline"><input id="empOthergraduationtime"  type="checkbox" value="其他学历毕业时间" checked/><lable>其他学历毕业时间</lable></div>
 	<div class="int-inline"><input id="empJobtitle"  type="checkbox" value="职称名称" checked/><lable>职称名称</lable></div>
 	<div class="int-inline"><input id="empJobtitlelevel"  type="checkbox" value="职称等级" checked/><lable>职称等级</lable></div>
 	<div class="int-inline"><input id="empJobtitleobtaintime"  type="checkbox" value="职称取得时间" checked/><lable>职称取得时间</lable></div>
@@ -188,6 +192,10 @@ layui.use(['table','laydate'], function(obj){
 		{field: 'empThirdeducationschool', title: '博士学历学校',sort: true,width:200},
 		{field: 'empThirdeducationpro', title: '博士学历专业',sort: true,width:200},
 		{field: 'empThirdgraduationtime', title: '博士学历毕业时间',sort: true,width:230},
+		{field: 'empOthereducation', title: '其他学历',sort: true,width:200},
+		{field: 'empOthereducationschool', title: '其他学历学校',sort: true,width:200},
+		{field: 'empOthereducationpro', title: '其他学历专业',sort: true,width:200},
+		{field: 'empOthergraduationtime', title: '其他学历毕业时间',sort: true,width:230},
 
 		{field: 'empJobtitle', title: '职称名称',sort: true,width:200},
 		{field: 'empJobtitlelevel', title: '职称等级',sort: true,width:200},
@@ -567,6 +575,10 @@ $("#searchtime").click(function(){
 						{field: 'empThirdeducationschool', title: '博士学历学校',sort: true,width:200},
 						{field: 'empThirdeducationpro', title: '博士学历专业',sort: true,width:200},
 						{field: 'empThirdgraduationtime', title: '博士学历毕业时间',sort: true,width:230},
+						{field: 'empOthereducation', title: '其他学历',sort: true,width:200},
+						{field: 'empOthereducationschool', title: '其他学历学校',sort: true,width:200},
+						{field: 'empOthereducationpro', title: '其他学历专业',sort: true,width:200},
+						{field: 'empOthergraduationtime', title: '其他学历毕业时间',sort: true,width:230},
 
 						{field: 'empJobtitle', title: '职称名称',sort: true,width:200},
 						{field: 'empJobtitlelevel', title: '职称等级',sort: true,width:200},
