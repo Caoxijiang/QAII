@@ -5,30 +5,38 @@
 <c:set var="basePath" value="${pageContext.request.contextPath}"></c:set>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>科研成果管理系统</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>添加界面</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
-  <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
-  <link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css" />
-  <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
-  <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
-  <script src="${basePath}/commen/bootstrap/bootstrap.min.js"></script>
-  <script src="${basePath}/router/adddetail.js"></script>
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
+  <link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
+	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
+	<script src="${basePath}/js/jquery.table2excel.js"></script>
   <style>
-  	.layui-table th{
-  	height:30px;
-  	min-height: 30px;
-    line-height: 30px;}
+    body{margin: 10px;}
+    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+    .layui-table-body {
+	    height: -moz-calc( 100vh - 215px );
+	    height: -webkit-calc( 100vh - 215px );
+	    height: calc( 100vh - 215 px );
+	}
   </style>
 </head>
-<body class="layui-layout-body" style="overflow:scroll">
-<div class="layui-layout layui-layout-admin">
-  <div class="layui-header">
-	  <div class="layui-logo"><img src="${basePath}/image/qaii.png" style="margin-right: 20px;"></img>智慧科技管理系统&nbsp;--&nbsp;软著信息添加页面</div>
-  </div>
-  <div class="addBanner"></div><!--banner展示图-->
-<!--  表单元素-->
-<div class="layui-container">
+<body id="bodyHei">
+<div class="tool">
+	<div class="techadd">
+		<img src="${basePath}/image/home.png"  class="home"/>
+		<span>首页&nbsp;>&nbsp;</span>
+		<span class="blue">软著&nbsp;—&nbsp;添加界面</span>
+	</div>
+	<!--		导出-->
+	<button onclick="srchange('soft.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+		返回
+	</button>		
+</div>
+<div class="layui-container addtop">
   <form class="layui-form" action="addSoft.do" method="post" enctype="multipart/form-data">
 <!--  第一块内容-->
 	  <div class="layui-row">
@@ -194,8 +202,6 @@
  </form>
 </div>
 <!--  表单元素-->
-
-</div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 $.post({
@@ -307,5 +313,6 @@ $.post({
 })
 
 </script>
+<script src="${basePath}/js/iframesrc.js"></script>
 </body>
 </html>

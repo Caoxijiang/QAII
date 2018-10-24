@@ -68,4 +68,10 @@
       Path = #{path,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-</mapper>
+  <insert id="insertReturnId"  parameterType="com.qaii.domain.Copyrightimg" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+  	insert into sci_copyrightimg (id, uid, Path
+      )
+    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{path,jdbcType=VARCHAR}
+      )
+  </insert>
+ </mapper>

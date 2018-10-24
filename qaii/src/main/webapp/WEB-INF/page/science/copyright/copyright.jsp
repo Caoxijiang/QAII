@@ -54,12 +54,12 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="softDept">作品名称</option>
-			<option value="softName">登记号</option>
-			<option value="softWriter">作者</option>
-			<option value="softAuthor">著作权人</option>
-			<option value="softDevelopendtime">创作完成日期</option>
-			<option value="softFirstpublishtime">首次发表日期</option>
+			<option value="copyPicture">作品名称</option>
+			<option value="copyCode">登记号</option>
+			<option value="copyAuthor">作者</option>
+			<option value="copyCopyrightperson">著作权人</option>
+			<option value="copyEndtime">创作完成日期</option>
+			<option value="copyPublishtime">首次发布日期</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -73,18 +73,18 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=softDept  type="checkbox" value="作品图样" checked="flase"/><lable>作品图样</lable></div>
-	<div class="int-inline"><input id="softCode"  type="checkbox" value="作品名称" checked/><lable>作品名称</lable></div>
-	<div class="int-inline"><input id="softName"  type="checkbox" value="登记号" checked/><lable>登记号</lable></div>
-	<div class="int-inline"><input id="softWriter"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
-	<div class="int-inline"><input id="softAuthor"  type="checkbox" value="著作权人" checked/><lable>著作权人</lable></div>
-	<div class="int-inline"><input id="softAgency"  type="checkbox" value="代理机构" checked/><lable>代理机构</lable></div>
-	<div class="int-inline"><input id="softDevelopendtime"  type="checkbox" value="创作完成日期" checked/><lable>创作完成日期</lable></div>
-	<div class="int-inline"><input id="softFirstpublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发布日期</lable></div>
-	<div class="int-inline"><input id="softNum"  type="checkbox" value="登记日期" checked/><lable>登记日期</lable></div>
+	<div class="int-inline"><input id=copyPicture  type="checkbox" value="作品图样" checked="flase"/><lable>作品图样</lable></div>
+	<div class="int-inline"><input id="copyName"  type="checkbox" value="作品名称" checked/><lable>作品名称</lable></div>
+	<div class="int-inline"><input id="copyCode"  type="checkbox" value="登记号" checked/><lable>登记号</lable></div>
+	<div class="int-inline"><input id="copyAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
+	<div class="int-inline"><input id="copyCopyrightperson"  type="checkbox" value="著作权人" checked/><lable>著作权人</lable></div>
+	<div class="int-inline"><input id="copyAgency"  type="checkbox" value="代理机构" checked/><lable>代理机构</lable></div>
+	<div class="int-inline"><input id="copyEndtime"  type="checkbox" value="创作完成日期" checked/><lable>创作完成日期</lable></div>
+	<div class="int-inline"><input id="copyPublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发布日期</lable></div>
+	<div class="int-inline"><input id="copyRegisttime"  type="checkbox" value="登记日期" checked/><lable>登记日期</lable></div>
 	<div class="int-inline"><input id="softCertificatetime"  type="checkbox" value="费用（元）" checked/><lable>费用（元）</lable></div>
-	<div class="int-inline"><input id="softInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
-	<div class="int-inline"><input id="softUpdatetime"  type="checkbox" value="状态" checked/><lable>状态</lable></div>
+	<div class="int-inline"><input id="copyInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
+	<div class="int-inline"><input id="copyStatus"  type="checkbox" value="状态" checked/><lable>状态</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -119,23 +119,23 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'getAllSoftwareMsg.do', //数据接口
+    url: 'getAllCopyright.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
     	{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'softDept', title: '作品图样',fixed: 'left',width:150},
-		{field: 'softCode', title: '作品名称',fixed: 'left',width:150},
-		{field: 'softName', title: '登记号',sort: true,width:120},
-		{field: 'softWriter', title: '作者',sort: true,width:100},
-		{field: 'softAuthor', title: '著作权人',sort: true,width:150},
-		{field: 'softAgency', title: '代理机构',sort: true,width:150},
-		{field: 'softDevelopendtime', title: '创作完成日期',width:220},
-		{field: 'softFirstpublishtime', title: '首次发布日期',sort: true,width:200},
-		{field: 'softNum', title: '登记日期',sort: true,width:150},
-		{field: 'softCost', title: '费用',sort: true,width:150},
-		{field: 'softInvoiceper', title: '发票收据-汇款人',sort: true,width:200},
-		{field: 'softUpdatetime', title: '状态',sort: true,width:200},
+		{field: 'copyPicture', title: '作品图样',fixed: 'left',width:150},
+		{field: 'copyName', title: '作品名称',fixed: 'left',width:150},
+		{field: 'copyCode', title: '登记号',sort: true,width:120},
+		{field: 'copyAuthor', title: '作者',sort: true,width:100},
+		{field: 'copyCopyrightperson', title: '著作权人',sort: true,width:150},
+		{field: 'copyAgency', title: '代理机构',sort: true,width:150},
+		{field: 'copyEndtime', title: '创作完成日期',width:220},
+		{field: 'copyPublishtime', title: '首次发布日期',sort: true,width:200},
+		{field: 'copyRegisttime', title: '登记日期',sort: true,width:150},
+		{field: 'copyCost', title: '费用',sort: true,width:150},
+		{field: 'copyInvoiceper', title: '发票收据-汇款人',sort: true,width:200},
+		{field: 'copyStatus', title: '状态',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
     ]], 
 	  //表格数据
@@ -221,16 +221,18 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="softDept"){
-  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="softName"){
-  				alert("搜索'名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="softAuthor"){
-  				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="softNum"){
+  			if(check=="copyPicture"){
+  				alert("搜索'作品名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="copyCode"){
   				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="softCertificatetime"){
-  				alert("搜索'发证日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="copyAuthor"){
+  				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="copyCopyrightperson"){
+  				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="copyEndtime"){
+  				alert("搜索'创作完成日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="copyPublishtime"){
+  				alert("搜索'首次发布日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -264,7 +266,7 @@ layui.use('table', function(obj){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"dellcopyrightMsg.do",
+          	url:"copyrightDeleted.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -327,7 +329,7 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: 'insertSoftDatabyexcel.do'
+  ,url: 'insertCopyrightOfExcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
 	  alert("上传成功！请更新数据！");
@@ -351,7 +353,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "软著管理",
+				filename: "软著信息",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片

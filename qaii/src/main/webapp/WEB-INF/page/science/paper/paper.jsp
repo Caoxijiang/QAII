@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>著作</title>
+  <title>论文</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
@@ -25,8 +25,8 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">著作( <span id="countnum"> </span> )</span>
-		<a href="adddetail.do" target="_blank">
+  	  <span class="limit">期刊论文( <span id="countnum"> </span> )</span>
+		<a href="paperAdd.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -50,9 +50,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="workPublishhouse">出版社</option>
+			<option value="sisPublishlocation">期刊/会议/杂志</option>
 			<option value="empJobtitlelevel">职称等级</option>
-			<option value="workAuthor">作者</option>
+			<option value="sisUnits">署名单位</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -66,23 +66,26 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=workType  type="checkbox" value="类型" checked="flase"/><lable>类型</lable></div>
-	<div class="int-inline"><input id="workTopic"  type="checkbox" value="题目" checked/><lable>题目</lable></div>
-	<div class="int-inline"><input id="workAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
-	<div class="int-inline"><input id="workPublishhouse"  type="checkbox" value="出版社" checked/><lable>出版社</lable></div>
-	<div class="int-inline"><input id="workPublishtime"  type="checkbox" value="出版年份" checked/><lable>出版年份</lable></div>
-	<div class="int-inline"><input id="workDept"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
+	<div class="int-inline"><input id=sisSubject  type="checkbox" value="题目" checked="flase"/><lable>题目</lable></div>
+	<div class="int-inline"><input id="sisAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
+	<div class="int-inline"><input id="sisUnits"  type="checkbox" value="署名单位" checked/><lable>署名单位</lable></div>
+	<div class="int-inline"><input id="sisPublishlocation"  type="checkbox" value="期刊/会议/杂志" checked/><lable>期刊/会议/杂志</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="发表时间" checked/><lable>发表时间</lable></div>
+	<div class="int-inline"><input id="sisStatus"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
+	<div class="int-inline"><input id="sisDept"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
+	
 </div>
 </div>  
 <!-- 数据展示主表格-->
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
- <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.workType}}'" target="_blank" method="post" id="chex">查看详情</a> -->
+ <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.sisSubject}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
 </script>
 <!-- 数据展示主表格-->
  
@@ -107,19 +110,24 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'getAllWorkMsg.do', //数据接口
+    url: 'getAllThesisMsg.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'workType', title: '类型',fixed: 'left',width:100},
-		{field: 'workTopic', title: '题目',fixed: 'left',width:150},
-		{field: 'workAuthor', title: '作者',sort: true},
-		{field: 'workPublishhouse', title: '出版社',sort: true,width:200},
-		{field: 'workPublishtime', title: '出版年份',sort: true,width:150},
-		{field: 'workDept', title: '部门',sort: true},
+		{field: 'sisSubject', title: '题目',fixed: 'left',width:100},
+		{field: 'sisAuthor', title: '作者',fixed: 'left',width:150},
+		{field: 'sisUnits', title: '作者单位',sort: true,width:150},
+		{field: 'sisPublishtime', title: '出版时间',sort: true,width:150},
+		{field: 'sisPublishtime', title: '刊名',sort: true,width:150},
+		{field: 'sisPublishtime', title: '卷号，期名，页码',width:400},
+		{field: 'sisPublishtime', title: '关键词',sort: true,width:150},
+		{field: 'sisPublishtime', title: '英文摘要',sort: true,width:150},
+		{field: 'sisPublishtime', title: '内容类型',sort: true,width:150},
+		{field: 'sisPublishtime', title: '收录类别',sort: true,width:150},
+		{field: 'sisStatus', title: '级别 ',sort: true,width:150},
+		{field: 'sisDept', title: '部门',width:220},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
-
     ]],
     
     
@@ -207,12 +215,12 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="workPublishhouse"){
-  				alert("搜索'出版社'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="workAuthor"){
-  				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="sisPublishlocation"){
+  				alert("搜索'期刊/会议/杂志'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="sisDept"){
+  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="sisUnits"){
+  				alert("搜索'署名单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -234,87 +242,41 @@ layui.use('table', function(obj){
       });
 	
   //监听工具条
-  table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-    var data = obj.data //获得当前行数据
-    console.log(data)
-    ,layEvent = obj.event; //获得 lay-event 对应的值
-    if(layEvent === 'detail'){
-		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
-     // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
-    } else if(layEvent === 'del'){
-      layer.confirm('确定删除信息', function(index){
-          let arr=[data.id];
-          console.log(data) 
-          $.post({
-          	url:"dellWorkMsg.do",
-          	data:{
-          		"requestDate" : arr
-          	},
-          	success:function(data){
-          		if(data.data){
-          		    //删除对应行（tr）的DOM结构
-          			obj.del();
-          			layer.close(index);
-          		}else{
-          			layer.alert("删除失败")
-          		}
-          		
-          	}
-          }) 
-    	  
-    	  
-    	  
-    	  
-        obj.del(); //删除对应行（tr）的DOM结构
-        layer.close(index);
-        //向服务端发送删除指令
-        
-        
-        
-        
-      });
-    } else if(layEvent === 'edit'){
-      layer.alert(
-		  '<div class="layui-form-item">'+
-
-			'<label class="layui-form-label">角色</label>'+
-			'<div class="layui-input-block">'+
-				'<select name="interest" lay-filter="aihao">'+
-					'<option value=""></option>'+
-					'<option value="0">超级管理员</option>'+
-					'<option value="1" selected="">院级权限</option>'+
-					'<option value="2">人事部门权限</option>'+
-					'<option value="3">产业化处权限</option>'+
-					'<option value="4">科技管理处</option>'+
-				'</select>'+
-			'</div>'+
-		'</div>')
-    }else if(layEvent==="dimission"){
-    	 layer.confirm('确定离职信息', function(index){
-             let arr=data.id;
-             console.log(data) 
-             $.post({
-             	url:"dellempInfo.do",
-             	data:{
-             		"requestDate" : arr
-             	},
-             	success:function(data){
-             		if(data.data){
-             		    //删除对应行（tr）的DOM结构
-             			layer.alert("离职操作成功");
-             		}else{
-             			layer.alert("离职操作失败");
-             		}
-             		
-             	}
-             }) 
-       	  
-          // obj.del(); //删除对应行（tr）的DOM结构
-          // layer.close(index);
-           //向服务端发送删除指  
-         });
-    }
-  });
+    table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+      var data = obj.data //获得当前行数据
+      console.log(data)
+      ,layEvent = obj.event; //获得 lay-event 对应的值
+      if(layEvent === 'detail'){
+      	var iframesrc="paperCheck.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      } else if(layEvent === 'del'){
+        layer.confirm('确定删除信息', function(index){
+            let arr=[data.id];
+            console.log(data) 
+            $.post({
+            	url:"dellpaperMsg.do",
+            	data:{
+            		"requestDate" : arr
+            	},
+            	success:function(data){
+            		if(data.data){
+            		    //删除对应行（tr）的DOM结构
+            			obj.del();
+            			layer.close(index);
+            		}else{
+            			layer.alert("删除失败")
+            		}
+            	}
+            }) 
+          obj.del(); //删除对应行（tr）的DOM结构
+          layer.close(index);
+          //向服务端发送删除指令
+        });
+      } else if(layEvent === 'edit'){
+      	var iframesrc="paperEdit.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }
+    });
 
 	//监听顶部添加删除操作
 	var arr=[];
@@ -328,7 +290,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"dellWorkMsg.do",
+		  	url:"dellThesisMsg.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},
@@ -355,10 +317,10 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: 'insertWorkDatabyexcel.do'
+  ,url: 'insertThesisDatabyexcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
-	  alert("添加成功！请更新数据！");
+	  alert("上传成功！请更新数据！");
     console.log(res)
   }
 })
@@ -379,7 +341,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "著作管理",
+				filename: "期刊论文信息",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片

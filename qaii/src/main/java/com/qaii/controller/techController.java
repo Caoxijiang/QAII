@@ -366,11 +366,66 @@ public class techController {
 	//论文
 	@RequestMapping("paper.do")
 	public String paper(){
-		return "page/science/paper";
+		return "page/science/paper/paper";
+	}
+	//论文添加
+	@RequestMapping("paperAdd.do")
+	public String paperAddr(){
+		return "page/science/paper/paperAdd";
+	}
+	//论文修改
+	@RequestMapping("paperEdit.do")
+	public String paperEdit(){
+		return "page/science/paper/paperEdit";
+	}
+	//论文查看详情
+	@RequestMapping("paperCheck.do")
+	public String paperCheck(){
+		return "page/science/paper/paperCheck";
+	}
+	//会议论文
+	@RequestMapping("papermeeting.do")
+	public String papermeeting(){
+		return "page/science/papermeeting/papermeeting";
+	}
+	//会议论文添加
+	@RequestMapping("papermeetingAdd.do")
+	public String papermeetingAddr(){
+		return "page/science/papermeeting/papermeetingAdd";
+	}
+	//会议论文修改
+	@RequestMapping("papermeetingEdit.do")
+	public String papermeetingEdit(){
+		return "page/science/papermeeting/papermeetingEdit";
+	}
+	//会议论文查看详情
+	@RequestMapping("papermeetingCheck.do")
+	public String papermeetingCheck(){
+		return "page/science/papermeeting/papermeetingCheck";
 	}
 	//著作
 	@RequestMapping("work.do")
 	public String work(){
-		return "page/science/work";
+		return "page/science/work/work";
+	}
+	//著作添加
+	@RequestMapping("workAdd.do")
+	public String workAdd(){
+		return "page/science/work/workAdd";
+	}
+	//著作查看详情
+	@RequestMapping("workCheck.do")
+	public String workCheck(){
+		return "page/science/work/workCheck";
+	}
+	//著作修改
+	@RequestMapping("workEdit.do")
+	public String workEdit(){
+		return "page/science/work/workEdit";
+	}
+	//消息管理
+	@RequestMapping("newsScience.do")
+	public String newsScience(){
+		return "page/science/newsScience";
 	}
 }

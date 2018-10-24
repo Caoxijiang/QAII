@@ -33,4 +33,10 @@ public class SoftcopyrightfileServiceImpl implements SoftcopyrightfileService {
 		return mapper.updateOtherfileById(record);
 	}
 
+	@Override
+	public int deleteByPrimaryKey(Integer id) {
+		// TODO Auto-generated method stub
+		return mapper.deleteByPrimaryKey(id);
+	}
+
 }
