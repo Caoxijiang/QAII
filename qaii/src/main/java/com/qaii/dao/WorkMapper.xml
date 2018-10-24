@@ -9,9 +9,11 @@
     <result column="work_PublishHouse" jdbcType="VARCHAR" property="workPublishhouse" />
     <result column="work_PublishTime" jdbcType="VARCHAR" property="workPublishtime" />
     <result column="work_Dept" jdbcType="VARCHAR" property="workDept" />
+    <result column="work_isbn" jdbcType="VARCHAR" property="workIsbn" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, work_Type, work_Topic, work_Author, work_PublishHouse, work_PublishTime, work_Dept
+    id, work_Type, work_Topic, work_Author, work_PublishHouse, work_PublishTime, work_Dept, 
+    work_isbn
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -26,10 +28,10 @@
   <insert id="insert" parameterType="com.qaii.domain.Work">
     insert into sci_work (id, work_Type, work_Topic, 
       work_Author, work_PublishHouse, work_PublishTime, 
-      work_Dept)
+      work_Dept, work_isbn)
     values (#{id,jdbcType=INTEGER}, #{workType,jdbcType=VARCHAR}, #{workTopic,jdbcType=VARCHAR}, 
       #{workAuthor,jdbcType=VARCHAR}, #{workPublishhouse,jdbcType=VARCHAR}, #{workPublishtime,jdbcType=VARCHAR}, 
-      #{workDept,jdbcType=VARCHAR})
+      #{workDept,jdbcType=VARCHAR}, #{workIsbn,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.Work">
     insert into sci_work
@@ -55,6 +57,9 @@
       <if test="workDept != null">
         work_Dept,
       </if>
+      <if test="workIsbn != null">
+        work_isbn,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -77,6 +82,9 @@
       </if>
       <if test="workDept != null">
         #{workDept,jdbcType=VARCHAR},
+      </if>
+      <if test="workIsbn != null">
+        #{workIsbn,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -101,6 +109,9 @@
       <if test="workDept != null">
         work_Dept = #{workDept,jdbcType=VARCHAR},
       </if>
+      <if test="workIsbn != null">
+        work_isbn = #{workIsbn,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -111,10 +122,11 @@
       work_Author = #{workAuthor,jdbcType=VARCHAR},
       work_PublishHouse = #{workPublishhouse,jdbcType=VARCHAR},
       work_PublishTime = #{workPublishtime,jdbcType=VARCHAR},
-      work_Dept = #{workDept,jdbcType=VARCHAR}
+      work_Dept = #{workDept,jdbcType=VARCHAR},
+      work_isbn = #{workIsbn,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="getAllWorkMsg" resultMap="BaseResultMap">SELECT * from sci_work</select>
+  <select id="getAllWorkMsg" resultMap="CustomMap">SELECT * from sci_work</select>
   <select id="selectCountNum" resultType="int">SELECT COUNT(*) FROM sci_work</select>
   <delete id="deleteByPrimaryKeys" parameterType="int">
   	DELETE  FROM sci_work WHERE id in
@@ -125,4 +137,23 @@
   <select id="countEachMonthwork" resultType="int">
     SELECT COUNT(*) FROM sci_work WHERE work_PublishTime BETWEEN #{0} AND #{1}
   </select>
+  <resultMap id="CustomMap" type="com.qaii.domain.Work">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="work_Type" jdbcType="VARCHAR" property="workType" />
+    <result column="work_Topic" jdbcType="VARCHAR" property="workTopic" />
+    <result column="work_Author" jdbcType="VARCHAR" property="workAuthor" />
+    <result column="work_PublishHouse" jdbcType="VARCHAR" property="workPublishhouse" />
+    <result column="work_PublishTime" jdbcType="VARCHAR" property="workPublishtime" />
+    <result column="work_Dept" jdbcType="VARCHAR" property="workDept" />
+    <result column="work_isbn" jdbcType="VARCHAR" property="workIsbn" />
+    <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.WorkFile">
+    	<id column="id" jdbcType="BIGINT" property="id" />
+	    <result column="wid" jdbcType="BIGINT" property="wid" />
+	    <result column="style" jdbcType="VARCHAR" property="style" />
+	    <result column="name" jdbcType="VARCHAR" property="name" />
+	    <result column="path" jdbcType="VARCHAR" property="path" />
+	    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+	    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    </collection>
+  </resultMap>
 </mapper>

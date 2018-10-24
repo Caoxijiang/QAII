@@ -111,7 +111,7 @@
         selectByExampleQueryId="false"></table>
         <table tableName="sci_copyright" domainObjectName="Copyright" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>-->
+        selectByExampleQueryId="false"></table>
         <table tableName="sci_periodicalthesis" domainObjectName="PeriodicalThesis" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
@@ -120,8 +120,8 @@
         selectByExampleQueryId="false"></table>
         <table tableName="sci_meetingthesis" domainObjectName="MeetingThesis" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>
-        <table tableName="sci_meetingthesisfile" domainObjectName="MeetingThesisFile" enableCountByExample="false" enableUpdateByExample="false"
+        selectByExampleQueryId="false"></table>-->
+        <table tableName="sci_workfile" domainObjectName="WorkFile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         

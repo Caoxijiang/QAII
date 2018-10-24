@@ -210,7 +210,7 @@
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="listAllMessage" resultMap="BaseResultMap">
+  <select id="listAllMessage" resultMap="CustomtMap">
   	SELECT * FROM sci_meetingthesis
   </select>
   <delete id="deleteMessages" parameterType="int">
@@ -316,4 +316,28 @@
       </if>
     </trim>
   </insert>
+  <resultMap id="CustomtMap" type="com.qaii.domain.MeetingThesis">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="author_unit" jdbcType="VARCHAR" property="authorUnit" />
+    <result column="publishtime" jdbcType="VARCHAR" property="publishtime" />
+    <result column="meeting_name" jdbcType="VARCHAR" property="meetingName" />
+    <result column="meeting_location" jdbcType="VARCHAR" property="meetingLocation" />
+    <result column="keyword" jdbcType="VARCHAR" property="keyword" />
+    <result column="communicate_author" jdbcType="VARCHAR" property="communicateAuthor" />
+    <result column="english_summary" jdbcType="VARCHAR" property="englishSummary" />
+    <result column="meeting_record" jdbcType="VARCHAR" property="meetingRecord" />
+    <result column="content_type" jdbcType="VARCHAR" property="contentType" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.MeetingThesisFile">
+    	<id column="id" jdbcType="BIGINT" property="id" />
+	    <result column="tid" jdbcType="BIGINT" property="tid" />
+	    <result column="style" jdbcType="VARCHAR" property="style" />
+	    <result column="name" jdbcType="VARCHAR" property="name" />
+	    <result column="path" jdbcType="VARCHAR" property="path" />
+    </collection>
+  </resultMap>
 </mapper>

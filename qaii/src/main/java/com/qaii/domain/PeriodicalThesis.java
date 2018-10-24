@@ -1,6 +1,7 @@
 package com.qaii.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class PeriodicalThesis {
     private Long id;
@@ -32,6 +33,8 @@ public class PeriodicalThesis {
     private Date gmtCreate;
 
     private Date gmtModified;
+    
+    private List<PeriodicalThesisFile> listFile;
 
     public Long getId() {
         return id;
@@ -152,4 +155,12 @@ public class PeriodicalThesis {
     public void setGmtModified(Date gmtModified) {
         this.gmtModified = gmtModified;
     }
+
+	public List<PeriodicalThesisFile> getListFile() {
+		return listFile;
+	}
+
+	public void setListFile(List<PeriodicalThesisFile> listFile) {
+		this.listFile = listFile;
+	}
 }

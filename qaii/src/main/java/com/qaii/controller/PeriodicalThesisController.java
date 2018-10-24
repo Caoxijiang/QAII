@@ -1,6 +1,7 @@
 package com.qaii.controller;
 
 import java.io.File;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -152,6 +153,7 @@ public class PeriodicalThesisController {
 		record.setRecordType(req.getParameter("recordType"));
 		record.setLevel(req.getParameter("level"));
 		record.setUnit(req.getParameter("unit"));
+		record.setGmtModified(new Date());
 	}
 	
 	//添加记录
@@ -160,6 +162,7 @@ public class PeriodicalThesisController {
 	String insertMessage(HttpServletRequest req, 
 			PeriodicalThesis record, 
 			@RequestParam("file") MultipartFile[] files) {
+		record.setGmtCreate(new Date());
 		loadData(req,record);
 		int insertResult=Service.insertMessage(record);
 		int fileResult = insertFile(record,files);
@@ -173,11 +176,11 @@ public class PeriodicalThesisController {
 	int insertFile(PeriodicalThesis record, MultipartFile[] files) {
 		// TODO Auto-generated method stub
 		if (files.equals(null) && files.length < 0) {
-			return 0;
+			return 1;
 		}
 		if(files[0].getSize()==0)
 			return 0;
-		PeriodicalThesisFile file=null;
+		PeriodicalThesisFile file = new PeriodicalThesisFile();
 		for (int i = 0; i < files.length; i++) {
 			
 			//文件类型
@@ -194,11 +197,12 @@ public class PeriodicalThesisController {
 				String path = (i==0?FILE_PATH + record.getPeriodicalName() + "/electronic/":FILE_PATH + record.getPeriodicalName() + "/certified/");
 				String dbpath=(i==0?DATABASE_PATH + record.getPeriodicalName() + "/electronic/":DATABASE_PATH + record.getPeriodicalName() + "/certified/");
 				String style=(i==0?"electronic":"certified");
-				File demoFile = new File(path + filename);
+				long t=record.getId();
 				file.setTid(record.getId());
 				file.setStyle(style);
 				file.setName(name);
 				file.setPath(dbpath + filename);
+				File demoFile = new File(path + filename);
 				if (!demoFile.getParentFile().exists()) {
 					demoFile.getParentFile().mkdirs();
 				}
