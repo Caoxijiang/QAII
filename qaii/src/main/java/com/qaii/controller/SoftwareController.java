@@ -125,7 +125,7 @@ public class SoftwareController {
 		}
 		if(files[0].getSize()==0)
 			return 0;
-		Softcopyrightfile softfile=new Softcopyrightfile();
+		Softcopyrightfile softfile=null;
 		for (int i = 0; i < files.length; i++) {
 			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
 			 
@@ -135,7 +135,8 @@ public class SoftwareController {
 			 
 			String uuid = UUID.randomUUID().toString().replaceAll("-","");
 			 
-			String filename = uuid + type;// 取当前时间戳作为文件名
+			// 取当前时间戳作为文件名
+			String filename = uuid + type;
 
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
