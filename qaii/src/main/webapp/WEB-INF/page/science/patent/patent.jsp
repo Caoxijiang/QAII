@@ -90,7 +90,7 @@
 	<div class="int-inline"><input id="patApplytime"  type="checkbox" value="申请日" checked/><lable>申请日</lable></div>
 	<div class="int-inline"><input id="patPublishtime"  type="checkbox" value="公开日" checked/><lable>公开日</lable></div>
 	<div class="int-inline"><input id="patAuthorzationtime"  type="checkbox" value="授权公告日" checked/><lable>授权公告日</lable></div>
-	<div class="int-inline"><input id="patRemission"  type="checkbox" value="授权公告日" checked/><lable>是否减免</lable></div>
+	<div class="int-inline"><input id="patRemission"  type="checkbox" value="是否减免" checked/><lable>是否减免</lable></div>
 	<div class="int-inline"><input id="patCost"  type="checkbox" value="申请费用（元）" checked/><lable>申请费用（元）</lable></div>
 	<div class="int-inline"><input id="patInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
 	<div class="int-inline"><input id="patRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>

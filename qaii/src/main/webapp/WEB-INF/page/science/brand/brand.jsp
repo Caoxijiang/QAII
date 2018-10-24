@@ -54,6 +54,7 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
+			<option value="tradmDept">部门</option>
 			<option value="tradmApplyper">申请人</option>
 			<option value="tradmApplynum">申请号</option>
 			<option value="tradmApplytime">申请日</option>
@@ -71,7 +72,7 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=tradmDept  type="checkbox" value="部门" checked="flase"/><lable>部门</lable></div>
+	<div class="int-inline"><input id="tradmDept"  type="checkbox" value="部门" checked="flase"/><lable>部门</lable></div>
 	<div class="int-inline"><input id="tradmCode"  type="checkbox" value="编号" checked/><lable>编号</lable></div>
 	<div class="int-inline"><input id="tradmPngandexplain"  type="checkbox" value="商标图样及说明" checked/><lable>商标图样及说明</lable></div>
 	<div class="int-inline"><input id="tradmApplyper"  type="checkbox" value="申请人" checked/><lable>申请人</lable></div>
@@ -240,6 +241,8 @@ layui.use('table', function(obj){
   				alert("搜索'申请日'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="tradmRegistertime"){
   				alert("搜索'注册日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="tradmDept"){
+  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}			
   		  }
   	    }//搜索结束

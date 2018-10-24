@@ -30,7 +30,7 @@
 <div class="tool">
 	<div class="layui-btn-group demoTable">
   	  <span class="limit">软著( <span id="countnum"> </span> )</span>
-		<a href="softAdd.do" target="_blank">
+		<a href="javascript:;" onclick="srchange('softAdd.do')">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -395,6 +395,7 @@ upload.render({
 
 	
 </script>
+<script src="${basePath}/js/iframesrc.js"></script>
 </body>
 </html>        
         
