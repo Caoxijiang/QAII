@@ -397,6 +397,12 @@ public class EmpController {
 		empInfo.setEmpForeign(req.getParameter("empForeign"));
 		empInfo.setEmpRemarks(req.getParameter("empRemarks"));
 		empInfo.setEmpTitle(req.getParameter("empTitle"));
+		empInfo.setEmpOthereducation(req.getParameter("empOthereducation"));
+		empInfo.setEmpOthereducationschool(req.getParameter("empOthereducationschool"));
+		empInfo.setEmpOthereducationpro(req.getParameter("empOthereducationpro"));
+		empInfo.setEmpOthergraduationtime(req.getParameter("empOthergraduationtime"));
+		
+		
 		//CountDatetoNowDays.TranstoStamp(empInfo);
 	}
 	

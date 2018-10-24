@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.MeetingThesisMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.MeetingThesis">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="author_unit" jdbcType="VARCHAR" property="authorUnit" />
+    <result column="publishtime" jdbcType="VARCHAR" property="publishtime" />
+    <result column="meeting_name" jdbcType="VARCHAR" property="meetingName" />
+    <result column="meeting_location" jdbcType="VARCHAR" property="meetingLocation" />
+    <result column="keyword" jdbcType="VARCHAR" property="keyword" />
+    <result column="communicate_author" jdbcType="VARCHAR" property="communicateAuthor" />
+    <result column="english_summary" jdbcType="VARCHAR" property="englishSummary" />
+    <result column="meeting_record" jdbcType="VARCHAR" property="meetingRecord" />
+    <result column="content_type" jdbcType="VARCHAR" property="contentType" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, topic, author, author_unit, publishtime, meeting_name, meeting_location, keyword, 
+    communicate_author, english_summary, meeting_record, content_type, unit, gmt_create, 
+    gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sci_meetingthesis
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sci_meetingthesis
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.MeetingThesis">
+    insert into sci_meetingthesis (id, topic, author, 
+      author_unit, publishtime, meeting_name, 
+      meeting_location, keyword, communicate_author, 
+      english_summary, meeting_record, content_type, 
+      unit, gmt_create, gmt_modified
+      )
+    values (#{id,jdbcType=BIGINT}, #{topic,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
+      #{authorUnit,jdbcType=VARCHAR}, #{publishtime,jdbcType=VARCHAR}, #{meetingName,jdbcType=VARCHAR}, 
+      #{meetingLocation,jdbcType=VARCHAR}, #{keyword,jdbcType=VARCHAR}, #{communicateAuthor,jdbcType=VARCHAR}, 
+      #{englishSummary,jdbcType=VARCHAR}, #{meetingRecord,jdbcType=VARCHAR}, #{contentType,jdbcType=VARCHAR}, 
+      #{unit,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.MeetingThesis">
+    insert into sci_meetingthesis
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="topic != null">
+        topic,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="authorUnit != null">
+        author_unit,
+      </if>
+      <if test="publishtime != null">
+        publishtime,
+      </if>
+      <if test="meetingName != null">
+        meeting_name,
+      </if>
+      <if test="meetingLocation != null">
+        meeting_location,
+      </if>
+      <if test="keyword != null">
+        keyword,
+      </if>
+      <if test="communicateAuthor != null">
+        communicate_author,
+      </if>
+      <if test="englishSummary != null">
+        english_summary,
+      </if>
+      <if test="meetingRecord != null">
+        meeting_record,
+      </if>
+      <if test="contentType != null">
+        content_type,
+      </if>
+      <if test="unit != null">
+        unit,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="topic != null">
+        #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorUnit != null">
+        #{authorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null">
+        #{publishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingName != null">
+        #{meetingName,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingLocation != null">
+        #{meetingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="keyword != null">
+        #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="communicateAuthor != null">
+        #{communicateAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="englishSummary != null">
+        #{englishSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingRecord != null">
+        #{meetingRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="contentType != null">
+        #{contentType,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null">
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.MeetingThesis">
+    update sci_meetingthesis
+    <set>
+      <if test="topic != null">
+        topic = #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorUnit != null">
+        author_unit = #{authorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null">
+        publishtime = #{publishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingName != null">
+        meeting_name = #{meetingName,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingLocation != null">
+        meeting_location = #{meetingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="keyword != null">
+        keyword = #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="communicateAuthor != null">
+        communicate_author = #{communicateAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="englishSummary != null">
+        english_summary = #{englishSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingRecord != null">
+        meeting_record = #{meetingRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="contentType != null">
+        content_type = #{contentType,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null">
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.MeetingThesis">
+    update sci_meetingthesis
+    set topic = #{topic,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      author_unit = #{authorUnit,jdbcType=VARCHAR},
+      publishtime = #{publishtime,jdbcType=VARCHAR},
+      meeting_name = #{meetingName,jdbcType=VARCHAR},
+      meeting_location = #{meetingLocation,jdbcType=VARCHAR},
+      keyword = #{keyword,jdbcType=VARCHAR},
+      communicate_author = #{communicateAuthor,jdbcType=VARCHAR},
+      english_summary = #{englishSummary,jdbcType=VARCHAR},
+      meeting_record = #{meetingRecord,jdbcType=VARCHAR},
+      content_type = #{contentType,jdbcType=VARCHAR},
+      unit = #{unit,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="listAllMessage" resultMap="BaseResultMap">
+  	SELECT * FROM sci_meetingthesis
+  </select>
+  <delete id="deleteMessages" parameterType="int">
+  	DELETE  FROM sci_meetingthesis WHERE id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
+  <insert id="insertMessage" parameterType="com.qaii.domain.MeetingThesis" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+  	insert into sci_meetingthesis
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="topic != null">
+        topic,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="authorUnit != null">
+        author_unit,
+      </if>
+      <if test="publishtime != null">
+        publishtime,
+      </if>
+      <if test="meetingName != null">
+        meeting_name,
+      </if>
+      <if test="meetingLocation != null">
+        meeting_location,
+      </if>
+      <if test="keyword != null">
+        keyword,
+      </if>
+      <if test="communicateAuthor != null">
+        communicate_author,
+      </if>
+      <if test="englishSummary != null">
+        english_summary,
+      </if>
+      <if test="meetingRecord != null">
+        meeting_record,
+      </if>
+      <if test="contentType != null">
+        content_type,
+      </if>
+      <if test="unit != null">
+        unit,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="topic != null">
+        #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorUnit != null">
+        #{authorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null">
+        #{publishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingName != null">
+        #{meetingName,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingLocation != null">
+        #{meetingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="keyword != null">
+        #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="communicateAuthor != null">
+        #{communicateAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="englishSummary != null">
+        #{englishSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingRecord != null">
+        #{meetingRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="contentType != null">
+        #{contentType,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null">
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

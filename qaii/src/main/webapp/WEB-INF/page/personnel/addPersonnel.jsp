@@ -90,18 +90,18 @@
 	<div class="int-inline"><input id="empEthnic"  type="checkbox" value="民族" checked/><lable>民族</lable></div>
 	<div class="int-inline"><input id="empPoliticallandscape"  type="checkbox" value="政治面貌" checked/><lable>政治面貌</lable></div>
 	<div class="int-inline"><input id="empMaritalstatus"  type="checkbox" value="婚姻状况" checked/><lable>婚姻状况</lable></div>
-	<div class="int-inline"><input id="empFirsteducation"  type="checkbox" value="第一学历" checked/><lable>第一学历</lable></div>
-	<div class="int-inline"><input id="empFirsteducationschool"  type="checkbox" value="第一学历学校" checked/><lable>第一学历学校</lable></div>
-	<div class="int-inline"><input id="empFirsteducationpro"  type="checkbox" value="第一学历专业" checked/><lable>第一学历专业</lable></div>
-	<div class="int-inline"><input id="empFirstgraduationtime"  type="checkbox" value="第一学历毕业时间" checked/><lable>第一学历毕业时间</lable></div>
-	<div class="int-inline"><input id="empSecondeducation"  type="checkbox" value="第二学历" checked/><lable>第二学历</lable></div>
-	<div class="int-inline"><input id="empSecondeducationschool"  type="checkbox" value="第二学历学校" checked/><lable>第二学历学校</lable></div>
-	<div class="int-inline"><input id="empSecondeducationpro"  type="checkbox" value="第二学历专业" checked/><lable>第二学历专业</lable></div>
-	<div class="int-inline"><input id="empSecondgraduationtime"  type="checkbox" value="第二学历毕业时间" checked/><lable>第二学历毕业时间</lable></div>
-	<div class="int-inline"><input id="empThirdeducation"  type="checkbox" value="第三学历" checked/><lable>第三学历</lable></div>
-	<div class="int-inline"><input id="empThirdeducationschool"  type="checkbox" value="第三学历学校" checked/><lable>第三学历学校</lable></div>
-	<div class="int-inline"><input id="empThirdeducationpro"  type="checkbox" value="第三学历专业" checked/><lable>第三学历专业</lable></div>
-	<div class="int-inline"><input id="empThirdgraduationtime"  type="checkbox" value="第三学历毕业时间" checked/><lable>第三学历毕业时间</lable></div>
+	<div class="int-inline"><input id="empFirsteducation"  type="checkbox" value="本科学历" checked/><lable>本科学历</lable></div>
+	<div class="int-inline"><input id="empFirsteducationschool"  type="checkbox" value="本科学历学校" checked/><lable>本科学历学校</lable></div>
+	<div class="int-inline"><input id="empFirsteducationpro"  type="checkbox" value="本科学历专业" checked/><lable>本科学历专业</lable></div>
+	<div class="int-inline"><input id="empFirstgraduationtime"  type="checkbox" value="本科学历毕业时间" checked/><lable>本科学历毕业时间</lable></div>
+	<div class="int-inline"><input id="empSecondeducation"  type="checkbox" value="硕士学历" checked/><lable>硕士学历</lable></div>
+	<div class="int-inline"><input id="empSecondeducationschool"  type="checkbox" value="硕士学历学校" checked/><lable>硕士学历学校</lable></div>
+	<div class="int-inline"><input id="empSecondeducationpro"  type="checkbox" value="硕士学历专业" checked/><lable>硕士学历专业</lable></div>
+	<div class="int-inline"><input id="empSecondgraduationtime"  type="checkbox" value="硕士学历毕业时间" checked/><lable>硕士学历毕业时间</lable></div>
+	<div class="int-inline"><input id="empThirdeducation"  type="checkbox" value="博士学历" checked/><lable>博士学历</lable></div>
+	<div class="int-inline"><input id="empThirdeducationschool"  type="checkbox" value="博士学历学校" checked/><lable>博士学历学校</lable></div>
+	<div class="int-inline"><input id="empThirdeducationpro"  type="checkbox" value="博士学历专业" checked/><lable>博士学历专业</lable></div>
+	<div class="int-inline"><input id="empThirdgraduationtime"  type="checkbox" value="博士学历毕业时间" checked/><lable>博士学历毕业时间</lable></div>
 	<div class="int-inline"><input id="empJobtitle"  type="checkbox" value="职称名称" checked/><lable>职称名称</lable></div>
 	<div class="int-inline"><input id="empJobtitlelevel"  type="checkbox" value="职称等级" checked/><lable>职称等级</lable></div>
 	<div class="int-inline"><input id="empJobtitleobtaintime"  type="checkbox" value="职称取得时间" checked/><lable>职称取得时间</lable></div>
@@ -176,18 +176,18 @@ layui.use(['table','laydate'], function(obj){
 		{field: 'empPoliticallandscape', title: '政治面貌',sort: true,width:150},
 		{field: 'empMaritalstatus', title: '婚姻状况',sort: true,width:150},
 		
-		{field: 'empFirsteducation', title: '第一学历',sort: true,width:200},
-		{field: 'empFirsteducationschool', title: '第一学历学校',sort: true,width:200},
-		{field: 'empFirsteducationpro', title: '第一学历专业',sort: true,width:200},
-		{field: 'empFirstgraduationtime', title: '第一学历毕业时间',sort: true,width:230},
-		{field: 'empSecondeducation', title: '第二学历',sort: true,width:200},
-		{field: 'empSecondeducationschool', title: '第二学历学校',sort: true,width:200},
-		{field: 'empSecondeducationpro', title: '第二学历专业',sort: true,width:200},
-		{field: 'empSecondgraduationtime', title: '第二学历毕业时间',sort: true,width:230},
-		{field: 'empThirdeducation', title: '第三学历',sort: true,width:200},
-		{field: 'empThirdeducationschool', title: '第三学历学校',sort: true,width:200},
-		{field: 'empThirdeducationpro', title: '第三学历专业',sort: true,width:200},
-		{field: 'empThirdgraduationtime', title: '第三学历毕业时间',sort: true,width:230},
+		{field: 'empFirsteducation', title: '本科学历',sort: true,width:200},
+		{field: 'empFirsteducationschool', title: '本科学历学校',sort: true,width:200},
+		{field: 'empFirsteducationpro', title: '本科学历专业',sort: true,width:200},
+		{field: 'empFirstgraduationtime', title: '本科学历毕业时间',sort: true,width:230},
+		{field: 'empSecondeducation', title: '硕士学历',sort: true,width:200},
+		{field: 'empSecondeducationschool', title: '硕士学历学校',sort: true,width:200},
+		{field: 'empSecondeducationpro', title: '硕士学历专业',sort: true,width:200},
+		{field: 'empSecondgraduationtime', title: '硕士学历毕业时间',sort: true,width:230},
+		{field: 'empThirdeducation', title: '博士学历',sort: true,width:200},
+		{field: 'empThirdeducationschool', title: '博士学历学校',sort: true,width:200},
+		{field: 'empThirdeducationpro', title: '博士学历专业',sort: true,width:200},
+		{field: 'empThirdgraduationtime', title: '博士学历毕业时间',sort: true,width:230},
 
 		{field: 'empJobtitle', title: '职称名称',sort: true,width:200},
 		{field: 'empJobtitlelevel', title: '职称等级',sort: true,width:200},
@@ -555,18 +555,18 @@ $("#searchtime").click(function(){
 						{field: 'empPoliticallandscape', title: '政治面貌',sort: true,width:150},
 						{field: 'empMaritalstatus', title: '婚姻状况',sort: true,width:150},
 						
-						{field: 'empFirsteducation', title: '第一学历',sort: true,width:200},
-						{field: 'empFirsteducationschool', title: '第一学历学校',sort: true,width:200},
-						{field: 'empFirsteducationpro', title: '第一学历专业',sort: true,width:200},
-						{field: 'empFirstgraduationtime', title: '第一学历毕业时间',sort: true,width:230},
-						{field: 'empSecondeducation', title: '第二学历',sort: true,width:200},
-						{field: 'empSecondeducationschool', title: '第二学历学校',sort: true,width:200},
-						{field: 'empSecondeducationpro', title: '第二学历专业',sort: true,width:200},
-						{field: 'empSecondgraduationtime', title: '第二学历毕业时间',sort: true,width:230},
-						{field: 'empThirdeducation', title: '第三学历',sort: true,width:200},
-						{field: 'empThirdeducationschool', title: '第三学历学校',sort: true,width:200},
-						{field: 'empThirdeducationpro', title: '第三学历专业',sort: true,width:200},
-						{field: 'empThirdgraduationtime', title: '第三学历毕业时间',sort: true,width:230},
+						{field: 'empFirsteducation', title: '本科学历',sort: true,width:200},
+						{field: 'empFirsteducationschool', title: '本科学历学校',sort: true,width:200},
+						{field: 'empFirsteducationpro', title: '本科学历专业',sort: true,width:200},
+						{field: 'empFirstgraduationtime', title: '本科学历毕业时间',sort: true,width:230},
+						{field: 'empSecondeducation', title: '硕士学历',sort: true,width:200},
+						{field: 'empSecondeducationschool', title: '硕士学历学校',sort: true,width:200},
+						{field: 'empSecondeducationpro', title: '硕士学历专业',sort: true,width:200},
+						{field: 'empSecondgraduationtime', title: '硕士学历毕业时间',sort: true,width:230},
+						{field: 'empThirdeducation', title: '博士学历',sort: true,width:200},
+						{field: 'empThirdeducationschool', title: '博士学历学校',sort: true,width:200},
+						{field: 'empThirdeducationpro', title: '博士学历专业',sort: true,width:200},
+						{field: 'empThirdgraduationtime', title: '博士学历毕业时间',sort: true,width:230},
 
 						{field: 'empJobtitle', title: '职称名称',sort: true,width:200},
 						{field: 'empJobtitlelevel', title: '职称等级',sort: true,width:200},
