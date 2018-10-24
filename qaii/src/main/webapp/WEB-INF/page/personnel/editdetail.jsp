@@ -43,10 +43,10 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">婚姻状况&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
-							<select name="empMaritalstatus" lay-verify="required" lay-search="" lay-verify="required" class="input">
+							<select name="empMaritalstatus"  lay-search="" lay-verify="required" class="input">
 								<option value="">   </option>
-								<option value="1">未婚</option>
-								<option value="2">已婚</option>
+								<option value="未婚">未婚</option>
+								<option value="已婚">已婚</option>
 							</select>
 						</div>
 					</div>
@@ -167,85 +167,109 @@
 			
 				<div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">第一学历&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">本科学历&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<input type="text" name="empFirsteducation" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
-					
+						<div class="layui-form-item">
+						<label class="layui-form-label">其他学历</label>
+						<div class="layui-input-block">
+							<input type="text" name="empOthereducation" lay-verify="title" autocomplete="off" class="layui-input input">
+						</div>
+					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历</label>
+						<label class="layui-form-label">硕士学历</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducation" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历</label>
+						<label class="layui-form-label">博士学历</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
+					
 				</div>
 			    <div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">第一学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">本科学历毕业学校&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<input type="text" name="empFirsteducationschool" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历毕业学校</label>
+						<label class="layui-form-label">硕士学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducationschool" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历毕业学校</label>
+						<label class="layui-form-label">博士学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducationschool" lay-verify="title" autocomplete="off" class="layui-input input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">其他学历毕业学校</label>
+						<div class="layui-input-block">
+							<input type="text" name="empOthereducationschool" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 				</div>
    		 		<div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">第一学历专业&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">本科学历专业&nbsp;<span class="star">*</span></label>
 						<div class="layui-input-block">
 							<input type="text" name="empFirsteducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">第二学历专业&nbsp;</label>
+						<label class="layui-form-label">硕士学历专业&nbsp;</label>
 						<div class="layui-input-block">
 							<input type="text" name="empSecondeducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">第三学历专业</label>
+						<label class="layui-form-label">博士学历专业</label>
 						<div class="layui-input-block">
 							<input type="text" name="empThirdeducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">其他学历专业</label>
+						<div class="layui-input-block">
+							<input type="text" name="empOthereducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 				</div>
    		 		<div class="layui-col-md3">
 					<div class="layui-form-item">
-						  <label class="layui-form-label">第一学历毕业时间&nbsp;<span class="star">*</span></label>
+						  <label class="layui-form-label">本科学历毕业时间&nbsp;<span class="star">*</span></label>
 						  <div class="layui-input-block">
 							<input type="text" name="empFirstgraduationtime" class="layui-input input" id="test1-1">
 						  </div>
 					</div>
 					<div class="layui-form-item">
-						  <label class="layui-form-label">第二学历毕业时间</label>
+						  <label class="layui-form-label">硕士学历毕业时间</label>
 						  <div class="layui-input-block">
 							<input type="text" name="empSecondgraduationtime" class="layui-input input" id="test1-2">
 						  </div>
 					</div>
 					<div class="layui-form-item">
-						  <label class="layui-form-label">第三学历毕业时间</label>
+						  <label class="layui-form-label">博士学历毕业时间</label>
 						  <div class="layui-input-block">
 							<input type="text" name="empThirdgraduationtime" class="layui-input input" id="test1-3">
 						  </div>
 					</div>
+						<div class="layui-form-item">
+						<label class="layui-form-label">其他学历毕业时间</label>
+						<div class="layui-input-block">
+						<input type="text" name="empOthergraduationtime" class="layui-input input" id="test1-4">
+					</div>
+				</div>
 				</div>
     		 
 	    		 
@@ -295,10 +319,10 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">编制</label>
 						<div class="layui-input-block">
-							<select name="empCompile" lay-search="" class="input">
+							<select name="empCompile" lay-search="" class="input" lay-verify="required">
 								<option value="">   </option>
-								<option value="是">是</option>
-								<option value="否">否</option>
+								<option value="所编">所编</option>
+								<option value="聘用">聘用</option>
 							</select>
 						</div>
 					</div>
@@ -396,7 +420,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">是否外籍人员</label>
 						<div class="layui-input-block">
-							<select name="empForeign" lay-search="" class="input">
+							<select name="empForeign" lay-search="" class="input" lay-verify="required">
 								<option value="">  </option>
 								<option value="是">是</option>
 								<option value="否">否</option>
@@ -492,27 +516,27 @@ $.post({
 		  laydate.render({
 		    elem: '#test2'
 		  });
-			//第一学历毕业时间日期选择
+			//本科学历毕业时间日期选择
 		  laydate.render({
 		    elem: '#test1-1'
 		  });
-			//第二学历毕业时间日期选择
+			//硕士学历毕业时间日期选择
 		  laydate.render({
 		    elem: '#test1-2'
 		  });
-			//第三学历毕业时间日期选择
+			//博士学历毕业时间日期选择
 		  laydate.render({
 		    elem: '#test1-3'
 		  });
-		//第一学历毕业时间日期选择
+		//本科学历毕业时间日期选择
 		  laydate.render({
 		    elem: '#test2-1'
 		  });
-			//第二学历毕业时间日期选择
+			//硕士学历毕业时间日期选择
 		  laydate.render({
 		    elem: '#test2-2'
 		  });
-			//第三学历毕业时间日期选择
+			//博士学历毕业时间日期选择
 		  laydate.render({
 		    elem: '#test2-3'
 		  });
@@ -623,7 +647,11 @@ $.post({
 								  "empDepartureTime":empinfo.empDepartureTime,
 								  "empTryStatus":empinfo.empTryStatus,
 								  "empContractStatus":empinfo.empContractStatus,
-								  "empReviewstatus":empinfo.empReviewstatus
+								  "empReviewstatus":empinfo.empReviewstatus,
+								  "empOthereducation":empinfo.empOthereducation,
+								  "empOthereducationschool":empinfo.empOthereducationschool,
+								  "empOthereducationpro":empinfo.empOthereducationpro,
+								  "empOthergraduationtime":empinfo.empOthergraduationtime
 							  })
 							  $("#demo1").attr("src",data.data.url);
 							 
