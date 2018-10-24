@@ -70,7 +70,8 @@
 	<div class="int-inline"><input id="workTopic"  type="checkbox" value="题目" checked/><lable>题目</lable></div>
 	<div class="int-inline"><input id="workAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
 	<div class="int-inline"><input id="workPublishhouse"  type="checkbox" value="出版社" checked/><lable>出版社</lable></div>
-	<div class="int-inline"><input id="workPublishtime"  type="checkbox" value="出版年份" checked/><lable>出版年份</lable></div>
+	<div class="int-inline"><input id="workPublishtime"  type="checkbox" value="出版日期" checked/><lable>出版日期</lable></div>
+	<div class="int-inline"><input id="workDept"  type="checkbox" value="ISBN" checked/><lable>ISBN</lable></div>
 	<div class="int-inline"><input id="workDept"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
 </div>
 </div>  
@@ -80,8 +81,8 @@
 </div>
  <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.workType}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail"  href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
-  <a class="layui-btn layui-btn-xs layui-btn-edit" href="updateEmpInfo.do?userId='{{d.id}}'" target="_blank" >修改</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -234,88 +235,42 @@ layui.use('table', function(obj){
     	alert("数据更新成功");
       });
 	
-  //监听工具条
-  table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-    var data = obj.data //获得当前行数据
-    console.log(data)
-    ,layEvent = obj.event; //获得 lay-event 对应的值
-    if(layEvent === 'detail'){
-		//$("#up").html("<a href="+"adddetail.do"+ "target="+"_blank>");
-     // layer.msg('用户名：'+JSON.stringify(data.id)+'<br>密码：'+JSON.stringify(data.empPhone)+'<br>角色：'+JSON.stringify(data.rid));
-    } else if(layEvent === 'del'){
-      layer.confirm('确定删除信息', function(index){
-          let arr=[data.id];
-          console.log(data) 
-          $.post({
-          	url:"dellWorkMsg.do",
-          	data:{
-          		"requestDate" : arr
-          	},
-          	success:function(data){
-          		if(data.data){
-          		    //删除对应行（tr）的DOM结构
-          			obj.del();
-          			layer.close(index);
-          		}else{
-          			layer.alert("删除失败")
-          		}
-          		
-          	}
-          }) 
-    	  
-    	  
-    	  
-    	  
-        obj.del(); //删除对应行（tr）的DOM结构
-        layer.close(index);
-        //向服务端发送删除指令
-        
-        
-        
-        
-      });
-    } else if(layEvent === 'edit'){
-      layer.alert(
-		  '<div class="layui-form-item">'+
-
-			'<label class="layui-form-label">角色</label>'+
-			'<div class="layui-input-block">'+
-				'<select name="interest" lay-filter="aihao">'+
-					'<option value=""></option>'+
-					'<option value="0">超级管理员</option>'+
-					'<option value="1" selected="">院级权限</option>'+
-					'<option value="2">人事部门权限</option>'+
-					'<option value="3">产业化处权限</option>'+
-					'<option value="4">科技管理处</option>'+
-				'</select>'+
-			'</div>'+
-		'</div>')
-    }else if(layEvent==="dimission"){
-    	 layer.confirm('确定离职信息', function(index){
-             let arr=data.id;
-             console.log(data) 
-             $.post({
-             	url:"dellempInfo.do",
-             	data:{
-             		"requestDate" : arr
-             	},
-             	success:function(data){
-             		if(data.data){
-             		    //删除对应行（tr）的DOM结构
-             			layer.alert("离职操作成功");
-             		}else{
-             			layer.alert("离职操作失败");
-             		}
-             		
-             	}
-             }) 
-       	  
-          // obj.del(); //删除对应行（tr）的DOM结构
-          // layer.close(index);
-           //向服务端发送删除指  
-         });
-    }
-  });
+    //监听工具条
+    table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+      var data = obj.data //获得当前行数据
+      console.log(data)
+      ,layEvent = obj.event; //获得 lay-event 对应的值
+      if(layEvent === 'detail'){
+      	var iframesrc="workCheck.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      } else if(layEvent === 'del'){
+        layer.confirm('确定删除信息', function(index){
+            let arr=[data.id];
+            console.log(data) 
+            $.post({
+            	url:"dellsoftMsg.do",
+            	data:{
+            		"requestDate" : arr
+            	},
+            	success:function(data){
+            		if(data.data){
+            		    //删除对应行（tr）的DOM结构
+            			obj.del();
+            			layer.close(index);
+            		}else{
+            			layer.alert("删除失败")
+            		}
+            	}
+            }) 
+          obj.del(); //删除对应行（tr）的DOM结构
+          layer.close(index);
+          //向服务端发送删除指令
+        });
+      } else if(layEvent === 'edit'){
+      	var iframesrc="workEdit.do?userId='"+data.id+"'";
+      	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }
+    });
 
 	//监听顶部添加删除操作
 	var arr=[];
@@ -380,7 +335,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "著作管理",
+				filename: "著作信息",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片

@@ -59,7 +59,7 @@
 			<option value="copyAuthor">作者</option>
 			<option value="copyCopyrightperson">著作权人</option>
 			<option value="copyEndtime">创作完成日期</option>
-			<option value="copyPublishtime">首次发表日期</option>
+			<option value="copyPublishtime">首次发布日期</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -222,15 +222,17 @@ layui.use('table', function(obj){
   				}  
   			 }
   			if(check=="copyPicture"){
-  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  				alert("搜索'作品名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="copyCode"){
-  				alert("搜索'名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="copyAuthor"){
+  				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="copyCopyrightperson"){
   				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyRegisttime"){
-  				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="softCertificatetime"){
-  				alert("搜索'发证日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="copyEndtime"){
+  				alert("搜索'创作完成日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="copyPublishtime"){
+  				alert("搜索'首次发布日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -351,7 +353,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "软著管理",
+				filename: "软著信息",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片

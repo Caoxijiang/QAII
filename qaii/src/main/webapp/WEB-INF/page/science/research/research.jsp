@@ -54,9 +54,17 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="empDept">部门</option>
-			<option value="empJobtitlelevel">职称等级</option>
-			<option value="empGender">性别</option>
+			<option value="govsubSource">来源</option>
+			<option value="govsubLevel">级别</option>
+			<option value="govsubName">课题项目名称</option>
+			<option value="govsubImplementtime">项目实施期</option>
+			<option value="govsubDutyunit">承担单位</option>
+			<option value="govsubAssumedepart">承担部门</option>
+			<option value="govsubProjectper">课题项目负责人</option>
+			<option value="govsubProjectapproval">是否立项</option>
+			<option value="govsubApprovalnum">立项编号</option>
+			<option value="govsubApprovaltime">立项时间</option>
+			<option value="govsubSubvention">资助金额（万元）</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -248,12 +256,28 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="empDept"){
-  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empGender"){
-  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="govsubSource"){
+  				alert("搜索'来源'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govsubLevel"){
+  				alert("搜索'级别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govsubName"){
+  				alert("搜索'课题项目名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govsubImplementtime"){
+  				alert("搜索'项目实施期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govsubDutyunit"){
+  				alert("搜索'承担单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govsubAssumedepart"){
+  				alert("搜索'承担部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govsubProjectper"){
+  				alert("搜索'课题项目负责人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govsubProjectapproval"){
+  				alert("搜索'是否立项'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govsubApprovalnum"){
+  				alert("搜索'立项编号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govsubApprovaltime"){
+  				alert("搜索'立项时间'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govsubSubvention"){
+  				alert("搜索'资助金额（万元）'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -390,7 +414,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "纵向课题管理",
+				filename: "纵向课题信息",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片
