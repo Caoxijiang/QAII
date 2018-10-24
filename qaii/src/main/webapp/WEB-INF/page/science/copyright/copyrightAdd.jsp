@@ -183,27 +183,27 @@ $.post({
 			  laydate.render({
 			    elem: '#test2'
 			  });
-				//第一学历毕业时间日期选择
+				//本科学历毕业时间日期选择
 			  laydate.render({
 			    elem: '#test1-1'
 			  });
-				//第二学历毕业时间日期选择
+				//硕士学历毕业时间日期选择
 			  laydate.render({
 			    elem: '#test1-2'
 			  });
-				//第三学历毕业时间日期选择
+				//博士学历毕业时间日期选择
 			  laydate.render({
 			    elem: '#test1-3'
 			  });
-			//第一学历毕业时间日期选择
+			//本科学历毕业时间日期选择
 			  laydate.render({
 			    elem: '#test2-1'
 			  });
-				//第二学历毕业时间日期选择
+				//硕士学历毕业时间日期选择
 			  laydate.render({
 			    elem: '#test2-2'
 			  });
-				//第三学历毕业时间日期选择
+				//博士学历毕业时间日期选择
 			  laydate.render({
 			    elem: '#test2-3'
 			  });
