@@ -54,7 +54,14 @@
     <result column="emp_departureTime" property="empDepartureTime" jdbcType="VARCHAR" />
     <result column="emp_tryStatus" property="empTryStatus" jdbcType="VARCHAR" />
     <result column="emp_contractStatus" property="empContractStatus" jdbcType="VARCHAR" />
-     <result column="emp_title" property="empTitle" jdbcType="VARCHAR" />
+    <result column="emp_title" property="empTitle" jdbcType="VARCHAR" />
+    <result column="emp_othereducation" property="empOthereducation" jdbcType="VARCHAR" />
+    <result column="emp_othereducationschool" property="empOthereducationschool" jdbcType="VARCHAR" />
+    <result column="emp_othereducationpro" property="empOthereducationpro" jdbcType="VARCHAR" />
+    <result column="emp_othergraduationtime" property="empOthergraduationtime" jdbcType="VARCHAR" />
+     
+     
+     
   </resultMap>
   <sql id="Base_Column_List" >
     id, eid, emp_num, emp_name, emp_gender, emp_dept, emp_position, emp_hire_startTime, 
@@ -66,7 +73,8 @@
     emp_fileAddress, emp_accountAddress, emp_homeAddress, emp_workType, emp_compile, 
     emp_inductionTime, emp_tryOutEndTime, emp_contractEndTime, emp_contractSignedNum, 
     emp_returnee, emp_foreign, emp_remarks, emp_reviewStatus, emp_stat, emp_departureTime, 
-    emp_tryStatus, emp_contractStatus,emp_title
+    emp_tryStatus, emp_contractStatus,emp_title,emp_othereducation,emp_othereducationschool,
+    emp_othereducationpro,emp_othergraduationtime
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -96,7 +104,7 @@
       emp_tryOutEndTime, emp_contractEndTime, emp_contractSignedNum, 
       emp_returnee, emp_foreign, emp_remarks, 
       emp_reviewStatus,emp_stat, emp_departureTime, emp_tryStatus, emp_contractStatus,
-      emp_title)
+      emp_title,emp_othereducation,emp_othereducationschool,emp_othereducationpro,emp_othergraduationtime)
     values (#{id,jdbcType=INTEGER}, #{eid,jdbcType=VARCHAR}, #{empNum,jdbcType=VARCHAR}, 
       #{empName,jdbcType=VARCHAR}, #{empGender,jdbcType=VARCHAR}, #{empDept,jdbcType=VARCHAR}, 
       #{empPosition,jdbcType=VARCHAR}, #{empHireStarttime,jdbcType=VARCHAR}, #{empIdcard,jdbcType=VARCHAR}, 
@@ -114,7 +122,9 @@
       #{empTryoutendtime,jdbcType=VARCHAR}, #{empContractendtime,jdbcType=VARCHAR}, #{empContractsignednum,jdbcType=INTEGER}, 
       #{empReturnee,jdbcType=VARCHAR}, #{empForeign,jdbcType=VARCHAR}, #{empRemarks,jdbcType=VARCHAR}, 
       #{empReviewstatus,jdbcType=VARCHAR}, #{empStat,jdbcType=VARCHAR}, #{empDepartureTime,jdbcType=VARCHAR},
-      #{empTryStatus,jdbcType=VARCHAR}, #{empContractStatus,jdbcType=VARCHAR},#{empTitle,jdbcType=VARCHAR})
+      #{empTryStatus,jdbcType=VARCHAR}, #{empContractStatus,jdbcType=VARCHAR},#{empTitle,jdbcType=VARCHAR},
+      #{empOthereducation,jdbcType=VARCHAR},#{empOthereducationschool,jdbcType=VARCHAR},
+      #{empOthereducationpro,jdbcType=VARCHAR}, #{empOthergraduationtime,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.EmpInfo" >
     insert into emp_info
@@ -567,7 +577,11 @@
       emp_departureTime= #{empDepartureTime,jdbcType=VARCHAR},
       emp_tryStatus= #{empTryStatus,jdbcType=VARCHAR}, 
       emp_contractStatus= #{empContractStatus,jdbcType=VARCHAR},
-      emp_title= #{empTitle,jdbcType=VARCHAR}
+      emp_title= #{empTitle,jdbcType=VARCHAR},
+      emp_othereducation=#{empOthereducation,jdbcType=VARCHAR},
+      emp_othereducationschool=#{empOthereducationschool,jdbcType=VARCHAR},
+      emp_othereducationpro=#{empOthereducationpro,jdbcType=VARCHAR},
+      emp_othergraduationtime=#{empOthergraduationtime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   	<select id="checkbyContract" resultMap="BaseResultMap" parameterType="java.lang.String">

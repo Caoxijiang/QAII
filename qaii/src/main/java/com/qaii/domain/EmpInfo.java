@@ -84,8 +84,79 @@ public class EmpInfo {
     
 
 	private String empTitle;
+	
+    private String empContractendtime;
     
-    public String getEmpStat() {
+    private String empContractstatus;
+
+    private Integer empContractsignednum;
+
+    private String empReturnee;
+
+    private String empForeign;
+
+    private String empRemarks;
+
+    private String empReviewstatus;
+    
+    private String url;
+    
+    private Integer count;
+    
+	private String empStat;
+    
+    private String empDepartureTime;
+    
+    private String empTryStatus;
+    
+    private String empContractStatus;
+    
+	
+	private String empOthereducation;
+	
+	private String empOthereducationschool;
+	
+	private String empOthereducationpro;
+	
+	private String empOthergraduationtime;
+	
+	
+	
+	
+    
+    public String getEmpOthereducation() {
+		return empOthereducation;
+	}
+
+	public void setEmpOthereducation(String empOthereducation) {
+		this.empOthereducation = empOthereducation;
+	}
+
+	public String getEmpOthereducationschool() {
+		return empOthereducationschool;
+	}
+
+	public void setEmpOthereducationschool(String empOthereducationschool) {
+		this.empOthereducationschool = empOthereducationschool;
+	}
+
+	public String getEmpOthereducationpro() {
+		return empOthereducationpro;
+	}
+
+	public void setEmpOthereducationpro(String empOthereducationpro) {
+		this.empOthereducationpro = empOthereducationpro;
+	}
+
+	public String getEmpOthergraduationtime() {
+		return empOthergraduationtime;
+	}
+
+	public void setEmpOthergraduationtime(String empOthergraduationtime) {
+		this.empOthergraduationtime = empOthergraduationtime;
+	}
+
+	public String getEmpStat() {
 		return empStat;
 	}
 
@@ -117,13 +188,7 @@ public class EmpInfo {
 		this.empContractStatus = empContractStatus;
 	}
 
-	private String empStat;
-    
-    private String empDepartureTime;
-    
-    private String empTryStatus;
-    
-    private String empContractStatus;
+
 
     public String getEmpInductiontime() {
 		return empInductiontime;
@@ -134,23 +199,7 @@ public class EmpInfo {
 	}
 
 
-    private String empContractendtime;
-    
-    private String empContractstatus;
 
-    private Integer empContractsignednum;
-
-    private String empReturnee;
-
-    private String empForeign;
-
-    private String empRemarks;
-
-    private String empReviewstatus;
-    
-    private String url;
-    
-    private Integer count;
 
     public Integer getCount() {
 		return count;
