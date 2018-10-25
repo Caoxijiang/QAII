@@ -10,10 +10,11 @@
     <result column="work_PublishTime" jdbcType="VARCHAR" property="workPublishtime" />
     <result column="work_Dept" jdbcType="VARCHAR" property="workDept" />
     <result column="work_isbn" jdbcType="VARCHAR" property="workIsbn" />
+    <result column="is_pass" jdbcType="TINYINT" property="isPass" />
   </resultMap>
   <sql id="Base_Column_List">
     id, work_Type, work_Topic, work_Author, work_PublishHouse, work_PublishTime, work_Dept, 
-    work_isbn
+    work_isbn, is_pass
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -28,10 +29,12 @@
   <insert id="insert" parameterType="com.qaii.domain.Work">
     insert into sci_work (id, work_Type, work_Topic, 
       work_Author, work_PublishHouse, work_PublishTime, 
-      work_Dept, work_isbn)
+      work_Dept, work_isbn, is_pass
+      )
     values (#{id,jdbcType=INTEGER}, #{workType,jdbcType=VARCHAR}, #{workTopic,jdbcType=VARCHAR}, 
       #{workAuthor,jdbcType=VARCHAR}, #{workPublishhouse,jdbcType=VARCHAR}, #{workPublishtime,jdbcType=VARCHAR}, 
-      #{workDept,jdbcType=VARCHAR}, #{workIsbn,jdbcType=VARCHAR})
+      #{workDept,jdbcType=VARCHAR}, #{workIsbn,jdbcType=VARCHAR}, #{isPass,jdbcType=TINYINT}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.Work">
     insert into sci_work
@@ -60,6 +63,9 @@
       <if test="workIsbn != null">
         work_isbn,
       </if>
+      <if test="isPass != null">
+        is_pass,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -85,6 +91,9 @@
       </if>
       <if test="workIsbn != null">
         #{workIsbn,jdbcType=VARCHAR},
+      </if>
+      <if test="isPass != null">
+        #{isPass,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
@@ -112,6 +121,9 @@
       <if test="workIsbn != null">
         work_isbn = #{workIsbn,jdbcType=VARCHAR},
       </if>
+      <if test="isPass != null">
+        is_pass = #{isPass,jdbcType=TINYINT},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -123,7 +135,8 @@
       work_PublishHouse = #{workPublishhouse,jdbcType=VARCHAR},
       work_PublishTime = #{workPublishtime,jdbcType=VARCHAR},
       work_Dept = #{workDept,jdbcType=VARCHAR},
-      work_isbn = #{workIsbn,jdbcType=VARCHAR}
+      work_isbn = #{workIsbn,jdbcType=VARCHAR},
+      is_pass = #{isPass,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="getAllWorkMsg" resultMap="CustomMap">SELECT * from sci_work</select>
@@ -146,14 +159,81 @@
     <result column="work_PublishTime" jdbcType="VARCHAR" property="workPublishtime" />
     <result column="work_Dept" jdbcType="VARCHAR" property="workDept" />
     <result column="work_isbn" jdbcType="VARCHAR" property="workIsbn" />
+    <result column="is_pass" jdbcType="TINYINT" property="isPass" />
     <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.WorkFile">
-    	<id column="id" jdbcType="BIGINT" property="id" />
-	    <result column="wid" jdbcType="BIGINT" property="wid" />
-	    <result column="style" jdbcType="VARCHAR" property="style" />
-	    <result column="name" jdbcType="VARCHAR" property="name" />
-	    <result column="path" jdbcType="VARCHAR" property="path" />
-	    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
-	    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    	<id column="fid" jdbcType="BIGINT" property="id" />
+	    <id column="wid" jdbcType="BIGINT" property="wid" />
+	    <id column="style" jdbcType="VARCHAR" property="style" />
+	    <id column="name" jdbcType="VARCHAR" property="name" />
+	    <id column="path" jdbcType="VARCHAR" property="path" />
+	    <id column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+	    <id column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
     </collection>
   </resultMap>
+  <select id="getMessage" resultMap="CustomMap" parameterType="int">
+  	SELECT a.*,b.id AS fid,b.`name`,b.path,b.style,b.wid 
+  	FROM sci_work AS a LEFT JOIN sci_workfile AS b ON b.wid = a.id  
+  	WHERE a.id =#{0}
+  </select>
+  <insert id="insertMessage" parameterType="com.qaii.domain.Work" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+  insert into sci_work
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="workType != null">
+        work_Type,
+      </if>
+      <if test="workTopic != null">
+        work_Topic,
+      </if>
+      <if test="workAuthor != null">
+        work_Author,
+      </if>
+      <if test="workPublishhouse != null">
+        work_PublishHouse,
+      </if>
+      <if test="workPublishtime != null">
+        work_PublishTime,
+      </if>
+      <if test="workDept != null">
+        work_Dept,
+      </if>
+      <if test="workIsbn != null">
+        work_isbn,
+      </if>
+      <if test="isPass != null">
+        is_pass,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="workType != null">
+        #{workType,jdbcType=VARCHAR},
+      </if>
+      <if test="workTopic != null">
+        #{workTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="workAuthor != null">
+        #{workAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="workPublishhouse != null">
+        #{workPublishhouse,jdbcType=VARCHAR},
+      </if>
+      <if test="workPublishtime != null">
+        #{workPublishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="workDept != null">
+        #{workDept,jdbcType=VARCHAR},
+      </if>
+      <if test="workIsbn != null">
+        #{workIsbn,jdbcType=VARCHAR},
+      </if>
+      <if test="isPass != null">
+        #{isPass,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
 </mapper>

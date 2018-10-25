@@ -254,7 +254,7 @@ layui.use('table', function(obj){
             let arr=[data.id];
             console.log(data) 
             $.post({
-            	url:"dellpaperMsg.do",
+            	url:"deletePeriodical.do",
             	data:{
             		"requestDate" : arr
             	},
@@ -290,7 +290,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"dellThesisMsg.do",
+		  	url:"deletePeriodical.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},

@@ -118,7 +118,7 @@ layui.use('table', function(obj){
 		{field: 'workAuthor', title: '作者',sort: true},
 		{field: 'workPublishhouse', title: '出版社',sort: true,width:200},
 		{field: 'workPublishtime', title: '出版日期',sort: true,width:150},
-		{field: 'workPublishtime', title: 'ISBN',sort: true,width:150},
+		{field: 'workIsbn', title: 'ISBN',sort: true,width:150},
 		{field: 'workDept', title: '部门',sort: true},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
 

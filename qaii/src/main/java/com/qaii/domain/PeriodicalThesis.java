@@ -30,13 +30,23 @@ public class PeriodicalThesis {
 
     private String unit;
 
+    private Byte isPass;
+
     private Date gmtCreate;
 
     private Date gmtModified;
     
     private List<PeriodicalThesisFile> listFile;
 
-    public Long getId() {
+    public List<PeriodicalThesisFile> getListFile() {
+		return listFile;
+	}
+
+	public void setListFile(List<PeriodicalThesisFile> listFile) {
+		this.listFile = listFile;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -140,6 +150,14 @@ public class PeriodicalThesis {
         this.unit = unit == null ? null : unit.trim();
     }
 
+    public Byte getIsPass() {
+        return isPass;
+    }
+
+    public void setIsPass(Byte isPass) {
+        this.isPass = isPass;
+    }
+
     public Date getGmtCreate() {
         return gmtCreate;
     }
@@ -155,12 +173,4 @@ public class PeriodicalThesis {
     public void setGmtModified(Date gmtModified) {
         this.gmtModified = gmtModified;
     }
-
-	public List<PeriodicalThesisFile> getListFile() {
-		return listFile;
-	}
-
-	public void setListFile(List<PeriodicalThesisFile> listFile) {
-		this.listFile = listFile;
-	}
 }

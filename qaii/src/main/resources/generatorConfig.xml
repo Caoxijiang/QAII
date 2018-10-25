@@ -114,14 +114,14 @@
         selectByExampleQueryId="false"></table>
         <table tableName="sci_periodicalthesis" domainObjectName="PeriodicalThesis" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>
-        <table tableName="sci_periodicalthesisfile" domainObjectName="PeriodicalThesisFile" enableCountByExample="false" enableUpdateByExample="false"
+        selectByExampleQueryId="false"></table>-->
+        <table tableName="sci_periodicalthesis" domainObjectName="PeriodicalThesis" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         <table tableName="sci_meetingthesis" domainObjectName="MeetingThesis" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>-->
-        <table tableName="sci_workfile" domainObjectName="WorkFile" enableCountByExample="false" enableUpdateByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="sci_work" domainObjectName="Work" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         

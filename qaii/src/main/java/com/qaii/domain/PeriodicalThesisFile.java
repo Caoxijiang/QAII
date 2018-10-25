@@ -50,4 +50,10 @@ public class PeriodicalThesisFile {
     public void setPath(String path) {
         this.path = path == null ? null : path.trim();
     }
+
+	@Override
+	public String toString() {
+		return "PeriodicalThesisFile [id=" + id + ", tid=" + tid + ", style=" + style + ", name=" + name + ", path="
+				+ path + "]";
+	}
 }

@@ -18,10 +18,21 @@ public class Work {
     private String workDept;
 
     private String workIsbn;
+
+    private Byte isPass;
     
     private List<WorkFile> listFile;
 
-    public Integer getId() {
+    
+    public List<WorkFile> getListFile() {
+		return listFile;
+	}
+
+	public void setListFile(List<WorkFile> listFile) {
+		this.listFile = listFile;
+	}
+
+	public Integer getId() {
         return id;
     }
 
@@ -85,11 +96,11 @@ public class Work {
         this.workIsbn = workIsbn == null ? null : workIsbn.trim();
     }
 
-	public List<WorkFile> getListFile() {
-		return listFile;
-	}
+    public Byte getIsPass() {
+        return isPass;
+    }
 
-	public void setListFile(List<WorkFile> listFile) {
-		this.listFile = listFile;
-	}
+    public void setIsPass(Byte isPass) {
+        this.isPass = isPass;
+    }
 }
