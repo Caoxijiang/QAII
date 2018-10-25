@@ -50,9 +50,14 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="sisPublishlocation">期刊/会议/杂志</option>
-			<option value="empJobtitlelevel">职称等级</option>
-			<option value="sisUnits">署名单位</option>
+			<option value="sisSubject">题目</option>
+			<option value="sisAuthor">作者</option>
+			<option value="sisUnits">作者单位</option>
+			<option value="sisPublishtime">出版时间</option>
+			<option value="sisUnits">内容类型</option>
+			<option value="sisUnits">收录类别</option>
+			<option value="sisUnits">级别</option>
+			<option value="sisUnits">部门</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
