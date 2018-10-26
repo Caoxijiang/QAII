@@ -50,13 +50,13 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="sisUnits">题目</option>
-			<option value="sisUnits">作者</option>
-			<option value="sisUnits">作者单位</option>
-			<option value="sisUnits">出版时间</option>
-			<option value="sisPublishlocation">通讯作者</option>
-			<option value="empJobtitlelevel">内容类型</option>
-			<option value="sisUnits">部门</option>
+			<option value="topic">题目</option>
+			<option value="author">作者</option>
+			<option value="authorUnit">作者单位</option>
+			<option value="publishtime">出版时间</option>
+			<option value="communicateAuthor">通讯作者</option>
+			<option value="contentType">内容类型</option>
+			<option value="unit">部门</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -70,13 +70,18 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=sisSubject  type="checkbox" value="题目" checked="flase"/><lable>题目</lable></div>
-	<div class="int-inline"><input id="sisAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
-	<div class="int-inline"><input id="sisUnits"  type="checkbox" value="署名单位" checked/><lable>作者单位</lable></div>
-	<div class="int-inline"><input id="sisPublishlocation"  type="checkbox" value="期刊/会议/杂志" checked/><lable>出版时间</lable></div>
-	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="发表时间" checked/><lable>通讯作者</lable></div>
-	<div class="int-inline"><input id="sisStatus"  type="checkbox" value="级别" checked/><lable>内容类型</lable></div>
-	<div class="int-inline"><input id="sisDept"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
+	<div class="int-inline"><input id="topic"  type="checkbox" value="题名" checked="flase"/><lable>题名</lable></div>
+	<div class="int-inline"><input id="author"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
+	<div class="int-inline"><input id="authorUnit"  type="checkbox" value="作者单位" checked/><lable>作者单位</lable></div>
+	<div class="int-inline"><input id="publishtime"  type="checkbox" value="出版时间" checked/><lable>出版时间</lable></div>
+	<div class="int-inline"><input id="meetingName"  type="checkbox" value="会议名称" checked/><lable>会议名称</lable></div>
+	<div class="int-inline"><input id="meetingLocation"  type="checkbox" value="会议地点" checked/><lable>会议地点</lable></div>
+	<div class="int-inline"><input id="keyword"  type="checkbox" value="关键词" checked/><lable>关键词</lable></div>
+	<div class="int-inline"><input id="communicateAuthor"  type="checkbox" value="通讯作者" checked/><lable>通讯作者</lable></div>
+	<div class="int-inline"><input id="englishSummary"  type="checkbox" value="英文摘要" checked/><lable>英文摘要</lable></div>
+	<div class="int-inline"><input id="meetingRecord"  type="checkbox" value="会议录" checked/><lable>会议录</lable></div>
+	<div class="int-inline"><input id="contentType"  type="checkbox" value="内容类型" checked/><lable>内容类型</lable></div>
+	<div class="int-inline"><input id="unit"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
 	
 </div>
 </div>  
@@ -84,7 +89,7 @@
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
- <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.sisSubject}}'" target="_blank" method="post" id="chex">查看详情</a> -->
+ <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.topic}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-xs" lay-event="detail">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
@@ -114,23 +119,23 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'getAllThesisMsg.do', //数据接口
+    url: 'listMeeting.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'sisSubject', title: '题名',fixed: 'left',width:100},
-		{field: 'sisAuthor', title: '作者',fixed: 'left',width:150},
-		{field: 'sisUnits', title: '作者单位',sort: true,width:150},
-		{field: 'sisPublishlocation', title: '出版时间',sort: true,width:200},
-		{field: 'sisPublishtime', title: '会议名称',sort: true,width:150},
-		{field: 'sisPublishtime', title: '会议地点',sort: true,width:150},
-		{field: 'sisPublishtime', title: '关键词',sort: true,width:150},
-		{field: 'sisPublishtime', title: '通讯作者',sort: true,width:150},
-		{field: 'sisPublishtime', title: '英文摘要',sort: true,width:150},
-		{field: 'sisStatus', title: '会议录 ',sort: true,width:150},
-		{field: 'sisPublishtime', title: '内容类型',sort: true,width:150},
-		{field: 'sisDept', title: '部门',width:220},
+		{field: 'topic', title: '题名',fixed: 'left',width:100},
+		{field: 'author', title: '作者',fixed: 'left',width:150},
+		{field: 'authorUnit', title: '作者单位',sort: true,width:150},
+		{field: 'publishtime', title: '出版时间',sort: true,width:200},
+		{field: 'meetingName', title: '会议名称',sort: true,width:150},
+		{field: 'meetingLocation', title: '会议地点',sort: true,width:150},
+		{field: 'keyword', title: '关键词',sort: true,width:150},
+		{field: 'communicateAuthor', title: '通讯作者',sort: true,width:150},
+		{field: 'englishSummary', title: '英文摘要',sort: true,width:150},
+		{field: 'meetingRecord', title: '会议录 ',sort: true,width:150},
+		{field: 'contentType', title: '内容类型',sort: true,width:150},
+		{field: 'unit', title: '部门',width:220},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
@@ -219,12 +224,20 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="sisPublishlocation"){
-  				alert("搜索'期刊/会议/杂志'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="sisDept"){
+  			if(check=="topic"){
+  				alert("搜索'题目'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="author"){
+  				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="authorUnit"){
+  				alert("搜索'作者单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="publishtime"){
+  				alert("搜索'出版时间'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="communicateAuthor"){
+  				alert("搜索'通讯作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="contentType"){
+  				alert("搜索'内容类型'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="unit"){
   				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="sisUnits"){
-  				alert("搜索'署名单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -258,7 +271,7 @@ layui.use('table', function(obj){
             let arr=[data.id];
             console.log(data) 
             $.post({
-            	url:"dellsoftMsg.do",
+            	url:"deleteMeeting.do",
             	data:{
             		"requestDate" : arr
             	},

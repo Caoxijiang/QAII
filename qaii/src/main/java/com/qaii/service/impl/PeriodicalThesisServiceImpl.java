@@ -31,13 +31,13 @@ public class PeriodicalThesisServiceImpl implements PeriodicalThesisService {
 	@Override
 	public PeriodicalThesis getMessage(long id) {
 		// TODO Auto-generated method stub
-		return mapper.selectByPrimaryKey(id);
+		return mapper.getMessage(id);
 	}
 
 	@Override
 	public int updateMessage(PeriodicalThesis record) {
 		// TODO Auto-generated method stub
-		return mapper.updateByPrimaryKey(record);
+		return mapper.updateByPrimaryKeySelective(record);
 	}
 
 	@Override
