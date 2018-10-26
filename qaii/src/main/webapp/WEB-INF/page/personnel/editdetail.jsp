@@ -172,12 +172,6 @@
 							<input type="text" name="empFirsteducation" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
-						<div class="layui-form-item">
-						<label class="layui-form-label">其他学历</label>
-						<div class="layui-input-block">
-							<input type="text" name="empOthereducation" lay-verify="title" autocomplete="off" class="layui-input input">
-						</div>
-					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">硕士学历</label>
 						<div class="layui-input-block">
@@ -190,7 +184,12 @@
 							<input type="text" name="empThirdeducation" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
-					
+					<div class="layui-form-item">
+						<label class="layui-form-label">其他学历</label>
+						<div class="layui-input-block">
+							<input type="text" name="empOthereducation" lay-verify="title" autocomplete="off" class="layui-input input">
+						</div>
+					</div>
 				</div>
 			    <div class="layui-col-md3">
 					<div class="layui-form-item">

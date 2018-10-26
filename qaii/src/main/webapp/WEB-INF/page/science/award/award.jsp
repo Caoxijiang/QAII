@@ -54,9 +54,14 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="empDept">部门</option>
-			<option value="empJobtitlelevel">职称等级</option>
-			<option value="empGender">性别</option>
+			<option value="rewardSource">来源</option>
+			<option value="rewardLevel">级别</option>
+			<option value="rewardName">获奖名称</option>
+			<option value="rewardProjectname">课题项目名称/人员姓名</option>
+			<option value="rewardDutyunit">承担单位/所在单位</option>
+			<option value="rewardAward">是否获奖</option>
+			<option value="rewardAwardtime">获奖时间</option>
+			<option value="rewardAwardnum">奖励金额</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -229,12 +234,22 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="empDept"){
-  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empGender"){
-  				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="rewardSource"){
+  				alert("搜索'来源'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="rewardLevel"){
+  				alert("搜索'级别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="rewardName"){
+  				alert("搜索'获奖名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="rewardProjectname"){
+  				alert("搜索'课题项目名称/人员姓名'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="rewardDutyunit"){
+  				alert("搜索'承担单位/所在单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="rewardAward"){
+  				alert("搜索'是否获奖'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="rewardAwardtime"){
+  				alert("搜索'获奖时间'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="rewardAwardnum"){
+  				alert("搜索'奖励金额'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
