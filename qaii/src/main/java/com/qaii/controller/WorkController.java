@@ -48,6 +48,11 @@ public class WorkController {
 	//数据库中记录的路径
 	public final static String DATABASE_PATH="File/Work/";
 	
+	public final static byte BYTE_TRUE = 1;
+	
+	public final static byte BYTE_FALSE = 0;
+	
+	
 	//获取所有著作信息
 	@RequestMapping(value="getAllWorkMsg.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -162,7 +167,7 @@ public class WorkController {
 			Work record, 
 			@RequestParam("file") MultipartFile[] files) {
 		loadData(req, record);		
-		record.setIsPass("0");
+		record.setIsPass(BYTE_FALSE);
 		int row = workService.insertMessage(record);
 		insertFile(record,files);
 		if(row>0) {

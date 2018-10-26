@@ -42,6 +42,10 @@ public class PeriodicalThesisController {
 	//数据库中记录的路径
 	public final static String DATABASE_PATH="File/PeriodicalThesis/";
 	
+	public final static byte BYTE_TRUE = 1;
+	
+	public final static byte BYTE_FALSE = 0;
+	
 	//查看所有信息
 	@RequestMapping(value="listPeriodical.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -164,7 +168,7 @@ public class PeriodicalThesisController {
 			PeriodicalThesis record, 
 			@RequestParam("file") MultipartFile[] files) {
 		record.setGmtCreate(new Date());
-		record.setIsPass("0");
+		record.setIsPass(BYTE_FALSE);
 		loadData(req,record);
 		int insertResult=Service.insertMessage(record);
 		int fileResult = insertFile(record,files);
