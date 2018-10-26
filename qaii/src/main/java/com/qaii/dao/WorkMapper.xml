@@ -139,8 +139,12 @@
       is_pass = #{isPass,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="getAllWorkMsg" resultMap="CustomMap">SELECT * from sci_work</select>
-  <select id="selectCountNum" resultType="int">SELECT COUNT(*) FROM sci_work</select>
+  <select id="getAllWorkMsg" resultMap="CustomMap">
+  SELECT * from sci_work where is_pass = 1 
+  </select>
+  <select id="selectCountNum" resultType="int">
+  SELECT COUNT(*) FROM sci_work
+  </select>
   <delete id="deleteByPrimaryKeys" parameterType="int">
   	DELETE  FROM sci_work WHERE id in
 	    <foreach item="id" collection="array" open="(" separator="," close=")">
@@ -236,4 +240,7 @@
       </if>
     </trim>
   </insert>
+  <select id="listNotPass" resultMap="BaseResultMap">
+  SELECT * FROM sci_work WHERE is_pass  = 0
+  </select>
 </mapper>

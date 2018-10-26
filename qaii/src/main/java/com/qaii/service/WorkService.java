@@ -21,4 +21,6 @@ public interface WorkService {
 	int countEachMonthwork(String firstDay, String endDay);
 
 	int insertMessage(Work work);
+	
+	List<Work> listNotPass();
 }

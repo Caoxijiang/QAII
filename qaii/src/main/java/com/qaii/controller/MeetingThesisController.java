@@ -1,6 +1,10 @@
 package com.qaii.controller;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -8,6 +12,13 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +31,7 @@ import com.qaii.domain.MeetingThesisFile;
 import com.qaii.service.MeetingThesisFileService;
 import com.qaii.service.MeetingThesisService;
 import com.qaii.util.AlertException;
+import com.qaii.util.CustomException;
 import com.qaii.util.JsonResult;
 import com.qaii.util.Layui;
 
@@ -290,5 +302,111 @@ public class MeetingThesisController {
 		}catch(Exception e){
 			return new JsonResult();
 		}
+	}
+	
+	//未审核的记录列表
+	@RequestMapping(value="listNotPassMeeting.do",method=RequestMethod.POST)
+	@ResponseBody
+	Layui listNotPass() {
+		List<MeetingThesis> result=Service.listNotPass();
+		return Layui.data(1, result);
+	}
+	
+	//通过申请
+	@RequestMapping(value="setPassMeeting.do",method=RequestMethod.POST)
+	@ResponseBody
+	JsonResult setPass(HttpServletRequest req, MeetingThesis record) {
+		record.setId(Long.valueOf(req.getParameter("id")));
+		record.setIsPass(BYTE_TRUE);
+		int result=Service.updateMessage(record);
+		return new JsonResult(result);
+	}
+	
+	//导入
+	@RequestMapping(value="insertMeetingByExcel.do")
+	@ResponseBody
+	public JsonResult insertByExcel(@RequestParam("file")MultipartFile file, MeetingThesis record) throws FileNotFoundException, IOException, CustomException, AlertException  {
+		List<String> list =new ArrayList<>();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		String filename=file.getOriginalFilename();
+		Workbook wookbook;
+		//判断是不是excel文件
+		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
+			throw new AlertException("请选择excel格式的文件！");
+		//判断是03版还是07版excel
+		if(filename.endsWith(".xls")) {
+			wookbook=new HSSFWorkbook(file.getInputStream());
+		}else {
+			wookbook=new XSSFWorkbook(file.getInputStream());
+		}
+		try {
+			Sheet sheet=wookbook.getSheet("Sheet1");
+			int rows = sheet.getPhysicalNumberOfRows();
+			for (int i=1;i<rows;i++) {
+				Row row =sheet.getRow(i);
+				int cells=sheet.getRow(0).getPhysicalNumberOfCells();
+				if (row!=null) {
+					list.clear();
+					for (int j=0;j<cells;j++) {
+						Cell cell=row.getCell(j);
+						if(cell!=null){
+							int cellType=cell.getCellType();
+							switch(cellType) {
+								case Cell.CELL_TYPE_BLANK: 	//单元格式为空白
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+									break;
+								case Cell.CELL_TYPE_BOOLEAN: //布尔
+									cell.setCellType(Cell.CELL_TYPE_BOOLEAN);
+									break;
+								case Cell.CELL_TYPE_ERROR: 	//错误
+									cell.setCellValue("错误");
+									break;
+								case Cell.CELL_TYPE_FORMULA: //公式
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+									break;
+								case Cell.CELL_TYPE_NUMERIC: 	//日期、数字
+									if (DateUtil.isCellDateFormatted(cell))
+										cell.setCellValue(sdf.format(cell.getDateCellValue()));
+									else {
+										cell.setCellType(Cell.CELL_TYPE_STRING);
+									}
+									break;
+								case Cell.CELL_TYPE_STRING:		//文本
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+							}
+							list.add(cell.toString());
+						}else {
+							list.add(null);
+						}
+					}
+					loadExcelData(record,list);
+					Service.insertMessage(record);
+					
+				}
+			}
+		}catch(Exception e) {
+			wookbook.close();
+			e.printStackTrace();
+			throw new CustomException("数据库异常!请检查文件格式!");			
+		}
+		wookbook.close();
+		return new JsonResult("success");
+		
+}
+
+	void loadExcelData(MeetingThesis record, List<String> list) {
+		// TODO Auto-generated method stub
+		record.setTopic(list.get(0));
+		record.setAuthor(list.get(1));
+		record.setAuthorUnit(list.get(2));
+		record.setPublishtime(list.get(3));
+		record.setMeetingName(list.get(4));
+		record.setMeetingLocation(list.get(5));
+		record.setKeyword(list.get(6));
+		record.setCommunicateAuthor(list.get(7));
+		record.setEnglishSummary(list.get(8));
+		record.setMeetingRecord(list.get(9));
+		record.setContentType(list.get(10));
+		record.setUnit(list.get(11));
 	}
 }

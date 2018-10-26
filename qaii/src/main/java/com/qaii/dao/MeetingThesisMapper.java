@@ -24,4 +24,6 @@ public interface MeetingThesisMapper {
     int insertMessage(MeetingThesis record);
     
     MeetingThesis getMessage(long id);
+    
+    List<MeetingThesis> listNotPass();
 }
