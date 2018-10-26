@@ -398,7 +398,8 @@ public class WorkController {
 		work.setWorkAuthor(value.get(2));
 		work.setWorkPublishhouse(value.get(3));
 		work.setWorkPublishtime(value.get(4));
-		work.setWorkDept(value.get(5));
+		work.setWorkIsbn(value.get(5));
+		work.setWorkDept(value.get(6));
 		
 		return work;
 	}

@@ -317,7 +317,7 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: 'insertThesisDatabyexcel.do'
+  ,url: 'insertMeetingByExcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
 	  alert("上传成功！请更新数据！");

@@ -184,7 +184,7 @@ layui.use('table', function(obj){
       layer.confirm('确定驳回申请', function(index){
     	  let arr=[data.id];
           $.post({
-          	url:"DellempInfo.do",
+          	url:"deletePeriodical.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -233,7 +233,48 @@ layui.use('table', function(obj){
 	  //表格数据
     data:obj.data
   });
-
+  //监听工具条
+  table.on('tool(demo2)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+    var data = obj.data //获得当前行数据
+    ,layEvent = obj.event; //获得 lay-event 对应的值
+    if(layEvent === 'dimission'){
+    	layer.confirm("确定要通过审核？",function(){
+    		layer.msg('审核通过');
+    		$.post({
+    			url:"setPassMeeting.do",
+    			data:{"msg":"通过","id":data.id},
+    			success:function(count){
+    				if(count.data!=1){
+    					alert("操作失败，请检查员工审核信息是否准确");
+    				}else{
+    					obj.del();
+    					layer.close(index);
+    				}
+    			}
+    		})
+    	})
+      
+    } else if(layEvent === 'del'){
+      layer.confirm('确定驳回申请', function(index){
+    	  let arr=[data.id];
+          $.post({
+          	url:"deleteMeeting.do",
+          	data:{
+          		"requestDate" : arr
+          	},
+          	success:function(data){
+          		if(data.data){
+          		    //删除对应行（tr）的DOM结构
+          			obj.del();
+          			layer.close(index);
+          		}else{
+          			layer.alert("删除失败")
+          		}
+          	}
+          }) 	
+      });
+    } 
+  });
 //著作审核
   table.render({
     elem: '#testTable3',
@@ -258,6 +299,48 @@ layui.use('table', function(obj){
     ]],
 	  //表格数据
     data: obj.data
+  });
+  //监听工具条
+  table.on('tool(demo3)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+    var data = obj.data //获得当前行数据
+    ,layEvent = obj.event; //获得 lay-event 对应的值
+    if(layEvent === 'dimission'){
+    	layer.confirm("确定要通过审核？",function(){
+    		layer.msg('审核通过');
+    		$.post({
+    			url:"setPassWork.do",
+    			data:{"msg":"通过","id":data.id},
+    			success:function(count){
+    				if(count.data!=1){
+    					alert("操作失败，请检查员工审核信息是否准确");
+    				}else{
+    					obj.del();
+    					layer.close(index);
+    				}
+    			}
+    		})
+    	})
+      
+    } else if(layEvent === 'del'){
+      layer.confirm('确定驳回申请', function(index){
+    	  let arr=[data.id];
+          $.post({
+          	url:"dellWorkMsg.do",
+          	data:{
+          		"requestDate" : arr
+          	},
+          	success:function(data){
+          		if(data.data){
+          		    //删除对应行（tr）的DOM结构
+          			obj.del();
+          			layer.close(index);
+          		}else{
+          			layer.alert("删除失败")
+          		}
+          	}
+          }) 	
+      });
+    } 
   });
 
 });
