@@ -291,4 +291,22 @@ public class MeetingThesisController {
 			return new JsonResult();
 		}
 	}
+	
+	//未审核的记录列表
+	@RequestMapping(value="listNotPassMeeting.do",method=RequestMethod.POST)
+	@ResponseBody
+	Layui listNotPass() {
+		List<MeetingThesis> result=Service.listNotPass();
+		return Layui.data(1, result);
+	}
+	
+	//通过申请
+	@RequestMapping(value="setPassMeeting.do",method=RequestMethod.POST)
+	@ResponseBody
+	JsonResult setPass(HttpServletRequest req, MeetingThesis record) {
+		record.setId(Long.valueOf(req.getParameter("id")));
+		record.setIsPass(BYTE_TRUE);
+		int result=Service.updateMessage(record);
+		return new JsonResult(result);
+	}
 }

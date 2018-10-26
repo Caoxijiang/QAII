@@ -43,7 +43,7 @@ public class WorkServiceImpl implements WorkService {
 	@Override
 	public int updateMsg(Work work) {
 		// TODO Auto-generated method stub
-		return workmapper.updateByPrimaryKey(work);
+		return workmapper.updateByPrimaryKeySelective(work);
 	}
 
 	@Override
@@ -62,6 +62,12 @@ public class WorkServiceImpl implements WorkService {
 	public int insertMessage(Work work) {
 		// TODO Auto-generated method stub
 		return workmapper.insertMessage(work);
+	}
+
+	@Override
+	public List<Work> listNotPass() {
+		// TODO Auto-generated method stub
+		return workmapper.listNotPass();
 	}
 
 }

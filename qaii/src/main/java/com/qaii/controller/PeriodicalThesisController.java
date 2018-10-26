@@ -375,5 +375,23 @@ public class PeriodicalThesisController {
 		}
 	}
 	
+	//未审核的记录列表
+	@RequestMapping(value="listNotPassPeriodical.do",method=RequestMethod.POST)
+	@ResponseBody
+	Layui listNotPass() {
+		List<PeriodicalThesis> result=Service.listNotPass();
+		return Layui.data(1, result);
+	}
+	
+	//通过申请
+	@RequestMapping(value="setPassPeriodical.do",method=RequestMethod.POST)
+	@ResponseBody
+	JsonResult setPass(HttpServletRequest req, PeriodicalThesis record) {
+		record.setId(Long.valueOf(req.getParameter("id")));
+		record.setIsPass(BYTE_TRUE);
+		int result=Service.updateMessage(record);
+		return new JsonResult(result);
+	}
+	
 	//导入功能
 }

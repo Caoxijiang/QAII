@@ -220,8 +220,8 @@
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="listAllMessage" resultMap="CustomMap">
-  	SELECT * FROM sci_periodicalthesis
+  <select id="listAllMessage" resultMap="BaseResultMap">
+  	SELECT * FROM sci_periodicalthesis where is_pass =1
   </select>
   <delete id="deleteMessages" parameterType="int">
   	DELETE  FROM sci_periodicalthesis WHERE id in
@@ -362,5 +362,8 @@
   	FROM sci_periodicalthesis AS a LEFT JOIN sci_periodicalthesisfile AS b 
   	ON b.tid = a.id  
   	WHERE a.id = #{0}
+  </select>
+  <select id="listNotPass" resultMap="BaseResultMap">
+  SELECT * FROM sci_periodicalthesis WHERE is_pass  = 0
   </select>
 </mapper>

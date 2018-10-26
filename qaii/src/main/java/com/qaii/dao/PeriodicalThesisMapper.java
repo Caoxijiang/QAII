@@ -24,4 +24,6 @@ public interface PeriodicalThesisMapper {
     int insertMessage(PeriodicalThesis record);
     
     PeriodicalThesis getMessage(long id);
+    
+    List<PeriodicalThesis> listNotPass();
 }

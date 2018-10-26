@@ -138,15 +138,22 @@ layui.use('table', function(obj){
 	id: 'testReload', 
 //    height: 332,
 //    ,url: '/demo/table/user/' //数据接口
-	url:"getstatusbyreview.do",
+	url:"listNotPassPeriodical.do",
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{field: 'id', title: '序号',type:'numbers'},
-		{field: 'empNum', title: '题目'},
-		{field: 'empName', title: '作者'},
-		{field: 'empDept', title: '出版时间',sort: true},
-		{field: 'empHireStarttime', title: '收录类型',sort: true},
-		{field: 'empInductiontime', title: '部门',sort: true},
+    	{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
+		{field: 'topic', title: '题目',fixed: 'left',width:100},
+		{field: 'author', title: '作者',fixed: 'left',width:150},
+		{field: 'authorUnit', title: '作者单位',sort: true,width:150},
+		{field: 'publishtime', title: '出版时间',sort: true,width:150},
+		{field: 'periodicalName', title: '刊名',sort: true,width:150},
+		{field: 'pageNumber', title: '卷号，期名，页码',width:400},
+		{field: 'keyword', title: '关键词',sort: true,width:150},
+		{field: 'englishSummary', title: '英文摘要',sort: true,width:150},
+		{field: 'contentType', title: '内容类型',sort: true,width:150},
+		{field: 'recordType', title: '收录类别',sort: true,width:150},
+		{field: 'level', title: '级别 ',sort: true,width:150},
+		{field: 'unit', title: '部门',width:220},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',width:320}
     ]],
 	  //表格数据
@@ -160,10 +167,10 @@ layui.use('table', function(obj){
     	layer.confirm("确定要通过审核？",function(){
     		layer.msg('审核通过');
     		$.post({
-    			url:"upReview.do",
+    			url:"setPassPeriodical.do",
     			data:{"msg":"通过","id":data.id},
     			success:function(count){
-    				if(count!=1){
+    				if(count.data!=1){
     					alert("操作失败，请检查员工审核信息是否准确");
     				}else{
     					obj.del();
@@ -205,16 +212,22 @@ layui.use('table', function(obj){
 	method:'post',
 //    height: 332,
 //    ,url: '/demo/table/user/' //数据接口
-	url:'getiDexpire.do',
+	url:'listNotPassMeeting.do',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{field: 'id', title: '序号',type:'numbers'},
-		{field: 'empNum', title: '题名'},
-		{field: 'empName', title: '作者'},
-		{field: 'empGender', title: '作者单位',sort: true},
-		{field: 'empDept', title: '会议名称',sort: true},
-		{field: 'empPosition', title: '会议地点',sort: true},
-		{field: 'empIdcard', title: '关键词'},
+    	{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
+		{field: 'topic', title: '题名',fixed: 'left',width:100},
+		{field: 'author', title: '作者',fixed: 'left',width:150},
+		{field: 'authorUnit', title: '作者单位',sort: true,width:150},
+		{field: 'publishtime', title: '出版时间',sort: true,width:200},
+		{field: 'meetingName', title: '会议名称',sort: true,width:150},
+		{field: 'meetingLocation', title: '会议地点',sort: true,width:150},
+		{field: 'keyword', title: '关键词',sort: true,width:150},
+		{field: 'communicateAuthor', title: '通讯作者',sort: true,width:150},
+		{field: 'englishSummary', title: '英文摘要',sort: true,width:150},
+		{field: 'meetingRecord', title: '会议录 ',sort: true,width:150},
+		{field: 'contentType', title: '内容类型',sort: true,width:150},
+		{field: 'unit', title: '部门',width:220},
 		{field: 'sex', title: '操作',toolbar: '#barDemo2'}
     ]],
 	  //表格数据
@@ -229,16 +242,18 @@ layui.use('table', function(obj){
 	id: 'testReload3', 
 //    height: 332,
 //    ,url: '/demo/table/user/' //数据接口
-	url:'getTryemp.do',
+	url:'listNotPassWork.do',
 	method:'post',
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{field: 'id', title: '序号',type:'numbers'},
-		{field: 'empNum', title: '类型'},
-		{field: 'empName', title: '题名'},
-		{field: 'empGender', title: '作者',sort: true},
-		{field: 'empDept', title: '出版社',sort: true},
-		{field: 'empPosition', title: '部门',sort: true},
+    	{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
+		{field: 'workType', title: '类型',fixed: 'left',width:100},
+		{field: 'workTopic', title: '题目',fixed: 'left',width:150},
+		{field: 'workAuthor', title: '作者',sort: true},
+		{field: 'workPublishhouse', title: '出版社',sort: true,width:200},
+		{field: 'workPublishtime', title: '出版日期',sort: true,width:150},
+		{field: 'workIsbn', title: 'ISBN',sort: true,width:150},
+		{field: 'workDept', title: '部门',sort: true},
 		{field: 'sex', title: '操作',toolbar: '#barDemo3'}
     ]],
 	  //表格数据
