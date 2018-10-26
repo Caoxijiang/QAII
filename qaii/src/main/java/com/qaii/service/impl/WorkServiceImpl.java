@@ -35,9 +35,9 @@ public class WorkServiceImpl implements WorkService {
 	}
 
 	@Override
-	public Work selectByPrimaryKey(int id) {
+	public Work getMessage(int id) {
 		// TODO Auto-generated method stub
-		return workmapper.selectByPrimaryKey(id);
+		return workmapper.getMessage(id);
 	}
 
 	@Override
@@ -56,6 +56,12 @@ public class WorkServiceImpl implements WorkService {
 	public int countEachMonthwork(String firstDay, String endDay) {
 		// TODO Auto-generated method stub
 		return workmapper.countEachMonthwork(firstDay, endDay);
+	}
+
+	@Override
+	public int insertMessage(Work work) {
+		// TODO Auto-generated method stub
+		return workmapper.insertMessage(work);
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.qaii.controller;
 
 import java.io.File;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -40,6 +41,10 @@ public class PeriodicalThesisController {
 	public final static String FILE_PATH= "C:/File/PeriodicalThesis/";
 	//数据库中记录的路径
 	public final static String DATABASE_PATH="File/PeriodicalThesis/";
+	
+	public final static byte BYTE_TRUE = 1;
+	
+	public final static byte BYTE_FALSE = 0;
 	
 	//查看所有信息
 	@RequestMapping(value="listPeriodical.do",method=RequestMethod.POST)
@@ -85,10 +90,11 @@ public class PeriodicalThesisController {
 			PeriodicalThesis record, 
 			@RequestParam("file") MultipartFile[] files) throws AlertException {
 		loadData(req,record);
+		record.setGmtModified(new Date());
 		record.setId(Long.parseLong(req.getParameter("id")));
 		int recordResult = Service.updateMessage(record);
-		int fileResult = updateFile(record, files);
-		if(recordResult > 0 && fileResult > 0) {
+		updateFile(record, files);
+		if(recordResult > 0) {
 			return "page/science/add-succesd";
 		}else {
 			return "page/science/add-faild";
@@ -103,7 +109,7 @@ public class PeriodicalThesisController {
 		}
 		if(files[0].getSize()==0)
 			return 0;
-		PeriodicalThesisFile file=null;
+		PeriodicalThesisFile file = new PeriodicalThesisFile();
 		for (int i = 0; i < files.length; i++) {
 			
 			//文件类型
@@ -152,6 +158,7 @@ public class PeriodicalThesisController {
 		record.setRecordType(req.getParameter("recordType"));
 		record.setLevel(req.getParameter("level"));
 		record.setUnit(req.getParameter("unit"));
+		record.setGmtModified(new Date());
 	}
 	
 	//添加记录
@@ -160,6 +167,8 @@ public class PeriodicalThesisController {
 	String insertMessage(HttpServletRequest req, 
 			PeriodicalThesis record, 
 			@RequestParam("file") MultipartFile[] files) {
+		record.setGmtCreate(new Date());
+		record.setIsPass(BYTE_FALSE);
 		loadData(req,record);
 		int insertResult=Service.insertMessage(record);
 		int fileResult = insertFile(record,files);
@@ -173,11 +182,11 @@ public class PeriodicalThesisController {
 	int insertFile(PeriodicalThesis record, MultipartFile[] files) {
 		// TODO Auto-generated method stub
 		if (files.equals(null) && files.length < 0) {
-			return 0;
+			return 1;
 		}
 		if(files[0].getSize()==0)
 			return 0;
-		PeriodicalThesisFile file=null;
+		PeriodicalThesisFile file = new PeriodicalThesisFile();
 		for (int i = 0; i < files.length; i++) {
 			
 			//文件类型
@@ -194,11 +203,12 @@ public class PeriodicalThesisController {
 				String path = (i==0?FILE_PATH + record.getPeriodicalName() + "/electronic/":FILE_PATH + record.getPeriodicalName() + "/certified/");
 				String dbpath=(i==0?DATABASE_PATH + record.getPeriodicalName() + "/electronic/":DATABASE_PATH + record.getPeriodicalName() + "/certified/");
 				String style=(i==0?"electronic":"certified");
-				File demoFile = new File(path + filename);
+				long t=record.getId();
 				file.setTid(record.getId());
 				file.setStyle(style);
 				file.setName(name);
 				file.setPath(dbpath + filename);
+				File demoFile = new File(path + filename);
 				if (!demoFile.getParentFile().exists()) {
 					demoFile.getParentFile().mkdirs();
 				}
@@ -236,14 +246,15 @@ public class PeriodicalThesisController {
 		return 1;
 	}
 	
-	//其他文件重新上传
-	@RequestMapping(value="otherFileReupPeriodical.do",method=RequestMethod.POST)
+	//文件重新上传
+	@RequestMapping(value="fileReupPeriodical.do",method=RequestMethod.POST)
 	@ResponseBody
-	JsonResult otherFileReup(HttpServletRequest req,
+	JsonResult fileReup(HttpServletRequest req,
 			PeriodicalThesisFile record,
 			@RequestParam("file") MultipartFile files
 			) {
-		String softName=req.getParameter("softName");
+		String topic=req.getParameter("topic");
+		String style=req.getParameter("style");
 		record.setId(Long.parseLong(req.getParameter("id")));
 		record.setName(files.getOriginalFilename());
 		try {
@@ -257,9 +268,9 @@ public class PeriodicalThesisController {
 			String uuid = UUID.randomUUID().toString().replaceAll("-","");
 			String filename = uuid + type;
 			//文件的本地绝对路径
-			String filepath=FILE_PATH + softName + "/other/" + filename;
+			String filepath=FILE_PATH + topic + style + filename;
 			//文件存放于数据库中的相对路径
-			String dbpath=DATABASE_PATH + softName + "/other/" + filename;
+			String dbpath=DATABASE_PATH + topic + style + filename;
 			record.setPath(dbpath);
 			file=new File(filepath);
 			if (!file.getParentFile().exists()) {
@@ -274,78 +285,78 @@ public class PeriodicalThesisController {
 	}
 	
 	//电子文件重新上传
-	@RequestMapping(value="electronicFileReloadPeriodical.do",method=RequestMethod.POST)
-	@ResponseBody
-	JsonResult electronicFileReload(
-			HttpServletRequest req,
-			PeriodicalThesisFile record,
-			@RequestParam("file") MultipartFile files) {
-		String softName=req.getParameter("softName");
-		record.setId(Long.parseLong(req.getParameter("id")));
-		record.setName(files.getOriginalFilename());
-		try {
-			File file = new File(FILE_PATH+req.getParameter("address"));
-			if (file.exists()) {
-				file.delete();
-			}
-			//文件后缀
-			String type = files.getOriginalFilename().substring(files.getOriginalFilename().lastIndexOf("."));
-			//新的文件名
-			String uuid = UUID.randomUUID().toString().replaceAll("-","");
-			String filename = uuid + type;
-			//文件的本地绝对路径
-			String filepath=FILE_PATH + softName + "/electronic/" + filename;
-			//文件存放于数据库中的相对路径
-			String dbpath=DATABASE_PATH + softName + "/electronic/" + filename;
-			record.setPath(dbpath);
-			file=new File(filepath);
-			if (!file.getParentFile().exists()) {
-				file.getParentFile().mkdirs();
-			}
-			files.transferTo(file);
-			fileService.updateMessage(record);
-			return new JsonResult("success!");
-		}catch(Exception e){
-			return new JsonResult();
-		}	
-	}
+//	@RequestMapping(value="electronicFileReloadPeriodical.do",method=RequestMethod.POST)
+//	@ResponseBody
+//	JsonResult electronicFileReload(
+//			HttpServletRequest req,
+//			PeriodicalThesisFile record,
+//			@RequestParam("file") MultipartFile files) {
+//		String topic=req.getParameter("topic");
+//		record.setId(Long.parseLong(req.getParameter("id")));
+//		record.setName(files.getOriginalFilename());
+//		try {
+//			File file = new File(FILE_PATH+req.getParameter("address"));
+//			if (file.exists()) {
+//				file.delete();
+//			}
+//			//文件后缀
+//			String type = files.getOriginalFilename().substring(files.getOriginalFilename().lastIndexOf("."));
+//			//新的文件名
+//			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+//			String filename = uuid + type;
+//			//文件的本地绝对路径
+//			String filepath=FILE_PATH + topic + "/electronic/" + filename;
+//			//文件存放于数据库中的相对路径
+//			String dbpath=DATABASE_PATH + topic + "/electronic/" + filename;
+//			record.setPath(dbpath);
+//			file=new File(filepath);
+//			if (!file.getParentFile().exists()) {
+//				file.getParentFile().mkdirs();
+//			}
+//			files.transferTo(file);
+//			fileService.updateMessage(record);
+//			return new JsonResult("success!");
+//		}catch(Exception e){
+//			return new JsonResult();
+//		}	
+//	}
 	
 	//证明文件重新上传
-	@RequestMapping(value="certifiedFileReloadPeriodical.do",method=RequestMethod.POST)
-	@ResponseBody
-	JsonResult certifiedFileReload(
-			HttpServletRequest req,
-			PeriodicalThesisFile record,
-			@RequestParam("file") MultipartFile files) {
-		String softName=req.getParameter("softName");
-		record.setId(Long.parseLong(req.getParameter("id")));
-		record.setName(files.getOriginalFilename());
-		try {
-			File file = new File(FILE_PATH+req.getParameter("address"));
-			if (file.exists()) {
-				file.delete();
-			}
-			//文件后缀
-			String type = files.getOriginalFilename().substring(files.getOriginalFilename().lastIndexOf("."));
-			//新的文件名
-			String uuid = UUID.randomUUID().toString().replaceAll("-","");
-			String filename = uuid + type;
-			//文件的本地绝对路径
-			String filepath=FILE_PATH + softName + "/certified/" + filename;
-			//文件存放于数据库中的相对路径
-			String dbpath=DATABASE_PATH + softName + "/certified/" + filename;
-			record.setPath(dbpath);
-			file=new File(filepath);
-			if (!file.getParentFile().exists()) {
-				file.getParentFile().mkdirs();
-			}
-			files.transferTo(file);
-			fileService.updateMessage(record);
-			return new JsonResult("success!");
-		}catch(Exception e){
-			return new JsonResult();
-		}	
-	}
+//	@RequestMapping(value="certifiedFileReloadPeriodical.do",method=RequestMethod.POST)
+//	@ResponseBody
+//	JsonResult certifiedFileReload(
+//			HttpServletRequest req,
+//			PeriodicalThesisFile record,
+//			@RequestParam("file") MultipartFile files) {
+//		String topic=req.getParameter("topic");
+//		record.setId(Long.parseLong(req.getParameter("id")));
+//		record.setName(files.getOriginalFilename());
+//		try {
+//			File file = new File(FILE_PATH+req.getParameter("address"));
+//			if (file.exists()) {
+//				file.delete();
+//			}
+//			//文件后缀
+//			String type = files.getOriginalFilename().substring(files.getOriginalFilename().lastIndexOf("."));
+//			//新的文件名
+//			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+//			String filename = uuid + type;
+//			//文件的本地绝对路径
+//			String filepath=FILE_PATH + topic + "/certified/" + filename;
+//			//文件存放于数据库中的相对路径
+//			String dbpath=DATABASE_PATH + topic + "/certified/" + filename;
+//			record.setPath(dbpath);
+//			file=new File(filepath);
+//			if (!file.getParentFile().exists()) {
+//				file.getParentFile().mkdirs();
+//			}
+//			files.transferTo(file);
+//			fileService.updateMessage(record);
+//			return new JsonResult("success!");
+//		}catch(Exception e){
+//			return new JsonResult();
+//		}	
+//	}
 	
 	//删除文件接口
 	@RequestMapping(value="deleteFilePeriodical.do",method=RequestMethod.POST)

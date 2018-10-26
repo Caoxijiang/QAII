@@ -1,5 +1,7 @@
 package com.qaii.domain;
 
+import java.util.List;
+
 public class Work {
     private Integer id;
 
@@ -15,7 +17,22 @@ public class Work {
 
     private String workDept;
 
-    public Integer getId() {
+    private String workIsbn;
+
+    private Byte isPass;
+    
+    private List<WorkFile> listFile;
+
+    
+    public List<WorkFile> getListFile() {
+		return listFile;
+	}
+
+	public void setListFile(List<WorkFile> listFile) {
+		this.listFile = listFile;
+	}
+
+	public Integer getId() {
         return id;
     }
 
@@ -69,5 +86,21 @@ public class Work {
 
     public void setWorkDept(String workDept) {
         this.workDept = workDept == null ? null : workDept.trim();
+    }
+
+    public String getWorkIsbn() {
+        return workIsbn;
+    }
+
+    public void setWorkIsbn(String workIsbn) {
+        this.workIsbn = workIsbn == null ? null : workIsbn.trim();
+    }
+
+    public Byte getIsPass() {
+        return isPass;
+    }
+
+    public void setIsPass(Byte isPass) {
+        this.isPass = isPass;
     }
 }

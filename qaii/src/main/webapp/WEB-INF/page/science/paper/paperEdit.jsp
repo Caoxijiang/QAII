@@ -37,8 +37,9 @@
 <div class="layui-container addtop"> 
 <input id="param" value='${param.userId}' type="hidden" />
 <!-- 采用表格内直接行结构  -->
- <form class="layui-form" action="addEmpInfo.do" method="post" lay-filter="example">
+ <form class="layui-form" action="updatePeriodical.do" method="post" lay-filter="example" enctype="multipart/form-data">
 <!--  第一块内容-->
+ <input type="hidden" name="fid1" />  <input type="hidden" name="fid2" /> <input type="hidden" name="id" /> 
 	  <div class="layui-row">
 		<h1>期刊论文基本信息</h1>
 	  	<div class="layui-row">
@@ -46,7 +47,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">题目&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCode" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="topic" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -54,7 +55,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softAgency" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="author" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -62,7 +63,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">作者单位&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="softDevelopendtime" class="layui-input input" id="test1">
+						<input type="text" name="authorUnit" class="layui-input input" id="test1">
 					  </div>
 				</div>
 			</div>
@@ -70,7 +71,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">出版时间&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="softFirstpublishtime" class="layui-input input" id="test2">
+						<input type="text" name="publishtime" class="layui-input input" id="test2">
 					  </div>
 				</div>
 			</div>
@@ -78,7 +79,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">刊名&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="periodicalName" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -86,7 +87,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">卷号，期号，页码&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="pageNumber" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -94,7 +95,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">内容类型&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="contentType" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -102,7 +103,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">收录类别&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="recordType" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -110,7 +111,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="level" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -118,7 +119,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="softDept" lay-verify="required" lay-search="" id="deptt" class="input">
+						<select name="unit" lay-verify="required" lay-search="" id="deptt" class="input">
 							
 						</select>
 					</div>
@@ -128,7 +129,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">关键词&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="keyword" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -226,7 +227,7 @@
 <script>
 var id=${param.userId};
 $.post({
-	url:"showSoftDetails.do",
+	url:"getPeriodical.do",
 	data:{
         id:id
     },
@@ -267,25 +268,28 @@ $.post({
 			//文件表格展示
             let trademark=data.data;
               form.val('example', {
-                  "paperDept":trademark.paperDept,
-                  "paperCode":trademark.paperCode,
-                  "paperName":trademark.paperName,
-                  "paperWriter":trademark.paperWriter,
-                  "paperAuthor":trademark.paperAuthor,
-                  "paperAgency":trademark.paperAgency,
-                  "paperDevelopendtime":trademark.paperDevelopendtime,
-                  "paperFirstpublishtime":trademark.paperFirstpublishtime,
-                  "paperNum":trademark.paperNum,
-                  "paperCertificatetime":trademark.paperCertificatetime,
-                  "paperCost":trademark.paperCost,
-                  "paperInvoiceper":trademark.paperInvoiceper,
-                  "paperUpdatetime":trademark.paperUpdatetime,
-                  "paperRemark":trademark.paperRemark,
-                  "paperfile":trademark.paperFile[0].path
+            	  "id":trademark.id,
+            	  "keyword":trademark.keyword,
+                  "topic":trademark.topic,
+                  "englishSummary":trademark.englishSummary,
+                  "contentType":trademark.contentType,
+                  "recordType":trademark.recordType,
+                  "author":trademark.author,
+                  "authorUnit":trademark.authorUnit,
+                  "publishtime":trademark.publishtime,
+                  "periodicalName":trademark.periodicalName,
+                  "level":trademark.level,
+                  "pageNumber":trademark.pageNumber,
+                  "unit":trademark.unit,
+                  "englishSummary":trademark.englishSummary,
+                  "paperfile":trademark.listFile[0].path,
+                  "fid1":trademark.listFile[0].id,
+                  "paperfile2":trademark.listFile[1].path,
+                  "fid2":trademark.listFile[1].id,
                 // 修改此输入框的value值，此value为测试值 paperfile为测试自定义值，证明文件值
               });
-              var otherfile=trademark.paperFile;
-              otherfile.splice(0,1);
+              var otherfile=trademark.listFile;
+              otherfile.splice(0,2);
 			  //文件表格展示
 			   table.render({
 			    elem: '#demo'
@@ -293,7 +297,7 @@ $.post({
 			    ,page: false//开启分页
 			    ,cols: [[ //表头
 			      {field: 'id', type:'numbers',title: '序号', width:80}
-			      ,{field: 'filename', title: '文件名'}
+			      ,{field: 'name', title: '文件名'}
 			      ,{field: 'path', title: '文件名'}
 			      ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
 			    ]],
@@ -306,12 +310,16 @@ $.post({
 				    var data = obj.data;
 				    //console.log(obj)
 				    if(obj.event === 'del'){
+				    	var address=data.path;
+						var id=data.id;
+						var topic=trademark.topic;
 				      layer.confirm('真的删除行么', function(index){
 				    	  let arr=[data.id];
 				          $.post({
-				          	url:"delltradefile.do",
+				          	url:"deleteFilePeriodical.do",
 				          	data:{
-				          		"requestDate" : arr
+				          		"id" : id,
+				          		"address" : address
 				          	},
 				          	success:function(data){
 				          		if(data.data){
@@ -342,13 +350,17 @@ $.post({
 					}else if(obj.event === 'upload'){//文件重新上传
 						var address=data.path;
 						var id=data.id;
+						var style=data.style;
+						var topic=$('input[name="topic"]').val();
 					    layer.open({
 				    	  type:1,
 						  title:"重新上传文件",
-						  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
+						  content:'<form action="fileReupPeriodical.do" method="post" enctype="multipart/form-data">'+
 						  '<input type="file" name="file" id="path">'+
 						  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 						  '<input type="hidden" name="address" id="address" value="'+address+'">'+
+						  '<input type="hidden" name="style" id="style" value="'+style+'">'+
+						  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
 						  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 						});
 					}//事件监听
@@ -453,12 +465,17 @@ $("#paperDownload").click(function(){
 })
 //发表电子版文件点击事件-重新上传
 $("#upload").click(function(){
+	var id=$('input[name="fid1"]').val();
+	var topic=$('input[name="topic"]').val();
+	var style="electronic";
 	layer.open({
   	  type:1,
 		  title:"重新上传文件",
-		  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
+		  content:'<form action="fileReupPeriodical.do" method="post" enctype="multipart/form-data">'+
 		  '<input type="file" name="file" id="path">'+
 		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
+		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
+		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })
@@ -484,12 +501,17 @@ $("#paperDownload2").click(function(){
 })
 //证明文件点击事件-重新上传
 $("#upload2").click(function(){
+	var id=$('input[name="fid2"]').val();
+	var topic=$('input[name="topic"]').val();
+	var style="certified";
 	layer.open({
   	  type:1,
 		  title:"重新上传文件",
-		  content:'<form action="tradeprocessupload.do" method="post" enctype="multipart/form-data">'+
+		  content:'<form action="fileReupPeriodical.do" method="post" enctype="multipart/form-data">'+
 		  '<input type="file" name="file" id="path">'+
 		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
+		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
+		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })

@@ -1,15 +1,21 @@
 package com.qaii.domain;
 
-public class PeriodicalThesisFile {
+import java.util.Date;
+
+public class WorkFile {
     private Long id;
 
-    private Long tid;
+    private Long wid;
 
     private String style;
 
     private String name;
 
     private String path;
+
+    private Date gmtCreate;
+
+    private Date gmtModified;
 
     public Long getId() {
         return id;
@@ -19,12 +25,12 @@ public class PeriodicalThesisFile {
         this.id = id;
     }
 
-    public Long getTid() {
-        return tid;
+    public Long getWid() {
+        return wid;
     }
 
-    public void setTid(Long tid) {
-        this.tid = tid;
+    public void setWid(Long wid) {
+        this.wid = wid;
     }
 
     public String getStyle() {
@@ -51,9 +57,19 @@ public class PeriodicalThesisFile {
         this.path = path == null ? null : path.trim();
     }
 
-	@Override
-	public String toString() {
-		return "PeriodicalThesisFile [id=" + id + ", tid=" + tid + ", style=" + style + ", name=" + name + ", path="
-				+ path + "]";
-	}
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
+    }
 }

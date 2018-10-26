@@ -24,4 +24,8 @@ public interface WorkMapper {
     int deleteByPrimaryKeys(Integer[] eid);
     
     int countEachMonthwork(String firstDay, String endDay);
+    
+    Work getMessage(Integer id);
+    
+    int insertMessage(Work record);
 }

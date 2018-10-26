@@ -29,7 +29,7 @@
   <div class="addBanner"></div><!--banner展示图-->
 <!--  表单元素-->
 <div class="layui-container">
-  <form class="layui-form" action="addSoft.do" method="post" enctype="multipart/form-data">
+  <form class="layui-form" action="addWork.do" method="post" enctype="multipart/form-data">
 <!--  第一块内容-->
 	  <div class="layui-row">
 		<h1>著作基本信息</h1>
@@ -38,7 +38,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">题目&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCode" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="workTopic" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softAgency" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="workAuthor" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">类型&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="softDevelopendtime" class="layui-input input" id="test1">
+						<input type="text" name="workType" class="layui-input input" id="test1">
 					  </div>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">出版社&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="softFirstpublishtime" class="layui-input input" id="test2">
+						<input type="text" name="workPublishhouse" class="layui-input input" id="test2">
 					  </div>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">ISBN&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="workIsbn" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -78,7 +78,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="softDept" lay-verify="required" lay-search="" id="deptt" class="input">
+						<select name="workDept" lay-verify="required" lay-search="" id="deptt" class="input">
 							
 						</select>
 					</div>

@@ -22,4 +22,6 @@ public interface PeriodicalThesisMapper {
     int deleteMessages(Integer[] id);
     
     int insertMessage(PeriodicalThesis record);
+    
+    PeriodicalThesis getMessage(long id);
 }
