@@ -50,9 +50,13 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="publishtime">期刊/会议/杂志</option>
-			<option value="empJobtitlelevel">职称等级</option>
-			<option value="authorUnit">署名单位</option>
+			<option value="topic">题目</option>
+			<option value="author">作者</option>
+			<option value="authorUnit">作者单位</option>
+			<option value="publishtime">出版时间</option>
+			<option value="communicateAuthor">通讯作者</option>
+			<option value="contentType">内容类型</option>
+			<option value="unit">部门</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -66,13 +70,18 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=topic  type="checkbox" value="题目" checked="flase"/><lable>题目</lable></div>
+	<div class="int-inline"><input id="topic"  type="checkbox" value="题名" checked="flase"/><lable>题名</lable></div>
 	<div class="int-inline"><input id="author"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
-	<div class="int-inline"><input id="authorUnit"  type="checkbox" value="署名单位" checked/><lable>署名单位</lable></div>
-	<div class="int-inline"><input id="publishtime"  type="checkbox" value="期刊/会议/杂志" checked/><lable>期刊/会议/杂志</lable></div>
-	<div class="int-inline"><input id="meetingName"  type="checkbox" value="发表时间" checked/><lable>发表时间</lable></div>
-	<div class="int-inline"><input id="sisStatus"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
-	<div class="int-inline"><input id="sisDept"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
+	<div class="int-inline"><input id="authorUnit"  type="checkbox" value="作者单位" checked/><lable>作者单位</lable></div>
+	<div class="int-inline"><input id="publishtime"  type="checkbox" value="出版时间" checked/><lable>出版时间</lable></div>
+	<div class="int-inline"><input id="meetingName"  type="checkbox" value="会议名称" checked/><lable>会议名称</lable></div>
+	<div class="int-inline"><input id="meetingLocation"  type="checkbox" value="会议地点" checked/><lable>会议地点</lable></div>
+	<div class="int-inline"><input id="keyword"  type="checkbox" value="关键词" checked/><lable>关键词</lable></div>
+	<div class="int-inline"><input id="communicateAuthor"  type="checkbox" value="通讯作者" checked/><lable>通讯作者</lable></div>
+	<div class="int-inline"><input id="englishSummary"  type="checkbox" value="英文摘要" checked/><lable>英文摘要</lable></div>
+	<div class="int-inline"><input id="meetingRecord"  type="checkbox" value="会议录" checked/><lable>会议录</lable></div>
+	<div class="int-inline"><input id="contentType"  type="checkbox" value="内容类型" checked/><lable>内容类型</lable></div>
+	<div class="int-inline"><input id="unit"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
 	
 </div>
 </div>  
@@ -215,12 +224,20 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="publishtime"){
-  				alert("搜索'期刊/会议/杂志'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="sisDept"){
-  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="topic"){
+  				alert("搜索'题目'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="author"){
+  				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="authorUnit"){
-  				alert("搜索'署名单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  				alert("搜索'作者单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="publishtime"){
+  				alert("搜索'出版时间'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="communicateAuthor"){
+  				alert("搜索'通讯作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="contentType"){
+  				alert("搜索'内容类型'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="unit"){
+  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
