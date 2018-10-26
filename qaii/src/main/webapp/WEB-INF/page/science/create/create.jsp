@@ -54,9 +54,17 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="govplatName">平台名称</option>
-			<option value="empJobtitlelevel">职称等级</option>
+			<option value="govplatSource">来源</option>
 			<option value="govplatLevel">级别</option>
+			<option value="govplatName">平台名称</option>
+			<option value="govplatImplementtime">项目实施期</option>
+			<option value="govplatDutyunit">承担单位</option>
+			<option value="govplatAssumedepart">承担部门</option>
+			<option value="govplatPlatformper">平台负责人</option>
+			<option value="govplatProjectapproval">是否立项</option>
+			<option value="govplatApprovalnum">立项编号</option>
+			<option value="govplatApprovaltime">立项时间</option>
+			<option value="govplatSubvention">资助金额（万元）</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -83,7 +91,7 @@
 	<div class="int-inline"><input id="govplatPlatformper"  type="checkbox" value="平台负责人" checked/><lable>平台负责人</lable></div>
 	<div class="int-inline"><input id="govplatProjectapproval"  type="checkbox" value="是否立项" checked/><lable>是否立项</lable></div>
 	<div class="int-inline"><input id="govplatApprovalnum"  type="checkbox" value="立项编号" checked/><lable>立项编号</lable></div>
-	<div class="int-inline"><input id="govplatApprovalnum"  type="checkbox" value="立项时间" checked/><lable>立项时间</lable></div>
+	<div class="int-inline"><input id="govplatApprovaltime"  type="checkbox" value="立项时间" checked/><lable>立项时间</lable></div>
 	<div class="int-inline"><input id="govplatSubvention"  type="checkbox" value="资助金额（万元）" checked/><lable>资助金额（万元）</lable></div>
 	<div class="int-inline"><input id="govplatFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
 	<div class="int-inline"><input id="govplatMiddleresult"  type="checkbox" value="中期检查考核时间" checked/><lable>中期检查考核时间</lable></div>
@@ -249,12 +257,28 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="govplatName"){
-  				alert("搜索'平台名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="govplatSource"){
+  				alert("搜索'来源'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="govplatLevel"){
   				alert("搜索'级别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govplatName"){
+  				alert("搜索'平台名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govplatImplementtime"){
+  				alert("搜索'项目实施期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govplatDutyunit"){
+  				alert("搜索'承担单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govplatPlatformper"){
+  				alert("搜索'项目负责人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govplatProjectapproval"){
+  				alert("搜索'是否立项'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govplatApprovalnum"){
+  				alert("搜索'立项编号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govplatApprovaltime"){
+  				alert("搜索'立项时间'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govplatSubvention"){
+  				alert("搜索'资助金额（万元）'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govplatAssumedepart"){
+  				alert("搜索'承担部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束

@@ -54,9 +54,12 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="govfundImplementtime">基金实施期</option>
-			<option value="empJobtitlelevel">职称等级</option>
+			<option value="govfundSource">来源</option>
+			<option value="govfundLevel">级别</option>
 			<option value="govfundName">基金名称</option>
+			<option value="govfundImplementtime">基金实施期</option>
+			<option value="govfundWrittentime">批复时间</option>
+			<option value="govfundFundlimit">基金资助额度</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -88,7 +91,7 @@
 	<div class="int-inline"><input id="govfundEndtime"  type="checkbox" value="项目结题验收时间" checked/><lable>项目结题验收时间</lable></div>
 	<div class="int-inline"><input id="govfundEndresult"  type="checkbox" value="项目结题验收结果" checked/><lable>项目结题验收结果</lable></div>
 	<div class="int-inline"><input id="govfundRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
-	<div class="int-inline"><input id="govfundFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div>
+<!-- 	<div class="int-inline"><input id="govfundFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div> -->
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -150,7 +153,7 @@ layui.use('table', function(obj){
 		{field: 'govfundEndtime', title: '项目结题验收时间',sort: true,width:230},
 		{field: 'govfundEndresult', title: '项目结题验收结果',sort: true,width:230},
 		{field: 'govfundRemark', title: '备注',sort: true,width:200},
-		{field: 'govfundFile', title: '附件',sort: true,width:200},
+		/* {field: 'govfundFile', title: '附件',sort: true,width:200}, */
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
     
@@ -239,12 +242,18 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="govfundImplementtime"){
-  				alert("搜索'基金实施期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="govfundSource"){
+  				alert("搜索'来源'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govfundLevel"){
+  				alert("搜索'级别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="govfundName"){
   				alert("搜索'基金名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govfundImplementtime"){
+  				alert("搜索'基金实施期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govfundWrittentime"){
+  				alert("搜索'批复时间'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="govfundFundlimit"){
+  				alert("搜索'基金资助额度'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束

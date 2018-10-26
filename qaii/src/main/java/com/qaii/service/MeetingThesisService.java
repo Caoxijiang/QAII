@@ -17,4 +17,5 @@ public interface MeetingThesisService {
 	//此方法可以保存插入对象的id
 	int insertMessage(MeetingThesis record);
 
+	List<MeetingThesis> listNotPass();
 }
