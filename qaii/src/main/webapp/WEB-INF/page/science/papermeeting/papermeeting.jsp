@@ -50,9 +50,13 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="sisPublishlocation">期刊/会议/杂志</option>
-			<option value="empJobtitlelevel">职称等级</option>
-			<option value="sisUnits">署名单位</option>
+			<option value="sisUnits">题目</option>
+			<option value="sisUnits">作者</option>
+			<option value="sisUnits">作者单位</option>
+			<option value="sisUnits">出版时间</option>
+			<option value="sisPublishlocation">通讯作者</option>
+			<option value="empJobtitlelevel">内容类型</option>
+			<option value="sisUnits">部门</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -68,10 +72,10 @@
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id=sisSubject  type="checkbox" value="题目" checked="flase"/><lable>题目</lable></div>
 	<div class="int-inline"><input id="sisAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
-	<div class="int-inline"><input id="sisUnits"  type="checkbox" value="署名单位" checked/><lable>署名单位</lable></div>
-	<div class="int-inline"><input id="sisPublishlocation"  type="checkbox" value="期刊/会议/杂志" checked/><lable>期刊/会议/杂志</lable></div>
-	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="发表时间" checked/><lable>发表时间</lable></div>
-	<div class="int-inline"><input id="sisStatus"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
+	<div class="int-inline"><input id="sisUnits"  type="checkbox" value="署名单位" checked/><lable>作者单位</lable></div>
+	<div class="int-inline"><input id="sisPublishlocation"  type="checkbox" value="期刊/会议/杂志" checked/><lable>出版时间</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="发表时间" checked/><lable>通讯作者</lable></div>
+	<div class="int-inline"><input id="sisStatus"  type="checkbox" value="级别" checked/><lable>内容类型</lable></div>
 	<div class="int-inline"><input id="sisDept"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
 	
 </div>

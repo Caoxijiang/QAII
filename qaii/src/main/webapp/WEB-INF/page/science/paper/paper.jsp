@@ -73,9 +73,14 @@
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id=sisSubject  type="checkbox" value="题目" checked="flase"/><lable>题目</lable></div>
 	<div class="int-inline"><input id="sisAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
-	<div class="int-inline"><input id="sisUnits"  type="checkbox" value="署名单位" checked/><lable>署名单位</lable></div>
-	<div class="int-inline"><input id="sisPublishlocation"  type="checkbox" value="期刊/会议/杂志" checked/><lable>期刊/会议/杂志</lable></div>
-	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="发表时间" checked/><lable>发表时间</lable></div>
+	<div class="int-inline"><input id="sisUnits"  type="checkbox" value="作者单位" checked/><lable>作者单位</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="出版时间" checked/><lable>出版时间</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="刊名" checked/><lable>刊名</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="卷号，期名，页码" checked/><lable>卷号，期名，页码</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="关键词" checked/><lable>关键词</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="英文摘要" checked/><lable>英文摘要</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="内容类别" checked/><lable>内容类别</lable></div>
+	<div class="int-inline"><input id="sisPublishtime"  type="checkbox" value="收录类别" checked/><lable>收录类别</lable></div>
 	<div class="int-inline"><input id="sisStatus"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
 	<div class="int-inline"><input id="sisDept"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
 	
