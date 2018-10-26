@@ -50,17 +50,14 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="sisSubject">题目</option>
-			<option value="sisAuthor">作者</option>
-			<option value="sisUnits">作者单位</option>
-			<option value="sisPublishtime">出版时间</option>
-			<option value="sisUnits">内容类型</option>
-			<option value="sisUnits">收录类别</option>
-			<option value="sisUnits">级别</option>
-			<option value="sisUnits">部门</option>
-			<option value="sisPublishlocation">期刊/会议/杂志</option>
-			<option value="empJobtitlelevel">职称等级</option>
-			<option value="authorUnit">署名单位</option>
+			<option value="topic">题目</option>
+			<option value="author">作者</option>
+			<option value="authorUnit">作者单位</option>
+			<option value="publishtime">出版时间</option>
+			<option value="contentType">内容类型</option>
+			<option value="recordType">收录类别</option>
+			<option value="level">级别</option>
+			<option value="unit">部门</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -74,11 +71,16 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=topic  type="checkbox" value="题目" checked="flase"/><lable>题目</lable></div>
+	<div class="int-inline"><input id="topic"  type="checkbox" value="题目" checked="flase"/><lable>题目</lable></div>
 	<div class="int-inline"><input id="author"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
-	<div class="int-inline"><input id="authorUnit"  type="checkbox" value="署名单位" checked/><lable>署名单位</lable></div>
-	<div class="int-inline"><input id="sisPublishlocation"  type="checkbox" value="期刊/会议/杂志" checked/><lable>期刊/会议/杂志</lable></div>
-	<div class="int-inline"><input id="publishtime"  type="checkbox" value="发表时间" checked/><lable>发表时间</lable></div>
+	<div class="int-inline"><input id="authorUnit"  type="checkbox" value="作者单位" checked/><lable>作者单位</lable></div>
+	<div class="int-inline"><input id="publishtime"  type="checkbox" value="出版时间" checked/><lable>出版时间</lable></div>
+	<div class="int-inline"><input id="periodicalName"  type="checkbox" value="刊名" checked/><lable>刊名</lable></div>
+	<div class="int-inline"><input id="pageNumber"  type="checkbox" value="卷号，期名，页码" checked/><lable>卷号，期名，页码</lable></div>
+	<div class="int-inline"><input id="keyword"  type="checkbox" value="关键词" checked/><lable>关键词</lable></div>
+	<div class="int-inline"><input id="englishSummary"  type="checkbox" value="英文摘要" checked/><lable>英文摘要</lable></div>
+	<div class="int-inline"><input id="contentType"  type="checkbox" value="内容类别" checked/><lable>内容类别</lable></div>
+	<div class="int-inline"><input id="recordType"  type="checkbox" value="收录类别" checked/><lable>收录类别</lable></div>
 	<div class="int-inline"><input id="level"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
 	<div class="int-inline"><input id="unit"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
 	
@@ -223,12 +225,22 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="sisPublishlocation"){
-  				alert("搜索'期刊/会议/杂志'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="sisDept"){
-  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="topic"){
+  				alert("搜索'题目'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="author"){
+  				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="authorUnit"){
-  				alert("搜索'署名单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  				alert("搜索'作者单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="publishtime"){
+  				alert("搜索'出版时间'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="contentType"){
+  				alert("搜索'内容类型'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="recordType"){
+  				alert("搜索'收录类别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="level"){
+  				alert("搜索'级别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="unit"){
+  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束

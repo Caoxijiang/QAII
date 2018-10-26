@@ -50,9 +50,12 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="workPublishhouse">出版社</option>
-			<option value="empJobtitlelevel">职称等级</option>
+			<option value="workType">类型</option>
+			<option value="workTopic">题名</option>
 			<option value="workAuthor">作者</option>
+			<option value="workPublishhouse">出版社</option>
+			<option value="workPublishtime">出版日期</option>
+			<option value="workDept">部门</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -71,7 +74,7 @@
 	<div class="int-inline"><input id="workAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
 	<div class="int-inline"><input id="workPublishhouse"  type="checkbox" value="出版社" checked/><lable>出版社</lable></div>
 	<div class="int-inline"><input id="workPublishtime"  type="checkbox" value="出版日期" checked/><lable>出版日期</lable></div>
-	<div class="int-inline"><input id="workDept"  type="checkbox" value="ISBN" checked/><lable>ISBN</lable></div>
+	<div class="int-inline"><input id="workIsbn"  type="checkbox" value="ISBN" checked/><lable>ISBN</lable></div>
 	<div class="int-inline"><input id="workDept"  type="checkbox" value="部门" checked/><lable>部门</lable></div>
 </div>
 </div>  
@@ -209,12 +212,18 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="workPublishhouse"){
-  				alert("搜索'出版社'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="empJobtitlelevel"){
-  				alert("搜索'职称等级'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="workType"){
+  				alert("搜索'类型'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="workTopic"){
+  				alert("搜索'题名'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="workAuthor"){
   				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="workPublishhouse"){
+  				alert("搜索'出版社'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="workPublishtime"){
+  				alert("搜索'出版日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="workDept"){
+  				alert("搜索'部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
