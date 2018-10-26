@@ -46,7 +46,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">题目&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="workCode" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
+						<input type="text" name="workTopic" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="workAgency" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
+						<input type="text" name="workAuthor" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">类型&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="workDevelopendtime" class="layui-input input" id="test1" disabled="">
+						<input type="text" name="workType" class="layui-input input" id="test1" disabled="">
 					  </div>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">出版社&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="workFirstpublishtime" class="layui-input input" id="test2" disabled="">
+						<input type="text" name="workPublishhouse" class="layui-input input" id="test2" disabled="">
 					  </div>
 				</div>
 			</div>
@@ -78,7 +78,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">ISBN&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="workNum" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+						<input type="text" name="workIsbn" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -175,7 +175,7 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
 	 //文件表格展示
        if(id!=null){
             $.post({
-                url:"showworkDetails.do",
+                url:"showWorkDetails.do",
                 data:{
                     id:id
                 },
@@ -190,28 +190,23 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                         /* console.log("afd"+JSON.stringify(trademark)); */
                         //表单初始赋值 从表单中提取数据
                           form.val('example', {
-                            "workDept":trademark.workDept,
-                            "workCode":trademark.workCode,
-                            "workName":trademark.workName,
-                            "workWriter":trademark.workWriter,
+                            "workType":trademark.workType,
+                            "workTopic":trademark.workType,
                             "workAuthor":trademark.workAuthor,
-                            "workAgency":trademark.workAgency,
-                            "workDevelopendtime":trademark.workDevelopendtime,
-                            "workFirstpublishtime":trademark.workFirstpublishtime,
-                            "workNum":trademark.workNum,
-                            "workCertificatetime":trademark.workCertificatetime,
-                            "workCost":trademark.workCost,
-                            "workInvoiceper":trademark.workInvoiceper,
-                            "workUpdatetime":trademark.workUpdatetime,
-                            "workRemark":trademark.workRemark,
-                            "workfile":trademark.workFile[0].path
+                            "workPublishhouse":trademark.workPublishhouse,
+                            "workPublishtime":trademark.workPublishtime,
+                            "workDept":trademark.workDept,
+                            "workIsbn":trademark.workIsbn,
+                            "workfile":trademark.listFile[0].path,
+                            "workfile2":trademark.listFile[1].path,
+                            "workfile3":trademark.listFile[2].path
                             // 修改此输入框的value值，此value为测试值 workfile为测试自定义值，证明文件值
                           });
                           var domain = window.location.host;
                           var url =data.data.url;
                           var imgpath=domain+url;
-                          var otherfile=trademark.workFile;
-                          otherfile.splice(0,1);
+                          var otherfile=trademark.listFile;
+                          otherfile.splice(0,3);
                           $("#demo1").attr("src","https://"+imgpath);
                         //文件表格展示
                           table.render({
@@ -221,7 +216,7 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                            ,page: false//开启分页
                            ,cols: [[ //表头
                              {field: 'id', type:'numbers',title: '序号', width:80}
-                             ,{field: 'filename', title: '文件名'}
+                             ,{field: 'name', title: '文件名'}
                              ,{field: 'path', title: '文件路径'}
                              ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
                            ]],

@@ -12,7 +12,7 @@ public interface WorkService {
 	
 	int deleteMsg(Integer[] eid);
 
-	Work selectByPrimaryKey(int id);
+	Work getMessage(int id);
 
 	int updateMsg(Work work);
 
@@ -20,4 +20,7 @@ public interface WorkService {
 	
 	int countEachMonthwork(String firstDay, String endDay);
 
+	int insertMessage(Work work);
+	
+	List<Work> listNotPass();
 }

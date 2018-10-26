@@ -46,7 +46,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">题目&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="paperCode" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
+						<input type="text" name="topic" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="paperAgency" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
+						<input type="text" name="author" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">作者单位&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="paperDevelopendtime" class="layui-input input" id="test1" disabled="">
+						<input type="text" name="authorUnit" class="layui-input input" id="test1" disabled="">
 					  </div>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">出版时间&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="paperFirstpublishtime" class="layui-input input" id="test2" disabled="">
+						<input type="text" name="publishtime" class="layui-input input" id="test2" disabled="">
 					  </div>
 				</div>
 			</div>
@@ -78,7 +78,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会议名称&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="paperNum" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+						<input type="text" name="meetingName" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -86,7 +86,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会议地点&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+						<input type="text" name="meetingLocation" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
 				</div>
 		   </div>
@@ -94,7 +94,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">关键词&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+						<input type="text" name="keyword" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
 				</div>
 		   </div>
@@ -102,7 +102,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">通讯作者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+						<input type="text" name="communicateAuthor" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
 				</div>
 		   </div>
@@ -110,7 +110,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会议录&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+						<input type="text" name="meetingRecord" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
 				</div>
 		   </div>
@@ -118,7 +118,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="paperDept" lay-verify="required" lay-search="" id="deptt" class="input" disabled="">
+						<select name="unit" lay-verify="required" lay-search="" id="deptt" class="input" disabled="">
 							
 						</select>
 					</div>
@@ -128,7 +128,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">内容类型&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="paperCost" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
+						<input type="text" name="contentType" lay-verify="required" autocomplete="off"  class="layui-input input" disabled="">
 					</div>
 				</div>
 		   </div>
@@ -215,7 +215,7 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
 	 //文件表格展示
        if(id!=null){
             $.post({
-                url:"showpaperDetails.do",
+                url:"getMeeting.do",
                 data:{
                     id:id
                 },
@@ -230,28 +230,28 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                         /* console.log("afd"+JSON.stringify(trademark)); */
                         //表单初始赋值 从表单中提取数据
                           form.val('example', {
-                            "paperDept":trademark.paperDept,
-                            "paperCode":trademark.paperCode,
-                            "paperName":trademark.paperName,
-                            "paperWriter":trademark.paperWriter,
-                            "paperAuthor":trademark.paperAuthor,
-                            "paperAgency":trademark.paperAgency,
-                            "paperDevelopendtime":trademark.paperDevelopendtime,
-                            "paperFirstpublishtime":trademark.paperFirstpublishtime,
-                            "paperNum":trademark.paperNum,
-                            "paperCertificatetime":trademark.paperCertificatetime,
-                            "paperCost":trademark.paperCost,
-                            "paperInvoiceper":trademark.paperInvoiceper,
-                            "paperUpdatetime":trademark.paperUpdatetime,
-                            "paperRemark":trademark.paperRemark,
-                            "paperfile":trademark.paperFile[0].path
+                            "topic":trademark.topic,
+                            "author":trademark.author,
+                            "authorUnit":trademark.authorUnit,
+                            "publishtime":trademark.publishtime,
+                            "meetingName":trademark.meetingName,
+                            "meetingLocation":trademark.meetingLocation,
+                            "keyword":trademark.keyword,
+                            "communicateAuthor":trademark.communicateAuthor,
+                            "englishSummary":trademark.englishSummary,
+                            "meetingRecord":trademark.meetingRecord,
+                            "contentType":trademark.contentType,
+                            "unit":trademark.unit,
+                            "englishSummary":trademark.englishSummary,
+                            "paperfile":trademark.listFile[0].path,
+                            "paperfile2":trademark.listFile[1].path
                             // 修改此输入框的value值，此value为测试值 paperfile为测试自定义值，证明文件值
                           });
                           var domain = window.location.host;
                           var url =data.data.url;
                           var imgpath=domain+url;
-                          var otherfile=trademark.paperFile;
-                          otherfile.splice(0,1);
+                          var otherfile=trademark.listFile;
+                          otherfile.splice(0,2);
                           $("#demo1").attr("src","https://"+imgpath);
                         //文件表格展示
                           table.render({
@@ -261,7 +261,7 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                            ,page: false//开启分页
                            ,cols: [[ //表头
                              {field: 'id', type:'numbers',title: '序号', width:80}
-                             ,{field: 'filename', title: '文件名'}
+                             ,{field: 'name', title: '文件名'}
                              ,{field: 'path', title: '文件路径'}
                              ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
                            ]],

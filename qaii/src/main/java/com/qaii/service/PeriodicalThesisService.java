@@ -17,4 +17,5 @@ public interface PeriodicalThesisService {
 	//此方法可以保存插入对象的id
 	int insertMessage(PeriodicalThesis record);
 
+	List<PeriodicalThesis> listNotPass();
 }

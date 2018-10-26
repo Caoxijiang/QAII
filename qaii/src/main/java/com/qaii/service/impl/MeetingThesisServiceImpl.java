@@ -31,19 +31,25 @@ public class MeetingThesisServiceImpl implements MeetingThesisService {
 	@Override
 	public MeetingThesis getMessage(long id) {
 		// TODO Auto-generated method stub
-		return mapper.selectByPrimaryKey(id);
+		return mapper.getMessage(id);
 	}
 
 	@Override
 	public int updateMessage(MeetingThesis record) {
 		// TODO Auto-generated method stub
-		return mapper.updateByPrimaryKey(record);
+		return mapper.updateByPrimaryKeySelective(record);
 	}
 
 	@Override
 	public int insertMessage(MeetingThesis record) {
 		// TODO Auto-generated method stub
 		return mapper.insertMessage(record);
+	}
+
+	@Override
+	public List<MeetingThesis> listNotPass() {
+		// TODO Auto-generated method stub
+		return mapper.listNotPass();
 	}
 
 }

@@ -29,7 +29,7 @@
   <div class="addBanner"></div><!--banner展示图-->
 <!--  表单元素-->
 <div class="layui-container">
-  <form class="layui-form" action="addSoft.do" method="post" enctype="multipart/form-data">
+  <form class="layui-form" action="insertPeriodical.do" method="post" enctype="multipart/form-data">
 <!--  第一块内容-->
 	  <div class="layui-row">
 		<h1>期刊论文基本信息</h1>
@@ -38,7 +38,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">题目&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCode" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="topic" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softAgency" lay-verify="required" autocomplete="off" class="layui-input input">
+						<input type="text" name="author" lay-verify="required" autocomplete="off" class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">作者单位&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="softDevelopendtime" class="layui-input input" id="test1">
+						<input type="text" name="authorUnit" class="layui-input input" id="test1">
 					  </div>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">出版时间&nbsp;<span class="star">*</span></label>
 					  <div class="layui-input-block">
-						<input type="text" name="softFirstpublishtime" class="layui-input input" id="test2">
+						<input type="text" name="publishtime" class="layui-input input" id="test2">
 					  </div>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">刊名&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softNum" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="periodicalName" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 			</div>
@@ -78,7 +78,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">卷号，期号，页码&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="pageNumber" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -86,7 +86,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">内容类型&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="contentType" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -94,7 +94,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">收录类别&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="recordType" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -102,7 +102,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="level" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -110,7 +110,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">部门&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<select name="softDept" lay-verify="required" lay-search="" id="deptt" class="input">
+						<select name="unit" lay-verify="required" lay-search="" id="deptt" class="input">
 							
 						</select>
 					</div>
@@ -120,7 +120,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">关键词&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="softCost" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="keyword" lay-verify="required" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -182,7 +182,7 @@
 			<div class="layui-form-item layui-form-text">
 				<!-- <label class="layui-form-label">备注</label> -->
 				<div class="layui-input-block">
-					<textarea name="softRemark" class="layui-textarea"></textarea>
+					<textarea name="englishSummary" class="layui-textarea"></textarea>
 				</div>
 			</div>
   		</div>		 
