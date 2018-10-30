@@ -110,9 +110,9 @@ public class SoftwareController {
 		int stat=updatewithSoftwarefile(files,soft);
 		if(row>=1) {
 			//String data="更新成功";
-			 return "page/science/add-succesd";
+			 return "page/science/inform/add-succesdsci";
 		}else {
-			return "page/science/add-faild";
+			return "page/science/inform/add-faildsci";
 			//return new JsonResult();
 		}
 	}
