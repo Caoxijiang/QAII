@@ -334,7 +334,7 @@ public class PeriodicalThesisController {
 	//导入功能
 	@RequestMapping(value="insertPeriodicalByExcel.do")
 	@ResponseBody
-	public JsonResult insertByExcel(@RequestParam("file")MultipartFile file,PeriodicalThesis record) throws FileNotFoundException, IOException, CustomException, AlertException  {
+	public JsonResult insertByExcel(@RequestParam("file")MultipartFile file, PeriodicalThesis record) throws FileNotFoundException, IOException, CustomException, AlertException  {
 		List<String> list =new ArrayList<>();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		String filename=file.getOriginalFilename();
