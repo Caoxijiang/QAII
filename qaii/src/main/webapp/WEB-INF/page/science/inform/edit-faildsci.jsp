@@ -5,7 +5,7 @@
 <c:set var="basePath" value="${pageContext.request.contextPath}"></c:set>
 <head>
 <meta charset="utf-8">
-<title>提交成功</title>
+<title>提交失败</title>
 <style>
 	.box{
 		margin: 0px auto;
@@ -49,23 +49,24 @@
 
 <body>
 	<div class="box">
-		<div class="contern">
-			<div>
-				<img src="${basePath}/image/success.png">
+	<div class="contern">
+		<div>
+			<img src="${basePath}/image/fail.png">
+		</div>
+		<div style="margin-top: 15px;">
+			<span class="sucss"> 修改失败</span>
+		</div>
+		<div style="margin-top: 15px;line-height: 30px">
+			<span class="appendix">
+				科研成果信息修改失败<br />
+				请重新修改信息
+			</span>
+		</div>
+		<a href="javascript:window.history.go(-1);">
+			<div class="close">
+				返回
 			</div>
-			<div style="margin-top: 15px;">
-				<span class="sucss"> 已提交成功</span>
-			</div>
-			<div style="margin-top: 15px;line-height: 30px">
-				<span class="appendix">
-					科研成果信息添加成功
-				</span>
-			</div>
-			<a href="javascript:window.history.go(-1);">
-				<div class="close">
-					返回
-				</div>
-			</a>
+		</a>
 		</div>
 	</div>
 </body>
