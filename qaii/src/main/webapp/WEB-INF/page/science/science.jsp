@@ -13,16 +13,6 @@
   <link rel="stylesheet" href="${basePath}/css/science.css">
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 <!--  iframe样式设置-->
-  <style>
-	  iframe{
-		  width: auto;
-		  width: 100%;
-		border:none;
-		height:-moz-calc( 100vh - 120px );
-		height:-webkit-calc( 100vh - 120px );
-		height:calc( 100vh - 120px );
-	}
-  </style>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
