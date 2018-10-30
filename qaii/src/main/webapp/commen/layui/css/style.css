@@ -48,11 +48,6 @@
 		height:-webkit-calc( 100vh - 100px );
 		height:calc( 100vh - 100px );
 	}
-	.layui-table-body {
-	    height: -moz-calc( 100vh - 170px ) !important;
-	    height: -webkit-calc( 100vh - 170px ) !important;
-	    height: calc( 100vh - 170 px ) !important;
-	}
 	 .layui-layout-admin .layui-side {
 	    top: 50px;
 	    width: 180px;
@@ -173,7 +168,7 @@
 	    height: calc( 100vh - 205 px )
 	}
 	.layui-layout-admin .layui-side {
-	    top: 70px;
+	    top: 50px;
 	    width: 160px;
 	    overflow-x: hidden;
 	}
