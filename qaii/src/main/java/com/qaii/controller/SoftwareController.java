@@ -346,8 +346,7 @@ public class SoftwareController {
 	
 	//其他文件重新上传文件信息
 	@RequestMapping(value="reUpOthersoftfile.do")
-	@ResponseBody
-	void reUpOthersoftfile(HttpServletRequest req,
+	String reUpOthersoftfile(HttpServletRequest req,
 			Softcopyrightfile softfile,
 			@RequestParam("file") MultipartFile files) throws CustomException {
 		String softName=req.getParameter("softName");
@@ -378,12 +377,12 @@ public class SoftwareController {
 		}catch(Exception e){
 			throw new CustomException("重新上传失败!");
 		}	
+		return "page/science/add-succesd";
 	}
 	
 	//证明文件重新上传
 	@RequestMapping(value="reUpMastersoftfile.do")
-	@ResponseBody
-	void reUpMastersoftfile(HttpServletRequest req,
+	String reUpMastersoftfile(HttpServletRequest req,
 			Softcopyrightfile softfile,
 			@RequestParam("file") MultipartFile files) throws CustomException {
 		String softName=req.getParameter("softName");
@@ -414,6 +413,7 @@ public class SoftwareController {
 		}catch(Exception e){
 			throw new CustomException("重新上传失败!");
 		}	
+		return "page/science/add-succesd";
 	}
 	
 	//删除其他文件接口
