@@ -49,15 +49,15 @@ public class PatentController {
 	//增加专利信息
 	@Resource
 	private ProcessimgService processimgService;
-	@ResponseBody
+
 	@RequestMapping(value="addPatentInfo.do",produces="application/json;charset=UTF-8")
-	public JsonResult addPatentInfo(HttpServletRequest req ,Patent patent) {
+	public String addPatentInfo(HttpServletRequest req ,Patent patent) {
 		PatentInfo(req, patent);
 		int row = patentService.insert(patent);
     	if(row!=0) {
-    		return  new JsonResult(row);
+    		return  "page/science/add-succesd";
     	}else {
-    		return  new JsonResult();
+    		return "page/science/add-faild";
     		
     	}
 	}
