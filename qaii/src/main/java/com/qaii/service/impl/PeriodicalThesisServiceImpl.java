@@ -46,4 +46,10 @@ public class PeriodicalThesisServiceImpl implements PeriodicalThesisService {
 		return mapper.insertMessage(record);
 	}
 
+	@Override
+	public List<PeriodicalThesis> listNotPass() {
+		// TODO Auto-generated method stub
+		return mapper.listNotPass();
+	}
+
 }

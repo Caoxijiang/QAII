@@ -222,7 +222,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
   <select id="listAllMessage" resultMap="BaseResultMap">
-  	SELECT * FROM sci_meetingthesis
+  	SELECT * FROM sci_meetingthesis where is_pass = 1
   </select>
   <delete id="deleteMessages" parameterType="int">
   	DELETE  FROM sci_meetingthesis WHERE id in
@@ -363,5 +363,8 @@
   	FROM sci_meetingthesis AS a 
   	LEFT JOIN sci_meetingthesisfile AS b ON b.tid = a.id 
   	WHERE a.id = #{0}
+  </select>
+  <select id="listNotPass" resultMap="BaseResultMap">
+  SELECT * FROM sci_meetingthesis WHERE is_pass  = 0
   </select>
 </mapper>

@@ -28,4 +28,6 @@ public interface WorkMapper {
     Work getMessage(Integer id);
     
     int insertMessage(Work record);
+    
+    List<Work> listNotPass();
 }

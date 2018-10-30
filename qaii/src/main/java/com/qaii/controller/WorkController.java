@@ -398,9 +398,28 @@ public class WorkController {
 		work.setWorkAuthor(value.get(2));
 		work.setWorkPublishhouse(value.get(3));
 		work.setWorkPublishtime(value.get(4));
-		work.setWorkDept(value.get(5));
+		work.setWorkIsbn(value.get(5));
+		work.setWorkDept(value.get(6));
 		
 		return work;
 	}
 
+	//未审核的记录列表
+	@RequestMapping(value="listNotPassWork.do",method=RequestMethod.POST)
+	@ResponseBody
+	Layui listNotPass() {
+		List<Work> result=workService.listNotPass();
+		return Layui.data(1, result);
+	}
+	
+	//通过申请
+	@RequestMapping(value="setPassWork.do",method=RequestMethod.POST)
+	@ResponseBody
+	JsonResult setPass(HttpServletRequest req,Work work) {
+		work.setId(Integer.parseInt(req.getParameter("id")));
+		work.setIsPass(BYTE_FALSE);
+		int result=workService.updateMsg(work);
+		return new JsonResult(result);
+		
+	}
 }
