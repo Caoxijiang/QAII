@@ -100,8 +100,7 @@ public class SoftwareController {
 	
 	//修改软著信息功能
 	@RequestMapping(value="updatesofts.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	@ResponseBody
-	public String updatesofts(Softwarecopyright soft,
+	String updatesofts(Softwarecopyright soft,
 			HttpServletRequest req,
 			@RequestParam("file") MultipartFile[] files) throws CustomException{	
 		loadData(req, soft);
@@ -110,10 +109,9 @@ public class SoftwareController {
 		int stat=updatewithSoftwarefile(files,soft);
 		if(row>=1) {
 			//String data="更新成功";
-			 return "page/science/inform/add-succesdsci";
-		}else {
-			return "page/science/inform/add-faildsci";
-			//return new JsonResult();
+			return  "page/science/inform/edit-succesdsci";
+    	}else {
+    		return "page/science/inform/edit-faildsci";
 		}
 	}
 	
@@ -178,9 +176,10 @@ public class SoftwareController {
 		soft.setSoftUpdatetime(req.getParameter("softUpdatetime"));
 		soft.setSoftRemark(req.getParameter("softRemark"));
 	}
+	
 	//添加软著信息功能
 	@RequestMapping("addSoft.do")
-	public String AddSoft(HttpServletRequest req,
+	String AddSoft(HttpServletRequest req,
 			Softwarecopyright soft,
 			@RequestParam("file") MultipartFile[] files) throws CustomException {
 		loadData(req, soft);		
@@ -188,15 +187,9 @@ public class SoftwareController {
 		int row = softwareService.insertSoft(soft);
 		updateSoftwarefile(files,soft);
 		if(row>0) {
-//			Map<String,String> map=new HashMap<>();
-//			 map.put("url","intoPerSys.do");
-//			 map.put("data", "提交成功");
-			 
-			//return new JsonResult();
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/add-succesdsci";
+    	}else {
+    		return "page/science/inform/add-faildsci";
 		}
 		
 	}

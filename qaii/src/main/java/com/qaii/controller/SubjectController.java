@@ -102,15 +102,13 @@ public class SubjectController {
 	
 	//修改政府项目信息功能
 	@RequestMapping(value="updateGovsubject.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public String updateGovsubjects(Govsubject govsubject,HttpServletRequest req){	
+	String updateGovsubjects(Govsubject govsubject,HttpServletRequest req){	
 		loadData(req, govsubject);
 		int row =govsubjectService.updateMsg(govsubject);
 		if(row>=1) {
-			//String data="更新成功";
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/edit-succesdsci";
+    	}else {
+    		return "page/science/inform/edit-faildsci";
 		}
 	}
 	//绑定请求数据到bean中
@@ -142,19 +140,13 @@ public class SubjectController {
 	}
 	//添加政府项目信息功能
 	@RequestMapping("addGovsubject.do")
-	public String AddGovsubject(HttpServletRequest req,Govsubject govsubject) {
+	String AddGovsubject(HttpServletRequest req,Govsubject govsubject) {
 		loadData(req, govsubject);		
 		int row = govsubjectService.insertMsg(govsubject);
 		if(row>0) {
-//						Map<String,String> map=new HashMap<>();
-//						 map.put("url","intoPerSys.do");
-//						 map.put("data", "提交成功");
-			 
-			//return new JsonResult();
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/add-succesdsci";
+    	}else {
+    		return "page/science/inform/add-faildsci";
 		}
 		
 	}
