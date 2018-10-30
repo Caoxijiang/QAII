@@ -88,12 +88,15 @@
 	<div class="int-inline"><input id="patPrepublishaudit"  type="checkbox" value="是否提前公开实审" checked/><lable>是否提前公开实审</lable></div>
 	<div class="int-inline"><input id="patApplynum"  type="checkbox" value="申请号" checked/><lable>申请号</lable></div>
 	<div class="int-inline"><input id="patApplytime"  type="checkbox" value="申请日" checked/><lable>申请日</lable></div>
+	<div class="int-inline"><input id="patPublishnum"  type="checkbox" value="公开号" checked/><lable>公开号</lable></div>
 	<div class="int-inline"><input id="patPublishtime"  type="checkbox" value="公开日" checked/><lable>公开日</lable></div>
 	<div class="int-inline"><input id="patAuthorzationtime"  type="checkbox" value="授权公告日" checked/><lable>授权公告日</lable></div>
 	<div class="int-inline"><input id="patRemission"  type="checkbox" value="是否减免" checked/><lable>是否减免</lable></div>
 	<div class="int-inline"><input id="patCost"  type="checkbox" value="申请费用（元）" checked/><lable>申请费用（元）</lable></div>
 	<div class="int-inline"><input id="patInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
 	<div class="int-inline"><input id="patRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
+	<div class="int-inline"><input id="patPenner"  type="checkbox" value="执笔人信息" checked/><lable>"执笔人信息"</lable></div>
+	<div class="int-inline"><input id="patAgent"  type="checkbox" value="代理人" checked/><lable>代理人</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -145,12 +148,15 @@ layui.use('table', function(obj){
 		{field: 'patPrepublishaudit', title: '是否提前公开实审',sort: true,width:200},
 		{field: 'patApplynum', title: '申请号',width:150},
 		{field: 'patApplytime', title: '申请日',sort: true,width:200},
+		{field: 'patPublishnum', title: '公开号',width:200},
 		{field: 'patPublishtime', title: '公开日',sort: true,width:200},
 		{field: 'patAuthorzationtime', title: '授权公告日',width:200},
 		{field: 'patRemission', title: '是否减免',width:230},
 		{field: 'patCost', title: '申请费用（元）',width:200},
 		{field: 'patInvoiceper', title: '发票收据-汇款人',width:200},
 		{field: 'patRemark', title: '备注',width:200},
+		{field: 'patPenner', title: '执笔人信息',width:200},
+		{field: 'patAgent', title: '代理人',width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:380}
     ]],
     
@@ -361,10 +367,11 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: '/upload/'
+  ,url: 'insertPatentByExcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
-    console.log(res)
+    console.log(res),
+    alert("上传成功！");
   }
 })
 
