@@ -55,9 +55,9 @@ public class PatentController {
 		PatentInfo(req, patent);
 		int row = patentService.insert(patent);
     	if(row!=0) {
-    		return  "page/science/add-succesd";
+    		return  "page/science/inform/add-succesdsci";
     	}else {
-    		return "page/science/add-faild";
+    		return "page/science/inform/add-faildsci";
     		
     	}
 	}
