@@ -71,15 +71,15 @@ public class techController {
 		return new ModelAndView("page/science/patent/patentData", "utflist", result);
 	}
 	//专利资料审查文件流程添加界面
-		@RequestMapping("patentDataAdd.do")
-		public String patentDataAdd(){
-			return "page/science/patent/patentDataAdd";
-		}
+	@RequestMapping("patentDataAdd.do")
+	public String patentDataAdd(){
+		return "page/science/patent/patentDataAdd";
+	}
 	//专利资料审查文件添加界面
-			@RequestMapping("patentDataAddFile.do")
-			public String patentDataAddFile(){
-				return "page/science/patent/patentDataAddFile";
-			}
+	@RequestMapping("patentDataAddFile.do")
+	public String patentDataAddFile(){
+		return "page/science/patent/patentDataAddFile";
+	}
 	//软著
 	@RequestMapping("soft.do")
 	public String soft(){

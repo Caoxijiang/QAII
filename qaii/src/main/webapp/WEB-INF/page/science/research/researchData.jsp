@@ -43,8 +43,8 @@
 <div class="layui-container addtop"> 
 	<div class="datacontent">
 		<div class="datatitle">
-			<span class="dataname" id="paname" name=${param.patName}>&nbsp;&nbsp;&nbsp;&nbsp;课程项目名称《&nbsp;${param.govsubName}&nbsp;》</span>
-			<span class="inventor">来源：${param.govsubSource}</span>
+			<span class="dataname" id="paname" name=${param.patName}>&nbsp;&nbsp;&nbsp;&nbsp;课程项目名称《&nbsp;${requestScope.utflist[0]}&nbsp;》</span>
+			<span class="inventor">来源：${requestScope.utflist[1]}</span>
 			<span class="datadate">立项时间：${param.govsubApprovalnum}&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>
 		<div id="process">
