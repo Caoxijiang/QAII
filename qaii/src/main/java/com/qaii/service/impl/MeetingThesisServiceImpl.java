@@ -52,4 +52,10 @@ public class MeetingThesisServiceImpl implements MeetingThesisService {
 		return mapper.listNotPass();
 	}
 
+	@Override
+	public int insert(MeetingThesis record) {
+		// TODO Auto-generated method stub
+		return mapper.insert(record);
+	}
+
 }

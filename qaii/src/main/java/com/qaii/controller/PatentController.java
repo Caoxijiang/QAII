@@ -55,9 +55,9 @@ public class PatentController {
 		PatentInfo(req, patent);
 		int row = patentService.insert(patent);
     	if(row!=0) {
-    		return  "page/science/add-succesd";
+    		return  "page/science/inform/add-succesdsci";
     	}else {
-    		return "page/science/add-faild";
+    		return "page/science/inform/add-faildsci";
     		
     	}
 	}
@@ -111,24 +111,20 @@ public class PatentController {
     
     
 	//修改部门信息
-    @ResponseBody
     @RequestMapping(value="uptatePatentInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-    public JsonResult uptatePatentInfo(HttpServletRequest req,Patent patent){
+    public String uptatePatentInfo(HttpServletRequest req,Patent patent){
     	PatentInfo(req, patent);
     	patent.setId(Integer.parseInt(req.getParameter("id")));
      	int row=patentService.updateByPrimaryKey(patent);
     	if(row!=0) {
-    		return  new JsonResult(row);
+    		return  "page/science/inform/edit-succesdsci";
     	}else {
-    		return  new JsonResult();
+    		return "page/science/inform/edit-faildsci";
     		
     	}
         
     }
     
-	
-	
-	
     //增加专利流程信息
   	@ResponseBody
   	@RequestMapping(value="addProcessInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")

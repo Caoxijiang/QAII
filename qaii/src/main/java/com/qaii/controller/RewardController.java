@@ -90,15 +90,13 @@ public class RewardController {
 	
 	//修改政府奖励信息功能
 	@RequestMapping(value="updateGovreward.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public String updateGovrewards(Govreward govreward,HttpServletRequest req){	
+	String updateGovrewards(Govreward govreward,HttpServletRequest req){	
 		loadData(req, govreward);
 		int row =govrewardService.updateMsg(govreward);
 		if(row>=1) {
-			//String data="更新成功";
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/edit-succesdsci";
+    	}else {
+    		return "page/science/inform/edit-faildsci";
 		}
 	}
 	//绑定请求数据到bean中
@@ -120,19 +118,13 @@ public class RewardController {
 	}
 	//添加政府奖励信息功能
 	@RequestMapping("addGovreward.do")
-	public String AddGovreward(HttpServletRequest req,Govreward govreward) {
+	String AddGovreward(HttpServletRequest req,Govreward govreward) {
 		loadData(req, govreward);		
 		int row = govrewardService.insertMsg(govreward);
 		if(row>0) {
-//							Map<String,String> map=new HashMap<>();
-//							 map.put("url","intoPerSys.do");
-//							 map.put("data", "提交成功");
-			 
-			//return new JsonResult();
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/add-succesdsci";
+    	}else {
+    		return "page/science/inform/add-faildsci";
 		}
 		
 	}

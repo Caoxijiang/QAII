@@ -94,18 +94,16 @@ public class WorkController {
 	
 	//修改著作信息功能
 	@RequestMapping(value="updateWork.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public String updateworks(Work record, HttpServletRequest req, 
+	String updateworks(Work record, HttpServletRequest req, 
 			@RequestParam("file") MultipartFile[] files){	
 		loadData(req, record);
 		record.setId(Integer.parseInt(req.getParameter("id")));
 		int row =workService.updateMsg(record);
 		updateFile(record, files);
 		if(row>=1) {
-			//String data="更新成功";
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/edit-succesdsci";
+    	}else {
+    		return "page/science/inform/edit-faildsci";
 		}
 	}
 	
@@ -163,7 +161,7 @@ public class WorkController {
 	}
 	//添加著作信息功能
 	@RequestMapping("addWork.do")
-	public String Addwork(HttpServletRequest req, 
+	String Addwork(HttpServletRequest req, 
 			Work record, 
 			@RequestParam("file") MultipartFile[] files) {
 		loadData(req, record);		
@@ -171,15 +169,9 @@ public class WorkController {
 		int row = workService.insertMessage(record);
 		insertFile(record,files);
 		if(row>0) {
-//						Map<String,String> map=new HashMap<>();
-//						 map.put("url","intoPerSys.do");
-//						 map.put("data", "提交成功");
-			 
-			//return new JsonResult();
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/add-succesdOut";
+    	}else {
+    		return "page/science/inform/add-faildOut";
 		}
 		
 	}
@@ -400,7 +392,7 @@ public class WorkController {
 		work.setWorkPublishtime(value.get(4));
 		work.setWorkIsbn(value.get(5));
 		work.setWorkDept(value.get(6));
-		
+		work.setIsPass(BYTE_TRUE);
 		return work;
 	}
 
@@ -417,7 +409,7 @@ public class WorkController {
 	@ResponseBody
 	JsonResult setPass(HttpServletRequest req,Work work) {
 		work.setId(Integer.parseInt(req.getParameter("id")));
-		work.setIsPass(BYTE_FALSE);
+		work.setIsPass(BYTE_TRUE);
 		int result=workService.updateMsg(work);
 		return new JsonResult(result);
 		

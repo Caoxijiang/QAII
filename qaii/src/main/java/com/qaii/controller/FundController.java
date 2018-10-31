@@ -95,23 +95,15 @@ public class FundController {
 		return new JsonResult(govfund);
 	}
 	
-	//跳转到修改基金详情页面
-	@RequestMapping("UpdateGovfund.do")
-	public String toUpdateGovfund() {
-		return "page/science";
-	}
-	
 	//修改基金信息功能
 	@RequestMapping(value="updateGovfund.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public String updateGovfunds(Govfund govfund,HttpServletRequest req){	
+	String updateGovfunds(Govfund govfund,HttpServletRequest req){	
 		loadData(req, govfund);
 		int row =govfundService.updateMsg(govfund);
 		if(row>=1) {
-			//String data="更新成功";
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/edit-succesdsci";
+    	}else {
+    		return "page/science/inform/edit-faildsci";
 		}
 	}
 	//绑定请求数据到bean中
@@ -138,19 +130,13 @@ public class FundController {
 	}
 	//添加基金信息功能
 	@RequestMapping("addGovfund.do")
-	public String AddGovfund(HttpServletRequest req,Govfund govfund) {
+	String AddGovfund(HttpServletRequest req,Govfund govfund) {
 		loadData(req, govfund);		
 		int row = govfundService.insertMsg(govfund);
 		if(row>0) {
-//							Map<String,String> map=new HashMap<>();
-//							 map.put("url","intoPerSys.do");
-//							 map.put("data", "提交成功");
-			 
-			//return new JsonResult();
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/add-succesdsci";
+    	}else {
+    		return "page/science/inform/add-faildsci";
 		}
 		
 	}

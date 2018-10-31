@@ -18,4 +18,6 @@ public interface MeetingThesisService {
 	int insertMessage(MeetingThesis record);
 
 	List<MeetingThesis> listNotPass();
+	
+	int insert(MeetingThesis record);
 }
