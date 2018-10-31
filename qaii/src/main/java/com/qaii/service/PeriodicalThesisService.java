@@ -18,4 +18,6 @@ public interface PeriodicalThesisService {
 	int insertMessage(PeriodicalThesis record);
 
 	List<PeriodicalThesis> listNotPass();
+	
+	int insert(PeriodicalThesis record);
 }

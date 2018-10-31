@@ -20,6 +20,12 @@
 	    height: -webkit-calc( 100vh - 190px );
 	    height: calc( 100vh - 190px );
 	}
+	@media screen and (max-width: 1600px) {
+		.layui-table-body {
+		    height: -moz-calc( 100vh - 145px );
+		    height: -webkit-calc( 100vh - 145px );
+		    height: calc( 100vh - 145 px );
+		}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
 	.noExl {
     display: none;
@@ -302,7 +308,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"dellcopyrightMsg.do",
+		  	url:"copyrightDeleted.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},

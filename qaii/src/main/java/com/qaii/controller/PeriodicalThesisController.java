@@ -97,7 +97,6 @@ public class PeriodicalThesisController {
 	
 	//修改信息
 	@RequestMapping(value="updatePeriodical.do",method=RequestMethod.POST)
-	@ResponseBody
 	String updateMessage(HttpServletRequest req, 
 			PeriodicalThesis record, 
 			@RequestParam("file") MultipartFile[] files) throws AlertException {
@@ -107,9 +106,9 @@ public class PeriodicalThesisController {
 		int recordResult = Service.updateMessage(record);
 		updateFile(record, files);
 		if(recordResult > 0) {
-			return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
+			return  "page/science/inform/edit-succesdsci";
+    	}else {
+    		return "page/science/inform/edit-faildsci";
 		}
 		
 	}
@@ -175,7 +174,6 @@ public class PeriodicalThesisController {
 	
 	//添加记录
 	@RequestMapping(value="insertPeriodical.do",method=RequestMethod.POST)
-	@ResponseBody
 	String insertMessage(HttpServletRequest req, 
 			PeriodicalThesis record, 
 			@RequestParam("file") MultipartFile[] files) {
@@ -185,9 +183,9 @@ public class PeriodicalThesisController {
 		int insertResult=Service.insertMessage(record);
 		int fileResult = insertFile(record,files);
 		if(insertResult > 0 && fileResult > 0) {
-			return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
+			return  "page/science/inform/add-succesdOut";
+    	}else {
+    		return "page/science/inform/add-faildOut";
 		}
 	}
 
@@ -389,7 +387,7 @@ public class PeriodicalThesisController {
 						}
 					}
 					loadExcelData(record,list);
-					Service.insertMessage(record);
+					Service.insert(record);
 					
 				}
 			}
@@ -419,6 +417,7 @@ public class PeriodicalThesisController {
 		record.setUnit(list.get(11));
 		record.setGmtCreate(new Date());
 		record.setGmtModified(new Date());
+		record.setIsPass(BYTE_TRUE);
 	}
 	
 }

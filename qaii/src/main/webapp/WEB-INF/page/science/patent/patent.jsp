@@ -23,8 +23,15 @@
 	    height: calc( 100vh - 215 px );
 	}
 	.noExl {
-    display: none;
-}
+	    display: none;
+	}
+	@media screen and (max-width: 1600px) {
+		.layui-table-body {
+		    height: -moz-calc( 100vh - 170px );
+		    height: -webkit-calc( 100vh - 170px );
+		    height: calc( 100vh - 170 px );
+		}
+	}
   </style>
 </head>
 <body id="bodyHei">
@@ -95,7 +102,7 @@
 	<div class="int-inline"><input id="patCost"  type="checkbox" value="申请费用（元）" checked/><lable>申请费用（元）</lable></div>
 	<div class="int-inline"><input id="patInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
 	<div class="int-inline"><input id="patRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
-	<div class="int-inline"><input id="patPenner"  type="checkbox" value="执笔人信息" checked/><lable>"执笔人信息"</lable></div>
+	<div class="int-inline"><input id="patPenner"  type="checkbox" value="执笔人信息" checked/><lable>执笔人信息</lable></div>
 	<div class="int-inline"><input id="patAgent"  type="checkbox" value="代理人" checked/><lable>代理人</lable></div>
 </div>
 </div>  

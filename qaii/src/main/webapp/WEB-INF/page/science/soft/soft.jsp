@@ -20,6 +20,13 @@
 	    height: -webkit-calc( 100vh - 190px );
 	    height: calc( 100vh - 190px );
 	}
+	@media screen and (max-width: 1600px) {
+		.layui-table-body {
+		    height: -moz-calc( 100vh - 145px );
+		    height: -webkit-calc( 100vh - 145px );
+		    height: calc( 100vh - 145 px );
+		}
+	}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
 	.noExl {
     display: none;

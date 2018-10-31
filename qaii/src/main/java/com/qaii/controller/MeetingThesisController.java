@@ -91,7 +91,6 @@ public class MeetingThesisController {
 	
 	//修改信息
 	@RequestMapping(value="updateMeeting.do",method=RequestMethod.POST)
-	@ResponseBody
 	String updateMessage(HttpServletRequest req, 
 		MeetingThesis record,
 		@RequestParam("file") MultipartFile[] files) throws AlertException {
@@ -101,9 +100,9 @@ public class MeetingThesisController {
 		int recordResult = Service.updateMessage(record);
 		updateFile(record, files);
 		if(recordResult > 0) {
-			return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
+			return  "page/science/inform/edit-succesdsci";
+    	}else {
+    		return "page/science/inform/edit-faildsci";
 		}	
 	}
 	
@@ -167,7 +166,6 @@ public class MeetingThesisController {
 	
 	//添加记录
 	@RequestMapping(value="insertMeeting.do",method=RequestMethod.POST)
-	@ResponseBody
 	String insertMessage(HttpServletRequest req, 
 			MeetingThesis record,
 			@RequestParam("file") MultipartFile[] files) {
@@ -177,9 +175,9 @@ public class MeetingThesisController {
 		int insertResult=Service.insertMessage(record);
 		insertFile(record,files);
 		if(insertResult > 0) {
-			return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
+			return  "page/science/inform/add-succesdOut";
+    	}else {
+    		return "page/science/inform/add-faildOut";
 		}
 	}
 
@@ -380,7 +378,7 @@ public class MeetingThesisController {
 						}
 					}
 					loadExcelData(record,list);
-					Service.insertMessage(record);
+					Service.insert(record);
 					
 				}
 			}
@@ -408,5 +406,8 @@ public class MeetingThesisController {
 		record.setMeetingRecord(list.get(9));
 		record.setContentType(list.get(10));
 		record.setUnit(list.get(11));
+		record.setGmtCreate(new Date());
+		record.setGmtModified(new Date());
+		record.setIsPass(BYTE_TRUE);
 	}
 }

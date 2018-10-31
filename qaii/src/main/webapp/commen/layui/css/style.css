@@ -1,6 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
 /*******************************/
+#iframe{
+	width: auto;
+	width: 100%;
+	border:none;
+	height:-moz-calc( 100vh - 120px );
+	height:-webkit-calc( 100vh - 120px );
+	height:calc( 100vh - 120px );
+}
 .layui-btn-group .btnLeft{
 	margin-left:40px !important;
 }
@@ -31,18 +39,136 @@
  	margin-left:15px;
  }
 /*** 数据可视化根据屏幕相应 ***/
+@media screen and (max-width: 1600px) {
+	#iframe{
+		width: auto;
+		width: 100%;
+		border:none;
+		height:-moz-calc( 100vh - 100px );
+		height:-webkit-calc( 100vh - 100px );
+		height:calc( 100vh - 100px );
+	}
+	 .layui-layout-admin .layui-side {
+	    top: 50px;
+	    width: 180px;
+	    overflow-x: hidden;
+	}
+	.layui-side-scroll {
+	    position: relative;
+	    width: 180px;
+	    height: 100%;
+	    overflow-x: hidden;
+	}
+	.layui-nav-tree {
+	    width: 180px;
+	    padding: 0;
+	}
+	.layui-body {
+	    position: absolute;
+	    left: 180px;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 998;
+	    width: auto;
+	    overflow: hidden;
+	    overflow-y: auto;
+	    box-sizing: border-box;
+	}
+	.layui-layout-admin .layui-footer {
+	    position: fixed;
+	    left: 180px;
+	    right: 0;
+	    bottom: 0;
+	    height: 44px;
+	    line-height: 44px;
+	    padding: 0 15px;
+	    background-color: #1b2032;
+	    color: rgba(255,255,255,0.5);
+	}
+	.layui-header {
+	    z-index: 1000;
+	    height: 50px;
+	}
+	.layui-layout-admin .layui-logo {
+	    position: absolute;
+	    left: 20px;
+	    top: 0;
+	    height: 100%;
+	    line-height: 50px;
+	    text-align: left;
+	    color: #fff;
+	    font-size: 24px;
+	}
+	.layui-nav .layui-nav-item {
+	    position: relative;
+	    display: inline-block;
+	    vertical-align: middle;
+	    line-height: 50px;
+	}
+	.layui-layout-admin .layui-body {
+	    top: 50px;
+	    bottom: 44px;
+	}
+}
 @media screen and (max-width: 1400px) {
 	 *{font-size:14px !important;}
-    }
+	 .layui-layout-admin .layui-side {
+	    top: 70px;
+	    width: 160px;
+	    overflow-x: hidden;
+	}
+	.layui-side-scroll {
+	    position: relative;
+	    width: 160px;
+	    height: 100%;
+	    overflow-x: hidden;
+	}
+	.layui-nav-tree {
+	    width: 160px;
+	    padding: 0;
+	}
+	.layui-body {
+	    position: absolute;
+	    left: 160px;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 998;
+	    width: auto;
+	    overflow: hidden;
+	    overflow-y: auto;
+	    box-sizing: border-box;
+	}
+	.layui-layout-admin .layui-footer {
+	    position: fixed;
+	    left: 160px;
+	    right: 0;
+	    bottom: 0;
+	    height: 44px;
+	    line-height: 44px;
+	    padding: 0 15px;
+	    background-color: #1b2032;
+	    color: rgba(255,255,255,0.5);
+	}
+}
 
 @media screen and (max-width: 1300px){
+	#iframe {
+	    width: auto;
+	    width: 100%;
+	    border: none;
+	    height: -moz-calc( 100vh - 100px ) !important;
+	    height: -webkit-calc( 100vh - 100px ) !important;
+	    height: calc( 100vh - 100px ) !important;
+	}
 	.layui-table-body{
 		height: -moz-calc( 100vh - 205px );
 	    height: -webkit-calc( 100vh - 205px ); 
 	    height: calc( 100vh - 205 px )
 	}
 	.layui-layout-admin .layui-side {
-	    top: 70px;
+	    top: 50px;
 	    width: 160px;
 	    overflow-x: hidden;
 	}
@@ -133,8 +259,18 @@
 	.layui-input {
 	    width: 100px;
 	    border: 1px solid #aaa;
-	    height: 33px;
-	    line-height: 33px;
+	    height: 33px !important;
+	    line-height: 33px !important;
+	}
+	.tool .export {
+	    background: #64ad30;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 100px;
+	    height: 35px !important;
+	    line-height: 35px !important;
+	    font-size: 22px;
+	    text-align: center;
 	}
 	#search{
 		margin-top: 0px !important;
