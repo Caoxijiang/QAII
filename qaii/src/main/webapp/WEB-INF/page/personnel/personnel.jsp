@@ -39,7 +39,7 @@
 		  </li>
 		   <li class="layui-nav-item">
 			<a href="javascript:;">
-			  <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+			  <img src="https://t.cn/RCzsdCq" class="layui-nav-img">
 			  贤心
 			</a>
 			<dl class="layui-nav-child">

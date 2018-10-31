@@ -80,7 +80,7 @@ public class UserController {
 				map2.put("USERROLEURL","personal.do");
 				return new JsonResult(map2);
 			case 3:
-				map2.put("USERROLEURL","science.do");
+				map2.put("USERROLEURL","indexScience.do");
 				return new JsonResult(map2);
 			default:
 				map2.put("USERROLEURL","indexUI.do");
