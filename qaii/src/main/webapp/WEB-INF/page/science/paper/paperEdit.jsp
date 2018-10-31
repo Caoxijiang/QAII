@@ -267,6 +267,17 @@ $.post({
 				
 			//文件表格展示
             let trademark=data.data;
+            //预定义必传文件路径
+            if(trademark.listFile== false){
+         	   trademark.listFile=[];
+         	   trademark.listFile[0]=new Object();
+         	   trademark.listFile[0].path='';
+         	   trademark.listFile[0].id='';
+         	   trademark.listFile[1]=new Object();
+        	   trademark.listFile[1].path='';
+        	   trademark.listFile[1].id='';
+            }
+          
               form.val('example', {
             	  "id":trademark.id,
             	  "keyword":trademark.keyword,

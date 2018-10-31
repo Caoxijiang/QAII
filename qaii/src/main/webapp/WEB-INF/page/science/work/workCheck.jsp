@@ -187,6 +187,18 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                         }else{
                             $("input[name='imageVal']").attr("value",eid);
                         }
+                        
+                        //预定义必传文件路径
+                        if(trademark.listFile== false){
+                     	   trademark.listFile=[];
+                     	   trademark.listFile[0]=new Object();
+                     	   trademark.listFile[0].path='';
+                     	   trademark.listFile[1]=new Object();
+                    	   trademark.listFile[1].path='';
+                    	   trademark.listFile[2]=new Object();
+                    	   trademark.listFile[2].path='';
+                        }
+                      
                         /* console.log("afd"+JSON.stringify(trademark)); */
                         //表单初始赋值 从表单中提取数据
                           form.val('example', {
