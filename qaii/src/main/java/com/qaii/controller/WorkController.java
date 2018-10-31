@@ -392,7 +392,7 @@ public class WorkController {
 		work.setWorkPublishtime(value.get(4));
 		work.setWorkIsbn(value.get(5));
 		work.setWorkDept(value.get(6));
-		
+		work.setIsPass(BYTE_TRUE);
 		return work;
 	}
 

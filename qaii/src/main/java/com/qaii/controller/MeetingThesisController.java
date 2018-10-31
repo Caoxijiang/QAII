@@ -378,7 +378,7 @@ public class MeetingThesisController {
 						}
 					}
 					loadExcelData(record,list);
-					Service.insertMessage(record);
+					Service.insert(record);
 					
 				}
 			}
@@ -406,5 +406,8 @@ public class MeetingThesisController {
 		record.setMeetingRecord(list.get(9));
 		record.setContentType(list.get(10));
 		record.setUnit(list.get(11));
+		record.setGmtCreate(new Date());
+		record.setGmtModified(new Date());
+		record.setIsPass(BYTE_TRUE);
 	}
 }

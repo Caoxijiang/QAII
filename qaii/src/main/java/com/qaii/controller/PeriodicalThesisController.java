@@ -387,7 +387,7 @@ public class PeriodicalThesisController {
 						}
 					}
 					loadExcelData(record,list);
-					Service.insertMessage(record);
+					Service.insert(record);
 					
 				}
 			}
@@ -417,6 +417,7 @@ public class PeriodicalThesisController {
 		record.setUnit(list.get(11));
 		record.setGmtCreate(new Date());
 		record.setGmtModified(new Date());
+		record.setIsPass(BYTE_TRUE);
 	}
 	
 }

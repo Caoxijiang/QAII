@@ -250,6 +250,13 @@ $.post({
 				
 			//文件表格展示
             let trademark=data.data;
+            //预定义必传文件路径
+            if(trademark.softFile== false){
+         	   trademark.softFile=[];
+         	   trademark.softFile[0]=new Object();
+         	   trademark.softFile[0].path='';
+         	   trademark.softFile[0].id='';
+            }
               form.val('example', {
             	  "id":trademark.id,
                   "softDept":trademark.softDept,

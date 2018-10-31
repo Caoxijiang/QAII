@@ -282,7 +282,7 @@ public class CopyrightController {
 		copyright.setCopyEndtime(list.get(6));
 		copyright.setCopyPublishtime(list.get(7));
 		copyright.setCopyRegisttime(list.get(8));
-		copyright.setCopyCode(list.get(9));
+		copyright.setCopyCost(list.get(9));
 		copyright.setCopyInvoiceper(list.get(10));
 		copyright.setCopyStatus(list.get(11));
 	}
