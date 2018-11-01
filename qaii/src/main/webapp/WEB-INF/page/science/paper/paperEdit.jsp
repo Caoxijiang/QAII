@@ -191,7 +191,7 @@
 					    </table>
 					  </div>
 					  <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button> 
-					  <button type="button" class="layui-btn" id="testListAction">开始上传</button>
+					  <!-- <button type="button" class="layui-btn" id="testListAction">开始上传</button> -->
 					</div> 
 				</div>
 			</div>

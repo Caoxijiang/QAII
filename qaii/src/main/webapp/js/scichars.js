@@ -247,7 +247,7 @@ var option2 = {
 	    },
 	    xAxis:  {
 	        type: 'category',
-	        data: ['申请','受理','授权','驳回'],
+	        data: ['申请','受理','授权'],
 	        axisLabel: {
                 textStyle: {
                     color: '#3db4e3',
