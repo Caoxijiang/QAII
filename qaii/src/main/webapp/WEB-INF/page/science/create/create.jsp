@@ -21,15 +21,16 @@
 	    height: -webkit-calc( 100vh - 215px );
 	    height: calc( 100vh - 215 px );
 	}
+	.noExl {
+    	display: none;
+	}
 	@media screen and (max-width: 1600px) {
 		.layui-table-body {
 		    height: -moz-calc( 100vh - 170px );
 		    height: -webkit-calc( 100vh - 170px );
 		    height: calc( 100vh - 170 px );
 		}
-	.noExl {
-    display: none;
-}
+	}
   </style>
 </head>
 <body id="bodyHei">
@@ -84,7 +85,7 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=govplatApplytime"  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
+	<div class="int-inline"><input id="govplatApplytime"  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
 	<div class="int-inline"><input id="govplatSource"  type="checkbox" value="来源" checked/><lable>来源</lable></div>
 	<div class="int-inline"><input id="govplatLevel"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
 	<div class="int-inline"><input id="govplatName"  type="checkbox" value="平台名称" checked/><lable>平台名称</lable></div>
