@@ -44,7 +44,7 @@
 				<script type="text/html" id="barDemo">
 				  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">审核通过</a>
 				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">驳回申请</a>
-				  <a class="layui-btn layui-btn-xs layui-btn-details" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
+				  <a class="layui-btn layui-btn-xs layui-btn-details" href="paperCheck.do?userId='{{d.id}}'" target="_blank">查看详情</a>
 				</script>
 			</div>
 		
@@ -61,7 +61,7 @@
 				<script type="text/html" id="barDemo2">
 				   <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">审核通过</a>
 				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">驳回申请</a>
-				  <a class="layui-btn layui-btn-xs layui-btn-details" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
+				  <a class="layui-btn layui-btn-xs layui-btn-details" href="papermeetingCheck.do?userId='{{d.id}}'" target="_blank">查看详情</a>
 				</script>
 			</div>
 		
@@ -78,7 +78,7 @@
 				<script type="text/html" id="barDemo3">
 				  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">审核通过</a>
 				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">驳回申请</a>
-				  <a class="layui-btn layui-btn-xs layui-btn-details" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
+				  <a class="layui-btn layui-btn-xs layui-btn-details" href="workCheck.do?userId='{{d.id}}'" target="_blank">查看详情</a>
 				</script>
 			</div>
 		</div>		

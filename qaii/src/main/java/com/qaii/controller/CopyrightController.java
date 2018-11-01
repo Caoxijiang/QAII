@@ -54,7 +54,7 @@ public class CopyrightController {
 	//文件路径
 	public final static String FILE_PATH= "C:/File/img/Copyright/Symbol/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="File/img/Copyright/Symbol/";
+	public final static String DATABASE_PATH="img/Copyright/Symbol/";
 	
 	
 	//所有版权的信息
@@ -67,14 +67,13 @@ public class CopyrightController {
 	}
 	//版权信息添加
 	@RequestMapping(value="insertCopyright.do",method=RequestMethod.POST)
-	@ResponseBody
-	JsonResult insertCopyright(HttpServletRequest request, Copyright copyright) {
+	String insertCopyright(HttpServletRequest request, Copyright copyright) {
 		loadData(request, copyright);
 		int result=Service.insert(copyright);
 		if(result >= 1) {
-			return new JsonResult(result);
-		}else {
-			return new JsonResult();
+			return  "page/science/inform/add-succesdsci";
+    	}else {
+    		return "page/science/inform/add-faildsci";
 		}
 	}
 	
@@ -110,15 +109,14 @@ public class CopyrightController {
 	
 	//版权信息修改
 	@RequestMapping(value="copyrightChanged.do",method=RequestMethod.POST)
-	@ResponseBody
-	JsonResult copyrightChanged(HttpServletRequest request, Copyright copyright) {
+	String copyrightChanged(HttpServletRequest request, Copyright copyright) {
 		copyright.setId(Integer.parseInt(request.getParameter("id")));
 		loadData(request, copyright);
 		int result=Service.update(copyright);
 		if(result >= 1) {
-			return new JsonResult(result);
-		}else {
-			return new JsonResult();
+			return  "page/science/inform/edit-succesdsci";
+    	}else {
+    		return "page/science/inform/edit-faildsci";
 		}
 	}
 	
@@ -284,7 +282,7 @@ public class CopyrightController {
 		copyright.setCopyEndtime(list.get(6));
 		copyright.setCopyPublishtime(list.get(7));
 		copyright.setCopyRegisttime(list.get(8));
-		copyright.setCopyCode(list.get(9));
+		copyright.setCopyCost(list.get(9));
 		copyright.setCopyInvoiceper(list.get(10));
 		copyright.setCopyStatus(list.get(11));
 	}
