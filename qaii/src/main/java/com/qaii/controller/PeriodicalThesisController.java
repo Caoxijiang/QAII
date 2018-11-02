@@ -285,10 +285,10 @@ public class PeriodicalThesisController {
 			if (!file.getParentFile().exists()) {
 				file.getParentFile().mkdirs();
 			}
-			files.transferTo(file);
 			
 			if(!"".equals(req.getParameter("id"))) {
 				record.setId(Long.parseLong(req.getParameter("id")));
+				files.transferTo(file);
 				fileService.updateMessage(record);
 			}else {
 				record.setTid(Long.valueOf(req.getParameter("tid")));

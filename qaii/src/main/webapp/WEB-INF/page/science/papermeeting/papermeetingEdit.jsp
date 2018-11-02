@@ -478,6 +478,7 @@ $("#upload").click(function(){
 	var id=$('input[name="fid1"]').val();
 	var topic=$('input[name="topic"]').val();
 	var style="electronic";
+	var tid=$('input[name="id"]').val();
 	layer.open({
   	  type:1,
 		  title:"重新上传文件",
@@ -486,6 +487,7 @@ $("#upload").click(function(){
 		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
 		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
+		  '<input type="hidden" name="tid" id="tid" value="'+tid+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })
@@ -514,6 +516,7 @@ $("#upload2").click(function(){
 	var id=$('input[name="fid2"]').val();
 	var topic=$('input[name="topic"]').val();
 	var style="certified";
+	var tid=$('input[name="id"]').val();
 	layer.open({
   	  type:1,
 		  title:"重新上传文件",
@@ -522,6 +525,7 @@ $("#upload2").click(function(){
 		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
 		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
+		  '<input type="hidden" name="tid" id="tid" value="'+tid+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })
