@@ -227,6 +227,20 @@ $.post({
 				
 			//文件表格展示
             let trademark=data.data;
+            //预定义必传文件路径
+            if(trademark.listFile== false){
+         	   trademark.listFile=[];
+         	   trademark.listFile[0]=new Object();
+         	   trademark.listFile[0].path='';
+         	   trademark.listFile[0].id='';
+         	   trademark.listFile[1]=new Object();
+        	   trademark.listFile[1].path='';
+        	   trademark.listFile[1].id='';
+        	   trademark.listFile[2]=new Object();
+        	   trademark.listFile[2].path='';
+        	   trademark.listFile[2].id='';
+            }
+			
               form.val('example', {
             	  "id":trademark.id,
             	  "workType":trademark.workType,
@@ -424,6 +438,7 @@ $("#upload").click(function(){
 	var id=$('input[name="fid1"]').val();
 	var topic=$('input[name="workTopic"]').val();
 	var style="title";
+	var wid=$('input[name="id"]').val();
 	layer.open({
   	  type:1,
 		  title:"重新上传文件",
@@ -432,6 +447,7 @@ $("#upload").click(function(){
 		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
 		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
+		  '<input type="hidden" name="wid" id="wid" value="'+wid+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })
@@ -460,6 +476,7 @@ $("#upload2").click(function(){
 	var id=$('input[name="fid2"]').val();
 	var topic=$('input[name="workTopic"]').val();
 	var style="directory";
+	var wid=$('input[name="id"]').val();
 	layer.open({
   	  type:1,
 		  title:"重新上传文件",
@@ -468,6 +485,7 @@ $("#upload2").click(function(){
 		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
 		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
+		  '<input type="hidden" name="wid" id="wid" value="'+wid+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })
@@ -496,6 +514,7 @@ $("#upload3").click(function(){
 	var id=$('input[name="fid3"]').val();
 	var topic=$('input[name="workTopic"]').val();
 	var style="firstpage";
+	var wid=$('input[name="id"]').val();
 	layer.open({
   	  type:1,
 		  title:"重新上传文件",
@@ -504,6 +523,7 @@ $("#upload3").click(function(){
 		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
 		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
+		  '<input type="hidden" name="wid" id="wid" value="'+wid+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })

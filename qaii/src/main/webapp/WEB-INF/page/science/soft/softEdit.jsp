@@ -456,6 +456,7 @@ $("#upload").click(function(){
 	var address=$('input[name="softfile"]').val();
 	var id=$('input[name="fid"]').val();
 	var softName=$('input[name="softName"]').val();
+	var sid=$('input[name="id"]').val();
 	layer.open({
   	  type:1,
 		  title:"重新上传文件",
@@ -464,6 +465,7 @@ $("#upload").click(function(){
 		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
 		  '<input type="hidden" name="softName" id="softName" value="'+softName+'">'+
 		  '<input type="hidden" name="address" id="address" value="'+address+'">'+
+		  '<input type="hidden" name="sid" id="sid" value="'+sid+'">'+
 		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
 		});
 })

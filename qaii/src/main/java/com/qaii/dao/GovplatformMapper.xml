@@ -339,6 +339,6 @@
         </foreach>
   </delete>
   <select id="listByNum" resultMap="BaseResultMap" parameterType="int">
-    SELECT * FROM sci_govplatform ORDER BY govplat_Subvention DESC LIMIT #{0}
+    SELECT * FROM sci_govplatform ORDER BY CAST(govplat_Subvention AS UNSIGNED INTEGER) DESC LIMIT #{0}
   </select>
 </mapper>
