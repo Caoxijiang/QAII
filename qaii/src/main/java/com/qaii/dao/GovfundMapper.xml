@@ -278,6 +278,6 @@
         </foreach>
   </delete>
   <select id="listByNum" resultMap="BaseResultMap" parameterType="int">
-    SELECT  * from sci_govfund ORDER BY govfund_FundLimit DESC LIMIT #{0}
+    SELECT  * from sci_govfund ORDER BY CAST(govfund_FundLimit AS UNSIGNED INTEGER) DESC LIMIT #{0}
   </select>
 </mapper>

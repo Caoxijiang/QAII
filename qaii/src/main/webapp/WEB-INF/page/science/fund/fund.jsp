@@ -27,9 +27,10 @@
 		    height: -webkit-calc( 100vh - 170px );
 		    height: calc( 100vh - 170 px );
 		}
+	}
 	.noExl {
-    display: none;
-}
+    	display: none;
+	}
   </style>
 </head>
 <body id="bodyHei">

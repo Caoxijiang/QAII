@@ -379,7 +379,6 @@ public class SoftwareController {
 			Softcopyrightfile softfile,
 			@RequestParam("file") MultipartFile files) throws CustomException {
 		String softName=req.getParameter("softName");
-		softfile.setId(Integer.parseInt(req.getParameter("id")));
 		softfile.setFilename(files.getOriginalFilename());
 		try {
 			File file = new File(FILE_PATH+req.getParameter("address"));
@@ -401,10 +400,17 @@ public class SoftwareController {
 				file.getParentFile().mkdirs();
 			}
 			files.transferTo(file);
-			softcopyrightfileService.updateOtherfileById(softfile);
+			if(!"".equals(req.getParameter("id"))) {
+				softfile.setId(Integer.parseInt(req.getParameter("id")));
+				softcopyrightfileService.updateOtherfileById(softfile);
+			}else {
+				softfile.setSid(Integer.parseInt(req.getParameter("sid")));
+				softfile.setStyle("master");
+				softcopyrightfileService.insert(softfile);
+			}
 			
 		}catch(Exception e){
-			throw new CustomException("重新上传失败!");
+			throw new CustomException("上传失败！请联系管理员!");
 		}	
 		return "page/science/add-succesd";
 	}

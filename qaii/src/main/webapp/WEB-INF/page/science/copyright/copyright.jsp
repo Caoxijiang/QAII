@@ -26,10 +26,11 @@
 		    height: -webkit-calc( 100vh - 145px );
 		    height: calc( 100vh - 145 px );
 		}
+	}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
 	.noExl {
-    display: none;
-}
+    	display: none;
+	}
   </style>
 </head>
 <body id="bodyHei">
@@ -88,7 +89,7 @@
 	<div class="int-inline"><input id="copyEndtime"  type="checkbox" value="创作完成日期" checked/><lable>创作完成日期</lable></div>
 	<div class="int-inline"><input id="copyPublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发布日期</lable></div>
 	<div class="int-inline"><input id="copyRegisttime"  type="checkbox" value="登记日期" checked/><lable>登记日期</lable></div>
-	<div class="int-inline"><input id="softCertificatetime"  type="checkbox" value="费用（元）" checked/><lable>费用（元）</lable></div>
+	<div class="int-inline"><input id="copyCost"  type="checkbox" value="费用（元）" checked/><lable>费用（元）</lable></div>
 	<div class="int-inline"><input id="copyInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
 	<div class="int-inline"><input id="copyStatus"  type="checkbox" value="状态" checked/><lable>状态</lable></div>
 </div>
