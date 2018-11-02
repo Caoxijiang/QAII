@@ -90,15 +90,13 @@ public class PlatformController {
 	
 	//修改资助平台信息功能
 	@RequestMapping(value="updateGovplatform.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public String updateGovplatforms(Govplatform govplatform,HttpServletRequest req){	
+	String updateGovplatforms(Govplatform govplatform,HttpServletRequest req){	
 		loadData(req, govplatform);
 		int row =govplatformService.updateMsg(govplatform);
 		if(row>=1) {
-			//String data="更新成功";
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/edit-succesdsci";
+    	}else {
+    		return "page/science/inform/edit-faildsci";
 		}
 	}
 	//绑定请求数据到bean中
@@ -130,19 +128,13 @@ public class PlatformController {
 	}
 	//添加资助平台信息功能
 	@RequestMapping("addGovplatform.do")
-	public String AddGovplatform(HttpServletRequest req,Govplatform govplatform) {
+	String AddGovplatform(HttpServletRequest req,Govplatform govplatform) {
 		loadData(req, govplatform);		
 		int row = govplatformService.insertMsg(govplatform);
 		if(row>0) {
-//							Map<String,String> map=new HashMap<>();
-//							 map.put("url","intoPerSys.do");
-//							 map.put("data", "提交成功");
-			 
-			//return new JsonResult();
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/add-succesdsci";
+    	}else {
+    		return "page/science/inform/add-faildsci";
 		}
 		
 	}

@@ -90,16 +90,14 @@ public class TradeMarkController {
 	
 	//修改商标信息功能
 	@RequestMapping(value="updateTrademark.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public String updateTrademarks(Trademark Trademark,HttpServletRequest req){	
+	String updateTrademarks(Trademark Trademark,HttpServletRequest req){	
 		Trademark.setId(Integer.parseInt(req.getParameter("userId")));
 		loadData(req, Trademark);
 		int row =trademarkService.updatetrademark(Trademark);
 		if(row>=1) {
-			//String data="更新成功";
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/edit-succesdsci";
+    	}else {
+    		return "page/science/inform/edit-faildsci";
 		}
 	}
 	//绑定请求数据到bean中
@@ -124,19 +122,13 @@ public class TradeMarkController {
 	}
 	//添加商标信息功能
 	@RequestMapping("addTrademark.do")
-	public String AddTrademark(HttpServletRequest req,Trademark trademark) {
+	String AddTrademark(HttpServletRequest req,Trademark trademark) {
 		loadData(req, trademark);		
 		int row = trademarkService.insertMsg(trademark);
 		if(row>0) {
-//				Map<String,String> map=new HashMap<>();
-//				 map.put("url","intoPerSys.do");
-//				 map.put("data", "提交成功");
-			 
-			//return new JsonResult();
-			 return "page/science/add-succesd";
-		}else {
-			return "page/science/add-faild";
-			//return new JsonResult();
+			return  "page/science/inform/add-succesdsci";
+    	}else {
+    		return "page/science/inform/add-faildsci";
 		}
 		
 	}

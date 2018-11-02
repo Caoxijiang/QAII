@@ -54,11 +54,11 @@
 				<img src="${basePath}/image/success.png">
 			</div>
 			<div style="margin-top: 15px;">
-				<span class="sucss"> 已提交成功</span>
+				<span class="sucss"> 已修改成功</span>
 			</div>
 			<div style="margin-top: 15px;line-height: 30px">
 				<span class="appendix">
-					科研成果信息添加成功
+					科研成果信息修改成功
 				</span>
 			</div>
 			<a href="javascript:window.history.go(-1);">

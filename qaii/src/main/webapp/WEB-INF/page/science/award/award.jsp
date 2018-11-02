@@ -21,6 +21,12 @@
 	    height: -webkit-calc( 100vh - 215px );
 	    height: calc( 100vh - 215 px );
 	}
+	@media screen and (max-width: 1600px) {
+		.layui-table-body {
+		    height: -moz-calc( 100vh - 145px );
+		    height: -webkit-calc( 100vh - 145px );
+		    height: calc( 100vh - 145 px );
+		}
 	.noExl {
     display: none;
 }
