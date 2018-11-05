@@ -276,6 +276,7 @@ $.post({
          	   trademark.listFile[1]=new Object();
         	   trademark.listFile[1].path='';
         	   trademark.listFile[1].id='';
+        	   console.log("s");
             }
           
               form.val('example', {
