@@ -19,7 +19,10 @@
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from sci_trademarkprocessfile
-    where id = #{id,jdbcType=INTEGER}
+    where id in   
+     <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	  </foreach>
   </delete>
   <insert id="insert" parameterType="com.qaii.domain.Trademarkprocessfile">
     insert into sci_trademarkprocessfile (id, oid, sid, 
