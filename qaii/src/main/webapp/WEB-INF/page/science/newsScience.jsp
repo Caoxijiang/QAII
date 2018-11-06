@@ -154,7 +154,7 @@ layui.use('table', function(obj){
 		{field: 'recordType', title: '收录类别',sort: true,width:150},
 		{field: 'level', title: '级别 ',sort: true,width:150},
 		{field: 'unit', title: '部门',width:220},
-		{field: 'sex', title: '操作',toolbar: '#barDemo',width:320}
+		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
     ]],
 	  //表格数据
     data:obj.data
@@ -228,7 +228,7 @@ layui.use('table', function(obj){
 		{field: 'meetingRecord', title: '会议录 ',sort: true,width:150},
 		{field: 'contentType', title: '内容类型',sort: true,width:150},
 		{field: 'unit', title: '部门',width:220},
-		{field: 'sex', title: '操作',toolbar: '#barDemo2'}
+		{field: 'sex', title: '操作',toolbar: '#barDemo2',fixed: 'right',width:320}
     ]],
 	  //表格数据
     data:obj.data
@@ -295,7 +295,7 @@ layui.use('table', function(obj){
 		{field: 'workPublishtime', title: '出版日期',sort: true,width:150},
 		{field: 'workIsbn', title: 'ISBN',sort: true,width:150},
 		{field: 'workDept', title: '部门',sort: true},
-		{field: 'sex', title: '操作',toolbar: '#barDemo3'}
+		{field: 'sex', title: '操作',toolbar: '#barDemo3',fixed: 'right',width:320}
     ]],
 	  //表格数据
     data: obj.data
