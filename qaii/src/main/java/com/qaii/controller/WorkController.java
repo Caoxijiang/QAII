@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -319,11 +320,14 @@ public class WorkController {
 	//使用excel文件快捷导入软著数据
 	@RequestMapping(value="insertWorkDatabyexcel.do")
 	@ResponseBody
-	public Layui test(@RequestParam("file")MultipartFile file) throws FileNotFoundException, IOException, CustomException, AlertException  {
+	public Layui test(@RequestParam("file")MultipartFile file,WorkFile recordfile) throws FileNotFoundException, IOException, CustomException, AlertException  {
+		Work work = new Work();
 		Layui result = null;
 		List<String> list =new ArrayList<>();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		String filename=file.getOriginalFilename();
+		recordfile.setName("null");
+		recordfile.setPath("null");
 		Workbook wookbook;
 		//判断是不是excel文件
 		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
@@ -374,9 +378,17 @@ public class WorkController {
 							list.add(null);
 						}
 					}
-					Work work = new Work();
+					work.setId(null);
 					work=setWorkvalue(work, list);
-					workService.insertMsg(work);
+					workService.insertMessage(work);
+					recordfile.setWid(work.getId().longValue());
+					recordfile.setGmtCreate(new Date());
+					recordfile.setStyle("title");
+					fileService.insertMessage(recordfile);
+					recordfile.setStyle("directory");
+					fileService.insertMessage(recordfile);
+					recordfile.setStyle("firstpage");
+					fileService.insertMessage(recordfile);
 					result=result.data(1, null);
 					
 				}
