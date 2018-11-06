@@ -364,15 +364,10 @@ $.post({
 						var style=data.style;
 						var topic=$('input[name="topic"]').val();
 					    layer.open({
-				    	  type:1,
-						  title:"重新上传文件",
-						  content:'<form action="fileReupPeriodical.do" method="post" enctype="multipart/form-data">'+
-						  '<input type="file" name="file" id="path">'+
-						  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-						  '<input type="hidden" name="address" id="address" value="'+address+'">'+
-						  '<input type="hidden" name="style" id="style" value="'+style+'">'+
-						  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
-						  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
+					    	type:2,
+							  title:"重新上传文件",
+							  content:'paperfilereloadadd.do?id='+id+'&topic='+topic+'&style='+style+'&address='+address,
+							  anim:0
 						});
 					}//事件监听
 				  })
