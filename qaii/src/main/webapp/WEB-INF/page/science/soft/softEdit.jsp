@@ -342,14 +342,10 @@ $.post({
 						var id=data.id;
 						var softName=trademark.softName;
 					    layer.open({
-				    	  type:1,
-						  title:"重新上传文件",
-						  content:'<form action="reUpOthersoftfile.do" method="post" enctype="multipart/form-data">'+
-						  '<input type="file" name="file" id="path">'+
-						  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-						  '<input type="hidden" name="address" id="address" value="'+address+'">'+
-						  '<input type="hidden" name="softName" id="softName" value="'+softName+'">'+
-						  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
+					    	type:2,
+					    	title:"重新上传文件",
+					    	content:'softfilereloadadd.do?id='+id+'&address='+address+'&softName='+softName,
+					    	anim:0
 						});
 					}//事件监听
 				  })
@@ -458,16 +454,11 @@ $("#upload").click(function(){
 	var softName=$('input[name="softName"]').val();
 	var sid=$('input[name="id"]').val();
 	layer.open({
-  	  type:1,
-		  title:"重新上传文件",
-		  content:'<form action="reUpMastersoftfile.do" method="post" enctype="multipart/form-data">'+
-		  '<input type="file" name="file" id="path">'+
-		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-		  '<input type="hidden" name="softName" id="softName" value="'+softName+'">'+
-		  '<input type="hidden" name="address" id="address" value="'+address+'">'+
-		  '<input type="hidden" name="sid" id="sid" value="'+sid+'">'+
-		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
-		});
+		type:2,
+		title:"重新上传文件",
+		content:'softfilereload.do?id='+id+'&softName='+softName+'&address='+address+'&sid='+sid,
+		anim:0  
+	});
 })
 function download(src) {
     var $a = document.createElement('a');

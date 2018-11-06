@@ -100,6 +100,26 @@ public class techController {
 	public String softCheck(){
 		return "page/science/soft/softCheck";
 	}
+	//软著文件重新上传
+	@RequestMapping("softfilereload.do")
+	public ModelAndView softfilereload(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("softName").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("sid").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/soft/softfilereload", "utflist", result);
+	}
+	//软著多文件重新上传
+	@RequestMapping("softfilereloadadd.do")
+	public ModelAndView softfilereloadadd(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/soft/softfilereloadadd", "utflist", result);
+	}
 	//商标
 	@RequestMapping("brand.do")
 	public String brand() {
@@ -393,6 +413,16 @@ public class techController {
 		result.add(new String(request.getParameter("tid").getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/paper/paperfilereload", "utflist", result);
 	}
+	//论文多文件重新上传
+	@RequestMapping("paperfilereloadadd.do")
+	public ModelAndView paperfilereloadadd(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/paper/paperfilereloadadd", "utflist", result);
+	}
 	//会议论文
 	@RequestMapping("papermeeting.do")
 	public String papermeeting(){
@@ -413,6 +443,26 @@ public class techController {
 	public String papermeetingCheck(){
 		return "page/science/papermeeting/papermeetingCheck";
 	}
+	//会议论文文件重新上传
+	@RequestMapping("papermeetingfilereload.do")
+	public ModelAndView papermeetingfilereload(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tid").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/paper/papermeetingfilereload", "utflist", result);
+	}
+	//会议论文多文件重新上传
+	@RequestMapping("papermeetingfilereloadadd.do")
+	public ModelAndView papermeetingfilereloadadd(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/paper/papermeetingfilereloadadd", "utflist", result);
+	}
 	//著作
 	@RequestMapping("work.do")
 	public String work(){
@@ -432,6 +482,26 @@ public class techController {
 	@RequestMapping("workEdit.do")
 	public String workEdit(){
 		return "page/science/work/workEdit";
+	}
+	//著作文件重新上传
+	@RequestMapping("workfilereload.do")
+	public ModelAndView workfilereload(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("wid").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/paper/workfilereload", "utflist", result);
+	}
+	//著作多文件重新上传
+	@RequestMapping("workfilereloadadd.do")
+	public ModelAndView workfilereloadadd(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/paper/workfilereloadadd", "utflist", result);
 	}
 	//消息管理
 	@RequestMapping("newsScience.do")

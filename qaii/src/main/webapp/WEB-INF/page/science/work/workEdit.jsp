@@ -323,16 +323,11 @@ $.post({
 						var style=data.style;
 						var topic=$('input[name="workTopic"]').val();
 					    layer.open({
-				    	  type:1,
-						  title:"重新上传文件",
-						  content:'<form action="fileReupWork.do" method="post" enctype="multipart/form-data">'+
-						  '<input type="file" name="file" id="path">'+
-						  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-						  '<input type="hidden" name="address" id="address" value="'+address+'">'+
-						  '<input type="hidden" name="style" id="style" value="'+style+'">'+
-						  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
-						  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
-						});
+					    	type:2,
+					    	title:"重新上传文件",
+					    	content:'workfilereloadadd.do?id='+id+'&topic='+topic+'&style='+style+'&address='+address,
+					    	anim:0
+					    });
 					}//事件监听
 				  })
 			//文件上传
@@ -440,16 +435,11 @@ $("#upload").click(function(){
 	var style="title";
 	var wid=$('input[name="id"]').val();
 	layer.open({
-  	  type:1,
-		  title:"重新上传文件",
-		  content:'<form action="fileReupWork.do" method="post" enctype="multipart/form-data">'+
-		  '<input type="file" name="file" id="path">'+
-		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
-		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
-		  '<input type="hidden" name="wid" id="wid" value="'+wid+'">'+
-		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
-		});
+		type:2,
+		title:"重新上传文件",
+		content:'wprkfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&wid='+wid,
+		anim:0 
+	});
 })
 //目录文件点击事件-在线预览
 $("#workOnline2").click(function(){
@@ -478,16 +468,11 @@ $("#upload2").click(function(){
 	var style="directory";
 	var wid=$('input[name="id"]').val();
 	layer.open({
-  	  type:1,
-		  title:"重新上传文件",
-		  content:'<form action="fileReupWork.do" method="post" enctype="multipart/form-data">'+
-		  '<input type="file" name="file" id="path">'+
-		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
-		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
-		  '<input type="hidden" name="wid" id="wid" value="'+wid+'">'+
-		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
-		});
+		type:2,
+		title:"重新上传文件",
+		content:'wprkfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&wid='+wid,
+		anim:0 
+	});
 })
 //首页文件点击事件-在线预览
 $("#workOnline3").click(function(){
@@ -516,16 +501,11 @@ $("#upload3").click(function(){
 	var style="firstpage";
 	var wid=$('input[name="id"]').val();
 	layer.open({
-  	  type:1,
-		  title:"重新上传文件",
-		  content:'<form action="fileReupWork.do" method="post" enctype="multipart/form-data">'+
-		  '<input type="file" name="file" id="path">'+
-		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
-		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
-		  '<input type="hidden" name="wid" id="wid" value="'+wid+'">'+
-		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
-		});
+		type:2,
+		title:"重新上传文件",
+		content:'wprkfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&wid='+wid,
+		anim:0 
+	});
 })
 function download(src) {
     var $a = document.createElement('a');
