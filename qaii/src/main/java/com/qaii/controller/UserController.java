@@ -34,6 +34,8 @@ import com.qaii.service.UserService;
 import com.qaii.util.JsonResult;
 import com.qaii.util.StringtoIntutil;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @SessionAttributes("user")
 public class UserController {
@@ -80,7 +82,10 @@ public class UserController {
 				map2.put("USERROLEURL","personal.do");
 				return new JsonResult(map2);
 			case 3:
-				map2.put("USERROLEURL","science.do");
+				map2.put("USERROLEURL","indexScience.do");
+				return new JsonResult(map2);
+			case 4:
+				map2.put("USERROLEURL", "industry.do");
 				return new JsonResult(map2);
 			default:
 				map2.put("USERROLEURL","indexUI.do");
@@ -90,6 +95,7 @@ public class UserController {
         
         }else {
         	System.out.println("ERR");
+        
             //登录失败，设置失败信息，并调转到登录页面
         	return new JsonResult();
         }
