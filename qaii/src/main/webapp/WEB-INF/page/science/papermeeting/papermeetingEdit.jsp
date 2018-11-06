@@ -30,7 +30,7 @@
 		<span class="blue">会议论文&nbsp;—&nbsp;修改界面</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('paper.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('papermeeting.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -363,15 +363,10 @@ $.post({
 						var style=data.style;
 						var topic=$('input[name="topic"]').val();
 					    layer.open({
-				    	  type:1,
-						  title:"重新上传文件",
-						  content:'<form action="fileReupMeeting.do" method="post" enctype="multipart/form-data">'+
-						  '<input type="file" name="file" id="path">'+
-						  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-						  '<input type="hidden" name="address" id="address" value="'+address+'">'+
-						  '<input type="hidden" name="style" id="style" value="'+style+'">'+
-						  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
-						  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
+					    	type:2,
+							  title:"重新上传文件",
+							  content:'papermeetingfilereloadadd.do?id='+id+'&topic='+topic+'&style='+style+'&address='+address,
+							  anim:0
 						});
 					}//事件监听
 				  })
@@ -480,15 +475,10 @@ $("#upload").click(function(){
 	var style="electronic";
 	var tid=$('input[name="id"]').val();
 	layer.open({
-  	  type:1,
+		  type:2,
 		  title:"重新上传文件",
-		  content:'<form action="fileReupMeeting.do" method="post" enctype="multipart/form-data">'+
-		  '<input type="file" name="file" id="path">'+
-		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
-		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
-		  '<input type="hidden" name="tid" id="tid" value="'+tid+'">'+
-		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
+		  content:'papermeetingfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+		  anim:0
 		});
 })
 //证明文件点击事件-在线预览
@@ -518,16 +508,11 @@ $("#upload2").click(function(){
 	var style="certified";
 	var tid=$('input[name="id"]').val();
 	layer.open({
-  	  type:1,
-		  title:"重新上传文件",
-		  content:'<form action="fileReupMeeting.do" method="post" enctype="multipart/form-data">'+
-		  '<input type="file" name="file" id="path">'+
-		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
-		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
-		  '<input type="hidden" name="tid" id="tid" value="'+tid+'">'+
-		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
-		});
+	  type:2,
+	  title:"重新上传文件",
+	  content:'papermeetingfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+	  anim:0
+	});
 })
 function download(src) {
     var $a = document.createElement('a');
