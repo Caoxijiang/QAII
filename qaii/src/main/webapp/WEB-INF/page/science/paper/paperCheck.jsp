@@ -236,6 +236,18 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                      	   trademark.listFile[0].path='';
                      	   trademark.listFile[1]=new Object();
                     	   trademark.listFile[1].path='';
+                    	   console.log("asdfasd");
+                        }else{
+                        	if(trademark.listFile[0]=null){
+                        		trademark.listFile[0]=new Object();
+                          	    trademark.listFile[0].path='';
+                          	    console.log("00未定义");
+                        	}
+                        	if(trademark.listFile[1]=null){
+                        		trademark.listFile[1]=new Object();
+                          	    trademark.listFile[1].path='';
+                          	 	console.log("11未定义");
+                        	}
                         }
                         
                         /* console.log("afd"+JSON.stringify(trademark)); */
