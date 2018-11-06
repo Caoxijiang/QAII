@@ -257,7 +257,6 @@ public class MeetingThesisController {
 			) {
 		String topic=req.getParameter("topic");
 		String style=req.getParameter("style");
-		record.setId(Long.parseLong(req.getParameter("id")));
 		record.setName(files.getOriginalFilename());
 		try {
 			File file = new File(FILE_PATH+req.getParameter("address"));
@@ -278,8 +277,17 @@ public class MeetingThesisController {
 			if (!file.getParentFile().exists()) {
 				file.getParentFile().mkdirs();
 			}
-			files.transferTo(file);
-			fileService.updateMessage(record);
+			
+			if(!"".equals(req.getParameter("id"))) {
+				record.setId(Long.parseLong(req.getParameter("id")));
+				files.transferTo(file);
+				fileService.updateMessage(record);
+			}else {
+				record.setTid(Long.valueOf(req.getParameter("tid")));
+				record.setStyle(style);
+				fileService.insertMessage(record);
+			}
+			
 			return new JsonResult("success!");
 		}catch(Exception e){
 			return new JsonResult();

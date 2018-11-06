@@ -265,7 +265,6 @@ public class WorkController {
 			) {
 		String topic=req.getParameter("topic");
 		String style=req.getParameter("style");
-		record.setId(Long.parseLong(req.getParameter("id")));
 		record.setName(files.getOriginalFilename());
 		try {
 			File file = new File(FILE_PATH+req.getParameter("address"));
@@ -286,8 +285,15 @@ public class WorkController {
 			if (!file.getParentFile().exists()) {
 				file.getParentFile().mkdirs();
 			}
-			files.transferTo(file);
-			fileService.updateMessage(record);
+			if(!"".equals(req.getParameter("id"))) {
+				record.setId(Long.parseLong(req.getParameter("id")));
+				files.transferTo(file);
+				fileService.updateMessage(record);
+			}else {
+				record.setWid(Long.valueOf(req.getParameter("wid")));
+				record.setStyle(style);
+				fileService.insertMessage(record);
+			}
 			return new JsonResult("success!");
 		}catch(Exception e){
 			return new JsonResult();

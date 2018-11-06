@@ -34,6 +34,8 @@ import com.qaii.service.UserService;
 import com.qaii.util.JsonResult;
 import com.qaii.util.StringtoIntutil;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @SessionAttributes("user")
 public class UserController {
@@ -90,6 +92,7 @@ public class UserController {
         
         }else {
         	System.out.println("ERR");
+        
             //登录失败，设置失败信息，并调转到登录页面
         	return new JsonResult();
         }

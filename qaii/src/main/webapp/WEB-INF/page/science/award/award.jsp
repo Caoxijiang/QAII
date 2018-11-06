@@ -27,6 +27,7 @@
 		    height: -webkit-calc( 100vh - 145px );
 		    height: calc( 100vh - 145 px );
 		}
+	}
 	.noExl {
     display: none;
 }
