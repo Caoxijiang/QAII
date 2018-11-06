@@ -6,11 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56af638f-02ff-4874-8844-c2f10e9851f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/SoftwareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/SoftwareController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softfilereload.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softfilereload.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="56af638f-02ff-4874-8844-c2f10e9851f9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,10 +18,11 @@
     <session id="-1159642356">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.57" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.61" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -59,7 +56,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/PeriodicalThesisController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="901">
               <caret line="86" column="56" selection-start-line="86" selection-start-column="56" selection-end-line="86" selection-end-column="56" />
             </state>
           </provider>
@@ -74,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softfilereload.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="60" lean-forward="true" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
+              <caret line="12" column="60" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -83,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/techController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="146">
-              <caret line="104" column="65" lean-forward="true" selection-start-line="104" selection-start-column="65" selection-end-line="104" selection-end-column="65" />
+              <caret line="105" column="65" selection-start-line="105" selection-start-column="65" selection-end-line="105" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -91,12 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softEdit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="458" column="42" lean-forward="true" selection-start-line="458" selection-start-column="40" selection-end-line="458" selection-end-column="42" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="7786">
+              <caret line="458" column="42" selection-start-line="458" selection-start-column="40" selection-end-line="458" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -104,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/SoftwareController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="420" column="17" lean-forward="true" selection-start-line="420" selection-start-column="17" selection-end-line="420" selection-end-column="17" />
+            <state relative-caret-position="6596">
+              <caret line="420" column="17" selection-start-line="420" selection-start-column="17" selection-end-line="420" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -162,7 +155,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -255,6 +247,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,17 +359,17 @@
       <updated>1541466871618</updated>
       <workItem from="1541466880731" duration="1382000" />
       <workItem from="1541472757473" duration="5287000" />
+      <workItem from="1541485072375" duration="596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6669000" />
+    <option name="totallyTimeSpent" value="7265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919224" visible="true" weight="0.18017058" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919224" visible="true" weight="0.18176973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -421,16 +414,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/PeriodicalThesisController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="86" column="56" selection-start-line="86" selection-start-column="56" selection-end-line="86" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softfilereloadadd.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softCheck.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-187">
@@ -445,35 +428,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/PeriodicalThesisController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="86" column="56" selection-start-line="86" selection-start-column="56" selection-end-line="86" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softfilereloadadd.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softfilereload.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="60" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softEdit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="458" column="42" lean-forward="true" selection-start-line="458" selection-start-column="40" selection-end-line="458" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="7786">
+          <caret line="458" column="42" selection-start-line="458" selection-start-column="40" selection-end-line="458" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/SoftwareController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="420" column="17" lean-forward="true" selection-start-line="420" selection-start-column="17" selection-end-line="420" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softfilereload.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="60" lean-forward="true" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
+        <state relative-caret-position="6596">
+          <caret line="420" column="17" selection-start-line="420" selection-start-column="17" selection-end-line="420" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/techController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
-          <caret line="104" column="65" lean-forward="true" selection-start-line="104" selection-start-column="65" selection-end-line="104" selection-end-column="65" />
+          <caret line="105" column="65" selection-start-line="105" selection-start-column="65" selection-end-line="105" selection-end-column="65" />
         </state>
       </provider>
     </entry>

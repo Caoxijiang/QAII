@@ -261,7 +261,7 @@ public class TradeMarkController {
     }
     try {
 		file.transferTo(dest);//保存文件
-		trade.setPath("/img/TradeMark/Symbol/"+fileName);
+		trade.setPath("img/TradeMark/Symbol/"+fileName);
 		InserttradeImg(trade, result, dest);
 		result.put("code", "0");
 		result.put("msg", "上传成功");
