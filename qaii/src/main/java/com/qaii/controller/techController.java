@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -102,22 +103,20 @@ public class techController {
 	}
 	//软著文件重新上传
 	@RequestMapping("softfilereload.do")
-	public ModelAndView softfilereload(HttpServletRequest request) throws UnsupportedEncodingException{
+	public ModelAndView softfilereload(@Param("softName")String softName, @Param("address")String address, @Param("sid")String sid, HttpServletRequest request ) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("softName").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("sid").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(softName.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(address.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(sid.getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/soft/softfilereload", "utflist", result);
 	}
 	//软著多文件重新上传
 	@RequestMapping("softfilereloadadd.do")
-	public ModelAndView softfilereloadadd(HttpServletRequest request) throws UnsupportedEncodingException{
+	public ModelAndView softfilereloadadd(@Param("id")String id, @Param("softName")String softName, @Param("address")String address, HttpServletRequest request) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(id.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(softName.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(address.getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/soft/softfilereloadadd", "utflist", result);
 	}
 	//商标

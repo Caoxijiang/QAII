@@ -123,7 +123,7 @@ public class SoftwareController {
 		}
 		if(files[0].getSize()==0)
 			return 0;
-		Softcopyrightfile softfile=null;
+		Softcopyrightfile softfile=new Softcopyrightfile();
 		for (int i = 0; i < files.length; i++) {
 			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
 			 
@@ -410,6 +410,7 @@ public class SoftwareController {
 			}
 			
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new CustomException("上传失败！请联系管理员!");
 		}	
 		return "page/science/add-succesd";
@@ -428,6 +429,7 @@ public class SoftwareController {
 			return new JsonResult(obj);
 			
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new CustomException("重新上传失败!");
 		}
 			
