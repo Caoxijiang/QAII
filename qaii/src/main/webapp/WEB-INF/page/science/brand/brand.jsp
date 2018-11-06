@@ -78,6 +78,7 @@
 <!-- 操作-->
 <div class="action"> 
 <div class="act">
+	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id="tradmDept"  type="checkbox" value="部门" checked="flase"/><lable>部门</lable></div>
 	<div class="int-inline"><input id="tradmCode"  type="checkbox" value="编号" checked/><lable>编号</lable></div>
@@ -394,15 +395,34 @@ upload.render({
 		$(".layui-form .layui-form-item div span").click(function(){
 			console.log($(this).attr('class')+"5555");
 		});
+		//显示设置
 		$(":checkbox").click(function(){
+			
 			var val=$(this).attr("id");
-			console.log(val);
-			if( $(this).prop('checked')){
-				$("[data-field='"+val+"']").removeClass("noExl");
+			if(val=='checkall'){
+				if($(this).prop('checked')){
+					$(this).parent('.int-inline').siblings().children().prop('checked',true);
+					$('table tr th').removeClass("noExl");
+					$('table tr td').removeClass("noExl");
+				}else{
+					$(this).parent('.int-inline').siblings().children().prop('checked',false);
+					$('table tr th').addClass("noExl");
+					$('table tr td').addClass("noExl");
+				}
 			}else{
-				$("[data-field='"+val+"']").addClass("noExl");
+				if( $(this).prop('checked')){
+					$("[data-field='"+val+"']").removeClass("noExl");
+					if($("[data-field='0']")){
+						$("[data-field='0']").removeClass("noExl");
+					}
+					if($("[data-field='sex']")){
+						$("[data-field='sex']").removeClass("noExl");
+					}
+				}else{
+					$("[data-field='"+val+"']").addClass("noExl");
+				}
 			}
-		});
+		});//显示设置
 	});
 </script>
 <!--自动设置主表格可视区域-->

@@ -276,7 +276,6 @@ $.post({
          	   trademark.listFile[1]=new Object();
         	   trademark.listFile[1].path='';
         	   trademark.listFile[1].id='';
-        	   console.log("s");
             }
           
               form.val('example', {
@@ -481,17 +480,13 @@ $("#upload").click(function(){
 	var topic=$('input[name="topic"]').val();
 	var style="electronic";
 	var tid=$('input[name="id"]').val();
+	console.log(id+"id"+tid+"tid");
 	layer.open({
-  	  type:1,
-		  title:"重新上传文件",
-		  content:'<form action="fileReupPeriodical.do" method="post" enctype="multipart/form-data">'+
-		  '<input type="file" name="file" id="path">'+
-		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
-		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
-		  '<input type="hidden" name="tid" id="tid" value="'+tid+'">'+
-		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
-		});
+  	  type:2,
+	  title:"重新上传文件",
+	  content:'paperfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+	  anim:0
+	});
 })
 //证明文件点击事件-在线预览
 $("#paperOnline2").click(function(){
@@ -520,15 +515,10 @@ $("#upload2").click(function(){
 	var style="certified";
 	var tid=$('input[name="id"]').val();
 	layer.open({
-  	  type:1,
+		type:2,
 		  title:"重新上传文件",
-		  content:'<form action="fileReupPeriodical.do" method="post" enctype="multipart/form-data">'+
-		  '<input type="file" name="file" id="path">'+
-		  '<input type="hidden" name="id" id="id" value="'+id+'">'+
-		  '<input type="hidden" name="topic" id="topic" value="'+topic+'">'+
-		  '<input type="hidden" name="style" id="style" value="'+style+'">'+
-		  '<input type="hidden" name="tid" id="tid" value="'+tid+'">'+
-		  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
+		  content:'paperfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+		  anim:0
 		});
 })
 function download(src) {

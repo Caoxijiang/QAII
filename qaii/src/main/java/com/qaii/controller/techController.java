@@ -370,7 +370,7 @@ public class techController {
 	}
 	//论文添加
 	@RequestMapping("paperAdd.do")
-	public String paperAddr(){
+	public String paperAdd(){
 		return "page/science/paper/paperAdd";
 	}
 	//论文修改
@@ -382,6 +382,16 @@ public class techController {
 	@RequestMapping("paperCheck.do")
 	public String paperCheck(){
 		return "page/science/paper/paperCheck";
+	}
+	//论文文件重新上传
+	@RequestMapping("paperfilereload.do")
+	public ModelAndView paperfilereload(HttpServletRequest request) throws UnsupportedEncodingException{
+		List<String> result=new ArrayList<String>();
+		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(request.getParameter("tid").getBytes("ISO-8859-1"),"utf-8"));
+		return new ModelAndView("page/science/paper/paperfilereload", "utflist", result);
 	}
 	//会议论文
 	@RequestMapping("papermeeting.do")

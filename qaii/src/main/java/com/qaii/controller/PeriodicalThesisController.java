@@ -84,7 +84,7 @@ public class PeriodicalThesisController {
 	}
 	
 	//查看详情
-	@RequestMapping(value="getPeriodical.do",method=RequestMethod.POST)
+	@RequestMapping(value="getPeriodical.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	@ResponseBody
 	JsonResult getMessage(HttpServletRequest req) {
 		PeriodicalThesis result = Service.getMessage(Long.parseLong(req.getParameter("id")));
@@ -96,7 +96,7 @@ public class PeriodicalThesisController {
 	}
 	
 	//修改信息
-	@RequestMapping(value="updatePeriodical.do",method=RequestMethod.POST)
+	@RequestMapping(value="updatePeriodical.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	String updateMessage(HttpServletRequest req, 
 			PeriodicalThesis record, 
 			@RequestParam("file") MultipartFile[] files) throws AlertException {
@@ -257,9 +257,9 @@ public class PeriodicalThesisController {
 	}
 	
 	//文件重新上传
-	@RequestMapping(value="fileReupPeriodical.do",method=RequestMethod.POST)
+	@RequestMapping(value="fileReupPeriodical.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	@ResponseBody
-	JsonResult fileReup(HttpServletRequest req,
+	 String fileReup(HttpServletRequest req,
 			PeriodicalThesisFile record,
 			@RequestParam("file") MultipartFile files
 			) {
@@ -296,9 +296,9 @@ public class PeriodicalThesisController {
 				fileService.insertMessage(record);
 			}
 			
-			return new JsonResult("success!");
+			return new String("文件重新上传成功");
 		}catch(Exception e){
-			return new JsonResult();
+			return new String("文件重新上传失败<br />请重新上传");
 		}	
 	}
 	
