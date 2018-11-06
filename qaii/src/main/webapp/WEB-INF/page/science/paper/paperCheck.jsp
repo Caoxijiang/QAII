@@ -236,6 +236,7 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                      	   trademark.listFile[0].path='';
                      	   trademark.listFile[1]=new Object();
                     	   trademark.listFile[1].path='';
+                    	   console.log("asdfasd");
                         }
                         
                         /* console.log("afd"+JSON.stringify(trademark)); */

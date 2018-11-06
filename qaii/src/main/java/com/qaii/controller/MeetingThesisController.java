@@ -331,10 +331,12 @@ public class MeetingThesisController {
 	//导入
 	@RequestMapping(value="insertMeetingByExcel.do")
 	@ResponseBody
-	public JsonResult insertByExcel(@RequestParam("file")MultipartFile file, MeetingThesis record) throws FileNotFoundException, IOException, CustomException, AlertException  {
+	public JsonResult insertByExcel(@RequestParam("file")MultipartFile file, MeetingThesis record,MeetingThesisFile recordfile) throws FileNotFoundException, IOException, CustomException, AlertException  {
 		List<String> list =new ArrayList<>();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		String filename=file.getOriginalFilename();
+		recordfile.setName("null");
+		recordfile.setPath("null");
 		Workbook wookbook;
 		//判断是不是excel文件
 		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
@@ -387,7 +389,13 @@ public class MeetingThesisController {
 					}
 					loadExcelData(record,list);
 					Service.insert(record);
-					
+					record.setId(null);
+					Service.insertMessage(record);
+					recordfile.setTid(record.getId());
+					recordfile.setStyle("electronic");
+					fileService.insertMessage(recordfile);
+					recordfile.setStyle("certified");
+					fileService.insertMessage(recordfile);
 				}
 			}
 		}catch(Exception e) {
