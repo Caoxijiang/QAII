@@ -38,7 +38,7 @@
 var userID=${param.userId};
 var step=${param.step};
 var patName=${param.patName};
-console.log(userID+"id与步骤"+step+"sdfgsdfg"+patName);
+
 
 layui.use('upload', function(){
   var $ = layui.jquery
