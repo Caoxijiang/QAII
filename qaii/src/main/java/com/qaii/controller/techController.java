@@ -63,12 +63,16 @@ public class techController {
 	}
 	//专利资料审查文件预览界面
 	@RequestMapping("patentData.do")
-	public ModelAndView patentData(HttpServletRequest request) throws UnsupportedEncodingException{
+	public ModelAndView patentData(@Param("patName")String patName, 
+			@Param("patAuthor")String patAuthor, 
+			@Param("patPublishtime")String patPublishtime, 
+			@Param("userId")String userId, 
+			HttpServletRequest request) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("patName").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("patAuthor").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("patPublishtime").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("userId").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(patName.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(patAuthor.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(patPublishtime.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(userId.getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/patent/patentData", "utflist", result);
 	}
 	//专利资料审查文件流程添加界面
