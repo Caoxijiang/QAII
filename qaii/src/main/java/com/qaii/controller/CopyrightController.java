@@ -54,7 +54,7 @@ public class CopyrightController {
 	//文件路径
 	public final static String FILE_PATH= "C:/File/img/Copyright/Symbol/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="img/Copyright/Symbol/";
+	public final static String DATABASE_PATH="/img/Copyright/Symbol/";
 	
 	
 	//所有版权的信息
