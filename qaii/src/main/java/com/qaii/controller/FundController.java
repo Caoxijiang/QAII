@@ -49,6 +49,11 @@ public class FundController {
 	@Resource
 	private GovFundProcessFileService processfileService;
 	
+	//文件路径
+	public final static String FILE_PATH= "C:/File/fund/";
+	//数据库中记录的路径
+	public final static String DATABASE_PATH="/fund/";
+	
 	//获取所有基金信息
 	@RequestMapping(value="getAllFundMsg.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -310,8 +315,8 @@ public class FundController {
 
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
-			String path = "C:/File/img/fund/File/" + govfundName + "/" + oid + "/" + stepid;
-			String dbpath="img/fund/File/"+govfundName + "/" + oid + "/" + stepid;
+			String path = FILE_PATH + govfundName + "/" + oid + "/" + stepid;
+			String dbpath = DATABASE_PATH + govfundName + "/" + oid + "/" + stepid;
 			File destFile = new File(path + "/" + filename);
 
 			if (!destFile.getParentFile().exists()) {

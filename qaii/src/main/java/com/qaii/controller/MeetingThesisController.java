@@ -46,7 +46,7 @@ public class MeetingThesisController {
 	//文件路径
 	public final static String FILE_PATH= "C:/File/MeetingThesis/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="MeetingThesis/";
+	public final static String DATABASE_PATH="/MeetingThesis/";
 	
 	public final static byte BYTE_TRUE = 1;
 	
