@@ -338,7 +338,7 @@ public class TradeMarkController {
   	//审核资料上传
   	@ResponseBody
 	@RequestMapping("/tradeprocessupload.do")
-	public Map<String, String> processupload(@RequestParam("file") MultipartFile[] files, Trademarkprocessfile img,
+	public String processupload(@RequestParam("file") MultipartFile[] files, Trademarkprocessfile img,
 			HttpServletRequest req) throws Exception {
 		// System.out.println(request.getParameter("name"));
 		String insertype=req.getParameter("type");
@@ -400,7 +400,7 @@ public class TradeMarkController {
 			}
 		}
 
-		return result;
+		return "上传成功!";
 
 	}
   	

@@ -514,7 +514,7 @@ public class techController {
 		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("tid").getBytes("ISO-8859-1"),"utf-8"));
-		return new ModelAndView("page/science/paper/papermeetingfilereload", "utflist", result);
+		return new ModelAndView("page/science/papermeeting/papermeetingfilereload", "utflist", result);
 	}
 	//会议论文多文件重新上传
 	@RequestMapping("papermeetingfilereloadadd.do")
@@ -524,7 +524,7 @@ public class techController {
 		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
-		return new ModelAndView("page/science/paper/papermeetingfilereloadadd", "utflist", result);
+		return new ModelAndView("page/science/papermeeting/papermeetingfilereloadadd", "utflist", result);
 	}
 	//著作
 	@RequestMapping("work.do")

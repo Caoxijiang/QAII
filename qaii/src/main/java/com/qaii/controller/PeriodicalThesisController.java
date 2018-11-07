@@ -50,9 +50,9 @@ public class PeriodicalThesisController {
 	private PeriodicalThesisFileService fileService;
 	
 	//文件路径
-	public final static String FILE_PATH= "C:/File/PeriodicalThesis/";
+	public final static String FILE_PATH= "C:/File/img/PeriodicalThesis/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="/PeriodicalThesis/";
+	public final static String DATABASE_PATH="/img/PeriodicalThesis/";
 	
 	public final static byte BYTE_TRUE = 1;
 	
@@ -277,9 +277,9 @@ public class PeriodicalThesisController {
 			String uuid = UUID.randomUUID().toString().replaceAll("-","");
 			String filename = uuid + type;
 			//文件的本地绝对路径
-			String filepath=FILE_PATH + topic + style + filename;
+			String filepath=FILE_PATH + topic + "/" + style + "/" + filename;
 			//文件存放于数据库中的相对路径
-			String dbpath=DATABASE_PATH + topic + style + filename;
+			String dbpath=DATABASE_PATH + topic + "/" + style + "/" + filename;
 			record.setPath(dbpath);
 			file=new File(filepath);
 			if (!file.getParentFile().exists()) {

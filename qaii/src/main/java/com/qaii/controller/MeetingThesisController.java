@@ -44,9 +44,9 @@ public class MeetingThesisController {
 	private MeetingThesisFileService fileService;
 	
 	//文件路径
-	public final static String FILE_PATH= "C:/File/MeetingThesis/";
+	public final static String FILE_PATH= "C:/File/img/MeetingThesis/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="/MeetingThesis/";
+	public final static String DATABASE_PATH="/img/MeetingThesis/";
 	
 	public final static byte BYTE_TRUE = 1;
 	
@@ -269,9 +269,9 @@ public class MeetingThesisController {
 			String uuid = UUID.randomUUID().toString().replaceAll("-","");
 			String filename = uuid + type;
 			//文件的本地绝对路径
-			String filepath=FILE_PATH + topic + style + filename;
+			String filepath=FILE_PATH +topic + "/" + style + "/" + filename;
 			//文件存放于数据库中的相对路径
-			String dbpath=DATABASE_PATH + topic + style + filename;
+			String dbpath=DATABASE_PATH +topic + "/" + style + "/" + filename;
 			record.setPath(dbpath);
 			file=new File(filepath);
 			if (!file.getParentFile().exists()) {
@@ -387,9 +387,8 @@ public class MeetingThesisController {
 							list.add(null);
 						}
 					}
-					loadExcelData(record,list);
-					Service.insert(record);
 					record.setId(null);
+					loadExcelData(record,list);
 					Service.insertMessage(record);
 					recordfile.setTid(record.getId());
 					recordfile.setStyle("electronic");
