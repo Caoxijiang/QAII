@@ -27,9 +27,10 @@
 		    height: -webkit-calc( 100vh - 170px );
 		    height: calc( 100vh - 170 px );
 		}
+	}
 	.noExl {
-    display: none;
-}
+    	display: none;
+	}
   </style>
 </head>
 <body id="bodyHei">
@@ -78,6 +79,7 @@
 <!-- 操作-->
 <div class="action"> 
 <div class="act">
+	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id=govfundApplytime  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
 	<div class="int-inline"><input id=govfundSource  type="checkbox" value="来源" checked="flase"/><lable>来源</lable></div>
@@ -412,14 +414,34 @@ upload.render({
 		$(".layui-form .layui-form-item div span").click(function(){
 			console.log($(this).attr('class')+"5555");
 		});
+		//显示设置
 		$(":checkbox").click(function(){
+			
 			var val=$(this).attr("id");
-			if( $(this).prop('checked')){
-				$("[data-field='"+val+"']").removeClass("noExl");
+			if(val=='checkall'){
+				if($(this).prop('checked')){
+					$(this).parent('.int-inline').siblings().children().prop('checked',true);
+					$('table tr th').removeClass("noExl");
+					$('table tr td').removeClass("noExl");
+				}else{
+					$(this).parent('.int-inline').siblings().children().prop('checked',false);
+					$('table tr th').addClass("noExl");
+					$('table tr td').addClass("noExl");
+				}
 			}else{
-				$("[data-field='"+val+"']").addClass("noExl");
+				if( $(this).prop('checked')){
+					$("[data-field='"+val+"']").removeClass("noExl");
+					if($("[data-field='0']")){
+						$("[data-field='0']").removeClass("noExl");
+					}
+					if($("[data-field='sex']")){
+						$("[data-field='sex']").removeClass("noExl");
+					}
+				}else{
+					$("[data-field='"+val+"']").addClass("noExl");
+				}
 			}
-		});
+		});//显示设置
 	});
 </script>
 <!--自动设置主表格可视区域-->

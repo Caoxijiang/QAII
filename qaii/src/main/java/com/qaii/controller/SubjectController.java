@@ -48,6 +48,11 @@ public class SubjectController {
 	@Resource
 	private GovSubjectProcessFileService processfileService;
 	
+	//文件路径
+	public final static String FILE_PATH= "C:/File/img/subject/";
+	//数据库中记录的路径
+	public final static String DATABASE_PATH="/img/subject/";
+	
 	//获取所有政府项目信息
 	@RequestMapping(value="getAllSubjectMsg.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -322,8 +327,8 @@ public class SubjectController {
 
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
-			String path = "C:/File/img/subject/File/" + govsubName + "/" + oid + "/" + stepid;
-			String dbpath="img/subject/File/"+govsubName + "/" + oid + "/" + stepid;
+			String path = FILE_PATH + govsubName + "/" + oid + "/" + stepid;
+			String dbpath=DATABASE_PATH+govsubName + "/" + oid + "/" + stepid;
 			File destFile = new File(path + "/" + filename);
 
 			if (!destFile.getParentFile().exists()) {

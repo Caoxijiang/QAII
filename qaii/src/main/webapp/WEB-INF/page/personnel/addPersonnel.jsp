@@ -6,6 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>QAII智慧管理平台</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
@@ -17,8 +18,8 @@
     body{margin: 10px;}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
 	.noExl {
-    display: none;
-}
+	    display: none;
+	}
   </style>
 </head>
 <body id="bodyHei">

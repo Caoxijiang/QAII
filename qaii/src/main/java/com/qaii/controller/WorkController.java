@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -44,9 +45,9 @@ public class WorkController {
 	private WorkFileService fileService;
 	
 	//文件路径
-	public final static String FILE_PATH= "C:/File/Work/";
+	public final static String FILE_PATH= "C:/File/img/Work/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="File/Work/";
+	public final static String DATABASE_PATH="/img/Work/";
 	
 	public final static byte BYTE_TRUE = 1;
 	
@@ -265,7 +266,6 @@ public class WorkController {
 			) {
 		String topic=req.getParameter("topic");
 		String style=req.getParameter("style");
-		record.setId(Long.parseLong(req.getParameter("id")));
 		record.setName(files.getOriginalFilename());
 		try {
 			File file = new File(FILE_PATH+req.getParameter("address"));
@@ -278,16 +278,23 @@ public class WorkController {
 			String uuid = UUID.randomUUID().toString().replaceAll("-","");
 			String filename = uuid + type;
 			//文件的本地绝对路径
-			String filepath=FILE_PATH + topic + style + filename;
+			String filepath=FILE_PATH + topic + "/" + style + "/" + filename;
 			//文件存放于数据库中的相对路径
-			String dbpath=DATABASE_PATH + topic + style + filename;
+			String dbpath=DATABASE_PATH + topic + "/" + style + "/" + filename;
 			record.setPath(dbpath);
 			file=new File(filepath);
 			if (!file.getParentFile().exists()) {
 				file.getParentFile().mkdirs();
 			}
-			files.transferTo(file);
-			fileService.updateMessage(record);
+			if(!"".equals(req.getParameter("id"))) {
+				record.setId(Long.parseLong(req.getParameter("id")));
+				files.transferTo(file);
+				fileService.updateMessage(record);
+			}else {
+				record.setWid(Long.valueOf(req.getParameter("wid")));
+				record.setStyle(style);
+				fileService.insertMessage(record);
+			}
 			return new JsonResult("success!");
 		}catch(Exception e){
 			return new JsonResult();
@@ -313,11 +320,14 @@ public class WorkController {
 	//使用excel文件快捷导入软著数据
 	@RequestMapping(value="insertWorkDatabyexcel.do")
 	@ResponseBody
-	public Layui test(@RequestParam("file")MultipartFile file) throws FileNotFoundException, IOException, CustomException, AlertException  {
+	public Layui test(@RequestParam("file")MultipartFile file,WorkFile recordfile) throws FileNotFoundException, IOException, CustomException, AlertException  {
+		Work work = new Work();
 		Layui result = null;
 		List<String> list =new ArrayList<>();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		String filename=file.getOriginalFilename();
+		recordfile.setName("null");
+		recordfile.setPath("null");
 		Workbook wookbook;
 		//判断是不是excel文件
 		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
@@ -368,9 +378,17 @@ public class WorkController {
 							list.add(null);
 						}
 					}
-					Work work = new Work();
+					work.setId(null);
 					work=setWorkvalue(work, list);
-					workService.insertMsg(work);
+					workService.insertMessage(work);
+					recordfile.setWid(work.getId().longValue());
+					recordfile.setGmtCreate(new Date());
+					recordfile.setStyle("title");
+					fileService.insertMessage(recordfile);
+					recordfile.setStyle("directory");
+					fileService.insertMessage(recordfile);
+					recordfile.setStyle("firstpage");
+					fileService.insertMessage(recordfile);
 					result=result.data(1, null);
 					
 				}
@@ -392,7 +410,7 @@ public class WorkController {
 		work.setWorkPublishtime(value.get(4));
 		work.setWorkIsbn(value.get(5));
 		work.setWorkDept(value.get(6));
-		
+		work.setIsPass(BYTE_TRUE);
 		return work;
 	}
 

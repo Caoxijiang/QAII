@@ -152,16 +152,9 @@ layui.use('table', function(obj){
 			var address=data.filename;
 			var id=data.id;
 		    layer.open({
-	    	  type:1,
+	    	  type:2,
 			  title:"重新上传文件",
-			  content:'<form action="Govsubjectprocessupload.do" method="post" enctype="multipart/form-data">'+
-			  '<input type="file" name="file" id="path">'+
-			  '<input type="hidden" name="oid" id="oid" value="'+userID+'">'+
-              '<input type="hidden" name="step" id="id" value="'+step+'">'+
-              '<input type="hidden" name="type" id="type" value="update">'+
-              '<input type="hidden" name="govsubName" id="govsubName" value="'+govsubName+'">'+
-              '<input type="hidden" name="id" id="id" value="'+id+'">'+
-			  '<input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input></form>'
+			  content:'researchfilereload.do?userID='+userID+'&step='+step+'&govsubName='+govsubName+'&id='+id
 			});
 		}//事件监听
 	  })

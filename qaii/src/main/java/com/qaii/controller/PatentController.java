@@ -199,7 +199,6 @@ public class PatentController {
 			// + filename);// 存放位置
 			String path = "C:/File/img/" + patName + "/" + oid + "/" + stepid;
 			String dbpath="img/"+patName + "/" + oid + "/" + stepid;
-			System.out.println("++++++" + path);
 			File destFile = new File(path + "/" + filename);
 
 			if (!destFile.getParentFile().exists()) {

@@ -44,9 +44,9 @@ public class MeetingThesisController {
 	private MeetingThesisFileService fileService;
 	
 	//文件路径
-	public final static String FILE_PATH= "C:/File/MeetingThesis/";
+	public final static String FILE_PATH= "C:/File/img/MeetingThesis/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="File/MeetingThesis/";
+	public final static String DATABASE_PATH="/img/MeetingThesis/";
 	
 	public final static byte BYTE_TRUE = 1;
 	
@@ -257,7 +257,6 @@ public class MeetingThesisController {
 			) {
 		String topic=req.getParameter("topic");
 		String style=req.getParameter("style");
-		record.setId(Long.parseLong(req.getParameter("id")));
 		record.setName(files.getOriginalFilename());
 		try {
 			File file = new File(FILE_PATH+req.getParameter("address"));
@@ -270,16 +269,25 @@ public class MeetingThesisController {
 			String uuid = UUID.randomUUID().toString().replaceAll("-","");
 			String filename = uuid + type;
 			//文件的本地绝对路径
-			String filepath=FILE_PATH + topic + style + filename;
+			String filepath=FILE_PATH +topic + "/" + style + "/" + filename;
 			//文件存放于数据库中的相对路径
-			String dbpath=DATABASE_PATH + topic + style + filename;
+			String dbpath=DATABASE_PATH +topic + "/" + style + "/" + filename;
 			record.setPath(dbpath);
 			file=new File(filepath);
 			if (!file.getParentFile().exists()) {
 				file.getParentFile().mkdirs();
 			}
-			files.transferTo(file);
-			fileService.updateMessage(record);
+			
+			if(!"".equals(req.getParameter("id"))) {
+				record.setId(Long.parseLong(req.getParameter("id")));
+				files.transferTo(file);
+				fileService.updateMessage(record);
+			}else {
+				record.setTid(Long.valueOf(req.getParameter("tid")));
+				record.setStyle(style);
+				fileService.insertMessage(record);
+			}
+			
 			return new JsonResult("success!");
 		}catch(Exception e){
 			return new JsonResult();
@@ -323,10 +331,12 @@ public class MeetingThesisController {
 	//导入
 	@RequestMapping(value="insertMeetingByExcel.do")
 	@ResponseBody
-	public JsonResult insertByExcel(@RequestParam("file")MultipartFile file, MeetingThesis record) throws FileNotFoundException, IOException, CustomException, AlertException  {
+	public JsonResult insertByExcel(@RequestParam("file")MultipartFile file, MeetingThesis record,MeetingThesisFile recordfile) throws FileNotFoundException, IOException, CustomException, AlertException  {
 		List<String> list =new ArrayList<>();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		String filename=file.getOriginalFilename();
+		recordfile.setName("null");
+		recordfile.setPath("null");
 		Workbook wookbook;
 		//判断是不是excel文件
 		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
@@ -377,9 +387,14 @@ public class MeetingThesisController {
 							list.add(null);
 						}
 					}
+					record.setId(null);
 					loadExcelData(record,list);
 					Service.insertMessage(record);
-					
+					recordfile.setTid(record.getId());
+					recordfile.setStyle("electronic");
+					fileService.insertMessage(recordfile);
+					recordfile.setStyle("certified");
+					fileService.insertMessage(recordfile);
 				}
 			}
 		}catch(Exception e) {
@@ -406,5 +421,8 @@ public class MeetingThesisController {
 		record.setMeetingRecord(list.get(9));
 		record.setContentType(list.get(10));
 		record.setUnit(list.get(11));
+		record.setGmtCreate(new Date());
+		record.setGmtModified(new Date());
+		record.setIsPass(BYTE_TRUE);
 	}
 }

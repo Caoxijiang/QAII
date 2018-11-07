@@ -26,10 +26,11 @@
 		    height: -webkit-calc( 100vh - 145px );
 		    height: calc( 100vh - 145 px );
 		}
+	}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
 	.noExl {
-    display: none;
-}
+    	display: none;
+	}
   </style>
 </head>
 <body id="bodyHei">
@@ -78,6 +79,7 @@
 <!-- 操作-->
 <div class="action"> 
 <div class="act">
+	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id=copyPicture  type="checkbox" value="作品图样" checked="flase"/><lable>作品图样</lable></div>
 	<div class="int-inline"><input id="copyName"  type="checkbox" value="作品名称" checked/><lable>作品名称</lable></div>
@@ -88,7 +90,7 @@
 	<div class="int-inline"><input id="copyEndtime"  type="checkbox" value="创作完成日期" checked/><lable>创作完成日期</lable></div>
 	<div class="int-inline"><input id="copyPublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发布日期</lable></div>
 	<div class="int-inline"><input id="copyRegisttime"  type="checkbox" value="登记日期" checked/><lable>登记日期</lable></div>
-	<div class="int-inline"><input id="softCertificatetime"  type="checkbox" value="费用（元）" checked/><lable>费用（元）</lable></div>
+	<div class="int-inline"><input id="copyCost"  type="checkbox" value="费用（元）" checked/><lable>费用（元）</lable></div>
 	<div class="int-inline"><input id="copyInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
 	<div class="int-inline"><input id="copyStatus"  type="checkbox" value="状态" checked/><lable>状态</lable></div>
 </div>
@@ -308,7 +310,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"dellcopyrightMsg.do",
+		  	url:"copyrightDeleted.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},
@@ -374,14 +376,34 @@ upload.render({
 		$(".layui-form .layui-form-item div span").click(function(){
 			console.log($(this).attr('class')+"5555");
 		});
+		//显示设置
 		$(":checkbox").click(function(){
+			
 			var val=$(this).attr("id");
-			if( $(this).prop('checked')){
-				$("[data-field='"+val+"']").removeClass("noExl");
+			if(val=='checkall'){
+				if($(this).prop('checked')){
+					$(this).parent('.int-inline').siblings().children().prop('checked',true);
+					$('table tr th').removeClass("noExl");
+					$('table tr td').removeClass("noExl");
+				}else{
+					$(this).parent('.int-inline').siblings().children().prop('checked',false);
+					$('table tr th').addClass("noExl");
+					$('table tr td').addClass("noExl");
+				}
 			}else{
-				$("[data-field='"+val+"']").addClass("noExl");
+				if( $(this).prop('checked')){
+					$("[data-field='"+val+"']").removeClass("noExl");
+					if($("[data-field='0']")){
+						$("[data-field='0']").removeClass("noExl");
+					}
+					if($("[data-field='sex']")){
+						$("[data-field='sex']").removeClass("noExl");
+					}
+				}else{
+					$("[data-field='"+val+"']").addClass("noExl");
+				}
 			}
-		});
+		});//显示设置
 	});
 </script>
 <!--自动设置主表格可视区域-->

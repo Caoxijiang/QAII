@@ -22,6 +22,17 @@
 	table tr,table td{border:none !important;}
 	table tr:hover{background:rgba(0,0,0,0) !important;}
 	.layui-table-header{border:none;}
+	@media screen and (max-width: 1300px){
+		.layui-table-cell {
+		    line-height: 32px;
+		    padding: 0 15px;
+		    position: relative;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    box-sizing: border-box;
+		}
+	}
   </style>
 </head>
 <body id="bodyHei">

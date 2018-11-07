@@ -50,9 +50,9 @@ public class PeriodicalThesisController {
 	private PeriodicalThesisFileService fileService;
 	
 	//文件路径
-	public final static String FILE_PATH= "C:/File/PeriodicalThesis/";
+	public final static String FILE_PATH= "C:/File/img/PeriodicalThesis/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="File/PeriodicalThesis/";
+	public final static String DATABASE_PATH="/img/PeriodicalThesis/";
 	
 	public final static byte BYTE_TRUE = 1;
 	
@@ -84,7 +84,7 @@ public class PeriodicalThesisController {
 	}
 	
 	//查看详情
-	@RequestMapping(value="getPeriodical.do",method=RequestMethod.POST)
+	@RequestMapping(value="getPeriodical.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	@ResponseBody
 	JsonResult getMessage(HttpServletRequest req) {
 		PeriodicalThesis result = Service.getMessage(Long.parseLong(req.getParameter("id")));
@@ -96,7 +96,7 @@ public class PeriodicalThesisController {
 	}
 	
 	//修改信息
-	@RequestMapping(value="updatePeriodical.do",method=RequestMethod.POST)
+	@RequestMapping(value="updatePeriodical.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	String updateMessage(HttpServletRequest req, 
 			PeriodicalThesis record, 
 			@RequestParam("file") MultipartFile[] files) throws AlertException {
@@ -257,15 +257,14 @@ public class PeriodicalThesisController {
 	}
 	
 	//文件重新上传
-	@RequestMapping(value="fileReupPeriodical.do",method=RequestMethod.POST)
+	@RequestMapping(value="fileReupPeriodical.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	@ResponseBody
-	JsonResult fileReup(HttpServletRequest req,
+	 String fileReup(HttpServletRequest req,
 			PeriodicalThesisFile record,
 			@RequestParam("file") MultipartFile files
 			) {
 		String topic=req.getParameter("topic");
 		String style=req.getParameter("style");
-		record.setId(Long.parseLong(req.getParameter("id")));
 		record.setName(files.getOriginalFilename());
 		try {
 			File file = new File(FILE_PATH+req.getParameter("address"));
@@ -278,19 +277,28 @@ public class PeriodicalThesisController {
 			String uuid = UUID.randomUUID().toString().replaceAll("-","");
 			String filename = uuid + type;
 			//文件的本地绝对路径
-			String filepath=FILE_PATH + topic + style + filename;
+			String filepath=FILE_PATH + topic + "/" + style + "/" + filename;
 			//文件存放于数据库中的相对路径
-			String dbpath=DATABASE_PATH + topic + style + filename;
+			String dbpath=DATABASE_PATH + topic + "/" + style + "/" + filename;
 			record.setPath(dbpath);
 			file=new File(filepath);
 			if (!file.getParentFile().exists()) {
 				file.getParentFile().mkdirs();
 			}
-			files.transferTo(file);
-			fileService.updateMessage(record);
-			return new JsonResult("success!");
+			
+			if(!"".equals(req.getParameter("id"))) {
+				record.setId(Long.parseLong(req.getParameter("id")));
+				files.transferTo(file);
+				fileService.updateMessage(record);
+			}else {
+				record.setTid(Long.valueOf(req.getParameter("tid")));
+				record.setStyle(style);
+				fileService.insertMessage(record);
+			}
+			
+			return new String("文件重新上传成功");
 		}catch(Exception e){
-			return new JsonResult();
+			return new String("文件重新上传失败<br />请重新上传");
 		}	
 	}
 	
@@ -332,11 +340,13 @@ public class PeriodicalThesisController {
 	//导入功能
 	@RequestMapping(value="insertPeriodicalByExcel.do")
 	@ResponseBody
-	public JsonResult insertByExcel(@RequestParam("file")MultipartFile file, PeriodicalThesis record) throws FileNotFoundException, IOException, CustomException, AlertException  {
+	public JsonResult insertByExcel(@RequestParam("file")MultipartFile file, PeriodicalThesis record,PeriodicalThesisFile recordfile) throws FileNotFoundException, IOException, CustomException, AlertException  {
 		List<String> list =new ArrayList<>();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		String filename=file.getOriginalFilename();
 		Workbook wookbook;
+		recordfile.setName("null");
+		recordfile.setPath("null");
 		//判断是不是excel文件
 		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
 			throw new AlertException("请选择excel格式的文件！");
@@ -387,8 +397,14 @@ public class PeriodicalThesisController {
 						}
 					}
 					loadExcelData(record,list);
+					record.setId(null);
 					Service.insertMessage(record);
-					
+					recordfile.setTid(record.getId());
+					recordfile.setStyle("electronic");
+					fileService.insertMessage(recordfile);
+					recordfile.setStyle("certified");
+					fileService.insertMessage(recordfile);
+						
 				}
 			}
 		}catch(Exception e) {
@@ -417,6 +433,7 @@ public class PeriodicalThesisController {
 		record.setUnit(list.get(11));
 		record.setGmtCreate(new Date());
 		record.setGmtModified(new Date());
+		record.setIsPass(BYTE_TRUE);
 	}
 	
 }

@@ -218,6 +218,6 @@
 	    </foreach>
   </delete>
   <select id="listByNum" resultMap="BaseResultMap" parameterType="int">
-    SELECT * FROM sci_govreward ORDER BY reward_AwardNum DESC LIMIT #{0}
+    SELECT * FROM sci_govreward ORDER BY CAST(reward_AwardNum AS UNSIGNED INTEGER) DESC LIMIT #{0}
   </select>
 </mapper>

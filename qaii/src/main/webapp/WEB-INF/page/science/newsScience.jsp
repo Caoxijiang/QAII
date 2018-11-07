@@ -44,7 +44,7 @@
 				<script type="text/html" id="barDemo">
 				  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">审核通过</a>
 				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">驳回申请</a>
-				  <a class="layui-btn layui-btn-xs layui-btn-details" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
+				  <a class="layui-btn layui-btn-xs layui-btn-details" href="paperCheck.do?userId='{{d.id}}'" target="_blank">查看详情</a>
 				</script>
 			</div>
 		
@@ -61,7 +61,7 @@
 				<script type="text/html" id="barDemo2">
 				   <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">审核通过</a>
 				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">驳回申请</a>
-				  <a class="layui-btn layui-btn-xs layui-btn-details" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
+				  <a class="layui-btn layui-btn-xs layui-btn-details" href="papermeetingCheck.do?userId='{{d.id}}'" target="_blank">查看详情</a>
 				</script>
 			</div>
 		
@@ -78,7 +78,7 @@
 				<script type="text/html" id="barDemo3">
 				  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="dimission">审核通过</a>
 				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">驳回申请</a>
-				  <a class="layui-btn layui-btn-xs layui-btn-details" href="seeEmpInfo.do?userId='{{d.id}}'" target="_blank">查看详情</a>
+				  <a class="layui-btn layui-btn-xs layui-btn-details" href="workCheck.do?userId='{{d.id}}'" target="_blank">查看详情</a>
 				</script>
 			</div>
 		</div>		
@@ -154,7 +154,7 @@ layui.use('table', function(obj){
 		{field: 'recordType', title: '收录类别',sort: true,width:150},
 		{field: 'level', title: '级别 ',sort: true,width:150},
 		{field: 'unit', title: '部门',width:220},
-		{field: 'sex', title: '操作',toolbar: '#barDemo',width:320}
+		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
     ]],
 	  //表格数据
     data:obj.data
@@ -228,7 +228,7 @@ layui.use('table', function(obj){
 		{field: 'meetingRecord', title: '会议录 ',sort: true,width:150},
 		{field: 'contentType', title: '内容类型',sort: true,width:150},
 		{field: 'unit', title: '部门',width:220},
-		{field: 'sex', title: '操作',toolbar: '#barDemo2'}
+		{field: 'sex', title: '操作',toolbar: '#barDemo2',fixed: 'right',width:320}
     ]],
 	  //表格数据
     data:obj.data
@@ -295,7 +295,7 @@ layui.use('table', function(obj){
 		{field: 'workPublishtime', title: '出版日期',sort: true,width:150},
 		{field: 'workIsbn', title: 'ISBN',sort: true,width:150},
 		{field: 'workDept', title: '部门',sort: true},
-		{field: 'sex', title: '操作',toolbar: '#barDemo3'}
+		{field: 'sex', title: '操作',toolbar: '#barDemo3',fixed: 'right',width:320}
     ]],
 	  //表格数据
     data: obj.data

@@ -54,7 +54,7 @@ public class CopyrightController {
 	//文件路径
 	public final static String FILE_PATH= "C:/File/img/Copyright/Symbol/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="img/Copyright/Symbol/";
+	public final static String DATABASE_PATH="/img/Copyright/Symbol/";
 	
 	
 	//所有版权的信息
@@ -282,7 +282,7 @@ public class CopyrightController {
 		copyright.setCopyEndtime(list.get(6));
 		copyright.setCopyPublishtime(list.get(7));
 		copyright.setCopyRegisttime(list.get(8));
-		copyright.setCopyCode(list.get(9));
+		copyright.setCopyCost(list.get(9));
 		copyright.setCopyInvoiceper(list.get(10));
 		copyright.setCopyStatus(list.get(11));
 	}

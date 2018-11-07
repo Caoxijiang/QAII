@@ -42,9 +42,9 @@ public class SoftwareController {
 	@Resource
 	private SoftcopyrightfileService softcopyrightfileService;
 	//文件路径
-	public final static String FILE_PATH= "C:/File/Software/";
+	public final static String FILE_PATH= "C:/File/img/Software/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="File/Software/";
+	public final static String DATABASE_PATH="/img/Software/";
 
 	//获取所有软著信息
 	@RequestMapping(value="getAllSoftwareMsg.do",method=RequestMethod.POST)
@@ -123,7 +123,7 @@ public class SoftwareController {
 		}
 		if(files[0].getSize()==0)
 			return 0;
-		Softcopyrightfile softfile=null;
+		Softcopyrightfile softfile=new Softcopyrightfile();
 		for (int i = 0; i < files.length; i++) {
 			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
 			 
@@ -338,7 +338,8 @@ public class SoftwareController {
 	}
 	
 	//其他文件重新上传文件信息
-	@RequestMapping(value="reUpOthersoftfile.do")
+	@RequestMapping(value="reUpOthersoftfile.do", produces="application/json;charset=UTF-8")
+	@ResponseBody
 	String reUpOthersoftfile(HttpServletRequest req,
 			Softcopyrightfile softfile,
 			@RequestParam("file") MultipartFile files) throws CustomException {
@@ -370,16 +371,16 @@ public class SoftwareController {
 		}catch(Exception e){
 			throw new CustomException("重新上传失败!");
 		}	
-		return "page/science/add-succesd";
+		return "文件上传成功！";
 	}
 	
 	//证明文件重新上传
-	@RequestMapping(value="reUpMastersoftfile.do")
+	@RequestMapping(value="reUpMastersoftfile.do", produces="application/json;charset=UTF-8")
+	@ResponseBody
 	String reUpMastersoftfile(HttpServletRequest req,
 			Softcopyrightfile softfile,
 			@RequestParam("file") MultipartFile files) throws CustomException {
 		String softName=req.getParameter("softName");
-		softfile.setId(Integer.parseInt(req.getParameter("id")));
 		softfile.setFilename(files.getOriginalFilename());
 		try {
 			File file = new File(FILE_PATH+req.getParameter("address"));
@@ -401,12 +402,20 @@ public class SoftwareController {
 				file.getParentFile().mkdirs();
 			}
 			files.transferTo(file);
-			softcopyrightfileService.updateOtherfileById(softfile);
+			if(!"".equals(req.getParameter("id"))) {
+				softfile.setId(Integer.parseInt(req.getParameter("id")));
+				softcopyrightfileService.updateOtherfileById(softfile);
+			}else {
+				softfile.setSid(Integer.parseInt(req.getParameter("sid")));
+				softfile.setStyle("master");
+				softcopyrightfileService.insert(softfile);
+			}
 			
 		}catch(Exception e){
-			throw new CustomException("重新上传失败!");
+			e.printStackTrace();
+			throw new CustomException("上传失败！请联系管理员!");
 		}	
-		return "page/science/add-succesd";
+		return "文件上传成功！";
 	}
 	
 	//删除其他文件接口
@@ -422,6 +431,7 @@ public class SoftwareController {
 			return new JsonResult(obj);
 			
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new CustomException("重新上传失败!");
 		}
 			
