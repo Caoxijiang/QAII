@@ -437,7 +437,7 @@ $("#upload").click(function(){
 	layer.open({
 		type:2,
 		title:"重新上传文件",
-		content:'wprkfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&wid='+wid,
+		content:'workfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&wid='+wid,
 		anim:0 
 	});
 })
@@ -470,7 +470,7 @@ $("#upload2").click(function(){
 	layer.open({
 		type:2,
 		title:"重新上传文件",
-		content:'wprkfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&wid='+wid,
+		content:'workfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&wid='+wid,
 		anim:0 
 	});
 })
@@ -503,7 +503,7 @@ $("#upload3").click(function(){
 	layer.open({
 		type:2,
 		title:"重新上传文件",
-		content:'wprkfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&wid='+wid,
+		content:'workfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&wid='+wid,
 		anim:0 
 	});
 })
