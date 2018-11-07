@@ -48,6 +48,11 @@ public class PlatformController {
 	@Resource
 	private GovPlatformProcessFileService processfileService;
 	
+	//文件路径
+	public final static String FILE_PATH= "C:/File/img/platform/";
+	//数据库中记录的路径
+	public final static String DATABASE_PATH="/img/platform/";
+	
 	//获取所有资助平台信息
 	@RequestMapping(value="getAllPlatformMsg.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -310,8 +315,8 @@ public class PlatformController {
 
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
-			String path = "C:/File/img/platform/File/" + govplatName + "/" + oid + "/" + stepid;
-			String dbpath="img/platform/File/"+govplatName + "/" + oid + "/" + stepid;
+			String path = FILE_PATH + govplatName + "/" + oid + "/" + stepid;
+			String dbpath=DATABASE_PATH+govplatName + "/" + oid + "/" + stepid;
 			File destFile = new File(path + "/" + filename);
 
 			if (!destFile.getParentFile().exists()) {

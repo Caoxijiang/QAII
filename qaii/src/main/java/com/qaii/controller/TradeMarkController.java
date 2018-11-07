@@ -261,7 +261,7 @@ public class TradeMarkController {
     }
     try {
 		file.transferTo(dest);//保存文件
-		trade.setPath("img/TradeMark/Symbol/"+fileName);
+		trade.setPath("/img/TradeMark/Symbol/"+fileName);
 		InserttradeImg(trade, result, dest);
 		result.put("code", "0");
 		result.put("msg", "上传成功");
@@ -338,7 +338,7 @@ public class TradeMarkController {
   	//审核资料上传
   	@ResponseBody
 	@RequestMapping("/tradeprocessupload.do")
-	public Map<String, String> processupload(@RequestParam("file") MultipartFile[] files, Trademarkprocessfile img,
+	public String processupload(@RequestParam("file") MultipartFile[] files, Trademarkprocessfile img,
 			HttpServletRequest req) throws Exception {
 		// System.out.println(request.getParameter("name"));
 		String insertype=req.getParameter("type");
@@ -366,7 +366,6 @@ public class TradeMarkController {
 			// + filename);// 存放位置
 			String path = "C:/File/img/TradeMark/File/" + tradmDept + "/" + oid + "/" + stepid;
 			String dbpath="/img/TradeMark/File/"+tradmDept + "/" + oid + "/" + stepid;
-			System.out.println("++++++" + path);
 			File destFile = new File(path + "/" + filename);
 
 			if (!destFile.getParentFile().exists()) {
@@ -401,7 +400,7 @@ public class TradeMarkController {
 			}
 		}
 
-		return result;
+		return "上传成功!";
 
 	}
   	
