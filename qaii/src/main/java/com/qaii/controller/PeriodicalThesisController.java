@@ -52,7 +52,7 @@ public class PeriodicalThesisController {
 	//文件路径
 	public final static String FILE_PATH= "C:/File/PeriodicalThesis/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="File/PeriodicalThesis/";
+	public final static String DATABASE_PATH="PeriodicalThesis/";
 	
 	public final static byte BYTE_TRUE = 1;
 	

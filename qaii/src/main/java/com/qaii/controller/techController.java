@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,12 +73,16 @@ public class techController {
 	}
 	//专利资料审查文件预览界面
 	@RequestMapping("patentData.do")
-	public ModelAndView patentData(HttpServletRequest request) throws UnsupportedEncodingException{
+	public ModelAndView patentData(@Param("patName")String patName, 
+			@Param("patAuthor")String patAuthor, 
+			@Param("patPublishtime")String patPublishtime, 
+			@Param("userId")String userId, 
+			HttpServletRequest request) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("patName").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("patAuthor").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("patPublishtime").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("userId").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(patName.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(patAuthor.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(patPublishtime.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(userId.getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/patent/patentData", "utflist", result);
 	}
 	//专利资料审查文件流程添加界面
@@ -112,22 +117,20 @@ public class techController {
 	}
 	//软著文件重新上传
 	@RequestMapping("softfilereload.do")
-	public ModelAndView softfilereload(HttpServletRequest request) throws UnsupportedEncodingException{
+	public ModelAndView softfilereload(@Param("softName")String softName, @Param("address")String address, @Param("sid")String sid, HttpServletRequest request ) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("softName").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("sid").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(softName.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(address.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(sid.getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/soft/softfilereload", "utflist", result);
 	}
 	//软著多文件重新上传
 	@RequestMapping("softfilereloadadd.do")
-	public ModelAndView softfilereloadadd(HttpServletRequest request) throws UnsupportedEncodingException{
+	public ModelAndView softfilereloadadd(@Param("id")String id, @Param("softName")String softName, @Param("address")String address, HttpServletRequest request) throws UnsupportedEncodingException{
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(id.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(softName.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(new String(address.getBytes("ISO-8859-1"),"utf-8"));
 		return new ModelAndView("page/science/soft/softfilereloadadd", "utflist", result);
 	}
 	//商标

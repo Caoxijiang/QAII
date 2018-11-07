@@ -47,7 +47,7 @@ public class WorkController {
 	//文件路径
 	public final static String FILE_PATH= "C:/File/Work/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="File/Work/";
+	public final static String DATABASE_PATH="Work/";
 	
 	public final static byte BYTE_TRUE = 1;
 	

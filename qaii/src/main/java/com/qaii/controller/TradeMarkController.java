@@ -261,7 +261,7 @@ public class TradeMarkController {
     }
     try {
 		file.transferTo(dest);//保存文件
-		trade.setPath("/img/TradeMark/Symbol/"+fileName);
+		trade.setPath("img/TradeMark/Symbol/"+fileName);
 		InserttradeImg(trade, result, dest);
 		result.put("code", "0");
 		result.put("msg", "上传成功");
@@ -365,7 +365,7 @@ public class TradeMarkController {
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
 			String path = "C:/File/img/TradeMark/File/" + tradmDept + "/" + oid + "/" + stepid;
-			String dbpath="img/TradeMark/File/"+tradmDept + "/" + oid + "/" + stepid;
+			String dbpath="/img/TradeMark/File/"+tradmDept + "/" + oid + "/" + stepid;
 			System.out.println("++++++" + path);
 			File destFile = new File(path + "/" + filename);
 

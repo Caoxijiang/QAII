@@ -44,7 +44,7 @@ public class SoftwareController {
 	//文件路径
 	public final static String FILE_PATH= "C:/File/Software/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="File/Software/";
+	public final static String DATABASE_PATH="Software/";
 
 	//获取所有软著信息
 	@RequestMapping(value="getAllSoftwareMsg.do",method=RequestMethod.POST)
@@ -123,7 +123,7 @@ public class SoftwareController {
 		}
 		if(files[0].getSize()==0)
 			return 0;
-		Softcopyrightfile softfile=null;
+		Softcopyrightfile softfile=new Softcopyrightfile();
 		for (int i = 0; i < files.length; i++) {
 			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
 			 
@@ -410,6 +410,7 @@ public class SoftwareController {
 			}
 			
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new CustomException("上传失败！请联系管理员!");
 		}	
 		return "page/science/add-succesd";
@@ -428,6 +429,7 @@ public class SoftwareController {
 			return new JsonResult(obj);
 			
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new CustomException("重新上传失败!");
 		}
 			
