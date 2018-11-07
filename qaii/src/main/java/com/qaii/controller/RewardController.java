@@ -48,6 +48,11 @@ public class RewardController {
 	@Resource
 	private GovRewardProcessFileService processfileService;
 	
+	//文件路径
+	public final static String FILE_PATH= "C:/File/reward/";
+	//数据库中记录的路径
+	public final static String DATABASE_PATH="/reward/";
+	
 	//获取所有政府奖励信息
 	@RequestMapping(value="getAllRewardMsg.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -291,8 +296,8 @@ public class RewardController {
 
 			// String path = request.getSession().getServletContext().getRealPath("/upload/"
 			// + filename);// 存放位置
-			String path = "C:/File/img/reward/File/" + rewardName + "/" + oid + "/" + stepid;
-			String dbpath="img/reward/File/"+rewardName + "/" + oid + "/" + stepid;
+			String path = FILE_PATH + rewardName + "/" + oid + "/" + stepid;
+			String dbpath = DATABASE_PATH + rewardName + "/" + oid + "/" + stepid;
 			File destFile = new File(path + "/" + filename);
 
 			if (!destFile.getParentFile().exists()) {
