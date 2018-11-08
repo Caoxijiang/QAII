@@ -571,4 +571,14 @@ public class techController {
 	public String newsScience(){
 		return "page/science/newsScience";
 	}
+	//成功界面
+	@RequestMapping("succesd.do")
+	public String succesd(){
+		return "page/science/succesd";
+	}
+	//失败界面
+	@RequestMapping("faild.do")
+	public String faild(){
+		return "page/science/faild";
+	}
 }
