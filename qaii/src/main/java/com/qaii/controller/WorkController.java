@@ -258,9 +258,9 @@ public class WorkController {
 	}
 	
 	//文件重新上传
-	@RequestMapping(value="fileReupWork.do",method=RequestMethod.POST)
+	@RequestMapping(value="fileReupWork.do",method=RequestMethod.POST, produces="application/json;charset=UTF-8")
 	@ResponseBody
-	JsonResult fileReup(HttpServletRequest req,
+	String fileReup(HttpServletRequest req,
 			WorkFile record,
 			@RequestParam("file") MultipartFile files
 			) {
@@ -295,9 +295,9 @@ public class WorkController {
 				record.setStyle(style);
 				fileService.insertMessage(record);
 			}
-			return new JsonResult("success!");
+			return "文件上传成功！";
 		}catch(Exception e){
-			return new JsonResult();
+			return "文件上传成功！";
 		}	
 	}
 	
