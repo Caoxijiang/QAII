@@ -50,9 +50,9 @@ public class FundController {
 	private GovFundProcessFileService processfileService;
 	
 	//文件路径
-	public final static String FILE_PATH= "C:/File/fund/";
+	public final static String FILE_PATH= "C:/File/img/fund/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="/fund/";
+	public final static String DATABASE_PATH="/img/fund/";
 	
 	//获取所有基金信息
 	@RequestMapping(value="getAllFundMsg.do",method=RequestMethod.POST)

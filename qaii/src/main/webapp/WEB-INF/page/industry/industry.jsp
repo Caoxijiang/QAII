@@ -51,38 +51,21 @@
 			<a class="" href="indexScience.do"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;全局总览</a>
         </li>
         <li class="layui-nav-item layui-this">
-          <a href="javascript:;" onclick="iframechange('patent.do')"><i class="layui-icon layui-icon-star" style="font-size: 22px;"></i>&nbsp;专利</a>
+          <a href="javascript:;" onclick="iframechange('hatch.do')"><i class="layui-icon layui-icon-star" style="font-size: 22px;"></i>&nbsp;孵化企业管理</a>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('soft.do')"><i class="layui-icon layui-icon-read" style="font-size: 22px;"></i>&nbsp;软著</a>
+          <a href="javascript:;" onclick="iframechange('innovate.do')"><i class="layui-icon layui-icon-read" style="font-size: 22px;"></i>&nbsp;创新能力</a>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('brand.do')"><i class="layui-icon layui-icon-note" style="font-size: 22px;"></i>&nbsp;商标</a>
-        </li>
-        <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('copyright.do')"><i class="layui-icon layui-icon-auz" style="font-size: 22px;"></i>&nbsp;版权</a>
-        </li>
-        <li class="layui-nav-item">
-          <a href="javascript:;"><i class="layui-icon layui-icon-senior" style="font-size: 22px;"></i>&nbsp;政府资助</a>
+          <a href="javascript:;"><i class="layui-icon layui-icon-diamond" style="font-size: 22px;"></i>&nbsp;奖励荣誉</a>
           <dl class="layui-nav-child">
-	          <dd class="navdd"><a onclick="iframechange('research.do')">纵向课题</a></dd>
-	          <dd class="navdd"><a onclick="iframechange('create.do')">平台建设</a></dd>
-	          <dd class="navdd"><a onclick="iframechange('fund.do')">基金管理</a></dd>
-	          <dd class="navdd"><a onclick="iframechange('award.do')">政府奖励</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('institute.do')">院获奖情况</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('incubate.do')">孵化企业获奖情况</a></dd>
+	          <dd class="navdd"><a onclick="iframechange('person.do')">个人获奖情况</a></dd>
 	      </dl>
-        </li>
-        <li class="layui-nav-item">
-          <a href="javascript:;"><i class="layui-icon layui-icon-senior" style="font-size: 22px;"></i>&nbsp;论文</a>
-          <dl class="layui-nav-child">
-	          <dd class="navdd"><a onclick="iframechange('paper.do')">期刊论文</a></dd>
-	          <dd class="navdd"><a onclick="iframechange('papermeeting.do')">会议论文</a></dd>
-	      </dl>
-        </li>
-        <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('work.do')"><i class="layui-icon layui-icon-diamond" style="font-size: 22px;"></i>&nbsp;著作</a>
         </li>
        	<li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('newsScience.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
+          <a href="javascript:;" onclick="iframechange('serviceFirm.do')"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;服务企业管理</a>
         </li>
       </ul>
     </div>
@@ -92,7 +75,7 @@
    
   <!--  主要数据表格-->
   <div class="layui-body" id="layuiBody">
-	  <iframe src="patent.do" id="iframe"></iframe>
+	  <iframe src="hatch.do" id="iframe"></iframe>
   </div>
   <!--  主要数据表格-->
   

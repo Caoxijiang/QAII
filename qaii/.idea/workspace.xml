@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+  <component name="ChangeListManager">
+    <list default="true" id="1e751a1b-fa6c-49ed-97aa-9c50fae5b0e4" name="Default Changelist" comment="" />
+=======
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="QAII:war" />
@@ -7,6 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56af638f-02ff-4874-8844-c2f10e9851f9" name="Default Changelist" comment="" />
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +20,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
+<<<<<<< HEAD
+    <session id="-1560355703">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="1" />
+=======
     <session id="-1159642356">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
@@ -47,10 +60,16 @@
         <counts>
           <entry key="JAVA" value="42" />
           <entry key="JSP" value="11" />
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
         </counts>
       </usages-collector>
     </session>
   </component>
+<<<<<<< HEAD
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+=======
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -122,12 +141,20 @@
       </list>
     </option>
   </component>
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="698" />
+=======
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -148,6 +175,7 @@
     <option name="y" value="20" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -155,6 +183,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+=======
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,12 +279,15 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
+=======
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541482499988" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -260,6 +295,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -274,6 +310,12 @@
     </option>
   </component>
   <component name="RunManager">
+<<<<<<< HEAD
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_QAII" />
+=======
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.90" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -285,6 +327,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_QAII" />
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -292,7 +335,11 @@
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <RunnerSettings RunnerId="Debug">
+<<<<<<< HEAD
+        <option name="DEBUG_PORT" value="62880" />
+=======
         <option name="DEBUG_PORT" value="60546" />
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -341,9 +388,12 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
+<<<<<<< HEAD
+=======
         <option name="BuildArtifacts" enabled="true">
           <artifact name="QAII:war" />
         </option>
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
       </method>
     </configuration>
   </component>
@@ -352,6 +402,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="1e751a1b-fa6c-49ed-97aa-9c50fae5b0e4" name="Default Changelist" comment="" />
+      <created>1541513465167</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541513465167</updated>
+      <workItem from="1541513469201" duration="4584000" />
+=======
       <changelist id="56af638f-02ff-4874-8844-c2f10e9851f9" name="Default Changelist" comment="" />
       <created>1541466871618</created>
       <option name="number" value="Default" />
@@ -360,10 +418,35 @@
       <workItem from="1541466880731" duration="1382000" />
       <workItem from="1541472757473" duration="5287000" />
       <workItem from="1541485072375" duration="596000" />
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="4584000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="10" y="20" width="1346" height="698" extended-state="0" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Capture Tool" />
+      <window_info id="Web" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2496112" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+=======
     <option name="totallyTimeSpent" value="7265000" />
   </component>
   <component name="ToolWindowManager">
@@ -381,10 +464,25 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32936078" />
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+<<<<<<< HEAD
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="JSF" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="CDI" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+=======
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.30985916" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32936078" />
@@ -405,6 +503,7 @@
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" />
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,6 +512,8 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
+=======
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/soft/softCheck.jsp">
       <provider selected="true" editor-type-id="text-editor">
@@ -555,4 +656,5 @@
       </state>
     </states>
   </component>
+>>>>>>> 26ab7ff5458f6c2cb328c31690ef8a9ace89b800
 </project>

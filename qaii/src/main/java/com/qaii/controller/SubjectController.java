@@ -49,9 +49,9 @@ public class SubjectController {
 	private GovSubjectProcessFileService processfileService;
 	
 	//文件路径
-	public final static String FILE_PATH= "C:/File/subject/";
+	public final static String FILE_PATH= "C:/File/img/subject/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="/subject/";
+	public final static String DATABASE_PATH="/img/subject/";
 	
 	//获取所有政府项目信息
 	@RequestMapping(value="getAllSubjectMsg.do",method=RequestMethod.POST)

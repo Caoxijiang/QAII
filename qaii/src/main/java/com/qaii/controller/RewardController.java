@@ -49,9 +49,9 @@ public class RewardController {
 	private GovRewardProcessFileService processfileService;
 	
 	//文件路径
-	public final static String FILE_PATH= "C:/File/reward/";
+	public final static String FILE_PATH= "C:/File/img/reward/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="/reward/";
+	public final static String DATABASE_PATH="/img/reward/";
 	
 	//获取所有政府奖励信息
 	@RequestMapping(value="getAllRewardMsg.do",method=RequestMethod.POST)
