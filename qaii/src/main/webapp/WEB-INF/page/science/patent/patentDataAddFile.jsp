@@ -37,7 +37,8 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
-var patName=${param.patName};
+var patName=${requestScope.utflist[0]};
+//var patPublishtime=${requestScope.utflist[2]};
 
 
 layui.use('upload', function(){

@@ -44,7 +44,7 @@ public class SoftwareController {
 	//文件路径
 	public final static String FILE_PATH= "C:/File/Software/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="Software/";
+	public final static String DATABASE_PATH="/Software/";
 
 	//获取所有软著信息
 	@RequestMapping(value="getAllSoftwareMsg.do",method=RequestMethod.POST)

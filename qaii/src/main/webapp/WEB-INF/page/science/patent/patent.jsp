@@ -331,8 +331,8 @@ layui.use('table', function(obj){
     	
     	//userid为当前记录id值，将会传到资料审查界面
     	var iframesrc="patentData.do?userId='"+data.id+"'&patName="+data.patName+"&patAuthor="+data.patAuthor+"&patPublishtime="+data.patPublishtime;
-    	iframesrc=encodeURI(iframesrc);
-    	iframesrc=encodeURI(iframesrc);
+    	url=encodeURI(iframesrc);
+    	url=encodeURI(url);
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }
   });
