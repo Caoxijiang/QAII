@@ -45,9 +45,9 @@ public class WorkController {
 	private WorkFileService fileService;
 	
 	//文件路径
-	public final static String FILE_PATH= "C:/File/Work/";
+	public final static String FILE_PATH= "C:/File/img/Work/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="/Work/";
+	public final static String DATABASE_PATH="/img/Work/";
 	
 	public final static byte BYTE_TRUE = 1;
 	
@@ -258,9 +258,9 @@ public class WorkController {
 	}
 	
 	//文件重新上传
-	@RequestMapping(value="fileReupWork.do",method=RequestMethod.POST)
+	@RequestMapping(value="fileReupWork.do",method=RequestMethod.POST, produces="application/json;charset=UTF-8")
 	@ResponseBody
-	JsonResult fileReup(HttpServletRequest req,
+	String fileReup(HttpServletRequest req,
 			WorkFile record,
 			@RequestParam("file") MultipartFile files
 			) {
@@ -278,9 +278,9 @@ public class WorkController {
 			String uuid = UUID.randomUUID().toString().replaceAll("-","");
 			String filename = uuid + type;
 			//文件的本地绝对路径
-			String filepath=FILE_PATH + topic + style + filename;
+			String filepath=FILE_PATH + topic + "/" + style + "/" + filename;
 			//文件存放于数据库中的相对路径
-			String dbpath=DATABASE_PATH + topic + style + filename;
+			String dbpath=DATABASE_PATH + topic + "/" + style + "/" + filename;
 			record.setPath(dbpath);
 			file=new File(filepath);
 			if (!file.getParentFile().exists()) {
@@ -295,9 +295,9 @@ public class WorkController {
 				record.setStyle(style);
 				fileService.insertMessage(record);
 			}
-			return new JsonResult("success!");
+			return "文件上传成功！";
 		}catch(Exception e){
-			return new JsonResult();
+			return "文件上传成功！";
 		}	
 	}
 	

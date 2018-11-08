@@ -534,7 +534,7 @@ public class techController {
 		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("tid").getBytes("ISO-8859-1"),"utf-8"));
-		return new ModelAndView("page/science/paper/papermeetingfilereload", "utflist", result);
+		return new ModelAndView("page/science/papermeeting/papermeetingfilereload", "utflist", result);
 	}
 	//会议论文多文件重新上传
 	@RequestMapping("papermeetingfilereloadadd.do")
@@ -544,7 +544,7 @@ public class techController {
 		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
-		return new ModelAndView("page/science/paper/papermeetingfilereloadadd", "utflist", result);
+		return new ModelAndView("page/science/papermeeting/papermeetingfilereloadadd", "utflist", result);
 	}
 	//著作
 	@RequestMapping("work.do")
@@ -574,7 +574,7 @@ public class techController {
 		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("wid").getBytes("ISO-8859-1"),"utf-8"));
-		return new ModelAndView("page/science/paper/workfilereload", "utflist", result);
+		return new ModelAndView("page/science/work/workfilereload", "utflist", result);
 	}
 	//著作多文件重新上传
 	@RequestMapping("workfilereloadadd.do")
@@ -584,11 +584,21 @@ public class techController {
 		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
-		return new ModelAndView("page/science/paper/workfilereloadadd", "utflist", result);
+		return new ModelAndView("page/science/work/workfilereloadadd", "utflist", result);
 	}
 	//消息管理
 	@RequestMapping("newsScience.do")
 	public String newsScience(){
 		return "page/science/newsScience";
+	}
+	//成功界面
+	@RequestMapping("succesd.do")
+	public String succesd(){
+		return "page/science/succesd";
+	}
+	//失败界面
+	@RequestMapping("faild.do")
+	public String faild(){
+		return "page/science/faild";
 	}
 }

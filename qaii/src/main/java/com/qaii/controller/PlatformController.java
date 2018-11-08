@@ -49,9 +49,9 @@ public class PlatformController {
 	private GovPlatformProcessFileService processfileService;
 	
 	//文件路径
-	public final static String FILE_PATH= "C:/File/platform/";
+	public final static String FILE_PATH= "C:/File/img/platform/";
 	//数据库中记录的路径
-	public final static String DATABASE_PATH="/platform/";
+	public final static String DATABASE_PATH="/img/platform/";
 	
 	//获取所有资助平台信息
 	@RequestMapping(value="getAllPlatformMsg.do",method=RequestMethod.POST)
