@@ -249,9 +249,9 @@ public class MeetingThesisController {
 	}
 	
 	//文件重新上传
-	@RequestMapping(value="fileReupMeeting.do",method=RequestMethod.POST)
+	@RequestMapping(value="fileReupMeeting.do",method=RequestMethod.POST, produces="application/json;charset=UTF-8")
 	@ResponseBody
-	JsonResult fileReup(HttpServletRequest req,
+	String fileReup(HttpServletRequest req,
 			MeetingThesisFile record,
 			@RequestParam("file") MultipartFile files
 			) {
@@ -288,9 +288,9 @@ public class MeetingThesisController {
 				fileService.insertMessage(record);
 			}
 			
-			return new JsonResult("success!");
+			return "文件上传成功!";
 		}catch(Exception e){
-			return new JsonResult();
+			return "文件上传失败!";
 		}	
 	}
 	

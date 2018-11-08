@@ -257,7 +257,7 @@ public class PeriodicalThesisController {
 	}
 	
 	//文件重新上传
-	@RequestMapping(value="fileReupPeriodical.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	@RequestMapping(value="fileReupPeriodical.do", method=RequestMethod.POST, produces="application/json;charset=UTF-8")
 	@ResponseBody
 	 String fileReup(HttpServletRequest req,
 			PeriodicalThesisFile record,
