@@ -8,7 +8,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.net.URLDecoder;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -58,17 +58,37 @@ public class techController {
 	}
 	//专利资料审查界面
 	@RequestMapping("patentProcess.do")
-	public String patentProcess(){
-		return "page/science/patent/patentProcess";
+	public ModelAndView patentProcess(HttpServletRequest req) throws UnsupportedEncodingException{		
+		req.setCharacterEncoding("UTF-8");
+		List<String> result=new ArrayList<String>();
+		result.add(req.getParameter("patName"));
+		System.out.println(req.getParameter("patName"));
+		return new ModelAndView("page/science/patent/patentProcess", "utflist", result);		
+
 	}
+	
+	
+	//专利文件重新上传
+	@RequestMapping("patentDataAddFile.do")
+	public ModelAndView patentload(HttpServletRequest req) throws UnsupportedEncodingException{
+		req.setCharacterEncoding("UTF-8");
+		List<String> result=new ArrayList<String>();
+		result.add(req.getParameter("patName"));
+		System.out.println(req.getParameter("patName"));
+		return new ModelAndView("page/science/patent/patentDataAddFile", "utflist", result);
+	}
+	
+	
 	//专利文件重新上传
 	@RequestMapping("patentfilereload.do")
 	public ModelAndView patentfilereload(HttpServletRequest request) throws UnsupportedEncodingException{
+		request.setCharacterEncoding("UTF-8");
 		List<String> result=new ArrayList<String>();
-		result.add(new String(request.getParameter("userID").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("step").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("pat").getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(request.getParameter("id").getBytes("ISO-8859-1"),"utf-8"));
+		result.add(request.getParameter("userID"));
+		result.add(request.getParameter("step"));
+		result.add(request.getParameter("pat"));
+		System.out.println(request.getParameter("pat"));
+		result.add(request.getParameter("id"));
 		return new ModelAndView("page/science/patent/patentfilereload", "utflist", result);
 	}
 	//专利资料审查文件预览界面
@@ -78,11 +98,11 @@ public class techController {
 			@Param("patPublishtime")String patPublishtime, 
 			@Param("userId")String userId, 
 			HttpServletRequest request) throws UnsupportedEncodingException{
+		request.setCharacterEncoding("utf-8");
 		List<String> result=new ArrayList<String>();
-		result.add(new String(patName.getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(patAuthor.getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(patPublishtime.getBytes("ISO-8859-1"),"utf-8"));
-		result.add(new String(userId.getBytes("ISO-8859-1"),"utf-8"));
+		result.add(patName);
+		result.add(patAuthor);
+		result.add(patPublishtime);
 		return new ModelAndView("page/science/patent/patentData", "utflist", result);
 	}
 	//专利资料审查文件流程添加界面
@@ -91,10 +111,10 @@ public class techController {
 		return "page/science/patent/patentDataAdd";
 	}
 	//专利资料审查文件添加界面
-	@RequestMapping("patentDataAddFile.do")
-	public String patentDataAddFile(){
-		return "page/science/patent/patentDataAddFile";
-	}
+//	@RequestMapping("patentDataAddFile.do")
+//	public String patentDataAddFile(){
+//		return "page/science/patent/patentDataAddFile";
+//	}
 	//软著
 	@RequestMapping("soft.do")
 	public String soft(){
@@ -570,5 +590,15 @@ public class techController {
 	@RequestMapping("newsScience.do")
 	public String newsScience(){
 		return "page/science/newsScience";
+	}
+	//成功界面
+	@RequestMapping("succesd.do")
+	public String succesd(){
+		return "page/science/succesd";
+	}
+	//失败界面
+	@RequestMapping("faild.do")
+	public String faild(){
+		return "page/science/faild";
 	}
 }

@@ -8,12 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>科研成果管理系统</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
-  <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css">
+  <link rel="stylesheet" href="${basePath}/commn/layui/css/layui.css">
   <link rel="stylesheet" href="${basePath}/css/layuiAdd.css">
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  
+  <script src="https://malsup.github.io/jquery.form.js"></script>
 </head>
-<body>
-<form action="processupload.do" method="post" enctype="multipart/form-data">
+<body id="www">
+<form action="processupload.do" method="post" enctype="multipart/form-data" id="asd">
   <input type="file" name="file" id="path">
   <input type="hidden" name="oid" id="oid" value="${requestScope.utflist[0]}">
   <input type="hidden" name="step" id="id" value="${requestScope.utflist[1]}">
@@ -22,5 +25,14 @@
   <input type="hidden" name="id" id="id" value="${requestScope.utflist[3]}">
   <input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input>
 </form>
+	<script type="text/javascript">
+	$().ready(function(){
+		$("#asd").ajaxForm(function(data){    
+			$("#www").html(data.msg)
+	    });     
+	})
+	</script>
+
 </body>
+
 </html>

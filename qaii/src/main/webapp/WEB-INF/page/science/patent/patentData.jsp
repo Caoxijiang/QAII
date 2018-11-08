@@ -62,6 +62,8 @@ $(function(){
 	$(document).on('click','.patentProcess',function(){
 		var stepnum="";
 		stepnum=$(this).attr("name");
+		var patName="${requestScope.utflist[0]}";
+		var patPublishtime="${requestScope.utflist[2]}";
 		$("body", parent.document).find('iframe').attr('src','patentProcess.do?userId='+userID+'&step='+stepnum+'&patName='+patName+'&patPublishtime='+patPublishtime+'&insertype=update');
 	});
 });
@@ -70,9 +72,10 @@ $(function(){
 //获取专利主界面传递过来的数据id
 var userID="";
 userID=${param.userId};
-var patName="";
-patName=$("#paname").attr("name");
-var patPublishtime='${param.patPublishtime}';
+var patName="${requestScope.utflist[0]}";
+console.log(patName);
+//var patPublishtime="${requestScope.utflist[2]}";
+//patName=$("#paname").attr("name");
 $(function(){
 	$(document).on('click','#test3',function(){
 		layui.use('layer', function(){
@@ -80,7 +83,7 @@ $(function(){
 			  layer.open({
 				type: 2, 
 				area: ['350px', '400px'],
-				content: "patentDataAdd.do?Id"+'='+${param.userId}
+				content: "patentDataAdd.do?Id"+'='+userID
 			});
 		}); 
 	});
