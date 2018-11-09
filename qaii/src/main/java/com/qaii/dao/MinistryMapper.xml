@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.MinistryMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.Ministry">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ministry_name" jdbcType="VARCHAR" property="ministryName" />
+    <result column="ministry_property" jdbcType="VARCHAR" property="ministryProperty" />
+    <result column="contact_person" jdbcType="VARCHAR" property="contactPerson" />
+    <result column="contact_method" jdbcType="VARCHAR" property="contactMethod" />
+    <result column="ministry_location" jdbcType="VARCHAR" property="ministryLocation" />
+    <result column="ministry_time" jdbcType="DATE" property="ministryTime" />
+    <result column="ministry_project" jdbcType="VARCHAR" property="ministryProject" />
+    <result column="ownself_unit" jdbcType="VARCHAR" property="ownselfUnit" />
+    <result column="ownself_contact_person" jdbcType="VARCHAR" property="ownselfContactPerson" />
+    <result column="ownself_contact_method" jdbcType="VARCHAR" property="ownselfContactMethod" />
+    <result column="fid" jdbcType="INTEGER" property="fid" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="alternative_one" jdbcType="VARCHAR" property="alternativeOne" />
+    <result column="alternative_two" jdbcType="VARCHAR" property="alternativeTwo" />
+    <result column="alternative_three" jdbcType="VARCHAR" property="alternativeThree" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, ministry_name, ministry_property, contact_person, contact_method, ministry_location, 
+    ministry_time, ministry_project, ownself_unit, ownself_contact_person, ownself_contact_method, 
+    fid, remark, alternative_one, alternative_two, alternative_three, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from industry_ministry
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from industry_ministry
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.Ministry">
+    insert into industry_ministry (id, ministry_name, ministry_property, 
+      contact_person, contact_method, ministry_location, 
+      ministry_time, ministry_project, ownself_unit, 
+      ownself_contact_person, ownself_contact_method, 
+      fid, remark, alternative_one, 
+      alternative_two, alternative_three, gmt_create, 
+      gmt_modified)
+    values (#{id,jdbcType=INTEGER}, #{ministryName,jdbcType=VARCHAR}, #{ministryProperty,jdbcType=VARCHAR}, 
+      #{contactPerson,jdbcType=VARCHAR}, #{contactMethod,jdbcType=VARCHAR}, #{ministryLocation,jdbcType=VARCHAR}, 
+      #{ministryTime,jdbcType=DATE}, #{ministryProject,jdbcType=VARCHAR}, #{ownselfUnit,jdbcType=VARCHAR}, 
+      #{ownselfContactPerson,jdbcType=VARCHAR}, #{ownselfContactMethod,jdbcType=VARCHAR}, 
+      #{fid,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{alternativeOne,jdbcType=VARCHAR}, 
+      #{alternativeTwo,jdbcType=VARCHAR}, #{alternativeThree,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.Ministry">
+    insert into industry_ministry
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="ministryName != null">
+        ministry_name,
+      </if>
+      <if test="ministryProperty != null">
+        ministry_property,
+      </if>
+      <if test="contactPerson != null">
+        contact_person,
+      </if>
+      <if test="contactMethod != null">
+        contact_method,
+      </if>
+      <if test="ministryLocation != null">
+        ministry_location,
+      </if>
+      <if test="ministryTime != null">
+        ministry_time,
+      </if>
+      <if test="ministryProject != null">
+        ministry_project,
+      </if>
+      <if test="ownselfUnit != null">
+        ownself_unit,
+      </if>
+      <if test="ownselfContactPerson != null">
+        ownself_contact_person,
+      </if>
+      <if test="ownselfContactMethod != null">
+        ownself_contact_method,
+      </if>
+      <if test="fid != null">
+        fid,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one,
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two,
+      </if>
+      <if test="alternativeThree != null">
+        alternative_three,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ministryName != null">
+        #{ministryName,jdbcType=VARCHAR},
+      </if>
+      <if test="ministryProperty != null">
+        #{ministryProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPerson != null">
+        #{contactPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="contactMethod != null">
+        #{contactMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="ministryLocation != null">
+        #{ministryLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="ministryTime != null">
+        #{ministryTime,jdbcType=DATE},
+      </if>
+      <if test="ministryProject != null">
+        #{ministryProject,jdbcType=VARCHAR},
+      </if>
+      <if test="ownselfUnit != null">
+        #{ownselfUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="ownselfContactPerson != null">
+        #{ownselfContactPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="ownselfContactMethod != null">
+        #{ownselfContactMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="fid != null">
+        #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThree != null">
+        #{alternativeThree,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.Ministry">
+    update industry_ministry
+    <set>
+      <if test="ministryName != null">
+        ministry_name = #{ministryName,jdbcType=VARCHAR},
+      </if>
+      <if test="ministryProperty != null">
+        ministry_property = #{ministryProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPerson != null">
+        contact_person = #{contactPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="contactMethod != null">
+        contact_method = #{contactMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="ministryLocation != null">
+        ministry_location = #{ministryLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="ministryTime != null">
+        ministry_time = #{ministryTime,jdbcType=DATE},
+      </if>
+      <if test="ministryProject != null">
+        ministry_project = #{ministryProject,jdbcType=VARCHAR},
+      </if>
+      <if test="ownselfUnit != null">
+        ownself_unit = #{ownselfUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="ownselfContactPerson != null">
+        ownself_contact_person = #{ownselfContactPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="ownselfContactMethod != null">
+        ownself_contact_method = #{ownselfContactMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="fid != null">
+        fid = #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one = #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThree != null">
+        alternative_three = #{alternativeThree,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.Ministry">
+    update industry_ministry
+    set ministry_name = #{ministryName,jdbcType=VARCHAR},
+      ministry_property = #{ministryProperty,jdbcType=VARCHAR},
+      contact_person = #{contactPerson,jdbcType=VARCHAR},
+      contact_method = #{contactMethod,jdbcType=VARCHAR},
+      ministry_location = #{ministryLocation,jdbcType=VARCHAR},
+      ministry_time = #{ministryTime,jdbcType=DATE},
+      ministry_project = #{ministryProject,jdbcType=VARCHAR},
+      ownself_unit = #{ownselfUnit,jdbcType=VARCHAR},
+      ownself_contact_person = #{ownselfContactPerson,jdbcType=VARCHAR},
+      ownself_contact_method = #{ownselfContactMethod,jdbcType=VARCHAR},
+      fid = #{fid,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      alternative_one = #{alternativeOne,jdbcType=VARCHAR},
+      alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
+      alternative_three = #{alternativeThree,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

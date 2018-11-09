@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.IncubatorMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.Incubator">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="credit_code" jdbcType="VARCHAR" property="creditCode" />
+    <result column="establish_time" jdbcType="DATE" property="establishTime" />
+    <result column="company_type" jdbcType="VARCHAR" property="companyType" />
+    <result column="company_location" jdbcType="VARCHAR" property="companyLocation" />
+    <result column="legal_representative" jdbcType="VARCHAR" property="legalRepresentative" />
+    <result column="registered_capital" jdbcType="VARCHAR" property="registeredCapital" />
+    <result column="business_scope" jdbcType="VARCHAR" property="businessScope" />
+    <result column="incubator_name" jdbcType="VARCHAR" property="incubatorName" />
+    <result column="hatching_time" jdbcType="DATE" property="hatchingTime" />
+    <result column="business_lisence" jdbcType="VARCHAR" property="businessLisence" />
+    <result column="change" jdbcType="VARCHAR" property="change" />
+    <result column="limited_period" jdbcType="VARCHAR" property="limitedPeriod" />
+    <result column="is_thousand_sail_enterprise" jdbcType="TINYINT" property="isThousandSailEnterprise" />
+    <result column="is_high_technology_enterprise" jdbcType="TINYINT" property="isHighTechnologyEnterprise" />
+    <result column="is_technology_enterprise" jdbcType="TINYINT" property="isTechnologyEnterprise" />
+    <result column="is_billion_enterprise" jdbcType="TINYINT" property="isBillionEnterprise" />
+    <result column="certificate_time" jdbcType="DATE" property="certificateTime" />
+    <result column="certificate_code" jdbcType="VARCHAR" property="certificateCode" />
+    <result column="annex_id" jdbcType="INTEGER" property="annexId" />
+    <result column="incoming_registration_code" jdbcType="VARCHAR" property="incomingRegistrationCode" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="alternative_one" jdbcType="VARCHAR" property="alternativeOne" />
+    <result column="alternative_two" jdbcType="VARCHAR" property="alternativeTwo" />
+    <result column="alternative_three" jdbcType="VARCHAR" property="alternativeThree" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, pid, company_name, credit_code, establish_time, company_type, company_location, 
+    legal_representative, registered_capital, business_scope, incubator_name, hatching_time, 
+    business_lisence, change, limited_period, is_thousand_sail_enterprise, is_high_technology_enterprise, 
+    is_technology_enterprise, is_billion_enterprise, certificate_time, certificate_code, 
+    annex_id, incoming_registration_code, remark, alternative_one, alternative_two, alternative_three, 
+    gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from industry_incubator
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from industry_incubator
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.Incubator">
+    insert into industry_incubator (id, pid, company_name, 
+      credit_code, establish_time, company_type, 
+      company_location, legal_representative, registered_capital, 
+      business_scope, incubator_name, hatching_time, 
+      business_lisence, change, limited_period, 
+      is_thousand_sail_enterprise, is_high_technology_enterprise, 
+      is_technology_enterprise, is_billion_enterprise, 
+      certificate_time, certificate_code, annex_id, 
+      incoming_registration_code, remark, alternative_one, 
+      alternative_two, alternative_three, gmt_create, 
+      gmt_modified)
+    values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{companyName,jdbcType=VARCHAR}, 
+      #{creditCode,jdbcType=VARCHAR}, #{establishTime,jdbcType=DATE}, #{companyType,jdbcType=VARCHAR}, 
+      #{companyLocation,jdbcType=VARCHAR}, #{legalRepresentative,jdbcType=VARCHAR}, #{registeredCapital,jdbcType=VARCHAR}, 
+      #{businessScope,jdbcType=VARCHAR}, #{incubatorName,jdbcType=VARCHAR}, #{hatchingTime,jdbcType=DATE}, 
+      #{businessLisence,jdbcType=VARCHAR}, #{change,jdbcType=VARCHAR}, #{limitedPeriod,jdbcType=VARCHAR}, 
+      #{isThousandSailEnterprise,jdbcType=TINYINT}, #{isHighTechnologyEnterprise,jdbcType=TINYINT}, 
+      #{isTechnologyEnterprise,jdbcType=TINYINT}, #{isBillionEnterprise,jdbcType=TINYINT}, 
+      #{certificateTime,jdbcType=DATE}, #{certificateCode,jdbcType=VARCHAR}, #{annexId,jdbcType=INTEGER}, 
+      #{incomingRegistrationCode,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{alternativeOne,jdbcType=VARCHAR}, 
+      #{alternativeTwo,jdbcType=VARCHAR}, #{alternativeThree,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.Incubator">
+    insert into industry_incubator
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="companyName != null">
+        company_name,
+      </if>
+      <if test="creditCode != null">
+        credit_code,
+      </if>
+      <if test="establishTime != null">
+        establish_time,
+      </if>
+      <if test="companyType != null">
+        company_type,
+      </if>
+      <if test="companyLocation != null">
+        company_location,
+      </if>
+      <if test="legalRepresentative != null">
+        legal_representative,
+      </if>
+      <if test="registeredCapital != null">
+        registered_capital,
+      </if>
+      <if test="businessScope != null">
+        business_scope,
+      </if>
+      <if test="incubatorName != null">
+        incubator_name,
+      </if>
+      <if test="hatchingTime != null">
+        hatching_time,
+      </if>
+      <if test="businessLisence != null">
+        business_lisence,
+      </if>
+      <if test="change != null">
+        change,
+      </if>
+      <if test="limitedPeriod != null">
+        limited_period,
+      </if>
+      <if test="isThousandSailEnterprise != null">
+        is_thousand_sail_enterprise,
+      </if>
+      <if test="isHighTechnologyEnterprise != null">
+        is_high_technology_enterprise,
+      </if>
+      <if test="isTechnologyEnterprise != null">
+        is_technology_enterprise,
+      </if>
+      <if test="isBillionEnterprise != null">
+        is_billion_enterprise,
+      </if>
+      <if test="certificateTime != null">
+        certificate_time,
+      </if>
+      <if test="certificateCode != null">
+        certificate_code,
+      </if>
+      <if test="annexId != null">
+        annex_id,
+      </if>
+      <if test="incomingRegistrationCode != null">
+        incoming_registration_code,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one,
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two,
+      </if>
+      <if test="alternativeThree != null">
+        alternative_three,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="creditCode != null">
+        #{creditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="establishTime != null">
+        #{establishTime,jdbcType=DATE},
+      </if>
+      <if test="companyType != null">
+        #{companyType,jdbcType=VARCHAR},
+      </if>
+      <if test="companyLocation != null">
+        #{companyLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="legalRepresentative != null">
+        #{legalRepresentative,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCapital != null">
+        #{registeredCapital,jdbcType=VARCHAR},
+      </if>
+      <if test="businessScope != null">
+        #{businessScope,jdbcType=VARCHAR},
+      </if>
+      <if test="incubatorName != null">
+        #{incubatorName,jdbcType=VARCHAR},
+      </if>
+      <if test="hatchingTime != null">
+        #{hatchingTime,jdbcType=DATE},
+      </if>
+      <if test="businessLisence != null">
+        #{businessLisence,jdbcType=VARCHAR},
+      </if>
+      <if test="change != null">
+        #{change,jdbcType=VARCHAR},
+      </if>
+      <if test="limitedPeriod != null">
+        #{limitedPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="isThousandSailEnterprise != null">
+        #{isThousandSailEnterprise,jdbcType=TINYINT},
+      </if>
+      <if test="isHighTechnologyEnterprise != null">
+        #{isHighTechnologyEnterprise,jdbcType=TINYINT},
+      </if>
+      <if test="isTechnologyEnterprise != null">
+        #{isTechnologyEnterprise,jdbcType=TINYINT},
+      </if>
+      <if test="isBillionEnterprise != null">
+        #{isBillionEnterprise,jdbcType=TINYINT},
+      </if>
+      <if test="certificateTime != null">
+        #{certificateTime,jdbcType=DATE},
+      </if>
+      <if test="certificateCode != null">
+        #{certificateCode,jdbcType=VARCHAR},
+      </if>
+      <if test="annexId != null">
+        #{annexId,jdbcType=INTEGER},
+      </if>
+      <if test="incomingRegistrationCode != null">
+        #{incomingRegistrationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThree != null">
+        #{alternativeThree,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.Incubator">
+    update industry_incubator
+    <set>
+      <if test="pid != null">
+        pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="companyName != null">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="creditCode != null">
+        credit_code = #{creditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="establishTime != null">
+        establish_time = #{establishTime,jdbcType=DATE},
+      </if>
+      <if test="companyType != null">
+        company_type = #{companyType,jdbcType=VARCHAR},
+      </if>
+      <if test="companyLocation != null">
+        company_location = #{companyLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="legalRepresentative != null">
+        legal_representative = #{legalRepresentative,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCapital != null">
+        registered_capital = #{registeredCapital,jdbcType=VARCHAR},
+      </if>
+      <if test="businessScope != null">
+        business_scope = #{businessScope,jdbcType=VARCHAR},
+      </if>
+      <if test="incubatorName != null">
+        incubator_name = #{incubatorName,jdbcType=VARCHAR},
+      </if>
+      <if test="hatchingTime != null">
+        hatching_time = #{hatchingTime,jdbcType=DATE},
+      </if>
+      <if test="businessLisence != null">
+        business_lisence = #{businessLisence,jdbcType=VARCHAR},
+      </if>
+      <if test="change != null">
+        change = #{change,jdbcType=VARCHAR},
+      </if>
+      <if test="limitedPeriod != null">
+        limited_period = #{limitedPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="isThousandSailEnterprise != null">
+        is_thousand_sail_enterprise = #{isThousandSailEnterprise,jdbcType=TINYINT},
+      </if>
+      <if test="isHighTechnologyEnterprise != null">
+        is_high_technology_enterprise = #{isHighTechnologyEnterprise,jdbcType=TINYINT},
+      </if>
+      <if test="isTechnologyEnterprise != null">
+        is_technology_enterprise = #{isTechnologyEnterprise,jdbcType=TINYINT},
+      </if>
+      <if test="isBillionEnterprise != null">
+        is_billion_enterprise = #{isBillionEnterprise,jdbcType=TINYINT},
+      </if>
+      <if test="certificateTime != null">
+        certificate_time = #{certificateTime,jdbcType=DATE},
+      </if>
+      <if test="certificateCode != null">
+        certificate_code = #{certificateCode,jdbcType=VARCHAR},
+      </if>
+      <if test="annexId != null">
+        annex_id = #{annexId,jdbcType=INTEGER},
+      </if>
+      <if test="incomingRegistrationCode != null">
+        incoming_registration_code = #{incomingRegistrationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one = #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThree != null">
+        alternative_three = #{alternativeThree,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.Incubator">
+    update industry_incubator
+    set pid = #{pid,jdbcType=INTEGER},
+      company_name = #{companyName,jdbcType=VARCHAR},
+      credit_code = #{creditCode,jdbcType=VARCHAR},
+      establish_time = #{establishTime,jdbcType=DATE},
+      company_type = #{companyType,jdbcType=VARCHAR},
+      company_location = #{companyLocation,jdbcType=VARCHAR},
+      legal_representative = #{legalRepresentative,jdbcType=VARCHAR},
+      registered_capital = #{registeredCapital,jdbcType=VARCHAR},
+      business_scope = #{businessScope,jdbcType=VARCHAR},
+      incubator_name = #{incubatorName,jdbcType=VARCHAR},
+      hatching_time = #{hatchingTime,jdbcType=DATE},
+      business_lisence = #{businessLisence,jdbcType=VARCHAR},
+      change = #{change,jdbcType=VARCHAR},
+      limited_period = #{limitedPeriod,jdbcType=VARCHAR},
+      is_thousand_sail_enterprise = #{isThousandSailEnterprise,jdbcType=TINYINT},
+      is_high_technology_enterprise = #{isHighTechnologyEnterprise,jdbcType=TINYINT},
+      is_technology_enterprise = #{isTechnologyEnterprise,jdbcType=TINYINT},
+      is_billion_enterprise = #{isBillionEnterprise,jdbcType=TINYINT},
+      certificate_time = #{certificateTime,jdbcType=DATE},
+      certificate_code = #{certificateCode,jdbcType=VARCHAR},
+      annex_id = #{annexId,jdbcType=INTEGER},
+      incoming_registration_code = #{incomingRegistrationCode,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      alternative_one = #{alternativeOne,jdbcType=VARCHAR},
+      alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
+      alternative_three = #{alternativeThree,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
