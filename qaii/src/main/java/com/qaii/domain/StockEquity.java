@@ -15,6 +15,8 @@ public class StockEquity {
 
     private String shareholderPosition;
 
+    private Integer incubatorId;
+
     private String remark;
 
     private String alternativeOne;
@@ -73,6 +75,14 @@ public class StockEquity {
 
     public void setShareholderPosition(String shareholderPosition) {
         this.shareholderPosition = shareholderPosition == null ? null : shareholderPosition.trim();
+    }
+
+    public Integer getIncubatorId() {
+        return incubatorId;
+    }
+
+    public void setIncubatorId(Integer incubatorId) {
+        this.incubatorId = incubatorId;
     }
 
     public String getRemark() {

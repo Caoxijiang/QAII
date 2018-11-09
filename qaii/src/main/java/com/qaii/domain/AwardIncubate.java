@@ -19,13 +19,13 @@ public class AwardIncubate {
 
     private String orgnizer;
 
+    private String remark;
+
     private String alternativeOne;
 
     private String alternativeTwo;
 
     private String alternativeThree;
-
-    private String remark;
 
     private Date gmtCreate;
 
@@ -95,6 +95,14 @@ public class AwardIncubate {
         this.orgnizer = orgnizer == null ? null : orgnizer.trim();
     }
 
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+
     public String getAlternativeOne() {
         return alternativeOne;
     }
@@ -117,14 +125,6 @@ public class AwardIncubate {
 
     public void setAlternativeThree(String alternativeThree) {
         this.alternativeThree = alternativeThree == null ? null : alternativeThree.trim();
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
     }
 
     public Date getGmtCreate() {

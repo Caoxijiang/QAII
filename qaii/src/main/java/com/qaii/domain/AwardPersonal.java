@@ -11,9 +11,9 @@ public class AwardPersonal {
 
     private String awardLevel;
 
-    private String name;
+    private String personName;
 
-    private String unit;
+    private String personUnit;
 
     private String awardName;
 
@@ -65,20 +65,20 @@ public class AwardPersonal {
         this.awardLevel = awardLevel == null ? null : awardLevel.trim();
     }
 
-    public String getName() {
-        return name;
+    public String getPersonName() {
+        return personName;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setPersonName(String personName) {
+        this.personName = personName == null ? null : personName.trim();
     }
 
-    public String getUnit() {
-        return unit;
+    public String getPersonUnit() {
+        return personUnit;
     }
 
-    public void setUnit(String unit) {
-        this.unit = unit == null ? null : unit.trim();
+    public void setPersonUnit(String personUnit) {
+        this.personUnit = personUnit == null ? null : personUnit.trim();
     }
 
     public String getAwardName() {

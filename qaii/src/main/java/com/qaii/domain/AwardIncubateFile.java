@@ -5,15 +5,15 @@ import java.util.Date;
 public class AwardIncubateFile {
     private Integer id;
 
-    private String name;
+    private String fileName;
 
-    private String style;
+    private String fileStyle;
 
     private Integer honorId;
 
-    private String path;
+    private String filePath;
 
-    private String description;
+    private String fileDescription;
 
     private Date gmtCreate;
 
@@ -27,20 +27,20 @@ public class AwardIncubateFile {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setFileName(String fileName) {
+        this.fileName = fileName == null ? null : fileName.trim();
     }
 
-    public String getStyle() {
-        return style;
+    public String getFileStyle() {
+        return fileStyle;
     }
 
-    public void setStyle(String style) {
-        this.style = style == null ? null : style.trim();
+    public void setFileStyle(String fileStyle) {
+        this.fileStyle = fileStyle == null ? null : fileStyle.trim();
     }
 
     public Integer getHonorId() {
@@ -51,20 +51,20 @@ public class AwardIncubateFile {
         this.honorId = honorId;
     }
 
-    public String getPath() {
-        return path;
+    public String getFilePath() {
+        return filePath;
     }
 
-    public void setPath(String path) {
-        this.path = path == null ? null : path.trim();
+    public void setFilePath(String filePath) {
+        this.filePath = filePath == null ? null : filePath.trim();
     }
 
-    public String getDescription() {
-        return description;
+    public String getFileDescription() {
+        return fileDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
+    public void setFileDescription(String fileDescription) {
+        this.fileDescription = fileDescription == null ? null : fileDescription.trim();
     }
 
     public Date getGmtCreate() {

@@ -10,16 +10,16 @@
     <result column="award_name" jdbcType="VARCHAR" property="awardName" />
     <result column="activity_name" jdbcType="VARCHAR" property="activityName" />
     <result column="orgnizer" jdbcType="VARCHAR" property="orgnizer" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
     <result column="alternative_one" jdbcType="VARCHAR" property="alternativeOne" />
     <result column="alternative_two" jdbcType="VARCHAR" property="alternativeTwo" />
     <result column="alternative_three" jdbcType="VARCHAR" property="alternativeThree" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
   </resultMap>
   <sql id="Base_Column_List">
     id, pid, award_time, award_level, award_unit, award_name, activity_name, orgnizer, 
-    alternative_one, alternative_two, alternative_three, remark, gmt_create, gmt_modified
+    remark, alternative_one, alternative_two, alternative_three, gmt_create, gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -34,13 +34,13 @@
   <insert id="insert" parameterType="com.qaii.domain.AwardCollege">
     insert into industry_awardcollege (id, pid, award_time, 
       award_level, award_unit, award_name, 
-      activity_name, orgnizer, alternative_one, 
-      alternative_two, alternative_three, remark, 
+      activity_name, orgnizer, remark, 
+      alternative_one, alternative_two, alternative_three, 
       gmt_create, gmt_modified)
     values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{awardTime,jdbcType=DATE}, 
       #{awardLevel,jdbcType=VARCHAR}, #{awardUnit,jdbcType=VARCHAR}, #{awardName,jdbcType=VARCHAR}, 
-      #{activityName,jdbcType=VARCHAR}, #{orgnizer,jdbcType=VARCHAR}, #{alternativeOne,jdbcType=VARCHAR}, 
-      #{alternativeTwo,jdbcType=VARCHAR}, #{alternativeThree,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{activityName,jdbcType=VARCHAR}, #{orgnizer,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{alternativeOne,jdbcType=VARCHAR}, #{alternativeTwo,jdbcType=VARCHAR}, #{alternativeThree,jdbcType=VARCHAR}, 
       #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.AwardCollege">
@@ -70,6 +70,9 @@
       <if test="orgnizer != null">
         orgnizer,
       </if>
+      <if test="remark != null">
+        remark,
+      </if>
       <if test="alternativeOne != null">
         alternative_one,
       </if>
@@ -78,9 +81,6 @@
       </if>
       <if test="alternativeThree != null">
         alternative_three,
-      </if>
-      <if test="remark != null">
-        remark,
       </if>
       <if test="gmtCreate != null">
         gmt_create,
@@ -114,6 +114,9 @@
       <if test="orgnizer != null">
         #{orgnizer,jdbcType=VARCHAR},
       </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
       <if test="alternativeOne != null">
         #{alternativeOne,jdbcType=VARCHAR},
       </if>
@@ -122,9 +125,6 @@
       </if>
       <if test="alternativeThree != null">
         #{alternativeThree,jdbcType=VARCHAR},
-      </if>
-      <if test="remark != null">
-        #{remark,jdbcType=VARCHAR},
       </if>
       <if test="gmtCreate != null">
         #{gmtCreate,jdbcType=TIMESTAMP},
@@ -158,6 +158,9 @@
       <if test="orgnizer != null">
         orgnizer = #{orgnizer,jdbcType=VARCHAR},
       </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
       <if test="alternativeOne != null">
         alternative_one = #{alternativeOne,jdbcType=VARCHAR},
       </if>
@@ -166,9 +169,6 @@
       </if>
       <if test="alternativeThree != null">
         alternative_three = #{alternativeThree,jdbcType=VARCHAR},
-      </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=VARCHAR},
       </if>
       <if test="gmtCreate != null">
         gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
@@ -188,10 +188,10 @@
       award_name = #{awardName,jdbcType=VARCHAR},
       activity_name = #{activityName,jdbcType=VARCHAR},
       orgnizer = #{orgnizer,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
       alternative_one = #{alternativeOne,jdbcType=VARCHAR},
       alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
       alternative_three = #{alternativeThree,jdbcType=VARCHAR},
-      remark = #{remark,jdbcType=VARCHAR},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}

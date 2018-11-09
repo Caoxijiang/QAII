@@ -7,15 +7,15 @@ public class Incubator {
 
     private Integer pid;
 
-    private String name;
+    private String companyName;
 
     private String creditCode;
 
     private Date establishTime;
 
-    private String type;
+    private String companyType;
 
-    private String location;
+    private String companyLocation;
 
     private String legalRepresentative;
 
@@ -23,7 +23,7 @@ public class Incubator {
 
     private String businessScope;
 
-    private String incubator;
+    private String incubatorName;
 
     private Date hatchingTime;
 
@@ -77,12 +77,12 @@ public class Incubator {
         this.pid = pid;
     }
 
-    public String getName() {
-        return name;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName == null ? null : companyName.trim();
     }
 
     public String getCreditCode() {
@@ -101,20 +101,20 @@ public class Incubator {
         this.establishTime = establishTime;
     }
 
-    public String getType() {
-        return type;
+    public String getCompanyType() {
+        return companyType;
     }
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+    public void setCompanyType(String companyType) {
+        this.companyType = companyType == null ? null : companyType.trim();
     }
 
-    public String getLocation() {
-        return location;
+    public String getCompanyLocation() {
+        return companyLocation;
     }
 
-    public void setLocation(String location) {
-        this.location = location == null ? null : location.trim();
+    public void setCompanyLocation(String companyLocation) {
+        this.companyLocation = companyLocation == null ? null : companyLocation.trim();
     }
 
     public String getLegalRepresentative() {
@@ -141,12 +141,12 @@ public class Incubator {
         this.businessScope = businessScope == null ? null : businessScope.trim();
     }
 
-    public String getIncubator() {
-        return incubator;
+    public String getIncubatorName() {
+        return incubatorName;
     }
 
-    public void setIncubator(String incubator) {
-        this.incubator = incubator == null ? null : incubator.trim();
+    public void setIncubatorName(String incubatorName) {
+        this.incubatorName = incubatorName == null ? null : incubatorName.trim();
     }
 
     public Date getHatchingTime() {

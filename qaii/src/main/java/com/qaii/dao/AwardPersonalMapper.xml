@@ -6,8 +6,8 @@
     <result column="pid" jdbcType="INTEGER" property="pid" />
     <result column="award_time" jdbcType="DATE" property="awardTime" />
     <result column="award_level" jdbcType="VARCHAR" property="awardLevel" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="person_name" jdbcType="VARCHAR" property="personName" />
+    <result column="person_unit" jdbcType="VARCHAR" property="personUnit" />
     <result column="award_name" jdbcType="VARCHAR" property="awardName" />
     <result column="activity_name" jdbcType="VARCHAR" property="activityName" />
     <result column="orgnizer" jdbcType="VARCHAR" property="orgnizer" />
@@ -19,8 +19,9 @@
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, pid, award_time, award_level, name, unit, award_name, activity_name, orgnizer, 
-    alternative_one, alternative_two, alternative_three, remark, gmt_create, gmt_modified
+    id, pid, award_time, award_level, person_name, person_unit, award_name, activity_name, 
+    orgnizer, alternative_one, alternative_two, alternative_three, remark, gmt_create, 
+    gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -34,13 +35,13 @@
   </delete>
   <insert id="insert" parameterType="com.qaii.domain.AwardPersonal">
     insert into industry_awardpersonal (id, pid, award_time, 
-      award_level, name, unit, 
+      award_level, person_name, person_unit, 
       award_name, activity_name, orgnizer, 
       alternative_one, alternative_two, alternative_three, 
       remark, gmt_create, gmt_modified
       )
     values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{awardTime,jdbcType=DATE}, 
-      #{awardLevel,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, 
+      #{awardLevel,jdbcType=VARCHAR}, #{personName,jdbcType=VARCHAR}, #{personUnit,jdbcType=VARCHAR}, 
       #{awardName,jdbcType=VARCHAR}, #{activityName,jdbcType=VARCHAR}, #{orgnizer,jdbcType=VARCHAR}, 
       #{alternativeOne,jdbcType=VARCHAR}, #{alternativeTwo,jdbcType=VARCHAR}, #{alternativeThree,jdbcType=VARCHAR}, 
       #{remark,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
@@ -61,11 +62,11 @@
       <if test="awardLevel != null">
         award_level,
       </if>
-      <if test="name != null">
-        name,
+      <if test="personName != null">
+        person_name,
       </if>
-      <if test="unit != null">
-        unit,
+      <if test="personUnit != null">
+        person_unit,
       </if>
       <if test="awardName != null">
         award_name,
@@ -108,11 +109,11 @@
       <if test="awardLevel != null">
         #{awardLevel,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="personName != null">
+        #{personName,jdbcType=VARCHAR},
       </if>
-      <if test="unit != null">
-        #{unit,jdbcType=VARCHAR},
+      <if test="personUnit != null">
+        #{personUnit,jdbcType=VARCHAR},
       </if>
       <if test="awardName != null">
         #{awardName,jdbcType=VARCHAR},
@@ -155,11 +156,11 @@
       <if test="awardLevel != null">
         award_level = #{awardLevel,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
+      <if test="personName != null">
+        person_name = #{personName,jdbcType=VARCHAR},
       </if>
-      <if test="unit != null">
-        unit = #{unit,jdbcType=VARCHAR},
+      <if test="personUnit != null">
+        person_unit = #{personUnit,jdbcType=VARCHAR},
       </if>
       <if test="awardName != null">
         award_name = #{awardName,jdbcType=VARCHAR},
@@ -196,8 +197,8 @@
     set pid = #{pid,jdbcType=INTEGER},
       award_time = #{awardTime,jdbcType=DATE},
       award_level = #{awardLevel,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      unit = #{unit,jdbcType=VARCHAR},
+      person_name = #{personName,jdbcType=VARCHAR},
+      person_unit = #{personUnit,jdbcType=VARCHAR},
       award_name = #{awardName,jdbcType=VARCHAR},
       activity_name = #{activityName,jdbcType=VARCHAR},
       orgnizer = #{orgnizer,jdbcType=VARCHAR},

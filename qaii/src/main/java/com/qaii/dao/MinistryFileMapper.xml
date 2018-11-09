@@ -3,16 +3,17 @@
 <mapper namespace="com.qaii.dao.MinistryFileMapper">
   <resultMap id="BaseResultMap" type="com.qaii.domain.MinistryFile">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="style" jdbcType="VARCHAR" property="style" />
+    <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+    <result column="file_style" jdbcType="VARCHAR" property="fileStyle" />
     <result column="incubator_id" jdbcType="INTEGER" property="incubatorId" />
-    <result column="path" jdbcType="VARCHAR" property="path" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="file_path" jdbcType="VARCHAR" property="filePath" />
+    <result column="file_description" jdbcType="VARCHAR" property="fileDescription" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, style, incubator_id, path, description, gmt_create, gmt_modified
+    id, file_name, file_style, incubator_id, file_path, file_description, gmt_create, 
+    gmt_modified
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -25,11 +26,11 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.qaii.domain.MinistryFile">
-    insert into industry_ministryfile (id, name, style, 
-      incubator_id, path, description, 
+    insert into industry_ministryfile (id, file_name, file_style, 
+      incubator_id, file_path, file_description, 
       gmt_create, gmt_modified)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{style,jdbcType=VARCHAR}, 
-      #{incubatorId,jdbcType=INTEGER}, #{path,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{fileName,jdbcType=VARCHAR}, #{fileStyle,jdbcType=VARCHAR}, 
+      #{incubatorId,jdbcType=INTEGER}, #{filePath,jdbcType=VARCHAR}, #{fileDescription,jdbcType=VARCHAR}, 
       #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.MinistryFile">
@@ -38,20 +39,20 @@
       <if test="id != null">
         id,
       </if>
-      <if test="name != null">
-        name,
+      <if test="fileName != null">
+        file_name,
       </if>
-      <if test="style != null">
-        style,
+      <if test="fileStyle != null">
+        file_style,
       </if>
       <if test="incubatorId != null">
         incubator_id,
       </if>
-      <if test="path != null">
-        path,
+      <if test="filePath != null">
+        file_path,
       </if>
-      <if test="description != null">
-        description,
+      <if test="fileDescription != null">
+        file_description,
       </if>
       <if test="gmtCreate != null">
         gmt_create,
@@ -64,20 +65,20 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
       </if>
-      <if test="style != null">
-        #{style,jdbcType=VARCHAR},
+      <if test="fileStyle != null">
+        #{fileStyle,jdbcType=VARCHAR},
       </if>
       <if test="incubatorId != null">
         #{incubatorId,jdbcType=INTEGER},
       </if>
-      <if test="path != null">
-        #{path,jdbcType=VARCHAR},
+      <if test="filePath != null">
+        #{filePath,jdbcType=VARCHAR},
       </if>
-      <if test="description != null">
-        #{description,jdbcType=VARCHAR},
+      <if test="fileDescription != null">
+        #{fileDescription,jdbcType=VARCHAR},
       </if>
       <if test="gmtCreate != null">
         #{gmtCreate,jdbcType=TIMESTAMP},
@@ -90,20 +91,20 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.MinistryFile">
     update industry_ministryfile
     <set>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
+      <if test="fileName != null">
+        file_name = #{fileName,jdbcType=VARCHAR},
       </if>
-      <if test="style != null">
-        style = #{style,jdbcType=VARCHAR},
+      <if test="fileStyle != null">
+        file_style = #{fileStyle,jdbcType=VARCHAR},
       </if>
       <if test="incubatorId != null">
         incubator_id = #{incubatorId,jdbcType=INTEGER},
       </if>
-      <if test="path != null">
-        path = #{path,jdbcType=VARCHAR},
+      <if test="filePath != null">
+        file_path = #{filePath,jdbcType=VARCHAR},
       </if>
-      <if test="description != null">
-        description = #{description,jdbcType=VARCHAR},
+      <if test="fileDescription != null">
+        file_description = #{fileDescription,jdbcType=VARCHAR},
       </if>
       <if test="gmtCreate != null">
         gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
@@ -116,11 +117,11 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qaii.domain.MinistryFile">
     update industry_ministryfile
-    set name = #{name,jdbcType=VARCHAR},
-      style = #{style,jdbcType=VARCHAR},
+    set file_name = #{fileName,jdbcType=VARCHAR},
+      file_style = #{fileStyle,jdbcType=VARCHAR},
       incubator_id = #{incubatorId,jdbcType=INTEGER},
-      path = #{path,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR},
+      file_path = #{filePath,jdbcType=VARCHAR},
+      file_description = #{fileDescription,jdbcType=VARCHAR},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
