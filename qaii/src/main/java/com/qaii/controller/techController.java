@@ -564,7 +564,7 @@ public class techController {
 		result.add(new String(request.getParameter("topic").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("style").getBytes("ISO-8859-1"),"utf-8"));
 		result.add(new String(request.getParameter("address").getBytes("ISO-8859-1"),"utf-8"));
-		return new ModelAndView("page/science/paper/workfilereloadadd", "utflist", result);
+		return new ModelAndView("page/science/work/workfilereloadadd", "utflist", result);
 	}
 	//消息管理
 	@RequestMapping("newsScience.do")

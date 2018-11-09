@@ -31,6 +31,9 @@
 	</button>		
 </div>
 <div class="layui-container addtop">
+	<button id="addmumber" data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">
+		<i class="layui-icon layui-icon-add-1"></i>添加成员
+	</button>
   <form class="layui-form" method="post">
   <!-- 基本信息 -->
 	  <div class="layui-row contern">
@@ -103,9 +106,6 @@
 			 <div class="layui-form-item">
 			    <div class="mumberBox" id="layerDemo">
 			    	<label class="layui-form-label mumber">股东出资及成员任职</label>
-			    	<button id="addmumber" data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">
-			    		<i class="layui-icon layui-icon-add-1"></i>添加成员
-			    	</button>
 			    </div>
 			    <div class="layui-input-block">
 			       <table class="layui-hide" id="test" lay-filter="demo"></table>
@@ -341,7 +341,19 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 	      });
 	    }
 	  });
-  
+  /*添加成员*/
+  $('#addmumber').on('click', function(){
+  	layer.open({
+        type: 2
+        ,title: "股东出资及成员管理"
+        ,content: 'hatchmumber.do'
+        ,shade: 0.3 //不显示遮罩
+        ,area: ['390px', '380px']
+        ,yes: function(){
+          layer.closeAll();
+        }
+      });
+    });
 });
 /**根据选择框显示隐藏内容**/
  /* 高新技术企业 */
@@ -362,11 +374,7 @@ $('#isTechnologyEnterprise').click(function(){
 		$("#isTech").hide();
 	}
 })
-/*添加成员*/
-$('#addmumber').on('click', function(){
-	  console.log("sdfsdf");
-	   
-  });
+
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>
 </body>

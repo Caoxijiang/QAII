@@ -16,74 +16,50 @@
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 </head>
 <body id="bodyHei">
-<div class="layui-container">
-  <form class="layui-form" method="post">
-  <!-- 基本信息 -->
-	  <div class="layui-row">
-		<div class="layui-col-xs12 layui-col-md12">
-			 <div class="layui-form-item">
-			    <label class="layui-form-label wid60">股东名称</label>
-			    <div class="layui-input-block wid80">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
-			    </div>
-			  </div>
+<div class="layui-container" style="margin-top:15px;">
+  <form class="layui-form" action="">
+  <div class="layui-form-item">
+    <label class="layui-form-label wid60">股东名称</label>
+    <div class="layui-input-block wid80">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入股东名称" class="layui-input">
+    </div>
+  </div>
+	<div class="layui-form-item">
+		<label class="layui-form-label wid60">出资比例</label>
+		<div class="layui-input-block wid80">
+			<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入出资比例" class="layui-input">
 		</div>
-	    <div class="layui-col-xs12 layui-col-md12">
-			 <div class="layui-form-item">
-			    <label class="layui-form-label wid60">出资比例</label>
-			    <div class="layui-input-block wid80">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
-			    </div>
-			  </div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label wid60">出资时间</label>
+		<div class="layui-input-block wid80">
+			<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入出资时间" class="layui-input" id="test1">
 		</div>
-		<div class="layui-col-xs12 layui-col-md12">
-			 <div class="layui-form-item">
-			    <label class="layui-form-label wid60">出资时间</label>
-			    <div class="layui-input-block wid80">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
-			    </div>
-			  </div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label wid60">股东职务</label>
+		<div class="layui-input-block wid80">
+			<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入股东职务" class="layui-input">
 		</div>
-		<div class="layui-col-xs12 layui-col-md12">
-			 <div class="layui-form-item">
-			    <label class="layui-form-label wid60">股东职务</label>
-			    <div class="layui-input-block wid80">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
-			    </div>
-			  </div>
-		</div>
-		<div class="layui-col-md12">
-		   <div class="layui-form-item">
-			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" lay-submit="" lay-filter="demo1" onSubmit="imgjudge()">立即提交</button>
-			  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-			</div>
-		  </div>
-  		</div>
- </form>
+	</div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
-layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], function(){
+layui.use(['layer','form', 'laydate'], function(){
   var form = layui.form,
-	element = layui.element,
 	layer = layui.layer,
-	laydate = layui.laydate,
-	upload = layui.upload,
-    table = layui.table;
+	laydate = layui.laydate;
 	//申请日期
  laydate.render({
    	elem: '#test1'
   });
-  table.on('tool(demo)', function(obj){
-	    var data = obj.data;
-	   if(obj.event === 'del'){
-	      layer.confirm('真的删除行么', function(index){
-	        obj.del();
-	        layer.close(index);
-	      });
-	    }
-	  });
   
 });
 </script>

@@ -64,42 +64,15 @@ input[type='checkbox']:checked{
 	display:inline-block;
 	width:150px;
 }
-#addmumber{
-	margin-right:15px;
-	float:right;
+#addmumber {
+    margin-right: 15px;
+    float: right;
+    position: absolute;
+    top: 370px;
+    right: 165px;
+    z-index: 1000;
 }
 /*弹窗*/
-.popWindow{
-	position:fixed;
-	margin:0px auto;
-	border:1px solid #ccc;
-	width:500px;
-	z-index: 1000;
-    top: 200px;
-    left: 30%;
-    background:#fff;
-    height:500px;
-}
-.popWintitle{
-	margin-bottom:15px;
-	height:20px;
-	color:#fff;
-	font-size:16px;
-	line-height:20px;
-	padding:10px 20px;
-	background-color: #003e8d;
-}
-.poptitle{
-	display:inline-block;
-}
-.popright{
-	float:right;
-}
-iframe{
-	border:none;
-	width:100%;
-	height:450px;
-}
 .wid60{
 	width:60px;
 }
