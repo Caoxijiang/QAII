@@ -240,15 +240,6 @@
   	</div>
  </form>
 </div>
-<!-- 弹窗 -->
-<!-- <div class="popWindow">
-	<div class="popWintitle">
-		<div class="poptitle">添加成员界面</div>
-		<i class="layui-icon layui-icon-close popright" id="close"></i>
-	</div>
-	<iframe src="hatchmumber.do"></iframe>
-</div> -->
-<!--  表单元素-->
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], function(){
