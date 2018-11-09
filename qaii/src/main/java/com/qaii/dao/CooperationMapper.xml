@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.CooperationMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.Cooperation">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="unit_name" jdbcType="VARCHAR" property="unitName" />
+    <result column="cooperation_name" jdbcType="VARCHAR" property="cooperationName" />
+    <result column="protocol_name" jdbcType="VARCHAR" property="protocolName" />
+    <result column="sign_time" jdbcType="TIMESTAMP" property="signTime" />
+    <result column="cooperation_content" jdbcType="VARCHAR" property="cooperationContent" />
+    <result column="fid" jdbcType="INTEGER" property="fid" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="alternative_one" jdbcType="VARCHAR" property="alternativeOne" />
+    <result column="alternative_two" jdbcType="VARCHAR" property="alternativeTwo" />
+    <result column="alternative_three" jdbcType="VARCHAR" property="alternativeThree" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <insert id="insert" parameterType="com.qaii.domain.Cooperation">
+    insert into industry_cooperation (id, unit_name, cooperation_name, 
+      protocol_name, sign_time, cooperation_content, 
+      fid, remark, alternative_one, 
+      alternative_two, alternative_three, gmt_create, 
+      gmt_modified)
+    values (#{id,jdbcType=INTEGER}, #{unitName,jdbcType=VARCHAR}, #{cooperationName,jdbcType=VARCHAR}, 
+      #{protocolName,jdbcType=VARCHAR}, #{signTime,jdbcType=TIMESTAMP}, #{cooperationContent,jdbcType=VARCHAR}, 
+      #{fid,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{alternativeOne,jdbcType=VARCHAR}, 
+      #{alternativeTwo,jdbcType=VARCHAR}, #{alternativeThree,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.Cooperation">
+    insert into industry_cooperation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="unitName != null">
+        unit_name,
+      </if>
+      <if test="cooperationName != null">
+        cooperation_name,
+      </if>
+      <if test="protocolName != null">
+        protocol_name,
+      </if>
+      <if test="signTime != null">
+        sign_time,
+      </if>
+      <if test="cooperationContent != null">
+        cooperation_content,
+      </if>
+      <if test="fid != null">
+        fid,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one,
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two,
+      </if>
+      <if test="alternativeThree != null">
+        alternative_three,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="unitName != null">
+        #{unitName,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperationName != null">
+        #{cooperationName,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolName != null">
+        #{protocolName,jdbcType=VARCHAR},
+      </if>
+      <if test="signTime != null">
+        #{signTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cooperationContent != null">
+        #{cooperationContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fid != null">
+        #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThree != null">
+        #{alternativeThree,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

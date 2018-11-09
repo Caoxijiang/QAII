@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.AwardPersonalMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.AwardPersonal">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="award_time" jdbcType="DATE" property="awardTime" />
+    <result column="award_level" jdbcType="VARCHAR" property="awardLevel" />
+    <result column="person_name" jdbcType="VARCHAR" property="personName" />
+    <result column="person_unit" jdbcType="VARCHAR" property="personUnit" />
+    <result column="award_name" jdbcType="VARCHAR" property="awardName" />
+    <result column="activity_name" jdbcType="VARCHAR" property="activityName" />
+    <result column="orgnizer" jdbcType="VARCHAR" property="orgnizer" />
+    <result column="alternative_one" jdbcType="VARCHAR" property="alternativeOne" />
+    <result column="alternative_two" jdbcType="VARCHAR" property="alternativeTwo" />
+    <result column="alternative_three" jdbcType="VARCHAR" property="alternativeThree" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, pid, award_time, award_level, person_name, person_unit, award_name, activity_name, 
+    orgnizer, alternative_one, alternative_two, alternative_three, remark, gmt_create, 
+    gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from industry_awardpersonal
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from industry_awardpersonal
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.AwardPersonal">
+    insert into industry_awardpersonal (id, pid, award_time, 
+      award_level, person_name, person_unit, 
+      award_name, activity_name, orgnizer, 
+      alternative_one, alternative_two, alternative_three, 
+      remark, gmt_create, gmt_modified
+      )
+    values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{awardTime,jdbcType=DATE}, 
+      #{awardLevel,jdbcType=VARCHAR}, #{personName,jdbcType=VARCHAR}, #{personUnit,jdbcType=VARCHAR}, 
+      #{awardName,jdbcType=VARCHAR}, #{activityName,jdbcType=VARCHAR}, #{orgnizer,jdbcType=VARCHAR}, 
+      #{alternativeOne,jdbcType=VARCHAR}, #{alternativeTwo,jdbcType=VARCHAR}, #{alternativeThree,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.AwardPersonal">
+    insert into industry_awardpersonal
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="awardTime != null">
+        award_time,
+      </if>
+      <if test="awardLevel != null">
+        award_level,
+      </if>
+      <if test="personName != null">
+        person_name,
+      </if>
+      <if test="personUnit != null">
+        person_unit,
+      </if>
+      <if test="awardName != null">
+        award_name,
+      </if>
+      <if test="activityName != null">
+        activity_name,
+      </if>
+      <if test="orgnizer != null">
+        orgnizer,
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one,
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two,
+      </if>
+      <if test="alternativeThree != null">
+        alternative_three,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="awardTime != null">
+        #{awardTime,jdbcType=DATE},
+      </if>
+      <if test="awardLevel != null">
+        #{awardLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="personName != null">
+        #{personName,jdbcType=VARCHAR},
+      </if>
+      <if test="personUnit != null">
+        #{personUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="awardName != null">
+        #{awardName,jdbcType=VARCHAR},
+      </if>
+      <if test="activityName != null">
+        #{activityName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgnizer != null">
+        #{orgnizer,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThree != null">
+        #{alternativeThree,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.AwardPersonal">
+    update industry_awardpersonal
+    <set>
+      <if test="pid != null">
+        pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="awardTime != null">
+        award_time = #{awardTime,jdbcType=DATE},
+      </if>
+      <if test="awardLevel != null">
+        award_level = #{awardLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="personName != null">
+        person_name = #{personName,jdbcType=VARCHAR},
+      </if>
+      <if test="personUnit != null">
+        person_unit = #{personUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="awardName != null">
+        award_name = #{awardName,jdbcType=VARCHAR},
+      </if>
+      <if test="activityName != null">
+        activity_name = #{activityName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgnizer != null">
+        orgnizer = #{orgnizer,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one = #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThree != null">
+        alternative_three = #{alternativeThree,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.AwardPersonal">
+    update industry_awardpersonal
+    set pid = #{pid,jdbcType=INTEGER},
+      award_time = #{awardTime,jdbcType=DATE},
+      award_level = #{awardLevel,jdbcType=VARCHAR},
+      person_name = #{personName,jdbcType=VARCHAR},
+      person_unit = #{personUnit,jdbcType=VARCHAR},
+      award_name = #{awardName,jdbcType=VARCHAR},
+      activity_name = #{activityName,jdbcType=VARCHAR},
+      orgnizer = #{orgnizer,jdbcType=VARCHAR},
+      alternative_one = #{alternativeOne,jdbcType=VARCHAR},
+      alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
+      alternative_three = #{alternativeThree,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
