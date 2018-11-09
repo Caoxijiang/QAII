@@ -85,43 +85,44 @@
         <table tableName="sci_trademarkprocessfile" domainObjectName="Trademarkprocessfile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table> -->
-        <!-- <table tableName="sci_govfundprocess" domainObjectName="Govfundprocess" enableCountByExample="false" enableUpdateByExample="false"
+        
+        <table tableName="industry_awardcollege" domainObjectName="AwardCollege" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_govfundprocessfile" domainObjectName="Govfundprocessfile" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_awardcollegefile" domainObjectName="AwardCollegeFile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_govplatformprocess" domainObjectName="Govplatformprocess" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_awardincubate" domainObjectName="AwardIncubate" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_govplatformprocessfile" domainObjectName="Govplatformprocessfile" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_awardincubatefile" domainObjectName="AwardIncubateFile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_govrewardprocess" domainObjectName="Govrewardprocess" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_awardpersonal" domainObjectName="AwardPersonal" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_govrewardprocessfile" domainObjectName="Govrewardprocessfile" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_awardpersonalfile" domainObjectName="AwardPersonalFile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_govsubjectprocess" domainObjectName="Govsubjectprocess" enableCountByExample="false" enableUpdateByExample="false"
-        enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table> 
-        <table tableName="sci_softwarecopyrightfile" domainObjectName="Softcopyrightfile" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_cooperation" domainObjectName="Cooperation" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_copyright" domainObjectName="Copyright" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_cooperationfile" domainObjectName="CooperationFile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_periodicalthesis" domainObjectName="PeriodicalThesis" enableCountByExample="false" enableUpdateByExample="false"
-        enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>-->
-        <table tableName="sci_periodicalthesis" domainObjectName="PeriodicalThesis" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_incubator" domainObjectName="Incubator" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_meetingthesis" domainObjectName="MeetingThesis" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_incubatorfile" domainObjectName="IncubatorFile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="sci_work" domainObjectName="Work" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_ministry" domainObjectName="Ministry" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="industry_ministryfile" domainObjectName="MinistryFile" enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="industry_stockequity" domainObjectName="StockEquity" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         
