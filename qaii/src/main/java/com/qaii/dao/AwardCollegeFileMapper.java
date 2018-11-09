@@ -14,4 +14,5 @@ public interface AwardCollegeFileMapper {
     int updateByPrimaryKeySelective(AwardCollegeFile record);
 
     int updateByPrimaryKey(AwardCollegeFile record);
+
 }

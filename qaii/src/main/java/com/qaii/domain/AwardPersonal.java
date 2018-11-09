@@ -1,6 +1,7 @@
 package com.qaii.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class AwardPersonal {
     private Integer id;
@@ -32,6 +33,16 @@ public class AwardPersonal {
     private Date gmtCreate;
 
     private Date gmtModified;
+
+    private List<AwardPersonalFile> listFile;
+
+    public List<AwardPersonalFile> getListFile() {
+        return listFile;
+    }
+
+    public void setListFile(List<AwardPersonalFile> listFile) {
+        this.listFile = listFile;
+    }
 
     public Integer getId() {
         return id;
