@@ -314,7 +314,7 @@
       #{id,jdbcType=INTEGER}
     </foreach>
   </delete>
-  <select id="listRecords" resultMap="com.qaii.domain.AwardPersonal">
+  <select id="listRecords" resultMap="CustomMap">
     SELECT * FROM industry_awardpersonal
   </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardPersonal">
