@@ -13,6 +13,16 @@ public class IndustryController {
 	public String hatchmumber(){
 		return "page/industry/hatch/hatchmumber";
 	}
+	//孵化企业变更时间修改界面（修改界面之内）
+	@RequestMapping("hatchchangetime.do")
+	public String hatchchangetime(){
+		return "page/industry/hatch/hatchchangetime";
+	}
+	//孵化企业变更修改界面
+	@RequestMapping("hatchshare.do")
+	public String hatchshare(){
+		return "page/industry/hatch/hatchshare";
+	}
 	//孵化企业添加界面
 	@RequestMapping("hatchAdd.do")
 	public String hatchAdd(){

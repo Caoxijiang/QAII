@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>孵化企业</title>
+  <title>服务企业管理</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
@@ -36,7 +36,7 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">版权( <span id="countnum"> </span> )</span>
+  	  <span class="limit">服务企业管理( <span id="countnum"> </span> )</span>
 		<a href="copyrightAdd.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
@@ -132,18 +132,17 @@ layui.use('table', function(obj){
     cols: [[ //标题栏
     	{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'copyPicture', title: '作品图样',fixed: 'left',width:150},
-		{field: 'copyName', title: '作品名称',fixed: 'left',width:150},
-		{field: 'copyCode', title: '登记号',sort: true,width:120},
-		{field: 'copyAuthor', title: '作者',sort: true,width:100},
-		{field: 'copyCopyrightperson', title: '著作权人',sort: true,width:150},
-		{field: 'copyAgency', title: '代理机构',sort: true,width:150},
-		{field: 'copyEndtime', title: '创作完成日期',width:220},
-		{field: 'copyPublishtime', title: '首次发布日期',sort: true,width:200},
-		{field: 'copyRegisttime', title: '登记日期',sort: true,width:150},
-		{field: 'copyCost', title: '费用',sort: true,width:150},
-		{field: 'copyInvoiceper', title: '发票收据-汇款人',sort: true,width:200},
-		{field: 'copyStatus', title: '状态',sort: true,width:200},
+		{field: 'copyPicture', title: '服务企业名称',fixed: 'left',width:150},
+		{field: 'copyName', title: '服务企业性质',width:150},
+		{field: 'copyCode', title: '服务企业联系人名称',sort: true,width:120},
+		{field: 'copyAuthor', title: '联系方式',sort: true,width:100},
+		{field: 'copyCopyrightperson', title: '服务企业地址',sort: true,width:150},
+		{field: 'copyAgency', title: '服务时间',sort: true,width:150},
+		{field: 'copyEndtime', title: '服务项目',width:220},
+		{field: 'copyPublishtime', title: '我院部门/公司',sort: true,width:200},
+		{field: 'copyRegisttime', title: '联系人',sort: true,width:150},
+		{field: 'copyCost', title: '联系方式',sort: true,width:150},
+		{field: 'copyInvoiceper', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
     ]], 
 	  //表格数据

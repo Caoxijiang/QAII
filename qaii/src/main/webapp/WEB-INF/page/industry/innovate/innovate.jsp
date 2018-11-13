@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>孵化企业</title>
+  <title>创新能力</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
@@ -36,7 +36,7 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">版权( <span id="countnum"> </span> )</span>
+  	  <span class="limit">创新能力( <span id="countnum"> </span> )</span>
 		<a href="copyrightAdd.do" target="_blank">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加

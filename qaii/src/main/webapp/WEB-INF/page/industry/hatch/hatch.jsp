@@ -102,7 +102,8 @@
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-xs" lay-event="detail">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="del">变更修改</a>
+  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="change">变更修改</a>
+  <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="shareholder">股东添加</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -149,7 +150,7 @@ layui.use('table', function(obj){
 		{field: 'copyStatus', title: '高新技术企业',sort: true,width:200},
 		{field: 'copyStatus', title: '青岛市科技型企业培育“百千万”工程 ',sort: true,width:360},
 		{field: 'copyStatus', title: '备注',sort: true,width:200},
-		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:360}
+		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:500}
     ]], 
 	  //表格数据
     data:obj.data,
@@ -215,7 +216,6 @@ layui.use('table', function(obj){
   						  myA[i]=myA[i]+$(this).text();
   						 }
   				 })
-  			
   			  }
   			//全局搜索
   			  $(".layui-table tr").each(function(){
@@ -252,8 +252,6 @@ layui.use('table', function(obj){
   	
       }
     };
-    
-    
     
     $('#search').on('click', function(){
 //  	window.location.reload();//刷新当前页面.
@@ -300,6 +298,22 @@ layui.use('table', function(obj){
     } else if(layEvent === 'edit'){
     	var iframesrc="hatchEdit.do?userId='"+data.id+"'";
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
+    }else if(layEvent === 'shareholder'){
+    	layer.open({
+    		  type: 2, 
+    		  title:'添加股东信息',
+    		  content: 'hatchmumber.do',
+ 		      shade: 0.3, //不显示遮罩
+ 		      area: ['390px', '380px']
+    		});
+    }else if(layEvent === 'change'){
+    	layer.open({
+  		  type: 2, 
+  		  title:'变更修改',
+  		  content: 'hatchshare.do',
+		  shade: 0.3, //不显示遮罩
+		  area: ['650px', '500px']
+  		});
     }
   });
 

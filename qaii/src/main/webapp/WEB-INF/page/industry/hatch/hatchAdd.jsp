@@ -31,9 +31,6 @@
 	</button>		
 </div>
 <div class="layui-container addtop">
-	<button id="addmumber" data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">
-		<i class="layui-icon layui-icon-add-1"></i>添加成员
-	</button>
   <form class="layui-form" method="post">
   <!-- 基本信息 -->
 	  <div class="layui-row contern">
@@ -99,19 +96,6 @@
 			    <label class="site-demo-button layui-form-label">经营范围</label>
 			    <div class="layui-input-block">
 			       <textarea class="layui-textarea" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
-			    </div>
-			  </div>
-		</div>
-		<div class="layui-col-xs12 layui-col-md12">
-			 <div class="layui-form-item">
-			    <div class="mumberBox" id="layerDemo">
-			    	<label class="layui-form-label mumber">股东出资及成员任职</label>
-			    </div>
-			    <div class="layui-input-block">
-			       <table class="layui-hide" id="test" lay-filter="demo"></table>
-			       <script type="text/html" id="barDemo">
-  					<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-				   </script>
 			    </div>
 			  </div>
 		</div>
@@ -287,64 +271,6 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
      console.log(res)
    }
  });
-  table.render({
-	    elem: '#test'
-	    /* ,url:'/demo/table/user/' */
-	    ,cellMinWidth: 100
-	    ,cols: [[
-	      {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
-	      ,{field:'username', title: '股东名称'}
-	      ,{field:'sex',title: '出资比例', sort: true}
-	      ,{field:'city',title: '出资时间', sort: true}
-	      ,{field:'sign', title: '股东职务', width: '30%', minWidth: 100}
-	      ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}
-	    ]],
-	    data: [{
-	        "id": "10001"
-	        ,"username": "杜甫"
-	        ,"email": "xianxin@layui.com"
-	        ,"sex": "男"
-	        ,"city": "浙江杭州"
-	        ,"sign": "人生恰似一场修行"
-	        ,"experience": "116"
-	        ,"ip": "192.168.0.8"
-	        ,"logins": "108"
-	        ,"joinTime": "2016-10-14"
-	      }, {
-          	"id": "10008"
-              ,"username": "贤心"
-              ,"email": "xianxin@layui.com"
-              ,"sex": "男"
-              ,"city": "浙江杭州"
-              ,"sign": "人生恰似一场修行"
-              ,"experience": "106"
-              ,"ip": "192.168.0.8"
-              ,"logins": "106"
-              ,"joinTime": "2016-10-14"
-            }]
-	  });
-  table.on('tool(demo)', function(obj){
-	    var data = obj.data;
-	   if(obj.event === 'del'){
-	      layer.confirm('真的删除行么', function(index){
-	        obj.del();
-	        layer.close(index);
-	      });
-	    }
-	  });
-  /*添加成员*/
-  $('#addmumber').on('click', function(){
-  	layer.open({
-        type: 2
-        ,title: "股东出资及成员管理"
-        ,content: 'hatchmumber.do'
-        ,shade: 0.3 //不显示遮罩
-        ,area: ['390px', '380px']
-        ,yes: function(){
-          layer.closeAll();
-        }
-      });
-    });
 });
 /**根据选择框显示隐藏内容**/
  /* 高新技术企业 */
