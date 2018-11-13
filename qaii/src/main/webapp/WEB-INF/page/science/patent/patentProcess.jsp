@@ -41,7 +41,7 @@
 	  	<i class="layui-icon layui-icon-download-circle"></i>下载
 	  </button>
 	</div>
-	<button onclick="srchange('patentData.do?userId=${param.userId}&step=${param.step}&patAuthor=${param.patAuthor}&patName=${param.patName}&patPublishtime=${param.patPublishtime}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('patentData.do?userId=${param.userId}&step=${param.step}&patAuthor=${param.patAuthor}&patName=${requestScope.utflist[2]}&patPublishtime=${param.patPublishtime}')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -59,8 +59,7 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
- var patName="${param.patName}";
- var pat=patName.replace(/\"/g, "");
+ var pat="${requestScope.utflist[0]}";
 console.log(pat);
 
 layui.use('table', function(obj){
@@ -158,7 +157,8 @@ layui.use('table', function(obj){
 	    	  type:2,
 			  title:"重新上传文件",
 			  content:'patentfilereload.do?userID='+userID+'&step='+step+'&pat='+pat+'&id='+id,
-			});
+			});     
+		    
 		}//事件监听
 	  })
 	});

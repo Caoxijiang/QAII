@@ -37,7 +37,7 @@
 <div class="tool">
 	<div class="layui-btn-group demoTable">
   	  <span class="limit">服务企业管理( <span id="countnum"> </span> )</span>
-		<a href="copyrightAdd.do" target="_blank">
+		<a href="javascript:;" onclick="srchange('serviceFirmAdd.do')">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -80,19 +80,17 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
-	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=copyPicture  type="checkbox" value="作品图样" checked="flase"/><lable>作品图样</lable></div>
-	<div class="int-inline"><input id="copyName"  type="checkbox" value="作品名称" checked/><lable>作品名称</lable></div>
-	<div class="int-inline"><input id="copyCode"  type="checkbox" value="登记号" checked/><lable>登记号</lable></div>
-	<div class="int-inline"><input id="copyAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
-	<div class="int-inline"><input id="copyCopyrightperson"  type="checkbox" value="著作权人" checked/><lable>著作权人</lable></div>
-	<div class="int-inline"><input id="copyAgency"  type="checkbox" value="代理机构" checked/><lable>代理机构</lable></div>
-	<div class="int-inline"><input id="copyEndtime"  type="checkbox" value="创作完成日期" checked/><lable>创作完成日期</lable></div>
-	<div class="int-inline"><input id="copyPublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发布日期</lable></div>
-	<div class="int-inline"><input id="copyRegisttime"  type="checkbox" value="登记日期" checked/><lable>登记日期</lable></div>
-	<div class="int-inline"><input id="copyCost"  type="checkbox" value="费用（元）" checked/><lable>费用（元）</lable></div>
-	<div class="int-inline"><input id="copyInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
-	<div class="int-inline"><input id="copyStatus"  type="checkbox" value="状态" checked/><lable>状态</lable></div>
+	<div class="int-inline"><input id="id"  type="checkbox" value="服务企业名称" checked="true"/><lable>服务企业名称</lable></div>
+	<div class="int-inline"><input id=copyPicture  type="checkbox" value="服务企业性质" checked="flase"/><lable>服务企业性质</lable></div>
+	<div class="int-inline"><input id="copyName"  type="checkbox" value="服务企业联系人名称" checked/><lable>服务企业联系人名称</lable></div>
+	<div class="int-inline"><input id="copyCode"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
+	<div class="int-inline"><input id="copyAuthor"  type="checkbox" value="服务企业地址" checked/><lable>服务企业地址</lable></div>
+	<div class="int-inline"><input id="copyCopyrightperson"  type="checkbox" value="服务时间" checked/><lable>服务时间</lable></div>
+	<div class="int-inline"><input id="copyAgency"  type="checkbox" value="服务项目" checked/><lable>服务项目</lable></div>
+	<div class="int-inline"><input id="copyEndtime"  type="checkbox" value="我院部门/公司" checked/><lable>我院部门/公司</lable></div>
+	<div class="int-inline"><input id="copyPublishtime"  type="checkbox" value="联系人" checked/><lable>联系人</lable></div>
+	<div class="int-inline"><input id="copyRegisttime"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
+	<div class="int-inline"><input id="copyCost"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -266,7 +264,7 @@ layui.use('table', function(obj){
     console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
-    	var iframesrc="copyrightCheck.do?userId='"+data.id+"'";
+    	var iframesrc="serviceFirmCheck.do?userId='"+data.id+"'";
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
@@ -292,7 +290,7 @@ layui.use('table', function(obj){
         //向服务端发送删除指令
       });
     } else if(layEvent === 'edit'){
-    	var iframesrc="copyrightEdit.do?userId='"+data.id+"'";
+    	var iframesrc="serviceFirmEdit.do?userId='"+data.id+"'";
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }
   });
@@ -406,16 +404,14 @@ upload.render({
 	});
 </script>
 <!--自动设置主表格可视区域-->
+<script src="${basePath}/js/iframesrc.js"></script>
 <script>
-
 	var hei=$(".action").height();
 	var ji=$(document).height();
 	var heigt=ji-hei-85;
-	$(".layui-table-body").prop("height",heigt+"px");
-	
+	$(".layui-table-body").prop("height",heigt+"px");	
 	console.log(heigt);
 
-	
 </script>
 </body>
 </html>        

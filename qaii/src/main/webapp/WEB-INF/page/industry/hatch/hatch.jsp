@@ -428,15 +428,12 @@ upload.render({
 <!--自动设置主表格可视区域-->
 <script src="${basePath}/js/iframesrc.js"></script>
 <script>
-
 	var hei=$(".action").height();
 	var ji=$(document).height();
 	var heigt=ji-hei-85;
 	$(".layui-table-body").prop("height",heigt+"px");
 	
 	console.log(heigt);
-
-	
 </script>
 </body>
 </html>        
