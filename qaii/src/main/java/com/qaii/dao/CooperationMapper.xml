@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qaii.dao.CooperationMapper">
   <resultMap id="BaseResultMap" type="com.qaii.domain.Cooperation">
-    <result column="id" jdbcType="INTEGER" property="id" />
+    <id column="id" jdbcType="INTEGER" property="id" />
     <result column="unit_name" jdbcType="VARCHAR" property="unitName" />
     <result column="cooperation_name" jdbcType="VARCHAR" property="cooperationName" />
     <result column="protocol_name" jdbcType="VARCHAR" property="protocolName" />
@@ -16,6 +16,20 @@
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
   </resultMap>
+  <sql id="Base_Column_List">
+    id, unit_name, cooperation_name, protocol_name, sign_time, cooperation_content, fid, 
+    remark, alternative_one, alternative_two, alternative_three, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from industry_cooperation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from industry_cooperation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
   <insert id="insert" parameterType="com.qaii.domain.Cooperation">
     insert into industry_cooperation (id, unit_name, cooperation_name, 
       protocol_name, sign_time, cooperation_content, 
@@ -113,4 +127,64 @@
       </if>
     </trim>
   </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.Cooperation">
+    update industry_cooperation
+    <set>
+      <if test="unitName != null">
+        unit_name = #{unitName,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperationName != null">
+        cooperation_name = #{cooperationName,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolName != null">
+        protocol_name = #{protocolName,jdbcType=VARCHAR},
+      </if>
+      <if test="signTime != null">
+        sign_time = #{signTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cooperationContent != null">
+        cooperation_content = #{cooperationContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fid != null">
+        fid = #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one = #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThree != null">
+        alternative_three = #{alternativeThree,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.Cooperation">
+    update industry_cooperation
+    set unit_name = #{unitName,jdbcType=VARCHAR},
+      cooperation_name = #{cooperationName,jdbcType=VARCHAR},
+      protocol_name = #{protocolName,jdbcType=VARCHAR},
+      sign_time = #{signTime,jdbcType=TIMESTAMP},
+      cooperation_content = #{cooperationContent,jdbcType=VARCHAR},
+      fid = #{fid,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      alternative_one = #{alternativeOne,jdbcType=VARCHAR},
+      alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
+      alternative_three = #{alternativeThree,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <insert id="insertRecordReturnID" parameterType="com.qaii.domain.Cooperation" useGeneratedKeys="true" keyColumn="id" keyProperty="id"></insert>
+  <delete id="deleteByPrimaryKeys" parameterType="java.lang.Integer"></delete>
 </mapper>
