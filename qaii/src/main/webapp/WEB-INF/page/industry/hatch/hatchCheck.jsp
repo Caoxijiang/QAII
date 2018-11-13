@@ -5,280 +5,346 @@
 <c:set var="basePath" value="${pageContext.request.contextPath}"></c:set>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>查看详情界面</title>
-  <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>科研成果管理系统</title>
+ <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
   <link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
-	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
-	<script src="${basePath}/js/jquery.table2excel.js"></script>
+  <link rel="stylesheet" href="${basePath}/css/industry.css" media="all" />
+  <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
   <style>
     body{margin: 10px;}
-    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
-    .layui-table-body {
-	    height:auto;
-	}
   </style>
 </head>
 <body id="bodyHei">
 <div class="tool">
-	<div class="techadd">
+	<div class="techadd" style="width:300px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">版权&nbsp;—&nbsp;查看详情界面</span>
+		<span class="blue">孵化企业管理&nbsp;—&nbsp;查看详情界面</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('copyright.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('hatch.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
-<div class="layui-container addtop"> 
-<input id="param" value='${param.userId}' type="hidden" />
-<!-- 采用表格内直接行结构  -->
- <form class="layui-form" action="addEmpInfo.do" method="post" lay-filter="example">
-<!--  第一块内容-->
-	  <div class="layui-row">
-		<div class="layui-col-md6">
-			<h1>版权基本信息</h1>
-		  	<div class="layui-row">
-				<div class="layui-col-md6">
-					<div class="layui-form-item">
-						<label class="layui-form-label">作品名称&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="copyName" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">登记号&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block"> 
-							<input type="text" name="copyCode" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="copyAuthor" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">著作权人&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="copyCopyrightperson" lay-verify="required" autocomplete="off" class="layui-input input" disabled="">
-						</div>
-					</div>
-				</div>
-			    <div class="layui-col-md6">
-					<div class="layui-form-item">
-						<label class="layui-form-label">代理机构&nbsp;<span class="star">*</span></label>
-						<div class="layui-input-block">
-							<input type="text" name="copyAgency" autocomplete="off" lay-verify="required" class="layui-input input" disabled="">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">创作完成日期&nbsp;<span class="star">*</span></label>
-						  <div class="layui-input-block">
-							<input type="text" name="copyEndtime" class="layui-input input" id="test2-1" disabled="">
-						  </div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">首次发布日期&nbsp;<span class="star">*</span></label>
-						  <div class="layui-input-block">
-							<input type="text" name="copyPublishtime" class="layui-input input" id="test2-2" disabled="">
-						  </div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">登记日期&nbsp;<span class="star">*</span></label>
-						  <div class="layui-input-block">
-							<input type="text" name="copyRegisttime" class="layui-input input" id="test2-3" disabled="">
-						  </div>
-					</div>
-				</div>
-		    </div>
+<div class="layui-container addtop">
+  <form class="layui-form" method="post" lay-filter="example">
+  <!-- 基本信息 -->
+	  <div class="layui-row contern">
+	  	<h1>基本信息</h1>
+		<div class="layui-col-xs6 layui-col-md6">
+			 <div class="layui-form-item">
+			    <label class="layui-form-label">企业名称</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			    </div>
+			  </div>
 		</div>
-		<div class="layui-col-md6">
-<!--	  图片上传-->
-			<div class="layui-upload" style="text-align: center;padding-top:10px;">
-				<div class="layui-upload-list" style="text-align: center;">
-					<img class="layui-upload-img" id="demo1" style="width:180px;height:252px;background: #f1f7f7;">
-					<p id="demoText"></p>
-				</div>
-				<input name="imageVal" type="hidden"></input>
-			</div> 
+	    <div class="layui-col-xs6 layui-col-md6">
+			 <div class="layui-form-item">
+			    <label class="layui-form-label">统一社会信用代码</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			    </div>
+			  </div>
 		</div>
-	  </div>
-   <!--  第一块内容-->
-   <!--  第二块内容-->
-   <h1>版权费用信息</h1>
-	  <div class="layui-row bgf7f8f8">
-			<div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">费用（元）&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="copyCost"  lay-verify="title" autocomplete="off" class="layui-input input" disabled="">
+		<div class="layui-col-xs6 layui-col-md6">
+			 <div class="layui-form-item">
+			    <label class="layui-form-label">成立时间</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test1" disabled="">
+			    </div>
+			  </div>
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			 <div class="layui-form-item">
+			    <label class="layui-form-label">公司类型</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			    </div>
+			  </div>
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			 <div class="layui-form-item">
+			    <label class="layui-form-label">公司住所</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			    </div>
+			  </div>
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			 <div class="layui-form-item">
+			    <label class="layui-form-label">法定代表人</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			    </div>
+			  </div>
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			 <div class="layui-form-item">
+			    <label class="layui-form-label">注册资本</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			    </div>
+			  </div>
+		</div>
+		<div class="layui-col-xs12 layui-col-md12">
+			 <div class="layui-form-item">
+			    <label class="site-demo-button layui-form-label">经营范围</label>
+			    <div class="layui-input-block">
+			       <textarea class="layui-textarea" name="content" lay-verify="content" id="LAY_demo_editor" disabled=""></textarea>
+			    </div>
+			  </div>
+		</div>
+		<div class="layui-col-xs12 layui-col-md12">
+			 <div class="layui-form-item">
+			    <div class="mumberBox" id="layerDemo">
+			    	<label class="layui-form-label mumber">股东出资及成员任职</label>
+			    </div>
+			    <div class="layui-input-block">
+			       <table class="layui-hide" id="test" lay-filter="demo"></table>
+			    </div>
+			  </div>
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			 <div class="layui-form-item">
+			    <label class="layui-form-label">所属孵化器</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			    </div>
+			  </div>
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			 <div class="layui-form-item">
+			    <label class="layui-form-label">入孵时间</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test2" disabled="">
+			    </div>
+			  </div>
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			 <div class="layui-form-item">
+			    <label class="layui-form-label">有限期</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test3" disabled="">
+			    </div>
+			  </div>
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			<div class="layui-form-item itemadd">
+				<label class="layui-form-label">上传营业执照</label>
+				<div class="layui-input-block">
+					<div class="layui-upload">
+					  <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test3" disabled="">
 					</div>
 				</div>
 			</div>
-			<div class="layui-col-md4">	
-				<div class="layui-form-item">
-					<label class="layui-form-label">发票收据-汇款人</label>
-					<div class="layui-input-block">
-						<input type="text" name="copyInvoiceper" lay-verify="title" autocomplete="off" class="layui-input input" disabled="">
+		</div>
+	</div>
+	<!-- 创新能力 -->
+	<div class="layui-row contern">
+	  	<h1>创新能力 </h1>
+	  	<div class="layui-col-xs6 layui-col-md6">
+	  		<div class="createbox">
+				<div class="layui-form-item itemadd">
+				    <label class="layui-form-label createlabel" id="isThousandSailEnterprise">是否“千帆计划”入库企业</label>
+				    <div class="layui-input-block createblock">
+				      <input type="radio" name="isThousandSailEnterprise" value="0" title="否" checked="" disabled="">
+				      <input type="radio" name="isThousandSailEnterprise" value="1" title="是" disabled="">
+				    </div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			<div class="createbox">
+				<div class="layui-form-item itemadd">
+				    <label class="layui-form-label createlabel" id="isBillionEnterprise">是否入选青岛市科技型企业培育“百千万”工程</label>
+				    <div class="layui-input-block createblock">
+				      <input type="radio" name="isBillionEnterprise" value="0" title="否" checked="" disabled="">
+				      <input type="radio" name="isBillionEnterprise" value="1" title="是" disabled="">
+				    </div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			<div class="createbox">
+				<div class="layui-form-item itemadd">
+				    <label class="layui-form-label createlabel">是否高新技术企业</label>
+				    <div class="layui-input-block createblock" id="isHighTechnologyEnterprise">
+				      <input type="radio" name="isHighTechnologyEnterprise" value="0" title="否" checked="" disabled="">
+				      <input type="radio" name="isHighTechnologyEnterprise" value="1" title="是" disabled="">
+				    </div>
+				</div>
+				<div class="additionBox" id="isHighTech" style="display:none;">
+					<div class="layui-form-item itemadd">
+						<label class="layui-form-label">发证时间</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test4" disabled="">
+					    </div>
+					</div>
+					<div class="layui-form-item itemadd">
+						<label class="layui-form-label">证书编号</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+					    </div>
+					</div>
+					<div class="layui-form-item itemadd">
+						<label class="layui-form-label">发表电子版</label>
+						<div class="layui-input-block">
+							<div class="layui-upload">
+							  <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">状态</label>
-					<div class="layui-input-block">
-						<input type="text" name="copyStatus" lay-verify="title" autocomplete="off" class="layui-input input" disabled="">
+		</div>
+		<div class="layui-col-xs6 layui-col-md6">
+			<div class="createbox">
+				<div class="layui-form-item itemadd">
+				    <label class="layui-form-label createlabel">是否科技型中小企业</label>
+				    <div class="layui-input-block createblock" id="isTechnologyEnterprise">
+				      <input type="radio" name="isTechnologyEnterprise" value="0" title="否" checked="" disabled="">
+				      <input type="radio" name="isTechnologyEnterprise" value="1" title="是" disabled="">
+				    </div>
+				</div>
+				<div class="additionBox" id="isTech" style="display:none;">
+					<div class="layui-form-item itemadd">
+						<label class="layui-form-label">入库登记编号</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+					    </div>
 					</div>
 				</div>
-			</div> 
+			</div>
+		</div>
 	</div>
  </form>
-  <div class="layui-row">
-   	   <div class="layui-col-md12">
-		   <div class="layui-form-item">
+ <!-- 变更记录 -->
+ <div class="layui-row contern">
+	  	<h1>变更记录</h1>
+		<div class="layuichange">
+	       <table class="layui-hide" id="table2" lay-filter="demo2"></table>
+	    </div>
+	</div>
+<div class="layui-row">
+ 	<div class="layui-col-md12">
+   		<div class="layui-form-item">
 			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" onclick="srchange('copyright.do')">返回</button>
+	  			<button class="layui-btn" onclick="srchange('hatch.do')">返回</button>
 			</div>
-		  </div>
   		</div>
-  	</div>
+	</div>
 </div>
-<script src="${basePath}/js/iframesrc.js"></script>
+</div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
-layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(obj){
-	  var form = layui.form,
-	    table = layui.table,
-		element = layui.element,
-		layer = layui.layer,
-		laydate = layui.laydate,
-		upload = layui.upload;
-	   var id=${param.userId};
-	   var eid=$("imageVal").val();
-	 //文件表格展示
-       if(id!=null){
-            $.post({
-                url:"copyrightDetail.do",
-                data:{
-                    id:id
-                },
-                success:function(data){
-                    if(data.data!=null){
-                        let trademark=data.data;
-                        if(eid==undefined){
-                            $("input[name='imageVal']").attr("value",trademark.eid);
-                        }else{
-                            $("input[name='imageVal']").attr("value",eid);
-                        }
-                        /* console.log("afd"+JSON.stringify(trademark)); */
-                        //表单初始赋值 从表单中提取数据
-                          form.val('example', {
-                            "copyName":trademark.copyName,
-                            "copyCode":trademark.copyCode,
-                            "copyAuthor":trademark.copyAuthor,
-                            "copyCopyrightperson":trademark.copyCopyrightperson,
-                            "copyAgency":trademark.copyAgency,
-                            "copyEndtime":trademark.copyEndtime,
-                            "copyPublishtime":trademark.copyPublishtime,
-                            "copyRegisttime":trademark.copyRegisttime,
-                            "copyCost":trademark.copyCost,
-                            "copyInvoiceper":trademark.copyInvoiceper,
-                            "copyStatus":trademark.copyStatus
-                            // 修改此输入框的value值，此value为测试值 softfile为测试自定义值，证明文件值
-                          });
-                          var domain = window.location.host;
-                          var url =data.data.url;
-                          var imgpath=domain+url;
-                          var otherfile=trademark.softFile;
-                          otherfile.splice(0,1);
-                          $("#demo1").attr("src","https://"+imgpath);
-                        //文件表格展示
-                          table.render({
-                           elem: '#demo'
-                           //,url: 'showSoftfileDetails.do'
-                               /*  //数据接口 */ 
-                           ,page: false//开启分页
-                           ,cols: [[ //表头
-                             {field: 'id', type:'numbers',title: '序号', width:80}
-                             ,{field: 'filename', title: '文件名'}
-                             ,{field: 'path', title: '文件路径'}
-                             ,{field: 'operator', title: '操作',toolbar: '#barDemo'}
-                           ]],
-                           limit: 999999,
-                           /* data:obj */
-                           data:otherfile
-                         });
-                    }else{
-                        alert("查看详情失败")
-                    }
-                }
-                
-            })
-       }else{
-           alert("请刷新页面");
-       }
-	   
-	 //监听行工具事件
-		  table.on('tool(test)', function(obj){
-		    var data = obj.data;
-		    /* var ops="http://"+window.location.host+"/"; */
-		    if(obj.event === 'online'){//在线预览，暂支持图片和pdf形式
-		    	var address=data.path;
-		    	var reg1=new RegExp("jpg","i");
-		    	var reg2=new RegExp("pdf","i");
-		    	var reg3=new RegExp("png","i");
-		    	if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
-		    /* 		window.open(ops+address); */
-		    		window.open(address);
-		    	}else{
-		    		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
-		    	};
-		    }else if(obj.event === 'download'){//文件下载
-		    	var address=data.path;
-		    	/* download(ops+address); */
-		    		download(address);
-			}//事件监听
-		  })
-		  
-		  
-	   
-	});
-	
-
-//证明文件点击事件-在线预览
-$("#copyrightOnline").click(function(){
-	/* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
-	var address=$('input[name="copyrightfile"]').val();
-	var reg1=new RegExp("jpg","i");
-	var reg2=new RegExp("pdf","i");
-	var reg3=new RegExp("png","i");
-	if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
-		/* window.open(ops+address); */
-		window.open(address);
+layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], function(){
+  var form = layui.form,
+	element = layui.element,
+	layer = layui.layer,
+	laydate = layui.laydate,
+	upload = layui.upload,
+    table = layui.table;
+	//日期
+	 laydate.render({
+	   	elem: '#test1'
+	  });
+	//日期
+	 laydate.render({
+	   	elem: '#test2'
+	  });
+	//日期
+	 laydate.render({
+	   	elem: '#test3'
+	  });
+	//日期
+	 laydate.render({
+	   	elem: '#test4'
+	  });
+  table.render({
+	    elem: '#test'
+	    /* ,url:'/demo/table/user/' */ /*back 股东出资及成员任职数据接口*/
+	    ,cellMinWidth: 100
+	    ,cols: [[
+	      {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
+	      ,{field:'username', title: '股东名称'}
+	      ,{field:'sex',title: '出资比例', sort: true}
+	      ,{field:'city',title: '出资时间', sort: true}
+	      ,{field:'sign', title: '股东职务', width: '30%', minWidth: 100}
+	    ]],
+	    data: [{
+	        "id": "10001"
+	        ,"username": "杜甫"
+	        ,"email": "xianxin@layui.com"
+	        ,"sex": "男"
+	        ,"city": "浙江杭州"
+	        ,"sign": "人生恰似一场修行"
+	        ,"experience": "116"
+	        ,"ip": "192.168.0.8"
+	        ,"logins": "108"
+	        ,"joinTime": "2016-10-14"
+	      }, {
+          	"id": "10008"
+              ,"username": "贤心"
+              ,"email": "xianxin@layui.com"
+              ,"sex": "男"
+              ,"city": "浙江杭州"
+              ,"sign": "人生恰似一场修行"
+              ,"experience": "106"
+              ,"ip": "192.168.0.8"
+              ,"logins": "106"
+              ,"joinTime": "2016-10-14"
+            }]
+	  });
+  //变更信息显示
+  table.render({
+	    elem: '#table2'
+	    /* ,url:'/demo/table/user/' */ /*back 变更信息数据接口 删除data*/
+	    ,cellMinWidth: 100
+	    ,cols: [[
+	      {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
+	      ,{field:'username', title: '变更时间'}
+	      ,{field:'username', title: '变更记录'}
+	    ]],
+	    data: [{
+	        "id": "10001"
+	        ,"username": "杜甫"
+	      }, {
+        	"id": "10008"
+            ,"username": "贤心"
+          }]
+	  });
+  //表单初始赋值
+  /*back 表单初始赋值，根据接口修改相应的name值*/
+  form.val('example', {
+    "title": "致铭科技有限公司" //
+    ,"content": "123456"
+    ,"isThousandSailEnterprise": "1" //“千帆计划”入库企业
+    ,"isBillionEnterprise": "1" //是否入选青岛市科技型企业培育“百千万”工程
+    ,"isHighTechnologyEnterprise": "1" //是否高新技术企业
+    ,"isTechnologyEnterprise": "1" //是否科技型中小企业
+    ,"desc": "sfgsdfg"
+  })
+  //科技型中小企业
+  var isTech="1";
+  if(isTech==1){
+		$("#isTech").show();
 	}else{
-		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
-	};
-})
-//证明文件点击事件-下载
-$("#copyrightDownload").click(function(){
-	var address=$('input[name="copyrightfile"]').val();
-	/* download(ops+address); */
-	download(address);
-})
-function download(src) {
-    var $a = document.createElement('a');
-    $a.setAttribute("href", src);
-    $a.setAttribute("download", "");
-    var evObj = document.createEvent('MouseEvents');
-    evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
-    $a.dispatchEvent(evObj);
-};
+		$("#isTech").hide();
+	}
+  /* 高新技术企业 */
+  var isHighTech="1";
+  if(isHighTech==1){
+		$("#isHighTech").show();
+	}else{
+		$("#isHighTech").hide();
+	}
+});
 </script>
+<script src="${basePath}/js/iframesrc.js"></script>
 </body>
-</html>        
-        
+</html>
