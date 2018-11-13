@@ -54,18 +54,18 @@
           <a href="javascript:;" onclick="iframechange('hatch.do')"><i class="layui-icon layui-icon-star" style="font-size: 22px;"></i>&nbsp;孵化企业管理</a>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('innovate.do')"><i class="layui-icon layui-icon-read" style="font-size: 22px;"></i>&nbsp;创新能力</a>
+          <a href="javascript:;" onclick="iframechange('serviceFirm.do')"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;服务企业管理</a>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;"><i class="layui-icon layui-icon-diamond" style="font-size: 22px;"></i>&nbsp;奖励荣誉</a>
+          <a href="javascript:;"><i class="layui-icon layui-icon-diamond" style="font-size: 22px;"></i>&nbsp;奖励荣誉管理</a>
           <dl class="layui-nav-child">
 	          <dd class="navdd"><a onclick="iframechange('institute.do')">院获奖情况</a></dd>
 	          <dd class="navdd"><a onclick="iframechange('incubate.do')">孵化企业获奖情况</a></dd>
 	          <dd class="navdd"><a onclick="iframechange('person.do')">个人获奖情况</a></dd>
 	      </dl>
         </li>
-       	<li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('serviceFirm.do')"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;服务企业管理</a>
+        <li class="layui-nav-item">
+          <a href="javascript:;" onclick="iframechange('innovate.do')"><i class="layui-icon layui-icon-read" style="font-size: 22px;"></i>&nbsp;合作情况管理</a>
         </li>
       </ul>
     </div>
