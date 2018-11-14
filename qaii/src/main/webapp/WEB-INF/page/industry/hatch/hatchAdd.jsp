@@ -31,7 +31,7 @@
 	</button>		
 </div>
 <div class="layui-container addtop">
-  <form class="layui-form" method="post">
+  <form class="layui-form" method="post" action="insertIndustryInfo.do" enctype="multipart/form-data">
   <!-- 基本信息 -->
 	  <div class="layui-row contern">
 	  	<h1>基本信息</h1>
@@ -39,7 +39,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">企业名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="companyName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -47,7 +47,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">统一社会信用代码</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="creditCode" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -55,7 +55,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">成立时间</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+			      <input type="text" name="establishTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 			    </div>
 			  </div>
 		</div>
@@ -63,7 +63,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">公司类型</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="companyType" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -71,7 +71,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">公司住所</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="companyLocation" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -79,7 +79,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">法定代表人</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="legalRepresentative" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -87,7 +87,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">注册资本</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="registeredCapital" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -95,7 +95,7 @@
 			 <div class="layui-form-item">
 			    <label class="site-demo-button layui-form-label">经营范围</label>
 			    <div class="layui-input-block">
-			       <textarea class="layui-textarea" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+			       <textarea class="layui-textarea" name="businessScope" lay-verify="content" id="LAY_demo_editor"></textarea>
 			    </div>
 			  </div>
 		</div>
@@ -103,7 +103,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">所属孵化器</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="incubatorName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -111,7 +111,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">入孵时间</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test2">
+			      <input type="text" name="hatchingTime" lay-verify="title" autocomplete="off" class="layui-input" id="test2">
 			    </div>
 			  </div>
 		</div>
@@ -119,7 +119,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">有限期</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test3">
+			      <input type="text" name="limitedPeriod" lay-verify="title" autocomplete="off" class="layui-input" id="test3">
 			    </div>
 			  </div>
 		</div>
@@ -172,13 +172,13 @@
 					<div class="layui-form-item itemadd">
 						<label class="layui-form-label">发证时间</label>
 					    <div class="layui-input-block">
-					      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test4">
+					      <input type="text" name="certificateTime" lay-verify="title" autocomplete="off" class="layui-input" id="test4">
 					    </div>
 					</div>
 					<div class="layui-form-item itemadd">
 						<label class="layui-form-label">证书编号</label>
 					    <div class="layui-input-block">
-					      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+					      <input type="text" name="certificateCode" lay-verify="title" autocomplete="off" class="layui-input">
 					    </div>
 					</div>
 					<div class="layui-form-item itemadd">
@@ -205,7 +205,7 @@
 					<div class="layui-form-item itemadd">
 						<label class="layui-form-label">入库登记编号</label>
 					    <div class="layui-input-block">
-					      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+					      <input type="text" name="incomingRegistrationCode" lay-verify="title" autocomplete="off" class="layui-input">
 					    </div>
 					</div>
 				</div>
