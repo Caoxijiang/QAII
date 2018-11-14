@@ -307,6 +307,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 	    ,cellMinWidth: 100
 	    ,cols: [[
 	      {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
+	      ,{field:'username', title: '变更时间'}
 	      ,{field:'username', title: '变更记录'}
 	    ]],
 	    data: [{

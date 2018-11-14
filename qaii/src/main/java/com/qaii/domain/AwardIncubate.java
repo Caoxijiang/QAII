@@ -1,6 +1,7 @@
 package com.qaii.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class AwardIncubate {
     private Integer id;
@@ -30,6 +31,16 @@ public class AwardIncubate {
     private Date gmtCreate;
 
     private Date gmtModified;
+
+    private List<AwardIncubateFile> listFile;
+
+    public List<AwardIncubateFile> getListFile() {
+        return listFile;
+    }
+
+    public void setListFile(List<AwardIncubateFile> listFile) {
+        this.listFile = listFile;
+    }
 
     public Integer getId() {
         return id;

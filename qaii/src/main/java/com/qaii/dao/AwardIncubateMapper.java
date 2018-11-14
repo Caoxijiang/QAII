@@ -2,6 +2,8 @@ package com.qaii.dao;
 
 import com.qaii.domain.AwardIncubate;
 
+import java.util.List;
+
 public interface AwardIncubateMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,12 @@ public interface AwardIncubateMapper {
     int updateByPrimaryKeySelective(AwardIncubate record);
 
     int updateByPrimaryKey(AwardIncubate record);
+
+    int insertRecordReturnID(AwardIncubate record);
+
+    int deleteByPrimaryKeys(Integer[] id);
+
+    List<AwardIncubate> listRecords();
+
+    AwardIncubate getRecord(Integer id);
 }

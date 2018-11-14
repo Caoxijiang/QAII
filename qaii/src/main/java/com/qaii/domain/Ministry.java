@@ -1,6 +1,7 @@
 package com.qaii.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class Ministry {
     private Integer id;
@@ -38,6 +39,16 @@ public class Ministry {
     private Date gmtCreate;
 
     private Date gmtModified;
+
+    private List<Ministry> listFile;
+
+    public List<Ministry> getListFile() {
+        return listFile;
+    }
+
+    public void setListFile(List<Ministry> listFile) {
+        this.listFile = listFile;
+    }
 
     public Integer getId() {
         return id;

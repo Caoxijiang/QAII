@@ -48,6 +48,16 @@ public class IndustryController {
 	public String hatchmumber(){
 		return "page/industry/hatch/hatchmumber";
 	}
+	//孵化企业变更时间修改界面（修改界面之内）
+	@RequestMapping("hatchchangetime.do")
+	public String hatchchangetime(){
+		return "page/industry/hatch/hatchchangetime";
+	}
+	//孵化企业变更修改界面
+	@RequestMapping("hatchshare.do")
+	public String hatchshare(){
+		return "page/industry/hatch/hatchshare";
+	}
 	//孵化企业添加界面
 	@RequestMapping("hatchAdd.do")
 	public String hatchAdd(){
@@ -92,6 +102,21 @@ public class IndustryController {
 	@RequestMapping("serviceFirm.do")
 	public String serviceFirm(){
 		return "page/industry/serviceFirm/serviceFirm";
+	}
+	//服务企业管理添加界面
+	@RequestMapping("serviceFirmAdd.do")
+	public String serviceFirmAdd(){
+		return "page/industry/serviceFirm/serviceFirmAdd";
+	}
+	//服务企业管理查看详情界面
+	@RequestMapping("serviceFirmCheck.do")
+	public String serviceFirmCheck(){
+		return "page/industry/serviceFirm/serviceFirmCheck";
+	}
+	//服务企业管理修改界面
+	@RequestMapping("serviceFirmEdit.do")
+	public String serviceFirmEdit(){
+		return "page/industry/serviceFirm/serviceFirmEdit";
 	}
 	
 	
@@ -190,15 +215,8 @@ public class IndustryController {
 			}
 		}else {
 			return new JsonResult("信息输入有误");
-		}
-
-
-		
-					
+		}				
 		
 	}
-		
-	
-	
 	
 }

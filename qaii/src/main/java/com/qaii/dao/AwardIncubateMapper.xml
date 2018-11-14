@@ -196,4 +196,138 @@
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <insert id="insertRecordReturnID" parameterType="com.qaii.domain.AwardIncubate" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    insert into industry_awardincubate
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="awardTime != null">
+        award_time,
+      </if>
+      <if test="awardLevel != null">
+        award_level,
+      </if>
+      <if test="awardUnit != null">
+        award_unit,
+      </if>
+      <if test="awardName != null">
+        award_name,
+      </if>
+      <if test="activityName != null">
+        activity_name,
+      </if>
+      <if test="orgnizer != null">
+        orgnizer,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one,
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two,
+      </if>
+      <if test="alternativeThree != null">
+        alternative_three,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="awardTime != null">
+        #{awardTime,jdbcType=DATE},
+      </if>
+      <if test="awardLevel != null">
+        #{awardLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="awardUnit != null">
+        #{awardUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="awardName != null">
+        #{awardName,jdbcType=VARCHAR},
+      </if>
+      <if test="activityName != null">
+        #{activityName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgnizer != null">
+        #{orgnizer,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThree != null">
+        #{alternativeThree,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <delete id="deleteByPrimaryKeys" parameterType="java.lang.Integer">
+    delete from industry_awardincubate
+    where id in
+    <foreach item="id" collection="array" open="(" separator="," close=")">
+      #{id,jdbcType=INTEGER}
+    </foreach>
+  </delete>
+  <select id="listRecords" resultMap="BaseResultMap">
+    SELECT * FROM industry_awardincubate
+  </select>
+  <resultMap id="CustomMap" type="com.qaii.domain.AwardIncubate">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="award_time" jdbcType="DATE" property="awardTime" />
+    <result column="award_level" jdbcType="VARCHAR" property="awardLevel" />
+    <result column="award_unit" jdbcType="VARCHAR" property="awardUnit" />
+    <result column="award_name" jdbcType="VARCHAR" property="awardName" />
+    <result column="activity_name" jdbcType="VARCHAR" property="activityName" />
+    <result column="orgnizer" jdbcType="VARCHAR" property="orgnizer" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="alternative_one" jdbcType="VARCHAR" property="alternativeOne" />
+    <result column="alternative_two" jdbcType="VARCHAR" property="alternativeTwo" />
+    <result column="alternative_three" jdbcType="VARCHAR" property="alternativeThree" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.AwardIncubateFile">
+      <id column="id" jdbcType="INTEGER" property="id" />
+      <id column="file_name" jdbcType="VARCHAR" property="fileName" />
+      <id column="file_style" jdbcType="VARCHAR" property="fileStyle" />
+      <id column="honor_id" jdbcType="INTEGER" property="honorId" />
+      <id column="file_path" jdbcType="VARCHAR" property="filePath" />
+      <id column="file_description" jdbcType="VARCHAR" property="fileDescription" />
+    </collection>
+  </resultMap>
+  <select id="getRecord" parameterType="java.lang.Integer" resultMap="CustomMap">
+    SELECT
+     a.*,b.id AS fid,b.file_name,b.file_style,b.file_description,b.file_path
+     FROM
+      industry_awardincubate AS a LEFT JOIN industry_awardincubatefile AS b
+      ON
+       a.id = b.honor_id
+       WHERE a.id = #{id,jdbcType=INTEGER}
+  </select>
 </mapper>
