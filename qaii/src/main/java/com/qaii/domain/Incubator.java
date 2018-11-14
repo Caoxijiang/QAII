@@ -29,7 +29,7 @@ public class Incubator {
 
     private String businessLisence;
 
-    private String change;
+    private String changes;
 
     private String limitedPeriod;
 
@@ -166,11 +166,11 @@ public class Incubator {
     }
 
     public String getChange() {
-        return change;
+        return changes;
     }
 
     public void setChange(String change) {
-        this.change = change == null ? null : change.trim();
+        this.changes = change == null ? null : change.trim();
     }
 
     public String getLimitedPeriod() {

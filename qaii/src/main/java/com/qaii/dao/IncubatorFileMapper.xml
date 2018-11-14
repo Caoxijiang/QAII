@@ -25,13 +25,15 @@
     delete from industry_incubatorfile
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.qaii.domain.IncubatorFile">
-    insert into industry_incubatorfile (id, file_name, file_style, 
+  <insert id="insert" parameterType="java.util.List">
+  	  insert into industry_incubatorfile (id, file_name, file_style, 
       incubator_id, file_path, file_description, 
-      gmt_create, gmt_modified)
-    values (#{id,jdbcType=INTEGER}, #{fileName,jdbcType=VARCHAR}, #{fileStyle,jdbcType=VARCHAR}, 
-      #{incubatorId,jdbcType=INTEGER}, #{filePath,jdbcType=VARCHAR}, #{fileDescription,jdbcType=VARCHAR}, 
-      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+      gmt_create, gmt_modified)values
+    <foreach collection="list" item="item" separator="," index="index">
+      (#{item.id,jdbcType=INTEGER}, #{item.fileName,jdbcType=VARCHAR}, #{item.fileStyle,jdbcType=VARCHAR}, 
+      #{item.incubatorId,jdbcType=INTEGER}, #{item.filePath,jdbcType=VARCHAR}, #{item.fileDescription,jdbcType=VARCHAR}, 
+      #{item.gmtCreate,jdbcType=TIMESTAMP}, #{item.gmtModified,jdbcType=TIMESTAMP})
+    </foreach>
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.IncubatorFile">
     insert into industry_incubatorfile

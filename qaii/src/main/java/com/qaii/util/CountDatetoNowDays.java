@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.mysql.fabric.xmlrpc.base.Data;
 import com.qaii.domain.EmpInfo;
 
 public class CountDatetoNowDays {
@@ -241,4 +242,23 @@ public class CountDatetoNowDays {
 		}
 		return emp;
 	}
+	
+	
+	public static Date StrconversionData(String time) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = sdf.parse(time);
+            return date;
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+          //  e.printStackTrace();
+        	throw e;
+           // return null;
+        }
+       
+		
+	}
+	
+	
+	
 }
