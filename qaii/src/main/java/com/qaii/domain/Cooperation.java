@@ -1,6 +1,7 @@
 package com.qaii.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class Cooperation {
     private Integer id;
@@ -28,6 +29,8 @@ public class Cooperation {
     private Date gmtCreate;
 
     private Date gmtModified;
+
+    private List<CooperationFile> listFile;
 
     public Integer getId() {
         return id;

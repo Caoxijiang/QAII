@@ -45,6 +45,17 @@ $().ready(function(){
 			}
 		})
 	});
+    $("#btn4").click(function(){
+        var a=$("#dat3").val();
+        $.ajax({
+            type:"POST",
+            url:"setdata6.do",
+            data:{date:a},
+            success:function(data){
+                $("#dat6").val(data);
+            }
+        })
+    });
 })
 	
 </script>
@@ -62,6 +73,10 @@ $().ready(function(){
 		<input type="file" name="file"> input file
 		<input type="submit" value="提交"><br><br>
 		<button type="button" id="btn3">测试后台输出</button><br>
+		输入时间，转换为时间类型：
+		<input type="text" name ="date5" id ="dat5">
+		<input type="text" name ="date6" id ="dat6">
+		<button type="button" id="btn4">StamptoTime</button> <br>
 	</form>
 </body>
 </html>
