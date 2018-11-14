@@ -185,6 +185,133 @@
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <insert id="insertRecordReturnID" parameterType="com.qaii.domain.Cooperation" useGeneratedKeys="true" keyColumn="id" keyProperty="id"></insert>
-  <delete id="deleteByPrimaryKeys" parameterType="java.lang.Integer"></delete>
+  <insert id="insertRecordReturnID" parameterType="com.qaii.domain.Cooperation" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+  	insert into industry_cooperation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="unitName != null">
+        unit_name,
+      </if>
+      <if test="cooperationName != null">
+        cooperation_name,
+      </if>
+      <if test="protocolName != null">
+        protocol_name,
+      </if>
+      <if test="signTime != null">
+        sign_time,
+      </if>
+      <if test="cooperationContent != null">
+        cooperation_content,
+      </if>
+      <if test="fid != null">
+        fid,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one,
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two,
+      </if>
+      <if test="alternativeThree != null">
+        alternative_three,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="unitName != null">
+        #{unitName,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperationName != null">
+        #{cooperationName,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolName != null">
+        #{protocolName,jdbcType=VARCHAR},
+      </if>
+      <if test="signTime != null">
+        #{signTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cooperationContent != null">
+        #{cooperationContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fid != null">
+        #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThree != null">
+        #{alternativeThree,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <delete id="deleteByPrimaryKeys" parameterType="java.lang.Integer">
+  	delete from industry_cooperation
+    where id in
+    <foreach item="id" collection="array" open="(" separator="," close=")">
+      #{id,jdbcType=INTEGER}
+    </foreach>
+  </delete>
+  <select id="listRecords" resultMap="BaseResultMap">
+	SELECT * FROM industry_cooperation
+  </select>
+  <resultMap id="CustomMap" type="com.qaii.domain.Cooperation">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="unit_name" jdbcType="VARCHAR" property="unitName" />
+    <result column="cooperation_name" jdbcType="VARCHAR" property="cooperationName" />
+    <result column="protocol_name" jdbcType="VARCHAR" property="protocolName" />
+    <result column="sign_time" jdbcType="TIMESTAMP" property="signTime" />
+    <result column="cooperation_content" jdbcType="VARCHAR" property="cooperationContent" />
+    <result column="fid" jdbcType="INTEGER" property="fid" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="alternative_one" jdbcType="VARCHAR" property="alternativeOne" />
+    <result column="alternative_two" jdbcType="VARCHAR" property="alternativeTwo" />
+    <result column="alternative_three" jdbcType="VARCHAR" property="alternativeThree" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.CooperationFile">
+    	<id column="id" jdbcType="INTEGER" property="fid" />
+	    <id column="file_name" jdbcType="VARCHAR" property="fileName" />
+	    <id column="file_style" jdbcType="VARCHAR" property="fileStyle" />
+	    <id column="incubator_id" jdbcType="INTEGER" property="incubatorId" />
+	    <id column="file_path" jdbcType="VARCHAR" property="filePath" />
+	    <id column="file_description" jdbcType="VARCHAR" property="fileDescription" />
+	    <id column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+	    <id column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    </collection>
+  </resultMap>
+  <select id="getRecord" resultMap="CustomMap" parameterType="java.lang.Integer">
+  	SELECT a.*,b.id AS fid,b.file_name,b.file_style,b.file_description,b.file_path
+    FROM
+    industry_cooperation AS a LEFT JOIN industry_cooperationfile AS b
+    ON
+    a.id = b.incubator_id
+    WHERE
+    a.id = #{id,jdbcType=INTEGER}
+  </select>
 </mapper>
