@@ -37,95 +37,95 @@
 	  	<h1>基本信息</h1>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">企业名称</label>
+			    <label class="layui-form-label">企业名称&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="companyName" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" lay-verify="required" name="companyName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
 	    <div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">统一社会信用代码</label>
+			    <label class="layui-form-label" style="width:125px;">统一社会信用代码&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="creditCode" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" lay-verify="required" name="creditCode" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">成立时间</label>
+			    <label class="layui-form-label">成立时间&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="establishTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+			      <input type="text" lay-verify="required" name="establishTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 			    </div>
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">公司类型</label>
+			    <label class="layui-form-label">公司类型&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="companyType" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" lay-verify="required" name="companyType" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">公司住所</label>
+			    <label class="layui-form-label">公司住所&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="companyLocation" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" lay-verify="required" name="companyLocation" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">法定代表人</label>
+			    <label class="layui-form-label">法定代表人&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="legalRepresentative" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" lay-verify="required" name="legalRepresentative" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">注册资本</label>
+			    <label class="layui-form-label">注册资本&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="registeredCapital" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" lay-verify="required" name="registeredCapital" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
 		<div class="layui-col-xs12 layui-col-md12">
 			 <div class="layui-form-item">
-			    <label class="site-demo-button layui-form-label">经营范围</label>
+			    <label class="site-demo-button layui-form-label">经营范围&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			       <textarea class="layui-textarea" name="businessScope" lay-verify="content" id="LAY_demo_editor"></textarea>
+			       <textarea class="layui-textarea" lay-verify="required" name="businessScope" lay-verify="content" id="LAY_demo_editor"></textarea>
 			    </div>
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">所属孵化器</label>
+			    <label class="layui-form-label">所属孵化器&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="incubatorName" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" lay-verify="required" name="incubatorName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">入孵时间</label>
+			    <label class="layui-form-label">入孵时间&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="hatchingTime" lay-verify="title" autocomplete="off" class="layui-input" id="test2">
+			      <input type="text" lay-verify="required" name="hatchingTime" lay-verify="title" autocomplete="off" class="layui-input" id="test2">
 			    </div>
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">有限期</label>
+			    <label class="layui-form-label">有限期&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="limitedPeriod" lay-verify="title" autocomplete="off" class="layui-input" id="test3">
+			      <input type="text" lay-verify="required" name="limitedPeriod" lay-verify="title" autocomplete="off" class="layui-input" id="test3">
 			    </div>
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
 			<div class="layui-form-item itemadd">
-				<label class="layui-form-label">上传营业执照</label>
+				<label class="layui-form-label">上传营业执照&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
 					  <button type="button" class="layui-btn layui-btn-normal" id="test10">选择文件</button>

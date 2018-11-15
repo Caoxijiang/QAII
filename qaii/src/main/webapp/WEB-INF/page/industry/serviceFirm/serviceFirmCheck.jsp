@@ -159,16 +159,42 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 	upload = layui.upload,
     table = layui.table;
 //表单初始赋值
-  /*back 表单初始赋值，根据接口修改相应的name值*/
-  form.val('example', {
-    "title": "致铭科技有限公司" //
-    ,"content": "123456"
-    ,"isThousandSailEnterprise": "1" //“千帆计划”入库企业
-    ,"isBillionEnterprise": "1" //是否入选青岛市科技型企业培育“百千万”工程
-    ,"isHighTechnologyEnterprise": "1" //是否高新技术企业
-    ,"isTechnologyEnterprise": "1" //是否科技型中小企业
-    ,"desc": "sfgsdfg"
-  })
+  var id=${param.userId};
+  if(id!=null){
+		$.post({
+			url:"showGovrewardDetails.do",
+			data:{
+				id:id
+			},
+			success:function(data){
+				if(data.data!=null){
+					let awardInfo=data.data;
+					//表单初始赋值 从表单中提取数据
+					  form.val('example', {
+						"patDept":awardInfo.patDept,
+						"rewardApplytime":awardInfo.rewardApplytime,
+						"rewardSource":awardInfo.rewardSource,
+						"rewardLevel":awardInfo.rewardLevel,
+						"rewardName":awardInfo.rewardName,
+						"rewardProjectname":awardInfo.rewardProjectname,
+						"rewardDutyunit":awardInfo.rewardDutyunit,
+						"rewardCooperationunit":awardInfo.rewardCooperationunit,
+						"rewardManagedepart":awardInfo.rewardManagedepart,
+						"rewardApplydepart":awardInfo.rewardApplydepart,
+						"rewardAssumedepart":awardInfo.rewardAssumedepart,
+						"rewardAward":awardInfo.rewardAward,
+						"rewardAwardtime":awardInfo.rewardAwardtime,
+						"rewardAwardnum":awardInfo.rewardAwardnum,
+						"rewardFundtime":awardInfo.rewardFundtime   
+					  })
+				}else{
+					alert("查看详情失败")
+				}
+			}
+		})
+  }else{
+	   alert("请刷新页面");
+  }
 });
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>
