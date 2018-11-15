@@ -39,7 +39,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">企业名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" value="">
 			    </div>
 			  </div>
 		</div>
@@ -47,7 +47,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">统一社会信用代码</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" value="">
 			    </div>
 			  </div>
 		</div>
@@ -55,7 +55,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">成立时间</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test1" value="">
 			    </div>
 			  </div>
 		</div>
@@ -63,7 +63,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">公司类型</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" value="">
 			    </div>
 			  </div>
 		</div>
@@ -71,7 +71,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">公司住所</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" value="">
 			    </div>
 			  </div>
 		</div>
@@ -79,7 +79,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">法定代表人</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" value="">
 			    </div>
 			  </div>
 		</div>
@@ -87,7 +87,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">注册资本</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" value="">
 			    </div>
 			  </div>
 		</div>
