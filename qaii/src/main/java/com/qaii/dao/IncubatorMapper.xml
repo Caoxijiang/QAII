@@ -15,7 +15,7 @@
     <result column="incubator_name" jdbcType="VARCHAR" property="incubatorName" />
     <result column="hatching_time" jdbcType="DATE" property="hatchingTime" />
     <result column="business_lisence" jdbcType="VARCHAR" property="businessLisence" />
-    <result column="change" jdbcType="VARCHAR" property="change" />
+    <result column="changes" jdbcType="VARCHAR" property="changes" />
     <result column="limited_period" jdbcType="VARCHAR" property="limitedPeriod" />
     <result column="is_thousand_sail_enterprise" jdbcType="TINYINT" property="isThousandSailEnterprise" />
     <result column="is_high_technology_enterprise" jdbcType="TINYINT" property="isHighTechnologyEnterprise" />
@@ -35,7 +35,7 @@
   <sql id="Base_Column_List">
     id, pid, company_name, credit_code, establish_time, company_type, company_location, 
     legal_representative, registered_capital, business_scope, incubator_name, hatching_time, 
-    business_lisence, change, limited_period, is_thousand_sail_enterprise, is_high_technology_enterprise, 
+    business_lisence, changes, limited_period, is_thousand_sail_enterprise, is_high_technology_enterprise, 
     is_technology_enterprise, is_billion_enterprise, certificate_time, certificate_code, 
     annex_id, incoming_registration_code, remark, alternative_one, alternative_two, alternative_three, 
     gmt_create, gmt_modified
@@ -51,22 +51,25 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.qaii.domain.Incubator">
-    insert into industry_incubator (id, pid, company_name, 
+   	<selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+    	SELECT LAST_INSERT_ID()
+  </selectKey>
+      insert into industry_incubator (id, pid, company_name, 
       credit_code, establish_time, company_type, 
       company_location, legal_representative, registered_capital, 
       business_scope, incubator_name, hatching_time, 
-      business_lisence, change, limited_period, 
+      business_lisence, changes, limited_period, 
       is_thousand_sail_enterprise, is_high_technology_enterprise, 
       is_technology_enterprise, is_billion_enterprise, 
       certificate_time, certificate_code, annex_id, 
       incoming_registration_code, remark, alternative_one, 
       alternative_two, alternative_three, gmt_create, 
       gmt_modified)
-    values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{companyName,jdbcType=VARCHAR}, 
+      values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{companyName,jdbcType=VARCHAR}, 
       #{creditCode,jdbcType=VARCHAR}, #{establishTime,jdbcType=DATE}, #{companyType,jdbcType=VARCHAR}, 
       #{companyLocation,jdbcType=VARCHAR}, #{legalRepresentative,jdbcType=VARCHAR}, #{registeredCapital,jdbcType=VARCHAR}, 
       #{businessScope,jdbcType=VARCHAR}, #{incubatorName,jdbcType=VARCHAR}, #{hatchingTime,jdbcType=DATE}, 
-      #{businessLisence,jdbcType=VARCHAR}, #{change,jdbcType=VARCHAR}, #{limitedPeriod,jdbcType=VARCHAR}, 
+      #{businessLisence,jdbcType=VARCHAR}, #{changes,jdbcType=VARCHAR}, #{limitedPeriod,jdbcType=VARCHAR}, 
       #{isThousandSailEnterprise,jdbcType=TINYINT}, #{isHighTechnologyEnterprise,jdbcType=TINYINT}, 
       #{isTechnologyEnterprise,jdbcType=TINYINT}, #{isBillionEnterprise,jdbcType=TINYINT}, 
       #{certificateTime,jdbcType=DATE}, #{certificateCode,jdbcType=VARCHAR}, #{annexId,jdbcType=INTEGER}, 
@@ -359,7 +362,7 @@
       incubator_name = #{incubatorName,jdbcType=VARCHAR},
       hatching_time = #{hatchingTime,jdbcType=DATE},
       business_lisence = #{businessLisence,jdbcType=VARCHAR},
-      change = #{change,jdbcType=VARCHAR},
+      changes = #{changes,jdbcType=VARCHAR},
       limited_period = #{limitedPeriod,jdbcType=VARCHAR},
       is_thousand_sail_enterprise = #{isThousandSailEnterprise,jdbcType=TINYINT},
       is_high_technology_enterprise = #{isHighTechnologyEnterprise,jdbcType=TINYINT},

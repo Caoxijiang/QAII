@@ -2,6 +2,8 @@ package com.qaii.dao;
 
 import com.qaii.domain.AwardPersonal;
 
+import java.util.List;
+
 public interface AwardPersonalMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,12 @@ public interface AwardPersonalMapper {
     int updateByPrimaryKeySelective(AwardPersonal record);
 
     int updateByPrimaryKey(AwardPersonal record);
+
+    int insertRecordReturnID(AwardPersonal record);
+
+    int deleteByPrimaryKeys(Integer[] id);
+
+    List<AwardPersonal> listRecords();
+
+    AwardPersonal getRecord(Integer id);
 }

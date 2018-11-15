@@ -9,6 +9,9 @@
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding> 
+		<!-- 编译时的编码 --> 
+	<maven.compiler.encoding>UTF-8</maven.compiler.encoding> 
     <!-- spring版本号 -->  
   	<spring.version>3.2.4.RELEASE</spring.version>  
   	<org.aspectj.version>1.7.3</org.aspectj.version>
