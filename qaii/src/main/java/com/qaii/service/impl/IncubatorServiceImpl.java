@@ -1,0 +1,23 @@
+package com.qaii.service.impl;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.qaii.dao.IncubatorMapper;
+import com.qaii.domain.Incubator;
+import com.qaii.service.IncubatorService;
+
+@Service("incubatorService")
+public class IncubatorServiceImpl implements IncubatorService {
+	@Resource
+	private IncubatorMapper incubatorMapper;
+
+	@Override
+	public int insert(Incubator incubator) {
+		
+		return incubatorMapper.insert(incubator);
+	}
+	
+	
+}
