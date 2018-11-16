@@ -46,6 +46,19 @@
     from industry_incubator
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectestablishtime" resultType="java.lang.String">
+    select
+    establish_time
+    from industry_incubator
+  </select>
+
+  <select id="selectCountNums" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select
+    count(*)
+    from industry_incubator where establish_time =#{establishtime,jdbcType=VARCHAR}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from industry_incubator
     where id = #{id,jdbcType=INTEGER}

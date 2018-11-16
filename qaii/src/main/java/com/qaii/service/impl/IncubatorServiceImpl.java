@@ -8,6 +8,8 @@ import com.qaii.dao.IncubatorMapper;
 import com.qaii.domain.Incubator;
 import com.qaii.service.IncubatorService;
 
+import java.util.List;
+
 @Service("incubatorService")
 public class IncubatorServiceImpl implements IncubatorService {
 	@Resource
@@ -18,6 +20,14 @@ public class IncubatorServiceImpl implements IncubatorService {
 		
 		return incubatorMapper.insert(incubator);
 	}
-	
-	
+
+	@Override
+	public List<String> selectestablishtime() {
+		return incubatorMapper.selectestablishtime();
+	}
+
+	@Override
+	public int selectCountNums(String establishtime) {
+		return incubatorMapper.selectCountNums(establishtime);
+	}
 }
