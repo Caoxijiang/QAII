@@ -20,6 +20,8 @@
     <!-- log4j日志文件管理包版本 -->
     <slf4j.version>1.7.12</slf4j.version>
     <log4j.version>1.2.17</log4j.version>
+      <jackson.version>1.9.13</jackson.version>
+      <jackson.core.version>2.4.2</jackson.core.version>
   </properties>
  
   <dependencies>
@@ -220,6 +222,23 @@
                    	<artifactId>poi-ooxml</artifactId>
                    	<version>3.14</version>
                    </dependency>
+      <!-- 用于解决后台向前台传的值是时间戳的问题 -->
+      <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-mapper-asl</artifactId>
+          <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+          <version>${jackson.core.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>${jackson.core.version}</version>
+      </dependency>
+
   </dependencies>
   <build>
   	<plugins>
@@ -250,14 +269,13 @@
     	</plugin>
     </plugins>
     <finalName>QAII</finalName>
-  <resources>    
-    <resource>  
-		<directory>${basedir}/src/main/java</directory>                
-		<includes>  
-			<include>**/*.xml</include>                  
-		</includes>			              
-		  </resource>  
-	  </resources>  
+      <resources>
+          <resource>
+              <directory>${basedir}/src/main/java</directory>
+              <includes>
+                  <include>**/*.xml</include>
+              </includes>
+          </resource>
+      </resources>
   </build>
-
 </project>
