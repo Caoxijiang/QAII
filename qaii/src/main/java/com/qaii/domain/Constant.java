@@ -9,4 +9,8 @@ public class Constant {
     public final static String INDUSTRY_INSERT_SUCCESS="page/science/inform/edit-succesdsci";
 
     public final static String INDUSTRY_INSERT_FAILD="page/science/inform/edit-faildsci";
+
+    public final static byte BYTE_TRUE = 1;
+
+    public final static byte BYTE_FALSE = 0;
 }
