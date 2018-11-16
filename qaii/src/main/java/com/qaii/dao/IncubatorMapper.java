@@ -1,5 +1,7 @@
 package com.qaii.dao;
 
+import java.util.List;
+
 import com.qaii.domain.Incubator;
 
 public interface IncubatorMapper {
@@ -14,4 +16,6 @@ public interface IncubatorMapper {
     int updateByPrimaryKeySelective(Incubator record);
 
     int updateByPrimaryKey(Incubator record);
+    
+    List<Incubator> selectAlllist();
 }

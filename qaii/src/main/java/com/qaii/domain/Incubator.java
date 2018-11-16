@@ -59,9 +59,37 @@ public class Incubator {
 
     private Date gmtCreate;
 
-    private Date gmtModified;
+    public String getChanges() {
+		return changes;
+	}
 
-    public Integer getId() {
+	public void setChanges(String changes) {
+		this.changes = changes;
+	}
+
+	private Date gmtModified;
+    
+    private String url;
+    
+    private IncubatorFile file;
+
+    public IncubatorFile getFile() {
+		return file;
+	}
+
+	public void setFile(IncubatorFile file) {
+		this.file = file;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public Integer getId() {
         return id;
     }
 

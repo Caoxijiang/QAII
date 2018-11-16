@@ -25,7 +25,7 @@
     select 
     <include refid="Base_Column_List" />
     from industry_stockequity
-    where id = #{id,jdbcType=INTEGER}
+    where incubator_id = #{incubatorId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from industry_stockequity
