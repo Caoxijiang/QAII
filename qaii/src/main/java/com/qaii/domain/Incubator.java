@@ -2,6 +2,8 @@ package com.qaii.domain;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Incubator {
     private Integer id;
 
@@ -10,7 +12,7 @@ public class Incubator {
     private String companyName;
 
     private String creditCode;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date establishTime;
 
     private String companyType;
@@ -24,7 +26,7 @@ public class Incubator {
     private String businessScope;
 
     private String incubatorName;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date hatchingTime;
 
     private String businessLisence;
@@ -40,7 +42,7 @@ public class Incubator {
     private Byte isTechnologyEnterprise;
 
     private Byte isBillionEnterprise;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date certificateTime;
 
     private String certificateCode;
@@ -56,7 +58,7 @@ public class Incubator {
     private String alternativeTwo;
 
     private String alternativeThree;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date gmtCreate;
 
     public String getChanges() {
@@ -69,7 +71,7 @@ public class Incubator {
 
 	private Date gmtModified;
     
-    private String url;
+    private String[] url;
     
     private IncubatorFile file;
 
@@ -81,11 +83,11 @@ public class Incubator {
 		this.file = file;
 	}
 
-	public String getUrl() {
+	public String[] getUrl() {
 		return url;
 	}
 
-	public void setUrl(String url) {
+	public void setUrl(String[] url) {
 		this.url = url;
 	}
 

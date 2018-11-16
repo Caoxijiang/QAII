@@ -59,6 +59,11 @@ public class IndustryController {
 	public String science(){
 		return "page/industry/industry";
 	}
+	//产业化处数据可视化界面
+	@RequestMapping("/indexIndustry.do")
+	public String indexIndustry(){
+		return "page/industry/indexIndustry";
+	}
 	//孵化企业界面
 	@RequestMapping("hatchmumber.do")
 	public ModelAndView hatchmumber(HttpServletRequest req) throws UnsupportedEncodingException{
@@ -69,22 +74,22 @@ public class IndustryController {
 		return new ModelAndView ("page/industry/hatch/hatchmumber","Info",result);
 	}
 	//孵化企业变更时间修改界面（修改界面之内）
-	@RequestMapping("hatchchangetime.do")
+	@RequestMapping("/hatchchangetime.do")
 	public String hatchchangetime(){
 		return "page/industry/hatch/hatchchangetime";
 	}
 	//孵化企业变更修改界面
-	@RequestMapping("hatchshare.do")
+	@RequestMapping("/hatchshare.do")
 	public String hatchshare(){
 		return "page/industry/hatch/hatchshare";
 	}
 	//孵化企业添加界面
-	@RequestMapping("hatchAdd.do")
+	@RequestMapping("/hatchAdd.do")
 	public String hatchAdd(){
 		return "page/industry/hatch/hatchAdd";
 	}
 	//孵化企业成员添加界面
-	@RequestMapping("hatch.do")
+	@RequestMapping("/hatch.do")
 	public String hatch(){
 		return "page/industry/hatch/hatch";	
 	}
@@ -108,42 +113,42 @@ public class IndustryController {
 		return new ModelAndView("page/industry/hatch/hatchEdit","Info",result);
 	}
 	//创新能力界面
-	@RequestMapping("innovate.do")
+	@RequestMapping("/innovate.do")
 	public String innovate(){
 		return "page/industry/innovate/innovate";
 	}
 	//院获奖情况界面
-	@RequestMapping("institute.do")
+	@RequestMapping("/institute.do")
 	public String institute(){
 		return "page/industry/honor/institute/institute";
 	}
 	//孵化企业获奖情况界面
-	@RequestMapping("incubate.do")
+	@RequestMapping("/incubate.do")
 	public String incubate(){
 		return "page/industry/honor/incubate/incubate";
 	}
 	//个人获奖界面
-	@RequestMapping("person.do")
+	@RequestMapping("/person.do")
 	public String person(){
 		return "page/industry/honor/person/person";
 	}
 	//服务企业管理界面
-	@RequestMapping("serviceFirm.do")
+	@RequestMapping("/serviceFirm.do")
 	public String serviceFirm(){
 		return "page/industry/serviceFirm/serviceFirm";
 	}
 	//服务企业管理添加界面
-	@RequestMapping("serviceFirmAdd.do")
+	@RequestMapping("/serviceFirmAdd.do")
 	public String serviceFirmAdd(){
 		return "page/industry/serviceFirm/serviceFirmAdd";
 	}
 	//服务企业管理查看详情界面
-	@RequestMapping("serviceFirmCheck.do")
+	@RequestMapping("/serviceFirmCheck.do")
 	public String serviceFirmCheck(){
 		return "page/industry/serviceFirm/serviceFirmCheck";
 	}
 	//服务企业管理修改界面
-	@RequestMapping("serviceFirmEdit.do")
+	@RequestMapping("/serviceFirmEdit.do")
 	public String serviceFirmEdit(){
 		return "page/industry/serviceFirm/serviceFirmEdit";
 	}
@@ -268,11 +273,6 @@ public class IndustryController {
 	@RequestMapping(value="selectIndusInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public Layui selectIndusInfo(HttpServletRequest request ) {
 		List<Incubator> incubator=incubatorService.selectAlllist();
-		for(Incubator in : incubator) {
-			in.getCertificateTime();
-			DateUtils.dateToOriStr(in.getCertificateTime());
-			System.out.println(DateUtils.dateToOriStr(in.getCertificateTime()));
-		}
 			int count =incubator.size();
 			if(incubator!=null) {
 				return Layui.data(count, incubator);
@@ -290,11 +290,17 @@ public class IndustryController {
 	public JsonResult selectIndusCheckInfo(HttpServletRequest req) throws UnsupportedEncodingException {
 			req.setCharacterEncoding("UTF-8");
 			Incubator incubator=new Incubator();
+			List<IncubatorFile> iFile=new ArrayList<>();
+			List<Object>list=new ArrayList<>();
 			Integer id=Integer.parseInt(req.getParameter("id"));
 			incubator= incubatorService.selectByPrimaryKey(id);
+			iFile=incubatorFileService.selectByPrimaryKey(id);
+			System.out.println(iFile.get(0).getFileName());
 			incubator2=incubator;
+			list.add(incubator);
+			list.add(iFile);
 			if(incubator!=null) {
-				return new JsonResult(incubator);
+				return new JsonResult(list);
 			}else {
 				return new JsonResult();
 			}
@@ -330,16 +336,26 @@ public class IndustryController {
 		Incubator newIncubator=new Incubator();
 		try {
 			IncubatorInfo(req, newIncubator);
+			
+			byte isTechnologyEnterprise = new Byte(req.getParameter("isTechnologyEnterprise"));
+			if (isTechnologyEnterprise == 0) {
+				newIncubator.setIsTechnologyEnterprise(isTechnologyEnterprise);
+			} else {
+				newIncubator.setIsTechnologyEnterprise(isTechnologyEnterprise);
+				newIncubator.setIncomingRegistrationCode(req.getParameter("incomingRegistrationCode"));
+			}
+			byte isHighTechnologyEnterprise = new Byte(req.getParameter("isHighTechnologyEnterprise"));
+			if (isHighTechnologyEnterprise == 0) {
+				newIncubator.setIsHighTechnologyEnterprise(isHighTechnologyEnterprise);
+			}else {
+				newIncubator.setIsHighTechnologyEnterprise(isHighTechnologyEnterprise);
+				newIncubator.setCertificateTime(CountDatetoNowDays.StrconversionData(req.getParameter("certificateTime")));
+				newIncubator.setCertificateCode(req.getParameter("certificateCode"));
+			}
+			
 			String isThousandSailEnterprise = req.getParameter("isThousandSailEnterprise");
 			newIncubator.setIsThousandSailEnterprise(new Byte(isThousandSailEnterprise));
 			newIncubator.setIsBillionEnterprise(new Byte(req.getParameter("isBillionEnterprise")));
-			byte isHighTechnologyEnterprise = new Byte(req.getParameter("isHighTechnologyEnterprise"));
-			newIncubator.setIsHighTechnologyEnterprise(isHighTechnologyEnterprise);
-			newIncubator.setCertificateTime(CountDatetoNowDays.StrconversionData(req.getParameter("certificateTime")));
-			newIncubator.setCertificateCode(req.getParameter("certificateCode"));
-			byte isTechnologyEnterprise = new Byte(req.getParameter("isTechnologyEnterprise"));
-			newIncubator.setIsTechnologyEnterprise(isTechnologyEnterprise);
-			newIncubator.setIncomingRegistrationCode(req.getParameter("incomingRegistrationCode"));
 		} catch (ParseException e) {
 			e.printStackTrace();
 			return new JsonResult("传入数据有误" + e);

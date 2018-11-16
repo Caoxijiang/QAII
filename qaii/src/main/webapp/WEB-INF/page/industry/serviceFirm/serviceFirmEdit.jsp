@@ -31,15 +31,17 @@
 	</button>		
 </div>
 <div class="layui-container addtop">
-  <form class="layui-form" method="post" lay-filter="example">
+  <form class="layui-form" action="updateMinistry.do" method="post" lay-filter="example" enctype="multipart/form-data">
   <!-- 基本信息 -->
 	  <div class="layui-row contern">
 	  	<h1>基本信息</h1>
+		  <input id="id" name="id" type="hidden">
+		  <input id="fid" name="fid" type="hidden">
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">服务企业名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="ministryName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -47,7 +49,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">服务企业性质</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="ministryProperty" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -55,7 +57,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label" style="width:160px;">服务企业联系人名称</label>
 			    <div class="layui-input-block" style="margin-left:180px;">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="contactPerson" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -63,7 +65,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">联系方式</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="contactMethod" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -71,7 +73,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">服务企业地址</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="ministryLocation" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -79,7 +81,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">服务时间</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+			      <input type="text" name="ministryTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 			    </div>
 			  </div>
 		</div>
@@ -87,7 +89,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">服务项目</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="ministryProject" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -98,7 +100,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">我院部门/公司</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="ownselfUnit" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -106,7 +108,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">联系人</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="ownselfContactPerson" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -114,7 +116,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">联系方式</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="ownselfContactMethod" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -135,7 +137,7 @@
 			 <div class="layui-form-item">
 			    <label class="site-demo-button layui-form-label">备注</label>
 			    <div class="layui-input-block">
-			       <textarea class="layui-textarea" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+			       <textarea class="layui-textarea" name="remark" lay-verify="content" id="LAY_demo_editor"></textarea>
 			    </div>
 			  </div>
 		</div>
@@ -177,16 +179,41 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
    }
  });
 //表单初始赋值
- /*back 表单初始赋值，根据接口修改相应的name值*/
- form.val('example', {
-   "title": "致铭科技有限公司" //
-   ,"content": "123456"
-   ,"isThousandSailEnterprise": "1" //“千帆计划”入库企业
-   ,"isBillionEnterprise": "1" //是否入选青岛市科技型企业培育“百千万”工程
-   ,"isHighTechnologyEnterprise": "1" //是否高新技术企业
-   ,"isTechnologyEnterprise": "1" //是否科技型中小企业
-   ,"desc": "sfgsdfg"
- })
+ var id=${param.userId};
+ if(id!=null){
+		$.post({
+			url:"getMinistry.do",
+			data:{
+				id:id
+			},
+			success:function(data){
+				if(data.data!=null){
+					let awardInfo=data.data;
+					//表单初始赋值 从表单中提取数据
+					  form.val('example', {
+                          "id":awardInfo.id,
+                          "ministryName":awardInfo.ministryName,
+                          "ministryProperty":awardInfo.ministryProperty,
+                          "contactPerson":awardInfo.contactPerson,
+                          "contactMethod":awardInfo.contactMethod,
+                          "ministryLocation":awardInfo.ministryLocation,
+                          "ministryTime":awardInfo.ministryTime,
+                          "ownselfContactPerson":awardInfo.ownselfContactPerson,
+                          "ministryProject":awardInfo.ministryProject,
+                          "ownselfUnit":awardInfo.ownselfUnit,
+                          "ownselfContactMethod":awardInfo.ownselfContactMethod,
+                          "remark":awardInfo.remark,
+                          "file0":awardInfo.listFile[0].fileName,
+						  "fid":awardInfo.listFile[0].id
+					  })
+				}else{
+					alert("查看详情失败")
+				}
+			}
+		})
+ }else{
+	   alert("请刷新页面");
+ }
 });
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>

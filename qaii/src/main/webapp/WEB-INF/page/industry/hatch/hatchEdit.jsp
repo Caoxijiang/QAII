@@ -359,7 +359,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 		  id:id
 	  },
 	  success:function(data){
-		  let Info=data.data;
+		  let Info=data.data[0];
 		  console.log(Info.isTechnologyEnterprise);
 		  if(Info!=null){
 			  form.val('example', {

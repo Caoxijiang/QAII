@@ -2,6 +2,8 @@ package com.qaii.domain;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class StockEquity {
     private Integer id;
 
@@ -10,7 +12,7 @@ public class StockEquity {
     private String contributionAmount;
 
     private String contributionProportion;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date contributionTime;
 
     private String shareholderPosition;
@@ -24,9 +26,9 @@ public class StockEquity {
     private String alternativeTwo;
 
     private String alternativeThreee;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date gmtCreate;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date gmtModified;
 
     public Integer getId() {

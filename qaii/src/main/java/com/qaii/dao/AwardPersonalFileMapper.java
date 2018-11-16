@@ -14,4 +14,6 @@ public interface AwardPersonalFileMapper {
     int updateByPrimaryKeySelective(AwardPersonalFile record);
 
     int updateByPrimaryKey(AwardPersonalFile record);
+
+    int deleteByParimaryKeys(Integer[] id);
 }
