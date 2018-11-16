@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
+	<script src="${basePath}/js/jquery.globalfunction.js"></script>
   <style>
     body{margin: 10px;}
     .layui-table-body {
@@ -62,11 +63,11 @@
 		<select class="search" id="switch">
 			<option value="all">全部</option>
 			<option value="copyPicture">作品名称</option>
-			<option value="copyCode">登记号</option>
-			<option value="copyAuthor">作者</option>
-			<option value="copyCopyrightperson">著作权人</option>
-			<option value="copyEndtime">创作完成日期</option>
-			<option value="copyPublishtime">首次发布日期</option>
+			<option value="contactPerson">登记号</option>
+			<option value="contactMethod">作者</option>
+			<option value="ministryLocation">著作权人</option>
+			<option value="ministryProject">创作完成日期</option>
+			<option value="ownselfUnit">首次发布日期</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -82,15 +83,15 @@
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 	<div class="int-inline"><input id="id"  type="checkbox" value="服务企业名称" checked="true"/><lable>服务企业名称</lable></div>
 	<div class="int-inline"><input id=copyPicture  type="checkbox" value="服务企业性质" checked="flase"/><lable>服务企业性质</lable></div>
-	<div class="int-inline"><input id="copyName"  type="checkbox" value="服务企业联系人名称" checked/><lable>服务企业联系人名称</lable></div>
-	<div class="int-inline"><input id="copyCode"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
-	<div class="int-inline"><input id="copyAuthor"  type="checkbox" value="服务企业地址" checked/><lable>服务企业地址</lable></div>
-	<div class="int-inline"><input id="copyCopyrightperson"  type="checkbox" value="服务时间" checked/><lable>服务时间</lable></div>
-	<div class="int-inline"><input id="copyAgency"  type="checkbox" value="服务项目" checked/><lable>服务项目</lable></div>
-	<div class="int-inline"><input id="copyEndtime"  type="checkbox" value="我院部门/公司" checked/><lable>我院部门/公司</lable></div>
-	<div class="int-inline"><input id="copyPublishtime"  type="checkbox" value="联系人" checked/><lable>联系人</lable></div>
-	<div class="int-inline"><input id="copyRegisttime"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
-	<div class="int-inline"><input id="copyCost"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
+	<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="服务企业联系人名称" checked/><lable>服务企业联系人名称</lable></div>
+	<div class="int-inline"><input id="contactPerson"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
+	<div class="int-inline"><input id="contactMethod"  type="checkbox" value="服务企业地址" checked/><lable>服务企业地址</lable></div>
+	<div class="int-inline"><input id="ministryLocation"  type="checkbox" value="服务时间" checked/><lable>服务时间</lable></div>
+	<div class="int-inline"><input id="ministryTime"  type="checkbox" value="服务项目" checked/><lable>服务项目</lable></div>
+	<div class="int-inline"><input id="ministryProject"  type="checkbox" value="我院部门/公司" checked/><lable>我院部门/公司</lable></div>
+	<div class="int-inline"><input id="ownselfUnit"  type="checkbox" value="联系人" checked/><lable>联系人</lable></div>
+	<div class="int-inline"><input id="ownselfContactPerson"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
+	<div class="int-inline"><input id="ownselfContactMethod"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -125,22 +126,22 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'getAllCopyright.do', //数据接口
+    url: 'listMinistries.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
     	{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'copyPicture', title: '服务企业名称',fixed: 'left',width:150},
-		{field: 'copyName', title: '服务企业性质',width:150},
-		{field: 'copyCode', title: '服务企业联系人名称',sort: true,width:120},
-		{field: 'copyAuthor', title: '联系方式',sort: true,width:100},
-		{field: 'copyCopyrightperson', title: '服务企业地址',sort: true,width:150},
-		{field: 'copyAgency', title: '服务时间',sort: true,width:150},
-		{field: 'copyEndtime', title: '服务项目',width:220},
-		{field: 'copyPublishtime', title: '我院部门/公司',sort: true,width:200},
-		{field: 'copyRegisttime', title: '联系人',sort: true,width:150},
-		{field: 'copyCost', title: '联系方式',sort: true,width:150},
-		{field: 'copyInvoiceper', title: '备注',sort: true,width:200},
+		{field: 'ministryName', title: '服务企业名称',fixed: 'left',width:150},
+		{field: 'ministryProperty', title: '服务企业性质',width:150},
+		{field: 'contactPerson', title: '服务企业联系人名称',sort: true,width:120},
+		{field: 'contactMethod', title: '联系方式',sort: true,width:100},
+		{field: 'ministryLocation', title: '服务企业地址',sort: true,width:150},
+		{field: 'ministryTime', title: '服务时间',sort: true,width:150},
+		{field: 'ministryProject', title: '服务项目',width:220},
+		{field: 'ownselfUnit', title: '我院部门/公司',sort: true,width:200},
+		{field: 'ownselfContactPerson', title: '联系人',sort: true,width:150},
+		{field: 'ownselfContactMethod', title: '联系方式',sort: true,width:150},
+		{field: 'remark', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
     ]], 
 	  //表格数据
@@ -228,15 +229,15 @@ layui.use('table', function(obj){
   			 }
   			if(check=="copyPicture"){
   				alert("搜索'作品名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyCode"){
+  			}else if(check=="contactPerson"){
   				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyAuthor"){
+  			}else if(check=="contactMethod"){
   				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyCopyrightperson"){
+  			}else if(check=="ministryLocation"){
   				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyEndtime"){
+  			}else if(check=="ministryProject"){
   				alert("搜索'创作完成日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyPublishtime"){
+  			}else if(check=="ownselfUnit"){
   				alert("搜索'首次发布日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
@@ -271,7 +272,7 @@ layui.use('table', function(obj){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"copyrightDeleted.do",
+          	url:"deleteMinistry.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -284,7 +285,7 @@ layui.use('table', function(obj){
           			layer.alert("删除失败")
           		}
           	}
-          }) 
+          })
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
         //向服务端发送删除指令
@@ -307,7 +308,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"copyrightDeleted.do",
+		  	url:"deleteMinistry.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},

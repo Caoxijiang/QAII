@@ -31,7 +31,7 @@
 	</button>		
 </div>
 <div class="layui-container addtop">
-  <form class="layui-form" method="post" enctype="multipart/form-data">
+  <form class="layui-form" action="insertMinistry.do" method="post" enctype="multipart/form-data">
   <!-- 基本信息 -->
 	  <div class="layui-row contern">
 	  	<h1>基本信息</h1>

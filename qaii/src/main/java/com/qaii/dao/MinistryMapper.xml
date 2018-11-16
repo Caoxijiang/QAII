@@ -21,6 +21,36 @@
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
   </resultMap>
+  <resultMap id="CustomMap" type="com.qaii.domain.Ministry">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ministry_name" jdbcType="VARCHAR" property="ministryName" />
+    <result column="ministry_property" jdbcType="VARCHAR" property="ministryProperty" />
+    <result column="contact_person" jdbcType="VARCHAR" property="contactPerson" />
+    <result column="contact_method" jdbcType="VARCHAR" property="contactMethod" />
+    <result column="ministry_location" jdbcType="VARCHAR" property="ministryLocation" />
+    <result column="ministry_time" jdbcType="DATE" property="ministryTime" />
+    <result column="ministry_project" jdbcType="VARCHAR" property="ministryProject" />
+    <result column="ownself_unit" jdbcType="VARCHAR" property="ownselfUnit" />
+    <result column="ownself_contact_person" jdbcType="VARCHAR" property="ownselfContactPerson" />
+    <result column="ownself_contact_method" jdbcType="VARCHAR" property="ownselfContactMethod" />
+    <result column="fid" jdbcType="INTEGER" property="fid" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="alternative_one" jdbcType="VARCHAR" property="alternativeOne" />
+    <result column="alternative_two" jdbcType="VARCHAR" property="alternativeTwo" />
+    <result column="alternative_three" jdbcType="VARCHAR" property="alternativeThree" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.MinistryFile">
+      <id column="bid" jdbcType="INTEGER" property="id" />
+      <id column="file_name" jdbcType="VARCHAR" property="fileName" />
+      <id column="file_style" jdbcType="VARCHAR" property="fileStyle" />
+      <id column="incubator_id" jdbcType="INTEGER" property="incubatorId" />
+      <id column="file_path" jdbcType="VARCHAR" property="filePath" />
+      <id column="file_description" jdbcType="VARCHAR" property="fileDescription" />
+      <id column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+      <id column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    </collection>
+  </resultMap>
   <sql id="Base_Column_List">
     id, ministry_name, ministry_property, contact_person, contact_method, ministry_location, 
     ministry_time, ministry_project, ownself_unit, ownself_contact_person, ownself_contact_method, 
@@ -370,38 +400,8 @@
   <select id="listRecords" resultMap="BaseResultMap">
     SELECT * FROM industry_ministry
   </select>
-  <resultMap id="CustomMap" type="com.qaii.domain.Ministry">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="ministry_name" jdbcType="VARCHAR" property="ministryName" />
-    <result column="ministry_property" jdbcType="VARCHAR" property="ministryProperty" />
-    <result column="contact_person" jdbcType="VARCHAR" property="contactPerson" />
-    <result column="contact_method" jdbcType="VARCHAR" property="contactMethod" />
-    <result column="ministry_location" jdbcType="VARCHAR" property="ministryLocation" />
-    <result column="ministry_time" jdbcType="DATE" property="ministryTime" />
-    <result column="ministry_project" jdbcType="VARCHAR" property="ministryProject" />
-    <result column="ownself_unit" jdbcType="VARCHAR" property="ownselfUnit" />
-    <result column="ownself_contact_person" jdbcType="VARCHAR" property="ownselfContactPerson" />
-    <result column="ownself_contact_method" jdbcType="VARCHAR" property="ownselfContactMethod" />
-    <result column="fid" jdbcType="INTEGER" property="fid" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="alternative_one" jdbcType="VARCHAR" property="alternativeOne" />
-    <result column="alternative_two" jdbcType="VARCHAR" property="alternativeTwo" />
-    <result column="alternative_three" jdbcType="VARCHAR" property="alternativeThree" />
-    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
-    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-    <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.MinistryFile">
-      <id column="id" jdbcType="INTEGER" property="id" />
-      <id column="file_name" jdbcType="VARCHAR" property="fileName" />
-      <id column="file_style" jdbcType="VARCHAR" property="fileStyle" />
-      <id column="incubator_id" jdbcType="INTEGER" property="incubatorId" />
-      <id column="file_path" jdbcType="VARCHAR" property="filePath" />
-      <id column="file_description" jdbcType="VARCHAR" property="fileDescription" />
-      <id column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
-      <id column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-    </collection>
-  </resultMap>
   <select id="getRecord" resultMap="CustomMap" parameterType="java.lang.Integer">
-    SELECT a.*,b.id AS fid,b.file_name,b.file_style,b.file_description,b.file_path
+    SELECT a.*,b.id AS bid,b.file_name,b.file_style,b.file_description,b.file_path
     FROM
     industry_ministry AS a LEFT JOIN industry_ministryfile AS b
     ON
