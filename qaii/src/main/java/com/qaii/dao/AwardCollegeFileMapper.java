@@ -15,4 +15,6 @@ public interface AwardCollegeFileMapper {
 
     int updateByPrimaryKey(AwardCollegeFile record);
 
+    int deleteByParimaryKeys(Integer[] id);
+
 }

@@ -14,4 +14,6 @@ public interface MinistryFileMapper {
     int updateByPrimaryKeySelective(MinistryFile record);
 
     int updateByPrimaryKey(MinistryFile record);
+
+    int deleteByParimaryKeys(Integer[] id);
 }

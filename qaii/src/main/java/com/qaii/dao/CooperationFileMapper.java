@@ -14,4 +14,6 @@ public interface CooperationFileMapper {
     int updateByPrimaryKeySelective(CooperationFile record);
 
     int updateByPrimaryKey(CooperationFile record);
+
+    int deleteByParimaryKeys(Integer[] id);
 }

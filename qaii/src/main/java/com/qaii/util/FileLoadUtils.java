@@ -51,6 +51,34 @@ public class FileLoadUtils {
 		return  result;
 
 	}
+
+	//上传文件并返回新的文件名
+	public static List<String> moveFileAndReturnName(MultipartFile[] files, String path) throws IOException {
+		List<String> list = new ArrayList<>();
+		if (files != null && files.length < 0) {
+			return null;
+		}
+		for (int i = 0; i < files.length; i++) {
+			if(files[i].getSize()==0) {
+				list.add("null");
+				continue;
+			}
+			String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
+			String uuid = UUID.randomUUID().toString().replaceAll("-","");
+			String filename = uuid + type;
+			list.add(filename);
+			File destFile = new File(path + filename);
+			if (!destFile.getParentFile().exists()) {
+				destFile.getParentFile().mkdirs();
+			}
+			try {
+				files[i].transferTo(destFile);
+			} catch (IllegalStateException | IOException e) {
+				throw new IOException("file load err"+e);
+			}
+		}
+		return list;
+	}
 	
 	//删除文件
     public static void delFile(String path,String filename){
