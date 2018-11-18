@@ -33,6 +33,7 @@ public class industryDataOverviewController {
         //先从产业表里面查出服务时间，并对数据库中的服务时间进行判断重复，
         // 再根据同一服务时间时查询服务公司数量
         List<String> list = ministryService.listministrytime();
+
         for  ( int i= 0 ; i <  list.size() -1 ; i ++ )  {
             for  ( int j =  list.size()- 1 ; j >i; j -- )  {
                 if  (list.get(j).equals(list.get(i)))  {
@@ -41,7 +42,9 @@ public class industryDataOverviewController {
             }
         }
         for (String str :list){
-            result.put(str,ministryService.selectCountNums(str));
+            //这里只截取出年，按年份进行查询；
+            String FinnalStr=str.substring(0,4);
+            result.put(FinnalStr,ministryService.selectCountNums(FinnalStr));
         }
         return result;
     }
@@ -63,7 +66,8 @@ public class industryDataOverviewController {
             }
         }
         for (String str :list){
-            result.put(str,incubatorService.selectCountNums(str));
+            String FinnalStr=str.substring(0,4);
+            result.put(str,incubatorService.selectCountNums(FinnalStr));
         }
         return result;
     }

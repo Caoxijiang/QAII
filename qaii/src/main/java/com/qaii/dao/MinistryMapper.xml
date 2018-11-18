@@ -67,7 +67,7 @@
     select
     count(*)
     from industry_ministry
-    where ministry_time =#{ministrytime,jdbcType=VARCHAR}
+    where ministry_time like "%"#{ministrytime,jdbcType=VARCHAR}"%"
   </select>
 
   <select id="listministrytime"  resultType="java.lang.String">

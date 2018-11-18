@@ -29,22 +29,22 @@ public class MinistryServiceImpl implements MinistryService {
 
     @Override
     public int deleteByPrimaryKeys(Integer[] id) {
-        return 0;
+        return ministryMapper.deleteByPrimaryKeys(id);
     }
 
     @Override
     public int updateByPrimaryKey(Ministry record) {
-        return 0;
+        return ministryMapper.updateByPrimaryKey(record);
     }
 
     @Override
     public List<Ministry> listRecords() {
-        return null;
+        return ministryMapper.listRecords();
     }
 
     @Override
     public Ministry getRecord(Integer id) {
-        return null;
+        return ministryMapper.getRecord(id);
     }
 
     @Override

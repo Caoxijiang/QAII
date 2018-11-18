@@ -17,22 +17,22 @@ public class AwardPersonalServiceImpl implements AwardPersonalService {
     private AwardPersonalMapper awardPersonalMapper;
     @Override
     public int insertRecordReturnID(AwardPersonal record) {
-        return 0;
+        return awardPersonalMapper.insertRecordReturnID(record);
     }
 
     @Override
     public int insertRecord(AwardPersonal record) {
-        return 0;
+        return awardPersonalMapper.insert(record);
     }
 
     @Override
     public int deleteByPrimaryKeys(Integer[] id) {
-        return 0;
+        return awardPersonalMapper.deleteByPrimaryKeys(id);
     }
 
     @Override
     public int updateByPrimaryKey(AwardPersonal record) {
-        return 0;
+        return awardPersonalMapper.updateByPrimaryKey(record);
     }
 
     @Override

@@ -23,7 +23,7 @@ public class AwardCollegeServiceImpl implements AwardCollegeService {
 
     @Override
     public int insertRecord(AwardCollege record) {
-        return awardCollegeMapper.insertSelective(record);
+        return awardCollegeMapper.insert(record);
     }
 
     @Override

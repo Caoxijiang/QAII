@@ -22,7 +22,7 @@ public class AwardIncubateServiceImpl implements AwardIncubateService {
 
     @Override
     public int insertRecord(AwardIncubate record) {
-        return awardIncubateMapper.insertSelective(record);
+        return awardIncubateMapper.insert(record);
     }
 
     @Override
