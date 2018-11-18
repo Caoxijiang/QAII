@@ -67,7 +67,7 @@ public class industryDataOverviewController {
         }
         for (String str :list){
             String FinnalStr=str.substring(0,4);
-            result.put(str,incubatorService.selectCountNums(FinnalStr));
+            result.put(FinnalStr,incubatorService.selectCountNums(FinnalStr));
         }
         return result;
     }
