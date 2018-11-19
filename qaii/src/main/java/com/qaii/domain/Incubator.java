@@ -2,6 +2,8 @@ package com.qaii.domain;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Incubator {
     private Integer id;
 
@@ -10,7 +12,7 @@ public class Incubator {
     private String companyName;
 
     private String creditCode;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date establishTime;
 
     private String companyType;
@@ -24,7 +26,7 @@ public class Incubator {
     private String businessScope;
 
     private String incubatorName;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date hatchingTime;
 
     private String businessLisence;
@@ -40,7 +42,7 @@ public class Incubator {
     private Byte isTechnologyEnterprise;
 
     private Byte isBillionEnterprise;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date certificateTime;
 
     private String certificateCode;
@@ -56,12 +58,40 @@ public class Incubator {
     private String alternativeTwo;
 
     private String alternativeThree;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date gmtCreate;
 
-    private Date gmtModified;
+    public String getChanges() {
+		return changes;
+	}
 
-    public Integer getId() {
+	public void setChanges(String changes) {
+		this.changes = changes;
+	}
+
+	private Date gmtModified;
+    
+    private String[] url;
+    
+    private IncubatorFile file;
+
+    public IncubatorFile getFile() {
+		return file;
+	}
+
+	public void setFile(IncubatorFile file) {
+		this.file = file;
+	}
+
+	public String[] getUrl() {
+		return url;
+	}
+
+	public void setUrl(String[] url) {
+		this.url = url;
+	}
+
+	public Integer getId() {
         return id;
     }
 

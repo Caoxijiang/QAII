@@ -380,7 +380,7 @@ public class DateUtils extends org.apache.commons.lang.time.DateUtils{
 	 */
 	public static String dateToOriStr(Date date) {
 		if (date == null) {
-			return "1900-01-01";
+			return null;
 		}
 		java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat(deaultDateFormat);
 		return dateFormat.format(date);

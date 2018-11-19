@@ -1,5 +1,7 @@
 package com.qaii.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -29,5 +31,15 @@ public class IncubatorServiceImpl implements IncubatorService {
 	@Override
 	public int selectCountNums(String establishtime) {
 		return incubatorMapper.selectCountNums(establishtime);
+	}
+	public Incubator selectByPrimaryKey(Integer id) {
+		// TODO Auto-generated method stub
+		return incubatorMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public List<Incubator> selectAlllist() {
+		// TODO Auto-generated method stub
+		return incubatorMapper.selectAlllist();
 	}
 }
