@@ -17,29 +17,30 @@
 </head>
 <body id="bodyHei">
 <div class="layui-container" style="margin-top:15px;">
-  <form class="layui-form" action="">
+  <form class="layui-form" action="addShareholderInfo.do" method="post">
   <div class="layui-form-item">
     <label class="layui-form-label wid60">股东名称</label>
     <div class="layui-input-block wid80">
-      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入股东名称" class="layui-input">
+      <input type="text" name="shareholderName" lay-verify="title" autocomplete="off" placeholder="请输入股东名称" class="layui-input">
+      <input type="hidden" name="id" value=${requestScope.Info[0]}>
     </div>
   </div>
 	<div class="layui-form-item">
 		<label class="layui-form-label wid60">出资比例</label>
 		<div class="layui-input-block wid80">
-			<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入出资比例" class="layui-input">
+			<input type="text" name="contributionProportion" lay-verify="title" autocomplete="off" placeholder="请输入出资比例" class="layui-input">
 		</div>
 	</div>
 	<div class="layui-form-item">
 		<label class="layui-form-label wid60">出资时间</label>
 		<div class="layui-input-block wid80">
-			<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入出资时间" class="layui-input" id="test1">
+			<input type="text" name="contributionTime" lay-verify="title" autocomplete="off" placeholder="请输入出资时间" class="layui-input" id="test1">
 		</div>
 	</div>
 	<div class="layui-form-item">
 		<label class="layui-form-label wid60">股东职务</label>
 		<div class="layui-input-block wid80">
-			<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入股东职务" class="layui-input">
+			<input type="text" name="shareholderPosition" lay-verify="title" autocomplete="off" placeholder="请输入股东职务" class="layui-input">
 		</div>
 	</div>
   <div class="layui-form-item">

@@ -46,7 +46,7 @@ $().ready(function(){
 		})
 	});
     $("#btn4").click(function(){
-        var a=$("#dat3").val();
+        var a=$("#dat5").val();
         $.ajax({
             type:"POST",
             url:"setdata6.do",

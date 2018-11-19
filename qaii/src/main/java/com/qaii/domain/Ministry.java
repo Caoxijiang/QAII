@@ -1,5 +1,7 @@
 package com.qaii.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class Ministry {
     private String contactMethod;
 
     private String ministryLocation;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date ministryTime;
 
     private String ministryProject;

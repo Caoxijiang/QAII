@@ -125,6 +125,16 @@ public class testCheckController {
 			){
 		return CountDatetoNowDays.StamptoDate(date);
 	}
+
+	//将时间字符串转为时间时间方法
+	@RequestMapping(value="setdata6.do",method=RequestMethod.POST)
+	@ResponseBody
+	public Date outDate(@RequestParam(value="date",required=false)String date
+	) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		System.out.println(sdf.format(CountDatetoNowDays.StringConvertToDate(date)));
+		return CountDatetoNowDays.StringConvertToDate(date);
+	}
 	
 	@RequestMapping("tsterr.do")
 	public void errorpage() throws CustomException {
@@ -151,81 +161,7 @@ public class testCheckController {
 		System.out.println(result);
 		return result;
 	} 
-	
-	
-	
-	
-//	// 資料上傳
-//	@ResponseBody
-//	@RequestMapping("/testupload.do")
-//	public Map<String, String> upload(@RequestParam("file") MultipartFile[] files, Processimg img,
-//			HttpServletRequest req) throws Exception {
-//		// System.out.println(request.getParameter("name"));
-//		Integer oid = Integer.parseInt(req.getParameter("oid"));
-//		Integer stepid = Integer.parseInt(req.getParameter("step"));
-//		String patName = req.getParameter("patName");
-//		System.out.println(files);
-//		Map<String, String> result = new HashMap<>();
-//		if (files != null && files.length < 0) {
-//			result.put("code", "1");
-//			result.put("msg", "文件为空");
-//		}
-//
-//		for (int i = 0; i < files.length; i++) {
-//			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
-//			// 取文件格式后缀名
-//			//String type = files[i].getOriginalFilename();
-//			 
-//			String uuid = UUID.randomUUID().toString().replaceAll("-","");
-//			 
-//			String filename = uuid + type;// 取当前时间戳作为文件名
-//
-//			System.out.println("文件名：" + filename);
-//			// String path = request.getSession().getServletContext().getRealPath("/upload/"
-//			// + filename);// 存放位置
-//			String path = "C:/File/img/" + patName + "/" + oid + "/" + stepid;
-//			String dbpath="img/"+patName + "/" + oid + "/" + stepid;
-//			System.out.println("++++++" + path);
-//			File destFile = new File(path + "/" + filename);
-//
-//			if (!destFile.getParentFile().exists()) {
-//				destFile.getParentFile().mkdirs();
-//			}
-//			try {
-//				// FileUtils.copyInputStreamToFile(files[i].getInputStream(), destFile);//
-//				// 复制临时文件到指定目录下
-//				files[i].transferTo(destFile);
-//				img.setSid(stepid);
-//				img.setOid(oid);
-//				img.setPath(dbpath.toString()+"/"+filename.toString());
-//				InsertProcessimg(img,result, destFile);
-//				result.put("code", "0");
-//				result.put("msg", "上传成功");
-//				result.put("url", destFile.getPath());
-//
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//				result.put("code", "1");
-//				result.put("msg", "上传失败");
-//			}
-//		}
-//
-//		return result;
-//
-//	}
-	
-	
-	
-//	private void InsertProcessimg(Processimg img, Map<String, String> result, File dest) {
-//		int row=processimgService.insert(img);
-//		if(row > 0) {
-//			result.put("code", "0");
-//			result.put("msg", "上传成功");
-//		}else {
-//			result.put("code", "1");
-//	    	result.put("msg", "上传失败");
-//		}
-//	}  
+
 	
 	
 	
