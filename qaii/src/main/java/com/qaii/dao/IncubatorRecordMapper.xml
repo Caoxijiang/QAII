@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.IncubatorRecordMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.IncubatorRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="list_name" jdbcType="VARCHAR" property="listName" />
+    <result column="old_name" jdbcType="VARCHAR" property="oldName" />
+    <result column="new_name" jdbcType="VARCHAR" property="newName" />
+    <result column="changed_time" jdbcType="DATE" property="changedTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, pid, list_name, old_name, new_name, changed_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from industry_incubatorrecord
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from industry_incubatorrecord
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.IncubatorRecord">
+    insert into industry_incubatorrecord (id, pid, list_name, 
+      old_name, new_name, changed_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{listName,jdbcType=VARCHAR}, 
+      #{oldName,jdbcType=VARCHAR}, #{newName,jdbcType=VARCHAR}, #{changedTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.IncubatorRecord">
+    insert into industry_incubatorrecord
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="listName != null">
+        list_name,
+      </if>
+      <if test="oldName != null">
+        old_name,
+      </if>
+      <if test="newName != null">
+        new_name,
+      </if>
+      <if test="changedTime != null">
+        changed_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="listName != null">
+        #{listName,jdbcType=VARCHAR},
+      </if>
+      <if test="oldName != null">
+        #{oldName,jdbcType=VARCHAR},
+      </if>
+      <if test="newName != null">
+        #{newName,jdbcType=VARCHAR},
+      </if>
+      <if test="changedTime != null">
+        #{changedTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.IncubatorRecord">
+    update industry_incubatorrecord
+    <set>
+      <if test="pid != null">
+        pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="listName != null">
+        list_name = #{listName,jdbcType=VARCHAR},
+      </if>
+      <if test="oldName != null">
+        old_name = #{oldName,jdbcType=VARCHAR},
+      </if>
+      <if test="newName != null">
+        new_name = #{newName,jdbcType=VARCHAR},
+      </if>
+      <if test="changedTime != null">
+        changed_time = #{changedTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.IncubatorRecord">
+    update industry_incubatorrecord
+    set pid = #{pid,jdbcType=INTEGER},
+      list_name = #{listName,jdbcType=VARCHAR},
+      old_name = #{oldName,jdbcType=VARCHAR},
+      new_name = #{newName,jdbcType=VARCHAR},
+      changed_time = #{changedTime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
