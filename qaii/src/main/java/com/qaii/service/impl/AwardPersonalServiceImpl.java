@@ -8,39 +8,40 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * Created by kunpeng on 2018/11/16 11:36
+ */
 @Service
 public class AwardPersonalServiceImpl implements AwardPersonalService {
-
     @Resource
-    private AwardPersonalMapper mapper;
-
+    private AwardPersonalMapper awardPersonalMapper;
     @Override
     public int insertRecordReturnID(AwardPersonal record) {
-        return mapper.insertRecordReturnID(record);
+        return awardPersonalMapper.insertRecordReturnID(record);
     }
 
     @Override
     public int insertRecord(AwardPersonal record) {
-        return mapper.insertSelective(record);
+        return awardPersonalMapper.insert(record);
     }
 
     @Override
     public int deleteByPrimaryKeys(Integer[] id) {
-        return mapper.deleteByPrimaryKeys(id);
+        return awardPersonalMapper.deleteByPrimaryKeys(id);
     }
 
     @Override
     public int updateByPrimaryKey(AwardPersonal record) {
-        return mapper.updateByPrimaryKeySelective(record);
+        return awardPersonalMapper.updateByPrimaryKey(record);
     }
 
     @Override
     public List<AwardPersonal> listRecords() {
-        return mapper.listRecords();
+        return awardPersonalMapper.listRecords();
     }
 
     @Override
     public AwardPersonal getRecord(Integer id) {
-        return mapper.getRecord(id);
+        return awardPersonalMapper.getRecord(id);
     }
 }

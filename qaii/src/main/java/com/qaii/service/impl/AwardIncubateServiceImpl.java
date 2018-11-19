@@ -8,40 +8,40 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * Created by kunpeng on 2018/11/16 11:27
+ */
 @Service
 public class AwardIncubateServiceImpl implements AwardIncubateService {
-
     @Resource
-    private AwardIncubateMapper mapper;
-
-
+    private AwardIncubateMapper awardIncubateMapper;
     @Override
     public int insertRecordReturnID(AwardIncubate record) {
-        return mapper.insertRecordReturnID(record);
+        return awardIncubateMapper.insertRecordReturnID(record);
     }
 
     @Override
     public int insertRecord(AwardIncubate record) {
-        return mapper.insertSelective(record);
+        return awardIncubateMapper.insert(record);
     }
 
     @Override
     public int deleteByPrimaryKeys(Integer[] id) {
-        return mapper.deleteByPrimaryKeys(id);
+        return awardIncubateMapper.deleteByPrimaryKeys(id);
     }
 
     @Override
     public int updateByPrimaryKey(AwardIncubate record) {
-        return mapper.updateByPrimaryKeySelective(record);
+        return awardIncubateMapper.updateByPrimaryKey(record);
     }
 
     @Override
     public List<AwardIncubate> listRecords() {
-        return mapper.listRecords();
+        return awardIncubateMapper.listRecords();
     }
 
     @Override
     public AwardIncubate getRecord(Integer id) {
-        return mapper.getRecord(id);
+        return awardIncubateMapper.getRecord(id);
     }
 }
