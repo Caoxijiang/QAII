@@ -2,6 +2,8 @@ package com.qaii.domain;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class IncubatorFile {
     private Integer id;
 
@@ -16,7 +18,7 @@ public class IncubatorFile {
     private String fileDescription;
 
     private Date gmtCreate;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date gmtModified;
 
     public Integer getId() {

@@ -62,6 +62,20 @@
     from industry_ministry
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectCountNums" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select
+    count(*)
+    from industry_ministry
+    where ministry_time like "%"#{ministrytime,jdbcType=VARCHAR}"%"
+  </select>
+
+  <select id="listministrytime"  resultType="java.lang.String">
+    select
+    ministry_time
+    from industry_ministry
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from industry_ministry
     where id = #{id,jdbcType=INTEGER}

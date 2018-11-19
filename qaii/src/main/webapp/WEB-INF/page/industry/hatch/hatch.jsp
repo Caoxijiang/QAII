@@ -129,26 +129,25 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'getAllCopyright.do', //数据接口
+    url:'selectIndusInfo.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
     	{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'copyPicture', title: '企业名称',fixed: 'left',width:150},
-		{field: 'copyCode', title: '统一社会信用代码',sort: true,width:250},
-		{field: 'copyAuthor', title: '成立时间',sort: true,width:150},
-		{field: 'copyCopyrightperson', title: '公司类型',sort: true,width:150},
-		{field: 'copyAgency', title: '公司住所',sort: true,width:150},
-		{field: 'copyEndtime', title: '法定代表人',width:220},
-		{field: 'copyPublishtime', title: '注册资本',sort: true,width:200},
-		{field: 'copyRegisttime', title: '经营范围',sort: true,width:150},
-		{field: 'copyCost', title: '股东出资及成员任职',sort: true,width:250},
-		{field: 'copyInvoiceper', title: '所属孵化器',sort: true,width:200},
-		{field: 'copyStatus', title: '入孵时间',sort: true,width:200},
-		{field: 'copyStatus', title: '有限期',sort: true,width:200},
-		{field: 'copyStatus', title: '“千帆计划”入库企业',sort: true,width:300},
-		{field: 'copyStatus', title: '高新技术企业',sort: true,width:200},
-		{field: 'copyStatus', title: '青岛市科技型企业培育“百千万”工程 ',sort: true,width:360},
+		{field: 'companyName', title: '企业名称',fixed: 'left',width:150},
+		{field: 'creditCode', title: '统一社会信用代码',sort: true,width:250},
+		{field: 'establishTime', title: '成立时间',sort: true,width:150},
+		{field: 'companyType', title: '公司类型',sort: true,width:150},
+		{field: 'companyLocation', title: '公司住所',sort: true,width:150},
+		{field: 'legalRepresentative', title: '法定代表人',width:220},
+		{field: 'registeredCapital', title: '注册资本',sort: true,width:200},
+		{field: 'businessScope', title: '经营范围',sort: true,width:150},
+		{field: 'incubatorName', title: '所属孵化器',sort: true,width:200},
+		{field: 'hatchingTime', title: '入孵时间',sort: true,width:200},
+		{field: 'limitedPeriod', title: '有限期',sort: true,width:200},
+		{field: 'isThousandSailEnterprise', title: '“千帆计划”入库企业',sort: true,width:300},
+		{field: 'isHighTechnologyEnterprise', title: '高新技术企业',sort: true,width:200},
+		{field: 'isBillionEnterprise', title: '青岛市科技型企业培育“百千万”工程 ',sort: true,width:360},
 		{field: 'copyStatus', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:500}
     ]], 
@@ -267,15 +266,13 @@ layui.use('table', function(obj){
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
-    console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
-    	var iframesrc="hatchCheck.do?userId='"+data.id+"'";
+    	var iframesrc="hatchCheck.do?id="+data.id;
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
           let arr=[data.id];
-          console.log(data) 
           $.post({
           	url:"hatchDeleted.do",
           	data:{
@@ -296,13 +293,13 @@ layui.use('table', function(obj){
         //向服务端发送删除指令
       });
     } else if(layEvent === 'edit'){
-    	var iframesrc="hatchEdit.do?userId='"+data.id+"'";
+    	var iframesrc="hatchEdit.do?id="+data.id;
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }else if(layEvent === 'shareholder'){
     	layer.open({
     		  type: 2, 
     		  title:'添加股东信息',
-    		  content: 'hatchmumber.do',
+    		  content: "hatchmumber.do?id="+data.id,
  		      shade: 0.3, //不显示遮罩
  		      area: ['390px', '380px']
     		});

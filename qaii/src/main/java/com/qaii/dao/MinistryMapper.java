@@ -12,7 +12,8 @@ public interface MinistryMapper {
     int insertSelective(Ministry record);
 
     Ministry selectByPrimaryKey(Integer id);
-
+    int selectCountNums(String ministrytime);
+    List<String> listministrytime();
     int updateByPrimaryKeySelective(Ministry record);
 
     int updateByPrimaryKey(Ministry record);
