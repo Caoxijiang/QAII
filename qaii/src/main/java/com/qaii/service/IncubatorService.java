@@ -12,4 +12,5 @@ public interface IncubatorService {
 	int selectCountNums(String establishtime);
 	Incubator selectByPrimaryKey(Integer id);
 	List<Incubator> selectAlllist();
+	int updateByPrimaryKeySelective(Incubator incubator);
 }

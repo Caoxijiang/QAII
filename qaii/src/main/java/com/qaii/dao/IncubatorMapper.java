@@ -15,8 +15,11 @@ public interface IncubatorMapper {
     int insertSelective(Incubator record);
 
     Incubator selectByPrimaryKey(Integer id);
+    
     List<String> selectestablishtime();
+    
     int selectCountNums(String establishtime);
+    
     int updateByPrimaryKeySelective(Incubator record);
 
     int updateByPrimaryKey(Incubator record);

@@ -42,4 +42,10 @@ public class IncubatorServiceImpl implements IncubatorService {
 		// TODO Auto-generated method stub
 		return incubatorMapper.selectAlllist();
 	}
+
+	@Override
+	public int updateByPrimaryKeySelective(Incubator incubator) {
+		// TODO Auto-generated method stub
+		return incubatorMapper.updateByPrimaryKeySelective(incubator);
+	}
 }

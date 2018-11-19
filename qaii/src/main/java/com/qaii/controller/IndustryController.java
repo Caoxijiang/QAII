@@ -29,6 +29,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.mysql.fabric.xmlrpc.base.Data;
 import com.qaii.domain.Incubator;
 import com.qaii.domain.IncubatorFile;
@@ -333,7 +335,9 @@ public class IndustryController {
 	public JsonResult updateIndusInfo(HttpServletRequest req) throws UnsupportedEncodingException {
 		req.setCharacterEncoding("UTF-8");
 		Incubator oldImcubator=incubator2;
+		Integer idString=oldImcubator.getId();
 		Incubator newIncubator=new Incubator();
+		newIncubator.setId(idString);
 		try {
 			IncubatorInfo(req, newIncubator);
 			
@@ -360,15 +364,23 @@ public class IndustryController {
 			e.printStackTrace();
 			return new JsonResult("传入数据有误" + e);
 		}
-		BeanChangeUtil<T> tBeanChangeUtil=new BeanChangeUtil<>();
-		String str=tBeanChangeUtil.contrastObj(oldImcubator,newIncubator);
-        if (str.equals("")) {
-            System.out.println("未有改变");
-        } else {
-            System.out.println(str);
-        }
+		
+		int row= incubatorService.updateByPrimaryKeySelective(newIncubator);
+		if(row>0) {
+			BeanChangeUtil<T> tBeanChangeUtil=new BeanChangeUtil<>();
+			List<Map<String, Object>> str=tBeanChangeUtil.contrastObj(oldImcubator,newIncubator,idString.toString());
+	        if (str==null) {
+	        	return new JsonResult("update succes result is null");
+	        } else {
+	        	return new JsonResult("update succes result is:"+str);
+	        }
+		}else {
+			return new JsonResult();
+		}
+		
+
     
-		return new JsonResult(str);
+		
 	}
 	
 	private void IncubatorInfo(HttpServletRequest req, Incubator incubator) throws ParseException {
