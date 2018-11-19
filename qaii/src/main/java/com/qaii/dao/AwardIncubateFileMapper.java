@@ -14,4 +14,6 @@ public interface AwardIncubateFileMapper {
     int updateByPrimaryKeySelective(AwardIncubateFile record);
 
     int updateByPrimaryKey(AwardIncubateFile record);
+
+    int deleteByParimaryKeys(Integer[] id);
 }

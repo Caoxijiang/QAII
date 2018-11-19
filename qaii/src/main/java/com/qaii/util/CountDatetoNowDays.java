@@ -2,7 +2,6 @@ package com.qaii.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -242,7 +241,22 @@ public class CountDatetoNowDays {
 		}
 		return emp;
 	}
-	
+
+	//讲string类型转为date类型
+	public static Date StringConvertToDate(String str) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar cal = Calendar.getInstance();
+		if(!"".equals(str))
+			try{
+				return  sdf.parse(str);
+			}
+			catch (ParseException e){
+				e.printStackTrace();
+				return null;
+			}
+		else
+			return null;
+	}
 	
 	public static Date StrconversionData(String time) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

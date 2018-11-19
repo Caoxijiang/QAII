@@ -13,7 +13,7 @@ public interface IncubatorFileMapper {
 
     int insertSelective(IncubatorFile record);
 
-    IncubatorFile selectByPrimaryKey(Integer id);
+    List<IncubatorFile> selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(IncubatorFile record);
 

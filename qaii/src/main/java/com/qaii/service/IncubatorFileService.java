@@ -6,4 +6,6 @@ import com.qaii.domain.IncubatorFile;
 
 public interface IncubatorFileService {
 	int insert(List<IncubatorFile> iFlist);
+	
+	List<IncubatorFile> selectByPrimaryKey(Integer id);
 }
