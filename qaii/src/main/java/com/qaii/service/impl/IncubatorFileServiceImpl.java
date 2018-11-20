@@ -18,5 +18,10 @@ public class IncubatorFileServiceImpl implements IncubatorFileService{
 		// TODO Auto-generated method stub
 		return incubatorFileMapper.insert(iFile) ;
 	}
+	@Override
+	public List<IncubatorFile> selectByPrimaryKey(Integer id) {
+		// TODO Auto-generated method stub
+		return incubatorFileMapper.selectByPrimaryKey(id);
+	}
 
 }

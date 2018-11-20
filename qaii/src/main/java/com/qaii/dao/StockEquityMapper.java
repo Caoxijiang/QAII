@@ -1,5 +1,7 @@
 package com.qaii.dao;
 
+import java.util.List;
+
 import com.qaii.domain.StockEquity;
 
 public interface StockEquityMapper {
@@ -9,7 +11,7 @@ public interface StockEquityMapper {
 
     int insertSelective(StockEquity record);
 
-    StockEquity selectByPrimaryKey(Integer id);
+    List<StockEquity>selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(StockEquity record);
 
