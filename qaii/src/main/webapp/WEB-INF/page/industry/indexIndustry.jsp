@@ -13,6 +13,7 @@
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
   <script src="${basePath}/js/echarts.min.js"></script>
   <script src="${basePath}/js/main.js"></script>
+  <script src="${basePath}/js/vue.min.js"></script>
 </head>
 <body class="mainbody">
 <div class="main">
@@ -27,25 +28,25 @@
 			<div class="row">
 				<div class="col-md-3 pad10">
 					<div class="titlebox"  style="background:#036eb8;">
-						<div class="font36">100家</div>
+						<div class="font36" id="industria1">{{ message }}家</div>
 						<div class="font16">“千帆计划”入库企业</div>
 					</div>
 				</div>
 				<div class="col-md-3 pad10">
 					<div class="titlebox"  style="background:#329d3f;">
-						<div class="font36">100家</div>
+						<div class="font36" id="industria2">{{ message }}家</div>
 						<div class="font16">高新技术企业</div>
 					</div>
 				</div>
 				<div class="col-md-3 pad10">
 					<div class="titlebox"  style="background:#f08c29;">
-						<div class="font36">100家</div>
+						<div class="font36" id="industria3">{{ message }}家</div>
 						<div class="font16">入选青岛市科技型企业培育“百千万”工程</div>
 					</div>
 				</div>
 				<div class="col-md-3 pad10">
 					<div class="titlebox"  style="background:#e4007f;">
-						<div class="font36">100家</div>
+						<div class="font36" id="industria4">{{ message }}家</div>
 						<div class="font16">科技型中小企业</div>
 					</div>
 				</div>
@@ -56,18 +57,21 @@
 			<div class="col-md-6 pad10" style="padding-left:15px;">
 				<div class="inditem">
 					<!-- 服务企业 -->
+					<div class="inditembg">服务企业总数</div>
 					 <div id="servcefirm" style="width: 800px;height:400px;"></div>
 				</div>
 			</div>
 			<div class="col-md-6 pad10" style="padding-right:15px;">
 				<div class="inditem">
 					<!-- 孵化企业总数 -->
+					<div class="inditembg">孵化企业总数</div>
 					 <div id="incubating" style="width: 800px;height:400px;"></div>
 				</div>
 			</div>
 		</div>
 		<!-- 奖励荣誉 -->
 		<div class="inditem">
+		<div class="inditembg">服务企业</div>
 			<div class="row">
 				<div class="col-md-12 pad10">
 					<div id="government" class="charsBox">
@@ -101,6 +105,7 @@
 			  							<th>获奖企业名称</th>
 			  							<th>奖励荣誉名称</th>
 			  						</tr>
+			  						
 			  					</table>
 			  				</div><!-- tab-创新平台界面  结束-->
 			  				<!-- tab-基金界面 -->
