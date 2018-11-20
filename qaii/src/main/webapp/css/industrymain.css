@@ -29,7 +29,7 @@ ul,li{
 }
 .sciNav{
 	right:50px;
-	top:27px;
+	top:12px;
 	position: absolute;
 }
 .pageTo {
@@ -44,11 +44,12 @@ ul,li{
     text-align:center;
 }
 .scititle{
-	padding-top:60px;
+	padding-top:10px;
 	color:#3db4e3;
-	font-size:55px;
+	font-size:50px;
 	text-align:center;
 	width:100%;
+	height:125px;
 	background-image:url(../image/indtitle.png);
 	background-repeat: no-repeat;
 }
@@ -56,107 +57,88 @@ ul,li{
 	margin:0px auto;
 	width:1760px;
 }
-.item{
-	margin-top:25px;
+.inditem{
+	margin-top:10px;
+	padding:10px 25px;
+	background:rgba(3,110,184,0.1);
+	border:1px solid #036eb8;
 }
-.itemtitle{
-	width:331px;
-	height:71px;
-	background-image: url(../image/itemtitle.png);
-	background-size: contain;
+.font36{
+	font-size:36px;
+}
+.font16{
+	font-size:16px;
+	padding-bottom:5px;
+}
+.pad10{
+	padding:10px;
+}
+.titlebox{
+	text-align:center;
+	color:#fff;
+}
+.fundingTab {
+    width: 158px;
+    height: 38px;
+    background-image: url(../image/indt2.png);
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position:center;
-    color:#fff;
-    font-size:28px;
-    line-height:71px;
-    text-align:center;
-    
+    background-position: center;
+    color: #4fafe4;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    display: inline-block;
+}
+.active {
+    background-image: url(../image/indt2a.png) !important;
+    color: #fff !important;
+}
+.fundingMor {
+    color: #4fafe4;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    display: inline-block;
+    float: right;
+}
+.govTable {
+    margin-top: 10px;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-left: 1px solid #3db4e3;
+    border-top: 1px solid #3db4e3;
+}
+.govTable tr th {
+    line-height: 55px;
+    font-size: 18px;
+    font-weight: normal;
+    color:#2ea7e0;
+    /* background: rgba(61,180,227,0.3); */
+    border-right: 1px solid #3db4e3;
+    border-bottom: 1px solid #3db4e3;
+}
+.govTable tr td {
+   font-size: 16px;
+    line-height: 50px;
+    border-right: 1px solid #3db4e3;
+    border-bottom: 1px solid #3db4e3;
 }
 .fundingTabUl{
-	display:inline-block;
+	float: right;
+    margin-bottom: 15px;
+    margin-top: -40px;
 }
-.itemcontent{
-	margin-top:15px;
-	width:100%;
-	height:300px;
-  	background: -webkit-linear-gradient(left, rgba(0,0,31,0.2), rgba(23,28,97,0.2)); /* Safari 5.1 - 6.0 */
-  	background: -o-linear-gradient(right, rgba(0,0,31,0.2), rgba(23,28,97,0.2)); /* Opera 11.1 - 12.0 */
-  	background: -moz-linear-gradient(right, rgba(0,0,31,0.2), rgba(23,28,97,0.2)); /* Firefox 3.6 - 15 */
-  	background: linear-gradient(to right, rgba(0,0,31,0.2), rgba(23,28,97,0.2)); /* 标准的语法 */
-  border:1px solid rgba(46,167,224,0.2);}
-.charsBox{
-	margin:0px auto;margin-top:10px;width:95%;height:250px;
-}
-.fundingTab{
-	width:77px;
-	height:25px;
-	background-image: url(../image/govfunding.png);
-	background-size: contain;
-    background-repeat: no-repeat;
-    background-position:center;
-    color:#4fafe4;
-    font-size:14px;
-    line-height:25px;
+.inditembg{
+	background-image:url(../image/indtitem.png);
+	width:408px;
+	height:43px;
+	margin: 0px auto;
+    margin-top: -10px;
+    color:#fff;
+    line-height:43px;
+    font-size:28px;
     text-align:center;
-    display:inline-block;
-}
-.fundingTab:hover{
-	background-image: url(../image/govfundingA.png);
-	color:#fff;
-}
-.fundingMor{
-    color:#4fafe4;
-    font-size:14px;
-    line-height:25px;
-    text-align:center;
-    display:inline-block;
-    float:right;
-}
-.active{
-	background-image: url(../image/govfundingA.png) !important;
-	color:#fff !important;
-}
-.govTable{
-	margin-top:10px;
-	width:100%;
-	color:#fff;
-	font-size:14px;
-	text-align:center;
-	border-left:1px solid #3db4e3;
-	border-top:1px solid #3db4e3;
-}
-.govTable tr th{
-	line-height:30px;
-	font-size:16px;
-	font-weight: normal;
-	background:rgba(61,180,227,0.3);
-	border-right:1px solid #3db4e3;
-	border-bottom:1px solid #3db4e3;
-}
-.govTable tr td{
-	line-height:26px;
-	border-right:1px solid #3db4e3;
-	border-bottom:1px solid #3db4e3;
-}
-/*科研成果总览*/
-.itemBox{
-	width:19%;
-	text-align:center;
-	display:inline-block;
-	color:#fff;
-}
-.line{
-	margin:0px auto;
-	padding:5px 0px;
-	width:80%;
-}
-.itmeline{
-	margin:0px auto;
-	width:100%;
-	border:1px solid #3db4e3;
-}
-.itmelineb{
-	margin-top:-4px;
-	width:20%;
-	border:3px solid #3db4e3;
 }
