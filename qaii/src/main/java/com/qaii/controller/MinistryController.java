@@ -1,11 +1,11 @@
 package com.qaii.controller;
 
-import com.qaii.util.ConstantUtil;
 import com.qaii.domain.Ministry;
 import com.qaii.domain.MinistryFile;
 import com.qaii.service.MinistryFileService;
 import com.qaii.service.MinistryService;
 import com.qaii.util.*;
+
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -117,14 +117,14 @@ public class MinistryController {
     //显示所有信息
     @RequestMapping(value = "listMinistries.do")
     @ResponseBody
-    Layui listMinistries() throws ParseException {
+    public Layui listMinistries() throws ParseException {
         return Layui.data(1,service.listRecords());
     }
 
     //查看详情
     @RequestMapping(value = "getMinistry.do")
     @ResponseBody
-    JsonResult getMinistry(@RequestParam("id")Integer id) throws ParseException {
+   public JsonResult getMinistry(@RequestParam("id")Integer id) throws ParseException {
         return new JsonResult(service.getRecord(id));
     }
 
@@ -154,7 +154,7 @@ public class MinistryController {
     //通过Excel导入到数据库中
     @RequestMapping(value = "insertMinistryWithExcel.do")
     @ResponseBody
-    JsonResult insertMinistryWithExcel(@RequestParam("file")MultipartFile file) throws Exception{
+    public JsonResult insertMinistryWithExcel(@RequestParam("file")MultipartFile file) throws Exception{
         int result = InsertOfExcel.insertExcel("MinistryController", "Ministry", file);
         if (result == 1) {
             return new JsonResult(ConstantUtil.SUCCESS_MESSAGE);

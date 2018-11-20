@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import com.qaii.domain.IncubatorFile;
 
 public interface IncubatorFileMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer[] id);
 
     int insert(List<IncubatorFile>iFile);
 

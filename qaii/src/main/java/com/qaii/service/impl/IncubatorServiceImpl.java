@@ -48,4 +48,9 @@ public class IncubatorServiceImpl implements IncubatorService {
 		// TODO Auto-generated method stub
 		return incubatorMapper.updateByPrimaryKeySelective(incubator);
 	}
+
+	@Override
+	public int deleteByPrimaryKey(Integer[] id) {
+		return incubatorMapper.deleteByPrimaryKey(id);
+	}
 }

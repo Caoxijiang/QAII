@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 public interface IncubatorMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer[] id);
 
     int insert(Incubator record);
 

@@ -320,32 +320,30 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 	      });
 	    }
 	  });
-//变更信息显示
-  table.render({
-	    elem: '#table2'
-	    /* ,url:'/demo/table/user/' */ /*back 变更信息数据接口 删除data*/
-	    ,cellMinWidth: 100
-	    ,cols: [[
-	      {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
-	      ,{field:'username', title: '变更时间'}
-	      ,{field:'username', title: '变更记录'}
-	      ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo2'}
-	    ]],
-	    data: [{
-	        "id": "10001"
-	        ,"username": "杜甫"
-	      }, {
-        	"id": "10008"
-            ,"username": "贤心"
-          }]
-	  });
+    //变更信息显示
+    table.render({
+        elem: '#table2'
+        ,method:'post'
+        ,url:'selectRecordInfoByinId.do?pid='+id  //*back 变更信息数据接口 删除data*/
+        ,cellMinWidth: 100
+        ,cols: [[
+            {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
+            ,{field:'changedTime', title: '变更时间'}
+            ,{field:'listName', title: '变更记录'}
+            ,{field:'oldName',title:"原记录"}
+            ,{field:'newName',title:"现记录"}
+            ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo2'}
+        ]],
+        data: obj.data
+    });
   table.on('tool(demo2)', function(obj){
 	    var data = obj.data;
+	    var id=data.id;
 	   if(obj.event === 'edit'){
 		   layer.open({
 	    		  type: 2, 
 	    		  title:'变更时间修改',
-	    		  content: 'hatchchangetime.do',
+	    		  content: 'hatchchangetime.do?id='+id,
 	 		      shade: 0.3, //不显示遮罩
 	 		      area: ['390px', '380px']
 	    		});

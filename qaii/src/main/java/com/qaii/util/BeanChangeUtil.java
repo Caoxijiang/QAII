@@ -40,8 +40,8 @@ public class BeanChangeUtil <T>{
                     str.append(id + "、list_name:" + field.getName() + ",old:" + o1 + ",new:" + o2 + ";");
                     map.put("id", id);
                     map.put("list_name",field.getName());
-                    map.put("old", o1);
-                    map.put("new", o2);
+                    map.put("old_name", o1);
+                    map.put("new_name", o2);
                     list.add(map);
                     i++;
                 }

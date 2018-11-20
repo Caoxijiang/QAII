@@ -9,5 +9,8 @@
         <module name="QAII" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="QAII" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
