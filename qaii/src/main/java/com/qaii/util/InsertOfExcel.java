@@ -1,5 +1,6 @@
 package com.qaii.util;
 
+import com.qaii.domain.Ministry;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -19,9 +20,17 @@ import java.util.List;
  */
 
 public class InsertOfExcel {
+
+    /**
+     * @param: className:完整的控制器名称 , recordName:完整的类名称
+     *
+     * @Time 2018/11/20
+     */
+
     public static int insertExcel(String className, String recordName, MultipartFile file) throws Exception {
         Class clazz = Class.forName(ConstantUtil.CONTROLLER_PREFIX + className);
-        Class record = Class.forName(ConstantUtil.DOMAIN_PREFIX + recordName);
+        Class recordClazz = Class.forName(ConstantUtil.DOMAIN_PREFIX + recordName);
+        Object obj=clazz.newInstance();
         List<String> list =new ArrayList<>();
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         String filename=file.getOriginalFilename();
@@ -75,9 +84,9 @@ public class InsertOfExcel {
                             list.add(null);
                         }
                     }
-                    Method method = clazz.getDeclaredMethod("insertExcelData", record.getClass(), List.class);
+                    Method method = clazz.getDeclaredMethod("insertExcelData", recordClazz, List.class);
                     method.setAccessible(true);
-                    method.invoke(clazz, list);
+                    method.invoke(obj, new Object[]{recordClazz.getConstructor().newInstance(), list});
                 }
             }
         }catch(Exception e) {
