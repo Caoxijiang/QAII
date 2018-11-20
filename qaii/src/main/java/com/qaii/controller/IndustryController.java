@@ -122,15 +122,60 @@ public class IndustryController {
 	public String institute(){
 		return "page/industry/honor/institute/institute";
 	}
+	//院获奖情况界面 添加
+	@RequestMapping("/instituteAdd.do")
+	public String instituteAdd(){
+		return "page/industry/honor/institute/instituteAdd";
+	}
+	//院获奖情况界面 查看详情
+	@RequestMapping("/instituteCheck.do")
+	public String instituteCheck(){
+		return "page/industry/honor/institute/instituteCheck";
+	}
+	//院获奖情况界面  修改
+	@RequestMapping("/instituteEdit.do")
+	public String instituteEdit(){
+		return "page/industry/honor/institute/instituteEdit";
+	}
 	//孵化企业获奖情况界面
 	@RequestMapping("/incubate.do")
 	public String incubate(){
 		return "page/industry/honor/incubate/incubate";
 	}
+	//孵化企业获奖情况界面 添加
+	@RequestMapping("/incubateAdd.do")
+	public String incubateAdd(){
+		return "page/industry/honor/incubate/incubateAdd";
+	}
+	//孵化企业获奖情况界面查看详情
+	@RequestMapping("/incubateCheck.do")
+	public String incubateCheck(){
+		return "page/industry/honor/incubate/incubateCheck";
+	}
+	//孵化企业获奖情况界面修改
+	@RequestMapping("/incubateEdit.do")
+	public String incubateEdit(){
+		return "page/industry/honor/incubate/incubateEdit";
+	}
 	//个人获奖界面
 	@RequestMapping("/person.do")
 	public String person(){
 		return "page/industry/honor/person/person";
+	}
+	//个人获奖界面 修改
+	@RequestMapping("/personEdit.do")
+	public String personEdit(){
+		return "page/industry/honor/person/personEdit";
+	}
+	//个人获奖界面 查看详情
+	@RequestMapping("/personCheck.do")
+	public String personCheck(){
+		return "page/industry/honor/person/personCheck";
+	}
+	//个人获奖界面 添加
+	@RequestMapping("/personAdd.do")
+	public String personAdd(){
+		return "page/industry/honor/person/personAdd";
 	}
 	//服务企业管理界面
 	@RequestMapping("/serviceFirm.do")
@@ -152,8 +197,6 @@ public class IndustryController {
 	public String serviceFirmEdit(){
 		return "page/industry/serviceFirm/serviceFirmEdit";
 	}
-	
-	
 	
 	// 孵化企业管理添加接口
 	@SuppressWarnings("unchecked")
