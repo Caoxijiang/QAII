@@ -13,14 +13,8 @@ import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.constraints.Null;
 
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.apache.poi.ss.formula.functions.T;
-import org.aspectj.apache.bcel.generic.ReturnaddressType;
-import org.omg.CORBA.PRIVATE_MEMBER;
-import org.springframework.context.support.StaticApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -352,7 +346,7 @@ public class IndustryController {
 	
 	//孵化企业股东详情页面
 	@ResponseBody
-	@RequestMapping(value="selectIndusStackInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	@RequestMapping(value="selectIndusStackInfo.do",method= RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public Layui selectIndusStackInfo(HttpServletRequest req) throws UnsupportedEncodingException {
 			req.setCharacterEncoding("UTF-8");
 			List<StockEquity> stockEquity=new ArrayList<>();
