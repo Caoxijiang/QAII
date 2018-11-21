@@ -163,8 +163,7 @@ layui.use('table', function(obj){
 	
   var $ = layui.$, active = {
       reload: function(){
-        var demoReload = $('#demoReload');
-        var key=demoReload.val();/*关键字*/
+        var demoReload = $('#demoReload');var key=demoReload.val();/*关键字*/
   	  var check=$('#switch').val();/*选择提示词*/
   	  var trlen=($(".layui-table tr").length)/3;/*行数*/
   	  var num=$(".layui-table tr:eq(0) th").length-1;/*显示的列元素个数*/
@@ -274,7 +273,7 @@ layui.use('table', function(obj){
       layer.confirm('确定删除信息', function(index){
           let arr=[data.id];
           $.post({
-          	url:"hatchDeleted.do",
+          	url:"dellIndusStackInfo.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -307,7 +306,7 @@ layui.use('table', function(obj){
     	layer.open({
   		  type: 2, 
   		  title:'变更修改',
-  		  content: 'hatchshare.do',
+  		  content: 'hatchshare.do?id='+data.id,
 		  shade: 0.3, //不显示遮罩
 		  area: ['650px', '500px']
   		});

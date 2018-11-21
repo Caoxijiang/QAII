@@ -16,4 +16,6 @@ public interface IncubatorService {
 	int selectCountNumsByMiddleLittle();
 	Incubator selectByPrimaryKey(Integer id);
 	List<Incubator> selectAlllist();
+	int updateByPrimaryKeySelective(Incubator incubator);
+	int deleteByPrimaryKey(Integer[] id);
 }

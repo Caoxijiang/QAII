@@ -62,4 +62,15 @@ public class IncubatorServiceImpl implements IncubatorService {
 	public int selectCountNumsByMiddleLittle() {
 		return incubatorMapper.selectCountNumsByMiddleLittle();
 	}
+
+	@Override
+	public int updateByPrimaryKeySelective(Incubator incubator) {
+		// TODO Auto-generated method stub
+		return incubatorMapper.updateByPrimaryKeySelective(incubator);
+	}
+
+	@Override
+	public int deleteByPrimaryKey(Integer[] id) {
+		return incubatorMapper.deleteByPrimaryKey(id);
+	}
 }

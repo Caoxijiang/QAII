@@ -76,8 +76,12 @@
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from industry_incubator
-    where id = #{id,jdbcType=INTEGER}
+    delete i,f from  industry_incubator i
+    inner join  industry_incubatorfile f on i.id=f.incubator_id
+    where i.id in
+    <foreach item="id" collection="array" open="(" separator="," close=")">
+      #{id,jdbcType=INTEGER}
+    </foreach>
   </delete>
   <insert id="insert" parameterType="com.qaii.domain.Incubator">
    	<selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
