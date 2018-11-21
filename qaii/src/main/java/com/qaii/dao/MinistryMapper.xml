@@ -72,7 +72,7 @@
 
   <select id="listministrytime"  resultType="java.lang.String">
     select
-    ministry_time
+   ministry_time
     from industry_ministry
   </select>
 
