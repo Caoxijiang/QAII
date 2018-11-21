@@ -199,12 +199,11 @@ public class IndustryController {
 	public String serviceFirmEdit(){
 		return "page/industry/serviceFirm/serviceFirmEdit";
 	}
-	
+
 	// 孵化企业管理添加接口
 	@SuppressWarnings("unchecked")
-	@ResponseBody
 	@RequestMapping("/insertIndustryInfo.do")
-	public JsonResult insertIndustryInfo(@RequestParam("file") MultipartFile[] files, HttpServletRequest req)
+	public String insertIndustryInfo(@RequestParam("file") MultipartFile[] files, HttpServletRequest req)
 			throws UnsupportedEncodingException, ParseException {
 		req.setCharacterEncoding("utf-8");
 		Incubator incubator = new Incubator();
@@ -222,7 +221,7 @@ public class IndustryController {
 			System.out.println(list);
 			System.out.println(list2);
 		} catch (IOException e1) {
-			return new JsonResult("图片上传失败" + e1);
+			return "page/industry/inform/addFaildind";
 		}
 		try {
 			IncubatorInfo(req, incubator);
@@ -268,7 +267,7 @@ public class IndustryController {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new JsonResult("传入数据有误" + e);
+			return "page/industry/inform/addFaildind";
 
 		}
 		int row = incubatorService.insert(incubator);
@@ -278,12 +277,12 @@ public class IndustryController {
 			iFile1.setIncubatorId(incubator.getId());
 			int args = incubatorFileService.insert(iFlists);
 			if (args > 0) {
-				return new JsonResult("添加成功");
+				return "page/industry/inform/addSuccesdind";
 			} else {
-				return new JsonResult("添加失败");
+				return "page/industry/inform/addFaildind";
 			}
 		} else {
-			return new JsonResult("信息输入有误");
+			return "page/industry/inform/addFaildind";
 		}
 
 	}
