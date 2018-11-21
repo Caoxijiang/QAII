@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -36,6 +38,7 @@ import java.util.List;
 @Controller
 public class MinistryController {
 
+    //加入此注解，可使前台日期类型的数据向后台传递时不报错
     @InitBinder
     protected void init(HttpServletRequest request, ServletRequestDataBinder binder) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -165,6 +168,9 @@ public class MinistryController {
 
     //导入Excel数据
     void insertExcelData(Ministry record, List<String> list) throws Exception {
+        WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();
+        service = (MinistryService)wac.getBean("ministryService");
+        fileService = (MinistryFileService)wac.getBean("ministryFileService");
         loadDataWithList(record, list);
         record.setId(null);
         service.insertRecordReturnID(record);
@@ -174,17 +180,29 @@ public class MinistryController {
     }
 
     void loadDataWithList(Ministry record, List<String> list) throws ParseException {
-        record.setMinistryName(list.get(0));
-        record.setMinistryProperty(list.get(1));
-        record.setContactPerson(list.get(2));
-        record.setContactMethod(list.get(3));
-        record.setMinistryLocation(list.get(4));
-        record.setMinistryTime(CountDatetoNowDays.StringConvertToDate(list.get(5)));
-        record.setMinistryProject(list.get(6));
-        record.setOwnselfUnit(list.get(7));
-        record.setOwnselfContactPerson(list.get(8));
-        record.setOwnselfContactMethod(list.get(9));
-        record.setRemark(list.get(10));
+        //排空
+        if (!list.get(0).isEmpty())
+            record.setMinistryName(list.get(0));
+        if (!list.get(1).isEmpty())
+            record.setMinistryProperty(list.get(1));
+        if (!list.get(2).isEmpty())
+            record.setContactPerson(list.get(2));
+        if (!list.get(3).isEmpty())
+            record.setContactMethod(list.get(3));
+        if (!list.get(4).isEmpty())
+            record.setMinistryLocation(list.get(4));
+        if (!list.get(5).isEmpty())
+            record.setMinistryTime(CountDatetoNowDays.StringConvertToDate(list.get(5)));
+        if (!list.get(6).isEmpty())
+            record.setMinistryProject(list.get(6));
+        if (!list.get(7).isEmpty())
+            record.setOwnselfUnit(list.get(7));
+        if (!list.get(8).isEmpty())
+            record.setOwnselfContactPerson(list.get(8));
+        if (!list.get(9).isEmpty())
+            record.setOwnselfContactMethod(list.get(9));
+        if (!list.get(10).isEmpty())
+            record.setRemark(list.get(10));
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
     }

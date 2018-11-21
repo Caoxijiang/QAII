@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by kunpeng on 2018/11/15 15:52
  */
-@Service
+@Service("ministryService")
 public class MinistryServiceImpl implements MinistryService {
     @Resource
     private MinistryMapper ministryMapper;
