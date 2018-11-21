@@ -44,6 +44,26 @@ public class IncubatorServiceImpl implements IncubatorService {
 	}
 
 	@Override
+	public int selectCountNumsByQianFan() {
+		return incubatorMapper.selectCountNumsByQianFan();
+	}
+
+	@Override
+	public int selectCountNumsByGaoxin() {
+		return incubatorMapper.selectCountNumsByGaoxin();
+	}
+
+	@Override
+	public int selectCountNumsByBaiQIan() {
+		return incubatorMapper.selectCountNumsByBaiQIan();
+	}
+
+	@Override
+	public int selectCountNumsByMiddleLittle() {
+		return incubatorMapper.selectCountNumsByMiddleLittle();
+	}
+
+	@Override
 	public int updateByPrimaryKeySelective(Incubator incubator) {
 		// TODO Auto-generated method stub
 		return incubatorMapper.updateByPrimaryKeySelective(incubator);

@@ -1,41 +1,4 @@
-//科研成果预览示例图
-function circle(boxid,id,color,total,num){//id为canvas的id值,color为基本外圆颜色值,total为圆铺满总量,num为数据量
-	var canvas=document.getElementById(id),
-	context=canvas.getContext("2d");
-	var canvasBox = document.getElementById(boxid).offsetWidth;
-	canvas.width = canvasBox*0.8;
-	var part=Math.PI*2*num/total-Math.PI/2;
-	context.moveTo(canvas.width/2,canvas.height/2);
-	context.beginPath();
-	context.arc(canvas.width/2,canvas.height/2,canvas.width/2,0,Math.PI*2,false);
-	context.strokeStyle="#fff";
-	context.stroke();
-	context.closePath();
-	//外圈绘制
-	context.moveTo(canvas.width/2,canvas.height/2);
-	context.beginPath();
-	context.lineWidth=canvas.width*58/540;
-	context.arc(canvas.width/2,canvas.height/2,canvas.width*200/540,0,Math.PI*2,false);
-	context.strokeStyle=color;
-	context.stroke();
-	context.closePath();
-	//绘制内圈
-	context.moveTo(canvas.width/2,canvas.height/2);
-	context.beginPath();
-	context.lineWidth=canvas.width*100/540;
-	context.arc(canvas.width/2,canvas.height/2,canvas.width*220/540,-Math.PI/2,part,false);/*绘制图形所占比圆弧*/
-	context.strokeStyle="#fff";
-	context.stroke();
-	context.closePath();
-	//绘制比例圆
-	context.font="bold 30px Arial";
-	context.fillStyle = '#fff';
-	context.textAlign="center";
-	context.textBaseline="middle";
-	context.fillText(num,canvas.width/2,canvas.height/2);
-}
-
-//政府资助点击事件tab切换
+//荣誉奖励点击事件tab切换
 $(document).ready(function(){
   $(".tabbox ul li").click(function(){
     $(this).addClass("active").siblings().removeClass("active");
@@ -44,237 +7,241 @@ $(document).ready(function(){
     $("#"+a).show();
   });
 });
-//科研成果信息
-var myChart = echarts.init(document.getElementById('information'));
-function getscientific(){
-	var result=null;
-	$.ajax({
-		async:false,
-		type:"POST",
-		url:"scientific.do",
-		success:function(data){
-			result=data;
-		}
-	})
-	return result;
-}
-var scientific=getscientific();
-var option = {
-	    tooltip: {
-	        trigger: 'axis'
-	    },
-	    color: ['#3db4e3','#8fc31f', '#e4007f', '#601986', '#91c7ae','#fff100',  '#ea7542', '#48efef','#ef4566'],
-	    legend: {
-	        data:['受理专利','授权专利','申请软著','授权软著','受理商标','授权商标','论文总数','著作总数'],
-	        textStyle:{    //图例文字的样式
-	            color:'#fff',
-	            fontSize:12
-	        }
-	    },
-	    grid: {
-	        left: '3%',
-	        right: '4%',
-	        bottom: '3%',
-	        containLabel: true
-	    },
-	    toolbox: {
-	        feature: {
-	            saveAsImage: {}
-	        }
-	    },
-	    xAxis : [
-            {
-                type : 'category',
-                boundaryGap: false,
-    	        data: [new Date(scientific.EachMonth[11]).getMonth()+1+'月',new Date(scientific.EachMonth[10]).getMonth()+1+'月',new Date(scientific.EachMonth[9]).getMonth()+1+'月',
-    	        	new Date(scientific.EachMonth[8]).getMonth()+1+'月',new Date(scientific.EachMonth[7]).getMonth()+1+'月',new Date(scientific.EachMonth[6]).getMonth()+1+'月',
-    	        	new Date(scientific.EachMonth[5]).getMonth()+1+'月',new Date(scientific.EachMonth[4]).getMonth()+1+'月',new Date(scientific.EachMonth[3]).getMonth()+1+'月',
-    	        	new Date(scientific.EachMonth[2]).getMonth()+1+'月',new Date(scientific.EachMonth[1]).getMonth()+1+'月',new Date(scientific.EachMonth[0]).getMonth()+1+'月'],
-                axisLabel: {
-                    show: true,
-                    textStyle: {
-                        color: '#3db4e3',
-                        fontSize:12
-                    },
-                    lineStyle:{ 
-                    	color:'#3db4e3' 
-                    	/*width:8*/
-                    }
-                },
-                splitLine: {
-                    show: false,
-                    lineStyle: {
-                        color: ['#000']
-                    }
-                },
-            }
-        ],
-	    yAxis : [
-            {
-            	type: 'value',
-            	splitLine: {
-                    show: true,
-                    lineStyle: {
-                        color: ['#3db4e3']
-                    }
-                },
-                axisLabel: {
-                    show: true,
-                    textStyle: {
-                        color: '#3db4e3',
-                        fontSize:12
-                    },
-                    lineStyle:{ 
-                    	color:'#3db4e3' 
-                    	/*width:8*/
-                    }
-                }
-            }
-        ],
-	    series: [
-	        {
-	            name:'受理专利',
-	            type:'line',
-	            data:[scientific.AgencyPatent[11], scientific.AgencyPatent[10], scientific.AgencyPatent[9], 
-	            	scientific.AgencyPatent[8], scientific.AgencyPatent[7], scientific.AgencyPatent[6], 
-	            	scientific.AgencyPatent[5], scientific.AgencyPatent[4], scientific.AgencyPatent[3],
-	            	scientific.AgencyPatent[2], scientific.AgencyPatent[1], scientific.AgencyPatent[0]]
-	        },
-	        {
-	            name:'授权专利',
-	            type:'line',
-	            data:[scientific.AuthorizationPatent[11], scientific.AuthorizationPatent[10], scientific.AuthorizationPatent[9], 
-	            	scientific.AuthorizationPatent[8], scientific.AuthorizationPatent[7], scientific.AuthorizationPatent[6], 
-	            	scientific.AuthorizationPatent[5], scientific.AuthorizationPatent[4], scientific.AuthorizationPatent[3],
-	            	scientific.AuthorizationPatent[2], scientific.AuthorizationPatent[11], scientific.AuthorizationPatent[0]]
-	        },
-	        {
-	            name:'申请软著',
-	            type:'line',
-	            data:[scientific.Applycopyright[11], scientific.Applycopyright[10], scientific.Applycopyright[9], 
-	            	scientific.Applycopyright[8], scientific.Applycopyright[7], scientific.Applycopyright[6], 
-	            	scientific.Applycopyright[5], scientific.Applycopyright[4], scientific.Applycopyright[3],
-	            	scientific.Applycopyright[2], scientific.Applycopyright[1], scientific.Applycopyright[0]]
-	        },
-	        {
-	            name:'授权软著',
-	            type:'line',
-	            data:[scientific.Authorizationcopyright[11], scientific.Authorizationcopyright[10], scientific.Authorizationcopyright[9], 
-	            	scientific.Authorizationcopyright[8], scientific.Authorizationcopyright[7], scientific.Authorizationcopyright[6], 
-	            	scientific.Authorizationcopyright[5], scientific.Authorizationcopyright[4], scientific.Authorizationcopyright[3],
-	            	scientific.Authorizationcopyright[2], scientific.Authorizationcopyright[1], scientific.Authorizationcopyright[0]]
-	        },
-	        {
-	            name:'受理商标',
-	            type:'line',
-	            data:[scientific.AgencyTradeMark[11], scientific.AgencyTradeMark[10], scientific.AgencyTradeMark[9], 
-	            	scientific.AgencyTradeMark[8], scientific.AgencyTradeMark[7], scientific.AgencyTradeMark[6], 
-	            	scientific.AgencyTradeMark[5], scientific.AgencyTradeMark[4], scientific.AgencyTradeMark[3],
-	            	scientific.AgencyTradeMark[2], scientific.AgencyTradeMark[1], scientific.AgencyTradeMark[0]]
-	        },
-	        {
-	            name:'授权商标',
-	            type:'line',
-	            data:[scientific.AuthorizationTradeMark[11], scientific.AuthorizationTradeMark[10], scientific.AuthorizationTradeMark[9], 
-	            	scientific.AuthorizationTradeMark[8], scientific.AuthorizationTradeMark[7], scientific.AuthorizationTradeMark[6], 
-	            	scientific.AuthorizationTradeMark[5], scientific.AuthorizationTradeMark[4], scientific.AuthorizationTradeMark[3],
-	            	scientific.AuthorizationTradeMark[2], scientific.AuthorizationTradeMark[1], scientific.AuthorizationTradeMark[0]]
-	        },
-	        {
-	            name:'论文总数',
-	            type:'line',
-	            data:[scientific.EachMonththesis[11], scientific.EachMonththesis[10], scientific.EachMonththesis[9], 
-	            	scientific.EachMonththesis[8], scientific.EachMonththesis[7], scientific.EachMonththesis[6], 
-	            	scientific.EachMonththesis[5], scientific.EachMonththesis[4], scientific.EachMonththesis[3],
-	            	scientific.EachMonththesis[2], scientific.EachMonththesis[1], scientific.EachMonththesis[0]]
-	        },
-	        {
-	            name:'著作总数',
-	            type:'line',
-	            data:[scientific.EachMonthwork[11], scientific.EachMonthwork[10], scientific.EachMonthwork[9], 
-	            	scientific.EachMonthwork[8], scientific.EachMonthwork[7], scientific.EachMonthwork[6], 
-	            	scientific.EachMonthwork[5], scientific.EachMonthwork[4], scientific.EachMonthwork[3],
-	            	scientific.EachMonthwork[2], scientific.EachMonthwork[1], scientific.EachMonthwork[0]]
-	        }
-	        
-	    ]
-	};
-
-
-// 使用刚指定的配置项和数据显示图表。
-myChart.setOption(option);
-
-//数据总量
-var myChart2 = echarts.init(document.getElementById('totalData'));
-function gettotalData(){
-	var result=null;
-	$.ajax({
-		async:false,
-		type:"POST",
-		url:"DataTotal.do",
-		success:function(data){
-			result=data;
-		}
-	})
-	return result;
-}
 var totalData=gettotalData();
-var option2 = {
-	    tooltip : {
-	        trigger: 'axis',
-	        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-	            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-	        }
-	    },
-	    color: ['#ea8a27','#7fccd8', '#3db4e3'],
-	    toolbox: {
-	        feature: {
-	            saveAsImage: {}
-	        }
-	    },
-	    legend: {
-	        data: ['外观设计专利', '实用新型专利','发明专利'],
-	        textStyle:{    //图例文字的样式
-	            color:'#fff',
-	            fontSize:12
-	        }
-	    },
-	    grid: {
-	        left: '3%',
-	        right: '4%',
-	        bottom: '3%',
-	        containLabel: true
-	    },
-	    xAxis:  {
+//四个综合信息赋值**kun**
+new Vue({
+  el: '#industria1',
+  data: {
+    message: totalData.QianFan//千帆计划入库企业
+  }
+})
+new Vue({
+  el: '#industria2',
+  data: {
+    message:totalData.GaoxinJishu//高新技术企业
+  }
+})
+new Vue({
+  el: '#industria3',
+  data: {
+    message: totalData.BaiQIan//入选青岛市科技型企业培育百万工程计划
+  }
+})
+new Vue({
+  el: '#industria4',
+  data: {
+    message: totalData.ZhongXiaoXing//科技型中小企业
+  }
+})
+//服务企业
+var myChart = echarts.init(document.getElementById('servcefirm'));
+
+function gettotalData(){
+    var result=null;
+    $.ajax({
+        async:false,
+        type:"POST",
+        url:"HighLevel.do",
+        success:function(data){
+            result=data;
+        }
+    })
+    return result;
+}
+
+function gettServiceData(){
+    var result=null;
+    $.ajax({
+        async:false,
+        type:"POST",
+        url:"servercm.do",
+        success:function(data){
+            result=data;
+        }
+    })
+    return result;
+}
+
+function gettCompanyData(){
+    var result=null;
+    $.ajax({
+        async:false,
+        type:"POST",
+        url:"hatchit.do",
+        success:function(data){
+            result=data;
+        }
+    })
+    return result;
+}
+
+function gettAwardData(){
+    var result=null;
+    $.ajax({
+        async:false,
+        type:"POST",
+        url:"Award.do",
+        success:function(data){
+            result=data;
+        }
+    })
+    return result;
+}
+var Award = gettAwardData();
+/*学院获奖情况*/
+if (Award.awardcollege[0]==null||Award.awardcollege[0]=="") {
+    Colleageawardid="";
+    ColleageawardTime="";
+    ColleageawardLevel="";
+    ColleageawardUnit="";
+    ColleageawardName="";
+}else{
+    var Colleageawardid=Award.awardcollege[0].id;
+    var ColleageawardTime=new Date(Award.awardcollege[0].awardTime).toLocaleDateString();
+    var ColleageawardLevel=Award.awardcollege[0].awardLevel;
+    var ColleageawardUnit=Award.awardcollege[0].awardUnit;
+    var ColleageawardName=Award.awardcollege[0].awardName;
+}
+
+if (Award.awardcollege[1]==null||Award.awardcollege[1]=="") {
+    Colleageawardid1="";
+    ColleageawardTime1="";
+    ColleageawardLevel1="";
+    ColleageawardUnit1="";
+    ColleageawardName1="";
+}else{
+    var Colleageawardid1=Award.awardcollege[1].id;
+    var ColleageawardTime1=new Date(Award.awardcollege[1].awardTime).toLocaleDateString();
+    var ColleageawardLevel1=Award.awardcollege[1].awardLevel;
+    var ColleageawardUnit1=Award.awardcollege[1].awardUnit;
+    var ColleageawardName1=Award.awardcollege[1].awardName;
+}
+
+if (Award.awardcollege[2]==null||Award.awardcollege[2]=="") {
+    Colleageawardid2="";
+    ColleageawardTime2="";
+    ColleageawardLevel2="";
+    ColleageawardUnit2="";
+    ColleageawardName2="";
+}else{
+    var Colleageawardid2=Award.awardcollege[2].id;
+    var ColleageawardTime2=new Date(Award.awardcollege[2].awardTime).toLocaleDateString();
+    var ColleageawardLevel2=Award.awardcollege[2].awardLevel;
+    var ColleageawardUnit2=Award.awardcollege[2].awardUnit;
+    var ColleageawardName2=Award.awardcollege[2].awardName;
+}
+/*孵化企业获奖情况*/
+if(Award.awardincubate[0]==null||Award.awardincubate[0]==""){
+    incubateawardid="";
+    incubateawardTime="";
+    incubateawardLevel="";
+    incubateawardUnit="";
+    incubateawardName="";
+}else{
+    var incubateawardid=Award.awardincubate[0].id;
+    var incubateawardTime=new Date(Award.awardincubate[0].awardTime).toLocaleDateString();
+    var incubateawardLevel=Award.awardincubate[0].awardLevel;
+    var incubateawardUnit=Award.awardincubate[0].awardUnit;
+    var incubateawardName=Award.awardincubate[0].awardName;
+}
+
+if(Award.awardincubate[1]==null||Award.awardincubate[1]==""){
+    incubateawardid1="";
+    incubateawardTime1="";
+    incubateawardLevel1="";
+    incubateawardUnit1="";
+    incubateawardName1="";
+}else{
+    var incubateawardid1=Award.awardincubate[1].id;
+    var incubateawardTime1=new Date(Award.awardincubate[1].awardTime).toLocaleDateString();
+    var incubateawardLevel1=Award.awardincubate[1].awardLevel;
+    var incubateawardUnit1=Award.awardincubate[1].awardUnit;
+    var incubateawardName1=Award.awardincubate[1].awardName;
+}
+
+if(Award.awardincubate[2]==null||Award.awardincubate[2]==""){
+    incubateawardid2="";
+    incubateawardTime2="";
+    incubateawardLevel2="";
+    incubateawardUnit2="";
+    incubateawardName2="";
+}else{
+    var incubateawardid2=Award.awardincubate[2].id;
+    var incubateawardTime2=new Date(Award.awardincubate[2].awardTime).toLocaleDateString();
+    var incubateawardLevel2=Award.awardincubate[2].awardLevel;
+    var incubateawardUnit2=Award.awardincubate[2].awardUnit;
+    var incubateawardName2=Award.awardincubate[2].awardName;
+}
+/*个人获奖情况*/
+if (Award.awardpersonal[0]==null||Award.awardpersonal[0]=="") {
+    Personalawardid="";
+    PersonalawardTime="";
+    PersonalawardLevel="";
+    PersonalpersonName="";
+    PersonalawardName="";
+}else {
+    var Personalawardid=Award.awardpersonal[0].id;
+    var PersonalawardTime=new Date(Award.awardpersonal[0].awardTime).toLocaleDateString();
+    var PersonalawardLevel=Award.awardpersonal[0].awardLevel;
+    var PersonalpersonName=Award.awardpersonal[0].personName;
+    var PersonalawardName=Award.awardpersonal[0].awardName;
+}
+
+if (Award.awardpersonal[1]==null||Award.awardpersonal[1]=="") {
+    Personalawardid1="";
+    PersonalawardTime1="";
+    PersonalawardLevel1="";
+    PersonalpersonName1="";
+    PersonalawardName1="";
+}else {
+    var Personalawardid1=Award.awardpersonal[1].id;
+    var PersonalawardTime1=new Date(Award.awardpersonal[1].awardTime).toLocaleDateString();
+    var PersonalawardLevel1=Award.awardpersonal[1].awardLevel;
+    var PersonalpersonName1=Award.awardpersonal[1].personName;
+    var PersonalawardName1=Award.awardpersonal[1].awardName;
+}
+
+if (Award.awardpersonal[2]==null||Award.awardpersonal[2]=="") {
+    Personalawardid2="";
+    PersonalawardTime2="";
+    PersonalawardLevel2="";
+    PersonalpersonName2="";
+    PersonalawardName2="";
+}else {
+    var Personalawardid2=Award.awardpersonal[2].id;
+    var PersonalawardTime2=new Date(Award.awardpersonal[2].awardTime).toLocaleDateString();
+    var PersonalawardLevel2=Award.awardpersonal[2].awardLevel;
+    var PersonalpersonName2=Award.awardpersonal[2].personName;
+    var PersonalawardName2=Award.awardpersonal[2].awardName;
+}
+console.log(111);
+var ServiceNum =gettServiceData();
+var option = {
+	 xAxis: {
 	        type: 'category',
-	        data: ['申请','受理','授权'],
+	        boundaryGap: false,
+	        data: [new Date(ServiceNum.ServiceYear[6]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[5]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[4]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[3]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[2]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[1]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[0]).getFullYear()+"年"],//服务企业总数x轴日期**kun**
 	        axisLabel: {
+                show: true,
                 textStyle: {
                     color: '#3db4e3',
                     fontSize:12
                 },
                 lineStyle:{ 
-                	show: false,
                 	color:'#3db4e3' 
                 	/*width:8*/
                 }
             },
-            splitLine: {
-                show: false,
-                lineStyle: {
+            splitLine: {/*修改图标辅助线样式*/
+                show: false,/*不显示X轴辅助线*/
+                lineStyle: { /*设置图标样式*/
                     color: ['#000']
                 }
-            },
+            }
 	    },
 	    yAxis: {
 	        type: 'value',
-	        splitLine: {
-                show: true,
-                lineStyle: {
-                    color: ['#3db4e3']
-                }
-            },
-            axisLabel: {
+	        axisLabel: {
                 show: true,
                 textStyle: {
                     color: '#3db4e3',
@@ -282,50 +249,102 @@ var option2 = {
                 },
                 lineStyle:{ 
                 	color:'#3db4e3' 
-                	/*width:8*/
+                }
+            },
+            splitLine: {/*修改图标辅助线样式*/
+               /* show: false,不显示X轴辅助线*/
+                lineStyle: { /*设置图标样式*/
+                    color: ['rgba(61,180,227,0.3)']
+                }
+            }
+	    },
+	    series: [{
+	        data: [ServiceNum.ServiceYearNums[6], ServiceNum.ServiceYearNums[5], ServiceNum.ServiceYearNums[4], ServiceNum.ServiceYearNums[3], ServiceNum.ServiceYearNums[2], ServiceNum.ServiceYearNums[1], ServiceNum.ServiceYearNums[0]],//服务企业总数 各项对应的数值**kun**
+	        type: 'line',
+	        areaStyle: {},
+	        color:["rgba(3,110,184,0.4)"],
+	        smooth: true
+	    }]
+};
+myChart.setOption(option);
+//孵化企业总数
+var CompanyNums=gettCompanyData();
+var myChart2 = echarts.init(document.getElementById('incubating'));
+var option2 = {
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {show: true}
+	        }
+	    },
+	    
+	    xAxis:{
+	            type: 'category',
+	            data: [new Date(CompanyNums.CompanyYear[6]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[5]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[4]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[3]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[2]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[1]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[0]).getFullYear()+"年"],//孵化企业总数x轴日期**kun**
+	            axisPointer: {
+	                type: 'shadow'
+	            },
+	            axisLabel: {
+	                show: true,
+	                textStyle: {
+	                    color: '#3db4e3',
+	                    fontSize:12
+	                },
+	                lineStyle:{ 
+	                	color:'#3db4e3' 
+	                }
+	            },
+	    },
+	    yAxis: {
+	    	axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#3db4e3',
+                    fontSize:12
+                },
+                lineStyle:{ 
+                	color:'#3db4e3' 
                 }
             }
 	    },
 	    series: [
 	        {
-	            name: '外观设计专利',
-	            type: 'bar',
-	            barWidth : 30,//柱图宽度
-	            stack: '总量',
-	            label: {
+	            name:'孵化企业总数',
+	            type:'bar',
+	            itemStyle: {
 	                normal: {
-	                    /*show: true,*/
-	                    position: 'insideRight'
-	                }
+	                    // 定制显示（按顺序）
+	                    color: function(params) { 
+	                        var colorList = ['#036eb8','#31a4b1','#3c99b6','#2079a8','#165489', '#164f6f','#036eb8','#31a4b1']; 
+	                        return colorList[params.dataIndex] 
+	                    }
+	                },
 	            },
-	            data: [totalData.apply[0], totalData.agency[0], totalData.authorization[0], totalData.reject[0]]
+	            data:[CompanyNums.CompanyNums[6],CompanyNums.CompanyNums[5],CompanyNums.CompanyNums[4],CompanyNums.CompanyNums[3],CompanyNums.CompanyNums[2],CompanyNums.CompanyNums[1],CompanyNums.CompanyNums[0]]//孵化企业总数 各项对应的数值**kun** 与下面注释数值一致
 	        },
 	        {
-	            name: '实用新型专利',
-	            type: 'bar',
-	            stack: '总量',
-	            label: {
-	                normal: {
-	                   /* show: true,*/
-	                    position: 'insideRight'
-	                }
-	            },
-	            data: [totalData.apply[1], totalData.agency[1], totalData.authorization[1], totalData.reject[1]]
-	        },
-	        {
-	            name: '发明专利',
-	            type: 'bar',
-	            stack: '总量',
-	            label: {
-	                normal: {
-	                    /*show: true,*/
-	                    position: 'insideRight'
-	                }
-	            },
-	            data: [totalData.apply[2], totalData.agency[2], totalData.authorization[2], totalData.reject[2]]
+	            name:'孵化企业总数（折）',
+	            type:'line',
+	            data:[CompanyNums.CompanyNums[6],CompanyNums.CompanyNums[5],CompanyNums.CompanyNums[4],CompanyNums.CompanyNums[3],CompanyNums.CompanyNums[2],CompanyNums.CompanyNums[1],CompanyNums.CompanyNums[0]],//孵化企业总数 各项对应的数值**kun** 与上面注释数值一致
+	            color:["rgba(3,110,184,0.4)"],
 	        }
+	        
+	        
 	    ]
 	};
-
-// 使用刚指定的配置项和数据显示图表。
 myChart2.setOption(option2);
+//荣誉奖励tab切换表格生成**kun**
+/*院获奖情况*/
+var html1="<tr><td>"+Colleageawardid+"</td><td>"+ColleageawardTime+"</td><td>"+ColleageawardLevel+"</td><td>"+ColleageawardUnit+"</td><td>"+ColleageawardName+"</td></tr>"+//院获奖第一行 逐行替换里面的文字内容
+"<tr><td>"+Colleageawardid1+"</td><td>"+ColleageawardTime1+"</td><td>"+ColleageawardLevel1+"</td><td>"+ColleageawardUnit1+"</td><td>"+ColleageawardName1+"</td></tr>"+//院获奖第二行
+"<tr><td>"+Colleageawardid2+"</td><td>"+ColleageawardTime2+"</td><td>"+ColleageawardLevel2+"</td><td>"+ColleageawardUnit2+"</td><td>"+ColleageawardName2+"</td></tr>";//院获奖第三行
+$("#govTable1").append(html1);
+/*孵化企业获奖情况*/
+var html2="<tr><td>"+incubateawardid+"</td><td>"+incubateawardTime+"</td><td>"+incubateawardLevel+"</td><td>"+incubateawardUnit+"</td><td>"+incubateawardName+"</td></tr>"+//院获奖第一行 逐行替换里面的文字内容
+"<tr><td>"+incubateawardid1+"</td><td>"+incubateawardTime1+"</td><td>"+incubateawardLevel1+"</td><td>"+incubateawardUnit1+"</td><td>"+incubateawardName1+"</td></tr>"+//院获奖第二行
+"<tr><td>"+incubateawardid2+"</td><td>"+incubateawardTime2+"</td><td>"+incubateawardLevel2+"</td><td>"+incubateawardUnit2+"</td><td>"+incubateawardName2+"</td></tr>";//院获奖第三行
+$("#govTable2").append(html2);
+/*个人获奖情况*/
+var html3="<tr><td>"+Personalawardid+"</td><td>"+PersonalawardTime+"</td><td>"+PersonalawardLevel+"</td><td>"+PersonalpersonName+"</td><td>"+PersonalawardName+"</td></tr>"+//院获奖第一行 逐行替换里面的文字内容
+"<tr><td>"+Personalawardid1+"</td><td>"+PersonalawardTime1+"</td><td>"+PersonalawardLevel1+"</td><td>"+PersonalpersonName1+"</td><td>"+PersonalawardName1+"</td></tr>"+//院获奖第二行
+"<tr><td>"+Personalawardid2+"</td><td>"+PersonalawardTime2+"</td><td>"+PersonalawardLevel2+"</td><td>"+PersonalpersonName2+"</td><td>"+PersonalawardName2+"</td></tr>";//院获奖第三行
+$("#govTable3").append(html3);

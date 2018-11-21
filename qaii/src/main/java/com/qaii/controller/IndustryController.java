@@ -7,6 +7,8 @@ import java.util.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.Null;
 
 import com.qaii.domain.IncubatorRecord;
 import com.qaii.service.IncubatorRecordService;
@@ -43,7 +45,7 @@ public class IndustryController {
 	@Resource
 	private IncubatorRecordService incubatorRecordService;
 
-	
+
 	Incubator incubator2=new Incubator();
 	
 	
@@ -315,7 +317,7 @@ public class IndustryController {
 			List<StockEquity> stockEquity=new ArrayList<>();
 			Integer id=Integer.parseInt(req.getParameter("id"));
 			stockEquity=stockEquityService.selectByPrimaryKey(id);
-			System.out.println("aaaa:"+stockEquity);
+			System.out.println(stockEquity);
 			int count =stockEquity.size();
 			if(stockEquity!=null) {
 				return Layui.data(count, stockEquity);
@@ -362,7 +364,7 @@ public class IndustryController {
 			e.printStackTrace();
 			return new JsonResult("传入数据有误" + e);
 		}
-		
+
 		int row= incubatorService.updateByPrimaryKeySelective(newIncubator);
 		if(row>0) {
 			BeanChangeUtil<T> tBeanChangeUtil=new BeanChangeUtil<>();
@@ -405,12 +407,12 @@ public class IndustryController {
 		}else {
 			return new JsonResult();
 		}
-		
 
-    
-		
+
+
+
 	}
-	
+
 	//删除孵化企业管理
 	@ResponseBody
 	@RequestMapping(value="dellIndusStackInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
@@ -424,13 +426,13 @@ public class IndustryController {
 
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 	private void IncubatorInfo(HttpServletRequest req, Incubator incubator) throws ParseException {
 		incubator.setCompanyName(req.getParameter("companyName"));
 		incubator.setCreditCode(req.getParameter("creditCode"));

@@ -47,9 +47,25 @@
   		select * from industry_incubator
   </select>
 
+
+  <select id="selectCountNumsByQianFan" resultType="Integer">
+  		select count(*) from industry_incubator where is_thousand_sail_enterprise = 1
+  </select>
+
+  <select id="selectCountNumsByGaoxin" resultType="Integer">
+  		select count(*) from industry_incubator where is_high_technology_enterprise = 1
+  </select>
+  <select id="selectCountNumsByBaiQIan" resultType="Integer">
+  		select count(*) from industry_incubator where is_billion_enterprise = 1
+  </select>
+
+  <select id="selectCountNumsByMiddleLittle" resultType="Integer">
+  		select count(*) from industry_incubator where is_technology_enterprise = 1
+  </select>
+
   <select id="selectestablishtime" resultType="java.lang.String">
     select
-    establish_time
+   establish_time
     from industry_incubator
   </select>
 

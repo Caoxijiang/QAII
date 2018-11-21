@@ -320,36 +320,34 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 				    ,"incubatorName":Info.incubatorName
 				    ,"hatchingTime":Info.hatchingTime
 				    ,"limitedPeriod":Info.limitedPeriod
-				    ,"isThousandSailEnterprise": Info.isThousandSailEnterprise//“千帆计划”入库企业
-				    ,"isBillionEnterprise": Info.isThousandSailEnterprise //是否入选青岛市科技型企业培育“百千万”工程
-				    ,"isHighTechnologyEnterprise": Info.isHighTechnologyEnterprise //是否高新技术企业
-				    ,"isTechnologyEnterprise": Info.isTechnologyEnterprise //是否科技型中小企业
+				    ,"isThousandSailEnterprise": Info.isThousandSailEnterprise+""//“千帆计划”入库企业
+				    ,"isBillionEnterprise": Info.isThousandSailEnterprise+"" //是否入选青岛市科技型企业培育“百千万”工程
+				    ,"isHighTechnologyEnterprise": Info.isHighTechnologyEnterprise+"" //是否高新技术企业
+				    ,"isTechnologyEnterprise": Info.isTechnologyEnterprise+"" //是否科技型中小企业
 				    ,"certificateTime":Info.certificateTime
 				    ,"certificateCode":Info.certificateCode
 				    ,"incomingRegistrationCode":Info.incomingRegistrationCode
 				    ,"desc": ""
 				})
+				 //科技型中小企业
+				  var isTech=String(Info.isTechnologyEnterprise);
+				  if(isTech=="1"){
+						$("#isTech").show();
+					}else{
+						$("#isTech").hide();
+					}
+				  /* 高新技术企业 */
+				  var isHighTech=Info.isHighTechnologyEnterprise+"";
+				  if(isHighTech=="1"){
+						$("#isHighTech").show();
+					}else{
+						$("#isHighTech").hide();
+					}
 		  }else{
 			  $("#www").html("数据接口异常")
 		  }
 	  }
   })
-  
-
-  //科技型中小企业
-  var isTech="1";
-  if(isTech==1){
-		$("#isTech").show();
-	}else{
-		$("#isTech").hide();
-	}
-  /* 高新技术企业 */
-  var isHighTech="1";
-  if(isHighTech==1){
-		$("#isHighTech").show();
-	}else{
-		$("#isHighTech").hide();
-	}
 });
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>

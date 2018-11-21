@@ -10,6 +10,10 @@ public interface IncubatorService {
 	int insert(Incubator incubator );
 	List<String> selectestablishtime();
 	int selectCountNums(String establishtime);
+	int selectCountNumsByQianFan();
+	int selectCountNumsByGaoxin();
+	int selectCountNumsByBaiQIan();
+	int selectCountNumsByMiddleLittle();
 	Incubator selectByPrimaryKey(Integer id);
 	List<Incubator> selectAlllist();
 	int updateByPrimaryKeySelective(Incubator incubator);

@@ -2,7 +2,7 @@
 .layui-table-body{
 	height: -moz-calc( 100vh - 190px );
     height: -webkit-calc( 100vh - 190px ); 
-    height: calc( 100vh - 190 px )
+    height: calc( 100vh - 190px )
 }
 .conternbox{
 	margin-top:70px;
