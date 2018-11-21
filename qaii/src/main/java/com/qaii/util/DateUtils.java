@@ -98,7 +98,7 @@ public class DateUtils extends org.apache.commons.lang.time.DateUtils{
 	 * 例：2009-11-03 13:50:46
 	 */
 	public static String getFullDate() {
-		java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd");
 		return dateFormat.format(new Date());
 	}
 

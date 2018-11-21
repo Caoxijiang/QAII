@@ -1,5 +1,7 @@
 package com.qaii.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class IncubatorRecord {
@@ -12,6 +14,7 @@ public class IncubatorRecord {
     private String oldName;
 
     private String newName;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
 
     private Date changedTime;
 

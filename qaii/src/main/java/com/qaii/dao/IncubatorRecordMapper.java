@@ -2,16 +2,20 @@ package com.qaii.dao;
 
 import com.qaii.domain.IncubatorRecord;
 
+import java.util.List;
+
 public interface IncubatorRecordMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(IncubatorRecord record);
+    int insert(List<IncubatorRecord> record);
 
     int insertSelective(IncubatorRecord record);
 
-    IncubatorRecord selectByPrimaryKey(Integer id);
+    List<IncubatorRecord> selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(IncubatorRecord record);
 
-    int updateByPrimaryKey(IncubatorRecord record);
+    int updateByPrimaryKey(List<IncubatorRecord> record);
+
+    int updataTime(IncubatorRecord incubatorRecord);
 }

@@ -107,7 +107,7 @@ table th{
 .layui-table-body{
 	height: -moz-calc( 100vh - 265px );
     height: -webkit-calc( 100vh - 265px ); 
-    height: calc( 100vh - 265 px )
+    height: calc( 100vh - 265px )
 }
 .layui-form{
 	height:auto !important;
@@ -234,7 +234,7 @@ table{
 }
 /*下拉选框样式*/
 .search{
-	width：50px;
+	width:50px;
 	height:36px;
 	/* border: 1px solid #1b274e; */
 	border: 1px solid #aaa;
