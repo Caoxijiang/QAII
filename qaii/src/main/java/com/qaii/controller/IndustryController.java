@@ -218,8 +218,7 @@ public class IndustryController {
 			result = FileLoadUtils.fileload(files, PATH);
 			list = (List<Map<String, Object>>) result.get("0");
 			list2 = (List<Map<String, Object>>) result.get("1");
-			System.out.println(list);
-			System.out.println(list2);
+			System.out.println("__________："+list+">>>>>>>>>>>："+list2);
 		} catch (IOException e1) {
 			return "page/industry/inform/addFaildind";
 		}
@@ -232,12 +231,14 @@ public class IndustryController {
 				iFile.setFilePath(list.get(0).get("URL").toString());
 				iFile.setFileStyle("License");
 				iFlists.add(iFile);
+			}else {
+				iFlists.add(iFile);
 			}
+
 			if (list2 != null) {
 				iFile1.setFileName(list2.get(0).get("oldName").toString());
 				iFile1.setFilePath(list2.get(0).get("URL").toString());
 				iFile1.setFileStyle("Electronic");
-
 			}
 			String isThousandSailEnterprise = req.getParameter("isThousandSailEnterprise");
 			incubator.setIsThousandSailEnterprise(new Byte(isThousandSailEnterprise));
@@ -270,20 +271,28 @@ public class IndustryController {
 			return "page/industry/inform/addFaildind";
 
 		}
-		int row = incubatorService.insert(incubator);
-		if (row > 0) {
-			System.out.println(incubator.getId());
-			iFile.setIncubatorId(incubator.getId());
-			iFile1.setIncubatorId(incubator.getId());
-			int args = incubatorFileService.insert(iFlists);
-			if (args > 0) {
-				return "page/industry/inform/addSuccesdind";
+
+		if((iFlists.get(0).getFileName())!=null){
+			System.out.println("--------------"+iFlists);
+			int row = incubatorService.insert(incubator);
+			if (row > 0 ) {
+				System.out.println(incubator.getId());
+				iFile.setIncubatorId(incubator.getId());
+				iFile1.setIncubatorId(incubator.getId());
+				int args = incubatorFileService.insert(iFlists);
+				if (args > 0) {
+					return "page/industry/inform/addSuccesdind";
+				} else {
+					return "page/industry/inform/addFaildind";
+				}
 			} else {
 				return "page/industry/inform/addFaildind";
 			}
-		} else {
+		}else{
 			return "page/industry/inform/addFaildind";
 		}
+
+
 
 	}
 
