@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-@Service
+@Service("ministryFileService")
 public class MinistryFileServiceImpl implements MinistryFileService {
 
     @Resource
