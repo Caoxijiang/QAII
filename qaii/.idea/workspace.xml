@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="qaii:war" />
+      <artifact name="qaii:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e73e5b12-3840-43a0-928a-87513875f6e8" name="Default Changelist" comment="Merge https://github.com/Caoxijiang/QAII&#10;&#10;# Conflicts:&#10;#&#9;qaii/.idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path=".idea/artifacts/qaii_war.xml" />
+    <ignored path=".idea/artifacts/qaii_war_exploded.xml" />
+    <ignored path=".idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" />
+    <ignored path=".idea/libraries/Maven__com_alibaba_druid_1_0_2.xml" />
+    <ignored path=".idea/libraries/Maven__com_alibaba_fastjson_1_2_6.xml" />
+    <ignored path=".idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_0.xml" />
+    <ignored path=".idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_4_2.xml" />
+    <ignored path=".idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_4_2.xml" />
+    <ignored path=".idea/libraries/Maven__com_github_virtuald_curvesapi_1_03.xml" />
+    <ignored path=".idea/libraries/Maven__commons_beanutils_commons_beanutils_1_7_0.xml" />
+    <ignored path=".idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" />
+    <ignored path=".idea/libraries/Maven__commons_collections_commons_collections_3_2.xml" />
+    <ignored path=".idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" />
+    <ignored path=".idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" />
+    <ignored path=".idea/libraries/Maven__commons_io_commons_io_2_4.xml" />
+    <ignored path=".idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
+    <ignored path=".idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
+    <ignored path=".idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" />
+    <ignored path=".idea/libraries/Maven__javax_javaee_api_6_0.xml" />
+    <ignored path=".idea/libraries/Maven__jstl_jstl_1_2.xml" />
+    <ignored path=".idea/libraries/Maven__junit_junit_4_11.xml" />
+    <ignored path=".idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
+    <ignored path=".idea/libraries/Maven__mysql_mysql_connector_java_5_1_35.xml" />
+    <ignored path=".idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_4.xml" />
+    <ignored path=".idea/libraries/Maven__net_sf_json_lib_json_lib_jdk15_2_2_1.xml" />
+    <ignored path=".idea/libraries/Maven__org_apache_commons_commons_lang3_3_1.xml" />
+    <ignored path=".idea/libraries/Maven__org_apache_poi_poi_3_14.xml" />
+    <ignored path=".idea/libraries/Maven__org_apache_poi_poi_ooxml_3_14.xml" />
+    <ignored path=".idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_14.xml" />
+    <ignored path=".idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" />
+    <ignored path=".idea/libraries/Maven__org_aspectj_aspectjrt_1_7_3.xml" />
+    <ignored path=".idea/libraries/Maven__org_aspectj_aspectjweaver_1_7_3.xml" />
+    <ignored path=".idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" />
+    <ignored path=".idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" />
+    <ignored path=".idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+    <ignored path=".idea/libraries/Maven__org_mybatis_mybatis_3_2_8.xml" />
+    <ignored path=".idea/libraries/Maven__org_mybatis_mybatis_spring_1_2_2.xml" />
+    <ignored path=".idea/libraries/Maven__org_projectlombok_lombok_1_18_0.xml" />
+    <ignored path=".idea/libraries/Maven__org_slf4j_slf4j_api_1_7_12.xml" />
+    <ignored path=".idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_12.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_aop_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_beans_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_context_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_context_support_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_core_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_expression_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_jdbc_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_orm_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_oxm_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_test_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_tx_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_web_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__org_springframework_spring_webmvc_3_2_4_RELEASE.xml" />
+    <ignored path=".idea/libraries/Maven__stax_stax_api_1_0_1.xml" />
+    <ignored path=".idea/compiler.xml" />
+    <ignored path=".idea/misc.xml" />
+    <ignored path=".idea/qaii.iml" />
+    <ignored path=".idea/vcs.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="645225995">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.77" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="15" />
+          <entry key="ft" value="118" />
+          <entry key="java" value="8073" />
+          <entry key="js" value="132" />
+          <entry key="jsp" value="288" />
+          <entry key="properties" value="14" />
+          <entry key="txt" value="9" />
+          <entry key="xml" value="295" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="8073" />
+          <entry key="JSP" value="288" />
+          <entry key="JavaScript" value="132" />
+          <entry key="PLAIN_TEXT" value="24" />
+          <entry key="Properties" value="14" />
+          <entry key="SQL" value="4" />
+          <entry key="VTL" value="118" />
+          <entry key="XML" value="291" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="5" />
+          <entry key="java" value="140" />
+          <entry key="js" value="1" />
+          <entry key="jsp" value="48" />
+          <entry key="md" value="1" />
+          <entry key="properties" value="6" />
+          <entry key="xml" value="90" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="5" />
+          <entry key="JAVA" value="140" />
+          <entry key="JSP" value="48" />
+          <entry key="JavaScript" value="1" />
+          <entry key="Markdown" value="1" />
+          <entry key="Properties" value="6" />
+          <entry key="XML" value="90" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="1" />
+          <entry key="git.branch.delete.local" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardCollegeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2370">
+              <caret line="180" column="8" selection-start-line="180" selection-start-column="8" selection-end-line="181" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardPersonalController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="12">
+              <caret line="153" column="57" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/personAdd.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1305">
+              <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/personCheck.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2190">
+              <caret line="146" column="24" selection-start-line="146" selection-start-column="24" selection-end-line="153" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardPersonalServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>DATABASE_PATH</find>
+      <find>title</find>
+      <find>copyCopyrightperson</find>
+      <find>detail</find>
+      <find>rewardAssumedepart</find>
+      <find>rewardAward</find>
+      <find>del</find>
+      <find>\\</find>
+      <find>fileName</find>
+      <find>fileClazz</find>
+      <find>obj.da</find>
+      <find>orgnizer</find>
+      <find>awardName</find>
+      <find>ministryTime</find>
+      <find>dellist</find>
+      <find>MinistryService</find>
+      <find>MinistryFileService</find>
+      <find>MinistryFile</find>
+      <find>导入</find>
+      <find>file</find>
+      <find>AwardCollege</find>
+      <find>test3</find>
+      <find>AwardIncubate</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>ministryName</replace>
+      <replace>ministryLocation</replace>
+      <replace>remark</replace>
+      <replace>/</replace>
+      <replace>file0</replace>
+      <replace>recordName</replace>
+      <replace>recordClazz</replace>
+      <replace>activityName</replace>
+      <replace>awardUnit</replace>
+      <replace>AwardCollegeService</replace>
+      <replace>AwardCollegeFileService</replace>
+      <replace>orgnizer</replace>
+      <replace>AwardCollegeFile</replace>
+      <replace>AwardIncubate</replace>
+      <replace>AwardPersonal</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/testCheckController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/MinistryMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmCheck.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmAdd.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/MinistryMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/CountDatetoNowDays.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/global.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/globalfunction.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/domain/Ministry.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/domain/Constant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/Constant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/fileDomainFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/ConstantUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/generator.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/MinistryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/MinistryFileServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/InsertOfExcel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/MinistryController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteAdd.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteCheck.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/domain/AwardCollege.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/domain/AwardPersonal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/AwardCollegeFileService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmEdit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/FileLoadUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteEdit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardCollegeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardCollegeFileServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardCollegeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardIncubateFileServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardIncubateServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardPersonalFileServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardPersonalServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/domain/AwardIncubate.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateAdd.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateCheck.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateEdit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardIncubateController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/institute/institute.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubate.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardPersonal.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/personAdd.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/personCheck.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/personEdit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardPersonalMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardPersonalController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/person.jsp" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$USER_HOME$/Documents/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="$USER_HOME$/Documents/apache-maven-3.6.0/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="QAII" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+              <item name="incubate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+              <item name="institute" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+              <item name="person" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="innovate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="serviceFirm" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542866343564" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.91" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="qaii:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_QAII_7" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="60201" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="qaii:war exploded" />
+          <artifact name="qaii:war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e73e5b12-3840-43a0-928a-87513875f6e8" name="Default Changelist" comment="" />
+      <created>1542160588123</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542160588123</updated>
+      <workItem from="1542160598338" duration="64530000" />
+      <workItem from="1542614108353" duration="7011000" />
+      <workItem from="1542699096693" duration="2628000" />
+      <workItem from="1542766420623" duration="22559000" />
+      <workItem from="1542856259975" duration="1396000" />
+    </task>
+    <task id="LOCAL-00001" summary="12121">
+      <created>1542598768596</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542598768596</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Merge https://github.com/Caoxijiang/QAII&#10;&#10;# Conflicts:&#10;#&#9;qaii/.idea/workspace.xml">
+      <created>1542701883261</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542701883262</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Merge https://github.com/Caoxijiang/QAII&#10;&#10;# Conflicts:&#10;#&#9;qaii/.idea/workspace.xml">
+      <created>1542702333029</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1542702333029</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge https://github.com/Caoxijiang/QAII&#10;&#10;# Conflicts:&#10;#&#9;qaii/.idea/workspace.xml">
+      <created>1542849585452</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542849585453</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Merge https://github.com/Caoxijiang/QAII&#10;&#10;# Conflicts:&#10;#&#9;qaii/.idea/workspace.xml">
+      <created>1542852391465</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542852391465</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="98124000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25772098" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32871288" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49838537" weight="0.3138614" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991684" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32952183" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4994618" visible="true" weight="0.3284974" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50161463" side_tool="true" weight="0.32952183" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32952183" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" weight="0.32952183" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="JSF" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="CDI" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32992464" />
+      <window_info anchor="right" id="Database" order="8" weight="0.32992464" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="12121" />
+    <MESSAGE value="Merge https://github.com/Caoxijiang/QAII&#10;&#10;# Conflicts:&#10;#&#9;qaii/.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge https://github.com/Caoxijiang/QAII&#10;&#10;# Conflicts:&#10;#&#9;qaii/.idea/workspace.xml" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_3_2_4_RELEASE.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_3_2_4_RELEASE.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_3_2_4_RELEASE.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_3_2_4_RELEASE.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_3_2_4_RELEASE.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_3_2_4_RELEASE.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_3_2_4_RELEASE.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_3_2_4_RELEASE.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_3_2_4_RELEASE.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/FileDomainFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteCheck.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-517">
+          <caret line="99" column="53" selection-start-line="99" selection-start-column="53" selection-end-line="99" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/CooperationFileServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/AwardCollegeFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/FileLoadUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/Ministry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="208" column="64" lean-forward="true" selection-start-line="208" selection-start-column="64" selection-end-line="208" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/AwardCollege.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardCollegeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardCollegeFileServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardPersonalFileServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardIncubateServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/AwardCollegeFileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="52" lean-forward="true" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardIncubateFileServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/InsertOfExcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-437">
+          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/AwardIncubate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-962">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateCheck.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="137" column="33" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/MinistryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-212">
+          <caret line="160" column="38" selection-start-line="160" selection-start-column="15" selection-end-line="160" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="108" column="64" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/institute/institute.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="329" column="36" selection-start-line="329" selection-start-column="36" selection-end-line="329" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="302" column="36" selection-start-line="302" selection-start-column="36" selection-end-line="302" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="122" column="47" selection-start-line="122" selection-start-column="47" selection-end-line="122" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardIncubateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="186" column="5" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="186" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="173" column="26" selection-start-line="173" selection-start-column="26" selection-end-line="175" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardPersonalFileMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardPersonalMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardPersonalMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="336" column="19" selection-start-line="336" selection-start-column="19" selection-end-line="336" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardPersonalFileMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="11" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/personEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1732">
+          <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/CopyrightController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1448">
+          <caret line="262" column="36" lean-forward="true" selection-start-line="262" selection-start-column="36" selection-end-line="262" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/person.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-537">
+          <caret line="329" column="37" selection-start-line="329" selection-start-column="37" selection-end-line="329" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/AwardPersonal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardCollegeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2370">
+          <caret line="180" column="8" selection-start-line="180" selection-start-column="8" selection-end-line="181" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/personAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/personCheck.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2190">
+          <caret line="146" column="24" selection-start-line="146" selection-start-column="24" selection-end-line="153" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardPersonalServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardPersonalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="153" column="57" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>qaii:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>qaii</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
+  </component>
+</project>
