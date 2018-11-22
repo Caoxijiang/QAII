@@ -17,11 +17,12 @@
 </head>
 <body id="bodyHei">
 <div class="layui-container" style="margin-top:15px;">
-  <form class="layui-form" action="">
+  <form class="layui-form" action="updataTime.do" method="post">
 	<div class="layui-form-item">
 		<label class="layui-form-label wid60">变更时间</label>
 		<div class="layui-input-block wid80">
-			<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入出资时间" class="layui-input" id="test1">
+            <input type="text" name="time" lay-verify="title" autocomplete="off" placeholder="请输入出资时间" class="layui-input" id="test1">
+            <input type="hidden" name="id" value="${requestScope.Info[0]}">
 		</div>
 	</div>
   <div class="layui-form-item">

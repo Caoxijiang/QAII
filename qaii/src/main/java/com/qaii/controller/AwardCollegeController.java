@@ -129,9 +129,9 @@ public class AwardCollegeController {
         }
         int result = service.updateByPrimaryKey(record);
         if (result!=0)
-            return ConstantUtil.INDUSTRY_INSERT_SUCCESS;
+            return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         else
-            return ConstantUtil.INDUSTRY_INSERT_FAILD;
+            return ConstantUtil.INDUSTRY_EDIT_FAILD;
     }
 
     //删除信息

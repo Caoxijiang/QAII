@@ -165,7 +165,7 @@
 	.layui-table-body{
 		height: -moz-calc( 100vh - 205px );
 	    height: -webkit-calc( 100vh - 205px ); 
-	    height: calc( 100vh - 205 px )
+	    height: calc( 100vh - 205px )
 	}
 	.layui-layout-admin .layui-side {
 	    top: 50px;
@@ -344,7 +344,7 @@
 	}
 	.layui-table td, .layui-table th {
 	    position: relative;
-	    padding: 9px px;
+	    padding: 9px;
 	    min-height: 35px;
 	    line-height: 35px;
 	    height:35px;

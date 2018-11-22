@@ -16,19 +16,20 @@
     select 
     <include refid="Base_Column_List" />
     from industry_incubatorrecord
-    where id = #{id,jdbcType=INTEGER}
+    where pid = #{pid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from industry_incubatorrecord
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.qaii.domain.IncubatorRecord">
+  <insert id="insert" parameterType="java.util.List">
     insert into industry_incubatorrecord (id, pid, list_name, 
-      old_name, new_name, changed_time
+      old_name, new_name, changed_time)values
+    <foreach collection="list" item="item" separator="," index="index">
+      (#{item.id,jdbcType=INTEGER}, #{item.pid,jdbcType=INTEGER}, #{item.listName,jdbcType=VARCHAR},
+      #{item.oldName,jdbcType=VARCHAR}, #{item.newName,jdbcType=VARCHAR}, #{item.changedTime,jdbcType=DATE}
       )
-    values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{listName,jdbcType=VARCHAR}, 
-      #{oldName,jdbcType=VARCHAR}, #{newName,jdbcType=VARCHAR}, #{changedTime,jdbcType=DATE}
-      )
+    </foreach>
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.IncubatorRecord">
     insert into industry_incubatorrecord
@@ -101,6 +102,11 @@
       old_name = #{oldName,jdbcType=VARCHAR},
       new_name = #{newName,jdbcType=VARCHAR},
       changed_time = #{changedTime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updataTime" parameterType="com.qaii.domain.IncubatorRecord">
+    update industry_incubatorrecord
+    set changed_time = #{changedTime,jdbcType=DATE}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
