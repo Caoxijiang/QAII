@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by kunpeng on 2018/11/16 10:37
  */
-@Service
+@Service("AwardCollegeService")
 public class AwardCollegeServiceImpl implements AwardCollegeService {
     @Resource
     private AwardCollegeMapper awardCollegeMapper;
@@ -33,7 +33,7 @@ public class AwardCollegeServiceImpl implements AwardCollegeService {
 
     @Override
     public int updateByPrimaryKey(AwardCollege record) {
-        return awardCollegeMapper.updateByPrimaryKey(record);
+        return awardCollegeMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override

@@ -31,15 +31,18 @@
 	</button>		
 </div>
 <div class="layui-container addtop">
-  <form class="layui-form" action="insertMinistry.do" method="post" enctype="multipart/form-data" lay-filter="example">
+  <form class="layui-form" action="updateAwardCollege.do" method="post" enctype="multipart/form-data" lay-filter="example">
   <!-- 基本信息 -->
 	  <div class="layui-row contern">
 	  	<h1>基本信息</h1>
+	  	<input id="id" name="id" type="hidden">
+	  	<input id="fid" name="fid" type="hidden">
+		<input id="fpath" name="fpath" type="hidden">
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">获奖单位名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryName" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="awardUnit" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -47,7 +50,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">获奖时间</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryProperty" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+			      <input type="text" name="awardTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 			    </div>
 			  </div>
 		</div>
@@ -55,7 +58,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">奖励荣誉名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="contactPerson" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="awardName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -63,7 +66,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">获奖级别</label>
 			    <div class="layui-input-block">
-			      <select name="interest" lay-filter="aihao">
+			      <select name="awardLevel" lay-filter="aihao">
 			        <option value="国际级">国际级</option>
 			        <option value="国家级" selected="">国家级</option>
 			        <option value="省级">省级</option>
@@ -77,7 +80,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">颁奖活动名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryLocation" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="activityName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -85,7 +88,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">主办单位</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryTime" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="orgnizer" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -151,7 +154,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
  var id=${param.userId};
  if(id!=null){
 		$.post({
-			url:"getMinistry.do",
+			url:"getAwardCollege.do",
 			data:{
 				id:id
 			},
@@ -161,19 +164,16 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 					//表单初始赋值 从表单中提取数据
 					  form.val('example', {
                           "id":awardInfo.id,
-                          "ministryName":awardInfo.ministryName,
-                          "ministryProperty":awardInfo.ministryProperty,
-                          "contactPerson":awardInfo.contactPerson,
-                          "contactMethod":awardInfo.contactMethod,
-                          "ministryLocation":awardInfo.ministryLocation,
-                          "ministryTime":awardInfo.ministryTime,
-                          "ownselfContactPerson":awardInfo.ownselfContactPerson,
-                          "ministryProject":awardInfo.ministryProject,
-                          "ownselfUnit":awardInfo.ownselfUnit,
-                          "ownselfContactMethod":awardInfo.ownselfContactMethod,
+                          "awardUnit":awardInfo.awardUnit,
+                          "awardTime":awardInfo.awardTime,
+                          "awardName":awardInfo.awardName,
+                          "activityName":awardInfo.activityName,
+                          "orgnizer":awardInfo.orgnizer,
+                          "awardLevel":awardInfo.awardLevel,
                           "remark":awardInfo.remark,
                           "file0":awardInfo.listFile[0].fileName,
-						  "fid":awardInfo.listFile[0].id
+						  "fid":awardInfo.listFile[0].id,
+                          "fpath":awardInfo.listFile[0].filePath
 					  })
 				}else{
 					alert("查看详情失败")

@@ -76,6 +76,8 @@ public class MinistryController {
         LoadData(request, record);
         //装载文件类属性
         LoadFileData(fileRecord);
+        record.setGmtCreate(new Date());
+        record.setGmtModified(new Date());
         int result=service.insertRecordReturnID(record);
         fileRecord.setIncubatorId(record.getId());
         //存储文件
@@ -113,8 +115,6 @@ public class MinistryController {
         record.setOwnselfContactPerson(request.getParameter("ownselfContactPerson"));
         record.setOwnselfContactMethod(request.getParameter("ownselfContactMethod"));
         record.setRemark(request.getParameter("remark"));
-        record.setGmtCreate(new Date());
-        record.setGmtModified(new Date());
     }
 
     //显示所有信息
@@ -136,6 +136,7 @@ public class MinistryController {
     String updateMinistry(HttpServletRequest request, Ministry record) throws ParseException {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
+        record.setGmtModified(new Date());
         int result = service.updateByPrimaryKey(record);
         if (result!=0)
             return ConstantUtil.INDUSTRY_INSERT_SUCCESS;
@@ -174,7 +175,7 @@ public class MinistryController {
         loadDataWithList(record, list);
         record.setId(null);
         service.insertRecordReturnID(record);
-        MinistryFile fileRecord = (MinistryFile)fileDomainFactory.getNullClass("MinistryFile");
+        MinistryFile fileRecord = (MinistryFile) FileDomainFactory.getNullClass("MinistryFile");
         fileRecord.setIncubatorId(record.getId());
         fileService.insertRecord(fileRecord);
     }
