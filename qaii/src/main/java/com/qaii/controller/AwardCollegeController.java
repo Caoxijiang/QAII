@@ -54,18 +54,18 @@ public class AwardCollegeController {
     private final static String DATABASE_PATH = ConstantUtil.DATABASE_BASE_PATH + BASE_PATH;
 
     //插入记录
-    @RequestMapping(value = "insertAwardCollege.do" ,produces = "text/json;charset=UTF-8" )
+    @RequestMapping(value = "insertAwardCollege.do", produces = "text/json;charset=UTF-8")
     String insertAwardCollege(HttpServletRequest request,
-                              @RequestParam("file")MultipartFile[] files,
+                              @RequestParam("file") MultipartFile[] files,
                               AwardCollege record,
                               AwardCollegeFile fileRecord) throws Exception {
         LoadData(request, record);
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
         int result = service.insertRecordReturnID(record);
-        if (files.length > 0){
+        if (files.length > 0) {
             List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
-            for (int i=0;i<files.length;i++) {
+            for (int i = 0; i < files.length; i++) {
                 fileRecord.setHonorId(record.getId());
                 fileRecord.setFileName(files[i].getOriginalFilename());
                 fileRecord.setFilePath(DATABASE_PATH + list.get(i));
@@ -73,12 +73,12 @@ public class AwardCollegeController {
                 fileRecord.setGmtModified(new Date());
                 fileService.insertRecord(fileRecord);
             }
-        }else {
-            fileRecord = (AwardCollegeFile)FileDomainFactory.getNullClass("AwardCollegeFile");
+        } else {
+            fileRecord = (AwardCollegeFile) FileDomainFactory.getNullClass("AwardCollegeFile");
             fileRecord.setHonorId(record.getId());
             fileService.insertRecord(fileRecord);
         }
-        if (result!=0)
+        if (result != 0)
             return ConstantUtil.INDUSTRY_INSERT_SUCCESS;
         else
             return ConstantUtil.INDUSTRY_INSERT_FAILD;
@@ -98,13 +98,13 @@ public class AwardCollegeController {
     @RequestMapping(value = "listAwardColleges.do")
     @ResponseBody
     Layui listAwardColleges() throws ParseException {
-        return Layui.data(1,service.listRecords());
+        return Layui.data(1, service.listRecords());
     }
 
     //查看详情
     @RequestMapping(value = "getAwardCollege.do")
     @ResponseBody
-    JsonResult getAwardCollege(@RequestParam("id")Integer id) throws ParseException {
+    JsonResult getAwardCollege(@RequestParam("id") Integer id) throws ParseException {
         return new JsonResult(service.getRecord(id));
     }
 
@@ -113,11 +113,11 @@ public class AwardCollegeController {
     String updateAwardCollege(HttpServletRequest request,
                               AwardCollege record,
                               AwardCollegeFile fileRecord,
-                              @RequestParam("file")MultipartFile[] files) throws Exception {
+                              @RequestParam("file") MultipartFile[] files) throws Exception {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setGmtModified(new Date());
-        if (files.length > 0){
+        if (!files[0].isEmpty()) {
             //删除旧文件，保存新文件
             FileLoadUtils.deleteFileOfPath(request.getParameter("fpath"));
             List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
@@ -128,7 +128,7 @@ public class AwardCollegeController {
             fileService.updateByPrimaryKey(fileRecord);
         }
         int result = service.updateByPrimaryKey(record);
-        if (result!=0)
+        if (result != 0)
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         else
             return ConstantUtil.INDUSTRY_EDIT_FAILD;
@@ -137,22 +137,23 @@ public class AwardCollegeController {
     //删除信息
     @RequestMapping(value = "deleteAwardCollege.do")
     @ResponseBody
-    JsonResult deleteAwardCollege(@RequestParam("requestDate[]")Integer[] id){
+    JsonResult deleteAwardCollege(@RequestParam("requestDate[]") Integer[] id) {
         int result = service.deleteByPrimaryKeys(id);
-        if (result != 0)
+        if (result != 0) {
+            fileService.deleteByPrimaryKeys(id);
             return new JsonResult("success!");
-        else
+        } else
             return new JsonResult();
     }
 
     //通过Excel导入数据库
     @RequestMapping(value = "insertAwardCollegeWithExcel.do")
     @ResponseBody
-    JsonResult insertAwardCollegeWithExcel(@RequestParam("file")MultipartFile file) throws Exception{
+    JsonResult insertAwardCollegeWithExcel(@RequestParam("file") MultipartFile file) throws Exception {
         int result = InsertOfExcel.insertExcel("AwardCollegeController", "AwardCollege", file);
         if (result == 1) {
             return new JsonResult(ConstantUtil.SUCCESS_MESSAGE);
-        }else {
+        } else {
             return new JsonResult();
         }
     }
@@ -160,8 +161,8 @@ public class AwardCollegeController {
     //导入Excel数据
     void insertExcelData(AwardCollege record, List<String> list) throws Exception {
         WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();
-        service = (AwardCollegeService)wac.getBean("AwardCollegeService");
-        fileService = (AwardCollegeFileService)wac.getBean("AwardCollegeFileService");
+        service = (AwardCollegeService) wac.getBean("AwardCollegeService");
+        fileService = (AwardCollegeFileService) wac.getBean("AwardCollegeFileService");
         loadDataWithList(record, list);
         record.setId(null);
         service.insertRecordReturnID(record);

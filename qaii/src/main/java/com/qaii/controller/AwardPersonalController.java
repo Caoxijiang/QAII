@@ -67,7 +67,7 @@ public class AwardPersonalController {
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
         int result = service.insertRecordReturnID(record);
-        if (files.length > 0){
+        if (!files[0].isEmpty()){
             List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
             for (int i=0;i<files.length;i++) {
                 fileRecord.setHonorId(record.getId());
@@ -144,9 +144,10 @@ public class AwardPersonalController {
     @ResponseBody
     JsonResult deleteAwardPersonal(@RequestParam("requestDate[]")Integer[] id){
         int result = service.deleteByPrimaryKeys(id);
-        if (result != 0)
+        if (result != 0){
+            fileService.deleteByPrimaryKeys(id);
             return new JsonResult("success!");
-        else
+        } else
             return new JsonResult();
     }
 

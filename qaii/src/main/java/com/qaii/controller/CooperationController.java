@@ -39,7 +39,7 @@ public class CooperationController {
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
-    
+
     @Resource
     private CooperationService service;
     @Resource
@@ -56,19 +56,20 @@ public class CooperationController {
     private final static String FILE_PATH = TEST_PATH + BASE_PATH;
     //数据库中记录的路径
     private final static String DATABASE_PATH = ConstantUtil.DATABASE_BASE_PATH + BASE_PATH;
+
     //插入记录
-    @RequestMapping(value = "insertCooperation.do" ,produces = "text/json;charset=UTF-8" )
+    @RequestMapping(value = "insertCooperation.do", produces = "text/json;charset=UTF-8")
     String insertCooperation(HttpServletRequest request,
-                              @RequestParam("file") MultipartFile[] files,
-                              Cooperation record,
-                              CooperationFile fileRecord) throws Exception {
+                             @RequestParam("file") MultipartFile[] files,
+                             Cooperation record,
+                             CooperationFile fileRecord) throws Exception {
         LoadData(request, record);
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
         int result = service.insertRecordReturnID(record);
-        if (files.length > 0){
+        if (files.length > 0) {
             List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
-            for (int i=0;i<files.length;i++) {
+            for (int i = 0; i < files.length; i++) {
                 fileRecord.setIncubatorId(record.getId());
                 fileRecord.setFileName(files[i].getOriginalFilename());
                 fileRecord.setFilePath(DATABASE_PATH + list.get(i));
@@ -76,12 +77,12 @@ public class CooperationController {
                 fileRecord.setGmtModified(new Date());
                 fileService.insertRecord(fileRecord);
             }
-        }else {
+        } else {
             fileRecord = (CooperationFile) FileDomainFactory.getNullClass("CooperationFile");
             fileRecord.setIncubatorId(record.getId());
             fileService.insertRecord(fileRecord);
         }
-        if (result!=0)
+        if (result != 0)
             return ConstantUtil.INDUSTRY_INSERT_SUCCESS;
         else
             return ConstantUtil.INDUSTRY_INSERT_FAILD;
@@ -100,26 +101,26 @@ public class CooperationController {
     @RequestMapping(value = "listCooperations.do")
     @ResponseBody
     Layui listCooperations() throws ParseException {
-        return Layui.data(1,service.listRecords());
+        return Layui.data(1, service.listRecords());
     }
 
     //查看详情
     @RequestMapping(value = "getCooperation.do")
     @ResponseBody
-    JsonResult getCooperation(@RequestParam("id")Integer id) throws ParseException {
+    JsonResult getCooperation(@RequestParam("id") Integer id) throws ParseException {
         return new JsonResult(service.getRecord(id));
     }
 
     //更新信息
     @RequestMapping(value = "updateCooperation.do")
     String updateCooperation(HttpServletRequest request,
-                              Cooperation record,
-                              CooperationFile fileRecord,
-                              @RequestParam("file")MultipartFile[] files) throws Exception {
+                             Cooperation record,
+                             CooperationFile fileRecord,
+                             @RequestParam("file") MultipartFile[] files) throws Exception {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setGmtModified(new Date());
-        if (files.length > 0){
+        if (!files[0].isEmpty()) {
             //删除旧文件，保存新文件
             FileLoadUtils.deleteFileOfPath(request.getParameter("fpath"));
             List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
@@ -130,7 +131,7 @@ public class CooperationController {
             fileService.updateByPrimaryKey(fileRecord);
         }
         int result = service.updateByPrimaryKey(record);
-        if (result!=0)
+        if (result != 0)
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         else
             return ConstantUtil.INDUSTRY_EDIT_FAILD;
@@ -139,22 +140,23 @@ public class CooperationController {
     //删除信息
     @RequestMapping(value = "deleteCooperation.do")
     @ResponseBody
-    JsonResult deleteCooperation(@RequestParam("requestDate[]")Integer[] id){
+    JsonResult deleteCooperation(@RequestParam("requestDate[]") Integer[] id) {
         int result = service.deleteByPrimaryKeys(id);
-        if (result != 0)
+        if (result != 0) {
+            fileService.deleteByPrimaryKeys(id);
             return new JsonResult("success!");
-        else
+        } else
             return new JsonResult();
     }
 
     //通过Excel导入数据库
     @RequestMapping(value = "insertCooperationWithExcel.do")
     @ResponseBody
-    JsonResult insertCooperationWithExcel(@RequestParam("file")MultipartFile file) throws Exception{
+    JsonResult insertCooperationWithExcel(@RequestParam("file") MultipartFile file) throws Exception {
         int result = InsertOfExcel.insertExcel("CooperationController", "Cooperation", file);
         if (result == 1) {
             return new JsonResult(ConstantUtil.SUCCESS_MESSAGE);
-        }else {
+        } else {
             return new JsonResult();
         }
     }
@@ -162,8 +164,8 @@ public class CooperationController {
     //导入Excel数据
     void insertExcelData(Cooperation record, List<String> list) throws Exception {
         WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();
-        service = (CooperationService)wac.getBean("CooperationService");
-        fileService = (CooperationFileService)wac.getBean("CooperationFileService");
+        service = (CooperationService) wac.getBean("CooperationService");
+        fileService = (CooperationFileService) wac.getBean("CooperationFileService");
         loadDataWithList(record, list);
         record.setId(null);
         service.insertRecordReturnID(record);
@@ -178,9 +180,9 @@ public class CooperationController {
         record.setProtocolName(list.get(2));
         record.setSignTime(CountDatetoNowDays.StringConvertToDate(list.get(3)));
         record.setCooperationContent(list.get(4));
-        record.setRemark(list.get(6));
+        record.setRemark(list.get(5));
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
     }
-    
+
 }

@@ -34,6 +34,14 @@ public class Cooperation {
 
     private List<CooperationFile> listFile;
 
+    public List<CooperationFile> getListFile() {
+        return listFile;
+    }
+
+    public void setListFile(List<CooperationFile> listFile) {
+        this.listFile = listFile;
+    }
+
     public Integer getId() {
         return id;
     }

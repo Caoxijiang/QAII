@@ -315,7 +315,7 @@
     </foreach>
   </delete>
   <select id="listRecords" resultMap="CustomMap">
-    SELECT * FROM industry_awardpersonal GROUP BY award_time DESC
+    SELECT * FROM industry_awardpersonal
   </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardPersonal">
     <id column="id" jdbcType="INTEGER" property="id" />

@@ -133,11 +133,24 @@ public class MinistryController {
 
     //更新信息
     @RequestMapping(value = "updateMinistry.do")
-    String updateMinistry(HttpServletRequest request, Ministry record) throws ParseException {
+    String updateMinistry(HttpServletRequest request,
+                          Ministry record,
+                          MinistryFile fileRecord,
+                          @RequestParam("file") MultipartFile[] files) throws Exception {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setGmtModified(new Date());
         int result = service.updateByPrimaryKey(record);
+        if (!files[0].isEmpty()) {
+            //删除旧文件，保存新文件
+            FileLoadUtils.deleteFileOfPath(request.getParameter("fpath"));
+            List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
+            fileRecord.setId(Integer.parseInt(request.getParameter("fid")));
+            fileRecord.setFileName(files[0].getOriginalFilename());
+            fileRecord.setFilePath(DATABASE_PATH + list.get(0));
+            fileRecord.setGmtModified(new Date());
+            fileService.updateByPrimaryKey(fileRecord);
+        }
         if (result!=0)
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         else
@@ -149,9 +162,10 @@ public class MinistryController {
     @ResponseBody
     JsonResult deleteMinistry(@RequestParam("requestDate[]")Integer[] id){
         int result = service.deleteByPrimaryKeys(id);
-        if (result != 0)
+        if (result != 0){
+            fileService.deleteByPrimaryKeys(id);
             return new JsonResult("success!");
-        else
+        } else
             return new JsonResult();
     }
 

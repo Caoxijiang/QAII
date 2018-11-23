@@ -128,7 +128,7 @@
   <delete id="deleteByParimaryKeys" parameterType="java.lang.Integer">
     DELETE FROM
     industry_awardincubatefile
-    WHERE id IN
+    WHERE honor_id IN
     <foreach collection="array" open="(" separator="," close=")" item="id">
       #{id,jdbcType=INTEGER}
     </foreach>
