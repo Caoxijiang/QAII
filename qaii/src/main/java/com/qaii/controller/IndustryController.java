@@ -114,11 +114,27 @@ public class IndustryController {
 		result.add(args);
 		return new ModelAndView("page/industry/hatch/hatchEdit","Info",result);
 	}
-	//创新能力界面
+	//合作情况管理界面
 	@RequestMapping("/innovate.do")
 	public String innovate(){
 		return "page/industry/innovate/innovate";
 	}
+	//合作情况管理界面添加
+	@RequestMapping("/innovateAdd.do")
+	public String innovateAdd(){
+		return "page/industry/innovate/innovateAdd";
+	}
+	//合作情况管理界面查看详情
+	@RequestMapping("/innovateCheck.do")
+	public String innovateCheck(){
+		return "page/industry/innovate/innovateCheck";
+	}
+	//合作情况管理界面修改
+	@RequestMapping("/innovateEdit.do")
+	public String innovateEdit(){
+		return "page/industry/innovate/innovateEdit";
+	}
+
 	//院获奖情况界面
 	@RequestMapping("/institute.do")
 	public String institute(){
