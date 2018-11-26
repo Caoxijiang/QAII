@@ -103,7 +103,8 @@ public class AwardPersonalController {
     @RequestMapping(value = "listAwardPersonals.do")
     @ResponseBody
     Layui listAwardPersonals() throws ParseException {
-        return Layui.data(1,service.listRecords());
+        List result = service.listRecords();
+        return Layui.data(result.size(), result);
     }
 
     //查看详情
