@@ -60,8 +60,8 @@ public class MinistryController {
     //文件类型
     public final static String FILE_CERTIFY = "certify";
     //文件路径 本机路径为/Users/wangxin/File
-    //private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
-    private final static String FILE_PATH = TEST_PATH + BASE_PATH;
+    private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
+//    private final static String FILE_PATH = TEST_PATH + BASE_PATH;
     //数据库中记录的路径
     private final static String DATABASE_PATH = ConstantUtil.DATABASE_BASE_PATH + BASE_PATH;
 
