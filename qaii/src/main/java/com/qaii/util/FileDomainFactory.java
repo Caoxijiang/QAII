@@ -10,7 +10,7 @@ import java.util.Date;
  * @Time 2018-11-19 10:15
  */
 
-public class fileDomainFactory {
+public class FileDomainFactory {
     public static Object getNullClass(String className) throws Exception{
         Class clazz = Class.forName(ConstantUtil.DOMAIN_PREFIX + className);
         Object obj = clazz.getConstructor().newInstance();

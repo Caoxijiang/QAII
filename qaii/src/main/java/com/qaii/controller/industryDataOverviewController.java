@@ -109,4 +109,5 @@ public class industryDataOverviewController {
         result.put("awardpersonal",personallist);
         return result;
     }
+
 }

@@ -82,11 +82,11 @@
 	<div class="act">
 		<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 		<div class="int-inline"><input id="id"  type="checkbox" value="获奖时间" checked="true"/><lable>我院/公司名称</lable></div>
-		<div class="int-inline"><input id=copyPicture  type="checkbox" value="获奖级别" checked="flase"/><lable>合作单位名称</lable></div>
-		<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="获奖单位名称" checked/><lable>签订的协议名称</lable></div>
-		<div class="int-inline"><input id="contactPerson"  type="checkbox" value="奖励荣誉名称" checked/><lable>签订时间</lable></div>
-		<div class="int-inline"><input id="contactMethod"  type="checkbox" value="颁奖活动名称" checked/><lable>合作内容/方向</lable></div>
-		<div class="int-inline"><input id="ownselfContactMethod"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
+		<div class="int-inline"><input id=unitName  type="checkbox" value="获奖级别" checked="flase"/><lable>合作单位名称</lable></div>
+		<div class="int-inline"><input id="cooperationName"  type="checkbox" value="获奖单位名称" checked/><lable>签订的协议名称</lable></div>
+		<div class="int-inline"><input id="protocolName"  type="checkbox" value="奖励荣誉名称" checked/><lable>签订时间</lable></div>
+		<div class="int-inline"><input id="signTime"  type="checkbox" value="颁奖活动名称" checked/><lable>合作内容/方向</lable></div>
+		<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 	</div>
 </div>
 <!-- 数据展示主表格-->
@@ -121,17 +121,17 @@
             limit:9999999,//不设置分页，最大数据量为9999999
             id: 'testReload',
 //    height: 332,
-            url: 'listMinistries.do', //数据接口
+            url: 'listCooperations.do', //数据接口
             cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
             cols: [[ //标题栏
                 {type:'checkbox',fixed: 'left'},
                 {field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-                {field: 'ministryName', title: '我院/公司名称',fixed: 'left',width:200},
-                {field: 'ministryProperty', title: '合作单位名称',width:150},
-                {field: 'contactPerson', title: '签订的协议名称',sort: true,width:180},
-                {field: 'contactMethod', title: '签订时间',sort: true,width:180},
-                {field: 'ministryLocation', title: '合作内容/方向',sort: true,width:180},
-                {field: 'ministryProject', title: '备注',width:220},
+                {field: 'unitName', title: '我院/公司名称',fixed: 'left',width:200},
+                {field: 'cooperationName', title: '合作单位名称',width:150},
+                {field: 'protocolName', title: '签订的协议名称',sort: true,width:180},
+                {field: 'signTime', title: '签订时间',sort: true,width:180},
+                {field: 'cooperationContent', title: '合作内容/方向',sort: true,width:180},
+                {field: 'remark', title: '备注',width:220},
                 {field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
             ]],
             //表格数据
@@ -262,7 +262,7 @@
                     let arr=[data.id];
                     console.log(data)
                     $.post({
-                        url:"deleteMinistry.do",
+                        url:"deleteCooperation.do",
                         data:{
                             "requestDate" : arr
                         },
@@ -298,7 +298,7 @@
         $("#dellist").on('click', function(){
             alert("请慎重考虑，删除数据不可恢复");
             $.post({
-                url:"deleteMinistry.do",
+                url:"deleteCooperation.do",
                 data:{
                     "requestDate" : arr
                 },
@@ -325,7 +325,7 @@
 //指定允许上传的文件类型
         upload.render({
             elem: '#test3'
-            ,url: 'insertCopyrightOfExcel.do'
+            ,url: 'insertCooperationWithExcel.do'
             ,accept: 'file' //普通文件
             ,done: function(res){
                 alert("上传成功！请更新数据！");

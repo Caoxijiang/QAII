@@ -1,9 +1,9 @@
 package com.qaii.controller;
 
-import com.qaii.domain.AwardCollege;
-import com.qaii.domain.AwardCollegeFile;
-import com.qaii.service.AwardCollegeFileService;
-import com.qaii.service.AwardCollegeService;
+import com.qaii.domain.Cooperation;
+import com.qaii.domain.CooperationFile;
+import com.qaii.service.CooperationFileService;
+import com.qaii.service.CooperationService;
 import com.qaii.util.*;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -18,14 +18,19 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @Company: 青岛智能产业技术研究院
+ * @author: wangxin
+ * @Descrpiton: 合作企业控制器类
+ * @Time 2018-11-23 10:00
+ */
 @Controller
-public class AwardCollegeController {
+public class CooperationController {
 
     //加入此注解，可使前台日期类型的数据向后台传递时不报错
     @InitBinder
@@ -36,29 +41,28 @@ public class AwardCollegeController {
     }
 
     @Resource
-    private AwardCollegeService service;
-
+    private CooperationService service;
     @Resource
-    private AwardCollegeFileService fileService;
+    private CooperationFileService fileService;
 
     private final static String TEST_PATH = "/Users/wangxin/File/";
 
     //文件位置
-    private final static String BASE_PATH = "industry/AwardCollege/";
+    private final static String BASE_PATH = "industry/Cooperation/";
     //文件类型
     public final static String FILE_CERTIFY = "certify";
     //文件路径 本机路径为/Users/wangxin/File
     private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
-    //private final static String FILE_PATH = TEST_PATH + BASE_PATH;
+//    private final static String FILE_PATH = TEST_PATH + BASE_PATH;
     //数据库中记录的路径
     private final static String DATABASE_PATH = ConstantUtil.DATABASE_BASE_PATH + BASE_PATH;
 
     //插入记录
-    @RequestMapping(value = "insertAwardCollege.do", produces = "text/json;charset=UTF-8")
-    String insertAwardCollege(HttpServletRequest request,
-                              @RequestParam("file") MultipartFile[] files,
-                              AwardCollege record,
-                              AwardCollegeFile fileRecord) throws Exception {
+    @RequestMapping(value = "insertCooperation.do", produces = "text/json;charset=UTF-8")
+    String insertCooperation(HttpServletRequest request,
+                             @RequestParam("file") MultipartFile[] files,
+                             Cooperation record,
+                             CooperationFile fileRecord) throws Exception {
         LoadData(request, record);
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
@@ -66,7 +70,7 @@ public class AwardCollegeController {
         if (files.length > 0) {
             List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
             for (int i = 0; i < files.length; i++) {
-                fileRecord.setHonorId(record.getId());
+                fileRecord.setIncubatorId(record.getId());
                 fileRecord.setFileName(files[i].getOriginalFilename());
                 fileRecord.setFilePath(DATABASE_PATH + list.get(i));
                 fileRecord.setGmtCreate(new Date());
@@ -74,8 +78,8 @@ public class AwardCollegeController {
                 fileService.insertRecord(fileRecord);
             }
         } else {
-            fileRecord = (AwardCollegeFile) FileDomainFactory.getNullClass("AwardCollegeFile");
-            fileRecord.setHonorId(record.getId());
+            fileRecord = (CooperationFile) FileDomainFactory.getNullClass("CooperationFile");
+            fileRecord.setIncubatorId(record.getId());
             fileService.insertRecord(fileRecord);
         }
         if (result != 0)
@@ -84,37 +88,36 @@ public class AwardCollegeController {
             return ConstantUtil.INDUSTRY_INSERT_FAILD;
     }
 
-    void LoadData(HttpServletRequest request, AwardCollege record) {
-        record.setAwardTime(DateUtils.parseStringToDate(request.getParameter("awardTime")));
-        record.setAwardLevel(request.getParameter("awardLevel"));
-        record.setAwardUnit(request.getParameter("awardUnit"));
-        record.setAwardName(request.getParameter("awardName"));
-        record.setActivityName(request.getParameter("activityName"));
-        record.setOrgnizer(request.getParameter("orgnizer"));
+    void LoadData(HttpServletRequest request, Cooperation record) throws Exception {
+        record.setUnitName(request.getParameter("unitName"));
+        record.setCooperationName(request.getParameter("cooperationName"));
+        record.setProtocolName(request.getParameter("protocolName"));
+        record.setSignTime(CountDatetoNowDays.StringConvertToDate(request.getParameter("signTime")));
+        record.setCooperationContent(request.getParameter("cooperationContent"));
         record.setRemark(request.getParameter("remark"));
     }
 
     //显示所有记录
-    @RequestMapping(value = "listAwardColleges.do")
+    @RequestMapping(value = "listCooperations.do")
     @ResponseBody
-    Layui listAwardColleges() throws ParseException {
+    Layui listCooperations() throws ParseException {
         List result = service.listRecords();
         return Layui.data(result.size(), result);
     }
 
     //查看详情
-    @RequestMapping(value = "getAwardCollege.do")
+    @RequestMapping(value = "getCooperation.do")
     @ResponseBody
-    JsonResult getAwardCollege(@RequestParam("id") Integer id) throws ParseException {
+    JsonResult getCooperation(@RequestParam("id") Integer id) throws ParseException {
         return new JsonResult(service.getRecord(id));
     }
 
     //更新信息
-    @RequestMapping(value = "updateAwardCollege.do")
-    String updateAwardCollege(HttpServletRequest request,
-                              AwardCollege record,
-                              AwardCollegeFile fileRecord,
-                              @RequestParam("file") MultipartFile[] files) throws Exception {
+    @RequestMapping(value = "updateCooperation.do")
+    String updateCooperation(HttpServletRequest request,
+                             Cooperation record,
+                             CooperationFile fileRecord,
+                             @RequestParam("file") MultipartFile[] files) throws Exception {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setGmtModified(new Date());
@@ -136,9 +139,9 @@ public class AwardCollegeController {
     }
 
     //删除信息
-    @RequestMapping(value = "deleteAwardCollege.do")
+    @RequestMapping(value = "deleteCooperation.do")
     @ResponseBody
-    JsonResult deleteAwardCollege(@RequestParam("requestDate[]") Integer[] id) {
+    JsonResult deleteCooperation(@RequestParam("requestDate[]") Integer[] id) {
         int result = service.deleteByPrimaryKeys(id);
         if (result != 0) {
             fileService.deleteByPrimaryKeys(id);
@@ -148,10 +151,10 @@ public class AwardCollegeController {
     }
 
     //通过Excel导入数据库
-    @RequestMapping(value = "insertAwardCollegeWithExcel.do")
+    @RequestMapping(value = "insertCooperationWithExcel.do")
     @ResponseBody
-    JsonResult insertAwardCollegeWithExcel(@RequestParam("file") MultipartFile file) throws Exception {
-        int result = InsertOfExcel.insertExcel("AwardCollegeController", "AwardCollege", file);
+    JsonResult insertCooperationWithExcel(@RequestParam("file") MultipartFile file) throws Exception {
+        int result = InsertOfExcel.insertExcel("CooperationController", "Cooperation", file);
         if (result == 1) {
             return new JsonResult(ConstantUtil.SUCCESS_MESSAGE);
         } else {
@@ -160,27 +163,27 @@ public class AwardCollegeController {
     }
 
     //导入Excel数据
-    void insertExcelData(AwardCollege record, List<String> list) throws Exception {
+    void insertExcelData(Cooperation record, List<String> list) throws Exception {
         WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();
-        service = (AwardCollegeService) wac.getBean("AwardCollegeService");
-        fileService = (AwardCollegeFileService) wac.getBean("AwardCollegeFileService");
+        service = (CooperationService) wac.getBean("CooperationService");
+        fileService = (CooperationFileService) wac.getBean("CooperationFileService");
         loadDataWithList(record, list);
         record.setId(null);
         service.insertRecordReturnID(record);
-        AwardCollegeFile fileRecord = (AwardCollegeFile) FileDomainFactory.getNullClass("AwardCollegeFile");
-        fileRecord.setHonorId(record.getId());
+        CooperationFile fileRecord = (CooperationFile) FileDomainFactory.getNullClass("CooperationFile");
+        fileRecord.setIncubatorId(record.getId());
         fileService.insertRecord(fileRecord);
     }
 
-    void loadDataWithList(AwardCollege record, List<String> list) throws Exception {
-        record.setAwardTime(CountDatetoNowDays.StringConvertToDate(list.get(0)));
-        record.setAwardLevel(list.get(1));
-        record.setAwardUnit(list.get(2));
-        record.setAwardName(list.get(3));
-        record.setActivityName(list.get(4));
-        record.setOrgnizer(list.get(5));
-        record.setRemark(list.get(6));
+    void loadDataWithList(Cooperation record, List<String> list) throws Exception {
+        record.setUnitName(list.get(0));
+        record.setCooperationName(list.get(1));
+        record.setProtocolName(list.get(2));
+        record.setSignTime(CountDatetoNowDays.StringConvertToDate(list.get(3)));
+        record.setCooperationContent(list.get(4));
+        record.setRemark(list.get(5));
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
     }
+
 }

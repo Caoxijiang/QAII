@@ -6,9 +6,13 @@ public class ConstantUtil {
 
     public final static String DATABASE_BASE_PATH="/img/";
 
-    public final static String INDUSTRY_INSERT_SUCCESS="page/science/inform/edit-succesdsci";
+    public final static String INDUSTRY_INSERT_SUCCESS="page/industry/inform/addSuccesdind";
 
-    public final static String INDUSTRY_INSERT_FAILD="page/science/inform/edit-faildsci";
+    public final static String INDUSTRY_INSERT_FAILD="page/industry/inform/addFaildind";
+
+    public final static String INDUSTRY_EDIT_SUCCESS="page/industry/inform/editSuccesdind";
+
+    public final static String INDUSTRY_EDIT_FAILD="page/industry/inform/editFaildind";
 
     public final static byte BYTE_TRUE = 1;
 

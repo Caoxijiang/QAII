@@ -1,5 +1,7 @@
 package com.qaii.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -7,7 +9,7 @@ public class AwardIncubate {
     private Integer id;
 
     private Integer pid;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date awardTime;
 
     private String awardLevel;
