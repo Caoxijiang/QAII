@@ -23,5 +23,7 @@ public interface AwardCollegeMapper {
 
     List<AwardCollege> listRecords();
 
+    List<AwardCollege> listcollege();
+
     AwardCollege getRecord(Integer id);
 }

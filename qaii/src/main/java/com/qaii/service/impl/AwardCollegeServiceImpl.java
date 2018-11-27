@@ -42,6 +42,11 @@ public class AwardCollegeServiceImpl implements AwardCollegeService {
     }
 
     @Override
+    public List<AwardCollege> listcollege() {
+        return awardCollegeMapper.listcollege();
+    }
+
+    @Override
     public AwardCollege getRecord(Integer id) {
         return awardCollegeMapper.getRecord(id);
     }

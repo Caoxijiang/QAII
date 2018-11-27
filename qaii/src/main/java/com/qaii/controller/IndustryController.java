@@ -364,7 +364,7 @@ public class IndustryController {
 			Integer id=Integer.parseInt(req.getParameter("id"));
 			incubator= incubatorService.selectByPrimaryKey(id);
 			iFile=incubatorFileService.selectByPrimaryKey(id);
-			System.out.println(iFile.get(0).getFileName());
+//			System.out.println(iFile.get(0).getFileName());
 			incubator2=incubator;
 			list.add(incubator);
 			list.add(iFile);
@@ -514,4 +514,6 @@ public class IndustryController {
 		incubator.setHatchingTime(CountDatetoNowDays.StrconversionData(req.getParameter("hatchingTime")));
 		incubator.setLimitedPeriod(req.getParameter("limitedPeriod"));
 	}
+
 }
+

@@ -297,6 +297,10 @@
   <select id="listRecords" resultMap="BaseResultMap">
     SELECT * FROM industry_awardincubate
   </select>
+
+  <select id="listIncubate" resultMap="BaseResultMap">
+    SELECT * FROM industry_awardincubate GROUP BY award_time DESC
+  </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardIncubate">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="pid" jdbcType="INTEGER" property="pid" />
