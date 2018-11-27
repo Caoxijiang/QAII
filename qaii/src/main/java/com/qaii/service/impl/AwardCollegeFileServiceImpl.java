@@ -6,7 +6,7 @@ import com.qaii.service.AwardCollegeFileService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-@Service
+@Service("AwardCollegeFileService")
 public class AwardCollegeFileServiceImpl implements AwardCollegeFileService {
 
     @Resource

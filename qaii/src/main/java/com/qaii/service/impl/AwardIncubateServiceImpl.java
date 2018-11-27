@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by kunpeng on 2018/11/16 11:27
  */
-@Service
+@Service("AwardIncubateService")
 public class AwardIncubateServiceImpl implements AwardIncubateService {
     @Resource
     private AwardIncubateMapper awardIncubateMapper;
@@ -32,12 +32,17 @@ public class AwardIncubateServiceImpl implements AwardIncubateService {
 
     @Override
     public int updateByPrimaryKey(AwardIncubate record) {
-        return awardIncubateMapper.updateByPrimaryKey(record);
+        return awardIncubateMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public List<AwardIncubate> listRecords() {
         return awardIncubateMapper.listRecords();
+    }
+
+    @Override
+    public List<AwardIncubate> listIncubate() {
+        return awardIncubateMapper.listIncubate();
     }
 
     @Override

@@ -23,5 +23,7 @@ public interface AwardPersonalMapper {
 
     List<AwardPersonal> listRecords();
 
+    List<AwardPersonal> listPersonal();
+
     AwardPersonal getRecord(Integer id);
 }

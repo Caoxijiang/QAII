@@ -37,6 +37,7 @@
 	  	<h1>基本信息</h1>
 		  <input id="id" name="id" type="hidden">
 		  <input id="fid" name="fid" type="hidden">
+		  <input id="fpath" name="fpath" type="hidden">
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">服务企业名称</label>
@@ -204,7 +205,8 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
                           "ownselfContactMethod":awardInfo.ownselfContactMethod,
                           "remark":awardInfo.remark,
                           "file0":awardInfo.listFile[0].fileName,
-						  "fid":awardInfo.listFile[0].id
+						  "fid":awardInfo.listFile[0].id,
+						  "fpath":awardInfo.listFile[0].filePath
 					  })
 				}else{
 					alert("查看详情失败")

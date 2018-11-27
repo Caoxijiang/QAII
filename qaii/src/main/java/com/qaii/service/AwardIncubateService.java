@@ -16,5 +16,7 @@ public interface AwardIncubateService {
 
     List<AwardIncubate> listRecords();
 
+    List<AwardIncubate> listIncubate();
+
     AwardIncubate getRecord(Integer id);
 }

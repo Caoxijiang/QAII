@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-@Service
+@Service("AwardIncubateFileService")
 public class AwardIncubateFileServiceImpl implements AwardIncubateFileService {
 
     @Resource
