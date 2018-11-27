@@ -98,7 +98,7 @@
         <table tableName="industry_awardincubatefile" domainObjectName="AwardIncubateFile" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
-        <table tableName="industry_awardpersonal" domainObjectName="AwardPersonal" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="industry_awardpersonal" domainObjectName="AwardPersonalController" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
         <table tableName="industry_awardpersonalfile" domainObjectName="AwardPersonalFile" enableCountByExample="false" enableUpdateByExample="false"

@@ -51,6 +51,13 @@ public class FileLoadUtils {
 		return  result;
 
 	}
+	
+	//删除文件
+    public static void delFile(String path,String filename){
+        File file=new File(path+"/"+filename);
+        if(file.exists()&&file.isFile())
+            file.delete();
+    }
 
 	//上传文件并返回新的文件名
 	public static List<String> moveFileAndReturnName(MultipartFile[] files, String path) throws IOException {
@@ -79,11 +86,26 @@ public class FileLoadUtils {
 		}
 		return list;
 	}
-	
-	//删除文件
-    public static void delFile(String path,String filename){
-        File file=new File(path+"/"+filename);
-        if(file.exists()&&file.isFile())
-            file.delete();
-    }
+
+	/**
+	 * @Company: 青岛智能产业技术研究院
+	 *
+	 * @author: wangxin
+	 *
+	 * @Descrpiton:删除指定目录的文件
+	 *
+	 * @param :path 要删除文件的路径
+	 *
+	 * @Time 2018/11/21
+	 */
+
+	public static int deleteFileOfPath(String path){
+		File file = new File(path);
+		if(file.exists()&&file.isFile()){
+			file.delete();
+			return ConstantUtil.BYTE_TRUE;
+		}
+		return ConstantUtil.BYTE_FALSE;
+	}
+
 }

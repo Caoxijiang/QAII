@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
+	<script src="${basePath}/js/jquery.globalfunction.js"></script>
   <style>
     body{margin: 10px;}
     .layui-table-body {
@@ -36,8 +37,8 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">版权( <span id="countnum"> </span> )</span>
-		<a href="copyrightAdd.do" target="_blank">
+  	  <span class="limit">院获奖情况( <span id="countnum"> </span> )</span>
+		<a href="javascript:;" onclick="srchange('instituteAdd.do')">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -62,11 +63,11 @@
 		<select class="search" id="switch">
 			<option value="all">全部</option>
 			<option value="copyPicture">作品名称</option>
-			<option value="copyCode">登记号</option>
-			<option value="copyAuthor">作者</option>
-			<option value="copyCopyrightperson">著作权人</option>
-			<option value="copyEndtime">创作完成日期</option>
-			<option value="copyPublishtime">首次发布日期</option>
+			<option value="contactPerson">登记号</option>
+			<option value="contactMethod">作者</option>
+			<option value="ministryLocation">著作权人</option>
+			<option value="ministryProject">创作完成日期</option>
+			<option value="ownselfUnit">首次发布日期</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -80,19 +81,13 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
-	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=copyPicture  type="checkbox" value="作品图样" checked="flase"/><lable>作品图样</lable></div>
-	<div class="int-inline"><input id="copyName"  type="checkbox" value="作品名称" checked/><lable>作品名称</lable></div>
-	<div class="int-inline"><input id="copyCode"  type="checkbox" value="登记号" checked/><lable>登记号</lable></div>
-	<div class="int-inline"><input id="copyAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
-	<div class="int-inline"><input id="copyCopyrightperson"  type="checkbox" value="著作权人" checked/><lable>著作权人</lable></div>
-	<div class="int-inline"><input id="copyAgency"  type="checkbox" value="代理机构" checked/><lable>代理机构</lable></div>
-	<div class="int-inline"><input id="copyEndtime"  type="checkbox" value="创作完成日期" checked/><lable>创作完成日期</lable></div>
-	<div class="int-inline"><input id="copyPublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发布日期</lable></div>
-	<div class="int-inline"><input id="copyRegisttime"  type="checkbox" value="登记日期" checked/><lable>登记日期</lable></div>
-	<div class="int-inline"><input id="copyCost"  type="checkbox" value="费用（元）" checked/><lable>费用（元）</lable></div>
-	<div class="int-inline"><input id="copyInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
-	<div class="int-inline"><input id="copyStatus"  type="checkbox" value="状态" checked/><lable>状态</lable></div>
+	<div class="int-inline"><input id="awardTime"  type="checkbox" value="获奖时间" checked="true"/><lable>获奖时间</lable></div>
+	<div class="int-inline"><input id=awardLevel  type="checkbox" value="获奖级别" checked="flase"/><lable>获奖级别</lable></div>
+	<div class="int-inline"><input id="awardUnit"  type="checkbox" value="获奖单位名称" checked/><lable>获奖单位名称</lable></div>
+	<div class="int-inline"><input id="awardName"  type="checkbox" value="奖励荣誉名称" checked/><lable>奖励荣誉名称</lable></div>
+	<div class="int-inline"><input id="activityName"  type="checkbox" value="颁奖活动名称" checked/><lable>颁奖活动名称</lable></div>
+	<div class="int-inline"><input id="orgnizer"  type="checkbox" value="主办单位" checked/><lable>主办单位</lable></div>
+	<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -127,23 +122,18 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'getAllCopyright.do', //数据接口
+    url: 'listAwardColleges.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
     	{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'copyPicture', title: '作品图样',fixed: 'left',width:150},
-		{field: 'copyName', title: '作品名称',fixed: 'left',width:150},
-		{field: 'copyCode', title: '登记号',sort: true,width:120},
-		{field: 'copyAuthor', title: '作者',sort: true,width:100},
-		{field: 'copyCopyrightperson', title: '著作权人',sort: true,width:150},
-		{field: 'copyAgency', title: '代理机构',sort: true,width:150},
-		{field: 'copyEndtime', title: '创作完成日期',width:220},
-		{field: 'copyPublishtime', title: '首次发布日期',sort: true,width:200},
-		{field: 'copyRegisttime', title: '登记日期',sort: true,width:150},
-		{field: 'copyCost', title: '费用',sort: true,width:150},
-		{field: 'copyInvoiceper', title: '发票收据-汇款人',sort: true,width:200},
-		{field: 'copyStatus', title: '状态',sort: true,width:200},
+		{field: 'awardTime', title: '获奖时间',fixed: 'left',width:150},
+		{field: 'awardLevel', title: '获奖级别',width:150},
+		{field: 'awardUnit', title: '获奖单位名称',sort: true,width:180},
+		{field: 'awardName', title: '奖励荣誉名称',sort: true,width:180},
+		{field: 'activityName', title: '颁奖活动名称',sort: true,width:180},
+		{field: 'orgnizer', title: '主办单位',sort: true,width:150},
+		{field: 'remark', title: '备注',width:220},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
     ]], 
 	  //表格数据
@@ -231,15 +221,15 @@ layui.use('table', function(obj){
   			 }
   			if(check=="copyPicture"){
   				alert("搜索'作品名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyCode"){
+  			}else if(check=="contactPerson"){
   				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyAuthor"){
+  			}else if(check=="contactMethod"){
   				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyCopyrightperson"){
+  			}else if(check=="ministryLocation"){
   				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyEndtime"){
+  			}else if(check=="ministryProject"){
   				alert("搜索'创作完成日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyPublishtime"){
+  			}else if(check=="ownselfUnit"){
   				alert("搜索'首次发布日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
@@ -267,14 +257,14 @@ layui.use('table', function(obj){
     console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
-    	var iframesrc="copyrightCheck.do?userId='"+data.id+"'";
+    	var iframesrc="instituteCheck.do?userId='"+data.id+"'";
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"copyrightDeleted.do",
+          	url:"deleteAwardCollege.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -287,13 +277,13 @@ layui.use('table', function(obj){
           			layer.alert("删除失败")
           		}
           	}
-          }) 
+          })
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
         //向服务端发送删除指令
       });
     } else if(layEvent === 'edit'){
-    	var iframesrc="copyrightEdit.do?userId='"+data.id+"'";
+    	var iframesrc="instituteEdit.do?userId='"+data.id+"'";
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }
   });
@@ -310,7 +300,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"copyrightDeleted.do",
+		  	url:"deleteAwardCollege.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},
@@ -337,7 +327,7 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: 'insertCopyrightOfExcel.do'
+  ,url: 'insertAwardCollegeWithExcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
 	  alert("上传成功！请更新数据！");
@@ -361,7 +351,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "软著信息",
+				filename: "院获奖情况",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片
@@ -407,16 +397,14 @@ upload.render({
 	});
 </script>
 <!--自动设置主表格可视区域-->
+<script src="${basePath}/js/iframesrc.js"></script>
 <script>
-
 	var hei=$(".action").height();
 	var ji=$(document).height();
 	var heigt=ji-hei-85;
-	$(".layui-table-body").prop("height",heigt+"px");
-	
+	$(".layui-table-body").prop("height",heigt+"px");	
 	console.log(heigt);
 
-	
 </script>
 </body>
 </html>        

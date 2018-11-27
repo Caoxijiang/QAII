@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -36,6 +38,7 @@ import java.util.List;
 @Controller
 public class MinistryController {
 
+    //加入此注解，可使前台日期类型的数据向后台传递时不报错
     @InitBinder
     protected void init(HttpServletRequest request, ServletRequestDataBinder binder) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -57,8 +60,8 @@ public class MinistryController {
     //文件类型
     public final static String FILE_CERTIFY = "certify";
     //文件路径 本机路径为/Users/wangxin/File
-    //private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
-    private final static String FILE_PATH = TEST_PATH + BASE_PATH;
+    private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
+//    private final static String FILE_PATH = TEST_PATH + BASE_PATH;
     //数据库中记录的路径
     private final static String DATABASE_PATH = ConstantUtil.DATABASE_BASE_PATH + BASE_PATH;
 
@@ -73,6 +76,8 @@ public class MinistryController {
         LoadData(request, record);
         //装载文件类属性
         LoadFileData(fileRecord);
+        record.setGmtCreate(new Date());
+        record.setGmtModified(new Date());
         int result=service.insertRecordReturnID(record);
         fileRecord.setIncubatorId(record.getId());
         //存储文件
@@ -110,15 +115,14 @@ public class MinistryController {
         record.setOwnselfContactPerson(request.getParameter("ownselfContactPerson"));
         record.setOwnselfContactMethod(request.getParameter("ownselfContactMethod"));
         record.setRemark(request.getParameter("remark"));
-        record.setGmtCreate(new Date());
-        record.setGmtModified(new Date());
     }
 
     //显示所有信息
     @RequestMapping(value = "listMinistries.do")
     @ResponseBody
     public Layui listMinistries() throws ParseException {
-        return Layui.data(1,service.listRecords());
+        List result = service.listRecords();
+        return Layui.data(result.size(), result);
     }
 
     //查看详情
@@ -130,14 +134,28 @@ public class MinistryController {
 
     //更新信息
     @RequestMapping(value = "updateMinistry.do")
-    String updateMinistry(HttpServletRequest request, Ministry record) throws ParseException {
+    String updateMinistry(HttpServletRequest request,
+                          Ministry record,
+                          MinistryFile fileRecord,
+                          @RequestParam("file") MultipartFile[] files) throws Exception {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
+        record.setGmtModified(new Date());
         int result = service.updateByPrimaryKey(record);
+        if (!files[0].isEmpty()) {
+            //删除旧文件，保存新文件
+            FileLoadUtils.deleteFileOfPath(request.getParameter("fpath"));
+            List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
+            fileRecord.setId(Integer.parseInt(request.getParameter("fid")));
+            fileRecord.setFileName(files[0].getOriginalFilename());
+            fileRecord.setFilePath(DATABASE_PATH + list.get(0));
+            fileRecord.setGmtModified(new Date());
+            fileService.updateByPrimaryKey(fileRecord);
+        }
         if (result!=0)
-            return ConstantUtil.INDUSTRY_INSERT_SUCCESS;
+            return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         else
-            return ConstantUtil.INDUSTRY_INSERT_FAILD;
+            return ConstantUtil.INDUSTRY_EDIT_FAILD;
     }
 
     //删除信息
@@ -145,9 +163,10 @@ public class MinistryController {
     @ResponseBody
     JsonResult deleteMinistry(@RequestParam("requestDate[]")Integer[] id){
         int result = service.deleteByPrimaryKeys(id);
-        if (result != 0)
+        if (result != 0){
+            fileService.deleteByPrimaryKeys(id);
             return new JsonResult("success!");
-        else
+        } else
             return new JsonResult();
     }
 
@@ -165,26 +184,41 @@ public class MinistryController {
 
     //导入Excel数据
     void insertExcelData(Ministry record, List<String> list) throws Exception {
+        WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();
+        service = (MinistryService)wac.getBean("ministryService");
+        fileService = (MinistryFileService)wac.getBean("ministryFileService");
         loadDataWithList(record, list);
         record.setId(null);
         service.insertRecordReturnID(record);
-        MinistryFile fileRecord = (MinistryFile)fileDomainFactory.getNullClass("MinistryFile");
+        MinistryFile fileRecord = (MinistryFile) FileDomainFactory.getNullClass("MinistryFile");
         fileRecord.setIncubatorId(record.getId());
         fileService.insertRecord(fileRecord);
     }
 
     void loadDataWithList(Ministry record, List<String> list) throws ParseException {
-        record.setMinistryName(list.get(0));
-        record.setMinistryProperty(list.get(1));
-        record.setContactPerson(list.get(2));
-        record.setContactMethod(list.get(3));
-        record.setMinistryLocation(list.get(4));
-        record.setMinistryTime(CountDatetoNowDays.StringConvertToDate(list.get(5)));
-        record.setMinistryProject(list.get(6));
-        record.setOwnselfUnit(list.get(7));
-        record.setOwnselfContactPerson(list.get(8));
-        record.setOwnselfContactMethod(list.get(9));
-        record.setRemark(list.get(10));
+        //排空
+        if (!list.get(0).isEmpty())
+            record.setMinistryName(list.get(0));
+        if (!list.get(1).isEmpty())
+            record.setMinistryProperty(list.get(1));
+        if (!list.get(2).isEmpty())
+            record.setContactPerson(list.get(2));
+        if (!list.get(3).isEmpty())
+            record.setContactMethod(list.get(3));
+        if (!list.get(4).isEmpty())
+            record.setMinistryLocation(list.get(4));
+        if (!list.get(5).isEmpty())
+            record.setMinistryTime(CountDatetoNowDays.StringConvertToDate(list.get(5)));
+        if (!list.get(6).isEmpty())
+            record.setMinistryProject(list.get(6));
+        if (!list.get(7).isEmpty())
+            record.setOwnselfUnit(list.get(7));
+        if (!list.get(8).isEmpty())
+            record.setOwnselfContactPerson(list.get(8));
+        if (!list.get(9).isEmpty())
+            record.setOwnselfContactMethod(list.get(9));
+        if (!list.get(10).isEmpty())
+            record.setRemark(list.get(10));
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
     }

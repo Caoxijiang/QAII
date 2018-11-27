@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="QAII:war">
+    <output-path>$PROJECT_DIR$/qaii/target</output-path>
+    <root id="archive" name="QAII.war">
+      <element id="artifact" artifact-name="QAII:war exploded" />
+    </root>
+  </artifact>
+</component>

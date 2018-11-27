@@ -295,7 +295,7 @@
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
     <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.CooperationFile">
-    	<id column="id" jdbcType="INTEGER" property="fid" />
+    	<id column="fileid" jdbcType="INTEGER" property="id" />
 	    <id column="file_name" jdbcType="VARCHAR" property="fileName" />
 	    <id column="file_style" jdbcType="VARCHAR" property="fileStyle" />
 	    <id column="incubator_id" jdbcType="INTEGER" property="incubatorId" />
@@ -306,7 +306,7 @@
     </collection>
   </resultMap>
   <select id="getRecord" resultMap="CustomMap" parameterType="java.lang.Integer">
-  	SELECT a.*,b.id AS fid,b.file_name,b.file_style,b.file_description,b.file_path
+  	SELECT a.*,b.id AS fileid,b.file_name,b.file_style,b.file_description,b.file_path
     FROM
     industry_cooperation AS a LEFT JOIN industry_cooperationfile AS b
     ON

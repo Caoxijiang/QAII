@@ -317,7 +317,7 @@
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
     <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.AwardIncubateFile">
-      <id column="id" jdbcType="INTEGER" property="id" />
+      <id column="fid" jdbcType="INTEGER" property="id" />
       <id column="file_name" jdbcType="VARCHAR" property="fileName" />
       <id column="file_style" jdbcType="VARCHAR" property="fileStyle" />
       <id column="honor_id" jdbcType="INTEGER" property="honorId" />

@@ -337,15 +337,15 @@
     <result column="remark" jdbcType="VARCHAR" property="remark" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-    <collection property="listFile" ofType="com.qaii.domain.AwardIncubateFile" javaType="java.util.List">
-      <id column="id" jdbcType="INTEGER" property="id" />
-      <id column="file_name" jdbcType="VARCHAR" property="fileName" />
-      <id column="file_style" jdbcType="VARCHAR" property="fileStyle" />
-      <id column="honor_id" jdbcType="INTEGER" property="honorId" />
-      <id column="file_path" jdbcType="VARCHAR" property="filePath" />
-      <id column="file_description" jdbcType="VARCHAR" property="fileDescription" />
-      <id column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
-      <id column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <collection property="listFile" ofType="com.qaii.domain.AwardPersonalFile" javaType="java.util.List">
+      <id column="fid" jdbcType="INTEGER" property="id" />
+      <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+      <result column="file_style" jdbcType="VARCHAR" property="fileStyle" />
+      <result column="honor_id" jdbcType="INTEGER" property="honorId" />
+      <result column="file_path" jdbcType="VARCHAR" property="filePath" />
+      <result column="file_description" jdbcType="VARCHAR" property="fileDescription" />
+      <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+      <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
     </collection>
   </resultMap>
   <select id="getRecord" resultMap="CustomMap" parameterType="java.lang.Integer">
