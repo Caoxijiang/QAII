@@ -101,9 +101,9 @@ public class industryDataOverviewController {
     @ResponseBody
     public Map<String, List> Awardcollege() {
         Map<String, List> result = new HashMap<>();
-        List<AwardCollege> collegelist = awardCollegeService.listRecords();
-        List<AwardIncubate> Incubatelist=awardIncubateService.listRecords();
-        List<AwardPersonal>personallist=awardPersonalService.listRecords();
+        List<AwardCollege> collegelist = awardCollegeService.listcollege();
+        List<AwardIncubate> Incubatelist=awardIncubateService.listIncubate();
+        List<AwardPersonal>personallist=awardPersonalService.listPersonal();
         result.put("awardcollege",collegelist);
         result.put("awardincubate",Incubatelist);
         result.put("awardpersonal",personallist);

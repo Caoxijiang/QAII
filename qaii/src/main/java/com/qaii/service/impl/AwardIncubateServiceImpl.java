@@ -41,6 +41,11 @@ public class AwardIncubateServiceImpl implements AwardIncubateService {
     }
 
     @Override
+    public List<AwardIncubate> listIncubate() {
+        return awardIncubateMapper.listIncubate();
+    }
+
+    @Override
     public AwardIncubate getRecord(Integer id) {
         return awardIncubateMapper.getRecord(id);
     }

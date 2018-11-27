@@ -41,6 +41,11 @@ public class AwardPersonalServiceImpl implements AwardPersonalService {
     }
 
     @Override
+    public List<AwardPersonal> listPersonal() {
+        return awardPersonalMapper.listPersonal();
+    }
+
+    @Override
     public AwardPersonal getRecord(Integer id) {
         return awardPersonalMapper.getRecord(id);
     }

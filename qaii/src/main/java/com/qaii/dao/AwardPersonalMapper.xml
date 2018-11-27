@@ -315,6 +315,10 @@
     </foreach>
   </delete>
   <select id="listRecords" resultMap="CustomMap">
+    SELECT * FROM industry_awardpersonal
+  </select>
+
+  <select id="listPersonal" resultMap="CustomMap">
     SELECT * FROM industry_awardpersonal GROUP BY award_time DESC
   </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardPersonal">
