@@ -70,4 +70,33 @@ public class WorkServiceImpl implements WorkService {
 		return workmapper.listNotPass();
 	}
 
+	@Override
+	public List<String> selectAllpathTable() {
+		return workmapper.selectAllpathTable();
+	}
+
+	@Override
+	public List<String> selectTable() {
+		return workmapper.selectTablename();
+	}
+
+	@Override
+	public List<String> selectTablenamePath() {
+		return workmapper.selectTablenamePath();
+	}
+
+	@Override
+	public List<String> selectPathBytableName(String Tablename) {
+		return workmapper.selectPathBytableName(Tablename);
+	}
+
+	@Override
+	public List<String> selectPathBytableNamePath(String Tablename) {
+		return workmapper.selectPathBytableNamePath(Tablename);
+	}
+
+	@Override
+	public List<String> selectqueUrl() {
+		return workmapper.selectqueUrl();
+	}
 }

@@ -23,5 +23,7 @@ public interface AwardIncubateMapper {
 
     List<AwardIncubate> listRecords();
 
+    List<AwardIncubate> listIncubate();
+
     AwardIncubate getRecord(Integer id);
 }
