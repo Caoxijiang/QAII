@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="QAII:war exploded">
+  <artifact type="exploded-war" build-on-make="true" name="qaii:war exploded">
     <output-path>$PROJECT_DIR$/target/QAII</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="QAII" />
+          <element id="module-output" name="qaii" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-test:3.2.4.RELEASE" />
@@ -61,7 +61,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/QAII/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="QAII/web/Web" />
+      <element id="javaee-facet-resources" facet="qaii/web/Web" />
     </root>
   </artifact>
 </component>

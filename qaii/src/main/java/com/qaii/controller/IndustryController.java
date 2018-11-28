@@ -12,6 +12,7 @@ import javax.validation.constraints.Null;
 
 import com.qaii.domain.IncubatorRecord;
 import com.qaii.service.IncubatorRecordService;
+import com.qaii.util.*;
 import org.apache.poi.ss.formula.functions.T;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,12 +28,7 @@ import com.qaii.domain.StockEquity;
 import com.qaii.service.IncubatorFileService;
 import com.qaii.service.IncubatorService;
 import com.qaii.service.StockEquityService;
-import com.qaii.util.BeanChangeUtil;
-import com.qaii.util.CountDatetoNowDays;
-import com.qaii.util.DateUtils;
-import com.qaii.util.FileLoadUtils;
-import com.qaii.util.JsonResult;
-import com.qaii.util.Layui;
+
 @Controller
 public class IndustryController {
 	private static String PATH="C:/File/img/industry/";
@@ -313,9 +309,8 @@ public class IndustryController {
 	}
 
 	//添加股东信息
-	@ResponseBody
 	@RequestMapping(value="addShareholderInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult addShareholderInfo(HttpServletRequest req) throws UnsupportedEncodingException, ParseException {
+	public String addShareholderInfo(HttpServletRequest req) throws UnsupportedEncodingException, ParseException {
 		req.setCharacterEncoding("UTF-8");
 		StockEquity stockEquity=new StockEquity();
 		try {	
@@ -325,13 +320,13 @@ public class IndustryController {
 			stockEquity.setShareholderPosition(req.getParameter("shareholderPosition"));
 			stockEquity.setIncubatorId(Integer.parseInt(req.getParameter("id")));
 		} catch (Exception e) {
-			return new JsonResult("数据传入有误"+e);
+			return ConstantUtil.INDUSTRY_INSERT_FAILD;
 		}
 		int row=stockEquityService.insert(stockEquity);
 		if(row>0) {
-			return new JsonResult("添加成功");
+			return ConstantUtil.INDUSTRY_INSERT_SUCCESS;
 		}else {
-			return new JsonResult();
+			return ConstantUtil.INDUSTRY_INSERT_FAILD;
 		}
 	}
 	
@@ -364,7 +359,7 @@ public class IndustryController {
 			Integer id=Integer.parseInt(req.getParameter("id"));
 			incubator= incubatorService.selectByPrimaryKey(id);
 			iFile=incubatorFileService.selectByPrimaryKey(id);
-			System.out.println(iFile.get(0).getFileName());
+//			System.out.println(iFile.get(0).getFileName());
 			incubator2=incubator;
 			list.add(incubator);
 			list.add(iFile);
@@ -396,10 +391,8 @@ public class IndustryController {
 	
 	
 	//更新孵化企业信息
-	
-	@ResponseBody
 	@RequestMapping(value="updateIndusInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult updateIndusInfo(HttpServletRequest req) throws UnsupportedEncodingException {
+	public String updateIndusInfo(HttpServletRequest req) throws UnsupportedEncodingException {
 		req.setCharacterEncoding("UTF-8");
 		Incubator oldImcubator=incubator2;
 		Integer idString=oldImcubator.getId();
@@ -429,7 +422,7 @@ public class IndustryController {
 			newIncubator.setIsBillionEnterprise(new Byte(req.getParameter("isBillionEnterprise")));
 		} catch (ParseException e) {
 			e.printStackTrace();
-			return new JsonResult("传入数据有误" + e);
+			return ConstantUtil.INDUSTRY_EDIT_FAILD;
 		}
 
 		int row= incubatorService.updateByPrimaryKeySelective(newIncubator);
@@ -439,7 +432,7 @@ public class IndustryController {
 	        if (strlist==null) {
 	        	String recordmsg="";
 	        	result.put("recordmsg",recordmsg);
-	        	return new JsonResult(recordmsg);
+	        	return ConstantUtil.INDUSTRY_EDIT_FAILD;
 	        } else {
 	        	List<IncubatorRecord> list=new ArrayList<>();
 				String time=DateUtils.getFullDate();
@@ -463,16 +456,16 @@ public class IndustryController {
 					String recordres=strlist.toString();
 					result.put("recordmsg",recordmsg);
 					result.put("recordres",recordmsg);
-					return new JsonResult(result);
+					return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
 				}else{
 					String recordmsg="DBERROR";
 					result.put("recordmsg",recordmsg);
-					return new JsonResult(result);
+					return ConstantUtil.INDUSTRY_EDIT_FAILD;
 				}
 
 	        }
 		}else {
-			return new JsonResult();
+			return ConstantUtil.INDUSTRY_EDIT_FAILD;
 		}
 
 
@@ -514,4 +507,6 @@ public class IndustryController {
 		incubator.setHatchingTime(CountDatetoNowDays.StrconversionData(req.getParameter("hatchingTime")));
 		incubator.setLimitedPeriod(req.getParameter("limitedPeriod"));
 	}
+
 }
+
