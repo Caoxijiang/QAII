@@ -7,725 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42074fb5-b165-4f9f-a415-0f5bff3ecb84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/qaii_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/qaii_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/base/Const.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/AwardCollegeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/AwardIncubateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/AwardPersonalController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/CooperationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/CopyrightController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/DataOverviewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/EmpController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/FundController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/GlobalExceptionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/IncubatorRecordController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/IndexController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/IndustryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/MeetingThesisController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/MinistryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/PatentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/PeriodicalThesisController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/PersonController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/PlatformController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/RewardController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/RoleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/SoftwareController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/SubjectController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/ThesisController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/TradeMarkController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/WorkController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/deptController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/industryDataOverviewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/newsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/sysAdminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/techController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/testCheckController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardCollegeFileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardCollegeFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardCollegeMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardCollegeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardIncubateFileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardIncubateFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardIncubateMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardIncubateMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardPersonalFileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardPersonalFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardPersonalMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/AwardPersonalMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/CooperationFileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/CooperationFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/CooperationMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/CooperationMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/CopyrightMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/CopyrightMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/CopyrightimgMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/CopyrightimgMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/DeptInfoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/DeptInfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/EmpAvatarinfoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/EmpAvatarinfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/EmpInfoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/EmpInfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovfundMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovfundMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovfundprocessMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovfundprocessMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovfundprocessfileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovfundprocessfileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovplatformMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovplatformMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovplatformprocessMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovplatformprocessMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovplatformprocessfileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovplatformprocessfileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovrewardMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovrewardMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovrewardprocessMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovrewardprocessMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovrewardprocessfileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovrewardprocessfileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovsubjectMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovsubjectMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovsubjectprocessMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovsubjectprocessMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovsubjectprocessfileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/GovsubjectprocessfileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/IncubatorFileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/IncubatorFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/IncubatorMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/IncubatorMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/IncubatorRecordMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/IncubatorRecordMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/MeetingThesisFileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/MeetingThesisFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/MeetingThesisMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/MeetingThesisMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/MinistryFileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/MinistryFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/MinistryMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/MinistryMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/PatentMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/PatentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/PeriodicalThesisFileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/PeriodicalThesisFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/PeriodicalThesisMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/PeriodicalThesisMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/PermissionMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/PermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/ProcessMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/ProcessMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/ProcessimgMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/ProcessimgMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/RoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/RoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/RolePermissionMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/RolePermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/SoftcopyrightfileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/SoftcopyrightfileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/SoftwarecopyrightMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/SoftwarecopyrightMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/StockEquityMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/StockEquityMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/ThesisMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/ThesisMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/TrademarkImgMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/TrademarkImgMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/TrademarkMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/TrademarkMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/TrademarkprocessMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/TrademarkprocessMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/TrademarkprocessfileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/TrademarkprocessfileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/UserRoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/UserRoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/WorkFileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/WorkFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/WorkMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/WorkMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/AwardCollege.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/AwardCollegeFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/AwardIncubate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/AwardIncubateFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/AwardPersonal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/AwardPersonalFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Cooperation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/CooperationFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Copyright.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Copyrightimg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/DeptInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/EmpAvatarinfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/EmpInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govfund.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govfundprocess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govfundprocessfile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govplatform.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govplatformprocess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govplatformprocessfile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govreward.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govrewardprocess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govrewardprocessfile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govsubject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govsubjectprocess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Govsubjectprocessfile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Incubator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/IncubatorFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/IncubatorRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/MeetingThesis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/MeetingThesisFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Ministry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/MinistryFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/PatProcess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Patent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/PeriodicalThesis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/PeriodicalThesisFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Permission.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Processimg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/RolePermission.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Softcopyrightfile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Softwarecopyright.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/StockEquity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Thesis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Trademark.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/TrademarkImg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Trademarkprocess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Trademarkprocessfile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/UserRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/Work.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/domain/WorkFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/interceptor/MyInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/interceptor/NoCacheFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/AwardCollegeFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/AwardCollegeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/AwardIncubateFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/AwardIncubateService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/AwardPersonalFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/AwardPersonalService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/CooperationFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/CooperationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/CopyrightImgService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/CopyrightService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/DeptInfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/EmpAvatarService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/EmpInfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovFundProcessFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovFundProcessService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovFundService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovPlatformProcessFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovPlatformProcessService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovPlatformService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovRewardProcessFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovRewardProcessService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovRewardService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovSubjectProcessFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovSubjectProcessService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/GovSubjectService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/IncubatorFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/IncubatorRecordService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/IncubatorService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/MeetingThesisFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/MeetingThesisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/MinistryFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/MinistryService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/PatentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/PeriodicalThesisFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/PeriodicalThesisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/ProcessService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/ProcessimgService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/RoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/SoftcopyrightfileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/SoftwarecopyrightService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/StockEquityService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/ThesisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/TradeMarkService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/TrademarkImgService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/TrademarkProcessFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/TrademarkProcessService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/UserRoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/WorkFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/WorkService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/AwardCollegeFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/AwardCollegeServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/AwardIncubateFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/AwardIncubateServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/AwardPersonalFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/AwardPersonalServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/CooperationFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/CooperationServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/CopyrightImgServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/CopyrightServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/DeptInfoServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/EmpAvatarServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/EmpInfoServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovFundProcessFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovFundProcessServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovFundServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovPlatformProcessFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovPlatformProcessServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovPlatformServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovRewardProcessFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovRewardProcessServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovRewardServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovSubjectProcessFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovSubjectProcessServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/GovSubjectServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/IncubatorFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/IncubatorRecordServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/IncubatorServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/MeetingThesisFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/MeetingThesisServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/MinistryFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/MinistryServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/PatentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/PeriodicalThesisFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/PeriodicalThesisServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/ProcessServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/ProcessimgServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/RoleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/SoftcopyrightfileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/SoftwarecopyrightServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/StockEquityServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/ThesisServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/TradeMarkServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/TrademarkImgServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/TrademarkProcessFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/TrademarkProcessServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/UserRoleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/WorkFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/WorkServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/AlertException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/BeanChangeUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/CalculationUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/ConstantUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/CountDatetoNowDays.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/CustomException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/DateUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/Encodes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/Exceptions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/FileDomainFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/FileLoadUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/InsertOfExcel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/JsonResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/Layui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/util/StringtoIntutil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/generator.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/jdbc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/spring-context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/spring-mvc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/spring-mybatis.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/errorpage/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/errorpage/405.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/errorpage/505.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/errorpage/Customerror.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/aopalliance-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/aspectjrt-1.7.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/aspectjweaver-1.7.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/commons-beanutils-1.7.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/commons-codec-1.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/commons-collections-3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/commons-dbcp-1.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/commons-fileupload-1.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/commons-io-2.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/commons-lang-2.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/commons-lang3-3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/commons-logging-1.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/commons-pool-1.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/curvesapi-1.03.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/druid-1.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/ezmorph-1.0.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/fastjson-1.2.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/jackson-annotations-2.4.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/jackson-core-2.4.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/jackson-core-asl-1.9.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/jackson-databind-2.4.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/json-lib-2.2.1-jdk15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/log4j-1.2.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/lombok-1.18.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/mybatis-3.2.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/mybatis-spring-1.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.35.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/poi-3.14.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/poi-ooxml-3.14.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/poi-ooxml-schemas-3.14.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/slf4j-api-1.7.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/slf4j-log4j12-1.7.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-aop-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-beans-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-context-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-context-support-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-core-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-expression-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-jdbc-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-orm-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-oxm-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-test-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-tx-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-web-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/spring-webmvc-3.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/stax-api-1.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/lib/xmlbeans-2.6.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/indexNav.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/hatch/hatch.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/hatch/hatchAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/hatch/hatchCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/hatch/hatchEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/hatch/hatchchangetime.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/hatch/hatchmumber.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/hatch/hatchshare.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/incubate/incubate.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/incubate/incubateAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/incubate/incubateCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/incubate/incubateEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/institute/institute.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/institute/instituteAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/institute/instituteCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/institute/instituteEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/person/person.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/person/personAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/person/personCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/honor/person/personEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/indexIndustry.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/industry.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/inform/addFaildind.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/inform/addSuccesdind.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/inform/editFaildind.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/inform/editSuccesdind.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/innovate/innovate.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/innovate/innovateAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/innovate/innovateCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/innovate/innovateEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/serviceFirm/serviceFirm.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/serviceFirm/serviceFirmAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/serviceFirm/serviceFirmCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/industry/serviceFirm/serviceFirmEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/limited - 系统后台框架.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/limited-add.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/limited-edit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/limited-iframe - 副本.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/limited-iframe.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/limited.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/personnel/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/personnel/addPersonnel.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/personnel/adddetail.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/personnel/checkdetail.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/personnel/delPersonnel.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/personnel/editdetail.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/personnel/indexPersonnel.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/personnel/newsPersonnel.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/personnel/personnel.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/personnel/systemPersonnel.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/add-faild.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/add-succesd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/award/award.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/award/awardAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/award/awardCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/award/awardData.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/award/awardDataAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/award/awardDataAddFile.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/award/awardEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/award/awardProcess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/award/awardfilereload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/brand/brand.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/brand/brandAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/brand/brandCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/brand/brandData.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/brand/brandDataAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/brand/brandDataAddFile.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/brand/brandEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/brand/brandProcess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/brand/brandfilereload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/copyright/copyright.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/copyright/copyrightAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/copyright/copyrightCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/copyright/copyrightEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/create/create.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/create/createAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/create/createCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/create/createData.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/create/createDataAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/create/createDataAddFile.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/create/createEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/create/createProcess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/create/createfilereload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/faild.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/fund/fund.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/fund/fundAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/fund/fundCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/fund/fundData.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/fund/fundDataAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/fund/fundDataAddFile.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/fund/fundEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/fund/fundProcess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/fund/fundfilereload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/indexScience.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/inform/add-faildOut.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/inform/add-faildsci.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/inform/add-succesdOut.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/inform/add-succesdsci.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/inform/edit-faildsci.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/inform/edit-succesdsci.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/newsScience.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/paper/paper.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/paper/paperAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/paper/paperCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/paper/paperEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/paper/paperfilereload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/paper/paperfilereloadadd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/papermeeting/papermeeting.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/papermeeting/papermeetingAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/papermeeting/papermeetingCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/papermeeting/papermeetingEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/papermeeting/papermeetingfilereload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/papermeeting/papermeetingfilereloadadd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/patent/patent.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/patent/patentAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/patent/patentCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/patent/patentData.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/patent/patentDataAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/patent/patentDataAddFile.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/patent/patentEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/patent/patentProcess - 分类查看.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/patent/patentProcess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/patent/patentfilereload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/research.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/research/research.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/research/researchAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/research/researchCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/research/researchData.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/research/researchDataAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/research/researchDataAddFile.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/research/researchEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/research/researchProcess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/research/researchfilereload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/science.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/soft/soft.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/soft/softAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/soft/softCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/soft/softEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/soft/softfilereload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/soft/softfilereloadadd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/succesd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/work/work.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/work/workAdd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/work/workCheck.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/work/workEdit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/work/workfilereload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/science/work/workfilereloadadd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/page/testchk.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/bootstrap/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/bootstrap/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/datatable/css/jquery.dataTables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/datatable/images/sort_asc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/datatable/images/sort_asc_disabled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/datatable/images/sort_both.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/datatable/images/sort_desc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/datatable/images/sort_desc_disabled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/datatable/js/commen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/datatable/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/datatable/js/jquery.dataTables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/layui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/layui.mobile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/layuiAdd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/code.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/laydate/default/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/laydate/laydate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/laydate/theme/default/font/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/laydate/theme/default/font/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/laydate/theme/default/font/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/laydate/theme/default/font/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/laydate/theme/default/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/layer/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/layer/default/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/science.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/font/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/font/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/font/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/font/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/10.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/11.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/12.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/13.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/14.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/15.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/16.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/17.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/18.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/19.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/20.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/21.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/22.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/23.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/24.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/25.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/26.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/27.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/28.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/29.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/30.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/31.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/32.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/33.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/34.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/35.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/36.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/37.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/38.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/39.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/4.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/40.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/41.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/42.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/43.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/44.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/45.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/46.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/47.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/48.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/49.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/5.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/50.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/51.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/52.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/53.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/54.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/55.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/56.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/57.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/58.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/59.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/6.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/60.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/61.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/62.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/63.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/64.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/65.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/66.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/67.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/68.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/69.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/7.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/70.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/71.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/8.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/images/face/9.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/code.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/flow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/laydate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/layedit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/laypage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/laytpl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/mobile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/rate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/table.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/tree.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/upload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/lay/modules/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/layui.all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/commen/layui/layui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/css/industry.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/css/industrymain.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/css/layuiAdd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/css/science.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/css/sciencemain.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/Customerror.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/account.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/add.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/code.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/fail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/govfunding.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/govfundingA.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/icon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/icon_checkbox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/indt2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/indt2a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/indt3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/indt3a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/indtitem.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/indtitle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/industry.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/itemtitle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/lobg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/loginbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/loginbg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/mark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/markA.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/navbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/pageto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/pagetoA.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/password.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/personbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/pertitle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/qaii.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/science.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/sciencebg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/sciencebg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/success.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/image/talent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/QRcode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/awarddata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/branddata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/commen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/createdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/echarts.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/funddata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/globalfunction.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/iframesrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/indchars.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/jquery.table2excel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/patentdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/perchars.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/researchdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/scichars.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/sweetalert.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/talent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/js/vue.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/router/adddetail.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/router/checkdetail.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/router/limited-add.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/router/limited-edit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/router/limited-iframe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/router/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/router/updateEmpinfo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/IncubatorRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/IncubatorRecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="C:\Users\Administrator\git\qaii\.idea\shelf/" />
@@ -741,20 +24,21 @@
         <counts>
           <entry key="project.closed" value="6" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="dtd" value="1" />
           <entry key="java" value="49" />
-          <entry key="jsp" value="8" />
+          <entry key="jsp" value="9" />
           <entry key="prefs" value="2" />
           <entry key="properties" value="2" />
           <entry key="xml" value="12" />
@@ -764,7 +48,7 @@
         <counts>
           <entry key="DTD" value="1" />
           <entry key="JAVA" value="49" />
-          <entry key="JSP" value="8" />
+          <entry key="JSP" value="9" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="25" />
@@ -773,12 +57,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="348" />
+          <entry key="jsp" value="28" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="348" />
+          <entry key="JSP" value="28" />
           <entry key="XML" value="4" />
         </counts>
       </usages-collector>
@@ -855,19 +141,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/base/Const.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardIncubateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="92" column="38" lean-forward="true" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+            <state relative-caret-position="1917">
+              <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -884,8 +161,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IncubatorRecordController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+            <state relative-caret-position="486">
+              <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -896,7 +173,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
+            <state relative-caret-position="16686">
               <caret line="656" selection-start-line="656" selection-end-line="656" />
             </state>
           </provider>
@@ -906,16 +183,25 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/GlobalExceptionController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="594">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="363" column="64" lean-forward="true" selection-start-line="363" selection-start-column="64" selection-end-line="363" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="362" column="47" lean-forward="true" selection-start-line="362" selection-start-column="47" selection-end-line="362" selection-end-column="47" />
+            <state relative-caret-position="863">
+              <caret line="321" column="29" selection-start-line="321" selection-start-column="29" selection-end-line="321" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -938,7 +224,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/TaskDemo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3645">
-              <caret line="142" column="21" lean-forward="true" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
+              <caret line="142" column="21" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -1007,7 +293,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/css/layuiAdd.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/commen/layui/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/CopyrightController.java" />
@@ -1058,6 +343,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/TaskDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/IncubatorRecordController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" />
       </list>
     </option>
   </component>
@@ -1096,6 +382,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1119,24 +406,45 @@
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="hatch" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1158,7 +466,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1309,11 +616,12 @@
       <workItem from="1543222795569" duration="348000" />
       <workItem from="1543280595113" duration="2707000" />
       <workItem from="1543301897480" duration="3401000" />
+      <workItem from="1543367300868" duration="2420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127820000" />
+    <option name="totallyTimeSpent" value="130240000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1326,8 +634,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1337,7 +646,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.52277654" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.046637744" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.19211823" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1435,13 +744,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardCollegeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="24" column="50" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/deptController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-300">
@@ -1720,6 +1022,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/base/Const.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardIncubateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1917">
+          <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IncubatorRecordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16686">
+          <caret line="656" selection-start-line="656" selection-end-line="656" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/GlobalExceptionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.settings/org.eclipse.jdt.apt.core.prefs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1733,59 +1080,21 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/TaskDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3645">
-          <caret line="142" column="21" lean-forward="true" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/base/Const.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardIncubateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="92" column="38" lean-forward="true" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/GlobalExceptionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IncubatorRecordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="656" selection-start-line="656" selection-end-line="656" />
+          <caret line="142" column="21" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="362" column="47" lean-forward="true" selection-start-line="362" selection-start-column="47" selection-end-line="362" selection-end-column="47" />
+        <state relative-caret-position="129">
+          <caret line="363" column="64" lean-forward="true" selection-start-line="363" selection-start-column="64" selection-end-line="363" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="863">
+          <caret line="321" column="29" selection-start-line="321" selection-start-column="29" selection-end-line="321" selection-end-column="29" />
         </state>
       </provider>
     </entry>
