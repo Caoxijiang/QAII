@@ -2,6 +2,7 @@ package com.qaii.controller;
 
 import com.qaii.domain.IncubatorRecord;
 import com.qaii.service.IncubatorRecordService;
+import com.qaii.util.ConstantUtil;
 import com.qaii.util.DateUtils;
 import com.qaii.util.JsonResult;
 import com.qaii.util.Layui;
@@ -46,9 +47,8 @@ public class IncubatorRecordController {
     }
 
     //更新变更时间
-    @ResponseBody
     @RequestMapping(value="updataTime.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-    public JsonResult updataTime(HttpServletRequest req) throws UnsupportedEncodingException {
+    public String updataTime(HttpServletRequest req) throws UnsupportedEncodingException {
         req.setCharacterEncoding("UTF-8");
         IncubatorRecord incubatorRecord=new IncubatorRecord();
         try {
@@ -57,13 +57,13 @@ public class IncubatorRecordController {
             Date times= DateUtils.parseStringToDate(time);
             incubatorRecord.setChangedTime(times);
         }catch (Exception e){
-            return new JsonResult("传入数据为空"+e);
+            return ConstantUtil.INDUSTRY_EDIT_FAILD;
         }
         int row =incubatorRecordService.updataTime(incubatorRecord);
         if(row!=0){
-            return new JsonResult(row);
+            return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         }else{
-            return new JsonResult();
+            return ConstantUtil.INDUSTRY_EDIT_FAILD;
         }
 
     }
