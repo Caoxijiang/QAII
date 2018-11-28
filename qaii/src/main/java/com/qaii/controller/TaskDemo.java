@@ -1,10 +1,12 @@
 package com.qaii.controller;
 import com.qaii.service.WorkService;
 import com.qaii.util.DeleteFileUtil;
+import com.qaii.util.FileLogUtil;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -21,7 +23,7 @@ import java.util.List;
     //存储文件完整路径
     List<String> listlocalPaths = new ArrayList<>();
     @Scheduled(cron = "0 0 1 * * ?")
-    void doSomethingWith() {
+    void doSomethingWith() throws IOException {
         //获取数据库中所有的与路径有关的Table名称
         //获取file_path列名的数据库的名字；
         List<String> listfilepathtable= workService.selectTable();
@@ -70,6 +72,10 @@ import java.util.List;
         showDirectory(file);
         //将数据库中的文件路径和磁盘中的路径进行比较
         Compare();
+        //清空缓存
+        listlocalPaths.clear();
+        listlocalPath.clear();
+        listpath.clear();
         //删除空文件夹
         DelNullDir nullDir=new DelNullDir();
         nullDir.ShowDir(file);
@@ -109,10 +115,9 @@ import java.util.List;
             //文件名
             listlocalPath.add(f2.getName());
         }
-
     }
 
-  public void Compare(){
+  public void Compare() throws IOException {
        for (String str:listlocalPath) {
            //如果磁盘里面的文件名在数据库中存在，则保留；不存在则进行删除
            if (listpath.contains(str)) {
@@ -124,6 +129,8 @@ import java.util.List;
                       System.out.println("Come on beach");
                       System.out.println("现在就只剩那些在数据库中不存在的路径了");
                       DeleteFileUtil.delete(filepath);
+                      FileLogUtil.showlog(filepath);
+                      System.out.println("删除文件的日志功能");
                    }
                }
            }
