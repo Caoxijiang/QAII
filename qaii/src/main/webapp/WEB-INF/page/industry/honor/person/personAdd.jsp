@@ -31,7 +31,7 @@
 	</button>		
 </div>
 <div class="layui-container addtop">
-  <form class="layui-form" action="insertMinistry.do" method="post" enctype="multipart/form-data">
+  <form class="layui-form" action="insertAwardPersonal.do" method="post" enctype="multipart/form-data">
   <!-- 基本信息 -->
 	  <div class="layui-row contern">
 	  	<h1>基本信息</h1>
@@ -39,7 +39,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">获奖人员</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryName" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="personName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -47,7 +47,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">获奖时间</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryProperty" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+			      <input type="text" name="awardTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 			    </div>
 			  </div>
 		</div>
@@ -55,7 +55,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">奖励荣誉名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="contactPerson" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="awardName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -63,7 +63,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">获奖级别</label>
 			    <div class="layui-input-block">
-			      <select name="interest" lay-filter="aihao">
+			      <select name="awardLevel" lay-filter="aihao">
 			        <option value="国际级">国际级</option>
 			        <option value="国家级" selected="">国家级</option>
 			        <option value="省级">省级</option>
@@ -77,7 +77,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">颁奖活动名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryLocation" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="activityName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -85,7 +85,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">主办单位</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryTime" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="orgnizer" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>

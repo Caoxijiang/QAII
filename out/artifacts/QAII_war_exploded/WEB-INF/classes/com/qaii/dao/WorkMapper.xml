@@ -240,7 +240,35 @@
       </if>
     </trim>
   </insert>
+
   <select id="listNotPass" resultMap="BaseResultMap">
   SELECT * FROM sci_work WHERE is_pass  = 0
+  </select>
+
+  <select id="selectAllpathTable" resultType="java.lang.String">
+  SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'qaiisys'
+  AND COLUMN_NAME LIKE '%path%'
+  </select>
+
+  <select id="selectTablename" resultType="java.lang.String">
+  SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'qaiisys'
+  AND COLUMN_NAME ='file_path'
+  </select>
+
+  <select id="selectTablenamePath" resultType="java.lang.String">
+  SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'qaiisys'
+  AND COLUMN_NAME ='path'
+  </select>
+
+  <select id="selectPathBytableName" parameterType="java.lang.String" resultType="java.lang.String">
+  SELECT file_path from ${Tablename}
+  </select>
+
+  <select id="selectPathBytableNamePath" parameterType="java.lang.String" resultType="java.lang.String">
+  SELECT path from ${Tablename}
+  </select>
+
+  <select id="selectqueUrl"  resultType="java.lang.String">
+  SELECT url from emp_avatarinfo
   </select>
 </mapper>

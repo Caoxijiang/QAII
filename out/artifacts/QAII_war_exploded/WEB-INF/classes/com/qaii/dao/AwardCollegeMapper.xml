@@ -295,6 +295,9 @@
     </foreach>
   </delete>
   <select id="listRecords" resultMap="BaseResultMap">
+    SELECT * FROM industry_awardcollege
+  </select>
+  <select id="listcollege" resultMap="BaseResultMap">
     SELECT * FROM industry_awardcollege GROUP BY award_time DESC
   </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardCollege">

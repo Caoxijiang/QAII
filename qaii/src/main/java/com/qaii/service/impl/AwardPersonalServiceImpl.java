@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by kunpeng on 2018/11/16 11:36
  */
-@Service
+@Service("AwardPersonalService")
 public class AwardPersonalServiceImpl implements AwardPersonalService {
     @Resource
     private AwardPersonalMapper awardPersonalMapper;
@@ -32,12 +32,17 @@ public class AwardPersonalServiceImpl implements AwardPersonalService {
 
     @Override
     public int updateByPrimaryKey(AwardPersonal record) {
-        return awardPersonalMapper.updateByPrimaryKey(record);
+        return awardPersonalMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public List<AwardPersonal> listRecords() {
         return awardPersonalMapper.listRecords();
+    }
+
+    @Override
+    public List<AwardPersonal> listPersonal() {
+        return awardPersonalMapper.listPersonal();
     }
 
     @Override

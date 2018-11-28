@@ -7,16 +7,125 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ef6a496-9566-4b4f-b590-d91cc76585dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/QAII_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/QAII_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/QAII_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/qaii.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardCollege.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardCollegeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardCollegeFileServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardCollegeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardCollegeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardCollegeServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardIncubate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardIncubateFileServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardIncubateMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardIncubateService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardIncubateServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardPersonal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardPersonalFileServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardPersonalMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardPersonalService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/AwardPersonalServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/BeanChangeUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/ConstantUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/Cooperation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/CooperationFileServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/CooperationServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/DateUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/FileDomainFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/FileLoadUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/IncubatorFileMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/IncubatorMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/IncubatorRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/IncubatorRecordMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/IncubatorService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/IncubatorServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/IndustryController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/MinistryController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/MinistryFileServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/MinistryServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/WorkMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/WorkService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/WorkServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/industryDataOverviewController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/.idea/shelf/Uncommitted_changes_before_Update_at_2018_11_27_0027_14_42__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/out/artifacts/unnamed/unnamed.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/AwardIncubateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/AwardPersonalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/CooperationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/TaskDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/util/DeleteFileUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/.idea/artifacts/QAII_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/.idea/artifacts/QAII_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/.idea/artifacts/qaii_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/.idea/artifacts/qaii_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qaii/QAII.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/QAII.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/src/main/resources/spring-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/resources/spring-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/out/artifacts/qaii_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/out/artifacts/qaii_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/AwardCollegeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/AwardCollegeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IncubatorRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IncubatorRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/MinistryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/MinistryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/industryDataOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/industryDataOverviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardCollegeFileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardCollegeFileMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardCollegeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardCollegeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardCollegeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardCollegeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardIncubateFileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardIncubateFileMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardIncubateMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardIncubateMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardIncubateMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardIncubateMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardPersonalFileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardPersonalFileMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardPersonalMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardPersonalMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardPersonalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardPersonalMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/CooperationFileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/CooperationFileMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/CooperationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/CooperationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/MinistryFileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/MinistryFileMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/WorkMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/WorkMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/WorkMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/WorkMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/domain/AwardCollege.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/domain/AwardCollege.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/domain/AwardIncubate.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/domain/AwardIncubate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/domain/AwardPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/domain/AwardPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/domain/Cooperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/domain/Cooperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/AwardCollegeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/AwardCollegeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/AwardIncubateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/AwardIncubateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/AwardPersonalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/AwardPersonalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/WorkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/WorkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardCollegeFileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardCollegeFileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardCollegeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardCollegeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardIncubateFileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardIncubateFileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardIncubateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardIncubateServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardPersonalFileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardPersonalFileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardPersonalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardPersonalServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/CooperationFileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/CooperationFileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/CooperationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/CooperationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/MinistryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/MinistryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/WorkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/WorkServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/util/ConstantUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/util/ConstantUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/util/FileLoadUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/util/FileLoadUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/util/fileDomainFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/util/FileDomainFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/resources/spring-mvc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/institute/institute.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/institute/institute.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/institute/instituteEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/person/person.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/person/person.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/person/personAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/person/personAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/person/personCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/person/personCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/person/personEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/person/personEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/qaii/target/m2e-wtp/web-resources/META-INF/maven/com.qaii/QAII/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/m2e-wtp/web-resources/META-INF/maven/com.qaii/QAII/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/qaii/target/" />
@@ -44,8 +153,8 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="1" />
-          <entry key="java" value="7" />
-          <entry key="jsp" value="19" />
+          <entry key="java" value="8" />
+          <entry key="jsp" value="28" />
           <entry key="properties" value="2" />
           <entry key="xml" value="1" />
         </counts>
@@ -53,23 +162,23 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="7" />
-          <entry key="JSP" value="19" />
+          <entry key="JAVA" value="8" />
+          <entry key="JSP" value="28" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="181" />
-          <entry key="jsp" value="482" />
+          <entry key="java" value="240" />
+          <entry key="jsp" value="545" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="181" />
-          <entry key="JSP" value="482" />
+          <entry key="JAVA" value="240" />
+          <entry key="JSP" value="545" />
           <entry key="XML" value="4" />
         </counts>
       </usages-collector>
@@ -78,10 +187,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp">
+        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirm.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4731">
-              <caret line="387" column="37" lean-forward="true" selection-start-line="387" selection-start-column="37" selection-end-line="387" selection-end-column="37" />
+            <state relative-caret-position="437">
+              <caret line="245" column="7" lean-forward="true" selection-start-line="245" selection-start-column="7" selection-end-line="245" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -94,6 +203,9 @@
       <find>insertIndustryInfo</find>
       <find>incubate</find>
       <find>countnum</find>
+      <find>paperOnline</find>
+      <find>fid1</find>
+      <find>topic</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -107,7 +219,6 @@
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/inform/editFaildind.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/inform/editSuccesdind.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp" />
-        <option value="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubate.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateEdit.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateEdit.jsp" />
@@ -116,6 +227,12 @@
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/resources/spring-context.xml" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp" />
+        <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" />
+        <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmCheck.jsp" />
+        <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmEdit.jsp" />
+        <option value="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java" />
+        <option value="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java" />
+        <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirm.jsp" />
       </list>
     </option>
   </component>
@@ -142,7 +259,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="25" />
     <option name="width" value="1400" />
@@ -175,6 +292,30 @@
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
@@ -221,6 +362,117 @@
               <item name="industry" type="462c0819:PsiDirectoryNode" />
               <item name="hatch" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+              <item name="incubate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+              <item name="institute" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+              <item name="person" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="inform" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="innovate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="serviceFirm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="personnel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="science" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="science" type="462c0819:PsiDirectoryNode" />
+              <item name="paper" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -230,10 +482,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="selectRecordInfoByinId&#9;null&#9;null&#10;insertIndustryInfo&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="insertIndustryInfo&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543369294337" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543388738559" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/qaii" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -439,7 +691,7 @@
       <workItem from="1543280246631" duration="2513000" />
       <workItem from="1543298087188" duration="449000" />
       <workItem from="1543298584620" duration="5573000" />
-      <workItem from="1543366585541" duration="711000" />
+      <workItem from="1543366585541" duration="11936000" />
     </task>
     <servers />
   </component>
@@ -455,23 +707,22 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47480000" />
+    <option name="totallyTimeSpent" value="58705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16950959" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1913646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.06337272" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22986037" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -504,24 +755,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java</url>
-          <line>185</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java</url>
-          <line>190</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/qaii/target/m2e-wtp/web-resources/META-INF/maven/com.qaii/QAII/pom.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -538,62 +771,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/inform/addSuccesdOut.jsp" />
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/inform/addFaildind.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/inform/addSuccesdind.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/inform/editFaildind.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/inform/editSuccesdind.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatchAdd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="282" column="5" selection-start-line="282" selection-start-column="5" selection-end-line="282" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="336" column="22" lean-forward="true" selection-start-line="336" selection-start-column="22" selection-end-line="336" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IncubatorRecordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="35" column="47" lean-forward="true" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubate.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -631,32 +808,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateEdit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state relative-caret-position="394">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateCheck.jsp">
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/inform/addSuccesdind.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="7" selection-end-line="171" selection-end-column="7" />
+        <state relative-caret-position="413">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateAdd.jsp">
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/inform/editFaildind.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="19" selection-end-line="153" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="394">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -695,10 +862,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatchAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4161">
+          <caret line="33" column="67" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/paperCheck.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="157" column="126" lean-forward="true" selection-start-line="157" selection-start-column="87" selection-end-line="157" selection-end-column="126" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1872">
+          <caret line="344" column="44" lean-forward="true" selection-start-line="344" selection-start-column="44" selection-end-line="344" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="126" column="34" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/paperEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="231" column="13" lean-forward="true" selection-start-line="231" selection-start-column="13" selection-end-line="231" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="137" column="5" lean-forward="true" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6729#6730#0" expanded="true" />
+            <element signature="e#6781#6782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4731">
-          <caret line="387" column="37" lean-forward="true" selection-start-line="387" selection-start-column="37" selection-end-line="387" selection-end-column="37" />
+        <state relative-caret-position="5567">
+          <caret line="428" column="8" lean-forward="true" selection-start-line="428" selection-start-column="8" selection-end-line="428" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmCheck.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1418">
+          <caret line="186" column="62" lean-forward="true" selection-start-line="186" selection-start-column="24" selection-end-line="186" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="245" column="7" lean-forward="true" selection-start-line="245" selection-start-column="7" selection-end-line="245" selection-end-column="7" />
         </state>
       </provider>
     </entry>

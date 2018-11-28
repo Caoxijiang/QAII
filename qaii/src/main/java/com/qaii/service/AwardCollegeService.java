@@ -15,6 +15,7 @@ public interface AwardCollegeService {
     int updateByPrimaryKey(AwardCollege record);
 
     List<AwardCollege> listRecords();
+    List<AwardCollege> listcollege();
 
     AwardCollege getRecord(Integer id);
 

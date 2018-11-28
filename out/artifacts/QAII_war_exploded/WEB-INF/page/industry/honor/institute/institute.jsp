@@ -81,13 +81,13 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
-	<div class="int-inline"><input id="id"  type="checkbox" value="获奖时间" checked="true"/><lable>获奖时间</lable></div>
-	<div class="int-inline"><input id=copyPicture  type="checkbox" value="获奖级别" checked="flase"/><lable>获奖级别</lable></div>
-	<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="获奖单位名称" checked/><lable>获奖单位名称</lable></div>
-	<div class="int-inline"><input id="contactPerson"  type="checkbox" value="奖励荣誉名称" checked/><lable>奖励荣誉名称</lable></div>
-	<div class="int-inline"><input id="contactMethod"  type="checkbox" value="颁奖活动名称" checked/><lable>颁奖活动名称</lable></div>
-	<div class="int-inline"><input id="ministryLocation"  type="checkbox" value="主办单位" checked/><lable>主办单位</lable></div>
-	<div class="int-inline"><input id="ownselfContactMethod"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
+	<div class="int-inline"><input id="awardTime"  type="checkbox" value="获奖时间" checked="true"/><lable>获奖时间</lable></div>
+	<div class="int-inline"><input id=awardLevel  type="checkbox" value="获奖级别" checked="flase"/><lable>获奖级别</lable></div>
+	<div class="int-inline"><input id="awardUnit"  type="checkbox" value="获奖单位名称" checked/><lable>获奖单位名称</lable></div>
+	<div class="int-inline"><input id="awardName"  type="checkbox" value="奖励荣誉名称" checked/><lable>奖励荣誉名称</lable></div>
+	<div class="int-inline"><input id="activityName"  type="checkbox" value="颁奖活动名称" checked/><lable>颁奖活动名称</lable></div>
+	<div class="int-inline"><input id="orgnizer"  type="checkbox" value="主办单位" checked/><lable>主办单位</lable></div>
+	<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -122,18 +122,18 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'listMinistries.do', //数据接口
+    url: 'listAwardColleges.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
     	{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'ministryName', title: '获奖时间',fixed: 'left',width:150},
-		{field: 'ministryProperty', title: '获奖级别',width:150},
-		{field: 'contactPerson', title: '获奖单位名称',sort: true,width:180},
-		{field: 'contactMethod', title: '奖励荣誉名称',sort: true,width:180},
-		{field: 'ministryLocation', title: '颁奖活动名称',sort: true,width:180},
-		{field: 'ministryTime', title: '主办单位',sort: true,width:150},
-		{field: 'ministryProject', title: '备注',width:220},
+		{field: 'awardTime', title: '获奖时间',fixed: 'left',width:150},
+		{field: 'awardLevel', title: '获奖级别',width:150},
+		{field: 'awardUnit', title: '获奖单位名称',sort: true,width:180},
+		{field: 'awardName', title: '奖励荣誉名称',sort: true,width:180},
+		{field: 'activityName', title: '颁奖活动名称',sort: true,width:180},
+		{field: 'orgnizer', title: '主办单位',sort: true,width:150},
+		{field: 'remark', title: '备注',width:220},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
     ]], 
 	  //表格数据
@@ -264,7 +264,7 @@ layui.use('table', function(obj){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"deleteMinistry.do",
+          	url:"deleteAwardCollege.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -300,7 +300,7 @@ layui.use('table', function(obj){
 	$("#dellist").on('click', function(){
 		alert("请慎重考虑，删除数据不可恢复");
 		$.post({
-		  	url:"deleteMinistry.do",
+		  	url:"deleteAwardCollege.do",
 		  	data:{
 		  		"requestDate" : arr
 		  	},
@@ -327,7 +327,7 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: 'insertCopyrightOfExcel.do'
+  ,url: 'insertAwardCollegeWithExcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
 	  alert("上传成功！请更新数据！");

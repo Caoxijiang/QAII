@@ -31,15 +31,18 @@
 	</button>
 </div>
 <div class="layui-container addtop">
-	<form class="layui-form" action="insertMinistry.do" method="post" enctype="multipart/form-data" lay-filter="example">
+	<form class="layui-form" action="updateCooperation.do" method="post" enctype="multipart/form-data" lay-filter="example">
 		<!-- 基本信息 -->
 		<div class="layui-row contern">
 			<h1>基本信息</h1>
+            <input id="id" name="id" type="hidden">
+            <input id="fid" name="fid" type="hidden">
+            <input id="fpath" name="fpath" type="hidden">
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
 					<label class="layui-form-label">我院/公司名称</label>
 					<div class="layui-input-block">
-						<input type="text" name="ministryName" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="unitName" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -47,7 +50,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">合作单位名称</label>
 					<div class="layui-input-block">
-						<input type="text" name="ministryProperty" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="cooperationName" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -55,7 +58,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">签订的协议名称</label>
 					<div class="layui-input-block">
-						<input type="text" name="contactPerson" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="protocolName" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -63,7 +66,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">签订时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="ministryTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+						<input type="text" name="signTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 					</div>
 				</div>
 			</div>
@@ -71,7 +74,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">合作内容/方向</label>
 					<div class="layui-input-block">
-						<input type="text" name="ministryLocation" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="cooperationContent" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -137,7 +140,7 @@
         var id=${param.userId};
         if(id!=null){
             $.post({
-                url:"getMinistry.do",
+                url:"getCooperation.do",
                 data:{
                     id:id
                 },
@@ -147,19 +150,15 @@
                         //表单初始赋值 从表单中提取数据
                         form.val('example', {
                             "id":awardInfo.id,
-                            "ministryName":awardInfo.ministryName,
-                            "ministryProperty":awardInfo.ministryProperty,
-                            "contactPerson":awardInfo.contactPerson,
-                            "contactMethod":awardInfo.contactMethod,
-                            "ministryLocation":awardInfo.ministryLocation,
-                            "ministryTime":awardInfo.ministryTime,
-                            "ownselfContactPerson":awardInfo.ownselfContactPerson,
-                            "ministryProject":awardInfo.ministryProject,
-                            "ownselfUnit":awardInfo.ownselfUnit,
-                            "ownselfContactMethod":awardInfo.ownselfContactMethod,
+                            "unitName":awardInfo.unitName,
+                            "cooperationName":awardInfo.cooperationName,
+                            "protocolName":awardInfo.protocolName,
+                            "signTime":awardInfo.signTime,
+                            "cooperationContent":awardInfo.cooperationContent,
                             "remark":awardInfo.remark,
                             "file0":awardInfo.listFile[0].fileName,
-                            "fid":awardInfo.listFile[0].id
+                            "fid":awardInfo.listFile[0].id,
+                            "fpath":awardInfo.listFile[0].filePath
                         })
                     }else{
                         alert("查看详情失败")

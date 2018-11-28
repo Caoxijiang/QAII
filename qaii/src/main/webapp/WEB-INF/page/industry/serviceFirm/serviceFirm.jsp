@@ -62,12 +62,12 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="copyPicture">作品名称</option>
-			<option value="contactPerson">登记号</option>
-			<option value="contactMethod">作者</option>
-			<option value="ministryLocation">著作权人</option>
-			<option value="ministryProject">创作完成日期</option>
-			<option value="ownselfUnit">首次发布日期</option>
+			<option value="ministryName">服务企业名称</option>
+			<option value="ministryProperty">服务企业性质</option>
+			<option value="contactPerson">服务企业联系人名称</option>
+			<option value="ministryLocation">服务企业地址</option>
+			<option value="ownselfUnit">我院部门/公司</option>
+			<option value="ownselfContactPerson">联系人</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -81,17 +81,17 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
-	<div class="int-inline"><input id="id"  type="checkbox" value="服务企业名称" checked="true"/><lable>服务企业名称</lable></div>
-	<div class="int-inline"><input id=copyPicture  type="checkbox" value="服务企业性质" checked="flase"/><lable>服务企业性质</lable></div>
-	<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="服务企业联系人名称" checked/><lable>服务企业联系人名称</lable></div>
-	<div class="int-inline"><input id="contactPerson"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
-	<div class="int-inline"><input id="contactMethod"  type="checkbox" value="服务企业地址" checked/><lable>服务企业地址</lable></div>
-	<div class="int-inline"><input id="ministryLocation"  type="checkbox" value="服务时间" checked/><lable>服务时间</lable></div>
-	<div class="int-inline"><input id="ministryTime"  type="checkbox" value="服务项目" checked/><lable>服务项目</lable></div>
-	<div class="int-inline"><input id="ministryProject"  type="checkbox" value="我院部门/公司" checked/><lable>我院部门/公司</lable></div>
-	<div class="int-inline"><input id="ownselfUnit"  type="checkbox" value="联系人" checked/><lable>联系人</lable></div>
-	<div class="int-inline"><input id="ownselfContactPerson"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
-	<div class="int-inline"><input id="ownselfContactMethod"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
+	<div class="int-inline"><input id="ministryName"  type="checkbox" value="服务企业名称" checked="true"/><lable>服务企业名称</lable></div>
+	<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="服务企业性质" checked="flase"/><lable>服务企业性质</lable></div>
+	<div class="int-inline"><input id="contactPerson"  type="checkbox" value="服务企业联系人名称" checked/><lable>服务企业联系人名称</lable></div>
+	<div class="int-inline"><input id="contactMethod"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
+	<div class="int-inline"><input id="ministryLocation"  type="checkbox" value="服务企业地址" checked/><lable>服务企业地址</lable></div>
+	<div class="int-inline"><input id="ministryTime"  type="checkbox" value="服务时间" checked/><lable>服务时间</lable></div>
+	<div class="int-inline"><input id="ministryProject"  type="checkbox" value="服务项目" checked/><lable>服务项目</lable></div>
+	<div class="int-inline"><input id="ownselfUnit"  type="checkbox" value="我院部门/公司" checked/><lable>我院部门/公司</lable></div>
+	<div class="int-inline"><input id="ownselfContactPerso"  type="checkbox" value="联系人" checked/><lable>联系人</lable></div>
+	<div class="int-inline"><input id="ownselfContactMethod"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
+	<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -227,18 +227,18 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="copyPicture"){
-  				alert("搜索'作品名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="contactPerson"){
-  				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="contactMethod"){
-  				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="ministryName"){
+  				alert("搜索'服务企业名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="ministryProperty"){
+  				alert("搜索'服务企业性质'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="ministryLocation"){
-  				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="ministryProject"){
-  				alert("搜索'创作完成日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  				alert("搜索'服务企业地址'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="ownselfUnit"){
-  				alert("搜索'首次发布日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  				alert("搜索'我院部门/公司'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="contactPerson"){
+  				alert("搜索'服务企业联系人名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="ownselfContactPerson"){
+  				alert("搜索'联系人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束

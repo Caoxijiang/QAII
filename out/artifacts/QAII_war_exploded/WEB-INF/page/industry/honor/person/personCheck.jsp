@@ -39,7 +39,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">获奖人员</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			      <input type="text" name="personName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 			    </div>
 			  </div>
 		</div>
@@ -47,7 +47,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">获奖时间</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryProperty" lay-verify="title" autocomplete="off" class="layui-input" id="test1" disabled="">
+			      <input type="text" name="awardTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1" disabled="">
 			    </div>
 			  </div>
 		</div>
@@ -55,7 +55,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">奖励荣誉名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="contactPerson" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			      <input type="text" name="awardName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 			    </div>
 			  </div>
 		</div>
@@ -63,7 +63,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">获奖级别</label>
 			    <div class="layui-input-block">
-			      <select name="interest" lay-filter="aihao" disabled="">
+			      <select name="awardLevel" lay-filter="aihao" disabled="">
 			        <option value="国际级">国际级</option>
 			        <option value="国家级" selected="">国家级</option>
 			        <option value="省级">省级</option>
@@ -77,7 +77,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">颁奖活动名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryLocation" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			      <input type="text" name="activityName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 			    </div>
 			  </div>
 		</div>
@@ -85,7 +85,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">主办单位</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="ministryTime" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+			      <input type="text" name="orgnizer" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 			    </div>
 			  </div>
 		</div>
@@ -97,7 +97,7 @@
 				<label class="layui-form-label" style="width:190px;">上传附件（服务证明书）</label>
 				<div class="layui-input-block" style="margin-left:210px;">
 					<div class="layui-upload">
-					   <input type="text" name="ministryTime" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+					   <input type="text" name="file0" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -135,7 +135,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
   var id=${param.userId};
   if(id!=null){
 		$.post({
-			url:"getMinistry.do",
+			url:"getAwardPersonal.do",
 			data:{
 				id:id
 			},
@@ -144,16 +144,13 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 					let awardInfo=data.data;
 					//表单初始赋值 从表单中提取数据
 					  form.val('example', {
-						"ministryName":awardInfo.ministryName,
-						"ministryProperty":awardInfo.ministryProperty,
-						"contactPerson":awardInfo.contactPerson,
-						"contactMethod":awardInfo.contactMethod,
-						"ministryLocation":awardInfo.ministryLocation,
-						"ministryTime":awardInfo.ministryTime,
-						"ownselfContactPerson":awardInfo.ownselfContactPerson,
-						"ministryProject":awardInfo.ministryProject,
-						"ownselfUnit":awardInfo.ownselfUnit,
-						"ownselfContactMethod":awardInfo.ownselfContactMethod,
+						"awardTime":awardInfo.awardTime,
+						"awardLevel":awardInfo.awardLevel,
+						"personName":awardInfo.personName,
+						"personUnit":awardInfo.personUnit,
+						"awardName":awardInfo.awardName,
+						"activityName":awardInfo.activityName,
+						"orgnizer":awardInfo.orgnizer,
 						"remark":awardInfo.remark,
 						"file0":awardInfo.listFile[0].fileName
 					  })

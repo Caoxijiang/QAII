@@ -379,7 +379,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "软著信息",
+				filename: "孵化企业管理",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片

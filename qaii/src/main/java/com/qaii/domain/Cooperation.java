@@ -1,5 +1,7 @@
 package com.qaii.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class Cooperation {
     private String cooperationName;
 
     private String protocolName;
-
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date signTime;
 
     private String cooperationContent;
@@ -31,6 +33,14 @@ public class Cooperation {
     private Date gmtModified;
 
     private List<CooperationFile> listFile;
+
+    public List<CooperationFile> getListFile() {
+        return listFile;
+    }
+
+    public void setListFile(List<CooperationFile> listFile) {
+        this.listFile = listFile;
+    }
 
     public Integer getId() {
         return id;

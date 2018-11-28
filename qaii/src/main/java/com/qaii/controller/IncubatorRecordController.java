@@ -32,7 +32,9 @@ public class IncubatorRecordController {
             List<IncubatorRecord> list=incubatorRecordService.selectByPrimaryKey(pid);
             int count =list.size();
             if (list!=null){
-                System.out.println("www:"+list.toString());
+                for (IncubatorRecord in :list){
+                    in.setListName(NameList(in.getListName()));
+                }
                 return Layui.data(count, list);
             }{
                 return Layui.data(count, list);
@@ -65,5 +67,51 @@ public class IncubatorRecordController {
         }
 
     }
+
+
+    public String NameList(String n){
+        String item=null;
+       // String n="companyName";
+        switch(n)
+        {
+            case "companyName":
+                item="企业名称";
+                break;
+            case "creditCode":
+                item="统一社会信用代码";
+                break;
+            case "establishTime":
+                item="成立时间";
+                break;
+            case "companyType":
+                item="公司类型";
+                break;
+            case "companyLocation":
+                item="公司住所";
+                break;
+            case "legalRepresentative":
+                item="法定代表人";
+                break;
+            case "registeredCapital":
+                item="注册资本";
+                break;
+            case "businessScope":
+                item="经营范围";
+                break;
+            case "incubatorName":
+                item="所属孵化器";
+                break;
+            case "hatchingTime":
+                item="入孵时间";
+                break;
+            case "limitedPeriod":
+                item="有限期";
+                break;
+            default:
+                item="";
+        }
+        return  item;
+    }
+
 
 }

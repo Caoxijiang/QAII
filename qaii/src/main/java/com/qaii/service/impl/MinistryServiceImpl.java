@@ -19,7 +19,7 @@ public class MinistryServiceImpl implements MinistryService {
 
     @Override
     public int insertRecordReturnID(Ministry record) {
-        return ministryMapper.insertSelective(record);
+        return ministryMapper.insertRecordReturnID(record);
     }
 
     @Override
