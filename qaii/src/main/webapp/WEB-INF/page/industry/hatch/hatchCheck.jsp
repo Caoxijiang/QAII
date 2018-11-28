@@ -134,11 +134,21 @@
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
-			<div class="layui-form-item itemadd">
+			<%--<div class="layui-form-item itemadd">
 				<label class="layui-form-label">上传营业执照</label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
 					  <input type="text" name="i1" lay-verify="title" autocomplete="off" class="layui-input" id="test3" disabled="">
+					</div>
+				</div>
+			</div>--%>
+			<div class="layui-form-item">
+				<label class="layui-form-label">上传营业执照</span></label>
+				<div class="layui-input-block">
+					<div class="layui-upload">
+						<input type="text" name="paperfile" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
+						<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline">在线预览</a>
+						<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload" >下载</a>
 					</div>
 				</div>
 			</div>

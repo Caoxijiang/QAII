@@ -81,6 +81,12 @@ public class IndustryController {
 		result.add(args);
 		return new ModelAndView ("page/industry/hatch/hatchshare","Info",result);
 	}
+	//孵化企业文件重新上传
+	@RequestMapping("/hatchfilereload.do")
+	public String hatchfilereload(){
+		return "page/industry/hatch/hatchfilereload";
+	}
+
 	//孵化企业添加界面
 	@RequestMapping("/hatchAdd.do")
 	public String hatchAdd(){
@@ -120,6 +126,13 @@ public class IndustryController {
 	public String innovateAdd(){
 		return "page/industry/innovate/innovateAdd";
 	}
+
+	//合作情况管理界面重新上传
+	@RequestMapping("/innovatefilereload.do")
+	public String innovatefilereload(){
+		return "page/industry/innovate/innovatefilereload";
+	}
+
 	//合作情况管理界面查看详情
 	@RequestMapping("/innovateCheck.do")
 	public String innovateCheck(){
@@ -141,6 +154,13 @@ public class IndustryController {
 	public String instituteAdd(){
 		return "page/industry/honor/institute/instituteAdd";
 	}
+
+	//院获奖情况界面重新上传
+	@RequestMapping("/institutefilereload.do")
+	public String institutefilereload(){
+		return "page/industry/honor/institute/institutefilereload";
+	}
+
 	//院获奖情况界面 查看详情
 	@RequestMapping("/instituteCheck.do")
 	public String instituteCheck(){
@@ -151,6 +171,7 @@ public class IndustryController {
 	public String instituteEdit(){
 		return "page/industry/honor/institute/instituteEdit";
 	}
+
 	//孵化企业获奖情况界面
 	@RequestMapping("/incubate.do")
 	public String incubate(){
@@ -161,11 +182,19 @@ public class IndustryController {
 	public String incubateAdd(){
 		return "page/industry/honor/incubate/incubateAdd";
 	}
+
+	//孵化企业获奖情况界面 重新上传
+	@RequestMapping("/incubatefilereload.do")
+	public String incubatefilereload(){
+		return "page/industry/honor/incubate/incubatefilereload";
+	}
+
 	//孵化企业获奖情况界面查看详情
 	@RequestMapping("/incubateCheck.do")
 	public String incubateCheck(){
 		return "page/industry/honor/incubate/incubateCheck";
 	}
+
 	//孵化企业获奖情况界面修改
 	@RequestMapping("/incubateEdit.do")
 	public String incubateEdit(){
@@ -191,6 +220,14 @@ public class IndustryController {
 	public String personAdd(){
 		return "page/industry/honor/person/personAdd";
 	}
+
+	//个人获奖界面 重新上传
+	@RequestMapping("/personfilereload.do")
+	public String personfilereload(){
+		return "page/industry/honor/person/personfilereload";
+	}
+
+
 	//服务企业管理界面
 	@RequestMapping("/serviceFirm.do")
 	public String serviceFirm(){
@@ -201,6 +238,13 @@ public class IndustryController {
 	public String serviceFirmAdd(){
 		return "page/industry/serviceFirm/serviceFirmAdd";
 	}
+
+	//服务企业管理重现上传
+	@RequestMapping("/serviceFirmfilereload.do")
+	public String serviceFirmfilereload(){
+		return "page/industry/serviceFirm/serviceFirmfilereload";
+	}
+
 	//服务企业管理查看详情界面
 	@RequestMapping("/serviceFirmCheck.do")
 	public String serviceFirmCheck(){
