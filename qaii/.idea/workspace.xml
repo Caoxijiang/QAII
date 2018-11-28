@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42074fb5-b165-4f9f-a415-0f5bff3ecb84" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="42074fb5-b165-4f9f-a415-0f5bff3ecb84" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="C:\Users\Administrator\git\qaii\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -499,37 +496,7 @@
             <path>
               <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -687,7 +654,7 @@
       <workItem from="1543301897480" duration="3401000" />
       <workItem from="1543367300868" duration="2876000" />
       <workItem from="1543375456319" duration="1571000" />
-      <workItem from="1543377056611" duration="2531000" />
+      <workItem from="1543377056611" duration="3621000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/Caoxijiang/QAII&#10;&#10;# Conflicts:&#10;#&#9;qaii/.idea/workspace.xml">
       <created>1543385443698</created>
@@ -700,7 +667,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134798000" />
+    <option name="totallyTimeSpent" value="135888000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
