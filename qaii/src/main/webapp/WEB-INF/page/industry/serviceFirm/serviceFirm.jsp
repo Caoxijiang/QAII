@@ -89,7 +89,7 @@
 	<div class="int-inline"><input id="ministryTime"  type="checkbox" value="服务时间" checked/><lable>服务时间</lable></div>
 	<div class="int-inline"><input id="ministryProject"  type="checkbox" value="服务项目" checked/><lable>服务项目</lable></div>
 	<div class="int-inline"><input id="ownselfUnit"  type="checkbox" value="我院部门/公司" checked/><lable>我院部门/公司</lable></div>
-	<div class="int-inline"><input id="ownselfContactPerso"  type="checkbox" value="联系人" checked/><lable>联系人</lable></div>
+	<div class="int-inline"><input id="ownselfContactPerson"  type="checkbox" value="联系人" checked/><lable>联系人</lable></div>
 	<div class="int-inline"><input id="ownselfContactMethod"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
 	<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
