@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<%@ page  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="basePath" value="${pageContext.request.contextPath}"></c:set>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>科研成果管理系统</title>
+	<link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
+	<link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
+	<link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
+	<link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
+	<link rel="stylesheet" href="${basePath}/css/industry.css" media="all" />
+	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
+	<style>
+		body{margin: 10px;}
+	</style>
+</head>
+<body id="bodyHei">
+<div class="tool">
+	<div class="techadd" style="width:330px;">
+		<img src="${basePath}/image/home.png"  class="home"/>
+		<span>首页&nbsp;>&nbsp;</span>
+		<span class="blue">合作情况管理&nbsp;—&nbsp;修改界面</span>
+	</div>
+	<!--导出-->
+	<button onclick="srchange('innovate.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+		返回
+	</button>
+</div>
+<div class="layui-container addtop">
+	<form class="layui-form" action="insertMinistry.do" method="post" enctype="multipart/form-data" lay-filter="example">
+		<!-- 基本信息 -->
+		<div class="layui-row contern">
+			<h1>基本信息</h1>
+			<div class="layui-col-xs6 layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label">我院/公司名称</label>
+					<div class="layui-input-block">
+						<input type="text" name="ministryName" lay-verify="title" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-xs6 layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label">合作单位名称</label>
+					<div class="layui-input-block">
+						<input type="text" name="ministryProperty" lay-verify="title" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-xs6 layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label">签订的协议名称</label>
+					<div class="layui-input-block">
+						<input type="text" name="contactPerson" lay-verify="title" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-xs6 layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label">签订时间</label>
+					<div class="layui-input-block">
+						<input type="text" name="ministryTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-xs6 layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label">合作内容/方向</label>
+					<div class="layui-input-block">
+						<input type="text" name="ministryLocation" lay-verify="title" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-row contern">
+			<h1>其他信息</h1>
+			<div class="layui-col-xs6 layui-col-md6">
+				<div class="layui-form-item itemadd">
+					<label class="layui-form-label" style="width:190px;">上传附件（协议扫描件）</label>
+					<div class="layui-input-block" style="margin-left:170px;">
+						<div class="layui-upload">
+							<button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-xs12 layui-col-md12">
+				<div class="layui-form-item">
+					<label class="site-demo-button layui-form-label">备注</label>
+					<div class="layui-input-block">
+						<textarea class="layui-textarea" name="remark" lay-verify="content" id="LAY_demo_editor"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-row">
+			<div class="layui-col-md12">
+				<div class="layui-form-item">
+					<div class="layui-input-block" style="text-align: right;">
+						<button class="layui-btn" lay-submit="" lay-filter="demo1" onSubmit="imgjudge()">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script src="${basePath}/commen/layui/layui.js"></script>
+<script>
+    layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], function(){
+        var form = layui.form,
+            element = layui.element,
+            layer = layui.layer,
+            laydate = layui.laydate,
+            upload = layui.upload,
+            table = layui.table;
+        //日期
+        laydate.render({
+            elem: '#test1'
+        });
+//上传附件
+        upload.render({
+            elem: '#test8'
+            ,url: '/upload/'
+            ,auto: false
+            ,accept: 'file' //普通文件
+            ,bindAction: '#test9'
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+//表单初始赋值
+        var id=${param.userId};
+        if(id!=null){
+            $.post({
+                url:"getMinistry.do",
+                data:{
+                    id:id
+                },
+                success:function(data){
+                    if(data.data!=null){
+                        let awardInfo=data.data;
+                        //表单初始赋值 从表单中提取数据
+                        form.val('example', {
+                            "id":awardInfo.id,
+                            "ministryName":awardInfo.ministryName,
+                            "ministryProperty":awardInfo.ministryProperty,
+                            "contactPerson":awardInfo.contactPerson,
+                            "contactMethod":awardInfo.contactMethod,
+                            "ministryLocation":awardInfo.ministryLocation,
+                            "ministryTime":awardInfo.ministryTime,
+                            "ownselfContactPerson":awardInfo.ownselfContactPerson,
+                            "ministryProject":awardInfo.ministryProject,
+                            "ownselfUnit":awardInfo.ownselfUnit,
+                            "ownselfContactMethod":awardInfo.ownselfContactMethod,
+                            "remark":awardInfo.remark,
+                            "file0":awardInfo.listFile[0].fileName,
+                            "fid":awardInfo.listFile[0].id
+                        })
+                    }else{
+                        alert("查看详情失败")
+                    }
+                }
+            })
+        }else{
+            alert("请刷新页面");
+        }
+    });
+</script>
+<script src="${basePath}/js/iframesrc.js"></script>
+</body>
+</html>

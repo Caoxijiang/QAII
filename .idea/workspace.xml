@@ -2,17 +2,22 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="QAII:war" />
+      <artifact name="QAII:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ef6a496-9566-4b4f-b590-d91cc76585dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/QAII_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/QAII_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/QAII_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateAdd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateCheck.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/.idea/artifacts/QAII_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/.idea/artifacts/QAII_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/QAII.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/QAII.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/resources/spring-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/resources/spring-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/target/m2e-wtp/web-resources/META-INF/maven/com.qaii/QAII/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/m2e-wtp/web-resources/META-INF/maven/com.qaii/QAII/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/qaii/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,103 +30,58 @@
     <session id="1202389431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="3" />
-          <entry key="jsp" value="18" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="7" />
+          <entry key="jsp" value="19" />
           <entry key="properties" value="2" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="3" />
-          <entry key="JSP" value="18" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="7" />
+          <entry key="JSP" value="19" />
           <entry key="Properties" value="2" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="181" />
-          <entry key="jsp" value="368" />
+          <entry key="jsp" value="482" />
+          <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="181" />
-          <entry key="JSP" value="368" />
+          <entry key="JSP" value="482" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateAdd.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="28" column="39" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp">
+        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="205" column="27" lean-forward="true" selection-start-line="205" selection-start-column="27" selection-end-line="205" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateCheck.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1558">
-              <caret line="82" column="83" selection-start-line="82" selection-start-column="83" selection-end-line="82" selection-end-column="83" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateEdit.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="39" column="62" selection-end-line="189" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateEdit.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateCheck.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="7" selection-end-line="171" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateAdd.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="19" selection-end-line="153" selection-end-column="7" />
+            <state relative-caret-position="4731">
+              <caret line="387" column="37" lean-forward="true" selection-start-line="387" selection-start-column="37" selection-end-line="387" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -133,6 +93,7 @@
       <find>addPatentInfo</find>
       <find>insertIndustryInfo</find>
       <find>incubate</find>
+      <find>countnum</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,6 +114,8 @@
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateCheck.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateAdd.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp" />
+        <option value="$PROJECT_DIR$/qaii/src/main/resources/spring-context.xml" />
+        <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp" />
       </list>
     </option>
   </component>
@@ -179,7 +142,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="260" />
     <option name="y" value="25" />
     <option name="width" value="1400" />
@@ -190,7 +153,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,6 +163,11 @@
             <path>
               <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -208,37 +175,6 @@
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
@@ -285,98 +221,22 @@
               <item name="industry" type="462c0819:PsiDirectoryNode" />
               <item name="hatch" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="industry" type="462c0819:PsiDirectoryNode" />
-              <item name="honor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="industry" type="462c0819:PsiDirectoryNode" />
-              <item name="honor" type="462c0819:PsiDirectoryNode" />
-              <item name="incubate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="industry" type="462c0819:PsiDirectoryNode" />
-              <item name="inform" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="industry" type="462c0819:PsiDirectoryNode" />
-              <item name="innovate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="science" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="science" type="462c0819:PsiDirectoryNode" />
-              <item name="inform" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="science" type="462c0819:PsiDirectoryNode" />
-              <item name="patent" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="selectRecordInfoByinId&#9;null&#9;null&#10;insertIndustryInfo&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542876150241" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543369294337" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/qaii" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -393,79 +253,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Unnamed (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.90" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="QAII:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="/QAII" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_(1)_QAII" />
-        <option name="HTTP_PORT" value="8088" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64173" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
+  <component name="RunManager" selected="Tomcat Server.tomcatqaii">
+    <configuration name="All Features in: qaii" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="3" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/qaii" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="QAII" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter" />
+      <option name="SUGGESTED_NAME" value="All Features in: qaii" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="QAII:war" />
-        </option>
       </method>
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.90" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:/Program Files/Java/jre1.8.0_121">
@@ -537,6 +340,85 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tomcatqaii" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.90" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:/Program Files/Java/jre1.8.0_121">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="QAII:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/QAII" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_QAII_2" />
+        <option name="HTTP_PORT" value="8086" />
+        <option name="JNDI_PORT" value="1098" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64173" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="QAII:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Cucumber java.All Features in: qaii" />
+      <item itemvalue="Tomcat Server.tomcatqaii" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -552,18 +434,34 @@
       <workItem from="1542769785524" duration="1928000" />
       <workItem from="1542771739035" duration="10696000" />
       <workItem from="1542848303238" duration="12615000" />
-      <workItem from="1542935162152" duration="1277000" />
+      <workItem from="1542935162152" duration="5883000" />
+      <workItem from="1543194016472" duration="6469000" />
+      <workItem from="1543280246631" duration="2513000" />
+      <workItem from="1543298087188" duration="449000" />
+      <workItem from="1543298584620" duration="5573000" />
+      <workItem from="1543366585541" duration="711000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="All_Features_in__qaii - 2018.11.27 at 13h 43m 48s.xml">
+      <configuration name="All Features in: qaii" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_Features_in__qaii - 2018.11.27 at 13h 43m 59s.xml">
+      <configuration name="All Features in: qaii" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_Features_in__qaii - 2018.11.27 at 13h 44m 02s.xml">
+      <configuration name="All Features in: qaii" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27159000" />
+    <option name="totallyTimeSpent" value="47480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18336888" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16950959" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -573,7 +471,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13533835" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.06337272" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -696,19 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="134" column="51" selection-start-line="134" selection-start-column="51" selection-end-line="134" selection-end-column="51" />
-          <folding>
-            <element signature="e#4196#4197#0" expanded="true" />
-            <element signature="e#4243#4244#0" expanded="true" />
-            <element signature="e#6253#6254#0" expanded="true" />
-            <element signature="e#6310#6311#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubate.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -723,16 +608,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovateCheck.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1558">
+        <state relative-caret-position="708">
           <caret line="82" column="83" selection-start-line="82" selection-start-column="83" selection-end-line="82" selection-end-column="83" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/honor/incubate/incubateEdit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
+        <state relative-caret-position="708">
           <caret line="39" column="62" selection-end-line="189" selection-end-column="7" />
         </state>
       </provider>
@@ -758,10 +650,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp">
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="205" column="27" lean-forward="true" selection-start-line="205" selection-start-column="27" selection-end-line="205" selection-end-column="27" />
+        <state relative-caret-position="76">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/QAII.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/IncubatorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.2.4.RELEASE/spring-beans-3.2.4.RELEASE-sources.jar!/org/springframework/beans/BeanUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2090">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/resources/spring-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="58" column="55" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4731">
+          <caret line="387" column="37" lean-forward="true" selection-start-line="387" selection-start-column="37" selection-end-line="387" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -771,7 +708,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>QAII:war</last-edited>
+          <last-edited>QAII:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -832,6 +769,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
