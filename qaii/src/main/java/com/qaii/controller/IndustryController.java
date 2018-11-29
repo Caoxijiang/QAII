@@ -86,6 +86,11 @@ public class IndustryController {
 	public String hatchfilereload(){
 		return "page/industry/hatch/hatchfilereload";
 	}
+	//孵化企业文件重新上传-发表电子版
+	@RequestMapping("/hatchfilereload2.do")
+	public String hatchfilereload2(){
+		return "page/industry/hatch/hatchfilereload2";
+	}
 
 	//孵化企业添加界面
 	@RequestMapping("/hatchAdd.do")
