@@ -62,12 +62,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="copyPicture">作品名称</option>
-			<option value="contactPerson">登记号</option>
-			<option value="contactMethod">作者</option>
-			<option value="ministryLocation">著作权人</option>
-			<option value="ministryProject">创作完成日期</option>
-			<option value="ownselfUnit">首次发布日期</option>
+			<option value="unitName">我院/公司名称</option>
+			<option value="cooperationName">合作单位名称</option>
+			<option value="protocolName">签订的协议名称</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -81,11 +78,12 @@
 <div class="action">
 	<div class="act">
 		<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
-		<div class="int-inline"><input id="id"  type="checkbox" value="获奖时间" checked="true"/><lable>我院/公司名称</lable></div>
-		<div class="int-inline"><input id=unitName  type="checkbox" value="获奖级别" checked="flase"/><lable>合作单位名称</lable></div>
-		<div class="int-inline"><input id="cooperationName"  type="checkbox" value="获奖单位名称" checked/><lable>签订的协议名称</lable></div>
-		<div class="int-inline"><input id="protocolName"  type="checkbox" value="奖励荣誉名称" checked/><lable>签订时间</lable></div>
-		<div class="int-inline"><input id="signTime"  type="checkbox" value="颁奖活动名称" checked/><lable>合作内容/方向</lable></div>
+		<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
+		<div class="int-inline"><input id="unitName"  type="checkbox" value="我院/公司名称" checked="flase"/><lable>我院/公司名称</lable></div>
+		<div class="int-inline"><input id="cooperationName"  type="checkbox" value="合作单位名称" checked/><lable>合作单位名称</lable></div>
+		<div class="int-inline"><input id="protocolName"  type="checkbox" value="签订的协议名称" checked/><lable>签订的协议名称</lable></div>
+		<div class="int-inline"><input id="signTime"  type="checkbox" value="签订时间" checked/><lable>签订时间</lable></div>
+		<div class="int-inline"><input id="cooperationContent"  type="checkbox" value="合作内容/方向" checked/><lable>合作内容/方向</lable></div>
 		<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 	</div>
 </div>
@@ -217,18 +215,12 @@
                                 numb=numb+1;
                             }
                         }
-                        if(check=="copyPicture"){
-                            alert("搜索'作品名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-                        }else if(check=="contactPerson"){
-                            alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-                        }else if(check=="contactMethod"){
-                            alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-                        }else if(check=="ministryLocation"){
-                            alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-                        }else if(check=="ministryProject"){
-                            alert("搜索'创作完成日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-                        }else if(check=="ownselfUnit"){
-                            alert("搜索'首次发布日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+                        if(check=="unitName"){
+                            alert("搜索'我院/公司名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+                        }else if(check=="cooperationName"){
+                            alert("搜索'合作单位名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+                        }else if(check=="protocolName"){
+                            alert("搜索'签订的协议名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
                         }
                     }
                 }//搜索结束

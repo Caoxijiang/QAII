@@ -6,8 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="QAII" />
         <module name="qaii" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="qaii" target="1.7" />
+      <module name="QAII" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

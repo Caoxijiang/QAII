@@ -138,7 +138,7 @@
 				<label class="layui-form-label">上传营业执照</label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
-					  <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" id="test3" disabled="">
+					  <input type="text" name="i1" lay-verify="title" autocomplete="off" class="layui-input" id="test3" disabled="">
 					</div>
 				</div>
 			</div>--%>
@@ -205,7 +205,7 @@
 						<label class="layui-form-label">发表电子版</label>
 						<div class="layui-input-block">
 							<div class="layui-upload">
-							  <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+							  <input type="text" name="i2" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 							</div>
 						</div>
 					</div>
@@ -316,7 +316,19 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 	  },
 	  success:function(data){
 		  let Info=data.data[0];
-		  console.log(Info.isTechnologyEnterprise);
+          let img=data.data[1];
+
+
+		  if(img!==null&& img!=undefined){
+		      for (let imgs of img){
+		          console.log(imgs.fileStyle);
+		          if (imgs.fileStyle=="License") {;
+                      var i1=(imgs.filePath);
+				  }else if(imgs.fileStyle=="Electronic") {
+                      var i2=(imgs.filePath);
+				  }
+			  } 
+		  }
 		  if(Info!=null){
 			  form.val('example', {
 				    "companyName": Info.companyName //
@@ -338,6 +350,8 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 				    ,"certificateCode":Info.certificateCode
 				    ,"incomingRegistrationCode":Info.incomingRegistrationCode
 				    ,"desc": ""
+				    ,"i1":i1
+                    ,"i2":i2
 				})
 				 //科技型中小企业
 				  var isTech=String(Info.isTechnologyEnterprise);
