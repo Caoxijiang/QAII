@@ -44,14 +44,12 @@ public class AwardCollegeController {
     private final static String TEST_PATH = "/Users/wangxin/File/";
 
     //文件位置
-    private final static String BASE_PATH = "industry/AwardCollege/";
+    private final static String BASE_PATH = "img/industry/AwardCollege/";
     //文件类型
     public final static String FILE_CERTIFY = "certify";
     //文件路径 本机路径为/Users/wangxin/File
     private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
     //private final static String FILE_PATH = TEST_PATH + BASE_PATH;
-    //数据库中记录的路径
-    private final static String DATABASE_PATH = ConstantUtil.DATABASE_BASE_PATH + BASE_PATH;
 
     //插入记录
     @RequestMapping(value = "insertAwardCollege.do", produces = "text/json;charset=UTF-8")
@@ -68,7 +66,7 @@ public class AwardCollegeController {
             for (int i = 0; i < files.length; i++) {
                 fileRecord.setHonorId(record.getId());
                 fileRecord.setFileName(files[i].getOriginalFilename());
-                fileRecord.setFilePath(DATABASE_PATH + list.get(i));
+                fileRecord.setFilePath(BASE_PATH + list.get(i));
                 fileRecord.setGmtCreate(new Date());
                 fileRecord.setGmtModified(new Date());
                 fileService.insertRecord(fileRecord);
@@ -124,7 +122,7 @@ public class AwardCollegeController {
             List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
             fileRecord.setId(Integer.parseInt(request.getParameter("fid")));
             fileRecord.setFileName(files[0].getOriginalFilename());
-            fileRecord.setFilePath(DATABASE_PATH + list.get(0));
+            fileRecord.setFilePath(BASE_PATH + list.get(0));
             fileRecord.setGmtModified(new Date());
             fileService.updateByPrimaryKey(fileRecord);
         }
