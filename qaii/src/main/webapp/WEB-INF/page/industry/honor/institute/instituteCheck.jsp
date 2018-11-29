@@ -94,7 +94,7 @@
 	  	<h1>其他信息</h1>
 		<div class="layui-col-xs10 layui-col-md10">
 			<div class="layui-form-item itemadd">
-				<label class="layui-form-label" style="width:190px;">上传附件（服务证明书）</label>
+				<label class="layui-form-label" style="width:190px;">上传附件（奖励荣誉照片）</label>
 				<div class="layui-input-block" style="margin-left:210px;">
 					<input type="text" name="file0" lay-verify="title" autocomplete="off" class="layui-input" style="width:48%;display:inline-block;" disabled="">
 					<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline">在线预览</a>
@@ -161,7 +161,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 	   alert("请刷新页面");
   }
 });
-/在线预览
+//在线预览
 $("#paperOnline").click(function(){
     /* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
     var address=$('input[name="file0"]').val();
@@ -190,7 +190,6 @@ function download(src) {
     evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
     $a.dispatchEvent(evObj);
 };
-</script>
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>
 </body>

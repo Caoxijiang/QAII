@@ -81,6 +81,7 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
+	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id="ministryName"  type="checkbox" value="服务企业名称" checked="true"/><lable>服务企业名称</lable></div>
 	<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="服务企业性质" checked="flase"/><lable>服务企业性质</lable></div>
 	<div class="int-inline"><input id="contactPerson"  type="checkbox" value="服务企业联系人名称" checked/><lable>服务企业联系人名称</lable></div>
