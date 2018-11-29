@@ -1,0 +1,391 @@
+@charset "utf-8";
+/* CSS Document */
+/*******************************/
+#iframe{
+	width: auto;
+	width: 100%;
+	border:none;
+	height:-moz-calc( 100vh - 120px );
+	height:-webkit-calc( 100vh - 120px );
+	height:calc( 100vh - 120px );
+}
+.layui-btn-group .btnLeft{
+	margin-left:40px !important;
+}
+.layui-btn-group .btnRight{
+	margin-right:16px !important	
+}
+.timeKey{
+	width:130px;
+}
+.condition{
+	height:36px;
+	float:right;
+	margin-top:18px;
+	border: 1px solid #aaa;
+	margin-right:15px;
+}
+.timeinput {
+    width: 100%;
+    border: 1px solid #aaa;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+ }
+ #searchtime{
+ 	height: 30px;
+ 	line-height: 30px;
+ 	font-size:0.8rem;
+ 	margin-left:15px;
+ }
+/*** 数据可视化根据屏幕相应 ***/
+@media screen and (max-width: 1600px) {
+	#iframe{
+		width: auto;
+		width: 100%;
+		border:none;
+		height:-moz-calc( 100vh - 100px );
+		height:-webkit-calc( 100vh - 100px );
+		height:calc( 100vh - 100px );
+	}
+	 .layui-layout-admin .layui-side {
+	    top: 50px;
+	    width: 180px;
+	    overflow-x: hidden;
+	}
+	.layui-side-scroll {
+	    position: relative;
+	    width: 180px;
+	    height: 100%;
+	    overflow-x: hidden;
+	}
+	.layui-nav-tree {
+	    width: 180px;
+	    padding: 0;
+	}
+	.layui-body {
+	    position: absolute;
+	    left: 180px;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 998;
+	    width: auto;
+	    overflow: hidden;
+	    overflow-y: auto;
+	    box-sizing: border-box;
+	}
+	.layui-layout-admin .layui-footer {
+	    position: fixed;
+	    left: 180px;
+	    right: 0;
+	    bottom: 0;
+	    height: 44px;
+	    line-height: 44px;
+	    padding: 0 15px;
+	    background-color: #1b2032;
+	    color: rgba(255,255,255,0.5);
+	}
+	.layui-header {
+	    z-index: 1000;
+	    height: 50px;
+	}
+	.layui-layout-admin .layui-logo {
+	    position: absolute;
+	    left: 20px;
+	    top: 0;
+	    height: 100%;
+	    line-height: 50px;
+	    text-align: left;
+	    color: #fff;
+	    font-size: 24px;
+	}
+	.layui-nav .layui-nav-item {
+	    position: relative;
+	    display: inline-block;
+	    vertical-align: middle;
+	    line-height: 50px;
+	}
+	.layui-layout-admin .layui-body {
+	    top: 50px;
+	    bottom: 44px;
+	}
+}
+@media screen and (max-width: 1400px) {
+	 *{font-size:14px !important;}
+	 .layui-layout-admin .layui-side {
+	    top: 70px;
+	    width: 160px;
+	    overflow-x: hidden;
+	}
+	.layui-side-scroll {
+	    position: relative;
+	    width: 160px;
+	    height: 100%;
+	    overflow-x: hidden;
+	}
+	.layui-nav-tree {
+	    width: 160px;
+	    padding: 0;
+	}
+	.layui-body {
+	    position: absolute;
+	    left: 160px;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 998;
+	    width: auto;
+	    overflow: hidden;
+	    overflow-y: auto;
+	    box-sizing: border-box;
+	}
+	.layui-layout-admin .layui-footer {
+	    position: fixed;
+	    left: 160px;
+	    right: 0;
+	    bottom: 0;
+	    height: 44px;
+	    line-height: 44px;
+	    padding: 0 15px;
+	    background-color: #1b2032;
+	    color: rgba(255,255,255,0.5);
+	}
+}
+
+@media screen and (max-width: 1300px){
+	#iframe {
+	    width: auto;
+	    width: 100%;
+	    border: none;
+	    height: -moz-calc( 100vh - 100px ) !important;
+	    height: -webkit-calc( 100vh - 100px ) !important;
+	    height: calc( 100vh - 100px ) !important;
+	}
+	.layui-table-body{
+		height: -moz-calc( 100vh - 205px );
+	    height: -webkit-calc( 100vh - 205px ); 
+	    height: calc( 100vh - 205px )
+	}
+	.layui-layout-admin .layui-side {
+	    top: 50px;
+	    width: 160px;
+	    overflow-x: hidden;
+	}
+	.layui-side-scroll {
+	    position: relative;
+	    width: 160px;
+	    height: 100%;
+	    overflow-x: hidden;
+	}
+	.layui-nav-tree {
+	    width: 160px;
+	    padding: 0;
+	}
+	.layui-body {
+	    position: absolute;
+	    left: 160px;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 998;
+	    width: auto;
+	    overflow: hidden;
+	    overflow-y: auto;
+	    box-sizing: border-box;
+	}
+	.layui-layout-admin .layui-footer {
+	    position: fixed;
+	    left: 160px;
+	    right: 0;
+	    bottom: 0;
+	    height: 44px;
+	    line-height: 44px;
+	    padding: 0 15px;
+	    background-color: #1b2032;
+	    color: rgba(255,255,255,0.5);
+	}
+	.layui-nav-tree .layui-nav-item a {
+	    position: relative;
+	    height: 50px;
+	    line-height: 50px;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    white-space: nowrap;
+	}
+	.tool {
+	    position: fixed;
+	    top: 0px;
+	    width: 100%;
+	    padding-left: 25px;
+	    background: #1b2032;
+	    height: 50px;
+	    line-height: 50px;
+	    z-index: 100;
+	}
+	.tool .limit {
+	    font-size: 16px;
+	    color: #fff;
+	    vertical-align: middle;
+	}
+	.action {
+	    margin-top: 50px;
+	    padding: 10px 20px 5px 20px;
+	    background: #eef1f4;
+	    /* width: 100%; */
+	    overflow:auto;
+	}
+	.act{
+		width:1570px;}
+	.export {
+		margin-top: 7.5px !important;
+	    background: #64ad30;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 120px;
+	    height: 35px !important;
+	    line-height: 35px !important;
+	    font-size: 22px;
+	    text-align: center;
+	}
+	.search {
+	    height: 33px;
+	    border: 1px solid #aaa;
+	    color: #aaa;
+	    line-height: 36px;
+	    vertical-align: middle;
+	    text-align: center;
+	}
+	.layui-input {
+	    width: 100px;
+	    border: 1px solid #aaa;
+	    height: 33px !important;
+	    line-height: 33px !important;
+	}
+	.tool .export {
+	    background: #64ad30;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 100px;
+	    height: 35px !important;
+	    line-height: 35px !important;
+	    font-size: 22px;
+	    text-align: center;
+	}
+	#search{
+		margin-top: 0px !important;
+	    display: inline-block;
+	    height: 33px !important;
+	    line-height: 33px !important;
+	    padding: 0 15px;
+	    background-color: #036eb8;
+	    color: #fff;
+	    white-space: nowrap;
+	    text-align: center;
+	    font-size: 16px;
+	    border: none;
+	    border-radius: 2px;}
+	.layui-inline{
+	    margin-left: -6px !important;
+	    margin-right: -6px !important;
+	    margin-top: 0px !important;
+	}
+	.btn {
+	    border-radius: 3px !important;
+	    height: 30px;
+	    line-height: 30px;
+	    width: 84px;
+	    background: #fff;
+	    color: #1b2032;
+	    vertical-align: middle;
+	}
+	/**********系统管理**********/
+	.systemBox {
+	    margin: 0px auto;
+	    margin-top: 70px;
+	    width: 880px;
+	    border: none;
+	}
+	.department {
+	    width: 400px;
+	    height: 32px;
+	    color: #898989;
+	    border: 1px #f0f1f3 solid;
+	    border-radius: 3px;
+	    font-size: 16px;
+	}
+	.layui-table-cell {
+	    height: 20px;
+	    line-height: 20px;
+	    padding: 0 15px;
+	    position: relative;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    box-sizing: border-box;
+	}
+	/******* 消息管理 ******/
+	.message {
+	    margin-top: 50px;
+	    padding: 20px;
+	}
+	.message .messagebox .messagecontern {
+	    padding: 15px;
+	    color: #036eb8;
+	    font-size: 16px;
+	}
+	/****** 成员管理  ******/
+	.action lable {
+	    padding: 0px 15px 0px 10px;
+	    color: #666;
+	    font-size: 12px !important;
+	    line-height: 20px;
+	    vertical-align: middle;
+	}
+	.layui-table td, .layui-table th {
+	    position: relative;
+	    padding: 9px;
+	    min-height: 35px;
+	    line-height: 35px;
+	    height:35px;
+	    font-size: 16px;
+	}
+	.layui-nav * {
+	    font-size: 16px !important;
+	}
+	.layui-btn-xs {
+	    height: 20px;
+	    line-height: 20px;
+	    padding: 0 15px;
+	    font-size: 12px !important;
+	}
+	/*****成员管理头部*****/
+	.layui-btn-group .btnLeft{
+		margin-left:20px !important;
+	}
+	.layui-btn-group .btnRight{
+		margin-right:5px !important	
+	}
+	.timeKey {
+	    width: 80px;
+	}
+	.timeinput {
+	    width: 100%;
+	    height: 20px;
+	    line-height: 20px;
+	    text-align: center;
+	    font-size: 12px !important;
+	    border-width: 1px;
+	    border-style: solid;
+	    border-color: rgb(170, 170, 170);
+	    border-image: initial;
+	}
+	.condition {
+	    height: 30px;
+	    float: right;
+	    font-size:12px;
+	    margin-top: 10px;
+	    border: 1px solid #aaa;
+	    margin-right: 15px;
+	}
+}
