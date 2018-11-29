@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.PeriodicalThesisMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.PeriodicalThesis">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="author_unit" jdbcType="VARCHAR" property="authorUnit" />
+    <result column="publishtime" jdbcType="VARCHAR" property="publishtime" />
+    <result column="periodical_name" jdbcType="VARCHAR" property="periodicalName" />
+    <result column="page_number" jdbcType="VARCHAR" property="pageNumber" />
+    <result column="keyword" jdbcType="VARCHAR" property="keyword" />
+    <result column="english_summary" jdbcType="VARCHAR" property="englishSummary" />
+    <result column="content_type" jdbcType="VARCHAR" property="contentType" />
+    <result column="record_type" jdbcType="VARCHAR" property="recordType" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="is_pass" jdbcType="TINYINT" property="isPass" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, topic, author, author_unit, publishtime, periodical_name, page_number, keyword, 
+    english_summary, content_type, record_type, level, unit, is_pass, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sci_periodicalthesis
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sci_periodicalthesis
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.PeriodicalThesis">
+    insert into sci_periodicalthesis (id, topic, author, 
+      author_unit, publishtime, periodical_name, 
+      page_number, keyword, english_summary, 
+      content_type, record_type, level, 
+      unit, is_pass, gmt_create, 
+      gmt_modified)
+    values (#{id,jdbcType=BIGINT}, #{topic,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
+      #{authorUnit,jdbcType=VARCHAR}, #{publishtime,jdbcType=VARCHAR}, #{periodicalName,jdbcType=VARCHAR}, 
+      #{pageNumber,jdbcType=VARCHAR}, #{keyword,jdbcType=VARCHAR}, #{englishSummary,jdbcType=VARCHAR}, 
+      #{contentType,jdbcType=VARCHAR}, #{recordType,jdbcType=VARCHAR}, #{level,jdbcType=VARCHAR}, 
+      #{unit,jdbcType=VARCHAR}, #{isPass,jdbcType=TINYINT}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.PeriodicalThesis">
+    insert into sci_periodicalthesis
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="topic != null">
+        topic,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="authorUnit != null">
+        author_unit,
+      </if>
+      <if test="publishtime != null">
+        publishtime,
+      </if>
+      <if test="periodicalName != null">
+        periodical_name,
+      </if>
+      <if test="pageNumber != null">
+        page_number,
+      </if>
+      <if test="keyword != null">
+        keyword,
+      </if>
+      <if test="englishSummary != null">
+        english_summary,
+      </if>
+      <if test="contentType != null">
+        content_type,
+      </if>
+      <if test="recordType != null">
+        record_type,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="unit != null">
+        unit,
+      </if>
+      <if test="isPass != null">
+        is_pass,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="topic != null">
+        #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorUnit != null">
+        #{authorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null">
+        #{publishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="periodicalName != null">
+        #{periodicalName,jdbcType=VARCHAR},
+      </if>
+      <if test="pageNumber != null">
+        #{pageNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keyword != null">
+        #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="englishSummary != null">
+        #{englishSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="contentType != null">
+        #{contentType,jdbcType=VARCHAR},
+      </if>
+      <if test="recordType != null">
+        #{recordType,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null">
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="isPass != null">
+        #{isPass,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.PeriodicalThesis">
+    update sci_periodicalthesis
+    <set>
+      <if test="topic != null">
+        topic = #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorUnit != null">
+        author_unit = #{authorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null">
+        publishtime = #{publishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="periodicalName != null">
+        periodical_name = #{periodicalName,jdbcType=VARCHAR},
+      </if>
+      <if test="pageNumber != null">
+        page_number = #{pageNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keyword != null">
+        keyword = #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="englishSummary != null">
+        english_summary = #{englishSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="contentType != null">
+        content_type = #{contentType,jdbcType=VARCHAR},
+      </if>
+      <if test="recordType != null">
+        record_type = #{recordType,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null">
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="isPass != null">
+        is_pass = #{isPass,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.PeriodicalThesis">
+    update sci_periodicalthesis
+    set topic = #{topic,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      author_unit = #{authorUnit,jdbcType=VARCHAR},
+      publishtime = #{publishtime,jdbcType=VARCHAR},
+      periodical_name = #{periodicalName,jdbcType=VARCHAR},
+      page_number = #{pageNumber,jdbcType=VARCHAR},
+      keyword = #{keyword,jdbcType=VARCHAR},
+      english_summary = #{englishSummary,jdbcType=VARCHAR},
+      content_type = #{contentType,jdbcType=VARCHAR},
+      record_type = #{recordType,jdbcType=VARCHAR},
+      level = #{level,jdbcType=VARCHAR},
+      unit = #{unit,jdbcType=VARCHAR},
+      is_pass = #{isPass,jdbcType=TINYINT},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="listAllMessage" resultMap="BaseResultMap">
+  	SELECT * FROM sci_periodicalthesis where is_pass =1
+  </select>
+  <delete id="deleteMessages" parameterType="int">
+  	DELETE  FROM sci_periodicalthesis WHERE id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
+  <insert id="insertMessage" parameterType="com.qaii.domain.PeriodicalThesis" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+  	insert into sci_periodicalthesis
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="topic != null">
+        topic,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="authorUnit != null">
+        author_unit,
+      </if>
+      <if test="publishtime != null">
+        publishtime,
+      </if>
+      <if test="periodicalName != null">
+        periodical_name,
+      </if>
+      <if test="pageNumber != null">
+        page_number,
+      </if>
+      <if test="keyword != null">
+        keyword,
+      </if>
+      <if test="englishSummary != null">
+        english_summary,
+      </if>
+      <if test="contentType != null">
+        content_type,
+      </if>
+      <if test="recordType != null">
+        record_type,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="unit != null">
+        unit,
+      </if>
+      <if test="isPass != null">
+        is_pass,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="topic != null">
+        #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorUnit != null">
+        #{authorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null">
+        #{publishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="periodicalName != null">
+        #{periodicalName,jdbcType=VARCHAR},
+      </if>
+      <if test="pageNumber != null">
+        #{pageNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="keyword != null">
+        #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="englishSummary != null">
+        #{englishSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="contentType != null">
+        #{contentType,jdbcType=VARCHAR},
+      </if>
+      <if test="recordType != null">
+        #{recordType,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null">
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="isPass != null">
+        #{isPass,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="CustomMap" type="com.qaii.domain.PeriodicalThesis">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="author_unit" jdbcType="VARCHAR" property="authorUnit" />
+    <result column="publishtime" jdbcType="VARCHAR" property="publishtime" />
+    <result column="periodical_name" jdbcType="VARCHAR" property="periodicalName" />
+    <result column="page_number" jdbcType="VARCHAR" property="pageNumber" />
+    <result column="keyword" jdbcType="VARCHAR" property="keyword" />
+    <result column="english_summary" jdbcType="VARCHAR" property="englishSummary" />
+    <result column="content_type" jdbcType="VARCHAR" property="contentType" />
+    <result column="record_type" jdbcType="VARCHAR" property="recordType" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="is_pass" jdbcType="TINYINT" property="isPass" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.PeriodicalThesisFile">
+    	<id column="fid" jdbcType="BIGINT" property="id" />
+	    <id column="tid" jdbcType="BIGINT" property="tid" />
+	    <id column="style" jdbcType="VARCHAR" property="style" />
+	    <id column="name" jdbcType="VARCHAR" property="name" />
+	    <id column="path" jdbcType="VARCHAR" property="path" />
+    </collection>
+  </resultMap>
+  <select id="getMessage" resultMap="CustomMap" parameterType="java.lang.Long">
+  	SELECT a.*,b.id AS fid,b.`name`,b.path,b.style,b.tid 
+  	FROM sci_periodicalthesis AS a LEFT JOIN sci_periodicalthesisfile AS b 
+  	ON b.tid = a.id  
+  	WHERE a.id = #{0}
+  </select>
+  <select id="listNotPass" resultMap="BaseResultMap">
+  SELECT * FROM sci_periodicalthesis WHERE is_pass  = 0
+  </select>
+</mapper>

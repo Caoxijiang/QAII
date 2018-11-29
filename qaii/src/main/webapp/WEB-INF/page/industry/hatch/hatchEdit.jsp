@@ -139,12 +139,15 @@
 			    </div>
 			  </div>
 		</div>
-		<div class="layui-col-xs6 layui-col-md6">
+		<div class="layui-col-xs12 layui-col-md12">
 			<div class="layui-form-item itemadd">
 				<label class="layui-form-label">上传营业执照</label>
 				<div class="layui-input-block">
-					<div class="layui-upload">
-					  <button type="button" class="layui-btn layui-btn-normal" id="test10">选择文件</button>
+					<div class="layui-upload" style="width:50%;display:inline-block;">
+						<input type="text" name="i1" class="layui-input input"  disabled="">
+						<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline">在线预览</a>
+						<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload" >下载</a>
+						<a class="layui-btn layui-btn-edit layui-btn-xs" id="upload">重新上传</a>
 					</div>
 				</div>
 			</div>
@@ -201,7 +204,17 @@
 						<label class="layui-form-label">发表电子版</label>
 						<div class="layui-input-block">
 							<div class="layui-upload">
-							  <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
+								<input type="text" name="i2" class="layui-input input">
+							</div>
+						</div>
+					</div>
+					<div class="layui-form-item itemadd">
+						<label class="layui-form-label"></label>
+						<div class="layui-input-block">
+							<div class="layui-upload">
+								<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline1">在线预览</a>
+								<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload1" >下载</a>
+								<a class="layui-btn layui-btn-edit layui-btn-xs" id="upload1">重新上传</a>
 							</div>
 						</div>
 					</div>
@@ -357,40 +370,57 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 		  id:id
 	  },
 	  success:function(data){
-		  let Info=data.data[0];
-		  console.log(Info.isTechnologyEnterprise);
-		  if(Info!=null){
-			  form.val('example', {
-				    "companyName": Info.companyName //
-				    ,"creditCode": Info.creditCode
-				    ,"establishTime":Info.establishTime
-				    ,"companyType":Info.companyType
-				    ,"companyLocation":Info.companyLocation
-				    ,"legalRepresentative":Info.legalRepresentative
-				    ,"registeredCapital":Info.registeredCapital
-				    ,"businessScope":Info.businessScope
-				    ,"incubatorName":Info.incubatorName
-				    ,"hatchingTime":Info.hatchingTime
-				    ,"limitedPeriod":Info.limitedPeriod
-				    ,"isThousandSailEnterprise": Info.isThousandSailEnterprise+""//“千帆计划”入库企业
-				    ,"isBillionEnterprise": Info.isThousandSailEnterprise +""//是否入选青岛市科技型企业培育“百千万”工程
-				    ,"isHighTechnologyEnterprise": Info.isHighTechnologyEnterprise+"" //是否高新技术企业
-				    ,"isTechnologyEnterprise": Info.isTechnologyEnterprise+"" //是否科技型中小企业
-				    ,"certificateTime":Info.certificateTime
-				    ,"certificateCode":Info.certificateCode
-				    ,"incomingRegistrationCode":Info.incomingRegistrationCode
-				    ,"desc": ""
-				})
+          let Info=data.data[0];
+          let img=data.data[1];
+
+
+          if(img!==null&& img!=undefined){
+              for (let imgs of img){
+                  console.log(imgs.fileStyle);
+                  if (imgs.fileStyle=="License") {;
+                      var i1=(imgs.filePath);
+                  }else if(imgs.fileStyle=="Electronic") {
+                      var i2=(imgs.filePath);
+                  }
+              }
+          }
+          if(Info!=null){
+              form.val('example', {
+                  "companyName": Info.companyName //
+                  ,"creditCode": Info.creditCode
+                  ,"establishTime":Info.establishTime
+                  ,"companyType":Info.companyType
+                  ,"companyLocation":Info.companyLocation
+                  ,"legalRepresentative":Info.legalRepresentative
+                  ,"registeredCapital":Info.registeredCapital
+                  ,"businessScope":Info.businessScope
+                  ,"incubatorName":Info.incubatorName
+                  ,"hatchingTime":Info.hatchingTime
+                  ,"limitedPeriod":Info.limitedPeriod
+                  ,"isThousandSailEnterprise": Info.isThousandSailEnterprise+""//“千帆计划”入库企业
+                  ,"isBillionEnterprise": Info.isThousandSailEnterprise+"" //是否入选青岛市科技型企业培育“百千万”工程
+                  ,"isHighTechnologyEnterprise": Info.isHighTechnologyEnterprise+"" //是否高新技术企业
+                  ,"isTechnologyEnterprise": Info.isTechnologyEnterprise+"" //是否科技型中小企业
+                  ,"certificateTime":Info.certificateTime
+                  ,"certificateCode":Info.certificateCode
+                  ,"incomingRegistrationCode":Info.incomingRegistrationCode
+                  ,"desc": ""
+                  ,"i1":i1
+                  ,"i2":i2
+              });
 				  //科技型中小企业
 				  var isTech=Info.isTechnologyEnterprise+"";
-				  if(isTech==1){
+			  console.log(isTech+"科技型中小企业");
+			  console.log(+"是否高新技术企业"+Info.isTechnologyEnterprise+"是否科技型中小企业" );
+				  if(isTech=="1"){
 						$("#isTech").show();
 					}else{
 						$("#isTech").hide();
 					}
 				  /* 高新技术企业 */
-				  var isHighTech=Info.isTechnologyEnterprise+"";
-				  if(isHighTech==1){
+				  var isHighTech=Info.isHighTechnologyEnterprise+"";
+              console.log(isTech+"高新技术企业");
+				  if(isHighTech=="1"){
 						$("#isHighTech").show();
 					}else{
 						$("#isHighTech").hide();
@@ -434,6 +464,85 @@ $('#isTechnologyEnterprise').click(function(){
        }
      });
    });
+</script>
+<script type="text/javascript">
+    //在线预览
+    $("#paperOnline").click(function(){
+        /* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
+        var address=$('input[name="i1"]').val();
+        var reg1=new RegExp("jpg","i");
+        var reg2=new RegExp("pdf","i");
+        var reg3=new RegExp("png","i");
+        if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+            /* window.open(ops+address); */
+            window.open(address);
+        }else{
+            alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+        };
+    })
+    //下载
+    $("#paperDownload").click(function(){
+        var address=$('input[name="i1"]').val();
+        /* download(ops+address); */
+        download(address);
+    })
+    //重新上传
+    $("#upload").click(function(){
+        var id=$('input[name="fid1"]').val();
+        var topic=$('input[name="topic"]').val();
+        var style="electronic";
+        var tid=$('input[name="id"]').val();
+        console.log(id+"id"+tid+"tid");
+        layer.open({
+            type:2,
+            title:"重新上传文件",
+            content:'hatchfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+            anim:0
+        });
+    })
+
+    //在线预览-发表电子版
+    $("#paperOnline1").click(function(){
+        /* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
+        var address=$('input[name="i2"]').val();
+        var reg1=new RegExp("jpg","i");
+        var reg2=new RegExp("pdf","i");
+        var reg3=new RegExp("png","i");
+        if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+            /* window.open(ops+address); */
+            window.open(address);
+        }else{
+            alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+        };
+    })
+    //下载-发表电子版
+    $("#paperDownload1").click(function(){
+        var address=$('input[name="i2"]').val();
+        /* download(ops+address); */
+        download(address);
+    })
+    //重新上传-发表电子版
+    $("#upload1").click(function(){
+        var id=$('input[name="fid1"]').val();
+        var topic=$('input[name="topic"]').val();
+        var style="electronic";
+        var tid=$('input[name="id"]').val();
+        console.log(id+"id"+tid+"tid");
+        layer.open({
+            type:2,
+            title:"重新上传文件",
+            content:'hatchfilereload2.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+            anim:0
+        });
+    })
+    function download(src) {
+        var $a = document.createElement('a');
+        $a.setAttribute("href", src);
+        $a.setAttribute("download", "");
+        var evObj = document.createEvent('MouseEvents');
+        evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
+        $a.dispatchEvent(evObj);
+    };
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>
 </body>
