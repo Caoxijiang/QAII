@@ -62,12 +62,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="copyPicture">作品名称</option>
-			<option value="contactPerson">登记号</option>
-			<option value="contactMethod">作者</option>
-			<option value="ministryLocation">著作权人</option>
-			<option value="ministryProject">创作完成日期</option>
-			<option value="ownselfUnit">首次发布日期</option>
+			<option value="awardLevel">获奖级别</option>
+			<option value="awardUnit">获奖企业名称</option>
+			<option value="awardName">奖励荣誉名称</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -81,9 +78,10 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
+	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id="awardTime"  type="checkbox" value="获奖时间" checked="true"/><lable>获奖时间</lable></div>
-	<div class="int-inline"><input id=awardLevel  type="checkbox" value="获奖级别" checked="flase"/><lable>获奖级别</lable></div>
-	<div class="int-inline"><input id="awardUnit"  type="checkbox" value="获奖单位名称" checked/><lable>获奖企业名称</lable></div>
+	<div class="int-inline"><input id="awardLevel"  type="checkbox" value="获奖级别" checked="flase"/><lable>获奖级别</lable></div>
+	<div class="int-inline"><input id="awardUnit"  type="checkbox" value="获奖企业名称" checked/><lable>获奖企业名称</lable></div>
 	<div class="int-inline"><input id="awardName"  type="checkbox" value="奖励荣誉名称" checked/><lable>奖励荣誉名称</lable></div>
 	<div class="int-inline"><input id="activityName"  type="checkbox" value="颁奖活动名称" checked/><lable>颁奖活动名称</lable></div>
 	<div class="int-inline"><input id="orgnizer"  type="checkbox" value="主办单位" checked/><lable>主办单位</lable></div>
@@ -219,19 +217,13 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="copyPicture"){
-  				alert("搜索'作品名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="contactPerson"){
-  				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="contactMethod"){
-  				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="ministryLocation"){
-  				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="ministryProject"){
-  				alert("搜索'创作完成日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="ownselfUnit"){
-  				alert("搜索'首次发布日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}	
+			  if(check=="awardLevel"){
+				  alert("搜索'获奖级别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+			  }else if(check=="awardUnit"){
+				  alert("搜索'获奖企业名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+			  }else if(check=="awardName"){
+				  alert("搜索'奖励荣誉名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+			  }
   		  }
   	    }//搜索结束
   	

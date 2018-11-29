@@ -252,7 +252,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
         layer.open({
             type:2,
             title:"重新上传文件",
-            content:'paperfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+            content:'serviceFirmfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
             anim:0
         });
     })

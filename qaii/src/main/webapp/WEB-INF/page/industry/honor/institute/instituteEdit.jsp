@@ -97,7 +97,7 @@
 	  	<h1>其他信息</h1>
 		<div class="layui-col-xs10 layui-col-md10">
 			<div class="layui-form-item itemadd">
-				<label class="layui-form-label" style="width:190px;">上传附件（服务证明书）</label>
+				<label class="layui-form-label" style="width:190px;">上传附件（奖励荣誉照片）</label>
 				<div class="layui-input-block" style="margin-left:170px;">
 					<div class="layui-upload">
 						<input type="text" name="file0" class="layui-input input" style="width:48%;display:inline-block;" disabled="">
@@ -219,7 +219,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
         layer.open({
             type:2,
             title:"重新上传文件",
-            content:'serviceFirmfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+            content:'institutefilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
             anim:0
         });
     })

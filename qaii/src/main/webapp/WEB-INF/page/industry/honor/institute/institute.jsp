@@ -78,6 +78,7 @@
 <div class="action"> 
 <div class="act">
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
+	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id="awardTime"  type="checkbox" value="获奖时间" checked="true"/><lable>获奖时间</lable></div>
 	<div class="int-inline"><input id="awardLevel"  type="checkbox" value="获奖级别" checked="flase"/><lable>获奖级别</lable></div>
 	<div class="int-inline"><input id="awardUnit"  type="checkbox" value="获奖单位名称" checked/><lable>获奖单位名称</lable></div>
