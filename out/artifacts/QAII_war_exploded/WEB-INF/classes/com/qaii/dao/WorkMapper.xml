@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.WorkMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.Work">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="work_Type" jdbcType="VARCHAR" property="workType" />
+    <result column="work_Topic" jdbcType="VARCHAR" property="workTopic" />
+    <result column="work_Author" jdbcType="VARCHAR" property="workAuthor" />
+    <result column="work_PublishHouse" jdbcType="VARCHAR" property="workPublishhouse" />
+    <result column="work_PublishTime" jdbcType="VARCHAR" property="workPublishtime" />
+    <result column="work_Dept" jdbcType="VARCHAR" property="workDept" />
+    <result column="work_isbn" jdbcType="VARCHAR" property="workIsbn" />
+    <result column="is_pass" jdbcType="TINYINT" property="isPass" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, work_Type, work_Topic, work_Author, work_PublishHouse, work_PublishTime, work_Dept, 
+    work_isbn, is_pass
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sci_work
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sci_work
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.Work">
+    insert into sci_work (id, work_Type, work_Topic, 
+      work_Author, work_PublishHouse, work_PublishTime, 
+      work_Dept, work_isbn, is_pass
+      )
+    values (#{id,jdbcType=INTEGER}, #{workType,jdbcType=VARCHAR}, #{workTopic,jdbcType=VARCHAR}, 
+      #{workAuthor,jdbcType=VARCHAR}, #{workPublishhouse,jdbcType=VARCHAR}, #{workPublishtime,jdbcType=VARCHAR}, 
+      #{workDept,jdbcType=VARCHAR}, #{workIsbn,jdbcType=VARCHAR}, #{isPass,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.Work">
+    insert into sci_work
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="workType != null">
+        work_Type,
+      </if>
+      <if test="workTopic != null">
+        work_Topic,
+      </if>
+      <if test="workAuthor != null">
+        work_Author,
+      </if>
+      <if test="workPublishhouse != null">
+        work_PublishHouse,
+      </if>
+      <if test="workPublishtime != null">
+        work_PublishTime,
+      </if>
+      <if test="workDept != null">
+        work_Dept,
+      </if>
+      <if test="workIsbn != null">
+        work_isbn,
+      </if>
+      <if test="isPass != null">
+        is_pass,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="workType != null">
+        #{workType,jdbcType=VARCHAR},
+      </if>
+      <if test="workTopic != null">
+        #{workTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="workAuthor != null">
+        #{workAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="workPublishhouse != null">
+        #{workPublishhouse,jdbcType=VARCHAR},
+      </if>
+      <if test="workPublishtime != null">
+        #{workPublishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="workDept != null">
+        #{workDept,jdbcType=VARCHAR},
+      </if>
+      <if test="workIsbn != null">
+        #{workIsbn,jdbcType=VARCHAR},
+      </if>
+      <if test="isPass != null">
+        #{isPass,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.Work">
+    update sci_work
+    <set>
+      <if test="workType != null">
+        work_Type = #{workType,jdbcType=VARCHAR},
+      </if>
+      <if test="workTopic != null">
+        work_Topic = #{workTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="workAuthor != null">
+        work_Author = #{workAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="workPublishhouse != null">
+        work_PublishHouse = #{workPublishhouse,jdbcType=VARCHAR},
+      </if>
+      <if test="workPublishtime != null">
+        work_PublishTime = #{workPublishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="workDept != null">
+        work_Dept = #{workDept,jdbcType=VARCHAR},
+      </if>
+      <if test="workIsbn != null">
+        work_isbn = #{workIsbn,jdbcType=VARCHAR},
+      </if>
+      <if test="isPass != null">
+        is_pass = #{isPass,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.Work">
+    update sci_work
+    set work_Type = #{workType,jdbcType=VARCHAR},
+      work_Topic = #{workTopic,jdbcType=VARCHAR},
+      work_Author = #{workAuthor,jdbcType=VARCHAR},
+      work_PublishHouse = #{workPublishhouse,jdbcType=VARCHAR},
+      work_PublishTime = #{workPublishtime,jdbcType=VARCHAR},
+      work_Dept = #{workDept,jdbcType=VARCHAR},
+      work_isbn = #{workIsbn,jdbcType=VARCHAR},
+      is_pass = #{isPass,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getAllWorkMsg" resultMap="CustomMap">
+  SELECT * from sci_work where is_pass = 1 
+  </select>
+  <select id="selectCountNum" resultType="int">
+  SELECT COUNT(*) FROM sci_work
+  </select>
+  <delete id="deleteByPrimaryKeys" parameterType="int">
+  	DELETE  FROM sci_work WHERE id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
+  <select id="countEachMonthwork" resultType="int">
+    SELECT COUNT(*) FROM sci_work WHERE work_PublishTime BETWEEN #{0} AND #{1}
+  </select>
+  <resultMap id="CustomMap" type="com.qaii.domain.Work">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="work_Type" jdbcType="VARCHAR" property="workType" />
+    <result column="work_Topic" jdbcType="VARCHAR" property="workTopic" />
+    <result column="work_Author" jdbcType="VARCHAR" property="workAuthor" />
+    <result column="work_PublishHouse" jdbcType="VARCHAR" property="workPublishhouse" />
+    <result column="work_PublishTime" jdbcType="VARCHAR" property="workPublishtime" />
+    <result column="work_Dept" jdbcType="VARCHAR" property="workDept" />
+    <result column="work_isbn" jdbcType="VARCHAR" property="workIsbn" />
+    <result column="is_pass" jdbcType="TINYINT" property="isPass" />
+    <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.WorkFile">
+    	<id column="fid" jdbcType="BIGINT" property="id" />
+	    <id column="wid" jdbcType="BIGINT" property="wid" />
+	    <id column="style" jdbcType="VARCHAR" property="style" />
+	    <id column="name" jdbcType="VARCHAR" property="name" />
+	    <id column="path" jdbcType="VARCHAR" property="path" />
+	    <id column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+	    <id column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    </collection>
+  </resultMap>
+  <select id="getMessage" resultMap="CustomMap" parameterType="int">
+  	SELECT a.*,b.id AS fid,b.`name`,b.path,b.style,b.wid 
+  	FROM sci_work AS a LEFT JOIN sci_workfile AS b ON b.wid = a.id  
+  	WHERE a.id =#{0}
+  </select>
+  <insert id="insertMessage" parameterType="com.qaii.domain.Work" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+  insert into sci_work
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="workType != null">
+        work_Type,
+      </if>
+      <if test="workTopic != null">
+        work_Topic,
+      </if>
+      <if test="workAuthor != null">
+        work_Author,
+      </if>
+      <if test="workPublishhouse != null">
+        work_PublishHouse,
+      </if>
+      <if test="workPublishtime != null">
+        work_PublishTime,
+      </if>
+      <if test="workDept != null">
+        work_Dept,
+      </if>
+      <if test="workIsbn != null">
+        work_isbn,
+      </if>
+      <if test="isPass != null">
+        is_pass,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="workType != null">
+        #{workType,jdbcType=VARCHAR},
+      </if>
+      <if test="workTopic != null">
+        #{workTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="workAuthor != null">
+        #{workAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="workPublishhouse != null">
+        #{workPublishhouse,jdbcType=VARCHAR},
+      </if>
+      <if test="workPublishtime != null">
+        #{workPublishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="workDept != null">
+        #{workDept,jdbcType=VARCHAR},
+      </if>
+      <if test="workIsbn != null">
+        #{workIsbn,jdbcType=VARCHAR},
+      </if>
+      <if test="isPass != null">
+        #{isPass,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="listNotPass" resultMap="BaseResultMap">
+  SELECT * FROM sci_work WHERE is_pass  = 0
+  </select>
+
+  <select id="selectAllpathTable" resultType="java.lang.String">
+  SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'qaiisys'
+  AND COLUMN_NAME LIKE '%path%'
+  </select>
+
+  <select id="selectTablename" resultType="java.lang.String">
+  SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'qaiisys'
+  AND COLUMN_NAME ='file_path'
+  </select>
+
+  <select id="selectTablenamePath" resultType="java.lang.String">
+  SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'qaiisys'
+  AND COLUMN_NAME ='path'
+  </select>
+
+  <select id="selectPathBytableName" parameterType="java.lang.String" resultType="java.lang.String">
+  SELECT file_path from ${Tablename}
+  </select>
+
+  <select id="selectPathBytableNamePath" parameterType="java.lang.String" resultType="java.lang.String">
+  SELECT path from ${Tablename}
+  </select>
+
+  <select id="selectqueUrl"  resultType="java.lang.String">
+  SELECT url from emp_avatarinfo
+  </select>
+</mapper>

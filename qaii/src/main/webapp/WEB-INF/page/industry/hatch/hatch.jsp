@@ -16,15 +16,15 @@
   <style>
     body{margin: 10px;}
     .layui-table-body {
-	    height: -moz-calc( 100vh - 190px );
-	    height: -webkit-calc( 100vh - 190px );
-	    height: calc( 100vh - 190px );
+	    height: -moz-calc( 100vh - 215px );
+	    height: -webkit-calc( 100vh - 215px );
+	    height: calc( 100vh - 215px );
 	}
 	@media screen and (max-width: 1600px) {
 		.layui-table-body {
-		    height: -moz-calc( 100vh - 145px );
-		    height: -webkit-calc( 100vh - 145px );
-		    height: calc( 100vh - 145 px );
+		    height: -moz-calc( 100vh - 170px );
+		    height: -webkit-calc( 100vh - 170px );
+		    height: calc( 100vh - 170 px );
 		}
 	}
     .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
@@ -61,12 +61,12 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="copyPicture">作品名称</option>
-			<option value="copyCode">登记号</option>
-			<option value="copyAuthor">作者</option>
-			<option value="copyCopyrightperson">著作权人</option>
-			<option value="copyEndtime">创作完成日期</option>
-			<option value="copyPublishtime">首次发布日期</option>
+			<option value="companyName">企业名称</option>
+			<option value="companyType">公司类型</option>
+			<option value="legalRepresentative">法定代表人</option>
+			<option value="isThousandSailEnterprise">“千帆计划”入库企业</option>
+			<option value="isHighTechnologyEnterprise">高新技术企业</option>
+			<option value="isBillionEnterprise">“百千万”工程</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -81,18 +81,21 @@
 <div class="act">
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=copyPicture  type="checkbox" value="作品图样" checked="flase"/><lable>作品图样</lable></div>
-	<div class="int-inline"><input id="copyName"  type="checkbox" value="作品名称" checked/><lable>作品名称</lable></div>
-	<div class="int-inline"><input id="copyCode"  type="checkbox" value="登记号" checked/><lable>登记号</lable></div>
-	<div class="int-inline"><input id="copyAuthor"  type="checkbox" value="作者" checked/><lable>作者</lable></div>
-	<div class="int-inline"><input id="copyCopyrightperson"  type="checkbox" value="著作权人" checked/><lable>著作权人</lable></div>
-	<div class="int-inline"><input id="copyAgency"  type="checkbox" value="代理机构" checked/><lable>代理机构</lable></div>
-	<div class="int-inline"><input id="copyEndtime"  type="checkbox" value="创作完成日期" checked/><lable>创作完成日期</lable></div>
-	<div class="int-inline"><input id="copyPublishtime"  type="checkbox" value="首次发表日期" checked/><lable>首次发布日期</lable></div>
-	<div class="int-inline"><input id="copyRegisttime"  type="checkbox" value="登记日期" checked/><lable>登记日期</lable></div>
-	<div class="int-inline"><input id="copyCost"  type="checkbox" value="费用（元）" checked/><lable>费用（元）</lable></div>
-	<div class="int-inline"><input id="copyInvoiceper"  type="checkbox" value="发票收据-汇款人" checked/><lable>发票收据-汇款人</lable></div>
-	<div class="int-inline"><input id="copyStatus"  type="checkbox" value="状态" checked/><lable>状态</lable></div>
+	<div class="int-inline"><input id="companyName"  type="checkbox" value="企业名称" checked="flase"/><lable>企业名称</lable></div>
+	<div class="int-inline"><input id="creditCode"  type="checkbox" value="统一社会信用代码" checked/><lable>统一社会信用代码</lable></div>
+	<div class="int-inline"><input id="establishTime"  type="checkbox" value="成立时间" checked/><lable>成立时间</lable></div>
+	<div class="int-inline"><input id="companyType"  type="checkbox" value="公司类型" checked/><lable>公司类型</lable></div>
+	<div class="int-inline"><input id="companyLocation"  type="checkbox" value="公司住所" checked/><lable>公司住所</lable></div>
+	<div class="int-inline"><input id="legalRepresentative"  type="checkbox" value="法定代表人" checked/><lable>法定代表人</lable></div>
+	<div class="int-inline"><input id="registeredCapital"  type="checkbox" value="注册资本" checked/><lable>注册资本</lable></div>
+	<div class="int-inline"><input id="businessScope"  type="checkbox" value="经营范围" checked/><lable>经营范围</lable></div>
+	<div class="int-inline"><input id="incubatorName"  type="checkbox" value="所属孵化器" checked/><lable>所属孵化器</lable></div>
+	<div class="int-inline"><input id="hatchingTime"  type="checkbox" value="入孵时间" checked/><lable>入孵时间</lable></div>
+	<div class="int-inline"><input id="limitedPeriod"  type="checkbox" value="有限期" checked/><lable>有限期</lable></div>
+	<div class="int-inline"><input id="isThousandSailEnterprise"  type="checkbox" value="“千帆计划”入库企业" checked/><lable>“千帆计划”入库企业</lable></div>
+	<div class="int-inline"><input id="isHighTechnologyEnterprise"  type="checkbox" value="高新技术企业" checked/><lable>高新技术企业</lable></div>
+	<div class="int-inline"><input id="isBillionEnterprise"  type="checkbox" value="青岛市科技型企业培育“百千万”工程" checked/><lable>青岛市科技型企业培育“百千万”工程</lable></div>
+	<div class="int-inline"><input id="copyStatus"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
@@ -232,18 +235,18 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="copyPicture"){
-  				alert("搜索'作品名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyCode"){
-  				alert("搜索'登记号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyAuthor"){
-  				alert("搜索'作者'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyCopyrightperson"){
-  				alert("搜索'著作权人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyEndtime"){
-  				alert("搜索'创作完成日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="copyPublishtime"){
-  				alert("搜索'首次发布日期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="companyName"){
+  				alert("搜索'企业名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="companyType"){
+  				alert("搜索'公司类型'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="legalRepresentative"){
+  				alert("搜索'法定代表人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="isThousandSailEnterprise"){
+  				alert("搜索'“千帆计划”入库企业'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="isHighTechnologyEnterprise"){
+  				alert("搜索'高新技术企业'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="isBillionEnterprise"){
+  				alert("搜索'“百千万”工程'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -376,7 +379,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "软著信息",
+				filename: "孵化企业管理",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片

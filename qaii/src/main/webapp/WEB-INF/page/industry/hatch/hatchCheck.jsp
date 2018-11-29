@@ -34,7 +34,8 @@
   <form class="layui-form" method="post" lay-filter="example" id="www">
   <!-- 基本信息 -->
 	  <div class="layui-row contern">
-	  	<h1>基本信息${requestScope.Info[0]}</h1>
+	  	<%--<h1>基本信息${requestScope.Info[0]}</h1>--%>
+		  <h1>基本信息</h1>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">企业名称</label>
@@ -134,11 +135,21 @@
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
-			<div class="layui-form-item itemadd">
+			<%--<div class="layui-form-item itemadd">
 				<label class="layui-form-label">上传营业执照</label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
 					  <input type="text" name="i1" lay-verify="title" autocomplete="off" class="layui-input" id="test3" disabled="">
+					</div>
+				</div>
+			</div>--%>
+			<div class="layui-form-item">
+				<label class="layui-form-label">上传营业执照</span></label>
+				<div class="layui-input-block">
+					<div class="layui-upload">
+						<input type="text" name="i1" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
+						<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline">在线预览</a>
+						<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload" >下载</a>
 					</div>
 				</div>
 			</div>
@@ -194,8 +205,13 @@
 					<div class="layui-form-item itemadd">
 						<label class="layui-form-label">发表电子版</label>
 						<div class="layui-input-block">
-							<div class="layui-upload">
+							<%--<div class="layui-upload">
 							  <input type="text" name="i2" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+							</div>--%>
+							<div class="layui-upload">
+								<input type="text" name="i2" class="layui-input input" style="width:50%;display:inline-block;" disabled="">
+								<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline1">在线预览</a>
+								<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload1" >下载</a>
 							</div>
 						</div>
 					</div>
@@ -363,6 +379,56 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 	  }
   })
 });
+//在线预览
+$("#paperOnline").click(function(){
+    /* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
+    var address=$('input[name="i1"]').val();
+    console.log(address);
+    var reg1=new RegExp("jpg","i");
+    var reg2=new RegExp("pdf","i");
+    var reg3=new RegExp("png","i");
+    if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+        /* window.open(ops+address); */
+        window.open(address);
+    }else{
+        alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+    };
+})
+//下载
+$("#paperDownload").click(function(){
+    var address=$('input[name="i1"]').val();
+    /* download(ops+address); */
+    download(address);
+})
+//在线预览-发表电子版
+$("#paperOnline1").click(function(){
+    /* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
+    var address=$('input[name="i2"]').val();
+    console.log(address);
+    var reg1=new RegExp("jpg","i");
+    var reg2=new RegExp("pdf","i");
+    var reg3=new RegExp("png","i");
+    if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+        /* window.open(ops+address); */
+        window.open(address);
+    }else{
+        alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+    };
+})
+//下载-发表电子版
+$("#paperDownload1").click(function(){
+    var address=$('input[name="i2"]').val();
+    /* download(ops+address); */
+    download(address);
+})
+function download(src) {
+    var $a = document.createElement('a');
+    $a.setAttribute("href", src);
+    $a.setAttribute("download", "");
+    var evObj = document.createEvent('MouseEvents');
+    evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
+    $a.dispatchEvent(evObj);
+};
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>
 </body>

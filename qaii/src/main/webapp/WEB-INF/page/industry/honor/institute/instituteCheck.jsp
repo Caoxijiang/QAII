@@ -92,13 +92,13 @@
 	</div>
 	<div class="layui-row contern">
 	  	<h1>其他信息</h1>
-		<div class="layui-col-xs6 layui-col-md6">
+		<div class="layui-col-xs10 layui-col-md10">
 			<div class="layui-form-item itemadd">
-				<label class="layui-form-label" style="width:190px;">上传附件（服务证明书）</label>
+				<label class="layui-form-label" style="width:190px;">上传附件（奖励荣誉照片）</label>
 				<div class="layui-input-block" style="margin-left:210px;">
-					<div class="layui-upload">
-					   <input type="text" name="file0" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
-					</div>
+					<input type="text" name="file0" lay-verify="title" autocomplete="off" class="layui-input" style="width:48%;display:inline-block;" disabled="">
+					<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline">在线预览</a>
+					<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload" >下载</a>
 				</div>
 			</div>
 		</div>
@@ -161,6 +161,35 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 	   alert("请刷新页面");
   }
 });
+//在线预览
+$("#paperOnline").click(function(){
+    /* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
+    var address=$('input[name="file0"]').val();
+    console.log(address);
+    var reg1=new RegExp("jpg","i");
+    var reg2=new RegExp("pdf","i");
+    var reg3=new RegExp("png","i");
+    if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
+        /* window.open(ops+address); */
+        window.open(address);
+    }else{
+        alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
+    };
+})
+//下载
+$("#paperDownload").click(function(){
+    var address=$('input[name="file0"]').val();
+    /* download(ops+address); */
+    download(address);
+})
+function download(src) {
+    var $a = document.createElement('a');
+    $a.setAttribute("href", src);
+    $a.setAttribute("download", "");
+    var evObj = document.createEvent('MouseEvents');
+    evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
+    $a.dispatchEvent(evObj);
+};
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>
 </body>
