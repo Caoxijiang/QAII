@@ -49,7 +49,7 @@
 	</bean>
 	
 	<!-- 拦截器 -->
-<!--   		 <mvc:interceptors>
+   		 <mvc:interceptors>
 			<mvc:interceptor>
 			<mvc:mapping path="/*.do" />
 			<mvc:exclude-mapping path="/checkLogin.do"/>
@@ -68,7 +68,7 @@
 			</mvc:interceptor>
 		</mvc:interceptors>  
 	
-	 -->
+
 	
 	 
 	

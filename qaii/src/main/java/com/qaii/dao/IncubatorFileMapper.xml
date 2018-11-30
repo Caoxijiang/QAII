@@ -115,7 +115,7 @@
         gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER} and incubator_id=#{incubatorId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qaii.domain.IncubatorFile">
     update industry_incubatorfile
