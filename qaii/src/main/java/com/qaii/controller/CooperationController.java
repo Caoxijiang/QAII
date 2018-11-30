@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -113,23 +114,10 @@ public class CooperationController {
 
     //更新信息
     @RequestMapping(value = "updateCooperation.do")
-    String updateCooperation(HttpServletRequest request,
-                             Cooperation record,
-                             CooperationFile fileRecord,
-                             @RequestParam("file") MultipartFile[] files) throws Exception {
+    String updateCooperation(HttpServletRequest request, Cooperation record) throws Exception {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setGmtModified(new Date());
-        if (!files[0].isEmpty()) {
-            //删除旧文件，保存新文件
-            FileLoadUtils.deleteFileOfPath(request.getParameter("fpath"));
-            List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
-            fileRecord.setId(Integer.parseInt(request.getParameter("fid")));
-            fileRecord.setFileName(files[0].getOriginalFilename());
-            fileRecord.setFilePath(BASE_PATH + list.get(0));
-            fileRecord.setGmtModified(new Date());
-            fileService.updateByPrimaryKey(fileRecord);
-        }
         int result = service.updateByPrimaryKey(record);
         if (result != 0)
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
@@ -183,6 +171,25 @@ public class CooperationController {
         record.setRemark(list.get(5));
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
+    }
+
+    @RequestMapping("reloadCooperationFile.do")
+    String reloadCooperationFile(HttpServletRequest request,
+                                  @RequestParam("file")MultipartFile[] files,
+                                  CooperationFile record) throws IOException {
+        record.setIncubatorId(Integer.parseInt(request.getParameter("id")));
+        record.setId(Integer.parseInt(request.getParameter("fid")));
+        FileLoadUtils.deleteFileOfPath(request.getParameter("fpath"));
+        List<String> list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
+        record.setFilePath(BASE_PATH + list.get(0));
+        record.setFileName(files[0].getOriginalFilename());
+        int result = fileService.updateByPrimaryKey(record);
+        if (result!=0){
+            FileLoadUtils.deleteFileOfPath(ConstantUtil.FILE_BASE_PATH + request.getParameter("path"));
+            return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
+        }else {
+            return ConstantUtil.INDUSTRY_EDIT_FAILD;
+        }
     }
 
 }

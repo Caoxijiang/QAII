@@ -109,23 +109,10 @@ public class AwardCollegeController {
 
     //更新信息
     @RequestMapping(value = "updateAwardCollege.do")
-    String updateAwardCollege(HttpServletRequest request,
-                              AwardCollege record,
-                              AwardCollegeFile fileRecord,
-                              @RequestParam("file") MultipartFile[] files) throws Exception {
+    String updateAwardCollege(HttpServletRequest request,AwardCollege record) throws Exception {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setGmtModified(new Date());
-        if (!files[0].isEmpty()) {
-            //删除旧文件，保存新文件
-            FileLoadUtils.deleteFileOfPath(request.getParameter("fpath"));
-            List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
-            fileRecord.setId(Integer.parseInt(request.getParameter("fid")));
-            fileRecord.setFileName(files[0].getOriginalFilename());
-            fileRecord.setFilePath(BASE_PATH + list.get(0));
-            fileRecord.setGmtModified(new Date());
-            fileService.updateByPrimaryKey(fileRecord);
-        }
         int result = service.updateByPrimaryKey(record);
         if (result != 0)
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
@@ -180,5 +167,24 @@ public class AwardCollegeController {
         record.setRemark(list.get(6));
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
+    }
+
+    @RequestMapping("reloadAwardCollegeFile.do")
+    String reloadAwardCollegeFile(HttpServletRequest request,
+                              @RequestParam("file")MultipartFile[] files,
+                              AwardCollegeFile record) throws IOException {
+        record.setHonorId(Integer.parseInt(request.getParameter("id")));
+        record.setId(Integer.parseInt(request.getParameter("fid")));
+        FileLoadUtils.deleteFileOfPath(request.getParameter("fpath"));
+        List<String> list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
+        record.setFilePath(BASE_PATH + list.get(0));
+        record.setFileName(files[0].getOriginalFilename());
+        int result = fileService.updateByPrimaryKey(record);
+        if (result!=0){
+            FileLoadUtils.deleteFileOfPath(ConstantUtil.FILE_BASE_PATH + request.getParameter("path"));
+            return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
+        }else {
+            return ConstantUtil.INDUSTRY_EDIT_FAILD;
+        }
     }
 }
