@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -48,14 +49,12 @@ public class AwardPersonalController {
     private final static String TEST_PATH = "/Users/wangxin/File/";
 
     //文件位置
-    private final static String BASE_PATH = "industry/AwardPersonal/";
+    private final static String BASE_PATH = "img/industry/AwardPersonal/";
     //文件类型
     public final static String FILE_CERTIFY = "certify";
     //文件路径 本机路径为/Users/wangxin/File
     private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
 //    private final static String FILE_PATH = TEST_PATH + BASE_PATH;
-    //数据库中记录的路径
-    private final static String DATABASE_PATH = ConstantUtil.DATABASE_BASE_PATH + BASE_PATH;
 
     //插入记录
     @RequestMapping(value = "insertAwardPersonal.do" ,produces = "text/json;charset=UTF-8" )
@@ -72,7 +71,7 @@ public class AwardPersonalController {
             for (int i=0;i<files.length;i++) {
                 fileRecord.setHonorId(record.getId());
                 fileRecord.setFileName(files[i].getOriginalFilename());
-                fileRecord.setFilePath(DATABASE_PATH + list.get(i));
+                fileRecord.setFilePath(BASE_PATH + list.get(i));
                 fileRecord.setGmtCreate(new Date());
                 fileRecord.setGmtModified(new Date());
                 fileService.insertRecord(fileRecord);
@@ -116,23 +115,10 @@ public class AwardPersonalController {
 
     //更新信息
     @RequestMapping(value = "updateAwardPersonal.do")
-    String updateAwardPersonal(HttpServletRequest request,
-                               AwardPersonal record,
-                               AwardPersonalFile fileRecord,
-                               @RequestParam("file")MultipartFile[] files) throws Exception {
+    String updateAwardPersonal(HttpServletRequest request, AwardPersonal record) throws Exception {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setGmtModified(new Date());
-        if (files.length > 0){
-            //删除旧文件，保存新文件
-            FileLoadUtils.deleteFileOfPath(request.getParameter("fpath"));
-            List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
-            fileRecord.setId(Integer.parseInt(request.getParameter("fid")));
-            fileRecord.setFileName(files[0].getOriginalFilename());
-            fileRecord.setFilePath(DATABASE_PATH + list.get(0));
-            fileRecord.setGmtModified(new Date());
-            fileService.updateByPrimaryKey(fileRecord);
-        }
         int result = service.updateByPrimaryKey(record);
         if (result!=0)
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
@@ -187,5 +173,24 @@ public class AwardPersonalController {
         record.setRemark(list.get(6));
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
+    }
+
+    @RequestMapping("reloadAwardPersonalFile.do")
+    String reloadAwardPersonalFile(HttpServletRequest request,
+                                  @RequestParam("file")MultipartFile[] files,
+                                  AwardPersonalFile record) throws IOException {
+        record.setHonorId(Integer.parseInt(request.getParameter("id")));
+        record.setId(Integer.parseInt(request.getParameter("fid")));
+        FileLoadUtils.deleteFileOfPath(request.getParameter("fpath"));
+        List<String> list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
+        record.setFilePath(BASE_PATH + list.get(0));
+        record.setFileName(files[0].getOriginalFilename());
+        int result = fileService.updateByPrimaryKey(record);
+        if (result!=0){
+            FileLoadUtils.deleteFileOfPath(ConstantUtil.FILE_BASE_PATH + request.getParameter("path"));
+            return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
+        }else {
+            return ConstantUtil.INDUSTRY_EDIT_FAILD;
+        }
     }
 }
