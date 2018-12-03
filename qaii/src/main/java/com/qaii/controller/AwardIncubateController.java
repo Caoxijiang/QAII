@@ -186,7 +186,7 @@ public class AwardIncubateController {
         record.setFileName(files[0].getOriginalFilename());
         int result = fileService.updateByPrimaryKey(record);
         if (result!=0){
-            FileLoadUtils.deleteFileOfPath(ConstantUtil.FILE_BASE_PATH + request.getParameter("path"));
+            FileLoadUtils.deleteFileOfPath(ConstantUtil.FILE_BASE_PATH + request.getParameter("fpath"));
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         }else {
             return ConstantUtil.INDUSTRY_EDIT_FAILD;
