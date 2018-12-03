@@ -207,7 +207,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
                           "ownselfUnit":awardInfo.ownselfUnit,
                           "ownselfContactMethod":awardInfo.ownselfContactMethod,
                           "remark":awardInfo.remark,
-                          "file0":awardInfo.listFile[0].fileName,
+                          "file0":awardInfo.listFile[0].filePath,
 						  "fid":awardInfo.listFile[0].id,
 						  "fpath":awardInfo.listFile[0].filePath
 					  })

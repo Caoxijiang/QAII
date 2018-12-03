@@ -159,7 +159,7 @@
                             "signTime":awardInfo.signTime,
                             "cooperationContent":awardInfo.cooperationContent,
                             "remark":awardInfo.remark,
-                            "file0":awardInfo.listFile[0].fileName,
+                            "file0":awardInfo.listFile[0].filePath,
                             "fid":awardInfo.listFile[0].id,
                             "fpath":awardInfo.listFile[0].filePath
                         })
