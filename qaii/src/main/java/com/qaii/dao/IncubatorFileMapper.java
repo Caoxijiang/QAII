@@ -17,5 +17,5 @@ public interface IncubatorFileMapper {
 
     int updateByPrimaryKeySelective(IncubatorFile record);
 
-    int updateByPrimaryKey(IncubatorFile record);
+    int updateByPrimaryKey(List<IncubatorFile> record);
 }

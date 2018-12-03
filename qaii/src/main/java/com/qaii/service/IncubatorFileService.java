@@ -9,5 +9,5 @@ public interface IncubatorFileService {
 	
 	List<IncubatorFile> selectByPrimaryKey(Integer id);
 
-	int updateByPrimaryKey(IncubatorFile record);
+	int updateByPrimaryKey(List<IncubatorFile> record);
 }
