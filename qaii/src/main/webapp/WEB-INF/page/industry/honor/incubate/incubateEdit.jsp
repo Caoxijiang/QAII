@@ -220,6 +220,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
             type:2,
             title:"重新上传文件",
             content:'incubatefilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+            area: ['500px', '420px'],
             anim:0
         });
     })

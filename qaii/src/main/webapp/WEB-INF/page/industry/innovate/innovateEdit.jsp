@@ -205,6 +205,7 @@
         layer.open({
             type:2,
             title:"重新上传文件",
+            area: ['500px', '420px'],
             content:'innovatefilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
             anim:0
         });

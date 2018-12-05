@@ -220,6 +220,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
         layer.open({
             type:2,
             title:"重新上传文件",
+            area: ['500px', '420px'],
             content:'personfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
             anim:0
         });
