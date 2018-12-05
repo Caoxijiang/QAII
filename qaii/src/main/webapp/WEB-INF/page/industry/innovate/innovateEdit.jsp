@@ -204,6 +204,7 @@
             type:2,
             title:"重新上传文件",
             content:'innovatefilereload.do?id='+id+'&fid='+fid+'&fpath='+fpath,
+            area: ['500px', '420px'],
             anim:0
         });
     })
