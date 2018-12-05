@@ -369,13 +369,13 @@ public class EmpController {
 		empInfo.setEmpMaritalstatus(req.getParameter("empMaritalstatus"));
 		empInfo.setEmpFirsteducation(req.getParameter("empFirsteducation"));
 		empInfo.setEmpSecondeducation(req.getParameter("empSecondeducation"));
-		empInfo.setEmpSecondeducation(req.getParameter("empThirdeducation"));
+		empInfo.setEmpThirdeducation(req.getParameter("empThirdeducation"));
 		empInfo.setEmpFirsteducationschool(req.getParameter("empFirsteducationschool"));
 		empInfo.setEmpSecondeducationschool(req.getParameter("empSecondeducationschool"));
 		empInfo.setEmpThirdeducationschool(req.getParameter("empThirdeducationschool"));
 		empInfo.setEmpFirsteducationpro(req.getParameter("empFirsteducationpro"));
 		empInfo.setEmpSecondeducationpro(req.getParameter("empSecondeducationpro"));
-		empInfo.setEmpSecondeducationpro(req.getParameter("empThirdeducationpro"));
+		empInfo.setEmpThirdeducationpro(req.getParameter("empThirdeducationpro"));
 		empInfo.setEmpFirstgraduationtime(req.getParameter("empFirstgraduationtime"));
 		empInfo.setEmpSecondgraduationtime(req.getParameter("empSecondgraduationtime"));
 		empInfo.setEmpThirdgraduationtime(req.getParameter("empThirdgraduationtime"));
