@@ -419,15 +419,14 @@ public class PatentController {
 		record.setPatPrepublishaudit(list.get(8));
 		record.setPatApplynum(list.get(9));
 		record.setPatApplytime(list.get(10));
-		record.setPatPublishnum(list.get(11));
-		record.setPatPublishtime(list.get(12));
-		record.setPatAuthorzationtime(list.get(13));
-		record.setPatRemission(list.get(14));
-		record.setPatCost(list.get(15));
-		record.setPatInvoiceper(list.get(16));
-		record.setPatRemark(list.get(17));
-		record.setPatPenner(list.get(18));
-		record.setPatAgent(list.get(19));
+		record.setPatPublishtime(list.get(11));
+		record.setPatAuthorzationtime(list.get(12));
+		record.setPatRemission(list.get(13));
+		record.setPatCost(list.get(14));
+		record.setPatInvoiceper(list.get(15));
+		record.setPatRemark(list.get(16));
+		record.setPatPenner(list.get(17));
+		record.setPatAgent(list.get(18));
 	}
 	
 }
