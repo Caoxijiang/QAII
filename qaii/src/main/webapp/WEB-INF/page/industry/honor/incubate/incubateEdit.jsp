@@ -174,7 +174,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
                           "activityName":awardInfo.activityName,
                           "orgnizer":awardInfo.orgnizer,
                           "remark":awardInfo.remark,
-                          "file0":awardInfo.listFile[0].fileName,
+                          "file0":awardInfo.listFile[0].filePath,
 						  "fid":awardInfo.listFile[0].id,
 						  "fpath":awardInfo.listFile[0].filePath
 					  })
@@ -211,15 +211,13 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
     })
     //重新上传
     $("#upload").click(function(){
-        var id=$('input[name="fid1"]').val();
-        var topic=$('input[name="topic"]').val();
-        var style="electronic";
-        var tid=$('input[name="id"]').val();
-        console.log(id+"id"+tid+"tid");
+        var id=$('input[name="id"]').val();
+        var fid=$('input[name="fid"]').val();
+        var fpath=$('input[name="fpath"]').val();
         layer.open({
             type:2,
             title:"重新上传文件",
-            content:'incubatefilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+            content:'incubatefilereload.do?id='+id+'&fid='+fid+'&fpath='+fpath,
             area: ['500px', '420px'],
             anim:0
         });

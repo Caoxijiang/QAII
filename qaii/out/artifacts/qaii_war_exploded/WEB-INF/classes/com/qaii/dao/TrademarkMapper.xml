@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.TrademarkMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.Trademark">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="tradm_Dept" jdbcType="VARCHAR" property="tradmDept" />
+    <result column="tradm_Code" jdbcType="VARCHAR" property="tradmCode" />
+    <result column="tradm_PngAndExplain" jdbcType="VARCHAR" property="tradmPngandexplain" />
+    <result column="tradm_ApplyPer" jdbcType="VARCHAR" property="tradmApplyper" />
+    <result column="tradm_Agency" jdbcType="VARCHAR" property="tradmAgency" />
+    <result column="tradm_Type" jdbcType="VARCHAR" property="tradmType" />
+    <result column="tradm_Item" jdbcType="VARCHAR" property="tradmItem" />
+    <result column="tradm_ApplyNum" jdbcType="VARCHAR" property="tradmApplynum" />
+    <result column="tradm_ApplyTime" jdbcType="VARCHAR" property="tradmApplytime" />
+    <result column="tradm_RegisterTime" jdbcType="VARCHAR" property="tradmRegistertime" />
+    <result column="tradm_ValidTime" jdbcType="VARCHAR" property="tradmValidtime" />
+    <result column="tradm_Cost" jdbcType="VARCHAR" property="tradmCost" />
+    <result column="tradm_InvoicePer" jdbcType="VARCHAR" property="tradmInvoiceper" />
+    <result column="tradm_StatusFollow" jdbcType="VARCHAR" property="tradmStatusfollow" />
+    <result column="tradm_UpdateTime" jdbcType="VARCHAR" property="tradmUpdatetime" />
+    <result column="eid" jdbcType="INTEGER" property="eid" />
+    <result column="Path" jdbcType="INTEGER" property="url" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, tradm_Dept, tradm_Code, tradm_PngAndExplain, tradm_ApplyPer, tradm_Agency, tradm_Type, 
+    tradm_Item, tradm_ApplyNum, tradm_ApplyTime, tradm_RegisterTime, tradm_ValidTime, 
+    tradm_Cost, tradm_InvoicePer, tradm_StatusFollow, tradm_UpdateTime,eid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT a.*,b.Path FROM sci_trademark AS a LEFT JOIN sci_trademarkimg AS b ON a.eid=b.id
+   where a.id = #{id,jdbcType=INTEGER} 
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sci_trademark
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.Trademark">
+    insert into sci_trademark (id, tradm_Dept, tradm_Code, 
+      tradm_PngAndExplain, tradm_ApplyPer, tradm_Agency, 
+      tradm_Type, tradm_Item, tradm_ApplyNum, 
+      tradm_ApplyTime, tradm_RegisterTime, tradm_ValidTime, 
+      tradm_Cost, tradm_InvoicePer, tradm_StatusFollow, 
+      tradm_UpdateTime,eid)
+    values (#{id,jdbcType=INTEGER}, #{tradmDept,jdbcType=VARCHAR}, #{tradmCode,jdbcType=VARCHAR}, 
+      #{tradmPngandexplain,jdbcType=VARCHAR}, #{tradmApplyper,jdbcType=VARCHAR}, #{tradmAgency,jdbcType=VARCHAR}, 
+      #{tradmType,jdbcType=VARCHAR}, #{tradmItem,jdbcType=VARCHAR}, #{tradmApplynum,jdbcType=VARCHAR}, 
+      #{tradmApplytime,jdbcType=VARCHAR}, #{tradmRegistertime,jdbcType=VARCHAR}, #{tradmValidtime,jdbcType=VARCHAR}, 
+      #{tradmCost,jdbcType=VARCHAR}, #{tradmInvoiceper,jdbcType=VARCHAR}, #{tradmStatusfollow,jdbcType=VARCHAR}, 
+      #{tradmUpdatetime,jdbcType=VARCHAR},#{eid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.Trademark">
+    insert into sci_trademark
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="tradmDept != null">
+        tradm_Dept,
+      </if>
+      <if test="tradmCode != null">
+        tradm_Code,
+      </if>
+      <if test="tradmPngandexplain != null">
+        tradm_PngAndExplain,
+      </if>
+      <if test="tradmApplyper != null">
+        tradm_ApplyPer,
+      </if>
+      <if test="tradmAgency != null">
+        tradm_Agency,
+      </if>
+      <if test="tradmType != null">
+        tradm_Type,
+      </if>
+      <if test="tradmItem != null">
+        tradm_Item,
+      </if>
+      <if test="tradmApplynum != null">
+        tradm_ApplyNum,
+      </if>
+      <if test="tradmApplytime != null">
+        tradm_ApplyTime,
+      </if>
+      <if test="tradmRegistertime != null">
+        tradm_RegisterTime,
+      </if>
+      <if test="tradmValidtime != null">
+        tradm_ValidTime,
+      </if>
+      <if test="tradmCost != null">
+        tradm_Cost,
+      </if>
+      <if test="tradmInvoiceper != null">
+        tradm_InvoicePer,
+      </if>
+      <if test="tradmStatusfollow != null">
+        tradm_StatusFollow,
+      </if>
+      <if test="tradmUpdatetime != null">
+        tradm_UpdateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tradmDept != null">
+        #{tradmDept,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmCode != null">
+        #{tradmCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmPngandexplain != null">
+        #{tradmPngandexplain,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmApplyper != null">
+        #{tradmApplyper,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmAgency != null">
+        #{tradmAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmType != null">
+        #{tradmType,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmItem != null">
+        #{tradmItem,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmApplynum != null">
+        #{tradmApplynum,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmApplytime != null">
+        #{tradmApplytime,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmRegistertime != null">
+        #{tradmRegistertime,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmValidtime != null">
+        #{tradmValidtime,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmCost != null">
+        #{tradmCost,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmInvoiceper != null">
+        #{tradmInvoiceper,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmStatusfollow != null">
+        #{tradmStatusfollow,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmUpdatetime != null">
+        #{tradmUpdatetime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.Trademark">
+    update sci_trademark
+    <set>
+      <if test="tradmDept != null">
+        tradm_Dept = #{tradmDept,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmCode != null">
+        tradm_Code = #{tradmCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmPngandexplain != null">
+        tradm_PngAndExplain = #{tradmPngandexplain,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmApplyper != null">
+        tradm_ApplyPer = #{tradmApplyper,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmAgency != null">
+        tradm_Agency = #{tradmAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmType != null">
+        tradm_Type = #{tradmType,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmItem != null">
+        tradm_Item = #{tradmItem,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmApplynum != null">
+        tradm_ApplyNum = #{tradmApplynum,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmApplytime != null">
+        tradm_ApplyTime = #{tradmApplytime,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmRegistertime != null">
+        tradm_RegisterTime = #{tradmRegistertime,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmValidtime != null">
+        tradm_ValidTime = #{tradmValidtime,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmCost != null">
+        tradm_Cost = #{tradmCost,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmInvoiceper != null">
+        tradm_InvoicePer = #{tradmInvoiceper,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmStatusfollow != null">
+        tradm_StatusFollow = #{tradmStatusfollow,jdbcType=VARCHAR},
+      </if>
+      <if test="tradmUpdatetime != null">
+        tradm_UpdateTime = #{tradmUpdatetime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.Trademark">
+    update sci_trademark
+    set tradm_Dept = #{tradmDept,jdbcType=VARCHAR},
+      tradm_Code = #{tradmCode,jdbcType=VARCHAR},
+      tradm_PngAndExplain = #{tradmPngandexplain,jdbcType=VARCHAR},
+      tradm_ApplyPer = #{tradmApplyper,jdbcType=VARCHAR},
+      tradm_Agency = #{tradmAgency,jdbcType=VARCHAR},
+      tradm_Type = #{tradmType,jdbcType=VARCHAR},
+      tradm_Item = #{tradmItem,jdbcType=VARCHAR},
+      tradm_ApplyNum = #{tradmApplynum,jdbcType=VARCHAR},
+      tradm_ApplyTime = #{tradmApplytime,jdbcType=VARCHAR},
+      tradm_RegisterTime = #{tradmRegistertime,jdbcType=VARCHAR},
+      tradm_ValidTime = #{tradmValidtime,jdbcType=VARCHAR},
+      tradm_Cost = #{tradmCost,jdbcType=VARCHAR},
+      tradm_InvoicePer = #{tradmInvoiceper,jdbcType=VARCHAR},
+      tradm_StatusFollow = #{tradmStatusfollow,jdbcType=VARCHAR},
+      tradm_UpdateTime = #{tradmUpdatetime,jdbcType=VARCHAR},
+      eid = #{eid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getAllTradeMarkMsg" resultMap="BaseResultMap">
+  	SELECT * from sci_trademark
+  </select>
+  
+  <select id="selectCountNum" resultType="int">
+  	SELECT COUNT(*) FROM sci_trademark
+  </select>
+  <delete id="deleteByPrimaryKeys" parameterType="int">
+  	DELETE  FROM sci_trademark WHERE id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
+  <select id="countAgencyTradeMark" resultType="int">
+    SELECT COUNT(*) FROM sci_trademark WHERE tradm_ApplyTime BETWEEN #{0} AND #{1}
+  </select>
+  <select id="countAuthorizationTradeMark" resultType="int">
+  SELECT COUNT(*) FROM sci_trademark WHERE tradm_RegisterTime IS NOT NULL
+   AND tradm_RegisterTime!="" 
+   AND tradm_RegisterTime BETWEEN #{0} AND #{1}
+  </select>
+  <select id="countAuthorizationTradeMarkNum" resultType="int">
+    SELECT COUNT(*) FROM sci_trademark WHERE tradm_RegisterTime IS NOT NULL AND tradm_RegisterTime !=""
+  </select>
+</mapper>

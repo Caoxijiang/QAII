@@ -42,7 +42,7 @@
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">企业名称</label>
 			    <div class="layui-input-block">
-			      <input type="text" name="companyName" lay-verify="title" autocomplete="off" class="layui-input">
+					<input type="text" name="companyName" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
@@ -145,6 +145,8 @@
 				<div class="layui-input-block">
 					<div class="layui-upload" style="width:50%;display:inline-block;">
 						<input type="text" name="i1" class="layui-input input"  disabled="">
+                        <input type="hidden" name="imgtype1" class="layui-input input"  disabled="">
+						<input type="hidden" name="fid1"  />
 						<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline">在线预览</a>
 						<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload" >下载</a>
 						<a class="layui-btn layui-btn-edit layui-btn-xs" id="upload">重新上传</a>
@@ -205,6 +207,8 @@
 						<div class="layui-input-block">
 							<div class="layui-upload">
 								<input type="text" name="i2" class="layui-input input">
+								<input type="hidden" name="fid2"  />
+                                <input type="hidden" name="imgtype2" class="layui-input input"  disabled="">
 							</div>
 						</div>
 					</div>
@@ -379,14 +383,19 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
                   console.log(imgs.fileStyle);
                   if (imgs.fileStyle=="License") {;
                       var i1=(imgs.filePath);
+                      var imgtype1=imgs.fileStyle;
+                      var fid1=imgs.id;
                   }else if(imgs.fileStyle=="Electronic") {
                       var i2=(imgs.filePath);
+                      var imgtype2=imgs.fileStyle;
+                      var fid2=img.id;
                   }
               }
           }
           if(Info!=null){
               form.val('example', {
-                  "companyName": Info.companyName //
+                  "fid":Info.id
+                  ,"companyName": Info.companyName //
                   ,"creditCode": Info.creditCode
                   ,"establishTime":Info.establishTime
                   ,"companyType":Info.companyType
@@ -407,6 +416,10 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
                   ,"desc": ""
                   ,"i1":i1
                   ,"i2":i2
+                  ,"imgtype1":imgtype1
+                  ,"imgtype2":imgtype2
+				  ,"fid1":fid1
+				  ,"fid2":fid2
               });
 				  //科技型中小企业
 				  var isTech=Info.isTechnologyEnterprise+"";
@@ -488,15 +501,13 @@ $('#isTechnologyEnterprise').click(function(){
     })
     //重新上传
     $("#upload").click(function(){
-        var id=$('input[name="fid1"]').val();
-        var topic=$('input[name="topic"]').val();
-        var style="electronic";
-        var tid=$('input[name="id"]').val();
-        console.log(id+"id"+tid+"tid");
+        var fid=$('input[name="fid1"]').val();
+        var imgtype1=$('input[name="imgtype1"]').val();
+       // var nid=id;
         layer.open({
             type:2,
             title:"重新上传文件",
-            content:'hatchfilereload.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+            content:'hatchfilereload.do?fid='+fid+'&nid='+id+'&imgtype1='+imgtype1,
             area: ['500px', '420px'],
             anim:0
         });
@@ -524,15 +535,16 @@ $('#isTechnologyEnterprise').click(function(){
     })
     //重新上传-发表电子版
     $("#upload1").click(function(){
-        var id=$('input[name="fid1"]').val();
-        var topic=$('input[name="topic"]').val();
-        var style="electronic";
-        var tid=$('input[name="id"]').val();
-        console.log(id+"id"+tid+"tid");
+        var fid=$('input[name="fid2"]').val();
+        var imgtype2=$('input[name="imgtype2"]').val();
+       // var nid=id;
+        // var topic=$('input[name="topic"]').val();
+        // var style="electronic";
+        // var tid=$('input[name="id"]').val();
         layer.open({
             type:2,
             title:"重新上传文件",
-            content:'hatchfilereload2.do?id='+id+'&topic='+topic+'&style='+style+'&tid='+tid,
+            content:'hatchfilereload2.do?fid='+fid+'&nid='+id+'&imgtype2='+imgtype2,
             area: ['500px', '420px'],
             anim:0
         });
