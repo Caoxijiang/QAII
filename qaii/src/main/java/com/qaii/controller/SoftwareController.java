@@ -119,12 +119,16 @@ public class SoftwareController {
 	//更新软著操作时的插入软著文件信息
 	int updatewithSoftwarefile(MultipartFile[] files,Softwarecopyright soft) throws CustomException {
 		if (files.equals(null) && files.length < 0) {
+			softwareService.dellsoftMsg(new Integer[]{soft.getId()});
 			throw new CustomException("请至少插入一个文件!");
+
 		}
 		if(files[0].getSize()==0)
 			return 0;
 		Softcopyrightfile softfile=new Softcopyrightfile();
 		for (int i = 0; i < files.length; i++) {
+			if (files[i].isEmpty())
+				continue;
 			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
 			 
 			 String name=files[i].getOriginalFilename();
@@ -197,11 +201,14 @@ public class SoftwareController {
 	//使用excel文件快捷导入软著数据
 	@RequestMapping(value="insertSoftDatabyexcel.do")
 	@ResponseBody
-	public Layui test(@RequestParam("file")MultipartFile file) throws FileNotFoundException, IOException, CustomException, AlertException  {
+	public Layui test(@RequestParam("file")MultipartFile file, Softcopyrightfile recordfile) throws FileNotFoundException, IOException, CustomException, AlertException  {
 		Layui result = null;
 		List<String> list =new ArrayList<>();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		String filename=file.getOriginalFilename();
+		recordfile.setFilename("null");
+		recordfile.setPath("null");
+		recordfile.setStyle("master");
 		Workbook wookbook;
 		//判断是不是excel文件
 		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
@@ -263,6 +270,7 @@ public class SoftwareController {
 					if(soft.getSoftUpdatetime()!=null)
 					soft.setSoftUpdatetime(soft.getSoftUpdatetime().replace("/", "-"));	
 					softwareService.insertSoft(soft);
+					recordfile.setSid(soft.getId());
 					result=result.data(1, null);
 					
 				}
@@ -297,8 +305,8 @@ public class SoftwareController {
 	
 	//插入软著文件信息
 	void updateSoftwarefile(MultipartFile[] files,Softwarecopyright soft) throws CustomException {
-		if (files.equals(null) && files.length < 0) {
-			throw new CustomException("请至少插入一个文件!");
+		if (files[0].isEmpty() || files.length < 1) {
+			throw new CustomException("主要文件不能为空!");
 		}
 		Softcopyrightfile softfile=new Softcopyrightfile();
 		for (int i = 0; i < files.length; i++) {
