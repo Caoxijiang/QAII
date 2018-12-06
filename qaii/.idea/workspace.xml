@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42074fb5-b165-4f9f-a415-0f5bff3ecb84" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/EmpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/EmpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/editdetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/editdetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/systemPersonnel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/systemPersonnel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -143,11 +140,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorFileMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            <state relative-caret-position="162">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -216,11 +213,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14715">
-              <caret line="545" column="37" selection-start-line="545" selection-start-column="21" selection-end-line="545" selection-end-column="37" />
+            <state relative-caret-position="223">
+              <caret line="549" column="11" lean-forward="true" selection-start-line="549" selection-start-column="11" selection-end-line="549" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -326,7 +323,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/FileLoadUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/ImgLoadResult.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorFileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorFileServiceImpl.java" />
@@ -339,6 +335,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/checkdetail.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/EmpController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/editdetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp" />
       </list>
     </option>
   </component>
@@ -499,7 +496,18 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="personnel" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="hatch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
@@ -729,12 +737,12 @@
       <workItem from="1543799438002" duration="7693000" />
       <workItem from="1543807865288" duration="6574000" />
       <workItem from="1543885867468" duration="6866000" />
-      <workItem from="1543972507398" duration="597000" />
+      <workItem from="1543972507398" duration="2970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188802000" />
+    <option name="totallyTimeSpent" value="191175000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -746,10 +754,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11247335" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20255864" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -759,7 +767,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49733475" visible="true" weight="0.6496746" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49733475" visible="true" weight="0.29067245" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38937092" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1144,8 +1152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorFileMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="162">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -1199,8 +1207,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14715">
-          <caret line="545" column="37" selection-start-line="545" selection-start-column="21" selection-end-line="545" selection-end-column="37" />
+        <state relative-caret-position="223">
+          <caret line="549" column="11" lean-forward="true" selection-start-line="549" selection-start-column="11" selection-end-line="549" selection-end-column="11" />
         </state>
       </provider>
     </entry>

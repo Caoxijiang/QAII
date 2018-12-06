@@ -550,7 +550,6 @@ $('#isTechnologyEnterprise').click(function(){
         });
     })
     function download(src) {
-    function download(src) {
         var $a = document.createElement('a');
         $a.setAttribute("href", src);
         $a.setAttribute("download", "");
