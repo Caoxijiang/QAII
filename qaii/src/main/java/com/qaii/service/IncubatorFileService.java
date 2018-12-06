@@ -8,4 +8,6 @@ public interface IncubatorFileService {
 	int insert(List<IncubatorFile> iFlist);
 	
 	List<IncubatorFile> selectByPrimaryKey(Integer id);
+
+	int updateByPrimaryKey(IncubatorFile record);
 }
