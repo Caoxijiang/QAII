@@ -164,7 +164,7 @@ public class WorkController {
 	@RequestMapping("addWork.do")
 	String Addwork(HttpServletRequest req, 
 			Work record, 
-			@RequestParam("file") MultipartFile[] files) {
+			@RequestParam("file") MultipartFile[] files) throws CustomException {
 		loadData(req, record);		
 		record.setIsPass(BYTE_FALSE);
 		int row = workService.insertMessage(record);
@@ -177,16 +177,24 @@ public class WorkController {
 		
 	}
 	
-	int insertFile(Work record, MultipartFile[] files) {
+	int insertFile(Work record, MultipartFile[] files) throws CustomException {
 		// TODO Auto-generated method stub
-		if (files.equals(null) && files.length < 0) {
-			return 1;
+		if (files[0].isEmpty() || files.length < 1) {
+			workService.deleteMsg(new Integer[]{(record.getId()).intValue()});
+			throw new CustomException("封面文件不能为空!");
 		}
-		if(files[0].getSize()==0)
-			return 0;
+		if (files[1].isEmpty()) {
+			workService.deleteMsg(new Integer[]{(record.getId()).intValue()});
+			throw new CustomException("目录文件不能为空!");
+		}
+		if (files[2].isEmpty()) {
+			workService.deleteMsg(new Integer[]{(record.getId()).intValue()});
+			throw new CustomException("首页文件不能为空!");
+		}
 		WorkFile file = new WorkFile();
 		for (int i = 0; i < files.length; i++) {
-			
+			if (files[i].isEmpty())
+				continue;
 			//文件类型
 			String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
 			//文件名

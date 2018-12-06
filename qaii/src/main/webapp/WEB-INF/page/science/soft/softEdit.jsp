@@ -217,11 +217,7 @@ $.post({
 	success:function(data){
 		var deptInfo=data.data;
 		if(deptInfo!=null){
-			$(deptInfo).each(function(index,element){
-				index+=1;
-				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
-				$("#deptt").append(heml);
-			})						
+
 		
 			//JavaScript代码区域
 			layui.use(['form', 'layedit', 'laydate','table','element','upload'], function(){
@@ -417,14 +413,25 @@ $.post({
 			      tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
 			    }
 			  });
-			  
-			});
+            });
 		}else{
 			alert("部门信息显示失败");
 		}
 	}
 })
-
+$.post({
+    url:"findDeptInfoList.do",
+    success:function(data) {
+        var deptInfo = data.data;
+        if (deptInfo != null) {
+            $(deptInfo).each(function (index, element) {
+                index += 1;
+                let heml = '<option value=' + element.deptName + '>' + element.deptName + '</option>';
+                $("#deptt").append(heml);
+            })
+        }
+    }
+})
 </script>
 <script type="text/javascript">
 //证明文件点击事件-在线预览
