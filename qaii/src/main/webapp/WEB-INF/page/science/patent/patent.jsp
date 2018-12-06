@@ -96,7 +96,6 @@
 	<div class="int-inline"><input id="patPrepublishaudit"  type="checkbox" value="是否提前公开实审" checked/><lable>是否提前公开实审</lable></div>
 	<div class="int-inline"><input id="patApplynum"  type="checkbox" value="申请号" checked/><lable>申请号</lable></div>
 	<div class="int-inline"><input id="patApplytime"  type="checkbox" value="申请日" checked/><lable>申请日</lable></div>
-	<div class="int-inline"><input id="patPublishnum"  type="checkbox" value="公开号" checked/><lable>公开号</lable></div>
 	<div class="int-inline"><input id="patPublishtime"  type="checkbox" value="公开日" checked/><lable>公开日</lable></div>
 	<div class="int-inline"><input id="patAuthorzationtime"  type="checkbox" value="授权公告日" checked/><lable>授权公告日</lable></div>
 	<div class="int-inline"><input id="patRemission"  type="checkbox" value="是否减免" checked/><lable>是否减免</lable></div>
@@ -156,7 +155,6 @@ layui.use('table', function(obj){
 		{field: 'patPrepublishaudit', title: '是否提前公开实审',sort: true,width:200},
 		{field: 'patApplynum', title: '申请号',width:150},
 		{field: 'patApplytime', title: '申请日',sort: true,width:200},
-		{field: 'patPublishnum', title: '公开号',width:200},
 		{field: 'patPublishtime', title: '公开日',sort: true,width:200},
 		{field: 'patAuthorzationtime', title: '授权公告日',width:200},
 		{field: 'patRemission', title: '是否减免',width:230},
