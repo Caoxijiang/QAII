@@ -130,7 +130,7 @@ layui.config({
 layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
 	 //监听表格复选框选择
-	console.log(JSON.stringify(obj.cache));
+	console.log("sdfgsd"+JSON.stringify(obj.cache));
 	  
   //执行一个 table 实例
   table.render({
@@ -165,8 +165,6 @@ layui.use('table', function(obj){
 		{field: 'patAgent', title: '代理人',width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:380}
     ]],
-    
-    
 	  //表格数据
     data:obj.data,
     done: function(res, curr, count){
@@ -177,7 +175,6 @@ layui.use('table', function(obj){
   //alert(JSON.stringify(obj.cache.testReload[0]))
  console.log(obj.cache)
 	//添加筛选功能
-	
   var $ = layui.$, active = {
       reload: function(){
         var demoReload = $('#demoReload');
@@ -340,29 +337,37 @@ layui.use('table', function(obj){
 	//var arr=[];
 	table.on('checkbox(demo)', function(obj){
 		 var data = obj.data //获得当前行数据
-		 arr.push(data.id);		 
-		 
+		 arr.push(data.id);
 	  });
 	
-	$("#dellist").on('click', function(){
-		alert("请慎重考虑，删除数据不可恢复");
-		$.post({
-		  	url:"dellPatentInfo.do",
-		  	data:{
-		  		"requestDate" : arr
-		  	},
-		  	success:function(data){
+	$("#dellist").on('click', function(obj){
+        confirm("请慎重考虑，删除数据不可恢复");
+        var checkallbox=$("[data-field='0'] .laytable-cell-checkbox div:first").hasClass("layui-form-checked");
+        if(checkallbox){//全选事件判定 xijiang
 
-		        if(data.status == 1){
-		            alert('删除成功，请刷新查看');
-		            window.location.reload();
-		        } else {
-		            alert('删除成功，请刷新查看'); return false;
-		            window.location.reload();
-		        }
-		    }
-		  }) 
+			var data = obj.data //获得当前行数据
+
+            console.log("asdfsad"+data);
+		}else{
+			$.post({
+				url:"dellPatentInfo.do",
+				data:{
+					"requestDate" : arr
+				},
+				success:function(data){
+
+					if(data.status == 1){
+						alert('删除成功，请刷新查看');
+						window.location.reload();
+					} else {
+						alert('删除成功，请刷新查看'); return false;
+						window.location.reload();
+					}
+				}
+			  })
+        }
 	});
+
 
 });
 </script>
