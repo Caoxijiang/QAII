@@ -76,7 +76,7 @@ public class IncubatorServiceImpl implements IncubatorService {
 	}
 
 	@Override
-	public List<CompanyInfo> selectAlllistByPreThreeMonth(String establishtime) {
-		return incubatorMapper.selectAlllistByPreThreeMonth(establishtime);
+	public List<CompanyInfo> selectAlllistByPreThreeMonth() {
+		return incubatorMapper.selectAlllistByPreThreeMonth();
 	}
 }

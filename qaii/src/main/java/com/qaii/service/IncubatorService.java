@@ -19,5 +19,5 @@ public interface IncubatorService {
 	List<Incubator> selectAlllist();
 	int updateByPrimaryKeySelective(Incubator incubator);
 	int deleteByPrimaryKey(Integer[] id);
-    List<CompanyInfo> selectAlllistByPreThreeMonth(String establishtime);
+    List<CompanyInfo> selectAlllistByPreThreeMonth();
 }

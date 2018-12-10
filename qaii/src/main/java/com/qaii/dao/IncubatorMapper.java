@@ -29,5 +29,5 @@ public interface IncubatorMapper {
     int updateByPrimaryKey(Incubator record);
     
     List<Incubator> selectAlllist();
-    List<CompanyInfo> selectAlllistByPreThreeMonth(String establishtime);
+    List<CompanyInfo> selectAlllistByPreThreeMonth();
 }

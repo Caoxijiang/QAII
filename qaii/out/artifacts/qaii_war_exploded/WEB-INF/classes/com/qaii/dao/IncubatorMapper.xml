@@ -60,7 +60,7 @@
     <result column="shareholder_position" jdbcType="TINYINT" property="shareholderPosition" />
   </resultMap>
   <select id="selectAlllistByPreThreeMonth" resultMap="CustomMap" parameterType="java.lang.String">
-  		select industry_incubator.id,industry_incubator.Company_name,industry_incubator.credit_code,industry_incubator.establish_time,industry_incubator.company_type,industry_incubator.legal_representative,industry_stockequity.shareholder_name,industry_stockequity.contribution_proportion,industry_stockequity.contribution_time,industry_stockequity.shareholder_position from industry_incubator  left join  industry_stockequity on industry_incubator.id=industry_stockequity.incubator_id where 1=1 and establish_time like "%"#{establishtime,jdbcType=VARCHAR}"%"
+  		select distinct industry_incubator.id,industry_incubator.Company_name,industry_incubator.credit_code,industry_incubator.establish_time,industry_incubator.company_type,industry_incubator.legal_representative,industry_stockequity.shareholder_name,industry_stockequity.contribution_proportion,industry_stockequity.contribution_time,industry_stockequity.shareholder_position from industry_incubator  left join  industry_stockequity on industry_incubator.id=industry_stockequity.incubator_id where 1=1
   </select>
 
 
