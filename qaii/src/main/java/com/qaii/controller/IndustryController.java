@@ -152,6 +152,11 @@ public class IndustryController {
 	public String innovatefilereload(){
 		return "page/industry/innovate/innovatefilereload";
 	}
+	//消息管理
+	@RequestMapping("/indnews.do")
+	public String indnews(){
+		return "page/industry/indnews";
+	}
 
 	//合作情况管理界面查看详情
 	@RequestMapping("/innovateCheck.do")
