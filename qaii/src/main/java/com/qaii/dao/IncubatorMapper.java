@@ -2,6 +2,7 @@ package com.qaii.dao;
 
 import java.util.List;
 
+import com.qaii.domain.CompanyInfo;
 import com.qaii.domain.Incubator;
 
 import java.util.Date;
@@ -28,4 +29,5 @@ public interface IncubatorMapper {
     int updateByPrimaryKey(Incubator record);
     
     List<Incubator> selectAlllist();
+    List<CompanyInfo> selectAlllistByPreThreeMonth(String establishtime);
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.qaii.domain.CompanyInfo;
 import org.springframework.stereotype.Service;
 
 import com.qaii.dao.IncubatorMapper;
@@ -72,5 +73,10 @@ public class IncubatorServiceImpl implements IncubatorService {
 	@Override
 	public int deleteByPrimaryKey(Integer[] id) {
 		return incubatorMapper.deleteByPrimaryKey(id);
+	}
+
+	@Override
+	public List<CompanyInfo> selectAlllistByPreThreeMonth(String establishtime) {
+		return incubatorMapper.selectAlllistByPreThreeMonth(establishtime);
 	}
 }

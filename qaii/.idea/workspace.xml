@@ -2,11 +2,29 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="qaii:war exploded" />
+      <artifact name="QAII:war exploded" />
+      <artifact name="QAII:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42074fb5-b165-4f9f-a415-0f5bff3ecb84" name="Default Changelist" comment="" />
+    <list default="true" id="42074fb5-b165-4f9f-a415-0f5bff3ecb84" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryInformationManagerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qaii/domain/CompanyInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/QAII_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/qaii_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/QAII_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/IndustryInformationManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/controller/IndustryInformationManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/IncubatorMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/IncubatorMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/IncubatorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/dao/IncubatorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/IncubatorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/IncubatorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/IncubatorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/qaii_war_exploded/WEB-INF/classes/com/qaii/service/impl/IncubatorServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,13 +99,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="77" />
+          <entry key="class" value="78" />
           <entry key="css" value="4" />
-          <entry key="java" value="482" />
+          <entry key="java" value="483" />
           <entry key="js" value="35" />
           <entry key="jsp" value="29" />
           <entry key="png" value="3" />
-          <entry key="properties" value="11" />
+          <entry key="properties" value="12" />
           <entry key="tld" value="2" />
           <entry key="ts" value="2" />
           <entry key="xml" value="80" />
@@ -95,13 +113,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="77" />
+          <entry key="CLASS" value="78" />
           <entry key="CSS" value="4" />
           <entry key="Image" value="3" />
-          <entry key="JAVA" value="482" />
+          <entry key="JAVA" value="483" />
           <entry key="JSP" value="29" />
           <entry key="JavaScript" value="35" />
-          <entry key="Properties" value="11" />
+          <entry key="Properties" value="12" />
           <entry key="TypeScript" value="2" />
           <entry key="XML" value="82" />
         </counts>
@@ -110,65 +128,34 @@
         <counts>
           <entry key="css" value="6" />
           <entry key="ft" value="9" />
-          <entry key="java" value="5997" />
+          <entry key="java" value="6007" />
           <entry key="js" value="1080" />
           <entry key="jsp" value="4" />
-          <entry key="properties" value="56" />
-          <entry key="xml" value="774" />
+          <entry key="properties" value="58" />
+          <entry key="xml" value="778" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="6" />
-          <entry key="JAVA" value="5997" />
+          <entry key="JAVA" value="6007" />
           <entry key="JSP" value="4" />
           <entry key="JavaScript" value="1080" />
-          <entry key="Properties" value="56" />
+          <entry key="Properties" value="58" />
           <entry key="SQL" value="3" />
           <entry key="VTL" value="9" />
-          <entry key="XML" value="771" />
+          <entry key="XML" value="775" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/industryDataOverviewController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardIncubateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="57" selection-start-line="57" selection-end-line="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/Incubator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-              <folding>
-                <element signature="e#1826#1827#0" expanded="true" />
-                <element signature="e#1851#1852#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -176,17 +163,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="62" column="82" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
+            <state relative-caret-position="155">
+              <caret line="386" column="61" selection-start-line="386" selection-start-column="50" selection-end-line="386" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/Work.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryInformationManagerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="7" column="27" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="27" />
+            <state relative-caret-position="73">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="131" selection-start-line="131" selection-end-line="131" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -194,8 +208,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            <state relative-caret-position="186">
+              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -203,8 +217,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            <state relative-caret-position="172">
+              <caret line="79" column="54" lean-forward="true" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
+              <folding>
+                <element signature="e#582#583#0" expanded="true" />
+                <element signature="e#633#634#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#757#758#0" expanded="true" />
+                <element signature="e#1086#1087#0" expanded="true" />
+                <element signature="e#1142#1143#0" expanded="true" />
+                <element signature="e#1194#1195#0" expanded="true" />
+                <element signature="e#1249#1250#0" expanded="true" />
+                <element signature="e#1302#1303#0" expanded="true" />
+                <element signature="e#1358#1359#0" expanded="true" />
+                <element signature="e#1416#1417#0" expanded="true" />
+                <element signature="e#1477#1478#0" expanded="true" />
+                <element signature="e#1716#1717#0" expanded="true" />
+                <element signature="e#1768#1769#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -221,7 +251,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>path</find>
       <find>listlocalPath</find>
       <find>GROUP BY award_time DESC</find>
       <find>listRecords</find>
@@ -251,6 +280,7 @@
       <find>asasas</find>
       <find>fid</find>
       <find>selectIndusCheckInfo</find>
+      <find>selectAlllistByPreThreeMonth</find>
     </findStrings>
     <replaceStrings>
       <replace>ministryName</replace>
@@ -272,10 +302,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/MinistryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/MinistryServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/MinistryMapper.java" />
@@ -311,7 +337,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/WorkMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/TaskDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/FileLogUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/FileLoadUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/ImgLoadResult.java" />
@@ -323,6 +348,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchfilereload2.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
       </list>
     </option>
   </component>
@@ -349,7 +379,12 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="QAII" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -369,62 +404,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="qaii" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="qaii" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="controller" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -505,12 +484,89 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="qaii" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="WEB-INF" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="WEB-INF" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="page" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544429877890" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544440353444" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -551,10 +607,9 @@
       </method>
     </configuration>
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.90" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="qaii:war exploded">
+        <artifact name="QAII:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/QAII" />
           </settings>
@@ -620,6 +675,8 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="qaii:war exploded" />
+          <artifact name="QAII:war exploded" />
+          <artifact name="QAII:war exploded" />
         </option>
       </method>
     </configuration>
@@ -670,7 +727,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164308000" />
+    <option name="totallyTimeSpent" value="164969000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -683,9 +740,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26626325" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.090771556" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -695,8 +751,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.4815618" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.11171366" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" weight="0.4815618" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.55500823" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32840723" />
@@ -707,7 +763,7 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.43275487" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.4989339" weight="0.59219086" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.4989339" weight="0.1724138" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -784,6 +840,24 @@
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryInformationManagerController.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryInformationManagerController.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryInformationManagerController.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -793,29 +867,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/WorkService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/WorkMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1758">
-          <caret line="247" column="32" selection-start-line="247" selection-start-column="14" selection-end-line="247" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QAII.iml" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/io/FileWriter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14910">
-          <caret line="512" column="24" selection-start-line="512" selection-start-column="8" selection-end-line="512" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/io/BufferedWriter.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -854,8 +905,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardIncubateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1200">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="30">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -903,13 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IncubatorRecordController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -922,13 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="62" column="82" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
         </state>
       </provider>
     </entry>
@@ -1086,13 +1123,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="79" column="54" lean-forward="true" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
+          <folding>
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1142#1143#0" expanded="true" />
+            <element signature="e#1194#1195#0" expanded="true" />
+            <element signature="e#1249#1250#0" expanded="true" />
+            <element signature="e#1302#1303#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1416#1417#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+            <element signature="e#1716#1717#0" expanded="true" />
+            <element signature="e#1768#1769#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="386" column="61" selection-start-line="386" selection-start-column="50" selection-end-line="386" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryInformationManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>qaii:war exploded</last-edited>
+          <last-edited>QAII:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
