@@ -8,6 +8,13 @@
   <component name="ChangeListManager">
     <list default="true" id="42074fb5-b165-4f9f-a415-0f5bff3ecb84" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/patent/patent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/patent/patent.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +27,7 @@
     <session id="372316882">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="1" />
@@ -30,42 +37,47 @@
           <entry key="project.open.time.32" value="2" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="dtd" value="1" />
-          <entry key="java" value="60" />
-          <entry key="jsp" value="41" />
-          <entry key="properties" value="2" />
-          <entry key="xml" value="14" />
+          <entry key="java" value="62" />
+          <entry key="js" value="1" />
+          <entry key="jsp" value="49" />
+          <entry key="properties" value="3" />
+          <entry key="xml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="DTD" value="1" />
-          <entry key="JAVA" value="60" />
-          <entry key="JSP" value="41" />
-          <entry key="Properties" value="2" />
-          <entry key="XML" value="27" />
+          <entry key="JAVA" value="62" />
+          <entry key="JSP" value="49" />
+          <entry key="JavaScript" value="1" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="1375" />
-          <entry key="jsp" value="376" />
+          <entry key="jsp" value="1074" />
+          <entry key="properties" value="4" />
           <entry key="xml" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1375" />
-          <entry key="JSP" value="376" />
+          <entry key="JSP" value="1074" />
+          <entry key="Properties" value="4" />
           <entry key="SQL" value="8" />
           <entry key="XML" value="37" />
         </counts>
@@ -143,44 +155,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/inform/editFaildind.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/inform/editSuccesdind.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/innovate/innovateAdd.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandEdit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3087" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirm.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1620" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brand.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandAdd.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="79" column="102" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="102" />
+            <state relative-caret-position="-3267">
+              <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
@@ -189,29 +167,79 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandCheck.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/patent/patent.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="76" column="136" lean-forward="true" selection-start-line="76" selection-end-line="77" />
+            <state relative-caret-position="54">
+              <caret line="358" lean-forward="true" selection-start-line="358" selection-end-line="377" selection-end-column="5" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/patent/patentAdd.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="51" selection-start-line="51" selection-end-line="69" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandEdit.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="452">
+              <caret line="356" column="5" selection-start-line="356" selection-start-column="5" selection-end-line="356" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/serviceFirm/serviceFirmAdd.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/PatentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1431">
+              <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-9407">
+              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchshare.jsp">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchmumber.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1134">
+              <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -226,24 +254,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>BaseResultMap</find>
-      <find>ShowDir</find>
-      <find>listR</find>
-      <find>listRe</find>
-      <find>insertPeriodicalByExcel.do</find>
-      <find>loadDataWithList</find>
-      <find>test3</find>
-      <find>selectPathBytableNamePath</find>
-      <find>selectAllpathTable</find>
-      <find>selectTablenamePath</find>
-      <find>Compare</find>
-      <find>listpath</find>
-      <find>fileList</find>
-      <find>transferTo</find>
-      <find>FILE_PATH</find>
-      <find>PATH</find>
-      <find>listlocalPaths</find>
-      <find>hi</find>
       <find>fid1</find>
       <find>hatchfilereload2</find>
       <find>hide</find>
@@ -255,7 +265,25 @@
       <find>硕士学历毕业</find>
       <find>硕士</find>
       <find>empSecondeducationschool</find>
+      <find>股东</find>
+      <find>添加</find>
+      <find>del</find>
+      <find>dellPatentInfo</find>
       <find>类</find>
+      <find>全选</find>
+      <find>test3</find>
+      <find>pelupdate</find>
+      <find>checkbox(demo)</find>
+      <find>checkbox</find>
+      <find>删除</find>
+      <find>dellist</find>
+      <find>delmore</find>
+      <find>filter</find>
+      <find>testTable</find>
+      <find>testReload</find>
+      <find>tool</find>
+      <find>demo</find>
+      <find>demoReload</find>
     </findStrings>
     <replaceStrings>
       <replace>ministryName</replace>
@@ -277,8 +305,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/js/indchars.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/TaskDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/TaskMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/TaskServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/TaskService.java" />
@@ -308,11 +334,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/WorkMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/TaskDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/FileLogUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchCheck.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/FileLoadUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/ImgLoadResult.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorFileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorFileServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorFileMapper.java" />
@@ -324,10 +348,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/checkdetail.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/EmpController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/editdetail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandAdd.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandCheck.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandEdit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/patent/patent.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp" />
       </list>
     </option>
   </component>
@@ -398,6 +426,11 @@
             <path>
               <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -405,6 +438,28 @@
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
@@ -448,18 +503,8 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="science" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="science" type="462c0819:PsiDirectoryNode" />
-              <item name="brand" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="hatch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qaii" type="b2602c69:ProjectViewProjectNode" />
@@ -470,7 +515,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -524,6 +568,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -541,6 +586,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\git\qaii\src\main\webapp\WEB-INF\page\science\patent" />
       <recent name="F:\项目\QAII\qaii\src\main\java\com\qaii\dao" />
     </key>
   </component>
@@ -694,12 +740,13 @@
       <workItem from="1544065270112" duration="4466000" />
       <workItem from="1544083717145" duration="479000" />
       <workItem from="1544085146740" duration="627000" />
-      <workItem from="1544145609392" duration="2281000" />
+      <workItem from="1544145609392" duration="15463000" />
+      <workItem from="1544404103630" duration="13524000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199103000" />
+    <option name="totallyTimeSpent" value="225809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -711,9 +758,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24840085" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2510661" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -723,8 +771,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49733475" visible="true" weight="0.37201735" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.38937092" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49733475" visible="true" weight="0.39370933" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.31236443" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32840723" />
@@ -830,6 +878,12 @@
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/controller/PatentController.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -839,44 +893,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IncubatorRecordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16686">
-          <caret line="656" selection-start-line="656" selection-end-line="656" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/GlobalExceptionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.settings/org.eclipse.jdt.apt.core.prefs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="68" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/TaskDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3780">
@@ -895,13 +911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchmumber.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -947,20 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="48" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="815">
@@ -982,13 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
           <caret line="129" column="56" lean-forward="true" selection-start-line="129" selection-start-column="56" selection-end-line="129" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11016">
-          <caret line="491" column="19" selection-start-line="491" selection-start-column="19" selection-end-line="491" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1082,13 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="378" lean-forward="true" selection-start-line="378" selection-end-line="378" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/honor/person/personAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324" />
@@ -1106,9 +1087,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/inform/editSuccesdind.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/innovate/innovateAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3087" />
@@ -1121,9 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1620" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brand.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
@@ -1138,17 +1113,103 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandCheck.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="76" column="136" lean-forward="true" selection-start-line="76" selection-end-line="77" />
+          <caret line="76" column="136" selection-start-line="76" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/echarts.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret column="313817" selection-start-column="313817" selection-end-column="313817" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brand.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12123">
+          <caret line="532" selection-start-line="532" selection-end-line="532" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/PatentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1431">
+          <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="51" selection-start-line="51" selection-end-line="69" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9407">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchmumber.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatchshare.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/innovate/innovate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3267">
+          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandEdit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
+        <state relative-caret-position="-3267">
+          <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/patent/patentAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/patent/patent.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="358" lean-forward="true" selection-start-line="358" selection-end-line="377" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/hatch/hatch.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="356" column="5" selection-start-line="356" selection-start-column="5" selection-end-line="356" selection-end-column="5" />
         </state>
       </provider>
     </entry>
