@@ -2,6 +2,7 @@ package com.qaii.service;
 
 import java.util.List;
 
+import com.qaii.domain.CompanyInfo;
 import com.qaii.domain.Incubator;
 
 import java.util.List;
@@ -18,4 +19,6 @@ public interface IncubatorService {
 	List<Incubator> selectAlllist();
 	int updateByPrimaryKeySelective(Incubator incubator);
 	int deleteByPrimaryKey(Integer[] id);
+
+	List<String> selectAlllistByPreThreeMonth(String str);
 }

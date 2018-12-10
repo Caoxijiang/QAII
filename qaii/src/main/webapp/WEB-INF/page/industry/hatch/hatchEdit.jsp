@@ -508,7 +508,6 @@ $('#isTechnologyEnterprise').click(function(){
             type:2,
             title:"重新上传文件",
             content:'hatchfilereload.do?fid='+fid+'&nid='+id+'&imgtype1='+imgtype1,
-            area: ['500px', '420px'],
             anim:0
         });
     })
@@ -545,11 +544,9 @@ $('#isTechnologyEnterprise').click(function(){
             type:2,
             title:"重新上传文件",
             content:'hatchfilereload2.do?fid='+fid+'&nid='+id+'&imgtype2='+imgtype2,
-            area: ['500px', '420px'],
             anim:0
         });
     })
-    function download(src) {
     function download(src) {
         var $a = document.createElement('a');
         $a.setAttribute("href", src);

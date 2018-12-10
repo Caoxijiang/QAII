@@ -207,7 +207,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
                           "ownselfUnit":awardInfo.ownselfUnit,
                           "ownselfContactMethod":awardInfo.ownselfContactMethod,
                           "remark":awardInfo.remark,
-                          "file0":awardInfo.listFile[0].filePath,
+                          "file0":awardInfo.listFile[0].fileName,
 						  "fid":awardInfo.listFile[0].id,
 						  "fpath":awardInfo.listFile[0].filePath
 					  })
@@ -251,7 +251,6 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
             type:2,
             title:"重新上传文件",
             content:'serviceFirmfilereload.do?id='+id+'&fid='+fid+'&fpath='+fpath,
-            area: ['500px', '420px'],
             anim:0
         });
     })
