@@ -47,6 +47,22 @@
   		select * from industry_incubator
   </select>
 
+  <resultMap id="CustomMap" type="com.qaii.domain.CompanyInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="Company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="credit_code" jdbcType="VARCHAR" property="creditCode" />
+    <result column="establish_time" jdbcType="DATE" property="establishTime" />
+    <result column="company_type" jdbcType="VARCHAR" property="companyType" />
+    <result column="legal_representative" jdbcType="VARCHAR" property="legalRepresentative" />
+    <result column="shareholder_name" jdbcType="VARCHAR" property="shareholderName" />
+    <result column="contribution_proportion" jdbcType="VARCHAR" property="contributionProportion" />
+    <result column="contribution_time" jdbcType="DATE" property="contributionTime" />
+    <result column="shareholder_position" jdbcType="TINYINT" property="shareholderPosition" />
+  </resultMap>
+  <select id="selectAlllistByPreThreeMonth" resultMap="CustomMap" parameterType="java.lang.String">
+  		select industry_incubator.id,industry_incubator.Company_name,industry_incubator.credit_code,industry_incubator.establish_time,industry_incubator.company_type,industry_incubator.legal_representative,industry_stockequity.shareholder_name,industry_stockequity.contribution_proportion,industry_stockequity.contribution_time,industry_stockequity.shareholder_position from industry_incubator  left join  industry_stockequity on industry_incubator.id=industry_stockequity.incubator_id where 1=1 and establish_time like "%"#{establishtime,jdbcType=VARCHAR}"%"
+  </select>
+
 
   <select id="selectCountNumsByQianFan" resultType="Integer">
   		select count(*) from industry_incubator where is_thousand_sail_enterprise = 1
@@ -381,25 +397,6 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-
-
-
-  <resultMap id="CustomMap" type="com.qaii.domain.CompanyInfo">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="Company_name" jdbcType="VARCHAR" property="companyName" />
-    <result column="credit_code" jdbcType="VARCHAR" property="creditCode" />
-    <result column="establish_time" jdbcType="VARCHAR" property="establishTime" />
-    <result column="company_type" jdbcType="VARCHAR" property="companyType" />
-    <result column="legal_representative" jdbcType="VARCHAR" property="legalRepresentative" />
-    <result column="shareholder_name" jdbcType="VARCHAR" property="shareholderName" />
-    <result column="contribution_proportion" jdbcType="VARCHAR" property="contributionProportion" />
-    <result column="contribution_time" jdbcType="VARCHAR" property="contributionTime" />
-    <result column="shareholder_position" jdbcType="TINYINT" property="shareholderPosition" />
-  </resultMap>
-  <select id="selectAlllistByPreThreeMonth" resultMap="CustomMap" parameterType="java.lang.String">
-  		select industry_incubator.id,industry_incubator.Company_name,industry_incubator.credit_code,industry_incubator.establish_time,industry_incubator.company_type,industry_incubator.legal_representative,industry_stockequity.shareholder_name,industry_stockequity.contribution_proportion,industry_stockequity.contribution_time,industry_stockequity.shareholder_position from industry_incubator  left join  industry_stockequity on industry_incubator.id=industry_stockequity.incubator_id where 1=1 and establish_time like "%"#{establishtime,jdbcType=VARCHAR}"%"
-  </select>
-
   <update id="updateByPrimaryKey" parameterType="com.qaii.domain.Incubator">
     update industry_incubator
     set pid = #{pid,jdbcType=INTEGER},

@@ -67,9 +67,6 @@
         <li class="layui-nav-item">
           <a href="javascript:;" onclick="iframechange('innovate.do')"><i class="layui-icon layui-icon-read" style="font-size: 22px;"></i>&nbsp;合作情况管理</a>
         </li>
-        <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('indnews.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
-        </li>
       </ul>
     </div>
   </div>

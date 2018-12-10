@@ -2,9 +2,9 @@ package com.qaii.util;
 
 public class ConstantUtil {
 
-    public final static String FILE_BASE_PATH = "C:/File/";
+//    public final static String FILE_BASE_PATH = "C:/File/";
 
-//    public final static String FILE_BASE_PATH = "/Users/wangxin/File/";
+    public final static String FILE_BASE_PATH = "/Users/wangxin/File/";
 
     public final static String INDUSTRY_INSERT_SUCCESS="page/industry/inform/addSuccesdind";
 
