@@ -7,8 +7,6 @@ import java.util.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.constraints.Null;
 
 import com.qaii.domain.IncubatorRecord;
 import com.qaii.service.IncubatorRecordService;
@@ -32,6 +30,7 @@ import com.qaii.service.StockEquityService;
 @Controller
 public class IndustryController {
 	private static String PATH="C:/File/img/industry/";
+	private static String URL="http://www.zmadmin.top/";
 	@Resource
 	private IncubatorService incubatorService;
 	@Resource
@@ -81,6 +80,33 @@ public class IndustryController {
 		result.add(args);
 		return new ModelAndView ("page/industry/hatch/hatchshare","Info",result);
 	}
+	//孵化企业文件重新上传
+	@RequestMapping("/hatchfilereload.do")
+	public ModelAndView hatchfilereload(HttpServletRequest req) throws UnsupportedEncodingException {
+		req.setCharacterEncoding("UTF-8");
+		List<String> result=new ArrayList<String>();
+		String fid=req.getParameter("fid");
+		String nid=req.getParameter("nid");
+		String type=req.getParameter("imgtype1");
+		result.add(fid);
+		result.add(nid);
+		result.add(type);
+		return new ModelAndView ("page/industry/hatch/hatchfilereload","Info",result);
+	}
+	//孵化企业文件重新上传-发表电子版
+	@RequestMapping("/hatchfilereload2.do")
+	public ModelAndView hatchfilereload2(HttpServletRequest req) throws UnsupportedEncodingException {
+		req.setCharacterEncoding("UTF-8");
+		List<String> result=new ArrayList<String>();
+		String fid=req.getParameter("fid");
+		String nid=req.getParameter("nid");
+		String type=req.getParameter("imgtype2");
+		result.add(fid);
+		result.add(nid);
+		result.add(type);
+		return new ModelAndView("page/industry/hatch/hatchfilereload2","Info",result);
+	}
+
 	//孵化企业添加界面
 	@RequestMapping("/hatchAdd.do")
 	public String hatchAdd(){
@@ -120,6 +146,13 @@ public class IndustryController {
 	public String innovateAdd(){
 		return "page/industry/innovate/innovateAdd";
 	}
+
+	//合作情况管理界面重新上传
+	@RequestMapping("/innovatefilereload.do")
+	public String innovatefilereload(){
+		return "page/industry/innovate/innovatefilereload";
+	}
+
 	//合作情况管理界面查看详情
 	@RequestMapping("/innovateCheck.do")
 	public String innovateCheck(){
@@ -141,6 +174,13 @@ public class IndustryController {
 	public String instituteAdd(){
 		return "page/industry/honor/institute/instituteAdd";
 	}
+
+	//院获奖情况界面重新上传
+	@RequestMapping("/institutefilereload.do")
+	public String institutefilereload(){
+		return "page/industry/honor/institute/institutefilereload";
+	}
+
 	//院获奖情况界面 查看详情
 	@RequestMapping("/instituteCheck.do")
 	public String instituteCheck(){
@@ -151,6 +191,7 @@ public class IndustryController {
 	public String instituteEdit(){
 		return "page/industry/honor/institute/instituteEdit";
 	}
+
 	//孵化企业获奖情况界面
 	@RequestMapping("/incubate.do")
 	public String incubate(){
@@ -161,11 +202,19 @@ public class IndustryController {
 	public String incubateAdd(){
 		return "page/industry/honor/incubate/incubateAdd";
 	}
+
+	//孵化企业获奖情况界面 重新上传
+	@RequestMapping("/incubatefilereload.do")
+	public String incubatefilereload(){
+		return "page/industry/honor/incubate/incubatefilereload";
+	}
+
 	//孵化企业获奖情况界面查看详情
 	@RequestMapping("/incubateCheck.do")
 	public String incubateCheck(){
 		return "page/industry/honor/incubate/incubateCheck";
 	}
+
 	//孵化企业获奖情况界面修改
 	@RequestMapping("/incubateEdit.do")
 	public String incubateEdit(){
@@ -191,6 +240,14 @@ public class IndustryController {
 	public String personAdd(){
 		return "page/industry/honor/person/personAdd";
 	}
+
+	//个人获奖界面 重新上传
+	@RequestMapping("/personfilereload.do")
+	public String personfilereload(){
+		return "page/industry/honor/person/personfilereload";
+	}
+
+
 	//服务企业管理界面
 	@RequestMapping("/serviceFirm.do")
 	public String serviceFirm(){
@@ -201,6 +258,13 @@ public class IndustryController {
 	public String serviceFirmAdd(){
 		return "page/industry/serviceFirm/serviceFirmAdd";
 	}
+
+	//服务企业管理重现上传
+	@RequestMapping("/serviceFirmfilereload.do")
+	public String serviceFirmfilereload(){
+		return "page/industry/serviceFirm/serviceFirmfilereload";
+	}
+
 	//服务企业管理查看详情界面
 	@RequestMapping("/serviceFirmCheck.do")
 	public String serviceFirmCheck(){
@@ -210,6 +274,12 @@ public class IndustryController {
 	@RequestMapping("/serviceFirmEdit.do")
 	public String serviceFirmEdit(){
 		return "page/industry/serviceFirm/serviceFirmEdit";
+	}
+
+	//消息管理
+	@RequestMapping("/indnews.do")
+	public String indnews(){
+		return "page/industry/indnews";
 	}
 
 	// 孵化企业管理添加接口
@@ -222,18 +292,12 @@ public class IndustryController {
 		IncubatorFile iFile = new IncubatorFile();
 		IncubatorFile iFile1 = new IncubatorFile();
 		List<IncubatorFile> iFlists = new ArrayList<>();
-		Map<String, Object> result = new HashMap<>();
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		List<Map<String, Object>> list2 = new ArrayList<Map<String, Object>>();
-		try {
-			// 文件上传结果
-			result = FileLoadUtils.fileload(files, PATH);
-			list = (List<Map<String, Object>>) result.get("0");
-			list2 = (List<Map<String, Object>>) result.get("1");
-			System.out.println("__________："+list+">>>>>>>>>>>："+list2);
-		} catch (IOException e1) {
-			return "page/industry/inform/addFaildind";
-		}
+		ImgLoadResult imgLoadResult = new ImgLoadResult(files).invoke();
+		if (imgLoadResult.is()) return "page/industry/inform/addFaildind";
+		list2 = imgLoadResult.getList2();
+		Map<String, Object> result = imgLoadResult.getResult();
 		try {
 			IncubatorInfo(req, incubator);
 			list = (List<Map<String, Object>>) result.get("0");
@@ -359,6 +423,11 @@ public class IndustryController {
 			Integer id=Integer.parseInt(req.getParameter("id"));
 			incubator= incubatorService.selectByPrimaryKey(id);
 			iFile=incubatorFileService.selectByPrimaryKey(id);
+			for (IncubatorFile file :iFile){
+				String o1= file.getFilePath();
+				String o2=o1.substring(8);
+				file.setFilePath(URL+o2);
+			}
 //			System.out.println(iFile.get(0).getFileName());
 			incubator2=incubator;
 			list.add(incubator);
@@ -487,7 +556,35 @@ public class IndustryController {
 		}
 	}
 
+	//更新孵化企业营业执照
+	@RequestMapping(value="updateLicense.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public String updateLicense(@RequestParam("file") MultipartFile[] files, HttpServletRequest req){
+		Map<String, Object> result = new HashMap<>();
+		IncubatorFile file=new IncubatorFile();
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		try {
+			Integer fid=Integer.parseInt(req.getParameter("fid"));
+			Integer nid=Integer.parseInt(req.getParameter("nid"));
+			String type=req.getParameter("type");
+			result=FileLoadUtils.fileload(files, PATH);
+			list = (List<Map<String, Object>>) result.get("0");
+			file.setFileName(list.get(0).get("oldName").toString());
+			file.setFilePath(list.get(0).get("URL").toString());
+			file.setFileStyle(type);
+			file.setId(fid);
+			file.setIncubatorId(nid);
+			int row=incubatorFileService.updateByPrimaryKey(file);
+			if(row!=0){
+				return "page/industry/inform/addSuccesdind";
+			}else {
+				return "page/industry/inform/addFaildind";
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "page/industry/inform/addFaildind";
+		}
 
+	}
 
 
 
@@ -507,6 +604,7 @@ public class IndustryController {
 		incubator.setHatchingTime(CountDatetoNowDays.StrconversionData(req.getParameter("hatchingTime")));
 		incubator.setLimitedPeriod(req.getParameter("limitedPeriod"));
 	}
+
 
 }
 

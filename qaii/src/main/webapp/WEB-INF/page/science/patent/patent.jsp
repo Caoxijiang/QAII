@@ -96,7 +96,6 @@
 	<div class="int-inline"><input id="patPrepublishaudit"  type="checkbox" value="是否提前公开实审" checked/><lable>是否提前公开实审</lable></div>
 	<div class="int-inline"><input id="patApplynum"  type="checkbox" value="申请号" checked/><lable>申请号</lable></div>
 	<div class="int-inline"><input id="patApplytime"  type="checkbox" value="申请日" checked/><lable>申请日</lable></div>
-	<div class="int-inline"><input id="patPublishnum"  type="checkbox" value="公开号" checked/><lable>公开号</lable></div>
 	<div class="int-inline"><input id="patPublishtime"  type="checkbox" value="公开日" checked/><lable>公开日</lable></div>
 	<div class="int-inline"><input id="patAuthorzationtime"  type="checkbox" value="授权公告日" checked/><lable>授权公告日</lable></div>
 	<div class="int-inline"><input id="patRemission"  type="checkbox" value="是否减免" checked/><lable>是否减免</lable></div>
@@ -131,7 +130,7 @@ layui.config({
 layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
 	 //监听表格复选框选择
-	console.log(JSON.stringify(obj.cache));
+	console.log("sdfgsd"+JSON.stringify(obj.cache));
 	  
   //执行一个 table 实例
   table.render({
@@ -156,7 +155,6 @@ layui.use('table', function(obj){
 		{field: 'patPrepublishaudit', title: '是否提前公开实审',sort: true,width:200},
 		{field: 'patApplynum', title: '申请号',width:150},
 		{field: 'patApplytime', title: '申请日',sort: true,width:200},
-		{field: 'patPublishnum', title: '公开号',width:200},
 		{field: 'patPublishtime', title: '公开日',sort: true,width:200},
 		{field: 'patAuthorzationtime', title: '授权公告日',width:200},
 		{field: 'patRemission', title: '是否减免',width:230},
@@ -167,8 +165,6 @@ layui.use('table', function(obj){
 		{field: 'patAgent', title: '代理人',width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:380}
     ]],
-    
-    
 	  //表格数据
     data:obj.data,
     done: function(res, curr, count){
@@ -179,7 +175,6 @@ layui.use('table', function(obj){
   //alert(JSON.stringify(obj.cache.testReload[0]))
  console.log(obj.cache)
 	//添加筛选功能
-	
   var $ = layui.$, active = {
       reload: function(){
         var demoReload = $('#demoReload');
@@ -342,29 +337,37 @@ layui.use('table', function(obj){
 	//var arr=[];
 	table.on('checkbox(demo)', function(obj){
 		 var data = obj.data //获得当前行数据
-		 arr.push(data.id);		 
-		 
+		 arr.push(data.id);
 	  });
 	
-	$("#dellist").on('click', function(){
-		alert("请慎重考虑，删除数据不可恢复");
-		$.post({
-		  	url:"dellPatentInfo.do",
-		  	data:{
-		  		"requestDate" : arr
-		  	},
-		  	success:function(data){
+	$("#dellist").on('click', function(obj){
+        confirm("请慎重考虑，删除数据不可恢复");
+        var checkallbox=$("[data-field='0'] .laytable-cell-checkbox div:first").hasClass("layui-form-checked");
+        if(checkallbox){//全选事件判定 xijiang
 
-		        if(data.status == 1){
-		            alert('删除成功，请刷新查看');
-		            window.location.reload();
-		        } else {
-		            alert('删除成功，请刷新查看'); return false;
-		            window.location.reload();
-		        }
-		    }
-		  }) 
+			var data = obj.data //获得当前行数据
+
+            console.log("asdfsad"+data);
+		}else{
+			$.post({
+				url:"dellPatentInfo.do",
+				data:{
+					"requestDate" : arr
+				},
+				success:function(data){
+
+					if(data.status == 1){
+						alert('删除成功，请刷新查看');
+						window.location.reload();
+					} else {
+						alert('删除成功，请刷新查看'); return false;
+						window.location.reload();
+					}
+				}
+			  })
+        }
 	});
+
 
 });
 </script>
