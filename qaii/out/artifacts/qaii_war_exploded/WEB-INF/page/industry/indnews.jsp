@@ -131,7 +131,6 @@ layui.use('table', function(obj){
       } else if(layEvent === 'del'){
           var iframesrc="Imby.do?id="+data.id;
           $("body", parent.document).find('iframe').attr('src',iframesrc);
-  		alert("处理操作 ，改变状态");//待修改 待完善
     } 
   });
 

@@ -26,7 +26,7 @@ public class StockEquity {
     private String alternativeTwo;
 
     private String alternativeThreee;
-
+    //这里的status是存数据库中股东表的状态码新增字段
     private int status;
 
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
