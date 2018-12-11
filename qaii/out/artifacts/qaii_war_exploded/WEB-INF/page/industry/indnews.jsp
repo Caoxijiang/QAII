@@ -123,12 +123,14 @@ layui.use('table', function(obj){
   });
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-    var data = obj.data //获得当前行数据
+      var data = obj.data //获得当前行数据
     ,layEvent = obj.event; //获得 lay-event 对应的值
       if(layEvent === 'detail'){
-          var iframesrc="hatchCheck.do?id="+data.id;
+          var iframesrc="hatchCheck.do?id="+data.incubatorid;
           $("body", parent.document).find('iframe').attr('src',iframesrc);
       } else if(layEvent === 'del'){
+          var iframesrc="Imby.do?id="+data.id;
+          $("body", parent.document).find('iframe').attr('src',iframesrc);
   		alert("处理操作 ，改变状态");//待修改 待完善
     } 
   });

@@ -15,6 +15,7 @@
     <result column="alternative_threee" jdbcType="VARCHAR" property="alternativeThreee" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
   <sql id="Base_Column_List">
     id, shareholder_name, contribution_amount, contribution_proportion, contribution_time, 
@@ -36,12 +37,12 @@
       contribution_proportion, contribution_time, 
       shareholder_position, incubator_id, remark, 
       alternative_one, alternative_two, alternative_threee, 
-      gmt_create, gmt_modified)
+      gmt_create, gmt_modified,status)
     values (#{id,jdbcType=INTEGER}, #{shareholderName,jdbcType=VARCHAR}, #{contributionAmount,jdbcType=VARCHAR}, 
       #{contributionProportion,jdbcType=VARCHAR}, #{contributionTime,jdbcType=DATE}, 
       #{shareholderPosition,jdbcType=VARCHAR}, #{incubatorId,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
       #{alternativeOne,jdbcType=VARCHAR}, #{alternativeTwo,jdbcType=VARCHAR}, #{alternativeThreee,jdbcType=VARCHAR}, 
-      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP},#{status})
   </insert>
   <insert id="insertSelective" parameterType="com.qaii.domain.StockEquity">
     insert into industry_stockequity
@@ -185,5 +186,10 @@
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateShareholderStatus" parameterType="java.lang.Integer">
+    update industry_stockequity
+    set status = 1 where id=#{id}
   </update>
 </mapper>

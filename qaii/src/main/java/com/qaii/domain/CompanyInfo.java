@@ -9,6 +9,7 @@ import java.util.Date;
  */
 public class CompanyInfo {
     private Integer id;
+    private Integer incubatorid;
     private String companyName;
     private String creditCode;
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
@@ -20,6 +21,14 @@ public class CompanyInfo {
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date contributionTime;
     private String shareholderPosition;
+
+    public Integer getIncubatorid() {
+        return incubatorid;
+    }
+
+    public void setIncubatorid(Integer incubatorid) {
+        this.incubatorid = incubatorid;
+    }
 
     public Integer getId() {
         return id;

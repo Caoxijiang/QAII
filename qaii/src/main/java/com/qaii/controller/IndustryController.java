@@ -382,6 +382,7 @@ public class IndustryController {
 			stockEquity.setContributionTime(CountDatetoNowDays.StrconversionData(req.getParameter("contributionTime")));
 			stockEquity.setShareholderPosition(req.getParameter("shareholderPosition"));
 			stockEquity.setIncubatorId(Integer.parseInt(req.getParameter("id")));
+			stockEquity.setStatus(0);
 		} catch (Exception e) {
 			return ConstantUtil.INDUSTRY_INSERT_FAILD;
 		}
