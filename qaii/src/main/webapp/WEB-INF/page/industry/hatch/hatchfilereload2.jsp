@@ -17,7 +17,7 @@
   <input type="file" name="file" id="path">
   <input type="hidden" name="fid" id="fid" value="${requestScope.Info[0]}">
   <input type="hidden" name="nid" id="nid" value="${requestScope.Info[1]}">
-  <input type="hidden" name="type" id="imgtype1" value="${requestScope.Info[2]}">
+  <input type="hidden" name="type" id="imgtype1" value="Electronic">
 <%--<input type="hidden" name="style" id="style" value="${requestScope.utflist[2]}">--%>
   <%--<input type="hidden" name="tid" id="tid" value="${requestScope.utflist[3]}">--%>
   <input type="submit" style="float:right;" class="layui-btn layui-btn-xs" value="上传文件"></input>

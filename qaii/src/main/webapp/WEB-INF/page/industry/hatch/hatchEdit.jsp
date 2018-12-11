@@ -469,7 +469,7 @@ $('#isTechnologyEnterprise').click(function(){
  	layer.open({
        type: 2
        ,title: "股东出资及成员管理"
-       ,content: 'hatchmumber.do'
+       ,content: 'hatchmumber.do?id='+id
        ,shade: 0.3 //不显示遮罩
        ,area: ['390px', '380px']
        ,yes: function(){

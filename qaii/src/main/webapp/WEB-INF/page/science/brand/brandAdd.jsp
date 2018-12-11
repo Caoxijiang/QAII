@@ -72,11 +72,12 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">类别</label>
 				<div class="layui-input-block">
-					<select name="tradmType" lay-search="" class="input">
-						<option value="">   </option>
-						<option value="1">一级</option>
-						<option value="2">二级</option>
-					</select>
+					<%--<select name="tradmType" lay-search="" class="input">--%>
+						<%--<option value="">   </option>--%>
+						<%--<option value="1">一级</option>--%>
+						<%--<option value="2">二级</option>--%>
+					<%--</select>--%>
+					<input type="text" name="tradmType" autocomplete="off"  class="layui-input input">
 				</div>
 			</div>
 			<div class="layui-form-item">

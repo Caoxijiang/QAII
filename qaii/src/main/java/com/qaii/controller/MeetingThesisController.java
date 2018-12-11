@@ -168,7 +168,7 @@ public class MeetingThesisController {
 	@RequestMapping(value="insertMeeting.do",method=RequestMethod.POST)
 	String insertMessage(HttpServletRequest req, 
 			MeetingThesis record,
-			@RequestParam("file") MultipartFile[] files) {
+			@RequestParam("file") MultipartFile[] files) throws CustomException {
 		record.setGmtCreate(new Date());
 		record.setIsPass(BYTE_FALSE);
 		loadData(req,record);
@@ -181,16 +181,22 @@ public class MeetingThesisController {
 		}
 	}
 
-	int insertFile(MeetingThesis record, MultipartFile[] files) {
+	int insertFile(MeetingThesis record, MultipartFile[] files) throws CustomException {
 		// TODO Auto-generated method stub
-		if (files.equals(null) && files.length < 0) {
-			return 1;
+		if (files[0].isEmpty() || files.length < 1) {
+			Service.deleteMessages(new Integer[]{(record.getId()).intValue()});
+			throw new CustomException("电子版文件不能为空!");
+		}
+		if (files[1].isEmpty()) {
+			Service.deleteMessages(new Integer[]{(record.getId()).intValue()});
+			throw new CustomException("检索文件不能为空!");
 		}
 		if(files[0].getSize()==0)
 			return 0;
 		MeetingThesisFile file=new MeetingThesisFile();
 		for (int i = 0; i < files.length; i++) {
-			
+			if (files[i].isEmpty())
+				continue;
 			//文件类型
 			String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
 			//文件名
