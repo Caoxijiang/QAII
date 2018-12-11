@@ -137,7 +137,7 @@
 	       <div class="layui-form-item">
 				<label class="layui-form-label">承担部门</label>
 				<div class="layui-input-block">
-					<select name="rewardAssumedepart" lay-search="" id="deptt3" class="input">
+					<select name="rewardAssumedepart" lay-search="" id="deptt" class="input">
 						
 					</select>
 				</div>
@@ -202,14 +202,7 @@
 $.post({
 	url:"findDeptInfoList.do",
 	success:function(data){
-		var deptInfo=data.data;
-		if(deptInfo!=null){
-			$(deptInfo).each(function(index,element){
-				index+=1;
-				let heml='<option value='+element.deptName+'>'+element.deptName+'</option>';
-				$("#deptt").append(heml);
-			})
-		}
+
 		//JavaScript代码区域
 
 		layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
@@ -275,7 +268,19 @@ $.post({
 		});
 	}
 })
-
+$.post({
+    url:"findDeptInfoList.do",
+    success:function(data) {
+        var deptInfo = data.data;
+        if (deptInfo != null) {
+            $(deptInfo).each(function (index, element) {
+                index += 1;
+                let heml = '<option value=' + element.deptName + '>' + element.deptName + '</option>';
+                $("#deptt").append(heml);
+            })
+        }
+    }
+})
 </script>
 </body>
 </html>        

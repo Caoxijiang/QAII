@@ -560,25 +560,34 @@ public class IndustryController {
 	@RequestMapping(value="updateLicense.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public String updateLicense(@RequestParam("file") MultipartFile[] files, HttpServletRequest req){
 		Map<String, Object> result = new HashMap<>();
-		IncubatorFile file=new IncubatorFile();
+		List<IncubatorFile> file=new ArrayList<>();
+		IncubatorFile in=new IncubatorFile();
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			Integer fid=Integer.parseInt(req.getParameter("fid"));
+			String fid=req.getParameter("fid");
+			Integer fids=null;
+			if(!fid.equals("")){
+				fids=Integer.parseInt(fid);
+			}
 			Integer nid=Integer.parseInt(req.getParameter("nid"));
 			String type=req.getParameter("type");
 			result=FileLoadUtils.fileload(files, PATH);
 			list = (List<Map<String, Object>>) result.get("0");
-			file.setFileName(list.get(0).get("oldName").toString());
-			file.setFilePath(list.get(0).get("URL").toString());
-			file.setFileStyle(type);
-			file.setId(fid);
-			file.setIncubatorId(nid);
-			int row=incubatorFileService.updateByPrimaryKey(file);
-			if(row!=0){
-				return "page/industry/inform/addSuccesdind";
+			in.setFileName(list.get(0).get("oldName").toString());
+			in.setFilePath(list.get(0).get("URL").toString());
+			in.setFileStyle(type);
+			in.setId(fids);
+			in.setIncubatorId(nid);
+			file.add(in);
+			if(fids==null){
+				int row=incubatorFileService.insert(file);
+				return Result(row);
 			}else {
-				return "page/industry/inform/addFaildind";
+				int row=incubatorFileService.updateByPrimaryKey(file);
+				return Result(row);
 			}
+
+
 		} catch (IOException e) {
 			e.printStackTrace();
 			return "page/industry/inform/addFaildind";
@@ -586,8 +595,13 @@ public class IndustryController {
 
 	}
 
-
-
+	private String Result(int row) {
+		if(row!=0){
+			return "page/industry/inform/addSuccesdind";
+		}else {
+			return "page/industry/inform/addFaildind";
+		}
+	}
 
 
 	private void IncubatorInfo(HttpServletRequest req, Incubator incubator) throws ParseException {

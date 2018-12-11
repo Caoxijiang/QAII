@@ -178,7 +178,7 @@ layui.use('layer', function(){ //独立版的layer无需执行这一句
 	  	,yes: function(index, layero){
 	    //提交修改按钮
 		var role=$("#sys-add").val();
-	    if(rolr==null){
+	    if(role==null){
 	    	alert("请输入内容")
 	    }else{
 			$.post({

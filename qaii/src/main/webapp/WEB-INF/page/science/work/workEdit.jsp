@@ -405,7 +405,19 @@ $.post({
 		}
 	}
 })
-
+$.post({
+    url:"findDeptInfoList.do",
+    success:function(data) {
+        var deptInfo = data.data;
+        if (deptInfo != null) {
+            $(deptInfo).each(function (index, element) {
+                index += 1;
+                let heml = '<option value=' + element.deptName + '>' + element.deptName + '</option>';
+                $("#deptt").append(heml);
+            })
+        }
+    }
+})
 </script>
 <script type="text/javascript">
 //封面电子版文件点击事件-在线预览
