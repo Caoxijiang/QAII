@@ -81,9 +81,9 @@
 	
 </div>
 <!-- 操作-->
-<div class="action"> 
+<div class="action">
 <div class="act">
-	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
+	<div class="int-inline"><input id="checkall"  type="checkbox" checked="false"/><lable>全选</lable></div>
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id="patDept"  type="checkbox" value="部门" checked="flase"/><lable>部门</lable></div>
 	<div class="int-inline"><input id="patType"  type="checkbox" value="专利类型" checked/><lable>专利类型</lable></div>
@@ -105,7 +105,7 @@
 	<div class="int-inline"><input id="patPenner"  type="checkbox" value="执笔人信息" checked/><lable>执笔人信息</lable></div>
 	<div class="int-inline"><input id="patAgent"  type="checkbox" value="代理人" checked/><lable>代理人</lable></div>
 </div>
-</div>  
+</div>
 <!-- 数据展示主表格-->
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
@@ -138,7 +138,7 @@ layui.use('table', function(obj){
 	page: false,
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
-	id: 'testReload',  
+	id: 'testReload',
     url: 'findPatentInfo.do',  //数据接口
 	cellMinWidth: 80,
     cols: [[ //标题栏
@@ -289,7 +289,6 @@ layui.use('table', function(obj){
   //监听工具条
   table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
     var data = obj.data //获得当前行数据
-    console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
     	var iframesrc="patentCheck.do?userId='"+data.id+"'";
@@ -332,41 +331,51 @@ layui.use('table', function(obj){
     }
   });
 
-	//监听顶部添加删除操作
-	var arr=[];
-	//var arr=[];
-	table.on('checkbox(demo)', function(obj){
-		 var data = obj.data //获得当前行数据
-		 arr.push(data.id);
-	  });
-	
-	$("#dellist").on('click', function(obj){
-        confirm("请慎重考虑，删除数据不可恢复");
-        var checkallbox=$("[data-field='0'] .laytable-cell-checkbox div:first").hasClass("layui-form-checked");
-        if(checkallbox){//全选事件判定 xijiang
 
-			var data = obj.data //获得当前行数据
-
-            console.log("asdfsad"+data);
-		}else{
-			$.post({
-				url:"dellPatentInfo.do",
-				data:{
-					"requestDate" : arr
-				},
-				success:function(data){
-
-					if(data.status == 1){
-						alert('删除成功，请刷新查看');
-						window.location.reload();
-					} else {
-						alert('删除成功，请刷新查看'); return false;
-						window.location.reload();
-					}
-				}
-			  })
+    var $ = layui.$, active = {
+        delmore: function () { //获取选中数据
+            confirm("请慎重考虑，删除数据不可恢复");
+            var checkStatus = table.checkStatus('testReload')
+                , data = checkStatus.data;
+            var arr=[];
+            for (var id of data){
+                var ids=id.id;
+               arr.push(ids)
+            }
+            if(arr.length!=0){
+                dell("dellPatentInfo.do",arr);
+            }else {
+                layer.alert("请选择要删除的内容");
+            }
         }
-	});
+    }
+
+
+    $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
+
+	function dell(url,arr) {
+        $.post({
+            url:url,
+            data:{
+                "requestDate" : arr
+            },
+            success:function(data){
+
+                if(data.status == 1){
+                   // alert('删除成功，请刷新查看');
+                    layer.alert("删除成功");
+                    window.location.reload();
+                } else {
+                    layer.alert("删除失败");
+                    //alert('删除成功，请刷新查看'); return false;
+                    window.location.reload();
+                }
+            }
+        })
+    }
 
 
 });
