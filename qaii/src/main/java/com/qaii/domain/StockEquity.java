@@ -26,10 +26,21 @@ public class StockEquity {
     private String alternativeTwo;
 
     private String alternativeThreee;
+    //这里的status是存数据库中股东表的状态码新增字段
+    private int status;
+
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date gmtCreate;
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date gmtModified;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public Integer getId() {
         return id;

@@ -121,6 +121,16 @@ public class CountDatetoNowDays {
 		cal.add(cal.DATE, addDay);
 		return sdf.format(cal.getTime());
 	}
+
+
+	//返回参数日期减去3个月的日期
+	public static Date Monthlow(String date) throws ParseException {
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		Calendar cal=Calendar.getInstance();
+		cal.setTime(sdf.parse(date));
+		cal.add(cal.MONTH,-3);
+		return cal.getTime();
+	}
 		
 	//获取目标当月的时间戳参数以及上个月的时间戳，本月的key值为this，上月的为last
 	public static Map<String,String> getfistDay(Date date) throws ParseException {
