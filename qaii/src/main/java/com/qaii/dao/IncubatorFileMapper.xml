@@ -90,42 +90,46 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.IncubatorFile">
-    update industry_incubatorfile
-    <set>
-      <if test="fileName != null">
-        file_name = #{fileName,jdbcType=VARCHAR},
-      </if>
-      <if test="fileStyle != null">
-        file_style = #{fileStyle,jdbcType=VARCHAR},
-      </if>
-      <if test="incubatorId != null">
-        incubator_id = #{incubatorId,jdbcType=INTEGER},
-      </if>
-      <if test="filePath != null">
-        file_path = #{filePath,jdbcType=VARCHAR},
-      </if>
-      <if test="fileDescription != null">
-        file_description = #{fileDescription,jdbcType=VARCHAR},
-      </if>
-      <if test="gmtCreate != null">
-        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="gmtModified != null">
-        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER} and incubator_id=#{incubatorId,jdbcType=INTEGER}
+  <update id="updateByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" item="item" separator="," index="index">
+      update industry_incubatorfile
+      <set>
+        <if test="fileName != null">
+          file_name = #{item.fileName,jdbcType=VARCHAR},
+        </if>
+        <if test="fileStyle != null">
+          file_style = #{item.fileStyle,jdbcType=VARCHAR},
+        </if>
+        <if test="incubatorId != null">
+          incubator_id = #{item.incubatorId,jdbcType=INTEGER},
+        </if>
+        <if test="filePath != null">
+          file_path = #{item.filePath,jdbcType=VARCHAR},
+        </if>
+        <if test="fileDescription != null">
+          file_description = #{item.fileDescription,jdbcType=VARCHAR},
+        </if>
+        <if test="gmtCreate != null">
+          gmt_create = #{item.gmtCreate,jdbcType=TIMESTAMP},
+        </if>
+        <if test="gmtModified != null">
+          gmt_modified = #{item.gmtModified,jdbcType=TIMESTAMP},
+        </if>
+      </set>
+      where id = #{item.id,jdbcType=INTEGER} and incubator_id=#{item.incubatorId,jdbcType=INTEGER}
+    </foreach>
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.IncubatorFile">
-    update industry_incubatorfile
-    set file_name = #{fileName,jdbcType=VARCHAR},
-      file_style = #{fileStyle,jdbcType=VARCHAR},
-      incubator_id = #{incubatorId,jdbcType=INTEGER},
-      file_path = #{filePath,jdbcType=VARCHAR},
-      file_description = #{fileDescription,jdbcType=VARCHAR},
-      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
-      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
+  <update id="updateByPrimaryKey" parameterType="java.util.List">
+    <foreach collection="list" item="item" separator="," index="index">
+      update industry_incubatorfile
+      set file_name = #{item.fileName,jdbcType=VARCHAR},
+      file_style = #{item.fileStyle,jdbcType=VARCHAR},
+      incubator_id = #{item.incubatorId,jdbcType=INTEGER},
+      file_path = #{item.filePath,jdbcType=VARCHAR},
+      file_description = #{item.fileDescription,jdbcType=VARCHAR},
+      gmt_create = #{item.gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{item.gmtModified,jdbcType=TIMESTAMP}
+      where id = #{item.id,jdbcType=INTEGER} and incubator_id=#{item.incubatorId,jdbcType=INTEGER}
+    </foreach>
   </update>
 </mapper>

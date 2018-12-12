@@ -25,7 +25,7 @@ public class IncubatorFileServiceImpl implements IncubatorFileService{
 	}
 
 	@Override
-	public int updateByPrimaryKey(IncubatorFile record) {
+	public int updateByPrimaryKey(List<IncubatorFile> record) {
 		return incubatorFileMapper.updateByPrimaryKey(record);
 	}
 
