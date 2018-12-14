@@ -136,7 +136,7 @@
                             "signTime":awardInfo.signTime,
                             "cooperationContent":awardInfo.cooperationContent,
                             "remark":awardInfo.remark,
-                            "file0":awardInfo.listFile[0].filePath
+                            "file0":awardInfo.listFile[0].fileName
                         })
                     }else{
                         alert("查看详情失败")

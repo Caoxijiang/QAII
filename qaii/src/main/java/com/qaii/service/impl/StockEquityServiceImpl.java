@@ -26,4 +26,8 @@ public class StockEquityServiceImpl implements StockEquityService{
 		return StockEquityMapper.selectByPrimaryKey(id);
 	}
 
+	@Override
+	public int updateShareholderStatus(Integer id) {
+		return StockEquityMapper.updateShareholderStatus(id);
+	}
 }

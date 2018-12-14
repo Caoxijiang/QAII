@@ -152,6 +152,11 @@ public class IndustryController {
 	public String innovatefilereload(){
 		return "page/industry/innovate/innovatefilereload";
 	}
+	//消息管理
+	@RequestMapping("/indnews.do")
+	public String indnews(){
+		return "page/industry/indnews";
+	}
 
 	//合作情况管理界面查看详情
 	@RequestMapping("/innovateCheck.do")
@@ -383,6 +388,8 @@ public class IndustryController {
 			stockEquity.setContributionTime(CountDatetoNowDays.StrconversionData(req.getParameter("contributionTime")));
 			stockEquity.setShareholderPosition(req.getParameter("shareholderPosition"));
 			stockEquity.setIncubatorId(Integer.parseInt(req.getParameter("id")));
+			//这里为新增字段，在向股东表插入数据的时候默认值（0代表未处理，1代表已处理）
+			stockEquity.setStatus(0);
 		} catch (Exception e) {
 			return ConstantUtil.INDUSTRY_INSERT_FAILD;
 		}
