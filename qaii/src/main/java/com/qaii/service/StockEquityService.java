@@ -8,4 +8,5 @@ import com.qaii.domain.StockEquity;
 public interface StockEquityService {
 	int insert(StockEquity stockEquity);
 	List<StockEquity> selectByPrimaryKey(Integer id);
+	int updateShareholderStatus(Integer id);
 }

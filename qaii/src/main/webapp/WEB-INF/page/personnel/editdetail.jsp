@@ -602,7 +602,7 @@ $.post({
 							  
 							  form.val('example', {
 								 "userId":empinfo.id,
-							    "empName": empinfo.empName,
+							     "empName": empinfo.empName,
 								  "empNum":empinfo.empNum,
 								  "empGender":empinfo.empGender,
 								  "empDept":empinfo.empDept,
@@ -618,7 +618,7 @@ $.post({
 								  "empFirsteducationpro":empinfo.empFirsteducationpro,
 								  "empFirstgraduationtime":empinfo.empFirstgraduationtime,
 								  "empSecondeducation":empinfo.empSecondeducation,
-								  "empSecondeducationsch ool":empinfo.empSecondeducationschool,
+								  "empSecondeducationschool":empinfo.empSecondeducationschool,
 								  "empSecondeducationpro":empinfo.empSecondeducationpro,
 								  "empSecondgraduationtime":empinfo.empSecondgraduationtime,
 								  "empThirdeducation":empinfo.empThirdeducation,

@@ -8,8 +8,6 @@ import java.util.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.constraints.Null;
 
 import com.qaii.domain.IncubatorRecord;
 import com.qaii.service.IncubatorRecordService;
@@ -36,6 +34,7 @@ import com.qaii.service.StockEquityService;
 @Controller
 public class IndustryController {
 	private static String PATH="C:/File/img/industry/";
+	private static String URL="http://www.zmadmin.top/";
 	@Resource
 	private IncubatorService incubatorService;
 	@Resource
@@ -87,13 +86,29 @@ public class IndustryController {
 	}
 	//孵化企业文件重新上传
 	@RequestMapping("/hatchfilereload.do")
-	public String hatchfilereload(){
-		return "page/industry/hatch/hatchfilereload";
+	public ModelAndView hatchfilereload(HttpServletRequest req) throws UnsupportedEncodingException {
+		req.setCharacterEncoding("UTF-8");
+		List<String> result=new ArrayList<String>();
+		String fid=req.getParameter("fid");
+		String nid=req.getParameter("nid");
+		String type=req.getParameter("imgtype1");
+		result.add(fid);
+		result.add(nid);
+		result.add(type);
+		return new ModelAndView ("page/industry/hatch/hatchfilereload","Info",result);
 	}
 	//孵化企业文件重新上传-发表电子版
 	@RequestMapping("/hatchfilereload2.do")
-	public String hatchfilereload2(){
-		return "page/industry/hatch/hatchfilereload2";
+	public ModelAndView hatchfilereload2(HttpServletRequest req) throws UnsupportedEncodingException {
+		req.setCharacterEncoding("UTF-8");
+		List<String> result=new ArrayList<String>();
+		String fid=req.getParameter("fid");
+		String nid=req.getParameter("nid");
+		String type=req.getParameter("imgtype2");
+		result.add(fid);
+		result.add(nid);
+		result.add(type);
+		return new ModelAndView("page/industry/hatch/hatchfilereload2","Info",result);
 	}
 
 	//孵化企业添加界面
@@ -140,6 +155,11 @@ public class IndustryController {
 	@RequestMapping("/innovatefilereload.do")
 	public String innovatefilereload(){
 		return "page/industry/innovate/innovatefilereload";
+	}
+	//消息管理
+	@RequestMapping("/indnews.do")
+	public String indnews(){
+		return "page/industry/indnews";
 	}
 
 	//合作情况管理界面查看详情
@@ -265,6 +285,12 @@ public class IndustryController {
 		return "page/industry/serviceFirm/serviceFirmEdit";
 	}
 
+	//消息管理
+	/*@RequestMapping("/indnews.do")
+	public String indnews(){
+		return "page/industry/indnews";
+	}*/
+
 	// 孵化企业管理添加接口
 	@SuppressWarnings("unchecked")
 	@RequestMapping("/insertIndustryInfo.do")
@@ -275,18 +301,12 @@ public class IndustryController {
 		IncubatorFile iFile = new IncubatorFile();
 		IncubatorFile iFile1 = new IncubatorFile();
 		List<IncubatorFile> iFlists = new ArrayList<>();
-		Map<String, Object> result = new HashMap<>();
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		List<Map<String, Object>> list2 = new ArrayList<Map<String, Object>>();
-		try {
-			// 文件上传结果
-			result = FileLoadUtils.fileload(files, PATH);
-			list = (List<Map<String, Object>>) result.get("0");
-			list2 = (List<Map<String, Object>>) result.get("1");
-			System.out.println("__________："+list+">>>>>>>>>>>："+list2);
-		} catch (IOException e1) {
-			return "page/industry/inform/addFaildind";
-		}
+		ImgLoadResult imgLoadResult = new ImgLoadResult(files).invoke();
+		if (imgLoadResult.is()) return "page/industry/inform/addFaildind";
+		list2 = imgLoadResult.getList2();
+		Map<String, Object> result = imgLoadResult.getResult();
 		try {
 			IncubatorInfo(req, incubator);
 			list = (List<Map<String, Object>>) result.get("0");
@@ -372,6 +392,8 @@ public class IndustryController {
 			stockEquity.setContributionTime(CountDatetoNowDays.StrconversionData(req.getParameter("contributionTime")));
 			stockEquity.setShareholderPosition(req.getParameter("shareholderPosition"));
 			stockEquity.setIncubatorId(Integer.parseInt(req.getParameter("id")));
+			//这里为新增字段，在向股东表插入数据的时候默认值（0代表未处理，1代表已处理）
+			stockEquity.setStatus(0);
 		} catch (Exception e) {
 			return ConstantUtil.INDUSTRY_INSERT_FAILD;
 		}
@@ -412,6 +434,11 @@ public class IndustryController {
 			Integer id=Integer.parseInt(req.getParameter("id"));
 			incubator= incubatorService.selectByPrimaryKey(id);
 			iFile=incubatorFileService.selectByPrimaryKey(id);
+			for (IncubatorFile file :iFile){
+				String o1= file.getFilePath();
+				String o2=o1.substring(8);
+				file.setFilePath(URL+o2);
+			}
 //			System.out.println(iFile.get(0).getFileName());
 			incubator2=incubator;
 			list.add(incubator);
@@ -540,10 +567,52 @@ public class IndustryController {
 		}
 	}
 
+	//更新孵化企业营业执照
+	@RequestMapping(value="updateLicense.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public String updateLicense(@RequestParam("file") MultipartFile[] files, HttpServletRequest req){
+		Map<String, Object> result = new HashMap<>();
+		List<IncubatorFile> file=new ArrayList<>();
+		IncubatorFile in=new IncubatorFile();
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		try {
+			String fid=req.getParameter("fid");
+			Integer fids=null;
+			if(!fid.equals("")){
+				fids=Integer.parseInt(fid);
+			}
+			Integer nid=Integer.parseInt(req.getParameter("nid"));
+			String type=req.getParameter("type");
+			result=FileLoadUtils.fileload(files, PATH);
+			list = (List<Map<String, Object>>) result.get("0");
+			in.setFileName(list.get(0).get("oldName").toString());
+			in.setFilePath(list.get(0).get("URL").toString());
+			in.setFileStyle(type);
+			in.setId(fids);
+			in.setIncubatorId(nid);
+			file.add(in);
+			if(fids==null){
+				int row=incubatorFileService.insert(file);
+				return Result(row);
+			}else {
+				int row=incubatorFileService.updateByPrimaryKey(file);
+				return Result(row);
+			}
 
 
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "page/industry/inform/addFaildind";
+		}
 
+	}
 
+	private String Result(int row) {
+		if(row!=0){
+			return "page/industry/inform/addSuccesdind";
+		}else {
+			return "page/industry/inform/addFaildind";
+		}
+	}
 
 
 	private void IncubatorInfo(HttpServletRequest req, Incubator incubator) throws ParseException {
@@ -561,6 +630,7 @@ public class IndustryController {
 		incubator.setLimitedPeriod(req.getParameter("limitedPeriod"));
 	}
 
+<<<<<<< HEAD
 	//导入孵化企业信息
 	@RequestMapping(value="insertIncubatorOfExcel.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -649,6 +719,8 @@ public class IndustryController {
 		incubator.setIsBillionEnterprise(Byte.valueOf(list.get(13)));
 		incubator.setRemark(list.get(14));
 	}
+=======
+>>>>>>> 932849cde04fe8b989ee12eb9b48fe497e5ac679
 
 }
 

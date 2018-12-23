@@ -15,5 +15,8 @@ public interface StockEquityMapper {
 
     int updateByPrimaryKeySelective(StockEquity record);
 
+    //更新股东状态码
+    int updateShareholderStatus(Integer id);
+
     int updateByPrimaryKey(StockEquity record);
 }

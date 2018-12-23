@@ -74,11 +74,7 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">类别&nbsp;<span class="star">*</span></label>
 				<div class="layui-input-block">
-					<select name="tradmType" lay-verify="required" lay-search="" class="input" disabled="">
-						<option value="">   </option>
-						<option value="1">一级</option>
-						<option value="2">二级</option>
-					</select>
+					<input type="text" name="tradmType" autocomplete="off" lay-verify="required"  class="layui-input input" disabled="">
 				</div>
 			</div>
 			<div class="layui-form-item">

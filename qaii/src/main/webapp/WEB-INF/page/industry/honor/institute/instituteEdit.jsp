@@ -174,7 +174,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
                           "orgnizer":awardInfo.orgnizer,
                           "awardLevel":awardInfo.awardLevel,
                           "remark":awardInfo.remark,
-                          "file0":awardInfo.listFile[0].filePath,
+                          "file0":awardInfo.listFile[0].fileName,
 						  "fid":awardInfo.listFile[0].id,
                           "fpath":awardInfo.listFile[0].filePath
 					  })

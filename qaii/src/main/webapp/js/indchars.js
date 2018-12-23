@@ -48,7 +48,6 @@ function gettotalData(){
     })
     return result;
 }
-
 function gettServiceData(){
     var result=null;
     $.ajax({
