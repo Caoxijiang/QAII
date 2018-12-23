@@ -3,6 +3,7 @@ package com.qaii.controller;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import javax.annotation.Resource;
@@ -13,7 +14,10 @@ import javax.validation.constraints.Null;
 import com.qaii.domain.IncubatorRecord;
 import com.qaii.service.IncubatorRecordService;
 import com.qaii.util.*;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.formula.functions.T;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -555,6 +559,95 @@ public class IndustryController {
 		incubator.setIncubatorName(req.getParameter("incubatorName"));
 		incubator.setHatchingTime(CountDatetoNowDays.StrconversionData(req.getParameter("hatchingTime")));
 		incubator.setLimitedPeriod(req.getParameter("limitedPeriod"));
+	}
+
+	//导入孵化企业信息
+	@RequestMapping(value="insertIncubatorOfExcel.do",method=RequestMethod.POST)
+	@ResponseBody
+	Layui insertIncubatorOfExcel(@RequestParam("file")MultipartFile file,Incubator incubator) throws IOException, CustomException {
+		List<String> list =new ArrayList<>();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		String filename=file.getOriginalFilename();
+		Workbook wookbook;
+		//判断是不是excel文件
+		if(!(filename.endsWith(".xls")||filename.endsWith(".xlsx")))
+			return  new Layui();
+		//判断是03版还是07版excel
+		if(filename.endsWith(".xls")) {
+			wookbook=new HSSFWorkbook(file.getInputStream());
+		}else {
+			wookbook=new XSSFWorkbook(file.getInputStream());
+		}
+		try {
+			Sheet sheet=wookbook.getSheet("Sheet1");
+			int rows = sheet.getPhysicalNumberOfRows();
+			for (int i=1;i<rows;i++) {
+				Row row =sheet.getRow(i);
+				int cells=sheet.getRow(0).getPhysicalNumberOfCells();
+				if (row!=null) {
+					list.clear();
+					for (int j=0;j<cells;j++) {
+						Cell cell=row.getCell(j);
+						if(cell!=null){
+							int cellType=cell.getCellType();
+							switch(cellType) {
+								case Cell.CELL_TYPE_BLANK: 	//单元格式为空白
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+									break;
+								case Cell.CELL_TYPE_BOOLEAN: //布尔
+									cell.setCellType(Cell.CELL_TYPE_BOOLEAN);
+									break;
+								case Cell.CELL_TYPE_ERROR: 	//错误
+									cell.setCellValue("错误");
+									break;
+								case Cell.CELL_TYPE_FORMULA: //公式
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+									break;
+								case Cell.CELL_TYPE_NUMERIC: 	//日期、数字
+									if (DateUtil.isCellDateFormatted(cell))
+										cell.setCellValue(sdf.format(cell.getDateCellValue()));
+									else {
+										cell.setCellType(Cell.CELL_TYPE_STRING);
+									}
+									break;
+								case Cell.CELL_TYPE_STRING:		//文本
+									cell.setCellType(Cell.CELL_TYPE_STRING);
+							}
+							list.add(cell.toString());
+						}else {
+							list.add(null);
+						}
+					}
+					setExcelCellsvalue(incubator, list);
+					incubator.setId(null);
+					incubatorService.insert(incubator);
+				}
+			}
+		}catch(Exception e) {
+			wookbook.close();
+			e.printStackTrace();
+			throw new CustomException("数据库异常!请检查文件格式!");
+		}
+		wookbook.close();
+		return Layui.data(1, null);
+	}
+
+	private void setExcelCellsvalue(Incubator incubator, List<String> list) throws ParseException {
+		incubator.setCompanyName(list.get(0));
+		incubator.setCreditCode(list.get(1));
+		incubator.setEstablishTime(CountDatetoNowDays.StringConvertToDate(list.get(2)));
+		incubator.setCompanyType(list.get(3));
+		incubator.setCompanyLocation(list.get(4));
+		incubator.setLegalRepresentative(list.get(5));
+		incubator.setRegisteredCapital(list.get(6));
+		incubator.setBusinessScope(list.get(7));
+		incubator.setIncubatorName(list.get(8));
+		incubator.setHatchingTime(CountDatetoNowDays.StringConvertToDate(list.get(9)));
+		incubator.setLimitedPeriod(list.get(10));
+		incubator.setIsThousandSailEnterprise(Byte.valueOf(list.get(11)));
+		incubator.setIsHighTechnologyEnterprise(Byte.valueOf(list.get(12)));
+		incubator.setIsBillionEnterprise(Byte.valueOf(list.get(13)));
+		incubator.setRemark(list.get(14));
 	}
 
 }
