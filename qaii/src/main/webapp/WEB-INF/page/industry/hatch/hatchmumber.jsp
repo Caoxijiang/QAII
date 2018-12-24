@@ -17,7 +17,7 @@
 </head>
 <body id="bodyHei">
 <div class="layui-container" style="margin-top:15px;">
-  <form class="layui-form" action="addShareholderInfo.do" method="post">
+  <form class="layui-form" action="addShareholderInfo.do" method="post" lay-filter="example">
   <div class="layui-form-item">
     <label class="layui-form-label wid60">股东名称</label>
     <div class="layui-input-block wid80">
@@ -53,14 +53,25 @@
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
+
+    var myDate=new Date();
+    var year=myDate.getFullYear(),    //获取完整的年份(4位,1970-????)
+        month=myDate.getMonth()-3,       //获取当前月份(0-11,0代表1月)
+        day=myDate.getDate();        //获取当前日(1-31)
+    var sqdata=year+"-"+month+"-"+day;
 layui.use(['layer','form', 'laydate'], function(){
   var form = layui.form,
 	layer = layui.layer,
 	laydate = layui.laydate;
 	//申请日期
+
  laydate.render({
    	elem: '#test1'
   });
+    //表单初始赋值
+    form.val('example', {
+        "contributionTime": sqdata
+    })
   
 });
 </script>

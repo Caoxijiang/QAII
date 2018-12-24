@@ -28,9 +28,9 @@
 				data:{date:nowdate},
 				success:function(data){
 					data.forEach(function(e){
-						$("#contractremind").append('<li class="permain"><div class="row rowbox"><div class="col-4 textovrt">'+
+						$("#contractremind").append('<li class="permain"><div class="row rowbox" style="margin:0px;"><div class="col-6 textovrt">'+
 								e.empDept+'</div><div class="col-2 textovrt name">'+
-								e.empName+'</div><div class="col-6 textovrt">'+
+								e.empName+'</div><div class="col-4 textovrt">'+
 								e.empContractendtime+'</div></div></li>');
 					})
 				}
@@ -45,9 +45,9 @@
 				data:{date:nowdate},
 				success:function(data){
 					data.forEach(function(e){
-						$("#tryremind").append('<li class="permain"><div class="row rowbox"><div class="col-4 textovrt">'+
+						$("#tryremind").append('<li class="permain"><div class="row rowbox" style="margin:0px;"><div class="col-6 textovrt">'+
 								e.empDept+'</div><div class="col-2 textovrt name">'+
-								e.empName+'</div><div class="col-6 textovrt">'+
+								e.empName+'</div><div class="col-4 textovrt">'+
 								e.empTryoutendtime+'</div></div></li>');
 					})
 				}
