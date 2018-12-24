@@ -630,7 +630,6 @@ public class IndustryController {
 		incubator.setLimitedPeriod(req.getParameter("limitedPeriod"));
 	}
 
-<<<<<<< HEAD
 	//导入孵化企业信息
 	@RequestMapping(value="insertIncubatorOfExcel.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -719,8 +718,5 @@ public class IndustryController {
 		incubator.setIsBillionEnterprise(Byte.valueOf(list.get(13)));
 		incubator.setRemark(list.get(14));
 	}
-=======
->>>>>>> 932849cde04fe8b989ee12eb9b48fe497e5ac679
-
 }
 
