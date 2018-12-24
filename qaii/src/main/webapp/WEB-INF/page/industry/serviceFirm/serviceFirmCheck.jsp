@@ -184,7 +184,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 						"ownselfUnit":awardInfo.ownselfUnit,
 						"ownselfContactMethod":awardInfo.ownselfContactMethod,
 						"remark":awardInfo.remark,
-						"file0":awardInfo.listFile[0].filePath
+						"file0":awardInfo.listFile[0].fileName
 					  })
 				}else{
 					alert("查看详情失败")

@@ -150,7 +150,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 						"activityName":awardInfo.activityName,
 						"orgnizer":awardInfo.orgnizer,
 						"remark":awardInfo.remark,
-						"file0":awardInfo.listFile[0].filePath
+						"file0":awardInfo.listFile[0].fileName
 					  })
 				}else{
 					alert("查看详情失败")

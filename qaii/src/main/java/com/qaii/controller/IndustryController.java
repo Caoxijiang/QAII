@@ -152,6 +152,11 @@ public class IndustryController {
 	public String innovatefilereload(){
 		return "page/industry/innovate/innovatefilereload";
 	}
+	//消息管理
+	@RequestMapping("/indnews.do")
+	public String indnews(){
+		return "page/industry/indnews";
+	}
 
 	//合作情况管理界面查看详情
 	@RequestMapping("/innovateCheck.do")
@@ -377,6 +382,8 @@ public class IndustryController {
 			stockEquity.setContributionTime(CountDatetoNowDays.StrconversionData(req.getParameter("contributionTime")));
 			stockEquity.setShareholderPosition(req.getParameter("shareholderPosition"));
 			stockEquity.setIncubatorId(Integer.parseInt(req.getParameter("id")));
+			//这里为新增字段，在向股东表插入数据的时候默认值（0代表未处理，1代表已处理）
+			stockEquity.setStatus(0);
 		} catch (Exception e) {
 			return ConstantUtil.INDUSTRY_INSERT_FAILD;
 		}
@@ -491,11 +498,11 @@ public class IndustryController {
 		int row= incubatorService.updateByPrimaryKeySelective(newIncubator);
 		if(row>0) {
 			BeanChangeUtil<T> tBeanChangeUtil=new BeanChangeUtil<>();
-			List<Map<String, Object>> strlist=tBeanChangeUtil.contrastObj(oldImcubator,newIncubator,idString.toString());
-	        if (strlist==null) {
+ 			List<Map<String, Object>> strlist=tBeanChangeUtil.contrastObj(oldImcubator,newIncubator,idString.toString());
+	        if (strlist.size()==0) {
 	        	String recordmsg="";
 	        	result.put("recordmsg",recordmsg);
-	        	return ConstantUtil.INDUSTRY_EDIT_FAILD;
+	        	return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
 	        } else {
 	        	List<IncubatorRecord> list=new ArrayList<>();
 				String time=DateUtils.getFullDate();
