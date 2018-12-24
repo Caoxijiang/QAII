@@ -282,10 +282,10 @@ public class IndustryController {
 	}
 
 	//消息管理
-	@RequestMapping("/indnews.do")
+	/*@RequestMapping("/indnews.do")
 	public String indnews(){
 		return "page/industry/indnews";
-	}
+	}*/
 
 	// 孵化企业管理添加接口
 	@SuppressWarnings("unchecked")
