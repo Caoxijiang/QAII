@@ -474,3 +474,8 @@ ul,li{
 	    overflow:hidden;
 	}
 }
+
+.textovrt{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;}

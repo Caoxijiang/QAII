@@ -1,5 +1,5 @@
 *{margin:0;padding:0;list-style:none;}
-body{background:url(../bg.jpg);font-family:microsoft yahei;overflow: hidden;}
+body{background:url(../image/bg.jpg);font-family:microsoft yahei;overflow: hidden;}
 @-webkit-keyframes cir1 {
   0% {
     transform: rotateY(360deg) rotateZ(5deg);

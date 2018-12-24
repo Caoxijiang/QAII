@@ -12,13 +12,13 @@
 	<link href="${basePath}/css/cir.css" rel="stylesheet" />
 	<script src="${basePath}/js/echarts.min.js"></script>
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
-
+	<script src="${basePath}/js/main.js"></script>
 
   <%--<link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="${basePath}/css/industrymain.css" media="all" />
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/echarts.min.js"></script>
-	<script src="${basePath}/js/main.js"></script>
+
 	<script src="${basePath}/js/vue.min.js"></script>--%>
 </head>
 <body class="mainbody">
