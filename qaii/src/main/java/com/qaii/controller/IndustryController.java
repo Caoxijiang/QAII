@@ -281,6 +281,12 @@ public class IndustryController {
 		return "page/industry/serviceFirm/serviceFirmEdit";
 	}
 
+	//消息管理
+	/*@RequestMapping("/indnews.do")
+	public String indnews(){
+		return "page/industry/indnews";
+	}*/
+
 	// 孵化企业管理添加接口
 	@SuppressWarnings("unchecked")
 	@RequestMapping("/insertIndustryInfo.do")
