@@ -508,11 +508,11 @@ public class IndustryController {
 		int row= incubatorService.updateByPrimaryKeySelective(newIncubator);
 		if(row>0) {
 			BeanChangeUtil<T> tBeanChangeUtil=new BeanChangeUtil<>();
-			List<Map<String, Object>> strlist=tBeanChangeUtil.contrastObj(oldImcubator,newIncubator,idString.toString());
-	        if (strlist==null) {
+ 			List<Map<String, Object>> strlist=tBeanChangeUtil.contrastObj(oldImcubator,newIncubator,idString.toString());
+	        if (strlist.size()==0) {
 	        	String recordmsg="";
 	        	result.put("recordmsg",recordmsg);
-	        	return ConstantUtil.INDUSTRY_EDIT_FAILD;
+	        	return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
 	        } else {
 	        	List<IncubatorRecord> list=new ArrayList<>();
 				String time=DateUtils.getFullDate();
