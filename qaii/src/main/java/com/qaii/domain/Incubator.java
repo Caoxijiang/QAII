@@ -73,15 +73,15 @@ public class Incubator {
     
     private String[] url;
     
-    private IncubatorFile file;
-
-    public IncubatorFile getFile() {
-		return file;
-	}
-
-	public void setFile(IncubatorFile file) {
-		this.file = file;
-	}
+//    private IncubatorFile file;
+//
+//    public IncubatorFile getFile() {
+//		return file;
+//	}
+//
+//	public void setFile(IncubatorFile file) {
+//		this.file = file;
+//	}
 
 	public String[] getUrl() {
 		return url;
