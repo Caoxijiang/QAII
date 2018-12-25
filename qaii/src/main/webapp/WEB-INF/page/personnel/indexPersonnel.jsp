@@ -101,7 +101,7 @@
 			</div>
 			<div class="perbox2 col-6">
 				<div class="inform">
-					<div class="perctitle"><span>本月人数增减情况</span></div>
+					<div class="perctitle"><span>院人数增减情况</span></div>
 					<div id="main"></div>
 				</div>
 				<div class="inform">
