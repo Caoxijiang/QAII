@@ -585,7 +585,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   	<select id="checkbyContract" resultMap="BaseResultMap" parameterType="java.lang.String">
-		SELECT	*FROM	emp_info WHERE	emp_contractStatus = '1' AND emp_stat='1' AND emp_reviewStatus='通过'
+		SELECT	* FROM	emp_info WHERE	emp_contractStatus = '1' AND emp_stat='1' AND emp_reviewStatus='通过'
 		<if test="_parameter!=null">
 			and emp_contractEndTime &lt; #{empContractendtime,jdbcType=VARCHAR}
 		</if>

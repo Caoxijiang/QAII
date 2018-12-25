@@ -736,6 +736,7 @@ public class EmpController {
 		empInfo.setEmpReviewstatus("通过");
 		empInfo.setEmpStat("1");
 		empInfo.setEid("1");
+		empInfo.setEmpContractStatus("1");
 //		empInfo.setEmpDepartureTime(value.get(41));
 //		empInfo.setEmpTryStatus(value.get(42));
 //		empInfo.setEmpContractStatus(value.get(43));
