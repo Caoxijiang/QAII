@@ -12,11 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="42074fb5-b165-4f9f-a415-0f5bff3ecb84" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/RewardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/RewardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/SubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/SubjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/research/researchDataAddFile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/research/researchDataAddFile.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -241,8 +236,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/RewardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="46" column="51" lean-forward="true" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
+            <state relative-caret-position="189">
+              <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -396,7 +391,7 @@
     <option name="jreName" value="1.8" />
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="411" />
     <option name="y" value="120" />
     <option name="width" value="1386" />
@@ -704,12 +699,12 @@
       <workItem from="1545095913542" duration="3173000" />
       <workItem from="1545286748724" duration="277000" />
       <workItem from="1545355588156" duration="3637000" />
-      <workItem from="1545619200778" duration="12591000" />
+      <workItem from="1545619200778" duration="14673000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258251000" />
+    <option name="totallyTimeSpent" value="260333000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -721,10 +716,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23294243" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23294243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -734,7 +728,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49733475" visible="true" weight="0.35357916" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49733475" visible="true" weight="0.35357916" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3177874" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1202,8 +1196,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/RewardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="46" column="51" lean-forward="true" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
+        <state relative-caret-position="189">
+          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
         </state>
       </provider>
     </entry>
