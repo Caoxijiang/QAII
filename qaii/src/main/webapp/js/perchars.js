@@ -231,9 +231,9 @@
 			dataset: {
 				dimensions: ['product', '孵化公司人数', '研究院人数','人员总数'],
 				source: [
-					{product: new Date(_8Years[7]).getFullYear(), '孵化公司人数': eachYearDate[7].Incnum, '研究院人数': eachYearDate[7].collegenum, '人员总数': eachYearDate[7].total},
+					/*{product: new Date(_8Years[7]).getFullYear(), '孵化公司人数': eachYearDate[7].Incnum, '研究院人数': eachYearDate[7].collegenum, '人员总数': eachYearDate[7].total},
 					{product: new Date(_8Years[6]).getFullYear(), '孵化公司人数': eachYearDate[6].Incnum, '研究院人数': eachYearDate[6].collegenum, '人员总数': eachYearDate[6].total},
-					{product: new Date(_8Years[5]).getFullYear(), '孵化公司人数': eachYearDate[5].Incnum, '研究院人数': eachYearDate[5].collegenum, '人员总数': eachYearDate[5].total},
+					{product: new Date(_8Years[5]).getFullYear(), '孵化公司人数': eachYearDate[5].Incnum, '研究院人数': eachYearDate[5].collegenum, '人员总数': eachYearDate[5].total},*/
 					{product: new Date(_8Years[4]).getFullYear(), '孵化公司人数': eachYearDate[4].Incnum, '研究院人数': eachYearDate[4].collegenum, '人员总数': eachYearDate[4].total},
 					{product: new Date(_8Years[3]).getFullYear(), '孵化公司人数': eachYearDate[3].Incnum, '研究院人数': eachYearDate[3].collegenum, '人员总数': eachYearDate[3].total},
 					{product: new Date(_8Years[2]).getFullYear(), '孵化公司人数': eachYearDate[2].Incnum, '研究院人数': eachYearDate[2].collegenum, '人员总数': eachYearDate[2].total},

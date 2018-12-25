@@ -351,21 +351,21 @@
 			    	<div class="layui-form-item">
 						<label class="layui-form-label">职称名称</label>
 						<div class="layui-input-block">
-							<input type="text" name="empJobtitle" lay-verify="required" autocomplete="off"  class="layui-input input">
+							<input type="text" name="empJobtitle" autocomplete="off"  class="layui-input input">
 						</div>
 					</div>
 					
 					<div class="layui-form-item">
 						<label class="layui-form-label">职称等级</label>
 						<div class="layui-input-block">
-							<input type="text" name="empJobtitlelevel" lay-verify="required" autocomplete="off" class="layui-input input">
+							<input type="text" name="empJobtitlelevel" autocomplete="off" class="layui-input input">
 
 						</div>
 					</div>
 					<div class="layui-form-item">
 						  <label class="layui-form-label">职称取得时间</label>
 						  <div class="layui-input-block">
-							<input type="text" name="empJobtitleobtaintime" class="layui-input input" lay-verify="required" id="test1">
+							<input type="text" name="empJobtitleobtaintime" class="layui-input input" id="test1">
 						  </div>
 					</div>
 					<div class="layui-form-item">
