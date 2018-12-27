@@ -37,4 +37,6 @@ public interface WorkMapper {
     List<String> selectPathBytableName(@Param(value = "Tablename") String Tablename);
     List<String> selectPathBytableNamePath(@Param(value = "Tablename") String Tablename);
     List<String> selectqueUrl();
+
+    int countMessageNotice();
 }
