@@ -43,22 +43,19 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">婚姻状况</label>
 						<div class="layui-input-block">
-							<select name="empMaritalstatus" lay-search="" lay-verify="required" class="input inputdisable" disabled="">
-								<option value="">  </option>
-								<option value="未婚">未婚</option>
-								<option value="已婚">已婚</option>
-							</select>
+							<input type="text" name="empMaritalstatus" autocomplete="off" lay-verify="required" class="layui-input input inputdisable" disabled="">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">政治面貌</label>
 						<div class="layui-input-block">
-							<select name="empPoliticallandscape" lay-search="" class="input inputdisable" disabled="">
+							<input type="text" name="empPoliticallandscape" autocomplete="off" lay-verify="required" class="layui-input input inputdisable" disabled="">
+							<%--<select name="empPoliticallandscape" lay-search="" class="input inputdisable" disabled="">
 								<option value="">  </option>
 								<option value="党员">党员</option>
 								<option value="团员">团员</option>
 								<option value="群众">群众</option>
-							</select>
+							</select>--%>
 						</div>
 					</div>
 					<div class="layui-form-item">
@@ -72,11 +69,12 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">性别</label>
 						<div class="layui-input-block">
-							<select name="empGender" lay-search=""  class="input inputdisable" disabled="">
+							<input type="text" name="empGender" lay-verify="required" autocomplete="off" class="layui-input input inputdisable" disabled="">
+							<%--<select name="empGender" lay-search=""  class="input inputdisable" disabled="">
 								<option value="">   </option>
 								<option value="男">男</option>
 								<option value="女">女</option>
-							</select>
+							</select>--%>
 						</div>
 					</div>
 					<div class="layui-form-item">
@@ -310,22 +308,24 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">编制&nbsp; </label>
 						<div class="layui-input-block">
-							<select name="empCompile" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
+							<input type="text" name="empCompile" lay-verify="required" autocomplete="off" class="layui-input input inputdisable" disabled="">
+							<%--<select name="empCompile" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
 								<option value="">   </option>
 								<option value="所编">所编</option>
 								<option value="聘用">聘用</option>
-							</select>
+							</select>--%>
 						</div>
 					</div>
 					
 					<div class="layui-form-item">
 						<label class="layui-form-label">职工状态</label>
 						<div class="layui-input-block">
-							<select name="empStat" lay-search="" lay-verify="required" class="input" disabled="">
+							<input type="text" name="empStat" lay-verify="required" autocomplete="off" class="layui-input input inputdisable" disabled="">
+							<%--<select name="empStat" lay-search="" lay-verify="required" class="input" disabled="">
 								<option value="">   </option>
 								<option value="1">在职</option>
 								<option value="0">离职</option>
-							</select>
+							</select>--%>
 						</div>
 					</div>
 				</div>
@@ -333,11 +333,12 @@
 			    	<div class="layui-form-item">
 						<label class="layui-form-label">用工形式&nbsp; </label>
 						<div class="layui-input-block">
-							<select name="empWorktype" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
+							<input type="text" name="empWorktype" lay-verify="required" autocomplete="off" class="layui-input input inputdisable" disabled="">
+							<%--<select name="empWorktype" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
 								<option value="">   </option>
 								<option value="全职">全职</option>
 								<option value="兼职">兼职</option>
-							</select>
+							</select>--%>
 						</div>
 					</div>
 			    	<div class="layui-form-item">
@@ -362,21 +363,23 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">试用期状态</label>
 						<div class="layui-input-block">
-							<select name=empTryStatus lay-search="" lay-verify="required"  class="input" disabled="">
+							<input type="text" name="empTryStatus" class="layui-input input inputdisable" lay-verify="required" id="test1" disabled="">
+							<%--<select name="empTryStatus" lay-search="" lay-verify="required"  class="input" disabled="">
 								<option value="">   </option>
 								<option value="0">试用期期满</option>
 								<option value="1">试用期中</option>
-							</select>
+							</select>--%>
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">合同状态 </label>
 						<div class="layui-input-block">
-							<select name="empContractStatus" lay-verify="required" lay-search="" class="input" disabled="">
+							<input type="text" name="empContractStatus" class="layui-input input inputdisable" lay-verify="required" id="test1" disabled="">
+							<%--<select name="empContractStatus" lay-verify="required" lay-search="" class="input" disabled="">
 								<option value="">   </option>
 								<option value="1">合同结束</option>
 								<option value="0">合同中</option>
-							</select>
+							</select>--%>
 						</div>
 					</div>
 					
@@ -399,22 +402,24 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">是否留学归国人员&nbsp; </label>
 						<div class="layui-input-block">
-							<select name="empReturnee" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
+							<input type="text" name="empReturnee" lay-verify="required" autocomplete="off" class="layui-input input inputdisable" disabled="">
+							<%--<select name="empReturnee" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
 								<option value="">   </option>
 								<option value="是">是</option>
 								<option value="否">否</option>
-							</select>
+							</select>--%>
 						</div>
 					</div>
 					
 					<div class="layui-form-item">
 						<label class="layui-form-label">是否外籍人员&nbsp; </label>
 						<div class="layui-input-block">
-							<select name="empForeign" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
+							<input type="text" name="empForeign" lay-verify="required" autocomplete="off" class="layui-input input inputdisable" disabled="">
+							<%--<select name="empForeign" lay-verify="required" lay-search="" class="input inputdisable" disabled="">
 								<option value="">   </option>
 								<option value="是">是</option>
 								<option value="否">否</option>
-							</select>
+							</select>--%>
 						</div>
 					</div>
 					
@@ -428,11 +433,12 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">审核状态</label>
 						<div class="layui-input-block">
-							<select name="empForeign" lay-search="" lay-verify="required" class="input"  disabled="">
+							<input type="text" name="empForeign" lay-verify="required" autocomplete="off" class="layui-input input inputdisable" disabled="">
+							<%--<select name="empForeign" lay-search="" lay-verify="required" class="input"  disabled="">
 								<option value="">   </option>
 								<option value="通过">通过</option>
 								<option value="待审核">待审核</option>
-							</select>
+							</select>--%>
 						</div>
 					</div>
 				</div>
