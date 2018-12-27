@@ -106,6 +106,7 @@
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-xs" lay-event="detail">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
+  <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="shareholder">作者添加</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 </script>
@@ -305,6 +306,14 @@ layui.use('table', function(obj){
       } else if(layEvent === 'edit'){
       	var iframesrc="papermeetingEdit.do?userId='"+data.id+"'";
       	$("body", parent.document).find('iframe').attr('src',iframesrc);
+      }else if(layEvent === 'shareholder') {
+          layer.open({
+              type: 2,
+              title: '添加作者信息',
+              content: "papermeetingmumber.do?id=" + data.id,
+              shade: 0.3, //不显示遮罩
+              area: ['390px', '500px']
+          });
       }
     });
 

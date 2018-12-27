@@ -488,6 +488,11 @@ public class techController {
 	public String paper(){
 		return "page/science/paper/paper";
 	}
+	//论文作者添加
+	@RequestMapping("papermumber.do")
+	public String papermumber(){
+		return "page/science/paper/papermumber";
+	}
 	//论文添加
 	@RequestMapping("paperAdd.do")
 	public String paperAdd(){
@@ -529,6 +534,11 @@ public class techController {
 	@RequestMapping("papermeeting.do")
 	public String papermeeting(){
 		return "page/science/papermeeting/papermeeting";
+	}
+	//会议论文作者添加
+	@RequestMapping("papermeetingmumber.do")
+	public String papermeetingmumber(){
+		return "page/science/papermeeting/papermeetingmumber";
 	}
 	//会议论文添加
 	@RequestMapping("papermeetingAdd.do")
