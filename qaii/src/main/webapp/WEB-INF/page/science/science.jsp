@@ -134,7 +134,13 @@ layui.use('element', function(){
 function iframechange(obj){
 	$('iframe').attr('src',obj);
 }
+$.post({
+    url:"countScienceMessageNotice.do",
+    success:function(data){
 
+        console.log("消息通知的数量是" + data.count);
+    }
+})
 </script>
 </body>
 </html>

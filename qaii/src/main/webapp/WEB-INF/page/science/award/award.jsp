@@ -291,7 +291,7 @@ layui.use('table', function(obj){
             let arr=[data.id];
             console.log(data) 
             $.post({
-            	url:"dellTradeMarkMsg.do",
+            	url:"dellRewardMsg.do",
             	data:{
             		"requestDate" : arr
             	},

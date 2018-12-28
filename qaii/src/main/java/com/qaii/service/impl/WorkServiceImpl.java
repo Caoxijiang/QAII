@@ -99,4 +99,9 @@ public class WorkServiceImpl implements WorkService {
 	public List<String> selectqueUrl() {
 		return workmapper.selectqueUrl();
 	}
+
+	@Override
+	public int countMessageNotic() {
+		return workmapper.countMessageNotice();
+	}
 }

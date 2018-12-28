@@ -272,11 +272,12 @@ public class RewardController {
 	@RequestMapping("/Govrewardprocessupload.do")
 	public Map<String, String> processupload(@RequestParam("file") MultipartFile[] files, Govrewardprocessfile img,
 			HttpServletRequest req) throws Exception {
+		req.setCharacterEncoding("utf-8");
 		// System.out.println(request.getParameter("name"));
 		String insertype=req.getParameter("type");
 		Integer oid = Integer.parseInt(req.getParameter("oid"));
 		Integer stepid = Integer.parseInt(req.getParameter("step"));
-		String rewardName = new String(req.getParameter("rewardName").getBytes("ISO-8859-1"),"utf-8");
+		String rewardName = new String(req.getParameter("rewardName"));
 		Map<String, String> result = new HashMap<>();
 		if (files != null && files.length < 0) {
 			result.put("code", "1");

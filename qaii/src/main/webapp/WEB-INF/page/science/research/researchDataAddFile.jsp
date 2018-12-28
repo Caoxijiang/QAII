@@ -37,8 +37,9 @@
 /* 获取页面传递过来的值 */
 var userID=${param.userId};
 var step=${param.step};
-var govsubName=${param.govsubName};
-console.log(userID+"id与步骤"+step+"sdfgsdfg"+govsubName);
+var govsubNames="${param.govsubName}";
+var govsubName=govsubNames;
+//console.log(userID+"id与步骤"+step+"sdfgsdfg"+govsubName);
 
 layui.use('upload', function(){
   var $ = layui.jquery

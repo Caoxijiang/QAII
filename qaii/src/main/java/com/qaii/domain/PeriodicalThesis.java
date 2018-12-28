@@ -38,6 +38,16 @@ public class PeriodicalThesis {
     
     private List<PeriodicalThesisFile> listFile;
 
+    private List<PeriodicalThesisAuthor> listAuthor;
+
+    public List<PeriodicalThesisAuthor> getListAuthor() {
+        return listAuthor;
+    }
+
+    public void setListAuthor(List<PeriodicalThesisAuthor> listAuthor) {
+        this.listAuthor = listAuthor;
+    }
+
     public List<PeriodicalThesisFile> getListFile() {
 		return listFile;
 	}

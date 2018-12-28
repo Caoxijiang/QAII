@@ -303,11 +303,12 @@ public class SubjectController {
 	@RequestMapping("Govsubjectprocessupload.do")
 	public Map<String, String> processupload(@RequestParam("file") MultipartFile[] files, Govsubjectprocessfile img,
 			HttpServletRequest req) throws Exception {
+		req.setCharacterEncoding("utf-8");
 		// System.out.println(request.getParameter("name"));
 		String insertype=req.getParameter("type");
 		Integer oid = Integer.parseInt(req.getParameter("oid"));
 		Integer stepid = Integer.parseInt(req.getParameter("step"));
-		String govsubName = new String(req.getParameter("govsubName").getBytes("ISO-8859-1"),"utf-8");
+		String govsubName = new String(req.getParameter("govsubName"));
 		Map<String, String> result = new HashMap<>();
 		if (files != null && files.length < 0) {
 			result.put("code", "1");

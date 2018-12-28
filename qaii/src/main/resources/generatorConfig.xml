@@ -121,10 +121,13 @@
         selectByExampleQueryId="false"></table>
         <table tableName="industry_stockequity" domainObjectName="StockEquity" enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
-        selectByExampleQueryId="false"></table>-->
-        <table tableName="industry_incubatorrecord" domainObjectName="IncubatorRecord" enableCountByExample="false" enableUpdateByExample="false"
+        selectByExampleQueryId="false"></table>
+        <table tableName="sci_meeting_thesis_author" domainObjectName="MeetingThesisAuthor" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
+        <table tableName="sci_periodical_thesis_author" domainObjectName="PeriodicalThesisAuthor" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"></table>-->
         
     </context>
 </generatorConfiguration>
