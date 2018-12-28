@@ -34,7 +34,7 @@ import com.qaii.service.StockEquityService;
 @Controller
 public class IndustryController {
 	private static String PATH="C:/File/img/industry/";
-	private static String URL="http://www.zmadmin.top/";
+	private static String URL="https://www.zmadmin.top/";
 	@Resource
 	private IncubatorService incubatorService;
 	@Resource
@@ -412,6 +412,32 @@ public class IndustryController {
 	@RequestMapping(value="selectIndusInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public Layui selectIndusInfo(HttpServletRequest request ) {
 		List<Incubator> incubator=incubatorService.selectAlllist();
+//		    String str1="是";
+//		    byte[] s=str1.getBytes();
+//		    String str2="否";
+//		    for (Incubator in :incubator){
+//		        if(in.getIsBillionEnterprise().equals("1")){
+//                in.setIsBillionEnterprise(new Byte("是"));
+//                }else {
+//                    in.setIsBillionEnterprise(new Byte("否"));
+//                }
+//                if (in.getIsHighTechnologyEnterprise().equals("1")){
+//                    in.setIsHighTechnologyEnterprise(new Byte("是"));
+//                }else {
+//                    in.setIsHighTechnologyEnterprise(new Byte("否"));
+//                }
+//                if (in.getIsTechnologyEnterprise().equals("1")){
+//                    in.setIsTechnologyEnterprise(new Byte("是"));
+//                }else {
+//                    in.setIsTechnologyEnterprise(new Byte("否"));
+//                }
+//                if(in.getIsThousandSailEnterprise().equals("1")){
+//                    in.setIsTechnologyEnterprise(new Byte("是"));
+//                }else {
+//                    in.setIsTechnologyEnterprise(new Byte("否"));
+//                }
+//
+//            }
 			int count =incubator.size();
 			if(incubator!=null) {
 				return Layui.data(count, incubator);

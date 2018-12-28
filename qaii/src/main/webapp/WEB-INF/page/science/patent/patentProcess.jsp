@@ -149,7 +149,8 @@ layui.use('table', function(obj){
 	    	};
 	    }else if(obj.event === 'download'){//文件下载
 	    	var address=data.path;
-	    		download(ops+address);
+	    		var down=(ops+address);
+	    		download(down);
 		}else if(obj.event === 'upload'){//文件重新上传
 			var address=data.path;
 			var id=data.id;

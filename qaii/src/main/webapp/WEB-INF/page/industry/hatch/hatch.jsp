@@ -123,6 +123,7 @@ layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
 	 //监听表格复选框选择
 	console.log("The obj data is "+JSON.stringify(obj.cache));
+
 	  
   //执行一个 table 实例
   table.render({
@@ -161,7 +162,9 @@ layui.use('table', function(obj){
         console.log(count+"总数");
         }
   });
- console.log(obj.cache)
+
+    console.log(obj.data);
+ //console.log(obj.cache)
 	//添加筛选功能
 	
   var $ = layui.$, active = {
