@@ -136,9 +136,18 @@
 	    </div>		 
 	  </div>
    <!--  第一块内容-->
+	 <h1>论文作者信息</h1>
+	 <div class="layui-row">
+		 <div class="layui-input-block">
+			 <table class="layui-hide" id="test" lay-filter="demo"></table>
+			 <script type="text/html" id="barDemo">
+				 <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+			 </script>
+		 </div>
+	 </div>
    <!--  第二块内容-->
    <h1>期刊论文相关文件</h1>
-	  <div class="layui-row bgf7f8f8">	
+	  <div class="layui-row bgf7f8f8">
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
 				<label class="layui-form-label">发表电子版&nbsp;<span class="star">*</span></label>
@@ -207,8 +216,8 @@
 					<textarea name="paperRemark" class="layui-textarea"></textarea>
 				</div>
 			</div>
-  		</div>		 
-	</div>	 
+  		</div>
+	</div>
    <!--  第三块内容-->
    <div class="layui-row">
    	   <div class="layui-col-md12">
