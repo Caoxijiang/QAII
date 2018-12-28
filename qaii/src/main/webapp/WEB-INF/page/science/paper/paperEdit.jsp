@@ -136,9 +136,18 @@
 	    </div>		 
 	  </div>
    <!--  第一块内容-->
+	 <h1>论文作者信息</h1>
+	 <div class="layui-row">
+		 <div class="layui-input-block">
+			 <table class="layui-hide" id="testpaper" lay-filter="demopaper"></table>
+			 <script type="text/html" id="barDemopaper">
+				 <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+			 </script>
+		 </div>
+	 </div>
    <!--  第二块内容-->
    <h1>期刊论文相关文件</h1>
-	  <div class="layui-row bgf7f8f8">	
+	  <div class="layui-row bgf7f8f8">
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
 				<label class="layui-form-label">发表电子版&nbsp;<span class="star">*</span></label>
@@ -207,8 +216,8 @@
 					<textarea name="paperRemark" class="layui-textarea"></textarea>
 				</div>
 			</div>
-  		</div>		 
-	</div>	 
+  		</div>
+	</div>
    <!--  第三块内容-->
    <div class="layui-row">
    	   <div class="layui-col-md12">
@@ -248,6 +257,31 @@ $.post({
 				layer = layui.layer,
 				laydate = layui.laydate,
 				upload = layui.upload;
+			  //添加论文作者表格 wangxin
+                table.render({
+                    elem: '#testpaper'
+                    ,method:'post'
+                    ,url:'selectIndusStackInfo.do?id='+id/*修改接口函数*/
+                    ,cellMinWidth: 100
+                    ,cols: [[
+                        {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
+                        ,{field:'shareholderName', title: '姓名'}
+                        ,{field:'contributionProportion',title: '排名', sort: true}
+                        ,{field:'contributionTime',title: '单位', sort: true}
+                    ]]
+                    /*data:obj.data*/
+
+                });
+                table.on('tool(demopaper)', function(obj){ //股东删除操作 xijiang
+                    var data = obj.data;
+                    if(obj.event === 'del'){
+                        layer.confirm('真的删除行么', function(index){
+                            obj.del();
+                            layer.close(index);
+                        });
+                    }
+                });
+
 				//开发完成日期
 			  laydate.render({
 			    elem: '#test1'
