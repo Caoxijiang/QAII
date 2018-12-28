@@ -32,4 +32,6 @@ public interface WorkService {
 	List<String> selectPathBytableName(String Tablename);
 	List<String> selectPathBytableNamePath(String Tablename);
 	List<String> selectqueUrl();
+
+	int countMessageNotic();
 }
