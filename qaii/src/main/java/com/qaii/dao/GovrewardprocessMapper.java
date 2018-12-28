@@ -18,4 +18,6 @@ public interface GovrewardprocessMapper {
     int updateByPrimaryKey(Govrewardprocess record);
     
     List<Govrewardprocess> getAllMsgBypid(Integer pid);
+
+    int deleteByPrimaryKeys(Integer[] id);
 }

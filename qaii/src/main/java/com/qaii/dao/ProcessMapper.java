@@ -8,4 +8,6 @@ public interface ProcessMapper {
 	int addProcessInfo(PatProcess process);
 	
 	List<PatProcess> findProcessList(Integer pid);
+
+	int deleteByPrimaryKeys(Integer[] id);
 }

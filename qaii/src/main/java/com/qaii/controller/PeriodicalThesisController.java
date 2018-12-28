@@ -12,6 +12,7 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.qaii.service.PeriodicalThesisAuthorService;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -48,6 +49,8 @@ public class PeriodicalThesisController {
 	private PeriodicalThesisService Service;
 	@Resource
 	private PeriodicalThesisFileService fileService;
+	@Resource
+	private PeriodicalThesisAuthorService authorService;
 	
 	//文件路径
 	public final static String FILE_PATH= "C:/File/img/PeriodicalThesis/";
@@ -438,6 +441,12 @@ public class PeriodicalThesisController {
 		record.setGmtCreate(new Date());
 		record.setGmtModified(new Date());
 		record.setIsPass(BYTE_TRUE);
+	}
+
+	//作者添加
+	String addPeriodicalAuthor(@RequestParam("shareholderName")String name, @RequestParam("patRemission")String level, @RequestParam("contributionTime")String unit){
+
+		return null;
 	}
 	
 }
