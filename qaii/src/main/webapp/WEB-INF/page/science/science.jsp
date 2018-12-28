@@ -12,6 +12,20 @@
   <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
   <link rel="stylesheet" href="${basePath}/css/science.css">
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
+    <style>
+        #messagenum{
+            background: #f5343d;
+            color:#fff;
+            font-size:10px;
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            line-height:20px;
+            display: inline-block;
+            text-align: center;
+            margin-left:5px;
+        }
+    </style>
 <!--  iframe样式设置-->
 </head>
 <body class="layui-layout-body">
@@ -82,7 +96,9 @@
           <a href="javascript:;" onclick="iframechange('work.do')"><i class="layui-icon layui-icon-diamond" style="font-size: 22px;"></i>&nbsp;著作</a>
         </li>
        	<li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('newsScience.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
+          <a href="javascript:;" onclick="iframechange('newsScience.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>
+              &nbsp;消息管理<div id="messagenum">2</div>
+          </a>
         </li>
       </ul>
     </div>
@@ -118,7 +134,13 @@ layui.use('element', function(){
 function iframechange(obj){
 	$('iframe').attr('src',obj);
 }
+$.post({
+    url:"countScienceMessageNotice.do",
+    success:function(data){
 
+        console.log("消息通知的数量是" + data.count);
+    }
+})
 </script>
 </body>
 </html>

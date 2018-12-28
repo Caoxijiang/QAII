@@ -12,6 +12,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import com.qaii.util.Layui;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -260,5 +261,12 @@ public class DataOverviewController {
 		result.put("authorization", authorizationList);
 		return result;
 	}
-	
+
+	//消息通知总数量
+	@RequestMapping("countScienceMessageNotice.do")
+	@ResponseBody
+	Layui countMessageNotice(){
+
+		return Layui.data(workService.countMessageNotic(),null);
+	}
 }

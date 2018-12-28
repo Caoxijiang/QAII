@@ -143,7 +143,7 @@
   SELECT * from sci_work where is_pass = 1 
   </select>
   <select id="selectCountNum" resultType="int">
-  SELECT COUNT(*) FROM sci_work
+  SELECT COUNT(*) FROM sci_work where is_pass = 1
   </select>
   <delete id="deleteByPrimaryKeys" parameterType="int">
   	DELETE  FROM sci_work WHERE id in
@@ -242,7 +242,7 @@
   </insert>
 
   <select id="listNotPass" resultMap="BaseResultMap">
-  SELECT * FROM sci_work WHERE is_pass  = 0
+  SELECT * FROM sci_work WHERE is_pass IS NULL OR is_pass = 0
   </select>
 
   <select id="selectAllpathTable" resultType="java.lang.String">
@@ -270,5 +270,9 @@
 
   <select id="selectqueUrl"  resultType="java.lang.String">
   SELECT url from emp_avatarinfo
+  </select>
+
+  <select id="countMessageNotice" resultType="java.lang.Integer">
+    SELECT (SELECT COUNT(1) FROM sci_work WHERE is_pass = 1)+(SELECT COUNT(*) FROM sci_periodicalthesis WHERE is_pass=1)+(SELECT COUNT(1) FROM sci_meetingthesis WHERE is_pass = 1 )
   </select>
 </mapper>
