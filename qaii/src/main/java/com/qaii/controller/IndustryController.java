@@ -413,6 +413,7 @@ public class IndustryController {
 	public Layui selectIndusInfo(HttpServletRequest request ) {
 		List<Incubator> incubator=incubatorService.selectAlllist();
 			int count =incubator.size();
+			transDate(incubator);
 			if(incubator!=null) {
 				return Layui.data(count, incubator);
 			}else {
@@ -420,9 +421,18 @@ public class IndustryController {
 			}
 		
 		}
-	
-	
-	
+
+	private void transDate(List<Incubator> incubator) {
+		Iterator<Incubator> ite = incubator.iterator();
+		while(ite.hasNext()){
+			Incubator incub = ite.next();
+			incub.setIsThousand(incub.getIsThousandSailEnterprise() == 1?"是":"否");
+			incub.setIsHighTechnology(incub.getIsHighTechnologyEnterprise() == 1?"是":"否");
+			incub.setIsBillion(incub.getIsBillionEnterprise() == 1?"是":"否");
+		}
+	}
+
+
 	//孵化企业详情页面
 	@ResponseBody
 	@RequestMapping(value="selectIndusCheckInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
@@ -713,9 +723,9 @@ public class IndustryController {
 		incubator.setIncubatorName(list.get(8));
 		incubator.setHatchingTime(CountDatetoNowDays.StringConvertToDate(list.get(9)));
 		incubator.setLimitedPeriod(list.get(10));
-		incubator.setIsThousandSailEnterprise(Byte.valueOf(list.get(11)));
-		incubator.setIsHighTechnologyEnterprise(Byte.valueOf(list.get(12)));
-		incubator.setIsBillionEnterprise(Byte.valueOf(list.get(13)));
+		incubator.setIsThousandSailEnterprise("是".equals(list.get(11))?new Byte("1"):new Byte("0"));
+		incubator.setIsHighTechnologyEnterprise("是".equals(list.get(11))?new Byte("1"):new Byte("0"));
+		incubator.setIsBillionEnterprise("是".equals(list.get(11))?new Byte("1"):new Byte("0"));
 		incubator.setRemark(list.get(14));
 	}
 }
