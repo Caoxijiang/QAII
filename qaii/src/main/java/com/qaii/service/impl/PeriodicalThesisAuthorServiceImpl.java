@@ -21,8 +21,8 @@ public class PeriodicalThesisAuthorServiceImpl implements PeriodicalThesisAuthor
     private PeriodicalThesisAuthorMapper mapper;
 
     @Override
-    public List<PeriodicalThesisAuthor> listRecord() {
-        return mapper.listRecord();
+    public List<PeriodicalThesisAuthor> listRecord(String id) {
+        return mapper.listRecord(id);
     }
 
     @Override
@@ -42,6 +42,6 @@ public class PeriodicalThesisAuthorServiceImpl implements PeriodicalThesisAuthor
 
     @Override
     public PeriodicalThesisAuthor getRecord(Integer id) {
-        return mapper.selectByPrimaryKey(id);
+        return mapper.getRecord(id);
     }
 }

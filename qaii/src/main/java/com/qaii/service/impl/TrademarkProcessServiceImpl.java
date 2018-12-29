@@ -28,4 +28,9 @@ public class TrademarkProcessServiceImpl implements TrademarkProcessService {
 		return processmapper.insert(process);
 	}
 
+	@Override
+	public int deleteRecord(Integer[] id) {
+		return processmapper.deleteByPrimaryKeys(id);
+	}
+
 }

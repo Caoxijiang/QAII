@@ -26,4 +26,9 @@ public class ProcessServiceImpl implements ProcessService {
 		return processMapper.findProcessList(pid);
 	}
 
+	@Override
+	public int deleteRecord(Integer[] id) {
+		return processMapper.deleteByPrimaryKeys(id);
+	}
+
 }

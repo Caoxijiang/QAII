@@ -12,7 +12,9 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.qaii.domain.PeriodicalThesisAuthor;
 import com.qaii.service.PeriodicalThesisAuthorService;
+import com.qaii.util.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -31,10 +33,6 @@ import com.qaii.domain.PeriodicalThesis;
 import com.qaii.domain.PeriodicalThesisFile;
 import com.qaii.service.PeriodicalThesisFileService;
 import com.qaii.service.PeriodicalThesisService;
-import com.qaii.util.AlertException;
-import com.qaii.util.CustomException;
-import com.qaii.util.JsonResult;
-import com.qaii.util.Layui;
 
 /**
  * Title:PeriodicalThesisController.java
@@ -444,9 +442,27 @@ public class PeriodicalThesisController {
 	}
 
 	//作者添加
-	String addPeriodicalAuthor(@RequestParam("shareholderName")String name, @RequestParam("patRemission")String level, @RequestParam("contributionTime")String unit){
+	@RequestMapping(value="addPeriodicalAuthor.do")
+	String addPeriodicalAuthor(@RequestParam("shareholderName")String name, @RequestParam("patRemission")String level, @RequestParam("contributionTime")String unit, @RequestParam("id")String id, PeriodicalThesisAuthor Record){
+		Record.setAuthorName(name);
+		Record.setAuthorLevel(level);
+		Record.setAuthorUnit(unit);
+		Record.setAuthorRemark(id);
+		Record.setId(null);
+		if (authorService.inset(Record)==1)
+		{
+			return ConstantUtil.SCIENCE_INSERT_SUCCESS;
+		} else {
+			return ConstantUtil.SCIENCE_INSERT_FAILD;
+		}
+	}
 
-		return null;
+	//显示作者
+	@RequestMapping("listPeriodicalAuthor.do")
+	@ResponseBody
+	Layui listPeriodicalAuthor(@RequestParam("id")String id){
+		List<PeriodicalThesisAuthor> result = authorService.listRecord(id);
+		return Layui.data(result.size(),result);
 	}
 	
 }

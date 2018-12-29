@@ -17,12 +17,12 @@
 </head>
 <body id="bodyHei">
 <div class="layui-container" style="margin-top:15px;">
-  <form class="layui-form" action="addShareholderInfo.do" method="post" lay-filter="example">
+  <form class="layui-form" action="addMeetingAuthor.do" method="post" lay-filter="example">
       <div class="layui-form-item">
           <label class="layui-form-label wid60">姓名</label>
           <div class="layui-input-block wid80">
               <input type="text" name="shareholderName" lay-verify="title" autocomplete="off" placeholder="请输入作者名称" class="layui-input">
-              <input type="hidden" name="id" value=${requestScope.Info[0]}>
+              <input type="hidden" name="id" value=${param.id}>
           </div>
       </div>
       <div class="layui-form-item">

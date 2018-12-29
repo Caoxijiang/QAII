@@ -21,8 +21,8 @@ public class MeetingThesisAuthorServiceImpl implements MeetingThesisAuthorServic
     private MeetingThesisAuthorMapper mapper;
 
     @Override
-    public List<MeetingThesisAuthor> listAuthor() {
-        return mapper.listRecord();
+    public List<MeetingThesisAuthor> listAuthor(String id) {
+        return mapper.listRecord(id);
     }
 
     @Override
@@ -42,6 +42,6 @@ public class MeetingThesisAuthorServiceImpl implements MeetingThesisAuthorServic
 
     @Override
     public MeetingThesisAuthor getRecord(Integer id) {
-        return mapper.selectByPrimaryKey(id);
+        return mapper.getRecord(id);
     }
 }
