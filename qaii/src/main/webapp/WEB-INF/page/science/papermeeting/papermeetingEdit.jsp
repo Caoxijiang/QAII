@@ -20,6 +20,14 @@
     .layui-table-body {
 	    height:auto;
 	}
+	#addmumber {
+		/*margin-right: 15px;
+		float: right;
+		position: absolute;
+		top: 370px;
+		right: 165px;
+		z-index: 1000;*/
+	}
   </style>
 </head>
 <body id="bodyHei">
@@ -144,6 +152,11 @@
 			 <script type="text/html" id="barDemopaper">
 				 <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 			 </script>
+		 </div>
+		 <div class="layui-input-block" style="margin-top:10px;">
+			 <div id="addmumber" data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">
+				 <i class="layui-icon layui-icon-add-1"></i>添加作者
+			 </div>
 		 </div>
 	 </div>
    <!--  第二块内容-->
@@ -569,6 +582,20 @@ function download(src) {
     evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
     $a.dispatchEvent(evObj);
 };
+
+/*添加成员*/
+$('#addmumber').on('click', function(){
+    layer.open({
+        type: 2
+        ,title: "作者添加"
+		,content: "papermeetingmumber.do?id=" + ${param.userId}
+        ,shade: 0.3 //不显示遮罩
+        ,area: ['390px', '500px']
+        ,yes: function(){
+            layer.closeAll();
+        }
+    });
+});
 </script>
 </body>
 </html>        
