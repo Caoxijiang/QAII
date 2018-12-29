@@ -144,6 +144,11 @@
 				 <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 			 </script>
 		 </div>
+		 <div class="layui-input-block" style="margin-top:10px;">
+			 <div id="addmumber" data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">
+				 <i class="layui-icon layui-icon-add-1"></i>添加作者
+			 </div>
+		 </div>
 	 </div>
    <!--  第二块内容-->
    <h1>期刊论文相关文件</h1>

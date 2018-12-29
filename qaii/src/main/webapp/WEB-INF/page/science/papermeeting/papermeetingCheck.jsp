@@ -30,7 +30,7 @@
 		<span class="blue">会议论文&nbsp;—&nbsp;查看详情界面</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('paper.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('papermeeting.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>		
 </div>
@@ -135,6 +135,13 @@
 	    </div>		 
 	  </div>
    <!--  第一块内容-->
+	 <!--  第一块内容-->
+	 <h1>论文作者信息</h1>
+	 <div class="layui-row">
+		 <div class="layui-input-block">
+			 <table class="layui-hide" id="testpaper" lay-filter="demopaper"></table>
+		 </div>
+	 </div>
    <!--  第二块内容-->
    <h1>会议论文相关文件</h1>
 	  <div class="layui-row bgf7f8f8">	
@@ -210,6 +217,21 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
 		layer = layui.layer,
 		laydate = layui.laydate,
 		upload = layui.upload;
+    //添加论文作者表格 wangxin
+    table.render({
+        elem: '#testpaper'
+        ,method:'post'
+        ,url:'selectIndusStackInfo.do?id='+id/*修改接口函数*/
+        ,cellMinWidth: 100
+        ,cols: [[
+            {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
+            ,{field:'shareholderName', title: '姓名'}
+            ,{field:'contributionProportion',title: '排名', sort: true}
+            ,{field:'contributionTime',title: '单位', sort: true}
+        ]]
+        /*data:obj.data*/
+
+    });
 	   var id=${param.userId};
 	   var eid=$("imageVal").val();
 	 //文件表格展示
