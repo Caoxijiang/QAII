@@ -113,7 +113,7 @@ layui.use('table', function(obj){
 	  //监听行工具事件
 	  table.on('tool(test)', function(obj){
 	    var data = obj.data;
-	    var ops="http://"+window.location.host+"/";
+	    var ops="https://"+window.location.host+"/";
 	    console.log(ops);
 	    //console.log(obj)
 	    if(obj.event === 'del'){
