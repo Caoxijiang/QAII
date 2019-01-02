@@ -120,7 +120,8 @@ layui.use('table', function(obj){
 	  //监听行工具事件
 	  table.on('tool(test)', function(obj){
 	    var data = obj.data;
-	    var ops="http://"+window.location.host+"/";
+
+	    var ops="https://"+window.location.host+"/";
 	    //console.log(obj)
 	    if(obj.event === 'del'){
 	      layer.confirm('真的删除行么', function(index){
@@ -157,7 +158,9 @@ layui.use('table', function(obj){
 	    }else if(obj.event === 'download'){//文件下载
 	        var addressid=data.id;
 	    	var address=data.path;
+
             download(ops+address);
+
 		}else if(obj.event === 'upload'){//文件重新上传
 			var address=data.path;
 			var id=data.id;
