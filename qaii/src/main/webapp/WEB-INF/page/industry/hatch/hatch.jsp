@@ -148,10 +148,10 @@ layui.use('table', function(obj){
 		{field: 'incubatorName', title: '所属孵化器',sort: true,width:200},
 		{field: 'hatchingTime', title: '入孵时间',sort: true,width:200},
 		{field: 'limitedPeriod', title: '有限期',sort: true,width:200},
-		{field: 'isThousandSailEnterprise', title: '“千帆计划”入库企业',sort: true,width:300},
-		{field: 'isHighTechnologyEnterprise', title: '高新技术企业',sort: true,width:200},
-		{field: 'isBillionEnterprise', title: '青岛市科技型企业培育“百千万”工程 ',sort: true,width:360},
-		{field: 'copyStatus', title: '备注',sort: true,width:200},
+		{field: 'isThousand', title: '“千帆计划”入库企业',sort: true,width:300},
+		{field: 'isHighTechnology', title: '高新技术企业',sort: true,width:200},
+		{field: 'isBillion', title: '青岛市科技型企业培育“百千万”工程 ',sort: true,width:360},
+		{field: 'remark', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:500}
     ]], 
 	  //表格数据
@@ -375,7 +375,7 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: 'insertCopyrightOfExcel.do'
+  ,url: 'insertIncubatorOfExcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
 	  alert("上传成功！请更新数据！");

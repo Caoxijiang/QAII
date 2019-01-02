@@ -320,7 +320,7 @@ layui.use('table', function(obj){
             let arr=[data.id];
             console.log(data) 
             $.post({
-            	url:"dellSubjectMsg.do",
+            	url:"dellPlatformMsg.do",
             	data:{
             		"requestDate" : arr
             	},
@@ -329,6 +329,7 @@ layui.use('table', function(obj){
             		    //删除对应行（tr）的DOM结构
             			obj.del();
             			layer.close(index);
+                        layer.alert("删除成功")
             		}else{
             			layer.alert("删除失败")
             		}

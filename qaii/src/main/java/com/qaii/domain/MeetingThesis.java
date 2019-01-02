@@ -38,6 +38,16 @@ public class MeetingThesis {
     
     private List<MeetingThesisFile> listFile;
 
+    private List<MeetingThesisAuthor> listAuthor;
+
+    public List<MeetingThesisAuthor> getListAuthor() {
+        return listAuthor;
+    }
+
+    public void setListAuthor(List<MeetingThesisAuthor> listAuthor) {
+        this.listAuthor = listAuthor;
+    }
+
     public List<MeetingThesisFile> getListFile() {
 		return listFile;
 	}

@@ -72,16 +72,45 @@ public class Incubator {
 	private Date gmtModified;
     
     private String[] url;
-    
-    private IncubatorFile file;
 
-    public IncubatorFile getFile() {
-		return file;
-	}
+    private String isThousand;
 
-	public void setFile(IncubatorFile file) {
-		this.file = file;
-	}
+    private String isHighTechnology;
+
+    private String isBillion;
+
+    public String getIsHighTechnology() {
+        return isHighTechnology;
+    }
+
+    public void setIsHighTechnology(String isHighTechnology) {
+        this.isHighTechnology = isHighTechnology;
+    }
+
+    public String getIsBillion() {
+        return isBillion;
+    }
+
+    public void setIsBillion(String isBillion) {
+        this.isBillion = isBillion;
+    }
+
+    public String getIsThousand() {
+        return isThousand;
+    }
+
+    public void setIsThousand(String isThousand) {
+        this.isThousand = isThousand;
+    }
+//    private IncubatorFile file;
+//
+//    public IncubatorFile getFile() {
+//		return file;
+//	}
+//
+//	public void setFile(IncubatorFile file) {
+//		this.file = file;
+//	}
 
 	public String[] getUrl() {
 		return url;
