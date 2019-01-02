@@ -39,6 +39,52 @@ circlehtml=circlehtml+
 }
 $(".base").html(circlehtml);
 
+//千帆计划、高新技术、百千万工程、中小型企业赋值
+var totalData=gettotalData();
+console.log(totalData)
+new Vue({
+    el: '#t1',
+    data: {
+        message: totalData.QianFan//千帆计划入库企业
+    }
+})
+
+new Vue({
+    el: '#t2',
+    data: {
+        message: totalData.GaoxinJishu//千帆计划入库企业
+    }
+})
+
+new Vue({
+    el: '#t3',
+    data: {
+        message: totalData.BaiQIan//千帆计划入库企业
+    }
+})
+
+new Vue({
+    el: '#t4',
+    data: {
+        message: totalData.ZhongXiaoXing//千帆计划入库企业
+    }
+})
+
+
+function gettotalData(){
+    var result=null;
+    $.ajax({
+        async:false,
+        type:"POST",
+        url:"HighLevel.do",
+        success:function(data){
+            result=data;
+        }
+    })
+    return result;
+}
+
+//
 function bodyfun1(){//千帆计划入库企业
 	var cirnum=6;
 	var circlehtml="<div class='pan'></div>";

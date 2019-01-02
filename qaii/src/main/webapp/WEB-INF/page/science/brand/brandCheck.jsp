@@ -183,7 +183,6 @@
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 //JavaScript代码区域
-
 layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
   var form = layui.form,
 	element = layui.element,
@@ -231,6 +230,7 @@ layui.use(['form', 'layedit', 'laydate','element','upload'], function(){
 					  var url =data.data.url;
 					  var imgpath=domain+url;
 					  $("#demo1").attr("src","https://"+imgpath);
+                        /*$("#demo1").attr("src","http://"+imgpath);*/
 				}else{
 					alert("查看详情失败")
 				}

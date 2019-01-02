@@ -27,7 +27,7 @@ public class industryDataOverviewController {
     @Resource
     private AwardPersonalService awardPersonalService;
     /*
-     * 千人计划、高新技术、百千万工程、中小型企业接口
+     * 千帆计划、高新技术、百千万工程、中小型企业接口
      * */
     @RequestMapping("HighLevel.do")
     @ResponseBody
@@ -40,8 +40,16 @@ public class industryDataOverviewController {
         return result;
     }
 
+/*//千帆计划查询出所有的公司名称。
+    @RequestMapping("SelectQianfan.do")
+    @ResponseBody
+    public Map<String,Integer> SelectQianfanaLeval(){
+        Map<String,Integer> result=new HashMap<>();
 
+        return null;
+    }*/
 
+    //查询高新技术企业接口
     /*
      * 服务企业数量接口
      * */
