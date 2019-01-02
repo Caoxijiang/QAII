@@ -49,7 +49,7 @@
 	<table id="demo" lay-filter="test"></table>
 	<script type="text/html" id="barDemo">
   		<a class="layui-btn layui-btn-tired layui-btn-xs" lay-event="online">在线预览</a>
-  		<a class="layui-btn layui-btn-xs" lay-event="download">下载</a>
+		<a class="layui-btn layui-btn-xs" lay-event="download">下载</a>
   		<a class="layui-btn layui-btn-edit layui-btn-xs" lay-event="upload">重新上传</a>
 		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 	</script>
@@ -60,10 +60,9 @@
 var userID=${param.userId};
 var step=${param.step};
  var pat="${requestScope.utflist[0]}";
+let opss=[];
 console.log(pat);
-
 layui.use('table', function(obj){
-	console.log(obj);
 	  var table = layui.table;
 	  table.render({
 	    elem: '#demo'
@@ -93,15 +92,23 @@ layui.use('table', function(obj){
 	      var checkStatus = table.checkStatus('demo')
 	      ,data = checkStatus.data;
 	      for(var i=0;i<data.length;i++){
-	    	  console.log(data[i].path);
+	    	  /*console.log(data[i].path);*/
 	      }
 	    }
 	    ,isAll: function(){ //批量下载
+	         let ops="http://"+window.location.host+"/";
 	    	 var checkStatus = table.checkStatus('demo')
-		      ,data = checkStatus.data;
-		      for(var i=0;i<data.length;i++){
-		    	  download(data[i].path);
+		       ,data = checkStatus.data;
+	    	    console.log("23323232");
+		        for(let i=0;i<data.length;i++){
+		        opss.push(ops+data[i].path);
+                downloadAll(opss);
+		        console.log(data[i].path)
+				console.log(ops+opss)
+                  //把所有的path放到数组中也是一种思路
 		      }
+               //   downloadAll(opss);
+		          opss=[];
 	    }
 	  };
 	  
@@ -114,7 +121,6 @@ layui.use('table', function(obj){
 	  table.on('tool(test)', function(obj){
 	    var data = obj.data;
 	    var ops="http://"+window.location.host+"/";
-	    console.log(ops);
 	    //console.log(obj)
 	    if(obj.event === 'del'){
 	      layer.confirm('真的删除行么', function(index){
@@ -144,12 +150,14 @@ layui.use('table', function(obj){
 	    	var reg3=new RegExp("png","i");
 	    	if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
 	    		window.open(ops+address);
+	    		console.log(address)
 	    	}else{
 	    		alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
 	    	};
 	    }else if(obj.event === 'download'){//文件下载
+	        var addressid=data.id;
 	    	var address=data.path;
-	    		download(ops+address);
+            download(ops+address);
 		}else if(obj.event === 'upload'){//文件重新上传
 			var address=data.path;
 			var id=data.id;
@@ -165,13 +173,26 @@ layui.use('table', function(obj){
 </script>
 <script>
 function download(src) {
-    var $a = document.createElement('a');
-    $a.setAttribute("href", src);
-    $a.setAttribute("download", "");
-    var evObj = document.createEvent('MouseEvents');
-    evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
-    $a.dispatchEvent(evObj);
+    var form = $("<form>");
+    form.attr("style","display:none");
+    form.attr("target","");
+    form.attr("method","post");
+    form.attr("action",  "Fileupload.do");
+    var input1 = $("<input>");
+    input1.attr("type","hidden");
+    input1.attr("dataType","json");
+    input1.attr("name","strZipPath");
+    input1.attr("value", src);
+    $("body").append(form);
+    form.append(input1);
+    form.submit();
+    form.remove();
 };
+
+
+function downloadAll(sus) {
+	window.location.href = ("http://"+window.location.host+"/"+"/QAII/FileupLoadAlls.do?code="+sus)
+}
 
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>
