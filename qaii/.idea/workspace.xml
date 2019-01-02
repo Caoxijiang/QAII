@@ -10,26 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42074fb5-b165-4f9f-a415-0f5bff3ecb84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ant_ant_1_6_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/FileLoadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/ZipDownloadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/errorpage/401.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/QAII_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/QAII_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/QAII_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QAII.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QAII.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/industryDataOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/industryDataOverviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/util/MyFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/util/MyFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/errorpage/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/errorpage/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/indexIndustry.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/indexIndustry.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandCheck.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandProcess.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandProcess.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/patent/patentProcess.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/patent/patentProcess.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/active.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/active.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/comm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/comm.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -242,8 +223,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/ZipDownloadController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+            <state relative-caret-position="1200">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -405,7 +386,7 @@
     <option name="jreName" value="1.8" />
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-300" />
     <option name="y" value="38" />
     <option name="width" value="1386" />
@@ -576,7 +557,7 @@
     <property name="SearchEverywhereHistoryKey" value="indnews&#9;FILE&#9;file://F:/项目/QAII/qaii/src/main/webapp/WEB-INF/page/industry/indnews.jsp" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546415694280" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546415935676" />
     <property name="last_opened_file_path" value="D:/新建文件夹/QAII/qaiiss" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -756,12 +737,12 @@
       <workItem from="1546003207607" duration="4479000" />
       <workItem from="1546045727469" duration="24649000" />
       <workItem from="1546391217155" duration="522000" />
-      <workItem from="1546391918566" duration="21452000" />
+      <workItem from="1546391918566" duration="21722000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="459706000" />
+    <option name="totallyTimeSpent" value="459976000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -774,10 +755,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8226601" visible="true" weight="0.0" />
-      <window_info id="Structure" order="1" sideWeight="0.1773399" side_tool="true" visible="true" weight="0.0" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79202276" visible="true" weight="0.17927383" />
+      <window_info id="Structure" order="1" sideWeight="0.2079772" side_tool="true" visible="true" weight="0.17927383" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -787,13 +767,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" weight="0.22495896" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.28899837" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32840723" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.39737275" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32840723" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.3316913" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" visible="true" weight="0.42364532" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159913" side_tool="true" weight="0.4175705" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.07881773" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
@@ -1486,8 +1466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/ZipDownloadController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+        <state relative-caret-position="1200">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
