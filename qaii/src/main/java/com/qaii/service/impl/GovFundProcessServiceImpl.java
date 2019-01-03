@@ -28,4 +28,9 @@ public class GovFundProcessServiceImpl implements GovFundProcessService {
 		return processmapper.insert(process);
 	}
 
+	@Override
+	public int deleteRecord(Integer[] id) {
+		return processmapper.deleteByPrimaryKeys(id);
+	}
+
 }

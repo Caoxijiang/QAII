@@ -1,10 +1,10 @@
 // JavaScript Document
-var num=new Array(32,45,102,62);
+/*var num=new Array(32,45,102,62);
 numadd(num[0],"t1");
 numadd(num[1],"t2");
 numadd(num[2],"t3");
 numadd(num[3],"t4");
-setInterval(function(){/*系统动态效果*/
+setInterval(function(){/!*系统动态效果*!/
 	numadd(num[0],"t1");
 	numadd(num[1],"t2");
 	numadd(num[2],"t3");
@@ -18,7 +18,7 @@ function numadd(numb,ids){
 			document.getElementById(ids).innerHTML = i;
 		}
 	},50); 
-}
+}*/
 
 //系统显示时间
 function getDate(){

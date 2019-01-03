@@ -17,7 +17,9 @@ public interface PeriodicalThesisAuthorMapper {
 
     int updateByPrimaryKey(PeriodicalThesisAuthor record);
 
-    List<PeriodicalThesisAuthor> listRecord();
+    List<PeriodicalThesisAuthor> listRecord(String id);
 
     int deleteByPrimaryKeys(Integer[] id);
+
+    PeriodicalThesisAuthor getRecord(Integer id);
 }

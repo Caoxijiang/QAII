@@ -107,8 +107,17 @@ public class IncubatorRecordController {
             case "limitedPeriod":
                 item="有限期";
                 break;
+            case "isThousandSailEnterprise":
+                item="是否'千帆计划'入库企业";
+                break;
+            case "isHighTechnologyEnterprise":
+                item="是否高新技术企业";
+                break;
+            case "isBillionEnterprise":
+                item="是否青岛市科技型企业培育’百千万‘工程";
+                break;
             default:
-                item="";
+                item="变更记录显示异常";
         }
         return  item;
     }

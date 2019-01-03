@@ -10,4 +10,5 @@ public interface GovPlatformProcessService {
 	
 	int addProcess(Govplatformprocess process);
 
+	int deleteRecord(Integer[] id);
 }

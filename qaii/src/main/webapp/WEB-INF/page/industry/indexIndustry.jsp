@@ -13,6 +13,7 @@
 	<script src="${basePath}/js/echarts.min.js"></script>
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/main.js"></script>
+	<script src="${basePath}/js/vue.min.js"></script>
 
   <%--<link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="${basePath}/css/industrymain.css" media="all" />
@@ -41,19 +42,19 @@
 		<ul>
 			<li class="tab tabac" style="margin-left:190px;" name="bodybox1">
 				<div class="title">"千帆计划"入库企业</div>
-				<span class="num" id="t1">36</span>
+				<span class="num" id="t1">{{message}}家</span>
 			</li>
 			<li class="tab" name="bodybox2">
 				<div class="title">高新技术企业</div>
-				<span class="num" id="t2">36</span>
+				<span class="num" id="t2">{{ message }}家</span>
 			</li>
 			<li class="tab" name="bodybox3">
 				<div class="title">培育"百千万"工程企业</div>
-				<span class="num" id="t3">36</span>
+				<span class="num" id="t3">{{ message }}家</span>
 			</li>
 			<li class="tab" name="bodybox4">
 				<div class="title">科技型中小企业</div>
-				<span class="num" id="t4">36</span>
+				<span class="num" id="t4">{{ message }}家</span>
 			</li>
 		</ul>
 	</div>
@@ -155,5 +156,6 @@
 	</div>
 	<script src="${basePath}/js/comm.js"></script>
 	<script src="${basePath}/js/active.js"></script>
+
 </body>
 </html>

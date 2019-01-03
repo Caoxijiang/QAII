@@ -14,6 +14,14 @@ public class ConstantUtil {
 
     public final static String INDUSTRY_EDIT_FAILD="page/industry/inform/editFaildind";
 
+    public final static String SCIENCE_INSERT_SUCCESS="page/science/inform/add-succesdsci";
+
+    public final static String SCIENCE_INSERT_FAILD="page/science/inform/add-faildsci";
+
+    public final static String SCIENCE_EDIT_SUCCESS="page/science/inform/edit-succesdsci";
+
+    public final static String SCIENCE_EDIT_FAILD="page/science/inform/edit-faildsci";
+
     public final static byte BYTE_TRUE = 1;
 
     public final static byte BYTE_FALSE = 0;
