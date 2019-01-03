@@ -29,5 +29,7 @@
 		name=#{name,jdbcType=VARCHAR} 
 		where id=#{id,jdbcType=INTEGER}
 	</update>
-	
+	<delete id="deleteBySid" parameterType="java.lang.Integer">
+		delete from  sci_processimg where sid=#{sid,jdbcType=INTEGER}
+	</delete>
 </mapper>

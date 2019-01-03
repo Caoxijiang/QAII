@@ -464,4 +464,18 @@ public class TradeMarkController {
     		
     	}
 	}
+
+	//删除流程
+	@RequestMapping(value="deleteTradeMarkProcess.do")
+	@ResponseBody
+	JsonResult deleteTradeMarkProcess(@RequestParam("id")Integer[] id){
+		int result = processService.deleteRecord(id);
+		//tradeimgService.deleteBySid(id[0]);
+		if(result == 1){
+			return new JsonResult(result);
+		}else {
+			return null;
+		}
+
+	}
 }

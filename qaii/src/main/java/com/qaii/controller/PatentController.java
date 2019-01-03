@@ -13,6 +13,7 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.qaii.util.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -34,11 +35,6 @@ import com.qaii.domain.Processimg;
 import com.qaii.service.PatentService;
 import com.qaii.service.ProcessService;
 import com.qaii.service.ProcessimgService;
-import com.qaii.util.AlertException;
-import com.qaii.util.CountDatetoNowDays;
-import com.qaii.util.CustomException;
-import com.qaii.util.JsonResult;
-import com.qaii.util.Layui;
 
 @Controller
 public class PatentController {
@@ -126,18 +122,17 @@ public class PatentController {
     }
     
     //增加专利流程信息
-  	@ResponseBody
   	@RequestMapping(value="addProcessInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-  	public JsonResult addProcessInfo(HttpServletRequest req,PatProcess patp) {
+  	public String addProcessInfo(HttpServletRequest req,PatProcess patp) {
   		patp.setPid(Integer.parseInt(req.getParameter("pid")));
   		patp.setDescription(req.getParameter("description"));
   		patp.setTitle(req.getParameter("title"));
   		patp.setTime(req.getParameter("time"));
   		int row = processService.addProcessInfo(patp);
       	if(row!=0) {
-      		return  new JsonResult(row);
+      		return ConstantUtil.SCIENCE_INSERT_SUCCESS;
       	}else {
-      		return  new JsonResult();
+      		return  ConstantUtil.SCIENCE_INSERT_FAILD;
       		
       	}
   	}
@@ -430,12 +425,15 @@ public class PatentController {
 	}
 
 	//删除流程
+	@RequestMapping(value="deletePatentProcess.do")
+	@ResponseBody
 	JsonResult deletePatentProcess(@RequestParam("id")Integer[] id){
 		int result = processService.deleteRecord(id);
+		processimgService.deleteBySid(id[0]);
 		if(result == 1){
 			return new JsonResult(result);
 		}else {
-			return new JsonResult();
+			return null;
 		}
 
 	}
