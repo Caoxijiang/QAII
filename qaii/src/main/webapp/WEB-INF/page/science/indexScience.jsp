@@ -25,7 +25,7 @@
 	<div class="scititle">QAII智慧科技管理系统</div>
 	<div class="contern">
 		<div class="row">
-		  <div class="col-md-6">
+		  <div class="col-md-8">
 		  	<div class="item">
 		  		<div class="itemtitle">
 		  			科研成果总览
@@ -80,24 +80,26 @@
 		  			</div>
 		  		</div>
 		  	</div>
-		  	<div class="item">
-		  		<div class="itemtitle">
-		  			科研成果信息
-		  		</div>
-		  		<div class="itemcontent">
-		  			<div id="information" class="charsBox"></div>
-		  		</div>
-		  	</div>
 		  </div>
-		  <div class="col-md-6">
+		  <div class="col-md-4">
 		  	<div class="item">
-		  		<div class="itemtitle">
-		  			数据总量
-		  		</div>
-		  		<div class="itemcontent">
-		  			<div id="totalData" class="charsBox"></div>
-		  		</div>
-		  	</div>
+              <div class="itemtitle">
+                  数据总量
+              </div>
+              <div class="itemcontent">
+                  <div id="totalData" class="charsBox"></div>
+              </div>
+          </div>
+
+              <div class="item">
+                  <div class="itemtitle">
+                      科研成果信息
+                  </div>
+                  <div class="itemcontent">
+                      <div id="information" class="charsBox"></div>
+                  </div>
+              </div>
+
 		  	<div class="item">
 		  		<div class="itemtitle">
 		  			政府资助
@@ -122,7 +124,6 @@
 			  							<th>课题项目名称</th>
 			  							<th>立项编号</th>
 			  							<th>立项时间</th>
-			  							<th>资助金额（万元）</th>
 			  						</tr>
 			  					</table>
 			  				</div><!-- tab-科研项目界面  结束-->
@@ -134,7 +135,6 @@
 			  							<th>平台名称</th>
 			  							<th>立项编号</th>
 			  							<th>立项时间</th>
-			  							<th>资助金额（万元）</th>
 			  						</tr>
 			  					</table>
 			  				</div><!-- tab-创新平台界面  结束-->
@@ -146,7 +146,6 @@
 			  							<th>基金名称</th>
 			  							<th>基金实施期</th>
 			  							<th>批复时间</th>
-			  							<th>基金资助额度</th>
 			  						</tr>
 			  					</table>
 			  				</div><!-- tab-基金界面  结束-->
@@ -157,7 +156,6 @@
 			  							<th>来源</th>
 			  							<th>获奖名称</th>
 			  							<th>获奖时间</th>
-			  							<th>奖励金额</th>
 			  						</tr>
 			  					</table>
 			  				</div><!-- tab-科技奖励界面  结束-->
@@ -211,7 +209,7 @@ function getGovernmentFunding(){
             		    "<td>"+e.govsubName+"</td>"+
             		    "<td>"+e.govsubApprovalnum+"</td>"+
             		    "<td>"+e.govsubApprovaltime+"</td>"+
-            		    "<td>"+e.govsubSubvention+"</td>"+
+            		   /* "<td>"+e.govsubSubvention+"</td>"+*/
             		    "</tr>").insertAfter($("#govTable1 tr:eq(0)"));
             });
             data.platform.forEach(function(e){
@@ -219,7 +217,7 @@ function getGovernmentFunding(){
                         "<td>"+e.govplatName+"</td>"+
                         "<td>"+e.govplatApprovalnum+"</td>"+
                         "<td>"+e.govplatApprovaltime+"</td>"+
-                        "<td>"+e.govplatSubvention+"</td>"+
+                        /*"<td>"+e.govplatSubvention+"</td>"+*/
                         "</tr>").insertAfter($("#govTable2 tr:eq(0)"));
             });
             data.fund.forEach(function(e){
@@ -227,14 +225,14 @@ function getGovernmentFunding(){
                         "<td>"+e.govfundName+"</td>"+
                         "<td>"+e.govfundImplementtime+"</td>"+
                         "<td>"+e.govfundWrittentime+"</td>"+
-                        "<td>"+e.govfundFundlimit+"</td>"+
+                       /* "<td>"+e.govfundFundlimit+"</td>"+*/
                         "</tr>").insertAfter($("#govTable3 tr:eq(0)"));
             });
             data.reward.forEach(function(e){
                 $("<tr><td>"+e.rewardSource+"</td>"+
                         "<td>"+e.rewardName+"</td>"+
                         "<td>"+e.rewardAwardtime+"</td>"+
-                        "<td>"+e.rewardAwardnum+"</td>"+
+                       /* "<td>"+e.rewardAwardnum+"</td>"+*/
                         "</tr>").insertAfter($("#govTable4 tr:eq(0)"));
             });
         }
