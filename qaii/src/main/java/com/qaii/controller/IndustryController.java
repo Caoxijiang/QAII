@@ -34,7 +34,7 @@ import com.qaii.service.StockEquityService;
 @Controller
 public class IndustryController {
 	private static String PATH="C:/File/img/industry/";
-	private static String URL="http://www.zmadmin.top/";
+	private static String URL="https://www.zmadmin.top/";
 	@Resource
 	private IncubatorService incubatorService;
 	@Resource

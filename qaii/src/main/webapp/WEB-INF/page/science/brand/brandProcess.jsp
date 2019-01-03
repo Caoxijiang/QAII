@@ -61,8 +61,7 @@ var userID=${param.userId};
 var step=${param.step};
 var tradmDept="${param.tradmDept}";
 /* var patName=${param.patName}; */
-
-
+let opss=[];
 layui.use('table', function(obj){
 	  var table = layui.table;
 	  table.render({
@@ -98,10 +97,13 @@ layui.use('table', function(obj){
 	      }
 	    }
 	    ,isAll: function(){ //批量下载
+              let ops="http://"+window.location.host+"/";
 	    	 var checkStatus = table.checkStatus('demo')
 		      ,data = checkStatus.data;
 		      for(var i=0;i<data.length;i++){
-		    	  download(data[i].filename);
+                  opss.push(ops+data[i].path);
+                  downloadAll(opss);
+		    	  //download(data[i].filename);
 		      }
 	    }
 	  };
@@ -113,6 +115,7 @@ layui.use('table', function(obj){
 	  
 	  //监听行工具事件
 	  table.on('tool(test)', function(obj){
+	    var ops="http://"+window.location.host+"/";
 	    var data = obj.data;
 	    //console.log(obj)
 	    if(obj.event === 'del'){
@@ -148,7 +151,8 @@ layui.use('table', function(obj){
 	    	};
 	    }else if(obj.event === 'download'){//文件下载
 	    	var address=data.path;
-	    		download(address);
+                download(ops+address);
+	    		//download(address);
 		}else if(obj.event === 'upload'){//文件重新上传
 			var address=data.filename;
 			var id=data.id;
@@ -163,13 +167,25 @@ layui.use('table', function(obj){
 </script>
 <script>
 function download(src) {
-    var $a = document.createElement('a');
-    $a.setAttribute("href", src);
-    $a.setAttribute("download", "");
-    var evObj = document.createEvent('MouseEvents');
-    evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
-    $a.dispatchEvent(evObj);
+    javascript:escape(src)
+    var form = $("<form>");
+    form.attr("style","display:none");
+    form.attr("target","");
+    form.attr("method","post");
+    form.attr("action",  "Fileupload.do");
+    var input1 = $("<input>");
+    input1.attr("type","hidden");
+    input1.attr("name","strZipPath");
+    input1.attr("value", src);
+    $("body").append(form);
+    form.append(input1);
+    form.submit();
+    form.remove();
 };
+
+function downloadAll(sus) {
+    window.location.href = ("http://"+window.location.host+"/"+"/QAII/FileupLoadAlls.do?code="+sus)
+}
 
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>
