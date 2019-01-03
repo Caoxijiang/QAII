@@ -161,6 +161,8 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
   }else{
 	   alert("请刷新页面");
   }
+
+
     //在线预览
     $("#paperOnline").click(function(){
         /* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
