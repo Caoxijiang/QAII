@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface MeetingThesisAuthorService {
 
-    List<MeetingThesisAuthor> listAuthor();
+    List<MeetingThesisAuthor> listAuthor(String id);
 
     int inset(MeetingThesisAuthor Record);
 

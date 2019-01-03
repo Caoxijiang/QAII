@@ -17,7 +17,9 @@ public interface MeetingThesisAuthorMapper {
 
     int updateByPrimaryKey(MeetingThesisAuthor record);
 
-    List<MeetingThesisAuthor> listRecord();
+    List<MeetingThesisAuthor> listRecord(String id);
 
     int deleteByPrimaryKeys(Integer[] id);
+
+    MeetingThesisAuthor getRecord(Integer id);
 }

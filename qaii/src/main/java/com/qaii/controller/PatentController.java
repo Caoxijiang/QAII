@@ -428,5 +428,16 @@ public class PatentController {
 		record.setPatPenner(list.get(17));
 		record.setPatAgent(list.get(18));
 	}
+
+	//删除流程
+	JsonResult deletePatentProcess(@RequestParam("id")Integer[] id){
+		int result = processService.deleteRecord(id);
+		if(result == 1){
+			return new JsonResult(result);
+		}else {
+			return new JsonResult();
+		}
+
+	}
 	
 }

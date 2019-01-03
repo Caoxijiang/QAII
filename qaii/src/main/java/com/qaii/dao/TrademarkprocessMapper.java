@@ -18,4 +18,6 @@ public interface TrademarkprocessMapper {
     int updateByPrimaryKey(Trademarkprocess record);
     
     List<Trademarkprocess> getAllMsgBypid(Integer pid);
+
+    int deleteByPrimaryKeys(Integer[] id);
 }
