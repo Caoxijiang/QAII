@@ -139,7 +139,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 //上传附件
  upload.render({
    elem: '#test8'
-   ,url: '/upload/'
+   ,url: '/upload /'
    ,auto: false
    ,accept: 'file' //普通文件
    ,bindAction: '#test9'
