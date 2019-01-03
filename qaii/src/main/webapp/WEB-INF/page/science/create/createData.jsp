@@ -103,6 +103,17 @@ $(function(){
 			$("body", parent.document).find('iframe').attr('src','createProcess.do?userId='+userID+'&step='+stepnum+'&govplatApprovalnum=${requestScope.utflist[2]}&govplatName=${requestScope.utflist[0]}&govplatSource=${requestScope.utflist[1]}');
 		});
 	});
+    //删除步骤wangxin
+    $(function(){
+        $(document).on('click','.patentdelete',function(){
+            layui.use('layer', function(){
+                var layer = layui.layer;
+
+                layer.msg('步骤删除成功');
+            });
+            /*parent.location.reload()*/
+        });
+    });
 </script>
 </body>
 </html>        

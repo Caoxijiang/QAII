@@ -34,6 +34,9 @@ $().ready(function(){
 							"<button class='layui-btn btn databtn patentProcess' name='"+theme[i].id+"'>"+
 								"文件预览"+
 							"</button>"+
+							"<button class='layui-btn btn databtn layui-btn-danger patentdelete' name='"+theme[i].id+"'>"+
+							"删除"+
+							"</button>"+
 						"</div>"+
 				      "</div>"+
 				    "</div>"+
@@ -55,6 +58,9 @@ $().ready(function(){
 							"</button>"+
 							"<button class='layui-btn btn databtn patentProcess' name='"+theme[i].id+"'>"+
 								"文件预览"+
+							"</button>"+
+							"<button class='layui-btn btn databtn layui-btn-danger patentdelete' name='"+theme[i].id+"'>"+
+							"删除"+
 							"</button>"+
 							"<span class='datalidatel'>"+theme[i].time+"</span>"+
 						"</div>"+

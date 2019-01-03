@@ -97,7 +97,7 @@
         </li>
        	<li class="layui-nav-item">
           <a href="javascript:;" onclick="iframechange('newsScience.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>
-              &nbsp;消息管理<div id="messagenum">2</div>
+              &nbsp;消息管理<div id="messagenum">0</div>
           </a>
         </li>
       </ul>
@@ -134,13 +134,16 @@ layui.use('element', function(){
 function iframechange(obj){
 	$('iframe').attr('src',obj);
 }
-$.post({
-    url:"countScienceMessageNotice.do",
-    success:function(data){
 
-        console.log("消息通知的数量是" + data.count);
-    }
-})
+setTimeout(function(){
+    $.post({
+        url:"countScienceMessageNotice.do",
+        success:function(data){
+            messagenews=data.count;
+              $("#messagenum").html( data.count)
+        }
+    })
+},1000);
 </script>
 </body>
 </html>

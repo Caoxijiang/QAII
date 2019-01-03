@@ -21,6 +21,11 @@
 	<script src="${basePath}/js/echarts.min.js"></script>
 
 	<script src="${basePath}/js/vue.min.js"></script>--%>
+	<style>
+		a{
+			text-decoration: none;
+		}
+	</style>
 </head>
 <body class="mainbody">
 	<div class="titleh1">
@@ -71,49 +76,13 @@
 			<div class="char3">
 				<div>
 					<ul class="tabnavreward">
-						<li class="nage">院获奖情况</li>
-						<li class="nage nageactive">孵化企业获奖情况</li>
-						<li class="nage">个人获奖情况</li>
+						<li class="nage" name="yuanhuojiang">院获奖情况</li>
+						<li class="nage nageactive" name="qiyehuojaing">孵化企业获奖情况</li>
+						<li class="nage" name="gerenhuojiang">个人获奖情况</li>
 					</ul>
 				</div>
 				<div>
 					<table id="rewardtable">
-						<tr>
-							<th>获奖时间</th>
-							<th>获奖级别</th>
-							<th>获奖单位名称</th>
-							<th>奖励荣誉名称</th>
-						</tr>
-						<tr>
-							<td>2018-12-13</td>
-							<td>国家级</td>
-							<td>青岛智铭智能科技有限公司</td>
-							<td>高新技术企业</td>
-						</tr>
-						<tr style="background: rgba(115,199,206,0.1)">
-							<td>2018-12-12</td>
-							<td>国家级</td>
-							<td>青岛智铭智能科技有限公司</td>
-							<td>高新技术企业</td>
-						</tr>
-						<tr>
-							<td>2018-12-11</td>
-							<td>国家级</td>
-							<td>青岛智铭智能科技有限公司</td>
-							<td>高新技术企业</td>
-						</tr>
-						<tr style="background: rgba(115,199,206,0.1)">
-							<td>2018-12-10</td>
-							<td>国家级</td>
-							<td>青岛智铭智能科技有限公司</td>
-							<td>高新技术企业</td>
-						</tr>
-						<tr>
-							<td>2018-12-09</td>
-							<td>国家级</td>
-							<td>青岛智铭智能科技有限公司</td>
-							<td>高新技术企业</td>
-						</tr>
 					</table>
 				</div>
 			</div>
@@ -121,9 +90,51 @@
 
 	</div>
 	<div class="bodybox bodybox1">
+
+		<div class="ui_baseoutsed u_p3d">
+			<div class="baseoutsed u_p3d">
+				<div class="panoutsed"></div>
+				<div class="ball_baseoutsed u_p3d ball_1outsed">
+					<div class="balloutsed">青岛万龙智控科技有限公司</div>
+				</div>
+				<div class="ball_baseoutsed u_p3d ball_2outsed">
+					<div class="balloutsed">青岛慧宜智能科技有限公司</div>
+				</div>
+				<div class="ball_baseoutsed u_p3d ball_3outsed">
+					<div class="balloutsed">青岛平行智能产业管理有限公司</div>
+				</div>
+				<div class="ball_baseoutsed u_p3d ball_4outsed">
+					<div class="balloutsed">青岛慧天平行智能厨具有限公司l</div>
+				</div>
+				<div class="ball_baseoutsed u_p3d ball_5outsed">
+					<div class="balloutsed">青岛传视智能科技有限公司</div>
+				</div>
+				<div class="ball_baseoutsed u_p3d ball_6outsed">
+					<a href="www.baidu.com"><div class="balloutsed">青岛云亭智能科技有限公司</div></a>
+				</div>
+			</div>
+		</div>
 		<div class="ui_base u_p3d">
 			<div class="base u_p3d">
-
+				<div class="pan"></div>
+				<div class="ball_base u_p3d ball_1">
+					<div class="ball">青岛慧拓智能机器有限公司</div>
+				</div>
+				<div class="ball_base u_p3d ball_2">
+					<div class="ball">青岛智铭智能科技有限公司</div>
+				</div>
+				<div class="ball_base u_p3d ball_3">
+					<div class="ball">青岛中科慧康科技有限公司</div>
+				</div>
+				<div class="ball_base u_p3d ball_4">
+					<div class="ball">青岛中科慧农科技有限公司</div>
+				</div>
+				<div class="ball_base u_p3d ball_5">
+					<div class="ball">青岛慧城智能科技有限公司</div>
+				</div>
+				<div class="ball_base u_p3d ball_6">
+					<a href="www.baidu.com"><div class="ball">青岛中科慧畅信息科技有限公司</div></a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -133,15 +144,15 @@
 	<div class="popup" style="display: none;">
 		<div class="close"><span>+</span></div>
 		<ul>
-			<li><div class="square"></div><label>公司名称：</label><span>青岛智能智能科技有限公司</span></li>
-			<li><div class="square"></div><label>成立时间：</label><span>2018-12-20</span></li>
-			<li><div class="square"></div><label>公司住所：</label><span>山东省青岛市高新技术开发区</span></li>
-			<li><div class="square"></div><label>注册资本：</label><span>2000万</span></li>
-			<li><div class="square"></div><label>公司类型：</label><span>高新技术产业开发</span></li>
-			<li><div class="square"></div><label>法定代表人：</label><span>战德成</span></li>
-			<li><div class="square"></div><label>统一社会信用代码：</label><span>9137702223214545569</span></li>
+			<li><div class="square"></div><label>公司名称：</label><span id="mingcheng">青岛智能智能科技有限公司</span></li>
+			<li><div class="square"></div><label>成立时间：</label><span id="shijian">2018-12-20</span></li>
+			<li><div class="square"></div><label>公司住所：</label><span id="zhusuo">山东省青岛市高新技术开发区</span></li>
+			<li><div class="square"></div><label>注册资本：</label><span id="ziben">2000万</span></li>
+			<li><div class="square"></div><label>公司类型：</label><span id="leixing">高新技术产业开发</span></li>
+			<li><div class="square"></div><label>法定代表人：</label><span id="faren">战德成</span></li>
+			<li><div class="square"></div><label>统一社会信用代码：</label><span id="xindaima">9137702223214545569</span></li>
 		</ul>
-		<div class="detail">查看详情</div>
+		<div class="detail"><a href="industry.do" style="color:#fff;">查看详情</a></div>
 	</div>
 	<script src="${basePath}/js/comm.js"></script>
 	<script src="${basePath}/js/active.js"></script>
