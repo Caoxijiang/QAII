@@ -27,4 +27,9 @@ public class GovPlatformProcessServiceImpl implements com.qaii.service.GovPlatfo
 		return processmapper.insert(process);
 	}
 
+	@Override
+	public int deleteRecord(Integer[] id) {
+		return processmapper.deleteByPrimaryKeys(id);
+	}
+
 }

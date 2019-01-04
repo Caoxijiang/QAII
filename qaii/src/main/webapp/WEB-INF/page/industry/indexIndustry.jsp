@@ -95,22 +95,22 @@
 			<div class="baseoutsed u_p3d">
 				<div class="panoutsed"></div>
 				<div class="ball_baseoutsed u_p3d ball_1outsed">
-					<div class="balloutsed">青岛万龙智控科技有限公司</div>
+					<div class="balloutsed" id="wanglong">青岛万龙智控科技有限公司</div>
 				</div>
 				<div class="ball_baseoutsed u_p3d ball_2outsed">
-					<div class="balloutsed">青岛慧宜智能科技有限公司</div>
+					<div class="balloutsed" id="青岛慧宜智能科技有限公司">青岛慧宜智能科技有限公司</div>
 				</div>
 				<div class="ball_baseoutsed u_p3d ball_3outsed">
-					<div class="balloutsed">青岛平行智能产业管理有限公司</div>
+					<div class="balloutsed" id="青岛平行智能产业管理有限公司">青岛平行智能产业管理有限公司</div>
 				</div>
 				<div class="ball_baseoutsed u_p3d ball_4outsed">
-					<div class="balloutsed">青岛慧天平行智能厨具有限公司l</div>
+					<div class="balloutsed" id="青岛慧天平行智能厨具有限公司">青岛慧天平行智能厨具有限公司</div>
 				</div>
 				<div class="ball_baseoutsed u_p3d ball_5outsed">
-					<div class="balloutsed">青岛传视智能科技有限公司</div>
+					<div class="balloutsed" id="青岛传视智能科技有限公司">青岛传视智能科技有限公司</div>
 				</div>
 				<div class="ball_baseoutsed u_p3d ball_6outsed">
-					<a href="www.baidu.com"><div class="balloutsed">青岛云亭智能科技有限公司</div></a>
+					<div class="balloutsed" id="青岛云亭智能科技有限公司">青岛云亭智能科技有限公司</div>
 				</div>
 			</div>
 		</div>
@@ -118,22 +118,22 @@
 			<div class="base u_p3d">
 				<div class="pan"></div>
 				<div class="ball_base u_p3d ball_1">
-					<div class="ball">青岛慧拓智能机器有限公司</div>
+					<div class="ball" id="青岛慧拓智能机器有限公司">青岛慧拓智能机器有限公司</div>
 				</div>
 				<div class="ball_base u_p3d ball_2">
-					<div class="ball">青岛智铭智能科技有限公司</div>
+					<div class="ball" id="青岛智铭智能科技有限公司">青岛智铭智能科技有限公司</div>
 				</div>
 				<div class="ball_base u_p3d ball_3">
-					<div class="ball">青岛中科慧康科技有限公司</div>
+					<div class="ball" id="青岛中科慧康科技有限公司">青岛中科慧康科技有限公司</div>
 				</div>
 				<div class="ball_base u_p3d ball_4">
-					<div class="ball">青岛中科慧农科技有限公司</div>
+					<div class="ball" id="青岛中科慧农科技有限公司">青岛中科慧农科技有限公司</div>
 				</div>
 				<div class="ball_base u_p3d ball_5">
-					<div class="ball">青岛慧城智能科技有限公司</div>
+					<div class="ball" id="青岛慧城智能科技有限公司">青岛慧城智能科技有限公司</div>
 				</div>
 				<div class="ball_base u_p3d ball_6">
-					<a href="www.baidu.com"><div class="ball">青岛中科慧畅信息科技有限公司</div></a>
+					<div class="ball" id="青岛中科慧畅信息科技有限公司">青岛中科慧畅信息科技有限公司</div>
 				</div>
 			</div>
 		</div>

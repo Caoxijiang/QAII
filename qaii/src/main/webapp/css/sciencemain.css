@@ -10,23 +10,23 @@ ul,li{
 }
 .mainbody{
 	width: 1920px;
-    height: 1080px;
-    background: url(../image/sciencebg.jpg) 0% 0% / 100% 100% !important;
-    transform: scale(1, 0.877778);
-    overflow: hidden;
-    position: relative;
-    transform-origin: left top 0px;
+	height: 1080px;
+	background: url(../image/sciencebg.jpg) 0% 0% / 100% 100% !important;
+	transform: scale(1, 0.877778);
+	overflow: hidden;
+	position: relative;
+	transform-origin: left top 0px;
 }
 .main{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 1920px;
-    height: 1080px;
-    z-index: 1;
-    background-image: url(../image/science.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 1920px;
+	height: 1080px;
+	z-index: 1;
+	background-image: url(../image/science.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 .sciNav{
 	right:50px;
@@ -34,15 +34,15 @@ ul,li{
 	position: absolute;
 }
 .pageTo {
-    margin: 0px 10px;
-    background-image: url(../image/pageto.png);
-    height: 32px;
-    width: 94px;
-    color: #0f7ebc;
-    font-size: 16px;
-    display: inline-block;
-    line-height: 28px;
-    text-align:center;
+	margin: 0px 10px;
+	background-image: url(../image/pageto.png);
+	height: 32px;
+	width: 94px;
+	color: #0f7ebc;
+	font-size: 16px;
+	display: inline-block;
+	line-height: 28px;
+	text-align:center;
 }
 .scititle{
 	padding-top:60px;
@@ -56,33 +56,26 @@ ul,li{
 	width:1760px;
 }
 .item{
-	margin-top:25px;
+	margin-top:15px;
 }
 .itemtitle{
-	width:331px;
-	height:71px;
-	background-image: url(../image/itemtitle.png);
-	background-size: contain;
-    background-repeat: no-repeat;
-    background-position:center;
-    color:#fff;
-    font-size:28px;
-    line-height:71px;
-    text-align:center;
-    
+	padding-left:20px;
+	height:41px;
+	color:#fff;
+	font-size:20px;
+	line-height:41px;
+	background:rgba(19,61,80,1) ;
+
 }
 .fundingTabUl{
 	display:inline-block;
 }
 .itemcontent{
-	margin-top:15px;
+	margin-top:5px;
 	width:100%;
-	height:300px;
-  	background: -webkit-linear-gradient(left, rgba(0,0,31,0.2), rgba(23,28,97,0.2)); /* Safari 5.1 - 6.0 */
-  	background: -o-linear-gradient(right, rgba(0,0,31,0.2), rgba(23,28,97,0.2)); /* Opera 11.1 - 12.0 */
-  	background: -moz-linear-gradient(right, rgba(0,0,31,0.2), rgba(23,28,97,0.2)); /* Firefox 3.6 - 15 */
-  	background: linear-gradient(to right, rgba(0,0,31,0.2), rgba(23,28,97,0.2)); /* 标准的语法 */
-  border:1px solid rgba(46,167,224,0.2);}
+	height:270px;
+	background:rgba(19,61,80,0.6) ;
+}
 .charsBox{
 	margin:0px auto;margin-top:10px;width:95%;height:250px;
 }
@@ -91,25 +84,25 @@ ul,li{
 	height:25px;
 	background-image: url(../image/govfunding.png);
 	background-size: contain;
-    background-repeat: no-repeat;
-    background-position:center;
-    color:#4fafe4;
-    font-size:14px;
-    line-height:25px;
-    text-align:center;
-    display:inline-block;
+	background-repeat: no-repeat;
+	background-position:center;
+	color:#4fafe4;
+	font-size:14px;
+	line-height:25px;
+	text-align:center;
+	display:inline-block;
 }
 .fundingTab:hover{
 	background-image: url(../image/govfundingA.png);
 	color:#fff;
 }
 .fundingMor{
-    color:#4fafe4;
-    font-size:14px;
-    line-height:25px;
-    text-align:center;
-    display:inline-block;
-    float:right;
+	color:#4fafe4;
+	font-size:14px;
+	line-height:25px;
+	text-align:center;
+	display:inline-block;
+	float:right;
 }
 .active{
 	background-image: url(../image/govfundingA.png) !important;

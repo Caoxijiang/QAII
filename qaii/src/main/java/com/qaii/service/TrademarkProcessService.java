@@ -9,4 +9,6 @@ public interface TrademarkProcessService {
 	List<Trademarkprocess> getAllMsgBypid(Integer pid);
 	
 	int addProcess(Trademarkprocess process);
+
+	int deleteRecord(Integer[] id);
 }

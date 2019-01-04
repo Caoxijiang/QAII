@@ -55,7 +55,7 @@ function getDate(){
 	var cycmin=myDate.getMinutes();     //获取当前分钟数(0-59)
 	var cycsecond=myDate.getSeconds();     //获取当前秒数(0-59)
 	document.getElementById("cycyear").innerHTML = cycyear;
-	document.getElementById("month").innerHTML = cycmonth;
+	document.getElementById("month").innerHTML = cycmonth+1;
 	document.getElementById("cycday").innerHTML = cycday;
 	document.getElementById("cychour").innerHTML = cychour;
 	document.getElementById("cycmin").innerHTML = cycmin;

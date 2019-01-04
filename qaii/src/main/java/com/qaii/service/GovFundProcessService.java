@@ -10,4 +10,6 @@ public interface GovFundProcessService {
 	
 	int addProcess(Govfundprocess process);
 
+	int deleteRecord(Integer[] id);
+
 }

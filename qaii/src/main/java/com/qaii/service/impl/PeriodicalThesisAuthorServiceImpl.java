@@ -1,8 +1,11 @@
 package com.qaii.service.impl;
 
+import com.qaii.dao.PeriodicalThesisAuthorMapper;
 import com.qaii.domain.PeriodicalThesisAuthor;
 import com.qaii.service.PeriodicalThesisAuthorService;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -11,30 +14,34 @@ import java.util.List;
  * @Descrpiton: 期刊论文作者服务层实现类
  * @Time 2018-12-27 9:00
  */
-
+@Service()
 public class PeriodicalThesisAuthorServiceImpl implements PeriodicalThesisAuthorService {
+
+    @Resource
+    private PeriodicalThesisAuthorMapper mapper;
+
     @Override
-    public List<PeriodicalThesisAuthor> listRecord() {
-        return null;
+    public List<PeriodicalThesisAuthor> listRecord(String id) {
+        return mapper.listRecord(id);
     }
 
     @Override
     public int inset(PeriodicalThesisAuthor Record) {
-        return 0;
+        return mapper.insert(Record);
     }
 
     @Override
     public int delete(Integer[] id) {
-        return 0;
+        return mapper.deleteByPrimaryKeys(id);
     }
 
     @Override
     public int update(PeriodicalThesisAuthor Record) {
-        return 0;
+        return mapper.updateByPrimaryKeySelective(Record);
     }
 
     @Override
     public PeriodicalThesisAuthor getRecord(Integer id) {
-        return null;
+        return mapper.getRecord(id);
     }
 }

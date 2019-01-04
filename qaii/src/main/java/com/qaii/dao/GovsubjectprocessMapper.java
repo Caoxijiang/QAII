@@ -18,4 +18,6 @@ public interface GovsubjectprocessMapper {
     int updateByPrimaryKey(Govsubjectprocess record);
     
     List<Govsubjectprocess> getAllMsgBypid(Integer pid);
+
+    int deleteByPrimaryKeys(Integer[] id);
 }

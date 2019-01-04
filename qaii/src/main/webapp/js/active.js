@@ -71,7 +71,7 @@ $(".nage").click(function(){
 
 
 var _box =$('#rewardtable');
-var _interval=1500, //刷新间隔时间3秒
+var _interval=1500, //刷新间隔时间1.5秒
 i=2;
 function gdb(){
     if(i%2==0){
@@ -112,19 +112,31 @@ $(".close").click(function(){
 $(".bodybox1").on("click",".ball",function(){
 	$(".zhezhao").show();
 	$(".popup").show(2000);
+	var idi=$(this).attr("id");
+	console.log(idi+"asdsd");
+    //弹窗赋值
+    $("#mingcheng").html("青岛智能智能科技有限公司");
+    $("#shijian").html("2018-12-20");
+    $("#zhusuo").html("山东省青岛市高新技术开发区");
+    $("#ziben").html("2000万");
+    $("#leixing").html("高新技术产业开发");
+    $("#faren").html("战德成");
+    $("#xindaima").html("9137702223214545569");
 
 })
 $(".bodybox1").on("click",".balloutsed",function(){
     $(".zhezhao").show();
     $(".popup").show(2000);
+    var idi=$(this).attr("id");
+    /*console.log(ii+"asdsd");*/
+    //弹窗赋值
+    $("#mingcheng").html("青岛智能智能科技有限公司");
+    $("#shijian").html("2018-12-20");
+    $("#zhusuo").html("山东省青岛市高新技术开发区");
+    $("#ziben").html("2000万");
+    $("#leixing").html("高新技术产业开发");
+    $("#faren").html("战德成");
+    $("#xindaima").html("9137702223214545569");
 
 })
 
-//弹窗赋值
-$("#mingcheng").html("青岛智能智能科技有限公司");
-$("#shijian").html("2018-12-20");
-$("#zhusuo").html("山东省青岛市高新技术开发区");
-$("#ziben").html("2000万");
-$("#leixing").html("高新技术产业开发");
-$("#faren").html("战德成");
-$("#xindaima").html("9137702223214545569");

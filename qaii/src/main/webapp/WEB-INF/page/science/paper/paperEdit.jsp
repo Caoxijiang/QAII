@@ -266,13 +266,14 @@ $.post({
                 table.render({
                     elem: '#testpaper'
                     ,method:'post'
-                    ,url:'selectIndusStackInfo.do?id='+id/*修改接口函数*/
+                    ,url:'listPeriodicalAuthor.do?id='+id/*修改接口函数*/
                     ,cellMinWidth: 100
                     ,cols: [[
                         {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
-                        ,{field:'shareholderName', title: '姓名'}
-                        ,{field:'contributionProportion',title: '排名', sort: true}
-                        ,{field:'contributionTime',title: '单位', sort: true}
+                        ,{field:'authorName', title: '姓名'}
+                        ,{field:'authorLevel',title: '排名', sort: true}
+                        ,{field:'authorUnit',title: '单位', sort: true}
+                        ,{fixed: 'right', title:'操作', toolbar: '#barDemopaper', width:150}
                     ]]
                     /*data:obj.data*/
 
