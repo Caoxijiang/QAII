@@ -273,6 +273,7 @@ $.post({
                         ,{field:'authorName', title: '姓名'}
                         ,{field:'authorLevel',title: '排名', sort: true}
                         ,{field:'authorUnit',title: '单位', sort: true}
+                        ,{fixed: 'right', title:'操作', toolbar: '#barDemopaper', width:150}
                     ]]
                     /*data:obj.data*/
 
