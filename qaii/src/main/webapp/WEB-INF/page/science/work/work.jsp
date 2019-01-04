@@ -270,7 +270,7 @@ layui.use('table', function(obj){
             let arr=[data.id];
             console.log(data) 
             $.post({
-            	url:"dellsoftMsg.do",
+            	url:"dellWorkMsg.do",
             	data:{
             		"requestDate" : arr
             	},

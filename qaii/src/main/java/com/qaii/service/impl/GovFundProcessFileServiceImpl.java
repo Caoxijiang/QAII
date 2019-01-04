@@ -40,4 +40,9 @@ public class GovFundProcessFileServiceImpl implements GovFundProcessFileService 
 		return processfilemapper.updateByPrimaryKey(record);
 	}
 
+	@Override
+	public int deleteBySid(Integer sid) {
+		return processfilemapper.deleteBySid(sid);
+	}
+
 }

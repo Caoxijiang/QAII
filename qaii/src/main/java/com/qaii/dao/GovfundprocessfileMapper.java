@@ -20,4 +20,6 @@ public interface GovfundprocessfileMapper {
     List<Govfundprocessfile> getAllMsgBysid(Integer sid);
     
     int deleteMsg(Integer[] id);
+
+    int deleteBySid(Integer sid);
 }

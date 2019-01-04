@@ -133,7 +133,6 @@ public class PatentController {
       		return ConstantUtil.SCIENCE_INSERT_SUCCESS;
       	}else {
       		return  ConstantUtil.SCIENCE_INSERT_FAILD;
-      		
       	}
   	}
 	
@@ -435,7 +434,6 @@ public class PatentController {
 		}else {
 			return null;
 		}
-
 	}
 	
 }
