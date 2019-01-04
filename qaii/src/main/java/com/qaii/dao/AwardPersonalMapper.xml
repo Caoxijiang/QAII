@@ -318,8 +318,8 @@
     SELECT * FROM industry_awardpersonal
   </select>
 
-  <select id="listPersonal" resultMap="CustomMap">
-    SELECT * FROM industry_awardpersonal GROUP BY award_time DESC
+  <select id="listPersonal" resultMap="CustomMap1">
+    SELECT award_time,award_level,person_unit,award_name FROM industry_awardpersonal GROUP BY award_time DESC
   </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardPersonal">
     <id column="id" jdbcType="INTEGER" property="id" />
@@ -347,6 +347,13 @@
       <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
       <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
     </collection>
+  </resultMap>
+
+  <resultMap id="CustomMap1" type="com.qaii.domain.AwardPersonalest">
+    <result column="award_time" jdbcType="DATE" property="awardTime" />
+    <result column="award_level" jdbcType="VARCHAR" property="awardLevel" />
+    <result column="person_unit" jdbcType="VARCHAR" property="personUnit" />
+    <result column="award_name" jdbcType="VARCHAR" property="awardName" />
   </resultMap>
   <select id="getRecord" resultMap="CustomMap" parameterType="java.lang.Integer">
     SELECT a.*,b.id AS fid,b.file_name,b.file_style,b.file_description,b.file_path

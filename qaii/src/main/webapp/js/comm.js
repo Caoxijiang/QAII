@@ -19,7 +19,32 @@ function numadd(numb,ids){
 		}
 	},50); 
 }*/
-
+let CompanyNums=gettCompanyData();
+function gettCompanyData(){
+    var result=null;
+    $.ajax({
+        async:false,
+        type:"POST",
+        url:"hatchit.do",
+        success:function(data){
+            result=data;
+        }
+    })
+    return result;
+}
+let ServiceNum =gettServiceData();
+function gettServiceData(){
+    let result=null;
+    $.ajax({
+        async:false,
+        type:"POST",
+        url:"servercm.do",
+        success:function(data){
+            result=data;
+        }
+    })
+    return result;
+}
 //系统显示时间
 function getDate(){
 	var myDate = new Date();
@@ -45,7 +70,7 @@ setInterval("getDate()",1000);
         
             tooltip: {},
             xAxis: {
-               data: ["2015","2016","2017","2018"],
+               data: [new Date(ServiceNum.ServiceYear[6]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[5]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[4]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[3]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[2]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[1]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[0]).getFullYear()+"年"],
 			   axisLine: {
 				   show: false,
 				   textStyle: {
@@ -71,7 +96,7 @@ setInterval("getDate()",1000);
             series: [{
                 name: '服务企业数量',
                 type: 'bar',
-                data: [ 20, 36, 10, 20],
+                data: [ServiceNum.ServiceYearNums[6], ServiceNum.ServiceYearNums[5], ServiceNum.ServiceYearNums[4], ServiceNum.ServiceYearNums[3], ServiceNum.ServiceYearNums[2], ServiceNum.ServiceYearNums[1], ServiceNum.ServiceYearNums[0]],
 				itemStyle: {
 					normal:{
 					  color: function (params){　
@@ -142,7 +167,7 @@ var option2 = {
         {
             type : 'category',
             boundaryGap : false,
-            data : ['2012','2013','2014','2015','2016','2017','2018'],
+            data : [new Date(CompanyNums.CompanyYear[6]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[5]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[4]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[3]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[2]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[1]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[0]).getFullYear()+"年"],
 			axisLine: {
 				   show: false,
 				   textStyle: {
@@ -196,7 +221,7 @@ var option2 = {
 					}  
 				}  
 			},  
-            data:[120, 132, 101, 134, 90, 230, 210]
+            data:[CompanyNums.CompanyNums[6],CompanyNums.CompanyNums[5],CompanyNums.CompanyNums[4],CompanyNums.CompanyNums[3],CompanyNums.CompanyNums[2],CompanyNums.CompanyNums[1],CompanyNums.CompanyNums[0]]
         }
         
     ]

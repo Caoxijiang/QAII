@@ -17,6 +17,13 @@
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
   </resultMap>
+  <resultMap id="BaseResultMap1" type="com.qaii.domain.AwardCollegest">
+    <result column="award_time" jdbcType="DATE" property="awardTime" />
+    <result column="award_level" jdbcType="VARCHAR" property="awardLevel" />
+    <result column="award_unit" jdbcType="VARCHAR" property="awardUnit" />
+    <result column="award_name" jdbcType="VARCHAR" property="awardName" />
+  </resultMap>
+
   <sql id="Base_Column_List">
     id, pid, award_time, award_level, award_unit, award_name, activity_name, orgnizer, 
     remark, alternative_one, alternative_two, alternative_three, gmt_create, gmt_modified
@@ -297,8 +304,8 @@
   <select id="listRecords" resultMap="BaseResultMap">
     SELECT * FROM industry_awardcollege
   </select>
-  <select id="listcollege" resultMap="BaseResultMap">
-    SELECT * FROM industry_awardcollege GROUP BY award_time DESC
+  <select id="listcollege" resultMap="BaseResultMap1">
+    SELECT award_time,award_level,award_unit,award_name FROM industry_awardcollege GROUP BY award_time DESC
   </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardCollege">
     <id column="id" jdbcType="INTEGER" property="id" />
