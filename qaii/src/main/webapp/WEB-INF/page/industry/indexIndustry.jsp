@@ -46,15 +46,15 @@
 			</li>
 			<li class="tab" name="bodybox2">
 				<div class="title">高新技术企业</div>
-				<span class="num" id="t2">{{ message }}家</span>
+				<span class="num" id="t2">{{message}}家</span>
 			</li>
 			<li class="tab" name="bodybox3">
 				<div class="title">培育"百千万"工程企业</div>
-				<span class="num" id="t3">{{ message }}家</span>
+				<span class="num" id="t3">{{message}}家</span>
 			</li>
 			<li class="tab" name="bodybox4">
 				<div class="title">科技型中小企业</div>
-				<span class="num" id="t4">{{ message }}家</span>
+				<span class="num" id="t4">{{message}}家</span>
 			</li>
 		</ul>
 	</div>

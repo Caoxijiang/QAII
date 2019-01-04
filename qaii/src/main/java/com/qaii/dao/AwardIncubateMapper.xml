@@ -298,8 +298,8 @@
     SELECT * FROM industry_awardincubate
   </select>
 
-  <select id="listIncubate" resultMap="BaseResultMap">
-    SELECT * FROM industry_awardincubate GROUP BY award_time DESC
+  <select id="listIncubate" resultMap="CustomMap1">
+    SELECT award_time,award_level,award_unit,award_name FROM industry_awardincubate GROUP BY award_time DESC
   </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardIncubate">
     <id column="id" jdbcType="INTEGER" property="id" />
@@ -324,6 +324,14 @@
       <id column="file_path" jdbcType="VARCHAR" property="filePath" />
       <id column="file_description" jdbcType="VARCHAR" property="fileDescription" />
     </collection>
+  </resultMap>
+
+
+  <resultMap id="CustomMap1" type="com.qaii.domain.AwardIncubatest">
+    <result column="award_time" jdbcType="DATE" property="awardTime" />
+    <result column="award_level" jdbcType="VARCHAR" property="awardLevel" />
+    <result column="award_unit" jdbcType="VARCHAR" property="awardUnit" />
+    <result column="award_name" jdbcType="VARCHAR" property="awardName" />
   </resultMap>
   <select id="getRecord" parameterType="java.lang.Integer" resultMap="CustomMap">
     SELECT
