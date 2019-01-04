@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qaii.dao.DeptInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.qaii.domain.DeptInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="dept_name" property="deptName" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, dept_name
+  </sql>
+  <select id="findAlldeptInfoList" resultMap="BaseResultMap">
+  	select * from dept_info
+  </select>
+  <delete id="dellDeptInfoByid" parameterType="java.lang.Integer">
+  	delete from dept_info where id=#{id,jdbcType=INTEGER}
+  </delete>
+  	<insert id="addDeptinfo" parameterType="com.qaii.domain.DeptInfo">
+  		insert into dept_info (dept_name) values(#{deptName,jdbcType=VARCHAR})
+  	</insert>
+  	
+  	<update id="updateDeptInfoById" parameterType="com.qaii.domain.DeptInfo">
+  		update dept_info set dept_name=#{deptName,jdbcType=VARCHAR} where id=#{id,jdbcType=INTEGER}
+  	</update>
+</mapper>

@@ -3,10 +3,13 @@ package com.qaii.controller;
 import com.qaii.domain.AwardCollege;
 import com.qaii.domain.AwardIncubate;
 import com.qaii.domain.AwardPersonal;
+import com.qaii.domain.Incubator;
 import com.qaii.service.*;
 import com.qaii.util.CountDatetoNowDays;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -116,6 +119,13 @@ public class industryDataOverviewController {
         result.put("awardincubate",Incubatelist);
         result.put("awardpersonal",personallist);
         return result;
+    }
+
+    @RequestMapping(value = "IndustryInner.do",method = RequestMethod.POST)
+    @ResponseBody
+    public List<Incubator> AwardIndustry(String IndustryName) {
+        List<Incubator> list=incubatorService.selectAlls(IndustryName);
+        return list;
     }
 
 }

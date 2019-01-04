@@ -17,6 +17,7 @@ public interface IncubatorService {
 	int selectCountNumsByMiddleLittle();
 	Incubator selectByPrimaryKey(Integer id);
 	List<Incubator> selectAlllist();
+	List<Incubator> selectAlls(String IncubatryName);
 	int updateByPrimaryKeySelective(Incubator incubator);
 	int deleteByPrimaryKey(Integer[] id);
     List<CompanyInfo> selectAlllistByPreThreeMonth();
