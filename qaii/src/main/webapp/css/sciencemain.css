@@ -24,13 +24,10 @@ ul,li{
 	width: 1920px;
 	height: 1080px;
 	z-index: 1;
-	background-image: url(../image/science.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
 }
 .sciNav{
 	right:50px;
-	top:27px;
+	top:2px;
 	position: absolute;
 }
 .pageTo {
@@ -45,15 +42,18 @@ ul,li{
 	text-align:center;
 }
 .scititle{
-	padding-top:60px;
 	color:#3db4e3;
-	font-size:55px;
+	font-size:40px;
 	text-align:center;
 	width:100%;
+	font-weight:bold;
+	line-height:67px;
 }
 .contern{
 	margin:0px auto;
-	width:1760px;
+	width:573px;
+	position: absolute;
+	right: 42px;
 }
 .item{
 	margin-top:15px;
@@ -73,7 +73,7 @@ ul,li{
 .itemcontent{
 	margin-top:5px;
 	width:100%;
-	height:270px;
+	height:255px;
 	background:rgba(19,61,80,0.6) ;
 }
 .charsBox{
@@ -151,4 +151,215 @@ ul,li{
 	margin-top:-4px;
 	width:20%;
 	border:3px solid #3db4e3;
+}
+
+/*//主图样式*/
+  .kjboxbg{
+	  width:1217px;
+	  height:956px;
+	  background: url(../image/kgboxbg.png);
+	  background-size: 100% 100%;
+	  position: absolute;
+	  top:64px;
+	  left:47px;
+  }
+.kjcenter{
+	margin-top: 250px;
+	margin-left: 170px;
+	background:url(../image/kjbg.png);
+	width:840px;
+	height:680px;
+	background-size:100% 100%;
+	position: absolute;
+}
+.kjcenter .kjcenterItem{
+	position: absolute;
+	margin-top: -50px;
+	margin-left:253px;
+	width:330px;
+	height:448px;
+}
+.kjcenterItem:hover{
+
+}
+.kjsmall{
+	margin-top: 260px;
+	margin-left: 160px;
+	background:url(../image/item22.png);
+	width:217px;
+	height:192px;
+	background-size:100% 100%;
+	position: absolute;
+}
+.kjsmallone{
+	margin-top: 650px;
+	margin-left: 860px;
+	background:url(../image/item22.png);
+	width:217px;
+	height:192px;
+	background-size:100% 100%;
+	position: absolute;
+}
+.kjsmalltwo{
+	margin-top: 260px;
+	margin-left: 770px;
+	background:url(../image/item22.png);
+	width:217px;
+	height:192px;
+	background-size:100% 100%;
+	position: absolute;
+}
+.kjsmalltir{
+	margin-top: 650px;
+	margin-left: 110px;
+	background:url(../image/item22.png);
+	width:217px;
+	height:192px;
+	background-size:100% 100%;
+	position: absolute;
+}
+
+.kjcenterItem .kjsmbox{
+	margin-top: -110px;
+	margin-left: 0px;
+}
+.kjcsilde1{
+	width:30px;
+	top:250px;
+	left:735px;
+	opacity: 0.2;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjcsilde2{
+	width:26px;
+	top:320px;
+	left:830px;
+	opacity: 0.3;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjcsilde3{
+	width:20px;
+	top:390px;
+	left:775px;
+	opacity: 0.4;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjcsilde4{
+	width:40px;
+	top:565px;
+	left:400px;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjcsilde5{
+	width:40px;
+	top:565px;
+	left:840px;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjcsilde6{
+	width:28px;
+	top:503px;
+	left:370px;
+	opacity: 0.6;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjcsilde7{
+	width:58px;
+	top:653px;
+	left:605px;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjcsilde8{
+	width:45px;
+	top:880px;
+	left:505px;
+	opacity: 0.8;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjcsilde9{
+	width:35px;
+	top:780px;
+	left:700px;
+	opacity: 0.6;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjcsilde10{
+	width:20px;
+	top:860px;
+	left:825px;
+	opacity: 0.4;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjcsilde11{
+	width:25px;
+	top:690px;
+	left:900px;
+	opacity: 0.4;
+	position: absolute;
+	animation: downup 3s infinite linear;
+}
+.kjtitle{
+	margin:0px auto;
+	padding-top:10px;
+	width: 170px;
+	height: 85px;
+	background: url(../image/kjtitle.gif);
+	background-size:100% 100%;
+	text-align: center;
+	color: #fff;
+	font-size:16px;
+	line-height:20px;
+}
+.kjtitleHead{
+	font-size:18px;
+	color:#3db4e3;
+	font-weight: bold;
+}
+.imgs{
+	animation: downupimg 3s infinite linear;
+}
+/*浮动动画*/
+@keyframes downup{
+	0%{
+		margin-top: 0px;
+	}
+	50%{
+		margin-top:-20px;
+	}
+	100%{
+		margin-top:0px;
+	}
+}
+@keyframes downupimg{
+	0%{
+		margin-top: -15px;
+	}
+	50%{
+		margin-top:0px;
+	}
+	100%{
+		margin-top:-15px;
+	}
+}
+
+@keyframes downupbox{
+	0%{
+		margin-top: 0px;
+	}
+	50%{
+		margin-top:-20px;
+	}
+	100%{
+		margin-top:0px;
+	}
 }

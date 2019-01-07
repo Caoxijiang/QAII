@@ -23,92 +23,66 @@
 		<!-- <a id="replacep"><div class="pageTo">退出</div></a> -->
 	</div>
 	<div class="scititle">QAII智慧科技管理系统</div>
-	<%--科技处主图--%>
-	<div>
-		<div class="kjboxbg">
-			<div class="kjcenter">
-				<div class="kjcenterItem">
-					<a href="science.do">
-					<div>
-						<div class="kjtitle">
-							<span class="kjtitleHead">专利总数</span><br />
-							<span id="tPatent">受理：0个<br />授权：0个</span>
-						</div>
-						<img src="${basePath}/image/kjcbox.png" class="imgs"/>
-					</div>
-					</a>
-				</div>
-			</div>
-			<div class="kjsmall">
-				<div class="kjcenterItem">
-					<a href="science.do">
-					<div class="kjsmbox">
-						<div class="kjtitle">
-							<span class="kjtitleHead">软著总数</span><br />
-							<span id="tSoft">受理：0个<br />授权：0个</span>
-						</div>
-						<img src="${basePath}/image/itemee.png" class="imgs" />
-					</div>
-					</a>
-				</div>
-			</div>
-			<div class="kjsmallone">
-				<div class="kjcenterItem">
-					<a href="science.do">
-					<div class="kjsmbox">
-						<div class="kjtitle">
-							<span class="kjtitleHead">著作总数</span><br />
-							<span id="tWork">著作：0篇</span><br />
-
-						</div>
-						<img src="${basePath}/image/itemee.png" class="imgs"/>
-					</div>
-					</a>
-				</div>
-			</div>
-			<div class="kjsmalltwo">
-				<div class="kjcenterItem">
-					<a href="science.do">
-					<div class="kjsmbox">
-						<div class="kjtitle">
-							<span class="kjtitleHead">商标总数</span><br />
-							<span id="tBrand">受理：0个<br />授权：0个</span>
-						</div>
-						<img src="${basePath}/image/itemee.png" class="imgs"/>
-					</div>
-					</a>
-				</div>
-			</div>
-			<div class="kjsmalltir">
-				<div class="kjcenterItem">
-					<a href="science.do">
-					<div class="kjsmbox">
-						<div class="kjtitle">
-							<span class="kjtitleHead">论文总数</span><br />
-							<span id="tPaper">论文：0篇</span>
-						</div>
-						<img src="${basePath}/image/itemee.png" class="imgs"/>
-					</div>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="kjcsilde">
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde1"/>
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde2"/>
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde3"/>
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde4"/>
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde5"/>
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde6"/>
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde7"/>
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde8"/>
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde9"/>
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde10"/>
-			<img src="${basePath}/image/slidedown.png" class="kjcsilde11"/>
-		</div>
-	</div>
 	<div class="contern">
-		<div class="item">
+		<div class="row">
+		  <div class="col-md-8">
+		  	<div class="item">
+		  		<div class="itemtitle">
+		  			科研成果总览
+		  		</div>
+		  		<div class="itemcontent">
+		  			<div id="pandect" class="charsBox">
+		  				<div class="itemBox" id="PatentBox">
+		  					<canvas id="totalPatent" class="itemCanvas"></canvas>
+		  					<div class="itmeTitle">专利总数</div>
+		  					<div class="line">
+		  						<div class="itmeline"></div>
+		  						<div class="itmelineb"></div>
+		  					</div>
+		  					<div class="itmeText"><span id="tPatent">受理：XXX个<br />授权：XXX个</span></div>
+		  				</div>
+		  				<div class="itemBox" id="PatentBox">
+		  					<canvas id="totalSoft" class="itemCanvas"></canvas>
+		  					<div class="itmeTitle">软著总数</div>
+		  					<div class="line">
+		  						<div class="itmeline"></div>
+		  						<div class="itmelineb"></div>
+		  					</div>
+		  					<div class="itmeText"><span id="tSoft">受理：XXX个<br />授权：XXX个</span></div>
+		  				</div>
+		  				<div class="itemBox" id="PatentBox">
+		  					<canvas id="totalBrand" class="itemCanvas"></canvas>
+		  					<div class="itmeTitle">商标总数</div>
+		  					<div class="line">
+		  						<div class="itmeline"></div>
+		  						<div class="itmelineb"></div>
+		  					</div>
+		  					<div class="itmeText"><span id="tBrand">受理：XXX个<br />授权：XXX个</span></div>
+		  				</div>
+		  				<div class="itemBox" id="PatentBox">
+		  					<canvas id="totalPaper" class="itemCanvas"></canvas>
+		  					<div class="itmeTitle">论文总数</div>
+		  					<div class="line">
+		  						<div class="itmeline"></div>
+		  						<div class="itmelineb"></div>
+		  					</div>
+		  					<div class="itmeText"><span id="tPaper">论文：XXX篇</span><br />&nbsp;</div>
+		  				</div>
+		  				<div class="itemBox" id="PatentBox">
+		  					<canvas id="totalWork" class="itemCanvas"></canvas>
+		  					<div class="itmeTitle">著作总数</div>
+		  					<div class="line">
+		  						<div class="itmeline"></div>
+		  						<div class="itmelineb"></div>
+		  					</div>
+		  					<div class="itmeText"><span id="tWork">著作：XXX部</span><br />&nbsp;</div>
+		  				</div>
+		  			</div>
+		  		</div>
+		  	</div>
+		  </div>
+		  <div class="col-md-4">
+		  	<div class="item">
               <div class="itemtitle">
                   数据总量
               </div>
@@ -117,14 +91,14 @@
               </div>
           </div>
 
-		  <div class="item">
-			  <div class="itemtitle">
-				  科研成果信息
-			  </div>
-			  <div class="itemcontent">
-				  <div id="information" class="charsBox"></div>
-			  </div>
-		  </div>
+              <div class="item">
+                  <div class="itemtitle">
+                      科研成果信息
+                  </div>
+                  <div class="itemcontent">
+                      <div id="information" class="charsBox"></div>
+                  </div>
+              </div>
 
 		  	<div class="item">
 		  		<div class="itemtitle">
@@ -189,6 +163,8 @@
 		  			</div>
 		  		</div>
 		  	</div>
+		  </div>
+		</div>
 	</div>
 </div>
 <script src="${basePath}/js/scichars.js"></script>
@@ -214,6 +190,11 @@ $("#tBrand").html("受理：" +scientificPreviewData.AgencyTradeMark+ "个<br />
 $("#tPaper").html("论文：" +scientificPreviewData.CountThesis+ "篇");
 $("#tWork").html("著作：" +scientificPreviewData.Countwork+ "篇");
 
+circle("PatentBox","totalPatent","#ea8a27",100, scientificPreviewData.AgencyPatent);
+circle("PatentBox","totalSoft","#ea8a27",100, scientificPreviewData.Applycopyright);
+circle("PatentBox","totalBrand","#ea8a27",100, scientificPreviewData.AgencyTradeMark);
+circle("PatentBox","totalPaper","#3db4e3",100, scientificPreviewData.CountThesis);
+circle("PatentBox","totalWork","#3db4e3",100, scientificPreviewData.Countwork);
 
 //政府资助
 function getGovernmentFunding(){
