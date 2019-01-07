@@ -7,6 +7,7 @@ import java.util.Date;
 /**
  * Created by kunpeng on 2019/1/4 10:37
  */
+//解决接口中奖励荣誉获奖情况只查看四个字段的情况
 public class AwardCollegest {
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date awardTime;

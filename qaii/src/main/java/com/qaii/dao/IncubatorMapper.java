@@ -27,7 +27,7 @@ public interface IncubatorMapper {
     int updateByPrimaryKeySelective(Incubator record);
 
     int updateByPrimaryKey(Incubator record);
-    
+    List<Incubator> selectAlls(String IncubatryName);
     List<Incubator> selectAlllist();
     List<CompanyInfo> selectAlllistByPreThreeMonth();
 }

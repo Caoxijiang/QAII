@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.StockEquityMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.StockEquity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="shareholder_name" jdbcType="VARCHAR" property="shareholderName" />
+    <result column="contribution_amount" jdbcType="VARCHAR" property="contributionAmount" />
+    <result column="contribution_proportion" jdbcType="VARCHAR" property="contributionProportion" />
+    <result column="contribution_time" jdbcType="DATE" property="contributionTime" />
+    <result column="shareholder_position" jdbcType="VARCHAR" property="shareholderPosition" />
+    <result column="incubator_id" jdbcType="INTEGER" property="incubatorId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="alternative_one" jdbcType="VARCHAR" property="alternativeOne" />
+    <result column="alternative_two" jdbcType="VARCHAR" property="alternativeTwo" />
+    <result column="alternative_threee" jdbcType="VARCHAR" property="alternativeThreee" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, shareholder_name, contribution_amount, contribution_proportion, contribution_time, 
+    shareholder_position, incubator_id, remark, alternative_one, alternative_two, alternative_threee, 
+    gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from industry_stockequity
+    where incubator_id = #{incubatorId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from industry_stockequity
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.StockEquity">
+    insert into industry_stockequity (id, shareholder_name, contribution_amount, 
+      contribution_proportion, contribution_time, 
+      shareholder_position, incubator_id, remark, 
+      alternative_one, alternative_two, alternative_threee, 
+      gmt_create, gmt_modified,status)
+    values (#{id,jdbcType=INTEGER}, #{shareholderName,jdbcType=VARCHAR}, #{contributionAmount,jdbcType=VARCHAR}, 
+      #{contributionProportion,jdbcType=VARCHAR}, #{contributionTime,jdbcType=DATE}, 
+      #{shareholderPosition,jdbcType=VARCHAR}, #{incubatorId,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{alternativeOne,jdbcType=VARCHAR}, #{alternativeTwo,jdbcType=VARCHAR}, #{alternativeThreee,jdbcType=VARCHAR}, 
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP},#{status})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.StockEquity">
+    insert into industry_stockequity
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="shareholderName != null">
+        shareholder_name,
+      </if>
+      <if test="contributionAmount != null">
+        contribution_amount,
+      </if>
+      <if test="contributionProportion != null">
+        contribution_proportion,
+      </if>
+      <if test="contributionTime != null">
+        contribution_time,
+      </if>
+      <if test="shareholderPosition != null">
+        shareholder_position,
+      </if>
+      <if test="incubatorId != null">
+        incubator_id,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one,
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two,
+      </if>
+      <if test="alternativeThreee != null">
+        alternative_threee,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="shareholderName != null">
+        #{shareholderName,jdbcType=VARCHAR},
+      </if>
+      <if test="contributionAmount != null">
+        #{contributionAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="contributionProportion != null">
+        #{contributionProportion,jdbcType=VARCHAR},
+      </if>
+      <if test="contributionTime != null">
+        #{contributionTime,jdbcType=DATE},
+      </if>
+      <if test="shareholderPosition != null">
+        #{shareholderPosition,jdbcType=VARCHAR},
+      </if>
+      <if test="incubatorId != null">
+        #{incubatorId,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThreee != null">
+        #{alternativeThreee,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.StockEquity">
+    update industry_stockequity
+    <set>
+      <if test="shareholderName != null">
+        shareholder_name = #{shareholderName,jdbcType=VARCHAR},
+      </if>
+      <if test="contributionAmount != null">
+        contribution_amount = #{contributionAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="contributionProportion != null">
+        contribution_proportion = #{contributionProportion,jdbcType=VARCHAR},
+      </if>
+      <if test="contributionTime != null">
+        contribution_time = #{contributionTime,jdbcType=DATE},
+      </if>
+      <if test="shareholderPosition != null">
+        shareholder_position = #{shareholderPosition,jdbcType=VARCHAR},
+      </if>
+      <if test="incubatorId != null">
+        incubator_id = #{incubatorId,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeOne != null">
+        alternative_one = #{alternativeOne,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeTwo != null">
+        alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="alternativeThreee != null">
+        alternative_threee = #{alternativeThreee,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.StockEquity">
+    update industry_stockequity
+    set shareholder_name = #{shareholderName,jdbcType=VARCHAR},
+      contribution_amount = #{contributionAmount,jdbcType=VARCHAR},
+      contribution_proportion = #{contributionProportion,jdbcType=VARCHAR},
+      contribution_time = #{contributionTime,jdbcType=DATE},
+      shareholder_position = #{shareholderPosition,jdbcType=VARCHAR},
+      incubator_id = #{incubatorId,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      alternative_one = #{alternativeOne,jdbcType=VARCHAR},
+      alternative_two = #{alternativeTwo,jdbcType=VARCHAR},
+      alternative_threee = #{alternativeThreee,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateShareholderStatus" parameterType="java.lang.Integer">
+    update industry_stockequity
+    set status = 1 where id=#{id}
+  </update>
+</mapper>
