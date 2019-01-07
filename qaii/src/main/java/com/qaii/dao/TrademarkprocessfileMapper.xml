@@ -102,4 +102,7 @@
 	    	#{id,jdbcType=INTEGER}
 	</foreach>
   </delete>
+  <delete id="deleteBySid" parameterType="java.lang.Integer">
+    DELETE from sci_trademarkprocessfile where sid=#{sid,jdbcType=INTEGER}
+  </delete>
 </mapper>

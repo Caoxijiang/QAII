@@ -456,4 +456,16 @@ public class MeetingThesisController {
 		List<MeetingThesisAuthor> result = authorService.listAuthor(id);
 		return Layui.data(result.size(),result);
 	}
+
+	//删除作者
+	@RequestMapping("deleteMeetingAuthor.do")
+	@ResponseBody
+	JsonResult deleteMeetingAuthor(@RequestParam("id")Integer[] id){
+		int result = authorService.delete(id);
+		if (result != 0){
+			return new JsonResult(result);
+		}else {
+			return new JsonResult();
+		}
+	}
 }

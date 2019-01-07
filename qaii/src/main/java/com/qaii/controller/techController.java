@@ -62,8 +62,7 @@ public class techController {
 		req.setCharacterEncoding("UTF-8");
 		List<String> result=new ArrayList<String>();
 		result.add(req.getParameter("patName"));
-		System.out.println(req.getParameter("patName"));
-		return new ModelAndView("page/science/patent/patentProcess", "utflist", result);		
+		return new ModelAndView("page/science/patent/patentProcess", "utflist", result);
 
 	}
 	
@@ -74,7 +73,6 @@ public class techController {
 		req.setCharacterEncoding("UTF-8");
 		List<String> result=new ArrayList<String>();
 		result.add(req.getParameter("patName"));
-		System.out.println(req.getParameter("patName"));
 		return new ModelAndView("page/science/patent/patentDataAddFile", "utflist", result);
 	}
 	
@@ -87,7 +85,6 @@ public class techController {
 		result.add(request.getParameter("userID"));
 		result.add(request.getParameter("step"));
 		result.add(request.getParameter("pat"));
-		System.out.println(request.getParameter("pat"));
 		result.add(request.getParameter("id"));
 		return new ModelAndView("page/science/patent/patentfilereload", "utflist", result);
 	}

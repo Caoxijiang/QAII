@@ -103,6 +103,27 @@ $(function(){
 			$("body", parent.document).find('iframe').attr('src','awardProcess.do?userId='+userID+'&step='+stepnum+'&rewardAwardtime=${requestScope.utflist[2]}&rewardName=${requestScope.utflist[0]}&rewardSource=${requestScope.utflist[1]}');
 		});
 	});
+
+    //删除步骤wangxin
+    $(function(){
+        $(document).on('click','.patentdelete',function(){
+            var patName = $(this).attr("name");
+            layui.use('layer', function(){
+                var layer = layui.layer;
+
+                $.post({
+                    url:"deleteRewardProcess.do",
+                    data:{
+                        "id" : patName
+                    },
+                    success:function(data){
+                        layer.msg('步骤删除成功');
+                    }
+                })
+            });
+            /*parent.location.reload()*/
+        });
+    });
 </script>
 </body>
 </html>        

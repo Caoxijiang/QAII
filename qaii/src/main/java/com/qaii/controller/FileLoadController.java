@@ -39,7 +39,6 @@ public class FileLoadController {
         //根据路径取出文件名
         int i = decode.lastIndexOf("/");
         String fileName = decode.substring(i + 1);
-        System.out.println(decode);
      /*   String result = "";
         int index = decode.indexOf("智");
         result = decode.substring(0,index);
@@ -52,7 +51,7 @@ public class FileLoadController {
         encode = encode.replace("%3A", ":");
         encode = encode.replace("%2C", ",");
        /* result += encode;*/
-        System.out.println("转码后的url:"+encode);
+       // System.out.println("转码后的url:"+encode);
         //获取请求reffer
         String referer = request.getHeader("referer");
 
@@ -82,9 +81,8 @@ public class FileLoadController {
 
             output.write(bs);
             response.flushBuffer();
-            System.out.println("jkkkjkkkjkjkrolin");
         } catch (Exception e) {
-            System.out.println("kankan");
+            System.out.println("ERR");
         } // 用户可能取消了下载
         finally {
             if (input != null)

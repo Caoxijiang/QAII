@@ -14,4 +14,6 @@ public interface GovSubjectProcessFileService {
 	
 	int updateMsg(Govsubjectprocessfile record);
 
+	int deleteBySid(Integer sid);
+
 }

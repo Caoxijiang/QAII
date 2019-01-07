@@ -464,5 +464,17 @@ public class PeriodicalThesisController {
 		List<PeriodicalThesisAuthor> result = authorService.listRecord(id);
 		return Layui.data(result.size(),result);
 	}
+
+	//删除作者
+	@RequestMapping("deletePeriodicalAuthor.do")
+	@ResponseBody
+	JsonResult deletePeriodicalAuthor(@RequestParam("id")Integer[] id){
+		int result = authorService.delete(id);
+		if (result != 0){
+			return new JsonResult(result);
+		}else {
+			return new JsonResult();
+		}
+	}
 	
 }
