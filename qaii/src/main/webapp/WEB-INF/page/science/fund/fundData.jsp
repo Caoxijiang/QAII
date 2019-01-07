@@ -103,6 +103,26 @@ $(function(){
 			$("body", parent.document).find('iframe').attr('src','fundProcess.do?userId='+userID+'&step='+stepnum+'&govfundApplytime=${requestScope.utflist[2]}&govfundName=${requestScope.utflist[0]}&govfundSource=${requestScope.utflist[1]}');
 		});
 	});
+    //删除步骤wangxin
+    $(function(){
+        $(document).on('click','.patentdelete',function(){
+            var patName = $(this).attr("name");
+            layui.use('layer', function(){
+                var layer = layui.layer;
+
+                $.post({
+                    url:"deleteFundProcess.do",
+                    data:{
+                        "id" : patName
+                    },
+                    success:function(data){
+                        layer.msg('步骤删除成功');
+                    }
+                })
+            });
+            /*parent.location.reload()*/
+        });
+    });
 </script>
 </body>
 </html>        

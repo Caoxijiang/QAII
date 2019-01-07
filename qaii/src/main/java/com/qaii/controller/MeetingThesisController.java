@@ -12,6 +12,9 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.qaii.domain.MeetingThesisAuthor;
+import com.qaii.service.MeetingThesisAuthorService;
+import com.qaii.util.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -30,10 +33,6 @@ import com.qaii.domain.MeetingThesis;
 import com.qaii.domain.MeetingThesisFile;
 import com.qaii.service.MeetingThesisFileService;
 import com.qaii.service.MeetingThesisService;
-import com.qaii.util.AlertException;
-import com.qaii.util.CustomException;
-import com.qaii.util.JsonResult;
-import com.qaii.util.Layui;
 
 @Controller
 public class MeetingThesisController {
@@ -42,6 +41,8 @@ public class MeetingThesisController {
 	private MeetingThesisService Service;
 	@Resource
 	private MeetingThesisFileService fileService;
+	@Resource
+	private MeetingThesisAuthorService authorService;
 	
 	//文件路径
 	public final static String FILE_PATH= "C:/File/img/MeetingThesis/";
@@ -430,5 +431,41 @@ public class MeetingThesisController {
 		record.setGmtCreate(new Date());
 		record.setGmtModified(new Date());
 		record.setIsPass(BYTE_TRUE);
+	}
+
+	//作者添加
+	@RequestMapping(value="addMeetingAuthor.do")
+	String addMeetingAuthor(@RequestParam("shareholderName")String name, @RequestParam("patRemission")String level, @RequestParam("contributionTime")String unit , @RequestParam("id")String id, MeetingThesisAuthor Record){
+		Record.setAuthorName(name);
+		Record.setAuthorLevel(level);
+		Record.setAuthorUnit(unit);
+		Record.setAuthorRemark(id);
+		Record.setId(null);
+		if (authorService.inset(Record)==1)
+		{
+			return ConstantUtil.SCIENCE_INSERT_SUCCESS;
+		} else {
+			return ConstantUtil.SCIENCE_INSERT_FAILD;
+		}
+	}
+
+	//显示作者
+	@RequestMapping("listMeetingAuthor.do")
+	@ResponseBody
+	Layui listMeetingAuthor(@RequestParam("id")String id){
+		List<MeetingThesisAuthor> result = authorService.listAuthor(id);
+		return Layui.data(result.size(),result);
+	}
+
+	//删除作者
+	@RequestMapping("deleteMeetingAuthor.do")
+	@ResponseBody
+	JsonResult deleteMeetingAuthor(@RequestParam("id")Integer[] id){
+		int result = authorService.delete(id);
+		if (result != 0){
+			return new JsonResult(result);
+		}else {
+			return new JsonResult();
+		}
 	}
 }

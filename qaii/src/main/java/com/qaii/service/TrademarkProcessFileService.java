@@ -14,4 +14,5 @@ public interface TrademarkProcessFileService {
 	
 	int updateMsg(Trademarkprocessfile record);
 
+	int deleteBySid(Integer sid);
 }

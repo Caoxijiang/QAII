@@ -20,6 +20,14 @@
     .layui-table-body {
 	    height:auto;
 	}
+	#addmumber {
+		/*margin-right: 15px;
+		float: right;
+		position: absolute;
+		top: 370px;
+		right: 165px;
+		z-index: 1000;*/
+	}
   </style>
 </head>
 <body id="bodyHei">
@@ -136,6 +144,21 @@
 	    </div>		 
 	  </div>
    <!--  第一块内容-->
+	 <!--  第一块内容-->
+	 <h1>论文作者信息</h1>
+	 <div class="layui-row">
+		 <div class="layui-input-block">
+			 <table class="layui-hide" id="testpaper" lay-filter="demopaper"></table>
+			 <script type="text/html" id="barDemopaper">
+				 <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+			 </script>
+		 </div>
+		 <div class="layui-input-block" style="margin-top:10px;">
+			 <div id="addmumber" data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">
+				 <i class="layui-icon layui-icon-add-1"></i>添加作者
+			 </div>
+		 </div>
+	 </div>
    <!--  第二块内容-->
    <h1>会议论文相关文件</h1>
 	  <div class="layui-row bgf7f8f8">	
@@ -248,6 +271,41 @@ $.post({
 				layer = layui.layer,
 				laydate = layui.laydate,
 				upload = layui.upload;
+                //添加论文作者表格 wangxin
+                table.render({
+                    elem: '#testpaper'
+                    ,method:'post'
+                    ,url:'listMeetingAuthor.do?id='+id/*修改接口函数*/
+                    ,cellMinWidth: 100
+                    ,cols: [[
+                        {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
+                        ,{field:'authorName', title: '姓名'}
+                        ,{field:'authorLevel',title: '排名', sort: true}
+                        ,{field:'authorUnit',title: '单位', sort: true}
+                        ,{fixed: 'right', title:'操作', toolbar: '#barDemopaper', width:150}
+                    ]]
+                    /*data:obj.data*/
+
+                });
+                table.on('tool(demopaper)', function(obj){ //股东删除操作 xijiang
+                    var data = obj.data;
+                    var id = data.id;
+                    layer.confirm('真的删除行么', function(index){
+                        $.post({
+                            url:"deleteMeetingAuthor.do",
+                            data:{
+                                "id" : id
+                            },
+                            success:function(data){
+                                obj.del();
+                                layer.alert("删除成功");
+                            }
+                        })
+
+                        layer.close(index);
+                    });
+                });
+
 				//开发完成日期
 			  laydate.render({
 			    elem: '#test1'
@@ -534,6 +592,20 @@ function download(src) {
     evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
     $a.dispatchEvent(evObj);
 };
+
+/*添加成员*/
+$('#addmumber').on('click', function(){
+    layer.open({
+        type: 2
+        ,title: "作者添加"
+		,content: "papermeetingmumber.do?id=" + ${param.userId}
+        ,shade: 0.3 //不显示遮罩
+        ,area: ['390px', '500px']
+        ,yes: function(){
+            layer.closeAll();
+        }
+    });
+});
 </script>
 </body>
 </html>        

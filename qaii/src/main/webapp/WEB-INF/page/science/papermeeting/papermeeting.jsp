@@ -452,7 +452,19 @@ upload.render({
 	$(".layui-table-body").prop("height",heigt+"px");
 	
 	console.log(heigt);
-
+    /*添加成员*/
+    $('#addmumber').on('click', function(){
+        layer.open({
+            type: 2
+            ,title: "作者添加"
+            ,content: "papermeetingmumber.do?id=" + ${param.userId}
+            ,shade: 0.3 //不显示遮罩
+            ,area: ['390px', '500px']
+            ,yes: function(){
+                layer.closeAll();
+            }
+        });
+    });
 	
 </script>
 </body>

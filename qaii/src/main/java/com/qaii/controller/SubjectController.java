@@ -13,6 +13,7 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.qaii.util.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -33,10 +34,6 @@ import com.qaii.domain.Govsubjectprocess;
 import com.qaii.service.GovSubjectProcessFileService;
 import com.qaii.service.GovSubjectProcessService;
 import com.qaii.service.GovSubjectService;
-import com.qaii.util.AlertException;
-import com.qaii.util.CustomException;
-import com.qaii.util.JsonResult;
-import com.qaii.util.Layui;
 
 @Controller
 public class SubjectController {
@@ -267,19 +264,17 @@ public class SubjectController {
 	
 	//添加纵向课题资料审核流程信息
   	@RequestMapping(value="addGovsubjectprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-  	@ResponseBody
-  	public JsonResult addProcessInfo(HttpServletRequest req,Govsubjectprocess patp) {
+  	public String addProcessInfo(HttpServletRequest req,Govsubjectprocess patp) {
   		patp.setPid(Integer.parseInt(req.getParameter("pid")));
   		patp.setDescription(req.getParameter("description"));
   		patp.setTitle(req.getParameter("title"));
   		patp.setTime(req.getParameter("time"));
   		int row = processService.addProcess(patp);
-      	if(row!=0) {
-      		return  new JsonResult(row);
-      	}else {
-      		return  new JsonResult();
-      		
-      	}
+		if(row!=0) {
+			return ConstantUtil.SCIENCE_INSERT_SUCCESS;
+		}else {
+			return  ConstantUtil.SCIENCE_INSERT_FAILD;
+		}
   	}
   	
   	//显示所有纵向课题审核流程信息
@@ -427,6 +422,19 @@ public class SubjectController {
     		return  new JsonResult();
     		
     	}
+	}
+
+	//删除流程
+	@RequestMapping(value="deleteSubjectProcess.do")
+	@ResponseBody
+	JsonResult deleteSubjectProcess(@RequestParam("id")Integer[] id){
+		int result = processService.deleteRecord(id);
+		processfileService.deleteBySid(id[0]);
+		if(result == 1){
+			return new JsonResult(result);
+		}else {
+			return null;
+		}
 	}
 
 }

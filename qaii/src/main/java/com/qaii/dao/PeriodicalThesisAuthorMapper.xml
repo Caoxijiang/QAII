@@ -104,7 +104,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="listRecord" resultMap="BaseResultMap">
-    SELECT * FROM sci_periodical_thesis_author
+    SELECT * FROM sci_periodical_thesis_author where author_remark = #{id,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKeys" parameterType="java.lang.Integer">
     delete from sci_periodical_thesis_author where id in
@@ -112,4 +112,7 @@
       #{id,jdbcType=INTEGER}
     </foreach>
   </delete>
+  <select id="getRecord" parameterType="java.lang.Integer">
+    select * from sci_periodical_thesis_author where id = #{id,jdbcType=INTEGER}
+  </select>
 </mapper>

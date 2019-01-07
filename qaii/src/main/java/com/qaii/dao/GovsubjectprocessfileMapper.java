@@ -20,4 +20,6 @@ public interface GovsubjectprocessfileMapper {
     List<Govsubjectprocessfile> getAllMsgBysid(Integer sid);
     
     int deleteMsg(Integer[] id);
+
+    int deleteBySid(Integer sid);
 }

@@ -22,6 +22,9 @@
 	    height: -webkit-calc( 100vh - 215px );
 	    height: calc( 100vh - 215 px );
 	}
+	.layui-btn-danger {
+		background-color: #c6345a !important;
+	}
   </style>
 </head>
 <body id="bodyHei">
@@ -59,13 +62,35 @@
 <script src="${basePath}/js/iframesrc.js"></script>
 <script>
 $(function(){
-	$(document).on('click','.patentProcess',function(){
-		var stepnum="";
-		stepnum=$(this).attr("name");
-		var patName="${requestScope.utflist[0]}";
-		var patPublishtime="${requestScope.utflist[2]}";
-		$("body", parent.document).find('iframe').attr('src','patentProcess.do?userId='+userID+'&step='+stepnum+'&patName='+patName+'&patPublishtime='+patPublishtime+'&insertype=update');
-	});
+    $(document).on('click','.patentProcess',function(){
+        var stepnum="";
+        stepnum=$(this).attr("name");
+        var patName="${requestScope.utflist[0]}";
+        var patPublishtime="${requestScope.utflist[2]}";
+        $("body", parent.document).find('iframe').attr('src','patentProcess.do?userId='+userID+'&step='+stepnum+'&patName='+patName+'&patPublishtime='+patPublishtime+'&insertype=update');
+    });
+});
+//删除步骤wangxin
+$(function(){
+    $(document).on('click','.patentdelete',function(){
+        var patName = $(this).attr("name");
+        layui.use('layer', function(){
+            var layer = layui.layer;
+
+			$.post({
+			    url:"deletePatentProcess.do",
+				data:{
+			        "id" : patName
+				},
+				success:function(data){
+                    layer.msg('步骤删除成功');
+				}
+
+			})
+
+        });
+        /*parent.location.reload()*/
+    });
 });
 </script>
 <script>

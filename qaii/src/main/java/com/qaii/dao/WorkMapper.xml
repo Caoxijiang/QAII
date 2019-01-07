@@ -273,6 +273,6 @@
   </select>
 
   <select id="countMessageNotice" resultType="java.lang.Integer">
-    SELECT (SELECT COUNT(1) FROM sci_work WHERE is_pass = 1)+(SELECT COUNT(*) FROM sci_periodicalthesis WHERE is_pass=1)+(SELECT COUNT(1) FROM sci_meetingthesis WHERE is_pass = 1 )
+    SELECT (SELECT COUNT(*) FROM sci_work WHERE is_pass = 0)+(SELECT COUNT(*) FROM sci_periodicalthesis WHERE is_pass=0)+(SELECT COUNT(*) FROM sci_meetingthesis WHERE is_pass = 0)
   </select>
 </mapper>

@@ -38,5 +38,10 @@ public class ProcessimgServiceImpl implements ProcessimgService{
 		return processimgMapper.updataProcessInfo(img);
 	}
 
+	@Override
+	public int deleteBySid(Integer sid) {
+		return processimgMapper.deleteBySid(sid);
+	}
+
 
 }

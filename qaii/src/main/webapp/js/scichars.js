@@ -135,6 +135,18 @@ var option = {
 	        {
 	            name:'受理专利',
 	            type:'line',
+                smooth:true,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: '#3db4e3'},
+                                {offset: 1, color: 'rgba(61,180,227,0)'}
+                            ]
+                        )
+                    }
+                },
 	            data:[scientific.AgencyPatent[11], scientific.AgencyPatent[10], scientific.AgencyPatent[9], 
 	            	scientific.AgencyPatent[8], scientific.AgencyPatent[7], scientific.AgencyPatent[6], 
 	            	scientific.AgencyPatent[5], scientific.AgencyPatent[4], scientific.AgencyPatent[3],
@@ -143,6 +155,18 @@ var option = {
 	        {
 	            name:'授权专利',
 	            type:'line',
+                smooth:true,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: 'rgba(143,195,31,1)'},
+                                {offset: 1, color: 'rgba(143,195,31,0)'}
+                            ]
+                        )
+                    }
+                },
 	            data:[scientific.AuthorizationPatent[11], scientific.AuthorizationPatent[10], scientific.AuthorizationPatent[9], 
 	            	scientific.AuthorizationPatent[8], scientific.AuthorizationPatent[7], scientific.AuthorizationPatent[6], 
 	            	scientific.AuthorizationPatent[5], scientific.AuthorizationPatent[4], scientific.AuthorizationPatent[3],
@@ -151,6 +175,18 @@ var option = {
 	        {
 	            name:'申请软著',
 	            type:'line',
+                smooth:true,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: 'rgba(228,0,127,1)'},
+                                {offset: 1, color: 'rgba(228,0,127,0)'}
+                            ]
+                        )
+                    }
+                },
 	            data:[scientific.Applycopyright[11], scientific.Applycopyright[10], scientific.Applycopyright[9], 
 	            	scientific.Applycopyright[8], scientific.Applycopyright[7], scientific.Applycopyright[6], 
 	            	scientific.Applycopyright[5], scientific.Applycopyright[4], scientific.Applycopyright[3],
@@ -159,6 +195,18 @@ var option = {
 	        {
 	            name:'授权软著',
 	            type:'line',
+                smooth:true,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: 'rgba(96,25,134,1)'},
+                                {offset: 1, color: 'rgba(96,25,134,0)'}
+                            ]
+                        )
+                    }
+                },
 	            data:[scientific.Authorizationcopyright[11], scientific.Authorizationcopyright[10], scientific.Authorizationcopyright[9], 
 	            	scientific.Authorizationcopyright[8], scientific.Authorizationcopyright[7], scientific.Authorizationcopyright[6], 
 	            	scientific.Authorizationcopyright[5], scientific.Authorizationcopyright[4], scientific.Authorizationcopyright[3],
@@ -167,6 +215,18 @@ var option = {
 	        {
 	            name:'受理商标',
 	            type:'line',
+                smooth:true,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: 'rgba(145,199,174,1)'},
+                                {offset: 1, color: 'rgba(145,199,174,0)'}
+                            ]
+                        )
+                    }
+                },
 	            data:[scientific.AgencyTradeMark[11], scientific.AgencyTradeMark[10], scientific.AgencyTradeMark[9], 
 	            	scientific.AgencyTradeMark[8], scientific.AgencyTradeMark[7], scientific.AgencyTradeMark[6], 
 	            	scientific.AgencyTradeMark[5], scientific.AgencyTradeMark[4], scientific.AgencyTradeMark[3],
@@ -175,6 +235,18 @@ var option = {
 	        {
 	            name:'授权商标',
 	            type:'line',
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: 'rgba(255,241,0,1)'},
+                                {offset: 1, color: 'rgba(255,241,0,0)'}
+                            ]
+                        )
+                    }
+                },
+                smooth:true,
 	            data:[scientific.AuthorizationTradeMark[11], scientific.AuthorizationTradeMark[10], scientific.AuthorizationTradeMark[9], 
 	            	scientific.AuthorizationTradeMark[8], scientific.AuthorizationTradeMark[7], scientific.AuthorizationTradeMark[6], 
 	            	scientific.AuthorizationTradeMark[5], scientific.AuthorizationTradeMark[4], scientific.AuthorizationTradeMark[3],
@@ -183,6 +255,18 @@ var option = {
 	        {
 	            name:'论文总数',
 	            type:'line',
+                smooth:true,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: 'rgba(234,117,66,1)'},
+                                {offset: 1, color: 'rgba(234,117,66,0)'}
+                            ]
+                        )
+                    }
+                },
 	            data:[scientific.EachMonththesis[11], scientific.EachMonththesis[10], scientific.EachMonththesis[9], 
 	            	scientific.EachMonththesis[8], scientific.EachMonththesis[7], scientific.EachMonththesis[6], 
 	            	scientific.EachMonththesis[5], scientific.EachMonththesis[4], scientific.EachMonththesis[3],
@@ -191,6 +275,18 @@ var option = {
 	        {
 	            name:'著作总数',
 	            type:'line',
+                smooth:true,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: 'rgba(72,239,239,1)'},
+                                {offset: 1, color: 'rgba(72,239,239,0)'}
+                            ]
+                        )
+                    }
+                },
 	            data:[scientific.EachMonthwork[11], scientific.EachMonthwork[10], scientific.EachMonthwork[9], 
 	            	scientific.EachMonthwork[8], scientific.EachMonthwork[7], scientific.EachMonthwork[6], 
 	            	scientific.EachMonthwork[5], scientific.EachMonthwork[4], scientific.EachMonthwork[3],
@@ -290,8 +386,7 @@ var option2 = {
 	        {
 	            name: '外观设计专利',
 	            type: 'bar',
-	            barWidth : 30,//柱图宽度
-	            stack: '总量',
+                barGap: 0,
 	            label: {
 	                normal: {
 	                    /*show: true,*/
@@ -303,7 +398,7 @@ var option2 = {
 	        {
 	            name: '实用新型专利',
 	            type: 'bar',
-	            stack: '总量',
+                barGap: 0,
 	            label: {
 	                normal: {
 	                   /* show: true,*/
@@ -315,7 +410,7 @@ var option2 = {
 	        {
 	            name: '发明专利',
 	            type: 'bar',
-	            stack: '总量',
+                barGap: 0,
 	            label: {
 	                normal: {
 	                    /*show: true,*/

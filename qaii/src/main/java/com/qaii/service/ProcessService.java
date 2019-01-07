@@ -8,4 +8,6 @@ public interface ProcessService {
 	int addProcessInfo(PatProcess patprocess);
 	
 	List<PatProcess> findProcessList(Integer pid);
+
+	int deleteRecord(Integer[] id);
 }
