@@ -39,7 +39,7 @@ public class IndustryInformationManagerController {
              Incubatorlist=incubatorService.selectAlllistByPreThreeMonth();
              Date date1=CountDatetoNowDays.Monthlow(sdf.format(date));
              String sd=sdf.format(date1);
-             System.out.println(sd);
+           //  System.out.println(sd);
         //这里是把内连接查询出来的数据进行判断，如果股东出资时间在当前时间以前三个月以后的数据则保留，不是则删除
              for (CompanyInfo companyInfo:Incubatorlist){
                  if (companyInfo.getContributionTime().after(CountDatetoNowDays.Monthlow(sdf.format(date)))){
@@ -48,7 +48,7 @@ public class IndustryInformationManagerController {
                      System.out.println("there is a system wrong!because The ContibuteTime is above Three month");
                  }
              }
-             System.out.println(list1);
+             //System.out.println(list1);
 
         int count =list1.size();
         if(list1!=null) {

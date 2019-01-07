@@ -24,9 +24,7 @@ public class MyFilter implements Filter{
         response.setHeader("Pragrma", "no-cache");
         response.setDateHeader("Expires", 0);//禁止浏览器缓存
         String referer = request.getHeader("referer");    //链接的来源地址
-        System.out.println("www.baidu");
         System.out.println(referer);
-        System.out.println("baidu");
         request.getSession().setAttribute("LocalName",referer);
         if (referer!=null) {//判断访问来源
             chain.doFilter(request, response); //正常显示图片

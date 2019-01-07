@@ -18,6 +18,6 @@ public class CustomException extends Exception {
 	}
 	public void printStackTrace(String msg) {
 		this.msg=msg;
-		System.out.println(msg);
+		//System.out.println(msg);
 	}
 }
