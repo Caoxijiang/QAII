@@ -120,7 +120,9 @@ public class industryDataOverviewController {
         result.put("awardpersonal",personallist);
         return result;
     }
-
+/*
+* 孵化企业旋转图接口
+* */
     @RequestMapping(value = "IndustryInner.do",method = RequestMethod.POST)
     @ResponseBody
     public List<Incubator> AwardIndustry(String IndustryName) {
