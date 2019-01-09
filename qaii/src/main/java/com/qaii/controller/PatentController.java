@@ -96,6 +96,8 @@ public class PatentController {
      	int row=patentService.deleteByPrimaryKey(id);
      
     	if(row!=0) {
+    		processService.deleteByPid(id);
+    		processimgService.deleteByOid(id);
     		return  new JsonResult(row);
     	}else {
     		return  new JsonResult();

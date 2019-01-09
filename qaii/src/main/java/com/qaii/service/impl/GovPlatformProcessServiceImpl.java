@@ -32,4 +32,9 @@ public class GovPlatformProcessServiceImpl implements com.qaii.service.GovPlatfo
 		return processmapper.deleteByPrimaryKeys(id);
 	}
 
+	@Override
+	public int deleteByPid(Integer[] pid) {
+		return processmapper.deleteByPid(pid);
+	}
+
 }

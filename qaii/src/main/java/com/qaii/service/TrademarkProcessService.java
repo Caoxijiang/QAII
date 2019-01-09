@@ -11,4 +11,6 @@ public interface TrademarkProcessService {
 	int addProcess(Trademarkprocess process);
 
 	int deleteRecord(Integer[] id);
+
+	int deleteByPid(Integer[] pid);
 }

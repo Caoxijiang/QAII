@@ -309,7 +309,7 @@ public class SoftwareController {
 			throw new CustomException("主要文件不能为空!");
 		}
 		Softcopyrightfile softfile=new Softcopyrightfile();
-		for (int i = 0; i < files.length; i++) {
+		for (int i = 0; i < files.length - 1; i++) {
 			 String type = files[i].getOriginalFilename().substring(files[i].getOriginalFilename().lastIndexOf("."));
 			 
 			 String name=files[i].getOriginalFilename();

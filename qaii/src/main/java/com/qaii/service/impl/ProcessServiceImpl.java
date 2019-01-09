@@ -31,4 +31,9 @@ public class ProcessServiceImpl implements ProcessService {
 		return processMapper.deleteByPrimaryKeys(id);
 	}
 
+	@Override
+	public int deleteByPid(Integer[] pid) {
+		return processMapper.deleteByPid(pid);
+	}
+
 }

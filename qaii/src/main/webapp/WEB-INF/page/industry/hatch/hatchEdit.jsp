@@ -332,10 +332,19 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
   table.on('tool(demo)', function(obj){ //股东删除操作 xijiang
 	    var data = obj.data;
 	   if(obj.event === 'del'){
-	      layer.confirm('真的删除行么', function(index){
-	        obj.del();
-	        layer.close(index);
-	      });
+           layer.confirm('真的删除行么', function(index){
+               $.post({
+                   url:"deleteIncubatorStockEquity.do",
+                   data:{
+                       "id" : data.id
+                   },
+                   success:function(data){
+                       obj.del();
+                       layer.alert("删除成功");
+                   }
+               })
+               layer.close(index);
+           });
 	    }
 	  });
     //变更信息显示

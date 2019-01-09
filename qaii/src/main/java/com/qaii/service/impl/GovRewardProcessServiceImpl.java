@@ -33,4 +33,9 @@ public class GovRewardProcessServiceImpl implements GovRewardProcessService {
 		return processmapper.deleteByPrimaryKeys(id);
 	}
 
+	@Override
+	public int deleteByPid(Integer[] pid) {
+		return processmapper.deleteByPid(pid);
+	}
+
 }

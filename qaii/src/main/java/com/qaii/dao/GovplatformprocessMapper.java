@@ -20,4 +20,6 @@ public interface GovplatformprocessMapper {
     List<Govplatformprocess> getAllMsgBypid(Integer pid);
 
     int deleteByPrimaryKeys(Integer[] id);
+
+    int deleteByPid(Integer[] pid);
 }
