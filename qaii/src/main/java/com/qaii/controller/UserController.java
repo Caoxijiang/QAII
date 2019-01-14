@@ -65,6 +65,7 @@ public class UserController {
                 UserRole role2=userRoleService.findUSerRoleByUserId(role.getUid());
                 //UserRole role2=userRoleService.findUSerRoleByUserId(userid);
                 //登录成功，将user对象设置到HttpSession作用范围
+                session.setAttribute("name",user.getAdminAccount());
                 session.setAttribute("user",user);
                 String sessionID = request.getRequestedSessionId();
                 String user1 = user2.getAdminAccount();
@@ -121,7 +122,11 @@ public String outLogin(HttpServletRequest req,HttpServletResponse res,HttpSessio
         return"page/login";
         }
 
-
+    //修改密码
+    @RequestMapping( "changePassword.do" )
+    public String changePwd(HttpServletRequest req,HttpServletResponse res,HttpSession session)throws IOException{
+        return"page/changePwd";
+    }
 @ResponseBody
 @RequestMapping( value = "DellUserAccount.do", method = RequestMethod.POST, produces = "application/json;charset=UTF-8" )
 public JsonResult DellUserAccount(@RequestParam( value = "requestDate[]" ) Integer[]userId){
