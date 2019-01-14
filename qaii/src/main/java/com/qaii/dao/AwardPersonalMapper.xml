@@ -319,7 +319,7 @@
   </select>
 
   <select id="listPersonal" resultMap="CustomMap1">
-    SELECT award_time,award_level,person_unit,award_name FROM industry_awardpersonal
+    SELECT award_time,award_level,person_name,award_name FROM industry_awardpersonal
   </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardPersonal">
     <id column="id" jdbcType="INTEGER" property="id" />
@@ -352,7 +352,7 @@
   <resultMap id="CustomMap1" type="com.qaii.domain.AwardPersonalest">
     <result column="award_time" jdbcType="DATE" property="awardTime" />
     <result column="award_level" jdbcType="VARCHAR" property="awardLevel" />
-    <result column="person_unit" jdbcType="VARCHAR" property="personUnit" />
+    <result column="person_name" jdbcType="VARCHAR" property="personName" />
     <result column="award_name" jdbcType="VARCHAR" property="awardName" />
   </resultMap>
   <select id="getRecord" resultMap="CustomMap" parameterType="java.lang.Integer">
