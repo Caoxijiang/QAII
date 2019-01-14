@@ -19,6 +19,19 @@
   	height:30px;
   	min-height: 30px;
     line-height: 30px;}
+	#paperwork .layui-form-select .layui-edge{margin:0px;}
+	#paperwork tr td{
+		font-size:16px;
+	}
+	  .addselect{
+		  display:block !important;
+		  height:36px;
+		  line-height:36px;
+	  }
+	.addselect option{
+		height:36px;
+		line-height: 36px;
+	}
   </style>
 </head>
 <body class="layui-layout-body" style="overflow:scroll">
@@ -42,22 +55,6 @@
 					</div>
 				</div>
 			</div>
-		    <%--<div class="layui-col-md8">
-				<div class="layui-form-item">
-					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="author" lay-verify="required" autocomplete="off" class="layui-input input">
-					</div>
-				</div>
-			</div>
-		    <div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">作者单位&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="authorUnit" class="layui-input input" id="test1">
-					  </div>
-				</div>
-			</div>--%>
 		    <div class="layui-col-md4">
 				<div class="layui-form-item">
 					<label class="layui-form-label">出版时间&nbsp;<span class="star">*</span></label>
@@ -125,6 +122,55 @@
 				</div>
 		   </div>
 	    </div>		 
+	  </div>
+	  <h1>期刊论文作者信息</h1>
+	  <div class="layui-row bgf7f8f8">
+		  <div class="layui-col-md12">
+			  <div class="layui-form-item">
+				  <div class="layui-input-block">
+					  <table class="layui-table" id="paperwork">
+						  <tr>
+							  <th>排名</th>
+							  <th>姓名</th>
+							  <th>单位</th>
+							  <th>操作</th>
+						  </tr>
+						 <%-- <tr>
+							  <td>
+								  <div class="layui-input-block">
+									  <select name="patRemission" lay-search="" class="input">
+										  <option value="">请选择作者排位</option>
+										  <option value="第一作者">第一作者</option>
+										  <option value="第二作者">第二作者</option>
+										  <option value="第三作者">第三作者</option>
+										  <option value="第四作者">第四作者</option>
+										  <option value="第五作者">第五作者</option>
+										  <option value="第六作者">第六作者</option>
+										  <option value="第七作者">第七作者</option>
+										  <option value="第八作者">第八作者</option>
+										  <option value="通讯作者">通讯作者</option>
+									  </select>
+								  </div>
+							  </td>
+							  <td>
+								  <div class="layui-input-block">
+									  <input type="text" name="shareholderName" lay-verify="title" autocomplete="off" placeholder="请输入作者名称" style="width:100%;" class="layui-input">
+								  </div>
+							  </td>
+							  <td>
+								  <div class="layui-input-block">
+								  	<input type="text" name="contributionTime" lay-verify="title" autocomplete="off" placeholder="请输入作者单位" class="layui-input" style="width:100%;">
+								  </div>
+							  </td>
+							  <td>
+								  <div class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</div>
+							  </td>
+						  </tr>--%>
+					  </table>
+					  <div class="layui-btn layui-btn-normal" style="margin-top:10px;" id="addauthor">添加作者</div>
+				  </div>
+			  </div>
+		  </div>
 	  </div>
    <!--  第一块内容-->
    <!--  第二块内容-->
@@ -211,6 +257,56 @@
 <!--  表单元素-->
 
 </div>
+<script>
+	$("#addauthor").click(function(){
+	    let htmls="<tr><td><div class='layui-input-block'><select name='patRemission' lay-search='' class='input addselect'>" +
+            "<option value=''>请选择作者排位</option>" +
+            "<option value='第一作者'>第一作者</option>" +
+            "<option value='第二作者'>第二作者</option>" +
+            "<option value='第三作者'>第三作者</option>" +
+            "<option value='第四作者'>第四作者</option>" +
+            "<option value='第五作者'>第五作者</option>" +
+            "<option value='第六作者'>第六作者</option>" +
+            "<option value='第七作者'>第七作者</option>" +
+            "<option value='第八作者'>第八作者</option>" +
+            "<option value='通讯作者'>通讯作者</option>" +
+            "</select>" +
+				/*"<div class='layui-form-select layui-form-selected'>"+
+					"<div class='layui-select-title'>"+
+						"<input type='text' placeholder='请选择作者排位' value='' class='layui-input'><i class='layui-edge'></i>"+
+					"</div>"+
+					"<dl class='layui-anim layui-anim-upbit' style=''>"+
+						"<dd lay-value='' class='layui-select-tips layui-this'>请选择作者排位</dd>"+
+						"<dd lay-value='第一作者' class=''>第一作者</dd>"+
+						"<dd lay-value='第二作者' class=''>第二作者</dd>"+
+						"<dd lay-value='第三作者' class=''>第三作者</dd>"+
+						"<dd lay-value='第四作者' class=''>第四作者</dd>"+
+						"<dd lay-value='第五作者' class=''>第五作者</dd>"+
+						"<dd lay-value='第六作者' class=''>第六作者</dd>"+
+						"<dd lay-value='第七作者' class=''>第七作者</dd>"+
+						"<dd lay-value='第八作者' class=''>第八作者</dd>"+
+						"<dd lay-value='通讯作者' class=''>通讯作者</dd>"+
+					"</dl>"+
+				"</div>"+*/
+            "</div>" +
+            "</td>" +
+            " <td>" +
+            "<div class='layui-input-block'>" +
+            "<input type='text' name='shareholderName' lay-verify='title' autocomplete='off' placeholder='请输入作者名称' style='width:100%;' class='layui-input'>" +
+            "</div>" +
+            "</td>" +
+            "<td>" +
+            "<div class='layui-input-block'>" +
+            "<input type='text' name='contributionTime' lay-verify='title' autocomplete='off' placeholder='请输入作者单位' class='layui-input' style='width:100%;'>" +
+            "</div>" +
+            "</td>" +
+            "<td>" +
+            "<div class='layui-btn layui-btn-xs layui-btn-danger demo-delete'>删除</div>" +
+            "</td>" +
+            "</tr>";
+	    $("#paperwork").append(htmls);
+	})
+</script>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 $.post({

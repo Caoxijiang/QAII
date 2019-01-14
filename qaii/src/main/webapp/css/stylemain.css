@@ -221,17 +221,16 @@ ul,li{
 }
 /*人事可视化界面*/
 #main{
-	width: 100%;height:400px;
+	width: 100%;height:260px;
 }
-.personalbody{
-	width: 100%;
-	min-width: 1200px;
-	height: 100vh !important;
-	background: #011039;
-	background-image:url(../image/personbg.jpg);
-	background-size:100%;
-	background-repeat:no-repeat;
-	background-attachment: fixed;
+.mainbody{
+	width: 1920px;
+	height: 1080px;
+	background: url(../image/personbg.jpg) 0% 0% / 100% 100% !important;
+	transform: scale(1, 0.877778);
+	overflow: hidden;
+	position: relative;
+	transform-origin: left top 0px;
 }
 .content{
 	margin: 0px auto;
@@ -298,15 +297,15 @@ ul,li{
 }
 .perinform{
 	padding:10px 15px 15px 15px;
-	height:367px !important;overflow:auto
+	height:420px !important;overflow:auto
 }
 .hei2{
-	height:310px !important;overflow:auto
+	height:420px !important;overflow:auto
 }
 .inform{
 	background: rgba(0,0,0,0.4);
 	border-radius: 10px;
-	margin-top:20px;}
+	margin-top:10px;}
 .gradient{
 	background: -webkit-linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,0.15)); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,0.15)); /* Opera 11.1 - 12.0 */
@@ -489,3 +488,74 @@ ul,li{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;}
+.heightpeople{
+	margin-top: -90px;
+	margin-left:-60px;
+	background-image:url(../image/rsbg.png);
+	height:721px;
+	width:987px;
+	background-size: 100%;
+}
+.hightpnum{
+	font-size:50px;
+	text-shadow: 0px 0px 20px rgba(2,15,31,1);
+	-webkit-text-stroke-width: 1px;
+	color:#1293ff ;
+	padding-top: 510px;
+	padding-left: 40px;
+	text-align: center;
+}
+.heightbox{
+	width:144px;
+	height:144px;
+	background-image:url(../image/peocir.png);
+	background-size:100%;
+	text-align: center;
+	position: absolute;
+	color:#34ffff;
+	font-size:18px;
+	font-weight: bold;
+	line-height: 25px;
+}
+.paopao{
+	margin-top:10px;
+	width:40%;
+}
+.pao11{
+	top:330px;
+	left:580px;
+	width:100px;
+	height:100px;
+}
+.pao22{
+	top:180px;
+	left:200px;
+	width:120px;
+	height:120px;
+}
+.pao33{
+	top:60px;
+	left:600px;
+}
+.pao44{
+	top:280px;
+	left:450px;
+	width:90px;
+	height:90px;
+}
+.pao55{
+	top:80px;
+	left:400px;
+	width:100px;
+	height:100px;
+}
+.pao66{
+	top:330px;
+	left:230px;
+	width:110px;
+	height:110px;
+}
+.pao77{
+	top:20px;
+	left:100px;
+}

@@ -116,6 +116,7 @@ ul,li{
 	text-align:center;
 	border-left:1px solid #3db4e3;
 	border-top:1px solid #3db4e3;
+	table-layout: fixed;
 }
 .govTable tr th{
 	line-height:30px;
@@ -129,6 +130,9 @@ ul,li{
 	line-height:26px;
 	border-right:1px solid #3db4e3;
 	border-bottom:1px solid #3db4e3;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 /*科研成果总览*/
 .itemBox{
@@ -326,8 +330,34 @@ ul,li{
 	font-weight: bold;
 }
 .imgs{
+	 background-image:url("../image/itemee.png");
+	 background-size: 100% 100%;
+	 width:217px;
+	 height:192px;
+	 animation: downupimg 3s infinite linear;
+ }
+.imgsp{
+	background-image:url("../image/kjcbox.png");
+	background-size: 100% 100%;
+	width:330px;
+	height:448px;
 	animation: downupimg 3s infinite linear;
 }
+.imgs:hover{
+	background-image:url("../image/itemeea.png");
+	background-size: 100% 100%;
+	width:217px;
+	height:192px;
+	animation-play-state:paused;
+}
+.imgsp:hover{
+	background-image:url("../image/kjcboxa.png");
+	background-size: 100% 100%;
+	width:330px;
+	height:448px;
+	animation-play-state:paused;
+}
+
 /*浮动动画*/
 @keyframes downup{
 	0%{

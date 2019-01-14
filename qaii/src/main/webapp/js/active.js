@@ -1,24 +1,5 @@
 
 //表格动态事件
-//荣誉奖励
-tablefun("qiyehuojaing");//孵化企业获奖情况初始赋值
-let awardDate=getawardAllData();//awardcollege代表院获奖情况如"awardcollege":[{"awardTime":"2018-11-21","awardLevel":"2","awardUnit":"当时说","awardName":"辅导费"}]；
-//awardpersonal代表个人获奖情况如"awardpersonal":[{"awardTime":"2018-11-21","awardLevel":"4","personUnit":null,"awardName":"达到"}]
-//awardincubate代表孵化企业获奖情况如："awardincubate":[{"awardTime":"2018-11-21","awardLevel":"2","awardUnit":"当时说","awardName":"辅导费"}]
-//赋值时要注意判断当值不存在的时候返回值为null的情况
-console.log("huang kun peng");
-function getawardAllData(){
-    var result=null;
-    $.ajax({
-        async:false,
-        type:"POST",
-        url:"Award.do",
-        success:function(data){
-            result=data;
-        }
-    })
-    return result;
-}
 let totalData=gettotalData();
 new Vue({
     el: '#t1',
@@ -44,44 +25,89 @@ new Vue({
         message: totalData.ZhongXiaoXing//科技型中小企业
     }
 })
+
+//荣誉奖励
+
+var awardDate=getawardAllData();//awardcollege代表院获奖情况如"awardcollege":[{"awardTime":"2018-11-21","awardLevel":"2","awardUnit":"当时说","awardName":"辅导费"}]；
+//awardpersonal代表个人获奖情况如"awardpersonal":[{"awardTime":"2018-11-21","awardLevel":"4","personUnit":null,"awardName":"达到"}]
+//awardincubate代表孵化企业获奖情况如："awardincubate":[{"awardTime":"2018-11-21","awardLevel":"2","awardUnit":"当时说","awardName":"辅导费"}]
+//赋值时要注意判断当值不存在的时候返回值为null的情况
+/*console.log(awardDate)
+console.log("huang kun peng"+awardDate.awardincubate[0].awardTime);
+console.log("huang kun peng"+awardDate.awardincubate.length);*/
+var arr=awardDate.awardincubate;
+console.log(arr);
+var num=6;/*定时器循环*/
+function getawardAllData(){
+    var result=null;
+    $.ajax({
+        async:false,
+        type:"POST",
+        url:"Award.do",
+        success:function(data){
+            result=data;
+        }
+    })
+    return result;
+}
+tablefun("qiyehuojaing");//孵化企业获奖情况初始赋值
 $(".nage").click(function(){
     $(this).siblings().removeClass("nageactive");
     $(this).addClass("nageactive");
     var ss=$(this).attr("name");
     tablefun(ss);
 });
-	function tablefun(ss){
-		let htmls="";
-		if(ss=="yuanhuojiang"){
-            htmls="<tr><th>获奖时间</th><th>获奖级别</th><th>获奖单位名称</th><th>奖励荣誉名称</th></tr>";
-		}else if(ss=="qiyehuojaing"){
-            htmls="<tr><th>获奖时间</th><th>获奖级别</th><th>获奖企业名称</th><th>奖励荣誉名称</th></tr>";
-		}else if (ss=="gerenhuojiang") {
-            htmls="<tr><th>获奖时间</th><th>获奖级别</th><th>个人获奖</th><th>奖励荣誉名称</th></tr>";
-		}
-		htmls=htmls+"<tr><td>2018-12-13</td><td>国家级</td><td>青岛智铭智能科技有限公司</td><td>高新技术企业</td></tr>"+
-            "<tr style='background: rgba(115,199,206,0.1)'><td>2018-12-13</td><td>国家级</td><td>青岛智铭智能科技有限公司</td><td>高新技术企业</td></tr>"+
-            "<tr><td>2018-12-13</td><td>国家级</td><td>青岛智铭智能科技有限公司</td><td>高新技术企业</td></tr>"+
-            "<tr style='background: rgba(115,199,206,0.1)'><td>2018-12-13</td><td>国家级</td><td>青岛智铭智能科技有限公司</td><td>高新技术企业</td></tr>"+
-            "<tr><td>2018-12-13</td><td>国家级</td><td>青岛智铭智能科技有限公司</td><td>高新技术企业</td></tr>"+
-            "<tr style='background: rgba(115,199,206,0.1)'><td>2018-12-13</td><td>国家级</td><td>青岛智铭智能科技有限公司</td><td>高新技术企业</td></tr>";
-        $('#rewardtable').html(htmls);//初始赋六个值
-	}
+function tablefun(ss){
+    let htmls="";
+    let htmltit=""
+    if(ss=="yuanhuojiang"){
+        arr=awardDate.awardcollege;
+        htmltit="<tr><th>获奖时间</th><th>获奖级别</th><th>获奖单位名称</th><th>奖励荣誉名称</th></tr>";
+        num=6;
+    }else if(ss=="qiyehuojaing"){
+        arr=awardDate.awardincubate;
+        htmltit="<tr><th>获奖时间</th><th>获奖级别</th><th>获奖企业名称</th><th>奖励荣誉名称</th></tr>";
+        num=6;
+    }else if (ss=="gerenhuojiang") {
+        arr=awardDate.awardpersonal;
+        htmltit="<tr><th>获奖时间</th><th>获奖级别</th><th>个人获奖</th><th>奖励荣誉名称</th></tr>";
+        num=6;
+    }
+
+    if(arr.length>5) {
+        for (let i = 0; i < 6; i++) {
+            if(i%2==0){
+                htmls = "<tr><td>" + arr[i].awardTime + "</td><td>" + arr[i].awardLevel +
+                    "</td><td>" + arr[i].awardUnit + "</td><td>" + arr[i].awardName + "</td></tr>"+htmls;
+            }else{
+                htmls = "<tr style='background: rgba(115,199,206,0.1)'><td>" + arr[i].awardTime + "</td><td>" + arr[i].awardLevel +
+                    "</td><td>" + arr[i].awardUnit + "</td><td>" + arr[i].awardName + "</td></tr>"+htmls;
+            }
+        }
+    }else{
+        console.log("暂无数据！！");
+    }
+    $('#rewardtable').html(htmltit+htmls);//初始赋六个值
+}
 
 
 
 var _box =$('#rewardtable');
-var _interval=1500, //刷新间隔时间1.5秒
-i=2;
+var _interval=1500; //刷新间隔时间1.5秒
 function gdb(){
-    if(i%2==0){
-        $('#rewardtable tr:first').after("<tr style='background: rgba(115,199,206,0.1)'><td>2018-12-"+Math.floor(Math.random()*10+1)+"</td><td>国家级</td><td>青岛智铭智能科技有限公司</td><td>高新技术企业</td></tr>");
-        i++;
-    }else{
-        //Math.floor(Math.random()*10+1),所得到的的是1-10之间的随机数，每次刷新都不同
-        $('#rewardtable tr:first').after("<tr><td>2018-12-"+Math.floor(Math.random()*10+1)+"</td><td>国家级</td><td>青岛智铭智能科技有限公司</td><td>高新技术企业</td></tr>");
-        i++;
+    if(num>=arr.length){
+        num=0;
     }
+    if(num%2==0){
+        $('#rewardtable tr:first').after("<tr><td>" + arr[num].awardTime + "</td><td>" + arr[num].awardLevel +
+            "</td><td>" + arr[num].awardUnit + "</td><td>" + arr[num].awardName + "</td></tr>");
+        num++;
+    }else{
+        $('#rewardtable tr:first').after("<tr style='background: rgba(115,199,206,0.1)'><td>" + arr[num].awardTime + "</td><td>" + arr[num].awardLevel +
+            "</td><td>" + arr[num].awardUnit + "</td><td>" + arr[num].awardName + "</td></tr>");
+        num++;
+    }
+
     var _first=$('#rewardtable tr:first').next();
     _first.animate({height: '+30px'}, "slow");
     var _last=$('#rewardtable tr:last');

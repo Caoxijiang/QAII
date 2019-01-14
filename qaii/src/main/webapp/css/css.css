@@ -263,6 +263,9 @@ body{
 .popup ul li{
 	height: 25px;
 	line-height: 25px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .popup ul li label{
 	padding-left: 5px;

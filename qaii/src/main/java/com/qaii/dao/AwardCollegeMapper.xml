@@ -305,7 +305,7 @@
     SELECT * FROM industry_awardcollege
   </select>
   <select id="listcollege" resultMap="BaseResultMap1">
-    SELECT award_time,award_level,award_unit,award_name FROM industry_awardcollege GROUP BY award_time DESC
+    SELECT award_time,award_level,award_unit,award_name FROM industry_awardcollege
   </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardCollege">
     <id column="id" jdbcType="INTEGER" property="id" />
