@@ -79,4 +79,9 @@ public class IncubatorServiceImpl implements IncubatorService {
 	public List<CompanyInfo> selectAlllistByPreThreeMonth() {
 		return incubatorMapper.selectAlllistByPreThreeMonth();
 	}
+
+	@Override
+	public List<Incubator> selectAlls(String IncubatryName) {
+		return incubatorMapper.selectAlls(IncubatryName);
+	}
 }

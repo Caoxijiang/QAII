@@ -8,5 +8,6 @@ public interface UserService {
 	 User checkLogin(User user);
 	 int insert(User user);
 	 int delete(Integer[] userId);
+	User findWithLogin(String userName);
 }
 

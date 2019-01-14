@@ -358,10 +358,8 @@ public class IndustryController {
 		}
 
 		if((iFlists.get(0).getFileName())!=null){
-			System.out.println("--------------"+iFlists);
 			int row = incubatorService.insert(incubator);
 			if (row > 0 ) {
-				System.out.println(incubator.getId());
 				iFile.setIncubatorId(incubator.getId());
 				iFile1.setIncubatorId(incubator.getId());
 				int args = incubatorFileService.insert(iFlists);
@@ -469,7 +467,6 @@ public class IndustryController {
 			List<StockEquity> stockEquity=new ArrayList<>();
 			Integer id=Integer.parseInt(req.getParameter("id"));
 			stockEquity=stockEquityService.selectByPrimaryKey(id);
-			System.out.println(stockEquity);
 			int count =stockEquity.size();
 			if(stockEquity!=null) {
 				return Layui.data(count, stockEquity);

@@ -35,7 +35,7 @@ public class ZipDownloadController {
         encode = encode.replace("%3A", ":");
         encode = encode.replace("%2C", ",");
         /* result += encode;*/
-        System.out.println("转码后的url:"+encode);
+       // System.out.println("转码后的url:"+encode);
         List<String> urls = new ArrayList();
         String[] sourceStrArray = encode.split(",");//分割出来的字符数组
         for (int i = 0; i < sourceStrArray.length; i++) {

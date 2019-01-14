@@ -47,6 +47,10 @@
   		select * from industry_incubator
   </select>
 
+  <select id="selectAlls" resultMap="BaseResultMap" parameterType="java.lang.String">
+  		select * from industry_incubator where Company_name=#{IncubatryName}
+  </select>
+
   <resultMap id="CustomMap" type="com.qaii.domain.CompanyInfo">
     <id column="id" jdbcType="INTEGER" property="id" />
     <id column="incubator_id" jdbcType="INTEGER" property="incubatorid" />

@@ -126,7 +126,6 @@ import java.util.List;
                for (String filepath : listlocalPaths) {
                    //判断完整文件名包含不在数据库中的文件名的情况；
                    if (filepath.contains(str)) {
-                      System.out.println("Come on beach");
                       System.out.println("现在就只剩那些在数据库中不存在的路径了");
                       DeleteFileUtil.delete(filepath);
                       FileLogUtil.showlog(filepath);
