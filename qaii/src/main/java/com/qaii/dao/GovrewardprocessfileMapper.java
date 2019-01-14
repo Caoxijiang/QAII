@@ -20,4 +20,6 @@ public interface GovrewardprocessfileMapper {
     List<Govrewardprocessfile> getAllMsgBysid(Integer sid);
     
     int deleteMsg(Integer[] id);
+
+    int deleteBySid(Integer sid);
 }

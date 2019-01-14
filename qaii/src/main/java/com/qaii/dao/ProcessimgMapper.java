@@ -12,4 +12,6 @@ public interface ProcessimgMapper {
 	int deleteByPrimaryKey(Integer[] id);
 	
 	int updataProcessInfo(Processimg img);
+
+	int deleteBySid(Integer sid);
 }

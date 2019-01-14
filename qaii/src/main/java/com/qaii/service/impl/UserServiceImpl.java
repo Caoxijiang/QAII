@@ -45,7 +45,10 @@ public class UserServiceImpl implements UserService {
 		return usermapper.deleteByPrimaryKey(userId) ;
 	}
 
-
+	@Override
+	public User findWithLogin(String userName) {
+		return usermapper.findWithLogin(userName);
+	}
 }
 
 

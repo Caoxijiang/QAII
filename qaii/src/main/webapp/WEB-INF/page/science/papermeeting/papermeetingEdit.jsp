@@ -289,12 +289,21 @@ $.post({
                 });
                 table.on('tool(demopaper)', function(obj){ //股东删除操作 xijiang
                     var data = obj.data;
-                    if(obj.event === 'del'){
-                        layer.confirm('真的删除行么', function(index){
-                            obj.del();
-                            layer.close(index);
-                        });
-                    }
+                    var id = data.id;
+                    layer.confirm('真的删除行么', function(index){
+                        $.post({
+                            url:"deleteMeetingAuthor.do",
+                            data:{
+                                "id" : id
+                            },
+                            success:function(data){
+                                obj.del();
+                                layer.alert("删除成功");
+                            }
+                        })
+
+                        layer.close(index);
+                    });
                 });
 
 				//开发完成日期

@@ -13,6 +13,7 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.qaii.util.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -39,10 +40,6 @@ import com.qaii.service.TradeMarkService;
 import com.qaii.service.TrademarkImgService;
 import com.qaii.service.TrademarkProcessFileService;
 import com.qaii.service.TrademarkProcessService;
-import com.qaii.util.AlertException;
-import com.qaii.util.CustomException;
-import com.qaii.util.JsonResult;
-import com.qaii.util.Layui;
 
 @Controller
 public class TradeMarkController {
@@ -304,19 +301,17 @@ public class TradeMarkController {
 	
 	//添加商标资料审核流程信息
   	@RequestMapping(value="addtradeProcess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-  	@ResponseBody
-  	public JsonResult addProcessInfo(HttpServletRequest req,Trademarkprocess patp) {
+  	public String addProcessInfo(HttpServletRequest req,Trademarkprocess patp) {
   		patp.setPid(Integer.parseInt(req.getParameter("pid")));
   		patp.setDescription(req.getParameter("description"));
   		patp.setTitle(req.getParameter("title"));
   		patp.setTime(req.getParameter("time"));
   		int row = processService.addProcess(patp);
-      	if(row!=0) {
-      		return  new JsonResult(row);
-      	}else {
-      		return  new JsonResult();
-      		
-      	}
+		if(row!=0) {
+			return ConstantUtil.SCIENCE_INSERT_SUCCESS;
+		}else {
+			return  ConstantUtil.SCIENCE_INSERT_FAILD;
+		}
   	}
   	
   	//显示所有商标审核流程信息
@@ -463,5 +458,19 @@ public class TradeMarkController {
     		return  new JsonResult();
     		
     	}
+	}
+
+	//删除流程
+	@RequestMapping(value="deleteTradeMarkProcess.do")
+	@ResponseBody
+	JsonResult deleteTradeMarkProcess(@RequestParam("id")Integer[] id){
+		int result = processService.deleteRecord(id);
+		processfileService.deleteBySid(id[0]);
+		if(result == 1){
+			return new JsonResult(result);
+		}else {
+			return null;
+		}
+
 	}
 }

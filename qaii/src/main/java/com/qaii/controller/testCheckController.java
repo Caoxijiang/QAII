@@ -132,7 +132,6 @@ public class testCheckController {
 	public Date outDate(@RequestParam(value="date",required=false)String date
 	) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		System.out.println(sdf.format(CountDatetoNowDays.StringConvertToDate(date)));
 		return CountDatetoNowDays.StringConvertToDate(date);
 	}
 	
@@ -158,7 +157,6 @@ public class testCheckController {
 		result.put("trademark", trademark.getCountNum());
 		result.put("thesis", thesis.getCountNum());
 		result.put("work", work.getCountNum());
-		System.out.println(result);
 		return result;
 	} 
 

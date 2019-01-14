@@ -103,19 +103,20 @@ layui.use('table', function(obj){
 	method:'post',
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',
-	url:"getstatusbyreview.do",//修改端口号 获取的股东出资时间的表格
+	url:"Ihkp.do",//修改端口号 获取的股东出资时间的表格
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
 		{field: 'id', title: '序号',type:'numbers'},
-		{field: 'empNum', title: '企业名称'},
-		{field: 'empName', title: '统一社会信用代码'},
-		{field: 'empDept', title: '成立时间'},
-		{field: 'empPosition', title: '公司类型'},
-		{field: 'empHireStarttime', title: '法定代表人'},
-		{field: 'empPhone', title: '股东名称'},
-		{field: 'empWorktype', title: '出资比例'},
-		{field: 'empInductiontime', title: '出资时间'},
-        {field: 'empInductiontime', title: '股东职务'},
+        {field: 'incubatorid', title: '孵化企业编号号',type:'numbers'},
+		{field: 'companyName', title: '企业名称'},
+		{field: 'creditCode', title: '统一社会信用代码'},
+		{field: 'establishTime', title: '成立时间'},
+		{field: 'companyType', title: '公司类型'},
+		{field: 'legalRepresentative', title: '法定代表人'},
+		{field: 'shareholderName', title: '股东名称'},
+		{field: 'contributionProportion', title: '出资比例'},
+		{field: 'contributionTime', title: '出资时间'},
+        {field: 'shareholderPosition', title: '股东职务'},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',width:320}
     ]],
 	  //表格数据
@@ -126,10 +127,15 @@ layui.use('table', function(obj){
     var data = obj.data //获得当前行数据
     ,layEvent = obj.event; //获得 lay-event 对应的值
       if(layEvent === 'detail'){
-          var iframesrc="hatchCheck.do?id="+data.id;
+          //var iframesrc="hatchCheck.do?id="+data.id;
+          var iframesrc="hatchCheck.do?id="+data.incubatorid;
+          console.log(data.id)
+          //console.log(data.incubatorid)
           $("body", parent.document).find('iframe').attr('src',iframesrc);
       } else if(layEvent === 'del'){
-  		alert("处理操作 ，改变状态");//待修改 待完善
+          var iframesrc="Imby.do?id="+data.id;
+          $("body", parent.document).find('iframe').attr('src',iframesrc);
+  		//alert("处理操作 ，改变状态");//待修改 待完善
     } 
   });
 

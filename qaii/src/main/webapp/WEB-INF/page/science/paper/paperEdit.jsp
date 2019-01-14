@@ -278,11 +278,21 @@ $.post({
                     /*data:obj.data*/
 
                 });
-                table.on('tool(demopaper)', function(obj){ //股东删除操作 xijiang
+                table.on('tool(demopaper)', function(obj){ //股东删除操作 xijiang data.id
                     var data = obj.data;
                     if(obj.event === 'del'){
                         layer.confirm('真的删除行么', function(index){
-                            obj.del();
+                            $.post({
+                                url:"deletePeriodicalAuthor.do",
+                                data:{
+                                    "id" : data.id
+                                },
+                                success:function(data){
+                                    obj.del();
+                                    layer.alert("删除成功");
+                                }
+                            })
+
                             layer.close(index);
                         });
                     }

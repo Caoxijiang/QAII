@@ -40,4 +40,9 @@ public class GovRewardProcessFileServiceImpl implements GovRewardProcessFileServ
 		return processfilemapper.updateByPrimaryKey(record);
 	}
 
+	@Override
+	public int deleteBySid(Integer sid) {
+		return processfilemapper.deleteBySid(sid);
+	}
+
 }

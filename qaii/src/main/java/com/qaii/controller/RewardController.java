@@ -13,6 +13,7 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.qaii.util.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -33,10 +34,6 @@ import com.qaii.domain.Govrewardprocessfile;
 import com.qaii.service.GovRewardService;
 import com.qaii.service.GovRewardProcessFileService;
 import com.qaii.service.GovRewardProcessService;
-import com.qaii.util.AlertException;
-import com.qaii.util.CustomException;
-import com.qaii.util.JsonResult;
-import com.qaii.util.Layui;
 
 @Controller
 public class RewardController {
@@ -236,19 +233,17 @@ public class RewardController {
 	
 	//添加奖励资料审核流程信息
   	@RequestMapping(value="addGovrewardprocess.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-  	@ResponseBody
-  	public JsonResult addProcessInfo(HttpServletRequest req,Govrewardprocess patp) {
+  	public String addProcessInfo(HttpServletRequest req,Govrewardprocess patp) {
   		patp.setPid(Integer.parseInt(req.getParameter("pid")));
   		patp.setDescription(req.getParameter("description"));
   		patp.setTitle(req.getParameter("title"));
   		patp.setTime(req.getParameter("time"));
   		int row = processService.addProcess(patp);
-      	if(row!=0) {
-      		return  new JsonResult(row);
-      	}else {
-      		return  new JsonResult();
-      		
-      	}
+		if(row!=0) {
+			return ConstantUtil.SCIENCE_INSERT_SUCCESS;
+		}else {
+			return  ConstantUtil.SCIENCE_INSERT_FAILD;
+		}
   	}
   	
   	//显示所有奖励审核流程信息
@@ -396,6 +391,19 @@ public class RewardController {
     		return  new JsonResult();
     		
     	}
+	}
+
+	//删除流程
+	@RequestMapping(value="deleteRewardProcess.do")
+	@ResponseBody
+	JsonResult deleteRewardProcess(@RequestParam("id")Integer[] id){
+		int result = processService.deleteRecord(id);
+		processfileService.deleteBySid(id[0]);
+		if(result == 1){
+			return new JsonResult(result);
+		}else {
+			return null;
+		}
 	}
 
 }

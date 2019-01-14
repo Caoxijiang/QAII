@@ -97,7 +97,7 @@ layui.use('table', function(obj){
 	      }
 	    }
 	    ,isAll: function(){ //批量下载
-              let ops="http://"+window.location.host+"/";
+              let ops="https://"+window.location.host+"/";
 	    	 var checkStatus = table.checkStatus('demo')
 		      ,data = checkStatus.data;
 		      for(var i=0;i<data.length;i++){
@@ -115,7 +115,7 @@ layui.use('table', function(obj){
 	  
 	  //监听行工具事件
 	  table.on('tool(test)', function(obj){
-	    var ops="http://"+window.location.host+"/";
+	    var ops="https://"+window.location.host+"/";
 	    var data = obj.data;
 	    //console.log(obj)
 	    if(obj.event === 'del'){
@@ -184,7 +184,7 @@ function download(src) {
 };
 
 function downloadAll(sus) {
-    window.location.href = ("http://"+window.location.host+"/"+"/QAII/FileupLoadAlls.do?code="+sus)
+    window.location.href = ("https://"+window.location.host+"/"+"/FileupLoadAlls.do?code="+sus)
 }
 
 </script>

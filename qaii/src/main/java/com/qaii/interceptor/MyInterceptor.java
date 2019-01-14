@@ -26,6 +26,7 @@ public class MyInterceptor implements HandlerInterceptor {
         if(u!=null){
             return true;
         }else{
+			//response.getWriter().write("强制下线");
         	request.getRequestDispatcher("indexUI.do").forward(request, response);
             return false;
         }

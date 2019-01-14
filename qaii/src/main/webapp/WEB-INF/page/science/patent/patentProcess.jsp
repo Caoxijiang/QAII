@@ -96,7 +96,7 @@ layui.use('table', function(obj){
 	      }
 	    }
 	    ,isAll: function(){ //批量下载
-	         let ops="http://"+window.location.host+"/";
+	         let ops="https://"+window.location.host+"/";
 	    	 var checkStatus = table.checkStatus('demo')
 		       ,data = checkStatus.data;
 	    	    console.log("23323232");
@@ -104,7 +104,6 @@ layui.use('table', function(obj){
 		        opss.push(ops+data[i].path);
                 downloadAll(opss);
 		        console.log(data[i].path)
-				console.log(ops+opss)
                   //把所有的path放到数组中也是一种思路
 		      }
                //   downloadAll(opss);
@@ -194,7 +193,7 @@ function download(src) {
 
 
 function downloadAll(sus) {
-	window.location.href = ("http://"+window.location.host+"/"+"/QAII/FileupLoadAlls.do?code="+sus)
+	window.location.href = ("https://"+window.location.host+"/"+"FileupLoadAlls.do?code="+sus)
 }
 
 </script>

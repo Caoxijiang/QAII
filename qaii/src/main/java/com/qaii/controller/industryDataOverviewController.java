@@ -117,10 +117,13 @@ public class industryDataOverviewController {
         List<AwardPersonal>personallist=awardPersonalService.listPersonal();
         result.put("awardcollege",collegelist);
         result.put("awardincubate",Incubatelist);
+        //新的src提交的文件夹
         result.put("awardpersonal",personallist);
         return result;
     }
-
+/*
+* 孵化企业旋转图接口
+* */
     @RequestMapping(value = "IndustryInner.do",method = RequestMethod.POST)
     @ResponseBody
     public List<Incubator> AwardIndustry(String IndustryName) {
