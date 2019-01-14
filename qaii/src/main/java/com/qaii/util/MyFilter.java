@@ -2,12 +2,9 @@ package com.qaii.util;
 /**
  * Created by kunpeng on 2018/12/21 16:33
  */
-import sun.java2d.loops.DrawGlyphListAA;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.Enumeration;
 
 public class MyFilter implements Filter{
 

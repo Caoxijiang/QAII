@@ -9,4 +9,9 @@ public class IndexController {
 	public String indexUI(){
 		return "page/login";
 	}
+
+	@RequestMapping("logout.do")
+	public String indexUi(){
+		return "page/logout";
+	}
 }

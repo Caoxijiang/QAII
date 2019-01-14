@@ -11,6 +11,16 @@
 <link rel="stylesheet" href="${basePath}/css/style.css" />
 <script src="${basePath}/js/QRcode.js"></script>
 <script src="${basePath}/router/login.js"></script>
+	<script type="text/javascript">
+		$(function () {
+		    var user = '<%=session.getAttribute("user")%>'
+			console.log(user);
+			if (user==null){
+			    console.log(111111);
+			    alert('强制下线');
+			}
+        })
+	</script>
 </head>
 
 <body>
