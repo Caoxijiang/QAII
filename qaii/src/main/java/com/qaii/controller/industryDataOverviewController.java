@@ -117,6 +117,7 @@ public class industryDataOverviewController {
         List<AwardPersonal>personallist=awardPersonalService.listPersonal();
         result.put("awardcollege",collegelist);
         result.put("awardincubate",Incubatelist);
+        //新的src提交的文件夹修改 个人获奖荣誉字段
         result.put("awardpersonal",personallist);
         return result;
     }

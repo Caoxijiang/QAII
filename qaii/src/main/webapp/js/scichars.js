@@ -1,39 +1,3 @@
-//科研成果预览示例图
-function circle(boxid,id,color,total,num){//id为canvas的id值,color为基本外圆颜色值,total为圆铺满总量,num为数据量
-	var canvas=document.getElementById(id),
-	context=canvas.getContext("2d");
-	var canvasBox = document.getElementById(boxid).offsetWidth;
-	canvas.width = canvasBox*0.8;
-	var part=Math.PI*2*num/total-Math.PI/2;
-	context.moveTo(canvas.width/2,canvas.height/2);
-	context.beginPath();
-	context.arc(canvas.width/2,canvas.height/2,canvas.width/2,0,Math.PI*2,false);
-	context.strokeStyle="#fff";
-	context.stroke();
-	context.closePath();
-	//外圈绘制
-	context.moveTo(canvas.width/2,canvas.height/2);
-	context.beginPath();
-	context.lineWidth=canvas.width*58/540;
-	context.arc(canvas.width/2,canvas.height/2,canvas.width*200/540,0,Math.PI*2,false);
-	context.strokeStyle=color;
-	context.stroke();
-	context.closePath();
-	//绘制内圈
-	context.moveTo(canvas.width/2,canvas.height/2);
-	context.beginPath();
-	context.lineWidth=canvas.width*100/540;
-	context.arc(canvas.width/2,canvas.height/2,canvas.width*220/540,-Math.PI/2,part,false);/*绘制图形所占比圆弧*/
-	context.strokeStyle="#fff";
-	context.stroke();
-	context.closePath();
-	//绘制比例圆
-	context.font="bold 30px Arial";
-	context.fillStyle = '#fff';
-	context.textAlign="center";
-	context.textBaseline="middle";
-	context.fillText(num,canvas.width/2,canvas.height/2);
-}
 
 //政府资助点击事件tab切换
 $(document).ready(function(){
@@ -64,13 +28,13 @@ var option = {
 	        trigger: 'axis'
 	    },
 	    color: ['#3db4e3','#8fc31f', '#e4007f', '#601986', '#91c7ae','#fff100',  '#ea7542', '#48efef','#ef4566'],
-	    legend: {
+	    /*legend: {
 	        data:['受理专利','授权专利','申请软著','授权软著','受理商标','授权商标','论文总数','著作总数'],
 	        textStyle:{    //图例文字的样式
 	            color:'#fff',
 	            fontSize:12
 	        }
-	    },
+	    },*/
 	    grid: {
 	        left: '3%',
 	        right: '4%',
@@ -328,13 +292,13 @@ var option2 = {
 	            saveAsImage: {}
 	        }
 	    },
-	    legend: {
+	    /*legend: {
 	        data: ['外观设计专利', '实用新型专利','发明专利'],
 	        textStyle:{    //图例文字的样式
 	            color:'#fff',
 	            fontSize:12
 	        }
-	    },
+	    },*/
 	    grid: {
 	        left: '3%',
 	        right: '4%',

@@ -1,6 +1,6 @@
 $().ready(function(){
-	
-	
+
+
 
     //防止页面后退
     history.pushState(null, null, document.URL);
@@ -73,12 +73,13 @@ $().ready(function(){
             return;
         }
 		$.post({
-			url:"checkLogin.do",
+            url:"checkLogin.do",
 			data:{
 				"requestDate" : str
 			},
 			success:function(data){
 			var result=data.data;
+
 			if(result==null){
 				alert("账号或密码错误");
 				document.location.href='indexUI.do';

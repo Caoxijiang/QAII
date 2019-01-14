@@ -198,16 +198,26 @@ ul,li{
 #time{
 	position:absolute;
 	right: 100px;
-	top: 60px;
+	top: 30px;
 	color: #fff;
 }
 .back{
 	position:absolute;
-	right: 97px;
-	bottom: 85px;
+	right: 20px;
+	bottom: 20px;
 	color:#fff;
 	text-align: center;
 	font-size: 15px;
+	opacity: 0.2;
+}
+.back:hover{
+	position:absolute;
+	right: 20px;
+	bottom: 20px;
+	color:#fff;
+	text-align: center;
+	font-size: 15px;
+	opacity: 1;
 }
 /*人事可视化界面*/
 #main{

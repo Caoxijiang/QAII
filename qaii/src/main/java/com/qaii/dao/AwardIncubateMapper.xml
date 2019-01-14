@@ -299,7 +299,7 @@
   </select>
 
   <select id="listIncubate" resultMap="CustomMap1">
-    SELECT award_time,award_level,award_unit,award_name FROM industry_awardincubate GROUP BY award_time DESC
+    SELECT award_time,award_level,award_unit,award_name FROM industry_awardincubate
   </select>
   <resultMap id="CustomMap" type="com.qaii.domain.AwardIncubate">
     <id column="id" jdbcType="INTEGER" property="id" />

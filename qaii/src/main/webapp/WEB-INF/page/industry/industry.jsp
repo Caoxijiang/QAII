@@ -51,7 +51,8 @@
 			<a class="" href="indexIndustry.do"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;全局总览</a>
         </li>
         <li class="layui-nav-item layui-this">
-          <a href="javascript:;" onclick="iframechange('hatch.do')"><i class="layui-icon layui-icon-star" style="font-size: 22px;"></i>&nbsp;孵化企业管理</a>
+            <a href="javascript:;" onclick="iframechange('hatch.do')"><i class="layui-icon layui-icon-star" style="font-size: 22px;"></i>&nbsp;孵化企业管理</a>
+          <%--<a class="" href="hatch.do"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;孵化企业管理</a>--%>
         </li>
         <li class="layui-nav-item">
           <a href="javascript:;" onclick="iframechange('serviceFirm.do')"><i class="layui-icon layui-icon-website" style="font-size: 22px;"></i>&nbsp;服务企业管理</a>

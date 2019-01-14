@@ -14,7 +14,7 @@ public class AwardPersonalest {
 
     private String awardLevel;
 
-    private String personUnit;
+    private String personName;
 
     private String awardName;
 
@@ -34,19 +34,20 @@ public class AwardPersonalest {
         this.awardLevel = awardLevel;
     }
 
-    public String getPersonUnit() {
-        return personUnit;
-    }
-
-    public void setPersonUnit(String personUnit) {
-        this.personUnit = personUnit;
-    }
-
     public String getAwardName() {
         return awardName;
     }
 
     public void setAwardName(String awardName) {
         this.awardName = awardName;
+    }
+
+    public String getPersonName() {
+        return personName;
+    }
+
+    public void setPersonName(String personName) {
+        this.personName = personName;
+
     }
 }

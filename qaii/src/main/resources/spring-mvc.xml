@@ -65,7 +65,12 @@
 			<mvc:exclude-mapping path="/testinterface.do"/>
 			<bean class="com.qaii.interceptor.MyInterceptor"></bean>
 			</mvc:interceptor>
-		</mvc:interceptors>
+
+			 <mvc:interceptor>
+				 <mvc:mapping path="/**"/>
+				 <bean class="com.qaii.util.SingleUserInterceptor"/>
+			 </mvc:interceptor>
+		 </mvc:interceptors>
 
 
 	
