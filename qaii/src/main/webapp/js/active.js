@@ -198,4 +198,3 @@ $(".bodybox1").on("click",".balloutsed",function(){
     $("#xindaima").html(Industry[0].creditCode);
 
 })
-
