@@ -12,4 +12,6 @@ public interface GovFundProcessService {
 
 	int deleteRecord(Integer[] id);
 
+	int deleteByPid(Integer[] pid);
+
 }

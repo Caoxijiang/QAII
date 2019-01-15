@@ -105,4 +105,10 @@
   <delete id="deleteBySid" parameterType="java.lang.Integer">
       DELETE from sci_govplatformprocessfile where sid=#{sid,jdbcType=INTEGER}
   </delete>
+  <delete id="deleteByOid" parameterType="java.lang.Integer">
+    delete from sci_govplatformprocessfile  where oid in
+    <foreach collection="array" item="oid" open="(" separator="," close=")">
+      #{oid,jdbcType=INTEGER}
+    </foreach>
+  </delete>
 </mapper>

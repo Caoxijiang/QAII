@@ -72,6 +72,8 @@ public class FundController {
 	public JsonResult dellFundMsg(@RequestParam("requestDate[]") Integer[] eid){
 		int row=govfundService.deleteMsg(eid);
     	if(row!=0) {
+			processService.deleteByPid(eid);
+			processfileService.deleteByOid(eid);
     		return  new JsonResult(row);
     	}else {
     		return  new JsonResult();

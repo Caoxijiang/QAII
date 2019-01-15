@@ -9,4 +9,8 @@ public interface StockEquityService {
 	int insert(StockEquity stockEquity);
 	List<StockEquity> selectByPrimaryKey(Integer id);
 	int updateShareholderStatus(Integer id);
+
+	int deleteByIncubatorId(Integer[] id);
+
+	int deleteByPrimaryKey(Integer id);
 }

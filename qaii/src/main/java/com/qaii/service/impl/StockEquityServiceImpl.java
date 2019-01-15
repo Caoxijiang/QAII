@@ -30,4 +30,14 @@ public class StockEquityServiceImpl implements StockEquityService{
 	public int updateShareholderStatus(Integer id) {
 		return StockEquityMapper.updateShareholderStatus(id);
 	}
+
+	@Override
+	public int deleteByIncubatorId(Integer[] id) {
+		return StockEquityMapper.deleteByIncubatorId(id);
+	}
+
+	@Override
+	public int deleteByPrimaryKey(Integer id) {
+		return StockEquityMapper.deleteByPrimaryKey(id);
+	}
 }

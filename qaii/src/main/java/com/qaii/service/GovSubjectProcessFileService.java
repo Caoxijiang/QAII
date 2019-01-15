@@ -16,4 +16,6 @@ public interface GovSubjectProcessFileService {
 
 	int deleteBySid(Integer sid);
 
+	int deleteByOid(Integer[] oid);
+
 }

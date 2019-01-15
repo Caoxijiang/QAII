@@ -192,4 +192,10 @@
     update industry_stockequity
     set status = 1 where id=#{id}
   </update>
+  <delete id="deleteByIncubatorId" parameterType="java.lang.Integer">
+    delete from industry_stockequity where incubator_id in
+    <foreach collection="array" item="id" open="(" separator="," close=")">
+      #{id,jdbcType=INTEGER}
+    </foreach>
+  </delete>
 </mapper>

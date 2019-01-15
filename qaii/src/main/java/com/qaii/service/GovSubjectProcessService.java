@@ -11,4 +11,6 @@ public interface GovSubjectProcessService {
 	int addProcess(Govsubjectprocess process);
 
 	int deleteRecord(Integer[] id);
+
+	int deleteByPid(Integer[] pid);
 }
