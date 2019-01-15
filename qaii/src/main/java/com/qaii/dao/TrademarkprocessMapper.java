@@ -20,4 +20,6 @@ public interface TrademarkprocessMapper {
     List<Trademarkprocess> getAllMsgBypid(Integer pid);
 
     int deleteByPrimaryKeys(Integer[] id);
+
+    int deleteByPid(Integer[] pid);
 }

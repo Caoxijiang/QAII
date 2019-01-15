@@ -66,6 +66,8 @@ public class TradeMarkController {
 	public JsonResult dellTradeMarkMsg(@RequestParam("requestDate[]") Integer[] eid){
 		int row=trademarkService.deleteMsg(eid);
     	if(row!=0) {
+			processService.deleteByPid(eid);
+			processfileService.deleteByOid(eid);
     		return  new JsonResult(row);
     	}else {
     		return  new JsonResult();
