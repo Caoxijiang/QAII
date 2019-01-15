@@ -74,15 +74,22 @@
       admin_pwd = #{adminPwd,jdbcType=VARCHAR}
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
+<!--新增修改密码xml-->
+  <update id="updatePassword" parameterType="com.qaii.domain.User" >
+    update user
+    set admin_pwd = #{adminPwd,jdbcType=VARCHAR},
+    where admin_account = #{adminAccount,jdbcType=INTEGER}
+  </update>
+
     <select id="findWithLoginAndPassword" resultMap="BaseResultMap" parameterType="com.qaii.domain.User" >
     select *
     from user
     where admin_account = #{adminAccount,jdbcType=VARCHAR} and admin_pwd=#{adminPwd,jdbcType=VARCHAR}
   </select>
   <!--新增逻辑判断 -->
-  <select id="findWithLogin" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select *
+  <select id="findWithLogin"   parameterType="com.qaii.domain.User" >
+    select count *
     from user
-    where admin_account = #{userName,jdbcType=VARCHAR}
+    where admin_account = #{adminAccount,jdbcType=VARCHAR} and admin_pwd=#{adminPwd,jdbcType=VARCHAR}
   </select>
 </mapper>

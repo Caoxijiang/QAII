@@ -19,5 +19,6 @@ public interface UserMapper {
     
 //    User findWithLoginAndPassword(@Param("adminAccount")String loginname,@Param("adminPwd")String password);
     User findWithLoginAndPassword(User user);
-    User findWithLogin(String userName);
+    int findWithLogin(User user);
+    int updatePassword(User user);
 }

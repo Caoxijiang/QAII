@@ -46,8 +46,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User findWithLogin(String userName) {
-		return usermapper.findWithLogin(userName);
+	public int findWithLogin(User user) {
+		return usermapper.findWithLogin(user);
+	}
+
+	@Override
+	public int updatePassword(User user) {
+		return usermapper.updatePassword(user);
 	}
 }
 
