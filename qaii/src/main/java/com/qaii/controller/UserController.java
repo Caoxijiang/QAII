@@ -82,6 +82,7 @@ public class UserController {
                 switch(role2.getRid()){
                 case 1:
                 map2.put("USERROLEURL","Role.do");
+
                 return new JsonResult(map2);
                 case 2:
                 map2.put("USERROLEURL","personal.do");
@@ -91,6 +92,7 @@ public class UserController {
                 return new JsonResult(map2);
                 case 4:
                 map2.put("USERROLEURL","indexIndustry.do");
+                return new JsonResult(map2);
                 case 5:
                 map2.put("USERROLEURL","dataindexNav.do");
                 return new JsonResult(map2);
