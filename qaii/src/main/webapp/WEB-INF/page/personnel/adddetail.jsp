@@ -91,9 +91,9 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">紧急联系人及联系方式&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">紧急联系人及联系方式</label>
 						<div class="layui-input-block">
-							<input type="text" name="empEmergencycontactandphone" lay-verify="required" autocomplete="off"  class="layui-input input">
+							<input type="text" name="empEmergencycontactandphone" autocomplete="off"  class="layui-input input">
 						</div>
 					</div>
 				</div>
@@ -167,7 +167,7 @@
 			
 				<div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">本科学历&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">本科学历</label>
 						<div class="layui-input-block">
 							<input type="text" name="empFirsteducation"  lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
@@ -194,9 +194,9 @@
 				</div>
 			    <div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">本科学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">本科学历毕业学校</label>
 						<div class="layui-input-block">
-							<input type="text" name="empFirsteducationschool" lay-verify="required"  lay-verify="title" autocomplete="off" class="layui-input input">
+							<input type="text" name="empFirsteducationschool"  lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
@@ -220,7 +220,7 @@
 				</div>
    		 		<div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">本科学历专业&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">本科学历专业</label>
 						<div class="layui-input-block">
 							<input type="text" name="empFirsteducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
@@ -248,7 +248,7 @@
 				</div>
    		 		<div class="layui-col-md3">
 					<div class="layui-form-item">
-						  <label class="layui-form-label">本科学历毕业时间&nbsp;<span class="star">*</span></label>
+						  <label class="layui-form-label">本科学历毕业时间</label>
 						  <div class="layui-input-block">
 							<input type="text" name="empFirstgraduationtime" class="layui-input input" id="test1-1">
 						  </div>
@@ -379,7 +379,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">是否留学归国人员</label>
 						<div class="layui-input-block">
-							<select name="empReturnee" lay-search="" class="input" lay-verify="required">
+							<select name="empReturnee" lay-search="" class="input">
 								<option value="">   </option>
 								<option value="是">是</option>
 								<option value="否">否</option>
@@ -390,7 +390,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">是否外籍人员</label>
 						<div class="layui-input-block">
-							<select name="empForeign" lay-search="" class="input" lay-verify="required">
+							<select name="empForeign" lay-search="" class="input">
 								<option value="">  </option>
 								<option value="是">是</option>
 								<option value="否">否</option>

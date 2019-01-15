@@ -92,7 +92,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">紧急联系人及联系方式</label>
 						<div class="layui-input-block">
-							<input type="text" name="empEmergencycontactandphone" lay-verify="required" autocomplete="off" class="layui-input input inputdisable" disabled="">
+							<input type="text" name="empEmergencycontactandphone" autocomplete="off" class="layui-input input inputdisable" disabled="">
 						</div>
 					</div>
 				</div>
@@ -100,13 +100,13 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">户口所在地</label>
 						<div class="layui-input-block">
-							<input type="text" name="empAccountaddress"  lay-verify="required" autocomplete="off" class="layui-input input inputdisable" disabled="">
+							<input type="text" name="empAccountaddress" autocomplete="off" class="layui-input input inputdisable" disabled="">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">家庭住址&nbsp; </label>
 						<div class="layui-input-block">
-							<input type="text" name="empHomeaddress" lay-verify="required" autocomplete="off" class="layui-input input inputdisable" disabled="">
+							<input type="text" name="empHomeaddress" autocomplete="off" class="layui-input input inputdisable" disabled="">
 						</div>
 					</div>
 				</div>

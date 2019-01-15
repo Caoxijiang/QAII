@@ -99,4 +99,10 @@
       #{id,jdbcType=INTEGER}
     </foreach>
   </delete>
+  <delete id="deleteByPid" parameterType="java.lang.Integer">
+    delete from sci_govplatformprocess where pid in
+    <foreach collection="array" item="pid" open="(" separator="," close=")">
+      #{pid,jdbcType=INTEGER}
+    </foreach>
+  </delete>
 </mapper>

@@ -234,7 +234,7 @@
 	    $(".zhezhaoc").addcss("display","none");
 	});
 </script>
-<script src="${basePath}/js/scichars.js"></script>
+<script src="${basePath}/js/scicharsw.js"></script>
 <script type="text/javascript">
 /* circle(boxid,id,color,total,num);//boxid为各个板块id值,id为canvas的id值,color为基本外圆颜色值,total为圆铺满总量,num为数据量 */
 //科研成果总览
