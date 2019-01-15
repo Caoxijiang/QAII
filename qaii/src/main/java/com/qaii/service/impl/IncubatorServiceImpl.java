@@ -84,4 +84,13 @@ public class IncubatorServiceImpl implements IncubatorService {
 	public List<Incubator> selectAlls(String IncubatryName) {
 		return incubatorMapper.selectAlls(IncubatryName);
 	}
+
+	@Override
+	public int selectOutCountNums(List<String> list) {
+		int totalRows=0;
+		for (String str:list) {
+			totalRows+= incubatorMapper.selectCountNums(str);
+		}
+		return totalRows;
+	}
 }

@@ -11,6 +11,8 @@ public interface IncubatorService {
 	int insert(Incubator incubator );
 	List<String> selectestablishtime();
 	int selectCountNums(String establishtime);
+
+	int selectOutCountNums(List<String> list);
 	int selectCountNumsByQianFan();
 	int selectCountNumsByGaoxin();
 	int selectCountNumsByBaiQIan();

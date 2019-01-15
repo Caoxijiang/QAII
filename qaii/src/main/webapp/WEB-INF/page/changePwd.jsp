@@ -33,14 +33,12 @@
     </script>
 </head>
 <body>
-<form name="changePwd" method="post" action="changePwd.do" onsubmit="return isValidate(changePwd)">
-    <div class="Change_Password_mainbody">
+<form class="layui-form" name="changePwd" method="post" action="changePwd.do" onsubmit="return isValidate(changePwd)">
         &nbsp;用户名<input type="text" name="Username"><br/><br/>
         原密码<input type="password" name="Password"><br/><br/>
         新密码<input type="password" name="Confirm_Password"><br/><br/>
         <input type="submit" value="修改" />
         <input type="reset" value="重置" />
-    </div>
 </form>
 </body>
 </html>
