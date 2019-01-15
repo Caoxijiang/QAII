@@ -152,9 +152,9 @@
 			<li><div class="square"></div><label>法定代表人：</label><span id="faren">战德成</span></li>
 			<li><div class="square"></div><label>统一社会信用代码：</label><span id="xindaima">9137702223214545569</span></li>
 		</ul>
-		<div class="detail"><a href="industry.do" style="color:#fff;">查看详情</a></div>
+		<div class="detail"><a href="http://www.vipioneers.com/" target="_blank" style="color:#fff;">查看详情</a></div>
 	</div>
-	<script src="${basePath}/js/comm.js"></script>
+	<script src="${basePath}/js/commw.js"></script>
 	<script src="${basePath}/js/active.js"></script>
 
 </body>

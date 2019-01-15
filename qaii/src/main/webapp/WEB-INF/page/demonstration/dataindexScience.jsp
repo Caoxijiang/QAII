@@ -10,6 +10,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="${basePath}/css/sciencemain.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="${basePath}/css/lanrenzhijia.css" />
+  <script type="text/javascript" src="${basePath}/js/lanrenzhijia.js"></script>
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
   <script src="${basePath}/js/echarts.min.js"></script>
   <script src="${basePath}/js/main.js"></script>
@@ -40,6 +42,7 @@
 							<span id="tPatent">受理：0个<br />授权：0个</span>
 						</div>
 						<div class="imgsp" ></div>
+						<div class="imgicon" ></div>
 					</div>
 					</a>
 				</div>
@@ -53,6 +56,7 @@
 							<span id="tSoft">受理：0个<br />授权：0个</span>
 						</div>
 						<div class="imgs" ></div>
+						<div class="imgiconr" ></div>
 					</div>
 					</a>
 				</div>
@@ -67,6 +71,7 @@
 
 						</div>
 						<div class="imgs" ></div>
+						<div class="imgicon1" ></div>
 					</div>
 					</a>
 				</div>
@@ -80,6 +85,7 @@
 							<span id="tBrand">受理：0个<br />授权：0个</span>
 						</div>
 						<div class="imgs" ></div>
+						<div class="imgicon2" ></div>
 					</div>
 					</a>
 				</div>
@@ -93,6 +99,7 @@
 							<span id="tPaper">论文：0篇</span>
 						</div>
 						<div class="imgs" ></div>
+						<div class="imgicon3" ></div>
 					</div>
 					</a>
 				</div>
@@ -115,7 +122,7 @@
 	<div class="contern">
 		<div class="item">
               <div class="itemtitle">
-                  数据总量
+                  专利数据总量
               </div>
               <div class="itemcontent">
                   <div id="totalData" class="charsBox"></div>
@@ -124,7 +131,7 @@
 
 		  <div class="item">
 			  <div class="itemtitle">
-				  科研成果信息
+				  科研成果信息总览
 			  </div>
 			  <div class="itemcontent">
 				  <div id="information" class="charsBox"></div>
@@ -196,7 +203,38 @@
 		  	</div>
 	</div>
 </div>
-<script src="${basePath}/js/scichars.js"></script>
+
+<%--<div class="zhezhaoc">
+	<div id="lanrenzhijia">
+		<a href="#">JS课程</a>
+		<a href="#" class="red">教程</a>
+		<a href="#">试听</a>
+		<a href="#">精品</a>
+		<a href="#" class="blue">智能社</a>
+		<a href="#">SEO</a>
+		<a href="#" class="red">特效</a>
+		<a href="#" class="yellow">JavaScript</a>
+		<a href="#">智能社</a>
+		<a href="#" class="red">CSS</a>
+		<a href="#">求职</a>
+		<a href="#" class="blue">面试题</a>
+		<a href="#">继承</a>
+		<a href="#" class="red">智能社</a>
+		<a href="#" class="blue">OOP</a>
+		<a href="#">XHTML</a>
+		<a href="#" class="blue">HTML5</a>
+		<a href="#">W3C</a>
+		<a href="#">css3</a>
+		<a href="#" class="yellow">Busy</a>
+		<a href="#">blue</a></div>
+</div>--%>
+
+<script>
+	$(".close").click(function(){
+	    $(".zhezhaoc").addcss("display","none");
+	});
+</script>
+<script src="${basePath}/js/scicharsw.js"></script>
 <script type="text/javascript">
 /* circle(boxid,id,color,total,num);//boxid为各个板块id值,id为canvas的id值,color为基本外圆颜色值,total为圆铺满总量,num为数据量 */
 //科研成果总览

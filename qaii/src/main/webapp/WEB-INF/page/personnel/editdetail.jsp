@@ -80,9 +80,9 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">工号&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">工号</label>
 						<div class="layui-input-block">
-							<input type="text" name="empNum"  lay-verify="required" autocomplete="off" class="layui-input input">
+							<input type="text" name="empNum" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 					<div class="layui-form-item">
@@ -92,9 +92,9 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">紧急联系人及联系方式&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">紧急联系人及联系方式</label>
 						<div class="layui-input-block">
-							<input type="text" name="empEmergencycontactandphone" lay-verify="required" autocomplete="off" class="layui-input input">
+							<input type="text" name="empEmergencycontactandphone" autocomplete="off" class="layui-input input">
 						</div>
 					</div>
 				</div>
@@ -137,7 +137,7 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">身份证到期时间 &nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">身份证到期时间</label>
 						  <div class="layui-input-block">
 							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1">
 						  </div>
@@ -167,7 +167,7 @@
 			
 				<div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">本科学历&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">本科学历</label>
 						<div class="layui-input-block">
 							<input type="text" name="empFirsteducation" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
@@ -193,7 +193,7 @@
 				</div>
 			    <div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">本科学历毕业学校&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">本科学历毕业学校</label>
 						<div class="layui-input-block">
 							<input type="text" name="empFirsteducationschool" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
@@ -219,7 +219,7 @@
 				</div>
    		 		<div class="layui-col-md3">
 					<div class="layui-form-item">
-						<label class="layui-form-label">本科学历专业&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">本科学历专业</label>
 						<div class="layui-input-block">
 							<input type="text" name="empFirsteducationpro" lay-verify="title" autocomplete="off" class="layui-input input">
 						</div>
@@ -246,7 +246,7 @@
 				</div>
    		 		<div class="layui-col-md3">
 					<div class="layui-form-item">
-						  <label class="layui-form-label">本科学历毕业时间&nbsp;<span class="star">*</span></label>
+						  <label class="layui-form-label">本科学历毕业时间</label>
 						  <div class="layui-input-block">
 							<input type="text" name="empFirstgraduationtime" class="layui-input input" id="test1-1">
 						  </div>
@@ -318,7 +318,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">编制</label>
 						<div class="layui-input-block">
-							<select name="empCompile" lay-search="" class="input" lay-verify="required">
+							<select name="empCompile" lay-search="" class="input">
 								<option value="">   </option>
 								<option value="所编">所编</option>
 								<option value="聘用">聘用</option>
@@ -327,9 +327,9 @@
 					</div>
 					
 					<div class="layui-form-item">
-						<label class="layui-form-label">职工状态&nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">职工状态&nbsp;</label>
 						<div class="layui-input-block">
-							<select name="empStat" lay-search="" lay-verify="required" class="input">
+							<select name="empStat" lay-search="" class="input">
 								<option value="">   </option>
 								<option value="1">在职</option>
 								<option value="0">离职</option>
