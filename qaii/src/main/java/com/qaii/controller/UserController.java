@@ -99,7 +99,6 @@ public class UserController {
                 default:
                 map2.put("USERROLEURL","indexUI.do");
                 return new JsonResult(map2);
-
         }
 
         }else{

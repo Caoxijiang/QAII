@@ -318,7 +318,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">编制</label>
 						<div class="layui-input-block">
-							<select name="empCompile" lay-search="" class="input" lay-verify="required">
+							<select name="empCompile" lay-search="" class="input">
 								<option value="">   </option>
 								<option value="所编">所编</option>
 								<option value="聘用">聘用</option>
