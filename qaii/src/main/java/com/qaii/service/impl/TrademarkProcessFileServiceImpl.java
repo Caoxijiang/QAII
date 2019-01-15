@@ -44,4 +44,9 @@ public class TrademarkProcessFileServiceImpl implements TrademarkProcessFileServ
 		return processfilemapper.deleteBySid(sid);
 	}
 
+	@Override
+	public int deleteByOid(Integer[] oid) {
+		return processfilemapper.deleteByOid(oid);
+	}
+
 }

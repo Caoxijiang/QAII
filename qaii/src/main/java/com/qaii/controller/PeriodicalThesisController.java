@@ -106,6 +106,7 @@ public class PeriodicalThesisController {
 		record.setId(Long.parseLong(req.getParameter("id")));
 		int recordResult = Service.updateMessage(record);
 		updateFile(record, files);
+
 		if(recordResult > 0) {
 			return  "page/science/inform/edit-succesdsci";
     	}else {
@@ -176,17 +177,33 @@ public class PeriodicalThesisController {
 	//添加记录
 	@RequestMapping(value="insertPeriodical.do",method=RequestMethod.POST)
 	String insertMessage(HttpServletRequest req, 
-			PeriodicalThesis record, 
+			PeriodicalThesis record,
+			@RequestParam("patRemission")String[] level,
+			@RequestParam("shareholderName")String[] authorName,
+			@RequestParam("contributionTime")String[] authorUnit,
 			@RequestParam("file") MultipartFile[] files) throws CustomException {
 		record.setGmtCreate(new Date());
 		record.setIsPass(BYTE_FALSE);
 		loadData(req,record);
 		int insertResult=Service.insertMessage(record);
+		insertAuthor(level, authorName, authorUnit, record.getId().toString());
 		int fileResult = insertFile(record,files);
 		if(insertResult > 0 && fileResult > 0) {
 			return  "page/science/inform/add-succesdOut";
     	}else {
     		return "page/science/inform/add-faildOut";
+		}
+	}
+
+	//在插入的时候同时插入作者信息
+	void insertAuthor(String[] level, String[] name, String[] unit, String id){
+		PeriodicalThesisAuthor author = new PeriodicalThesisAuthor();
+		author.setAuthorRemark(id);
+		for(int i = 0;i < name.length;i++){
+			author.setAuthorLevel(level[i]);
+			author.setAuthorName(name[i]);
+			author.setAuthorUnit(unit[i]);
+			authorService.inset(author);
 		}
 	}
 

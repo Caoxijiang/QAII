@@ -10,4 +10,6 @@ public interface ProcessService {
 	List<PatProcess> findProcessList(Integer pid);
 
 	int deleteRecord(Integer[] id);
+
+	int deleteByPid(Integer[] pid);
 }

@@ -16,4 +16,6 @@ public interface GovRewardProcessFileService {
 
 	int deleteBySid(Integer sid);
 
+	int deleteByOid(Integer[] oid);
+
 }

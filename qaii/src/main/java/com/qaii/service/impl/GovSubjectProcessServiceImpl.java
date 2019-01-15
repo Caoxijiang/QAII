@@ -33,4 +33,9 @@ public class GovSubjectProcessServiceImpl implements GovSubjectProcessService {
 		return processmapper.deleteByPrimaryKeys(id);
 	}
 
+	@Override
+	public int deleteByPid(Integer[] pid) {
+		return processmapper.deleteByPid(pid);
+	}
+
 }

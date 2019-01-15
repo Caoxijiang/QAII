@@ -44,4 +44,9 @@ public class GovPlatformProcessFileServiceImpl implements com.qaii.service.GovPl
 		return processfilemapper.deleteBySid(sid);
 	}
 
+	@Override
+	public int deleteByOid(Integer[] oid) {
+		return processfilemapper.deleteByOid(oid);
+	}
+
 }

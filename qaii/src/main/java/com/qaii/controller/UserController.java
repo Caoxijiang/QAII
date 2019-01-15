@@ -65,21 +65,24 @@ public class UserController {
                 UserRole role2=userRoleService.findUSerRoleByUserId(role.getUid());
                 //UserRole role2=userRoleService.findUSerRoleByUserId(userid);
                 //登录成功，将user对象设置到HttpSession作用范围
+                session.setAttribute("name",user.getAdminAccount());
                 session.setAttribute("user",user);
                 String sessionID = request.getRequestedSessionId();
                 String user1 = user2.getAdminAccount();
                 if (!MemoryData.getSessionIDMap().containsKey(user1)) { //不存在，首次登陆，放入Map
                    MemoryData.getSessionIDMap().put(user1, sessionID);
                   }else if(!StringUtils.equals(sessionID, MemoryData.getSessionIDMap().get(user1))&&MemoryData.getSessionIDMap().containsKey(user1)){
-                    System.out.println(111);
+//                    System.out.println(111);
                   MemoryData.getSessionIDMap().remove(user1);
                   MemoryData.getSessionIDMap().put(user1, sessionID);
                 }
+                //账号页面跳转
                 Map map2=new HashMap();
                 map2.put("LOGINSTATUS","OK");
                 switch(role2.getRid()){
                 case 1:
                 map2.put("USERROLEURL","Role.do");
+
                 return new JsonResult(map2);
                 case 2:
                 map2.put("USERROLEURL","personal.do");
@@ -90,9 +93,12 @@ public class UserController {
                 case 4:
                 map2.put("USERROLEURL","indexIndustry.do");
                 return new JsonResult(map2);
-default:
-        map2.put("USERROLEURL","indexUI.do");
-        return new JsonResult(map2);
+                case 5:
+                map2.put("USERROLEURL","dataindexNav.do");
+                return new JsonResult(map2);
+                default:
+                map2.put("USERROLEURL","indexUI.do");
+                return new JsonResult(map2);
 
         }
 
@@ -121,7 +127,11 @@ public String outLogin(HttpServletRequest req,HttpServletResponse res,HttpSessio
         return"page/login";
         }
 
-
+    //修改密码
+    @RequestMapping( "changePassword.do" )
+    public String changePwd(HttpServletRequest req,HttpServletResponse res,HttpSession session)throws IOException{
+        return"page/changePwd";
+    }
 @ResponseBody
 @RequestMapping( value = "DellUserAccount.do", method = RequestMethod.POST, produces = "application/json;charset=UTF-8" )
 public JsonResult DellUserAccount(@RequestParam( value = "requestDate[]" ) Integer[]userId){

@@ -725,5 +725,16 @@ public class IndustryController {
 		incubator.setIsBillionEnterprise("是".equals(list.get(11))?new Byte("1"):new Byte("0"));
 		incubator.setRemark(list.get(14));
 	}
+
+	@RequestMapping("deleteIncubatorStockEquity.do")
+	@ResponseBody
+	JsonResult deleteIncubatorStockEquity(@RequestParam("id")Integer id){
+		int result = stockEquityService.deleteByPrimaryKey(id);
+		if (result != 0){
+			return new JsonResult(result);
+		}else {
+			return new JsonResult();
+		}
+	}
 }
 

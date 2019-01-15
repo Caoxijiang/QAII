@@ -403,6 +403,8 @@ public class SubjectController {
 	public JsonResult dellProessimg(@RequestParam(value = "requestDate[]") Integer[] id) {
 		int row=processfileService.deleteByPrimaryKey(id);
     	if(row!=0) {
+    		processService.deleteByPid(id);
+    		processfileService.deleteByOid(id);
     		return  new JsonResult(row);
     	}else {
     		return  new JsonResult();
