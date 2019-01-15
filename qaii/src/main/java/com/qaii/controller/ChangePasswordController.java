@@ -1,4 +1,3 @@
-/*
 package com.qaii.controller;
 import com.qaii.domain.User;
 import com.qaii.service.UserService;
@@ -9,11 +8,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 
-*/
 /**
  * Created by kunpeng on 2019/1/14 13:46
- **//*
-
+ **/
 
 @Controller
 public class ChangePasswordController{
@@ -40,9 +37,8 @@ public class ChangePasswordController{
             user1.setAdminPwd(newpassword);
             userServivce.updatePassword(user1);
         }else{
-            System.out.println("查无账号，做进一步处理");
+            System.out.println("查无账号，做进一步处理,可以跳转到一个显示页面");
         }
 
     }
 }
-*/
