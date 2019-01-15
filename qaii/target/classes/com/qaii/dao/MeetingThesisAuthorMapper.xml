@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.MeetingThesisAuthorMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.MeetingThesisAuthor">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="author_name" jdbcType="VARCHAR" property="authorName" />
+    <result column="author_level" jdbcType="VARCHAR" property="authorLevel" />
+    <result column="author_unit" jdbcType="VARCHAR" property="authorUnit" />
+    <result column="author_details" jdbcType="VARCHAR" property="authorDetails" />
+    <result column="author_remark" jdbcType="VARCHAR" property="authorRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, author_name, author_level, author_unit, author_details, author_remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sci_meeting_thesis_author
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sci_meeting_thesis_author
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.MeetingThesisAuthor">
+    insert into sci_meeting_thesis_author (id, author_name, author_level, 
+      author_unit, author_details, author_remark
+      )
+    values (#{id,jdbcType=INTEGER}, #{authorName,jdbcType=VARCHAR}, #{authorLevel,jdbcType=VARCHAR}, 
+      #{authorUnit,jdbcType=VARCHAR}, #{authorDetails,jdbcType=VARCHAR}, #{authorRemark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.MeetingThesisAuthor">
+    insert into sci_meeting_thesis_author
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="authorName != null">
+        author_name,
+      </if>
+      <if test="authorLevel != null">
+        author_level,
+      </if>
+      <if test="authorUnit != null">
+        author_unit,
+      </if>
+      <if test="authorDetails != null">
+        author_details,
+      </if>
+      <if test="authorRemark != null">
+        author_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="authorName != null">
+        #{authorName,jdbcType=VARCHAR},
+      </if>
+      <if test="authorLevel != null">
+        #{authorLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="authorUnit != null">
+        #{authorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="authorDetails != null">
+        #{authorDetails,jdbcType=VARCHAR},
+      </if>
+      <if test="authorRemark != null">
+        #{authorRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.MeetingThesisAuthor">
+    update sci_meeting_thesis_author
+    <set>
+      <if test="authorName != null">
+        author_name = #{authorName,jdbcType=VARCHAR},
+      </if>
+      <if test="authorLevel != null">
+        author_level = #{authorLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="authorUnit != null">
+        author_unit = #{authorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="authorDetails != null">
+        author_details = #{authorDetails,jdbcType=VARCHAR},
+      </if>
+      <if test="authorRemark != null">
+        author_remark = #{authorRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.MeetingThesisAuthor">
+    update sci_meeting_thesis_author
+    set author_name = #{authorName,jdbcType=VARCHAR},
+      author_level = #{authorLevel,jdbcType=VARCHAR},
+      author_unit = #{authorUnit,jdbcType=VARCHAR},
+      author_details = #{authorDetails,jdbcType=VARCHAR},
+      author_remark = #{authorRemark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="listRecord" resultMap="BaseResultMap">
+    SELECT * FROM sci_meeting_thesis_author where author_remark = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKeys" parameterType="java.lang.Integer">
+    delete from sci_meeting_thesis_author where id in
+    <foreach collection="array" open="(" separator="," close=")" item="id">
+      #{id,jdbcType=INTEGER}
+    </foreach>
+  </delete>
+  <select id="getRecord" parameterType="java.lang.Integer">
+    select * from sci_meeting_thesis_author where id = #{id,jdbcType=INTEGER}
+  </select>
+</mapper>
