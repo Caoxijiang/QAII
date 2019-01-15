@@ -20,4 +20,6 @@ public interface GovrewardprocessMapper {
     List<Govrewardprocess> getAllMsgBypid(Integer pid);
 
     int deleteByPrimaryKeys(Integer[] id);
+
+    int deleteByPid(Integer[] pid);
 }

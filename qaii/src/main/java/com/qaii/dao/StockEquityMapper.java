@@ -19,4 +19,6 @@ public interface StockEquityMapper {
     int updateShareholderStatus(Integer id);
 
     int updateByPrimaryKey(StockEquity record);
+
+    int deleteByIncubatorId(Integer[] id);
 }

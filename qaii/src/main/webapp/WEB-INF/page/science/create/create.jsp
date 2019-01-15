@@ -395,7 +395,7 @@ layui.use('table', function(obj){
             },
             success:function(data){
 
-                if(data.status == 1){
+                if(data.state == 1){
                     // alert('删除成功，请刷新查看');
                     layer.alert("删除成功");
                     window.location.reload();

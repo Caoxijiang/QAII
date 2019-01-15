@@ -71,6 +71,8 @@ public class RewardController {
 	public JsonResult dellRewardMsg(@RequestParam("requestDate[]") Integer[] eid){
 		int row=govrewardService.deleteMsg(eid);
     	if(row!=0) {
+			processService.deleteByPid(eid);
+			processfileService.deleteByOid(eid);
     		return  new JsonResult(row);
     	}else {
     		return  new JsonResult();

@@ -33,4 +33,9 @@ public class GovFundProcessServiceImpl implements GovFundProcessService {
 		return processmapper.deleteByPrimaryKeys(id);
 	}
 
+	@Override
+	public int deleteByPid(Integer[] pid) {
+		return processmapper.deleteByPid(pid);
+	}
+
 }

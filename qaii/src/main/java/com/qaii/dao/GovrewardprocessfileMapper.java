@@ -22,4 +22,6 @@ public interface GovrewardprocessfileMapper {
     int deleteMsg(Integer[] id);
 
     int deleteBySid(Integer sid);
+
+    int deleteByOid(Integer[] oid);
 }

@@ -43,5 +43,10 @@ public class ProcessimgServiceImpl implements ProcessimgService{
 		return processimgMapper.deleteBySid(sid);
 	}
 
+	@Override
+	public int deleteByOid(Integer[] oid) {
+		return processimgMapper.deleteByOid(oid);
+	}
+
 
 }

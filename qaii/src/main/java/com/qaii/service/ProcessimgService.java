@@ -14,4 +14,6 @@ public interface ProcessimgService {
 	int updataProcessInfo(Processimg img);
 
 	int deleteBySid(Integer sid);
+
+	int deleteByOid(Integer[] oid);
 }
