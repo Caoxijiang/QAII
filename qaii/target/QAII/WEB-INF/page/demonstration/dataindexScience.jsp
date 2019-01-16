@@ -122,7 +122,7 @@
 	<div class="contern">
 		<div class="item">
               <div class="itemtitle">
-                  数据总量
+                  专利数据总量
               </div>
               <div class="itemcontent">
                   <div id="totalData" class="charsBox"></div>
@@ -131,7 +131,7 @@
 
 		  <div class="item">
 			  <div class="itemtitle">
-				  科研成果信息
+				  科研成果信息总览
 			  </div>
 			  <div class="itemcontent">
 				  <div id="information" class="charsBox"></div>

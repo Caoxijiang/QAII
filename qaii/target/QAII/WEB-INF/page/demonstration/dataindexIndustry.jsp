@@ -154,7 +154,7 @@
 		</ul>
 		<div class="detail"><a href="http://www.vipioneers.com/" target="_blank" style="color:#fff;">查看详情</a></div>
 	</div>
-	<script src="${basePath}/js/comm.js"></script>
+	<script src="${basePath}/js/commw.js"></script>
 	<script src="${basePath}/js/active.js"></script>
 
 </body>

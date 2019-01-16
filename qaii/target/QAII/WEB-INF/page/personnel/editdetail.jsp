@@ -137,7 +137,7 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
-						<label class="layui-form-label">身份证到期时间 &nbsp;<span class="star">*</span></label>
+						<label class="layui-form-label">身份证到期时间</label>
 						  <div class="layui-input-block">
 							<input type="text" name="empIdcardEndtime" class="layui-input input" id="test2-1">
 						  </div>

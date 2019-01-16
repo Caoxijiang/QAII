@@ -70,7 +70,7 @@ setInterval("getDate()",1000);
         
             tooltip: {},
             xAxis: {
-               data: [new Date(ServiceNum.ServiceYear[0]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[1]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[2]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[3]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[4]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[5]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[6]).getFullYear()+"年"],
+               data: [new Date(ServiceNum.ServiceYear[6]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[5]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[4]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[3]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[2]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[1]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[0]).getFullYear()+"年"],
 			   axisLine: {
 				   show: false,
 				   textStyle: {
@@ -168,7 +168,7 @@ var option2 = {
         {
             type : 'category',
             boundaryGap : false,
-            data : [new Date(CompanyNums.CompanyYear[0]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[1]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[4]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[3]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[2]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[1]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[0]).getFullYear()+"年"],
+            data : [new Date(CompanyNums.CompanyYear[6]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[5]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[4]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[3]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[2]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[1]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[0]).getFullYear()+"年"],
 			axisLine: {
 				   show: false,
 				   textStyle: {
@@ -222,8 +222,7 @@ var option2 = {
 					}  
 				}  
 			},
-            data:[5,9,15,20,26,28,30]
-			/*data:[CompanyNums.CompanyNums[6],CompanyNums.CompanyNums[5],CompanyNums.CompanyNums[4],CompanyNums.CompanyNums[3],CompanyNums.CompanyNums[2],CompanyNums.CompanyNums[1],CompanyNums.CompanyNums[0]]*/
+			data:[CompanyNums.CompanyNums[6],CompanyNums.CompanyNums[5],CompanyNums.CompanyNums[4],CompanyNums.CompanyNums[3],CompanyNums.CompanyNums[2],CompanyNums.CompanyNums[1],CompanyNums.CompanyNums[0]]
         }
         
     ]
