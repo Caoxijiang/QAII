@@ -14,6 +14,6 @@
 </head>
 <body>
 <h5>该账号已经在其他地方登陆，您被强制下线！请重新登录</h5>
-<a href="indexUI.do" target="_top">确定</a>
+<a href="indexUI.do">确定</a>
 </body>
 </html>
