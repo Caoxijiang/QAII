@@ -79,6 +79,16 @@ public class Incubator {
 
     private String isBillion;
 
+    private String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getIsHighTechnology() {
         return isHighTechnology;
     }
