@@ -19,4 +19,5 @@ public interface MinistryService {
 
     Ministry getRecord(Integer id);
     int selectCountNums(String ministrytime);
+    int selectOutCountNums(List<String> list);
 }

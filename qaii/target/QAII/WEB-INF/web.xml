@@ -47,6 +47,7 @@
   <listener>
     <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
+<!--  listener形式监听强制下线-->
 <!--  <listener>
     <listener-class>com.qaii.util.LoginListenner</listener-class>
   </listener>-->

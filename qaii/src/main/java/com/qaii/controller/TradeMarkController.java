@@ -88,7 +88,7 @@ public class TradeMarkController {
 	}
 	
 	//修改商标信息功能
-	@RequestMapping(value="updateTrademark.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	@RequestMapping(value="updateTrademark.do", method=RequestMethod.POST, produces="application/json;charset=UTF-8")
 	String updateTrademarks(Trademark Trademark,HttpServletRequest req){	
 		Trademark.setId(Integer.parseInt(req.getParameter("userId")));
 		loadData(req, Trademark);

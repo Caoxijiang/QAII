@@ -31,6 +31,7 @@
     <result column="alternative_three" jdbcType="VARCHAR" property="alternativeThree" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
   </resultMap>
   <sql id="Base_Column_List">
     id, pid, company_name, credit_code, establish_time, company_type, company_location, 

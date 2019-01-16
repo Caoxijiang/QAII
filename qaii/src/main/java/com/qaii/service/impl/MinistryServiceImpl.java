@@ -56,4 +56,16 @@ public class MinistryServiceImpl implements MinistryService {
     public List<String> listministrytime() {
         return ministryMapper.listministrytime();
     }
+
+    //这里是用累加的方式来查询外部服务企业数量
+    @Override
+    public int selectOutCountNums(List<String> list) {
+        int totalRows=0;
+        for (String str:list){
+            int i=ministryMapper.selectCountNums(str);
+            System.out.println(i);
+            totalRows += ministryMapper.selectCountNums(str);
+        }
+        return totalRows;
+    }
 }

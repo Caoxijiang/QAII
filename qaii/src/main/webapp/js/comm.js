@@ -96,8 +96,8 @@ setInterval("getDate()",1000);
             series: [{
                 name: '服务企业数量',
                 type: 'bar',
-                data: [5,8,10,15,19,25],
-                /*data: [ServiceNum.ServiceYearNums[6], ServiceNum.ServiceYearNums[5], ServiceNum.ServiceYearNums[4], ServiceNum.ServiceYearNums[3], ServiceNum.ServiceYearNums[2], ServiceNum.ServiceYearNums[1], ServiceNum.ServiceYearNums[0]],*/
+               
+                data: [ServiceNum.ServiceYearNums[6], ServiceNum.ServiceYearNums[5], ServiceNum.ServiceYearNums[4], ServiceNum.ServiceYearNums[3], ServiceNum.ServiceYearNums[2], ServiceNum.ServiceYearNums[1], ServiceNum.ServiceYearNums[0]],
 				itemStyle: {
 					normal:{
 					  color: function (params){　
@@ -222,8 +222,7 @@ var option2 = {
 					}  
 				}  
 			},
-            data:[5,9,15,20,26,28,30]
-			/*data:[CompanyNums.CompanyNums[6],CompanyNums.CompanyNums[5],CompanyNums.CompanyNums[4],CompanyNums.CompanyNums[3],CompanyNums.CompanyNums[2],CompanyNums.CompanyNums[1],CompanyNums.CompanyNums[0]]*/
+			data:[CompanyNums.CompanyNums[6],CompanyNums.CompanyNums[5],CompanyNums.CompanyNums[4],CompanyNums.CompanyNums[3],CompanyNums.CompanyNums[2],CompanyNums.CompanyNums[1],CompanyNums.CompanyNums[0]]
         }
         
     ]

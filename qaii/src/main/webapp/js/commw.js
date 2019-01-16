@@ -25,7 +25,7 @@ function gettCompanyData(){
     $.ajax({
         async:false,
         type:"POST",
-        url:"hatchit.do",
+        url:"OutIndustry.do",
         success:function(data){
             result=data;
         }
@@ -38,7 +38,7 @@ function gettServiceData(){
     $.ajax({
         async:false,
         type:"POST",
-        url:"servercm.do",
+        url:"OutServCompany.do",
         success:function(data){
             result=data;
         }
@@ -70,7 +70,7 @@ setInterval("getDate()",1000);
         
             tooltip: {},
             xAxis: {
-               data: [new Date(ServiceNum.ServiceYear[6]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[5]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[4]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[3]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[2]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[1]).getFullYear()+"年", new Date(ServiceNum.ServiceYear[0]).getFullYear()+"年"],
+               data: [new Date(ServiceNum.OutServiceYear[0]).getFullYear()+"年", new Date(ServiceNum.OutServiceYear[1]).getFullYear()+"年", new Date(ServiceNum.OutServiceYear[2]).getFullYear()+"年", new Date(ServiceNum.OutServiceYear[3]).getFullYear()+"年", new Date(ServiceNum.OutServiceYear[4]).getFullYear()+"年", new Date(ServiceNum.OutServiceYear[5]).getFullYear()+"年", new Date(ServiceNum.OutServiceYear[6]).getFullYear()+"年"],
 			   axisLine: {
 				   show: false,
 				   textStyle: {
@@ -96,8 +96,7 @@ setInterval("getDate()",1000);
             series: [{
                 name: '服务企业数量',
                 type: 'bar',
-                data: [5,8,10,15,19,25],
-                /*data: [ServiceNum.ServiceYearNums[6], ServiceNum.ServiceYearNums[5], ServiceNum.ServiceYearNums[4], ServiceNum.ServiceYearNums[3], ServiceNum.ServiceYearNums[2], ServiceNum.ServiceYearNums[1], ServiceNum.ServiceYearNums[0]],*/
+                data: [ServiceNum.OutServiceYearNums[0], ServiceNum.OutServiceYearNums[1], ServiceNum.OutServiceYearNums[2], ServiceNum.OutServiceYearNums[3], ServiceNum.OutServiceYearNums[4], ServiceNum.OutServiceYearNums[5], ServiceNum.OutServiceYearNums[6]],
 				itemStyle: {
 					normal:{
 					  color: function (params){　
@@ -168,7 +167,7 @@ var option2 = {
         {
             type : 'category',
             boundaryGap : false,
-            data : [new Date(CompanyNums.CompanyYear[6]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[5]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[4]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[3]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[2]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[1]).getFullYear()+"年",new Date(CompanyNums.CompanyYear[0]).getFullYear()+"年"],
+            data : [new Date(CompanyNums.OuterServiceYear[0]).getFullYear()+"年",new Date(CompanyNums.OuterServiceYear[1]).getFullYear()+"年",new Date(CompanyNums.OuterServiceYear[2]).getFullYear()+"年",new Date(CompanyNums.OuterServiceYear[3]).getFullYear()+"年",new Date(CompanyNums.OuterServiceYear[4]).getFullYear()+"年",new Date(CompanyNums.OuterServiceYear[5]).getFullYear()+"年",new Date(CompanyNums.OuterServiceYear[6]).getFullYear()+"年"],
 			axisLine: {
 				   show: false,
 				   textStyle: {
@@ -222,8 +221,7 @@ var option2 = {
 					}  
 				}  
 			},
-            data:[5,9,15,20,26,28,30]
-			/*data:[CompanyNums.CompanyNums[6],CompanyNums.CompanyNums[5],CompanyNums.CompanyNums[4],CompanyNums.CompanyNums[3],CompanyNums.CompanyNums[2],CompanyNums.CompanyNums[1],CompanyNums.CompanyNums[0]]*/
+			data:[CompanyNums.OuterServiceYearNums[0],CompanyNums.OuterServiceYearNums[1],CompanyNums.OuterServiceYearNums[2],CompanyNums.OuterServiceYearNums[3],CompanyNums.OuterServiceYearNums[4],CompanyNums.OuterServiceYearNums[5],CompanyNums.OuterServiceYearNums[6]]
         }
         
     ]
