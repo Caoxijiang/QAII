@@ -279,33 +279,50 @@
         });
 
         //监听顶部添加删除操作
-        var arr=[];
-        //var arr=[];
-        table.on('checkbox(demo)', function(obj){
-            var data = obj.data //获得当前行数据
-            arr.push(data.id);
+        var $ = layui.$, active = {
+            delmore: function () { //获取选中数据
+                confirm("请慎重考虑，删除数据不可恢复");
+                var checkStatus = table.checkStatus('testReload')
+                    , data = checkStatus.data;
+                var arr=[];
+                for (var id of data){
+                    var ids=id.id;
+                    arr.push(ids)
+                }
+                if(arr.length!=0){
+                    dell("deleteCooperation.do",arr);
+                }else {
+                    layer.alert("请选择要删除的内容");
+                }
+            }
+        }
 
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
         });
 
-        $("#dellist").on('click', function(){
-            alert("请慎重考虑，删除数据不可恢复");
+        function dell(url,arr) {
             $.post({
-                url:"deleteCooperation.do",
+                url:url,
                 data:{
                     "requestDate" : arr
                 },
                 success:function(data){
 
                     if(data.status == 1){
-                        alert('删除成功，请刷新查看');
+                        // alert('删除成功，请刷新查看');
+                        layer.alert("删除成功");
                         window.location.reload();
                     } else {
-                        alert('删除成功，请刷新查看'); return false;
+                        layer.alert("删除失败");
+                        //alert('删除成功，请刷新查看'); return false;
                         window.location.reload();
                     }
                 }
             })
-        });
+        }
 
     });
 </script>

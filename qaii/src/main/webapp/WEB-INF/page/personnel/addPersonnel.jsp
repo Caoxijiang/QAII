@@ -405,26 +405,52 @@ layui.use(['table','laydate'], function(obj){
 		 arr.push(data.id);		 
 		 
 	  });
-	
-	$("#dellist").on('click', function(){
-		alert("请慎重考虑，删除数据不可恢复");
-		$.post({
-		  	url:"DellempInfo.do",
-		  	data:{
-		  		"requestDate" : arr
-		  	},
-		  	success:function(data){
 
-		        if(data.status == 1){
-		            alert('删除成功，请刷新查看');
-		            window.location.reload();
-		        } else {
-		            alert('删除成功，请刷新查看'); return false;
-		            window.location.reload();
-		        }
-		    }
-		  }) 
-	});
+
+    var $ = layui.$, active = {
+        delmore: function () { //获取选中数据
+            confirm("请慎重考虑，删除数据不可恢复");
+            var checkStatus = table.checkStatus('testReload')
+                , data = checkStatus.data;
+            var arr=[];
+            for (var id of data){
+                var ids=id.id;
+                arr.push(ids)
+            }
+            if(arr.length!=0){
+                dell("DellempInfo.do",arr);
+            }else {
+                layer.alert("请选择要删除的内容");
+            }
+        }
+    }
+
+
+    $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
+
+    function dell(url,arr) {
+        $.post({
+            url:url,
+            data:{
+                "requestDate" : arr
+            },
+            success:function(data){
+
+                if(data.status == 1){
+                    // alert('删除成功，请刷新查看');
+                    layer.alert("删除成功");
+                    window.location.reload();
+                } else {
+                    layer.alert("删除失败");
+                    //alert('删除成功，请刷新查看'); return false;
+                    window.location.reload();
+                }
+            }
+        })
+    }
 
 });
 </script>
