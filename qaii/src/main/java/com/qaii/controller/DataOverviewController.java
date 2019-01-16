@@ -91,7 +91,7 @@ public class DataOverviewController {
 		Date date =new Date();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		List<String> list=new ArrayList<>();
-		list=CountDatetoNowDays.getpremonth(sdf.format(date), 12);
+		list=CountDatetoNowDays.getpreYears(sdf.format(date), 12);
 		Map<String, List> result=new HashMap<>();
 		result.put("AgencyPatent", listAgencyPatent(list));
 		result.put("AuthorizationPatent", listAuthorizationPatent(list));
@@ -112,7 +112,7 @@ public class DataOverviewController {
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(patentService.countAgencyPatent(map.get("first"), map.get("end")));
+			result.add(patentService.countAgencyPatent(list.get(11), str));
 		}
 		return result;
 	} 
@@ -124,7 +124,8 @@ public class DataOverviewController {
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(patentService.countAuthorizationPatent(map.get("first"), map.get("end")));
+			result.add(patentService.countAuthorizationPatent(list.get(11), str));
+			//result.add(patentService.countAuthorizationPatent(map.get("first"), map.get("end")));
 		}
 		return result;
 	} 
@@ -136,7 +137,7 @@ public class DataOverviewController {
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(softService.countApplycopyright(map.get("first"), map.get("end")));
+			result.add(softService.countApplycopyright(list.get(11), str));
 		}
 		return result;
 	}
@@ -148,7 +149,7 @@ public class DataOverviewController {
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(softService.countAuthorizationcopyright(map.get("first"), map.get("end")));
+			result.add(softService.countAuthorizationcopyright(list.get(11), str));
 		}
 		return result;
 	}
@@ -160,7 +161,7 @@ public class DataOverviewController {
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(trademarkService.countAgencyTradeMark(map.get("first"), map.get("end")));
+			result.add(trademarkService.countAgencyTradeMark(list.get(11), str));
 		}
 		return result;
 	} 
@@ -172,7 +173,7 @@ public class DataOverviewController {
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(trademarkService.countAuthorizationTradeMark(map.get("first"), map.get("end")));
+			result.add(trademarkService.countAuthorizationTradeMark(list.get(11), str));
 		}
 		return result;
 	}
@@ -184,7 +185,7 @@ public class DataOverviewController {
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(thesisService.countEachMonththesis(map.get("first"), map.get("end")));
+			result.add(thesisService.countEachMonththesis(list.get(11), str));
 		}
 		return result;
 	}
@@ -196,7 +197,7 @@ public class DataOverviewController {
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(workService.countEachMonthwork(map.get("first"), map.get("end")));
+			result.add(workService.countEachMonthwork(list.get(11), str));
 		}
 		return result;
 	}
