@@ -121,7 +121,7 @@ public class industryDataOverviewController {
         return result;
     }
 /*
-* 孵化企业旋转图接口
+* 孵化企业旋转图接口  新增地址查询结果
 * */
     @RequestMapping(value = "IndustryInner.do",method = RequestMethod.POST)
     @ResponseBody
@@ -183,4 +183,5 @@ public class industryDataOverviewController {
        }
         return result;
     }
+
 }
