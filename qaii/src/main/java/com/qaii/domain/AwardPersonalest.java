@@ -48,5 +48,6 @@ public class AwardPersonalest {
 
     public void setPersonName(String personName) {
         this.personName = personName;
+
     }
 }

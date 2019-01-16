@@ -1,0 +1,144 @@
+@charset "UTF-8";
+body,html,div,li,ul,dt,dd{
+	margin:0px;
+	padding:0px;
+	border:none;
+	font-size:16px;
+}
+ul,li{
+	liststyle:none;
+}
+.mainbody{
+	width: 1920px;
+    height: 1080px;
+    transform: scale(1, 0.877778);
+    overflow: hidden;
+    position: relative;
+    transform-origin: left top 0px;
+}
+.main{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 1;
+    background-image: url(../image/industry.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.sciNav{
+	right:50px;
+	top:12px;
+	position: absolute;
+}
+.pageTo {
+    margin: 0px 10px;
+    background-image: url(../image/pageto.png);
+    height: 32px;
+    width: 94px;
+    color: #0f7ebc;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 28px;
+    text-align:center;
+}
+.scititle{
+	padding-top:10px;
+	color:#3db4e3;
+	font-size:50px;
+	text-align:center;
+	width:100%;
+	height:125px;
+	background-image:url(../image/indtitle.png);
+	background-repeat: no-repeat;
+}
+.contern{
+	margin:0px auto;
+	width:1760px;
+}
+.inditem{
+	margin-top:10px;
+	padding:10px 25px;
+	background:rgba(3,110,184,0.1);
+	border:1px solid #036eb8;
+}
+.font36{
+	font-size:36px;
+}
+.font16{
+	font-size:16px;
+	padding-bottom:5px;
+}
+.pad10{
+	padding:10px;
+}
+.titlebox{
+	text-align:center;
+	color:#fff;
+}
+.fundingTab {
+    width: 158px;
+    height: 38px;
+    background-image: url(../image/indt2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #4fafe4;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    display: inline-block;
+}
+.active {
+    background-image: url(../image/indt2a.png) !important;
+    color: #fff !important;
+}
+.fundingMor {
+    color: #4fafe4;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    display: inline-block;
+    float: right;
+}
+.govTable {
+    margin-top: 10px;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-left: 1px solid #3db4e3;
+    border-top: 1px solid #3db4e3;
+}
+.govTable tr th {
+    line-height: 55px;
+    font-size: 18px;
+    font-weight: normal;
+    color:#2ea7e0;
+    /* background: rgba(61,180,227,0.3); */
+    border-right: 1px solid #3db4e3;
+    border-bottom: 1px solid #3db4e3;
+}
+.govTable tr td {
+   font-size: 16px;
+    line-height: 50px;
+    border-right: 1px solid #3db4e3;
+    border-bottom: 1px solid #3db4e3;
+}
+.fundingTabUl{
+	float: right;
+    margin-bottom: 15px;
+    margin-top: -40px;
+}
+.inditembg{
+	background-image:url(../image/indtitem.png);
+	width:408px;
+	height:43px;
+	margin: 0px auto;
+    margin-top: -10px;
+    color:#fff;
+    line-height:43px;
+    font-size:28px;
+    text-align:center;
+}

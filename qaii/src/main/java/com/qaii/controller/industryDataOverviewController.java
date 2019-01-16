@@ -9,7 +9,6 @@ import com.qaii.util.CountDatetoNowDays;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -131,4 +130,57 @@ public class industryDataOverviewController {
         return list;
     }
 
+    /*数据可视化外部视图服务企业数量累加效果接口*/
+
+    @RequestMapping(value = "OutServCompany.do",method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, List> OutServCompany(String IndustryName) throws ParseException {
+        Map<String, List> result = new HashMap<>();
+        List<Integer> listdate=new ArrayList<>();
+        Date date =new Date();
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        List<String> list=new ArrayList<>();
+        List<String> listad=new ArrayList<>();
+        try {
+            list= CountDatetoNowDays.getpreYears(sdf.format(date), 7);
+            Collections.reverse(list);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+     for (int i =0; i<list.size(); i++){
+         String FinnalStr=list.get(i).substring(0,4);
+         listad.add(FinnalStr);
+         listdate.add(ministryService.selectOutCountNums(listad));
+         result.put("OutServiceYearNums",listdate);
+         result.put("OutServiceYear",list);
+     }
+        return result;
+    }
+
+    /*孵化企业数量外部数据可视化接口*/
+    @RequestMapping("OutIndustry.do")
+    @ResponseBody
+    public Map<String, List> OutIndustry() {
+        Map<String, List> result = new HashMap<>();
+        List<Integer> listoutcompany=new ArrayList<>();
+        //思路同服务企业数量接口;根据成立时间查询
+        Date date =new Date();
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        List<String> list=new ArrayList<>();
+        List<String> listad=new ArrayList<>();
+        try {
+            list= CountDatetoNowDays.getpreYears(sdf.format(date), 7);
+            Collections.reverse(list);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+       for (int i=0;i<list.size();i++){
+           String FinnalStr=list.get(i).substring(0,4);
+           listad.add(FinnalStr);
+           listoutcompany.add(incubatorService.selectOutCountNums(listad));
+           result.put("OuterServiceYearNums",listoutcompany);
+           result.put("OuterServiceYear",list);
+       }
+        return result;
+    }
 }
