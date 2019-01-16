@@ -83,121 +83,121 @@ public class DataOverviewController {
 		return result;
 	}
 	
-	// 科研成果信息区域
-	@RequestMapping("scientific.do")
+	// 内部科研成果信息区域
+	@RequestMapping("scientifics.do")
 	@ResponseBody
-	Map<String, List> scientific() throws ParseException{
+	Map<String, List> scientifics() throws ParseException{
 		//获取当前时间
 		Date date =new Date();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		List<String> list=new ArrayList<>();
-		list=CountDatetoNowDays.getpreYears(sdf.format(date), 12);
+		list=CountDatetoNowDays.getpremonth(sdf.format(date), 12);
 		Map<String, List> result=new HashMap<>();
-		result.put("AgencyPatent", listAgencyPatent(list));
-		result.put("AuthorizationPatent", listAuthorizationPatent(list));
-		result.put("Applycopyright", listApplycopyright(list));
-		result.put("Authorizationcopyright", listAuthorizationcopyright(list));
-		result.put("AgencyTradeMark", listAgencyTradeMark(list));
-		result.put("AuthorizationTradeMark", listAuthorizationTradeMark(list));
-		result.put("EachMonththesis", listEachMonththesis(list));
-		result.put("EachMonthwork", listEachMonthwork(list));
+		result.put("AgencyPatent", listAgencyPatents(list));
+		result.put("AuthorizationPatent", listAuthorizationPatents(list));
+		result.put("Applycopyright", listApplycopyrights(list));
+		result.put("Authorizationcopyright", listAuthorizationcopyrights(list));
+		result.put("AgencyTradeMark", listAgencyTradeMarks(list));
+		result.put("AuthorizationTradeMark", listAuthorizationTradeMarks(list));
+		result.put("EachMonththesis", listEachMonththesiss(list));
+		result.put("EachMonthwork", listEachMonthworks(list));
 		result.put("EachMonth", list);
 		return result;		
 	}
 	
 	// 十二个月的受理专利信息
-	List<Integer> listAgencyPatent(List<String> list) throws ParseException{
+	List<Integer> listAgencyPatents(List<String> list) throws ParseException{
 		//获取当前时间
 		Map<String, String> map=new HashMap<>();
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(patentService.countAgencyPatent(list.get(11), str));
+			result.add(patentService.countAgencyPatent(map.get("first"), map.get("end")));
 		}
 		return result;
 	} 
 	
 	// 十二个月的授权专利信息
 //	@RequestMapping("TestPrint.do")
-	List<Integer> listAuthorizationPatent(List<String> list) throws ParseException{
+	List<Integer> listAuthorizationPatents(List<String> list) throws ParseException{
 		Map<String, String> map=new HashMap<>();
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(patentService.countAuthorizationPatent(list.get(11), str));
-			//result.add(patentService.countAuthorizationPatent(map.get("first"), map.get("end")));
+			//result.add(patentService.countAuthorizationPatent(list.get(11), str));
+			result.add(patentService.countAuthorizationPatent(map.get("first"), map.get("end")));
 		}
 		return result;
 	} 
 	
 	// 十二个月的申请软著信息
 //	@RequestMapping("TestPrint.do")
-	List<Integer> listApplycopyright(List<String> list) throws ParseException{
+	List<Integer> listApplycopyrights(List<String> list) throws ParseException{
 		Map<String, String> map=new HashMap<>();
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(softService.countApplycopyright(list.get(11), str));
+			result.add(softService.countApplycopyright(map.get("first"), map.get("end")));
 		}
 		return result;
 	}
 	
 	// 十二个月的授权软著信息
 //	@RequestMapping("TestPrint.do")
-	List<Integer> listAuthorizationcopyright(List<String> list) throws ParseException{
+	List<Integer> listAuthorizationcopyrights(List<String> list) throws ParseException{
 		Map<String, String> map=new HashMap<>();
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(softService.countAuthorizationcopyright(list.get(11), str));
+			result.add(softService.countAuthorizationcopyright(map.get("first"), map.get("end")));
 		}
 		return result;
 	}
 	
 	// 十二个月的受理商标信息
 //	@RequestMapping("TestPrint.do")
-	List<Integer> listAgencyTradeMark(List<String> list) throws ParseException{
+	List<Integer> listAgencyTradeMarks(List<String> list) throws ParseException{
 		Map<String, String> map=new HashMap<>();
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(trademarkService.countAgencyTradeMark(list.get(11), str));
+			result.add(trademarkService.countAgencyTradeMark(map.get("first"), map.get("end")));
 		}
 		return result;
 	} 
 	
 	// 十二个月的授权商标信息
 //	@RequestMapping("TestPrint.do")
-	List<Integer> listAuthorizationTradeMark(List<String> list) throws ParseException{
+	List<Integer> listAuthorizationTradeMarks(List<String> list) throws ParseException{
 		Map<String, String> map=new HashMap<>();
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(trademarkService.countAuthorizationTradeMark(list.get(11), str));
+			result.add(trademarkService.countAuthorizationTradeMark(map.get("first"), map.get("end")));
 		}
 		return result;
 	}
 	
 	// 十二个月的论文总数信息
 //	@RequestMapping("TestPrint.do")
-	List<Integer> listEachMonththesis(List<String> list) throws ParseException{
+	List<Integer> listEachMonththesiss(List<String> list) throws ParseException{
 		Map<String, String> map=new HashMap<>();
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(thesisService.countEachMonththesis(list.get(11), str));
+			result.add(thesisService.countEachMonththesis(map.get("first"), map.get("end")));
 		}
 		return result;
 	}
 	
 	// 十二个月的著作总数信息
 //	@RequestMapping("TestPrint.do")
-	List<Integer> listEachMonthwork(List<String> list) throws ParseException{
+	List<Integer> listEachMonthworks(List<String> list) throws ParseException{
 		Map<String, String> map=new HashMap<>();
 		List<Integer> result =new ArrayList<>();
 		for (String str:list) {
 			map=CountDatetoNowDays.getBothEnds(str);
-			result.add(workService.countEachMonthwork(list.get(11), str));
+			result.add(workService.countEachMonthwork(map.get("first"), map.get("end")));
 		}
 		return result;
 	}
@@ -269,5 +269,124 @@ public class DataOverviewController {
 	Layui countMessageNotice(){
 
 		return Layui.data(workService.countMessageNotic(),null);
+	}
+
+	// 外部科研成果信息区域
+	@RequestMapping("scientific.do")
+	@ResponseBody
+	Map<String, List> scientific() throws ParseException{
+		//获取当前时间
+		Date date =new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		List<String> list=new ArrayList<>();
+		list=CountDatetoNowDays.getpreYears(sdf.format(date), 12);
+		Map<String, List> result=new HashMap<>();
+		result.put("AgencyPatent", listAgencyPatent(list));
+		result.put("AuthorizationPatent", listAuthorizationPatent(list));
+		result.put("Applycopyright", listApplycopyright(list));
+		result.put("Authorizationcopyright", listAuthorizationcopyright(list));
+		result.put("AgencyTradeMark", listAgencyTradeMark(list));
+		result.put("AuthorizationTradeMark", listAuthorizationTradeMark(list));
+		result.put("EachMonththesis", listEachMonththesis(list));
+		result.put("EachMonthwork", listEachMonthwork(list));
+		result.put("EachMonth", list);
+		return result;
+	}
+
+	// 十二个月的受理专利信息
+	List<Integer> listAgencyPatent(List<String> list) throws ParseException{
+		//获取当前时间
+		Map<String, String> map=new HashMap<>();
+		List<Integer> result =new ArrayList<>();
+		for (String str:list) {
+			map=CountDatetoNowDays.getBothEnds(str);
+			result.add(patentService.countAgencyPatent(list.get(11), str));
+		}
+		return result;
+	}
+
+	// 十二个月的授权专利信息
+//	@RequestMapping("TestPrint.do")
+	List<Integer> listAuthorizationPatent(List<String> list) throws ParseException{
+		Map<String, String> map=new HashMap<>();
+		List<Integer> result =new ArrayList<>();
+		for (String str:list) {
+			map=CountDatetoNowDays.getBothEnds(str);
+			result.add(patentService.countAuthorizationPatent(list.get(11), str));
+			//result.add(patentService.countAuthorizationPatent(map.get("first"), map.get("end")));
+		}
+		return result;
+	}
+
+	// 十二个月的申请软著信息
+//	@RequestMapping("TestPrint.do")
+	List<Integer> listApplycopyright(List<String> list) throws ParseException{
+		Map<String, String> map=new HashMap<>();
+		List<Integer> result =new ArrayList<>();
+		for (String str:list) {
+			map=CountDatetoNowDays.getBothEnds(str);
+			result.add(softService.countApplycopyright(list.get(11), str));
+		}
+		return result;
+	}
+
+	// 十二个月的授权软著信息
+//	@RequestMapping("TestPrint.do")
+	List<Integer> listAuthorizationcopyright(List<String> list) throws ParseException{
+		Map<String, String> map=new HashMap<>();
+		List<Integer> result =new ArrayList<>();
+		for (String str:list) {
+			map=CountDatetoNowDays.getBothEnds(str);
+			result.add(softService.countAuthorizationcopyright(list.get(11), str));
+		}
+		return result;
+	}
+
+	// 十二个月的受理商标信息
+//	@RequestMapping("TestPrint.do")
+	List<Integer> listAgencyTradeMark(List<String> list) throws ParseException{
+		Map<String, String> map=new HashMap<>();
+		List<Integer> result =new ArrayList<>();
+		for (String str:list) {
+			map=CountDatetoNowDays.getBothEnds(str);
+			result.add(trademarkService.countAgencyTradeMark(list.get(11), str));
+		}
+		return result;
+	}
+
+	// 十二个月的授权商标信息
+//	@RequestMapping("TestPrint.do")
+	List<Integer> listAuthorizationTradeMark(List<String> list) throws ParseException{
+		Map<String, String> map=new HashMap<>();
+		List<Integer> result =new ArrayList<>();
+		for (String str:list) {
+			map=CountDatetoNowDays.getBothEnds(str);
+			result.add(trademarkService.countAuthorizationTradeMark(list.get(11), str));
+		}
+		return result;
+	}
+
+	// 十二个月的论文总数信息
+//	@RequestMapping("TestPrint.do")
+	List<Integer> listEachMonththesis(List<String> list) throws ParseException{
+		Map<String, String> map=new HashMap<>();
+		List<Integer> result =new ArrayList<>();
+		for (String str:list) {
+			map=CountDatetoNowDays.getBothEnds(str);
+			result.add(thesisService.countEachMonththesis(list.get(11), str));
+		}
+		return result;
+	}
+
+	// 十二个月的著作总数信息
+//	@RequestMapping("TestPrint.do")
+	List<Integer> listEachMonthwork(List<String> list) throws ParseException{
+		Map<String, String> map=new HashMap<>();
+		List<Integer> result =new ArrayList<>();
+		for (String str:list) {
+			map=CountDatetoNowDays.getBothEnds(str);
+			result.add(workService.countEachMonthwork(list.get(11), str));
+		}
+		return result;
 	}
 }
