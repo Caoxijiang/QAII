@@ -166,6 +166,7 @@ $(".bodybox1").on("click",".ball",function(){
     $("#leixing").html(Industry[0].companyType);
     $("#faren").html(Industry[0].legalRepresentative);
     $("#xindaima").html(Industry[0].creditCode);
+    $("#addressnull a").attr("href",Industry[0].address);
 
 })
 $(".bodybox1").on("click",".balloutsed",function(){
