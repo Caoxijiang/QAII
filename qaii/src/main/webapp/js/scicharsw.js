@@ -112,10 +112,11 @@ var option = {
                         )
                     }
                 },
-                data:[5,9,12,16,19,20,26]
-	          /*  data:[scientific.AgencyPatent[11], scientific.AgencyPatent[10], scientific.AgencyPatent[9],
-	            	scientific.AgencyPatent[8], scientific.AgencyPatent[7], scientific.AgencyPatent[6], 
-	            	scientific.AgencyPatent[5], scientific.AgencyPatent[4], scientific.AgencyPatent[3],
+                //data:[5,9,12,16,19,20,26]
+	            data:[scientific.AgencyPatent[6], scientific.AgencyPatent[5], scientific.AgencyPatent[4],
+	            	scientific.AgencyPatent[3], scientific.AgencyPatent[2], scientific.AgencyPatent[1],
+	            	scientific.AgencyPatent[0]]
+                    /*, scientific.AgencyPatent[4], scientific.AgencyPatent[3],
 	            	scientific.AgencyPatent[2], scientific.AgencyPatent[1], scientific.AgencyPatent[0]]*/
 	        },
 	        {
@@ -133,10 +134,11 @@ var option = {
                         )
                     }
                 },
-                data:[1,3,9,12,16,19,20]
-	           /* data:[scientific.AuthorizationPatent[11], scientific.AuthorizationPatent[10], scientific.AuthorizationPatent[9],
-	            	scientific.AuthorizationPatent[8], scientific.AuthorizationPatent[7], scientific.AuthorizationPatent[6], 
-	            	scientific.AuthorizationPatent[5], scientific.AuthorizationPatent[4], scientific.AuthorizationPatent[3],
+                //data:[1,3,9,12,16,19,20]
+	            data:[scientific.AuthorizationPatent[6], scientific.AuthorizationPatent[5], scientific.AuthorizationPatent[4],
+	            	scientific.AuthorizationPatent[3], scientific.AuthorizationPatent[2], scientific.AuthorizationPatent[1],
+	            	scientific.AuthorizationPatent[0]]
+                    /*, scientific.AuthorizationPatent[4], scientific.AuthorizationPatent[3],
 	            	scientific.AuthorizationPatent[2], scientific.AuthorizationPatent[11], scientific.AuthorizationPatent[0]]*/
 	        },
 	        {
@@ -154,10 +156,11 @@ var option = {
                         )
                     }
                 },
-                data:[12,16,19,20,25,26,35]
-	            /*data:[scientific.Applycopyright[11], scientific.Applycopyright[10], scientific.Applycopyright[9],
-	            	scientific.Applycopyright[8], scientific.Applycopyright[7], scientific.Applycopyright[6], 
-	            	scientific.Applycopyright[5], scientific.Applycopyright[4], scientific.Applycopyright[3],
+                //data:[12,16,19,20,25,26,35]
+	            data:[scientific.Applycopyright[6], scientific.Applycopyright[5], scientific.Applycopyright[4],
+	            	scientific.Applycopyright[3], scientific.Applycopyright[2], scientific.Applycopyright[1],
+	            	scientific.Applycopyright[0]]
+	            	/*, scientific.Applycopyright[4], scientific.Applycopyright[3],
 	            	scientific.Applycopyright[2], scientific.Applycopyright[1], scientific.Applycopyright[0]]*/
 	        },
 	        {
@@ -175,10 +178,11 @@ var option = {
                         )
                     }
                 },
-                data:[16,19,20,26,30,32,38]
-	            /*data:[scientific.Authorizationcopyright[11], scientific.Authorizationcopyright[10], scientific.Authorizationcopyright[9],
-	            	scientific.Authorizationcopyright[8], scientific.Authorizationcopyright[7], scientific.Authorizationcopyright[6], 
-	            	scientific.Authorizationcopyright[5], scientific.Authorizationcopyright[4], scientific.Authorizationcopyright[3],
+                //data:[16,19,20,26,30,32,38]
+	            data:[scientific.Authorizationcopyright[6], scientific.Authorizationcopyright[5], scientific.Authorizationcopyright[4],
+	            	scientific.Authorizationcopyright[3], scientific.Authorizationcopyright[2], scientific.Authorizationcopyright[1],
+	            	scientific.Authorizationcopyright[0]]
+                /*, scientific.Authorizationcopyright[4], scientific.Authorizationcopyright[3],
 	            	scientific.Authorizationcopyright[2], scientific.Authorizationcopyright[1], scientific.Authorizationcopyright[0]]*/
 	        },
 	        {
@@ -196,10 +200,11 @@ var option = {
                         )
                     }
                 },
-                data:[8,6,9,15,16,19,20]
-	            /*data:[scientific.AgencyTradeMark[11], scientific.AgencyTradeMark[10], scientific.AgencyTradeMark[9],
-	            	scientific.AgencyTradeMark[8], scientific.AgencyTradeMark[7], scientific.AgencyTradeMark[6], 
-	            	scientific.AgencyTradeMark[5], scientific.AgencyTradeMark[4], scientific.AgencyTradeMark[3],
+                //data:[8,6,9,15,16,19,20]
+	            data:[scientific.AgencyTradeMark[6], scientific.AgencyTradeMark[5], scientific.AgencyTradeMark[4],
+	            	scientific.AgencyTradeMark[3], scientific.AgencyTradeMark[2], scientific.AgencyTradeMark[1],
+	            	scientific.AgencyTradeMark[0]]
+                /*, scientific.AgencyTradeMark[4], scientific.AgencyTradeMark[3],
 	            	scientific.AgencyTradeMark[2], scientific.AgencyTradeMark[1], scientific.AgencyTradeMark[0]]*/
 	        },
 	        {
@@ -217,10 +222,11 @@ var option = {
                     }
                 },
                 smooth:true,
-                data:[2,5,6,7,9,10,12]
-	            /*data:[scientific.AuthorizationTradeMark[11], scientific.AuthorizationTradeMark[10], scientific.AuthorizationTradeMark[9],
-	            	scientific.AuthorizationTradeMark[8], scientific.AuthorizationTradeMark[7], scientific.AuthorizationTradeMark[6], 
-	            	scientific.AuthorizationTradeMark[5], scientific.AuthorizationTradeMark[4], scientific.AuthorizationTradeMark[3],
+                //data:[2,5,6,7,9,10,12]
+	            data:[scientific.AuthorizationTradeMark[6], scientific.AuthorizationTradeMark[5], scientific.AuthorizationTradeMark[4],
+	            	scientific.AuthorizationTradeMark[3], scientific.AuthorizationTradeMark[2], scientific.AuthorizationTradeMark[1],
+	            	scientific.AuthorizationTradeMark[0]]
+                /*, scientific.AuthorizationTradeMark[4], scientific.AuthorizationTradeMark[3],
 	            	scientific.AuthorizationTradeMark[2], scientific.AuthorizationTradeMark[1], scientific.AuthorizationTradeMark[0]]*/
 	        },
 	        {
@@ -238,10 +244,11 @@ var option = {
                         )
                     }
                 },
-                data:[0,1,3,4,5,6,8]
-	            /*data:[scientific.EachMonththesis[11], scientific.EachMonththesis[10], scientific.EachMonththesis[9],
-	            	scientific.EachMonththesis[8], scientific.EachMonththesis[7], scientific.EachMonththesis[6], 
-	            	scientific.EachMonththesis[5], scientific.EachMonththesis[4], scientific.EachMonththesis[3],
+                //data:[0,1,3,4,5,6,8]
+	            data:[scientific.EachMonththesis[6], scientific.EachMonththesis[5], scientific.EachMonththesis[4],
+	            	scientific.EachMonththesis[3], scientific.EachMonththesis[2], scientific.EachMonththesis[1],
+	            	scientific.EachMonththesis[0]]
+                /*, scientific.EachMonththesis[4], scientific.EachMonththesis[3],
 	            	scientific.EachMonththesis[2], scientific.EachMonththesis[1], scientific.EachMonththesis[0]]*/
 	        },
 	        {
@@ -259,10 +266,11 @@ var option = {
                         )
                     }
                 },
-                data:[4,6,7,8,9,10,13]
-	            /*data:[scientific.EachMonthwork[11], scientific.EachMonthwork[10], scientific.EachMonthwork[9],
-	            	scientific.EachMonthwork[8], scientific.EachMonthwork[7], scientific.EachMonthwork[6], 
-	            	scientific.EachMonthwork[5], scientific.EachMonthwork[4], scientific.EachMonthwork[3],
+                //data:[4,6,7,8,9,10,13]
+	            data:[scientific.EachMonthwork[6], scientific.EachMonthwork[5], scientific.EachMonthwork[4],
+	            	scientific.EachMonthwork[3], scientific.EachMonthwork[2], scientific.EachMonthwork[1],
+	            	scientific.EachMonthwork[0]]
+                /*, scientific.EachMonthwork[4], scientific.EachMonthwork[3],
 	            	scientific.EachMonthwork[2], scientific.EachMonthwork[1], scientific.EachMonthwork[0]]*/
 	        }
 	        

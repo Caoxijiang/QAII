@@ -15,7 +15,7 @@ function getscientific(){
 	$.ajax({
 		async:false,
 		type:"POST",
-		url:"scientific.do",
+		url:"scientifics.do",
 		success:function(data){
 			result=data;
 		}
