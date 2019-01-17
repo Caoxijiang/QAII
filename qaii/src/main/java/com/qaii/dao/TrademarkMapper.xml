@@ -236,7 +236,7 @@
 	    </foreach>
   </delete>
   <select id="countAgencyTradeMark" resultType="int">
-    SELECT COUNT(*) FROM sci_trademark WHERE tradm_ApplyTime BETWEEN #{0} AND #{1}
+    SELECT COUNT(*) FROM sci_trademark WHERE tradm_ApplyTime="" OR tradm_ApplyTime BETWEEN #{0} AND #{1}
   </select>
   <select id="countAuthorizationTradeMark" resultType="int">
   SELECT COUNT(*) FROM sci_trademark WHERE tradm_RegisterTime IS NOT NULL
