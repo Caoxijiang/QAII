@@ -25,6 +25,11 @@
 		a{
 			text-decoration: none;
 		}
+		#rewardtable{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
 	</style>
 </head>
 <body class="mainbody">
@@ -82,7 +87,7 @@
 					</ul>
 				</div>
 				<div>
-					<table id="rewardtable">
+					<table id="rewardtable" style="table-layout: fixed;">
 					</table>
 				</div>
 			</div>

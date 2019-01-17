@@ -55,8 +55,10 @@
 						<div class="layui-input-block">
 							<select name="empPoliticallandscape" lay-verify="required" lay-search="" class="input">
 								<option value="">   </option>
-								<option value="党员">党员</option>
-								<option value="团员">团员</option>
+								<option value="中共党员">中共党员</option>
+								<option value="预备党员">预备党员</option>
+								<option value="民革党员">民革党员</option>
+								<option value="致公党员">致公党员</option>
 								<option value="群众">群众</option>
 							</select>
 						</div>
@@ -321,6 +323,9 @@
 							<select name="empCompile" lay-search="" class="input">
 								<option value="">   </option>
 								<option value="所编">所编</option>
+								<option value="所聘">所聘</option>
+								<option value="派遣">派遣</option>
+								<option value="部聘">部聘</option>
 								<option value="聘用">聘用</option>
 							</select>
 						</div>

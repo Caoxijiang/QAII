@@ -46,14 +46,14 @@
 			    </div>
 			  </div>
 		</div>
-	    <div class="layui-col-xs6 layui-col-md6">
+	   <%-- <div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">服务企业性质</label>
 			    <div class="layui-input-block">
 			      <input type="text" name="ministryProperty" lay-verify="title" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
-		</div>
+		</div>--%>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
 			    <label class="layui-form-label" style="width:160px;">服务企业联系人名称</label>
