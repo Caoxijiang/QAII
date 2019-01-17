@@ -7,16 +7,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42074fb5-b165-4f9f-a415-0f5bff3ecb84" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/QAII_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/QAII_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/NoChangePwdUser.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/changePwdError.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/changePwdSuccess.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/industryDataOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/industryDataOverviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/ChangePasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/ChangePasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/domain/Incubator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/domain/Incubator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAII/WEB-INF/classes/com/qaii/dao/IncubatorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAII/WEB-INF/classes/com/qaii/dao/IncubatorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAII/WEB-INF/classes/com/qaii/domain/Incubator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAII/WEB-INF/classes/com/qaii/domain/Incubator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/qaii/dao/IncubatorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qaii/dao/IncubatorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/qaii/domain/Incubator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qaii/domain/Incubator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/logout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/logout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/personnel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/personnel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/science.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/science.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAII/WEB-INF/classes/com/qaii/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAII/WEB-INF/classes/com/qaii/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAII/WEB-INF/classes/com/qaii/util/SingleUserInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAII/WEB-INF/classes/com/qaii/util/SingleUserInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAII/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAII/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAII/WEB-INF/page/logout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAII/WEB-INF/page/logout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAII/WEB-INF/page/personnel/personnel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAII/WEB-INF/page/personnel/personnel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAII/WEB-INF/page/science/science.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAII/WEB-INF/page/science/science.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qaii/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qaii/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qaii/util/SingleUserInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qaii/util/SingleUserInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -111,16 +124,17 @@
           <entry key="html" value="11" />
           <entry key="ico" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="853" />
+          <entry key="java" value="893" />
           <entry key="jpg" value="4" />
-          <entry key="js" value="87" />
-          <entry key="jsp" value="134" />
+          <entry key="js" value="93" />
+          <entry key="jsp" value="145" />
           <entry key="png" value="22" />
-          <entry key="properties" value="46" />
+          <entry key="prefs" value="1" />
+          <entry key="properties" value="49" />
           <entry key="rnc" value="3" />
           <entry key="tld" value="2" />
           <entry key="ts" value="15" />
-          <entry key="xml" value="153" />
+          <entry key="xml" value="159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -131,13 +145,14 @@
           <entry key="HTML" value="11" />
           <entry key="IDEA_MODULE" value="2" />
           <entry key="Image" value="27" />
-          <entry key="JAVA" value="853" />
-          <entry key="JSP" value="134" />
-          <entry key="JavaScript" value="87" />
-          <entry key="Properties" value="46" />
+          <entry key="JAVA" value="893" />
+          <entry key="JSP" value="145" />
+          <entry key="JavaScript" value="93" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="49" />
           <entry key="RNG Compact" value="3" />
           <entry key="TypeScript" value="15" />
-          <entry key="XML" value="155" />
+          <entry key="XML" value="161" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -145,24 +160,24 @@
           <entry key="css" value="6" />
           <entry key="ft" value="9" />
           <entry key="html" value="117" />
-          <entry key="java" value="12543" />
+          <entry key="java" value="13360" />
           <entry key="js" value="1913" />
-          <entry key="jsp" value="4025" />
-          <entry key="properties" value="181" />
-          <entry key="xml" value="1371" />
+          <entry key="jsp" value="4068" />
+          <entry key="properties" value="188" />
+          <entry key="xml" value="1372" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="6" />
           <entry key="HTML" value="117" />
-          <entry key="JAVA" value="12543" />
-          <entry key="JSP" value="4025" />
+          <entry key="JAVA" value="13360" />
+          <entry key="JSP" value="4068" />
           <entry key="JavaScript" value="1913" />
-          <entry key="Properties" value="181" />
+          <entry key="Properties" value="188" />
           <entry key="SQL" value="10" />
           <entry key="VTL" value="9" />
-          <entry key="XML" value="1361" />
+          <entry key="XML" value="1362" />
         </counts>
       </usages-collector>
     </session>
@@ -173,34 +188,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/ChangePasswordController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="454">
+              <caret line="75" column="34" lean-forward="true" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/commw.js">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/indexIndustry.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="187" column="34" selection-start-line="187" selection-start-column="34" selection-end-line="187" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/industryDataOverviewController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="47" column="53" lean-forward="true" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="252">
+              <caret line="157" column="35" lean-forward="true" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -208,172 +208,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/active.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="162" column="50" selection-start-line="162" selection-start-column="50" selection-end-line="162" selection-end-column="50" />
+            <state relative-caret-position="780">
+              <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
               <folding>
                 <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="21" column="51" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
-              <folding>
-                <element signature="e#733#734#0" expanded="true" />
-                <element signature="e#793#794#0" expanded="true" />
-                <element signature="e#1875#1876#0" expanded="true" />
-                <element signature="e#1935#1936#0" expanded="true" />
-                <element signature="e#2006#2007#0" expanded="true" />
-                <element signature="e#2061#2062#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="29" column="30" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1350">
-              <caret line="3" column="30" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/Incubator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="14" column="59" lean-forward="true" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-              <folding>
-                <element signature="e#1382#1383#0" expanded="true" />
-                <element signature="e#1403#1404#0" expanded="true" />
-                <element signature="e#1446#1447#0" expanded="true" />
-                <element signature="e#1475#1476#0" expanded="true" />
-                <element signature="e#1698#1699#0" expanded="true" />
-                <element signature="e#1728#1729#0" expanded="true" />
-                <element signature="e#1774#1775#0" expanded="true" />
-                <element signature="e#1812#1813#0" expanded="true" />
-                <element signature="e#1855#1856#0" expanded="true" />
-                <element signature="e#1894#1895#0" expanded="true" />
-                <element signature="e#1958#1959#0" expanded="true" />
-                <element signature="e#2014#2015#0" expanded="true" />
-                <element signature="e#2050#2051#0" expanded="true" />
-                <element signature="e#2082#2083#0" expanded="true" />
-                <element signature="e#2132#2133#0" expanded="true" />
-                <element signature="e#2174#2175#0" expanded="true" />
-                <element signature="e#2211#2212#0" expanded="true" />
-                <element signature="e#2244#2245#0" expanded="true" />
-                <element signature="e#2296#2297#0" expanded="true" />
-                <element signature="e#2340#2341#0" expanded="true" />
-                <element signature="e#2542#2543#0" expanded="true" />
-                <element signature="e#2559#2560#0" expanded="true" />
-                <element signature="e#2596#2597#0" expanded="true" />
-                <element signature="e#2617#2618#0" expanded="true" />
-                <element signature="e#2644#2645#0" expanded="true" />
-                <element signature="e#2669#2670#0" expanded="true" />
-                <element signature="e#2706#2707#0" expanded="true" />
-                <element signature="e#2734#2735#0" expanded="true" />
-                <element signature="e#2765#2766#0" expanded="true" />
-                <element signature="e#2791#2792#0" expanded="true" />
-                <element signature="e#2830#2831#0" expanded="true" />
-                <element signature="e#2860#2861#0" expanded="true" />
-                <element signature="e#2898#2899#0" expanded="true" />
-                <element signature="e#2932#2933#0" expanded="true" />
-                <element signature="e#3105#3106#0" expanded="true" />
-                <element signature="e#3138#3139#0" expanded="true" />
-                <element signature="e#3190#3191#0" expanded="true" />
-                <element signature="e#3269#3270#0" expanded="true" />
-                <element signature="e#3307#3308#0" expanded="true" />
-                <element signature="e#3343#3344#0" expanded="true" />
-                <element signature="e#3399#3400#0" expanded="true" />
-                <element signature="e#3449#3450#0" expanded="true" />
-                <element signature="e#3487#3488#0" expanded="true" />
-                <element signature="e#3521#3522#0" expanded="true" />
-                <element signature="e#3699#3700#0" expanded="true" />
-                <element signature="e#3737#3738#0" expanded="true" />
-                <element signature="e#3939#3940#0" expanded="true" />
-                <element signature="e#3981#3982#0" expanded="true" />
-                <element signature="e#4201#4202#0" expanded="true" />
-                <element signature="e#4241#4242#0" expanded="true" />
-                <element signature="e#4447#4448#0" expanded="true" />
-                <element signature="e#4483#4484#0" expanded="true" />
-                <element signature="e#4669#4670#0" expanded="true" />
-                <element signature="e#4705#4706#0" expanded="true" />
-                <element signature="e#4888#4889#0" expanded="true" />
-                <element signature="e#4923#4924#0" expanded="true" />
-                <element signature="e#4977#4978#0" expanded="true" />
-                <element signature="e#5025#5026#0" expanded="true" />
-                <element signature="e#5067#5068#0" expanded="true" />
-                <element signature="e#5105#5106#0" expanded="true" />
-                <element signature="e#5294#5295#0" expanded="true" />
-                <element signature="e#5324#5325#0" expanded="true" />
-                <element signature="e#5368#5369#0" expanded="true" />
-                <element signature="e#5436#5437#0" expanded="true" />
-                <element signature="e#5476#5477#0" expanded="true" />
-                <element signature="e#5512#5513#0" expanded="true" />
-                <element signature="e#5707#5708#0" expanded="true" />
-                <element signature="e#5754#5755#0" expanded="true" />
-                <element signature="e#5955#5956#0" expanded="true" />
-                <element signature="e#6004#6005#0" expanded="true" />
-                <element signature="e#6209#6210#0" expanded="true" />
-                <element signature="e#6254#6255#0" expanded="true" />
-                <element signature="e#6440#6441#0" expanded="true" />
-                <element signature="e#6482#6483#0" expanded="true" />
-                <element signature="e#6550#6551#0" expanded="true" />
-                <element signature="e#6612#6613#0" expanded="true" />
-                <element signature="e#6652#6653#0" expanded="true" />
-                <element signature="e#6690#6691#0" expanded="true" />
-                <element signature="e#6750#6751#0" expanded="true" />
-                <element signature="e#6804#6805#0" expanded="true" />
-                <element signature="e#6846#6847#0" expanded="true" />
-                <element signature="e#6884#6885#0" expanded="true" />
-                <element signature="e#7075#7076#0" expanded="true" />
-                <element signature="e#7105#7106#0" expanded="true" />
-                <element signature="e#7152#7153#0" expanded="true" />
-                <element signature="e#7190#7191#0" expanded="true" />
-                <element signature="e#7241#7242#0" expanded="true" />
-                <element signature="e#7288#7289#0" expanded="true" />
-                <element signature="e#7522#7523#0" expanded="true" />
-                <element signature="e#7551#7552#0" expanded="true" />
-                <element signature="e#7595#7596#0" expanded="true" />
-                <element signature="e#7662#7663#0" expanded="true" />
-                <element signature="e#7703#7704#0" expanded="true" />
-                <element signature="e#7740#7741#0" expanded="true" />
-                <element signature="e#7932#7933#0" expanded="true" />
-                <element signature="e#7969#7970#0" expanded="true" />
-                <element signature="e#8163#8164#0" expanded="true" />
-                <element signature="e#8202#8203#0" expanded="true" />
-                <element signature="e#8397#8398#0" expanded="true" />
-                <element signature="e#8429#8430#0" expanded="true" />
-                <element signature="e#8477#8478#0" expanded="true" />
-                <element signature="e#8519#8520#0" expanded="true" />
-                <element signature="e#8555#8556#0" expanded="true" />
-                <element signature="e#8589#8590#0" expanded="true" />
-                <element signature="e#8641#8642#0" expanded="true" />
-                <element signature="e#8687#8688#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -382,8 +221,42 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="240">
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/industryDataOverviewController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardPersonalServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+              <folding>
+                <element signature="e#1216#1217#0" expanded="true" />
+                <element signature="e#1273#1274#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardPersonalMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="355" column="70" selection-start-line="355" selection-start-column="61" selection-end-line="355" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -393,28 +266,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>outLogin.do</find>
-      <find>findWithLoginAndPassword</find>
-      <find>addTrademark.do</find>
-      <find>imgload</find>
-      <find>form</find>
-      <find>RequestMapping</find>
-      <find>count</find>
-      <find>dataindexIndustry</find>
-      <find>dataindexIndustry.do</find>
-      <find>list</find>
-      <find>foreach</find>
-      <find>selectOutCountNums</find>
-      <find>deleteByPrimaryKeys</find>
-      <find>selectCountNums</find>
-      <find>OuterServiceYearNums</find>
       <find>liste</find>
       <find>updatePassword</find>
       <find>findWithLogin</find>
@@ -422,7 +280,6 @@
       <find>updateByPrimaryKeySelective</find>
       <find>update</find>
       <find>ServiceNum</find>
-      <find>CompanyNums</find>
       <find>CustomMap</find>
       <find>sql</find>
       <find>selectAlls</find>
@@ -430,6 +287,22 @@
       <find>selectAlllistByPreThreeMonth</find>
       <find>IndustryInner.do</find>
       <find>IndustryName</find>
+      <find>CompanyNums</find>
+      <find>SimpleDateFormat</find>
+      <find>sdf</find>
+      <find>登陆成功</find>
+      <find>personal.do</find>
+      <find>checkLogin.do</find>
+      <find>addRoleuser.do</find>
+      <find>limited-add.js</find>
+      <find>limited-add.jsp</find>
+      <find>sub_btn</find>
+      <find>贤心</find>
+      <find>selectCountNums</find>
+      <find>listdate</find>
+      <find>role2</find>
+      <find>listPersonal</find>
+      <find>CustomMap1</find>
     </findStrings>
     <dirStrings>
       <dir>F:\项目\QAII\qaii</dir>
@@ -441,11 +314,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/indnews.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/IndustryInformationManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/MyFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/SessionContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/SessionSave.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/LoginFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardIncubateMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardCollegeMapper.xml" />
@@ -458,17 +326,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/LoginListenner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/MemoryData.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/logout.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardPersonalMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/domain/AwardPersonalest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/limited.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/science.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/personnel.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/limited - 系统后台框架.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/industry.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/UserService.java" />
@@ -485,12 +347,23 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/ChangePasswordController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/comm.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/commw.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qaii/domain/Incubator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/industryDataOverviewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/domain/Incubator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/RoleController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/science.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/personnel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/changePwdSuccess.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/changePwdError.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/NoChangePwdUser.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/ChangePasswordController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/logout.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
       </list>
     </option>
@@ -595,7 +468,42 @@
               <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="qaii" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="dao" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="qaii" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="util" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="qaii" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="QAII" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="WEB-INF" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -686,9 +594,9 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547617501286" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547712498407" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -852,12 +760,12 @@
       <workItem from="1547435905396" duration="14838000" />
       <workItem from="1547455906571" duration="793000" />
       <workItem from="1547514312176" duration="24248000" />
-      <workItem from="1547600363918" duration="10949000" />
+      <workItem from="1547600363918" duration="37498000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="610469000" />
+    <option name="totallyTimeSpent" value="637018000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -872,7 +780,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7816092" visible="true" weight="0.071104385" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7816092" visible="true" weight="0.0" />
       <window_info id="Structure" order="1" sideWeight="0.21803279" side_tool="true" weight="0.10892587" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -882,14 +790,14 @@
       <window_info id="Web" order="7" sideWeight="0.21230769" side_tool="true" weight="0.009077156" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.27586207" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.2364532" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.23809524" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.060755335" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5090312" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32840723" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.38916257" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32840723" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4977307" weight="0.22988506" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4977307" weight="0.049261082" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50226927" side_tool="true" weight="0.44170773" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.20361248" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32840723" />
@@ -988,36 +896,6 @@
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="132" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="133" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="134" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/qaii/controller/ChangePasswordController.java</url>
           <line>24</line>
           <properties />
@@ -1049,12 +927,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/qaii/controller/ChangePasswordController.java</url>
-          <line>39</line>
-          <properties />
-          <option name="timeStamp" value="157" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/controller/ChangePasswordController.java</url>
           <line>35</line>
           <properties />
           <option name="timeStamp" value="158" />
@@ -1071,6 +943,66 @@
           <properties />
           <option name="timeStamp" value="208" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="263" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="264" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="268" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="269" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="270" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="272" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="275" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="276" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="277" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="278" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -1079,352 +1011,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/DataOverviewController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4050">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="127" column="22" lean-forward="true" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/TaskDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1530">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/TradeMarkController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="65" column="69" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/brand/brandAdd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="145" column="22" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/MyFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/MemoryData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginListenner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#1615#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="64" column="26" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.4.RELEASE/spring-webmvc-3.2.4.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-870">
-          <caret line="48" column="71" selection-start-line="48" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="28" column="61" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="55" column="56" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-context.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/PwdController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="61" column="2" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/changePwd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="39" column="42" lean-forward="true" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/dataindexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/demonstration/dataindexNav.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/ZipDownloadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1680">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/FileLoadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" column="75" lean-forward="true" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/CountDatetoNowDays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="210" column="8" selection-start-line="210" selection-start-column="8" selection-end-line="210" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/text/DateFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="360" column="15" selection-start-line="360" selection-start-column="11" selection-end-line="360" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Collections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="373" column="23" selection-start-line="373" selection-start-column="23" selection-end-line="373" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.4.RELEASE/spring-webmvc-3.2.4.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/MinistryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="160" column="69" lean-forward="true" selection-start-line="160" selection-start-column="69" selection-end-line="160" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/TrademarkprocessMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="97" column="23" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorRecordMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/EmpInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="614" column="33" selection-start-line="614" selection-start-column="29" selection-end-line="614" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/MinistryMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/MinistryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/MinistryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/MinistryMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/indexIndustry.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="156" column="33" lean-forward="true" selection-start-line="156" selection-start-column="33" selection-end-line="156" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/logout.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-          <folding>
-            <element signature="e#1071#1072#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1167#1168#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2400">
-          <caret line="80" column="57" selection-start-line="80" selection-start-column="57" selection-end-line="80" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/comm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2970">
-          <caret line="99" column="49" selection-start-line="99" selection-start-column="34" selection-end-line="99" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/demonstration/dataindexIndustry.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="156" column="34" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/commw.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="187" column="34" selection-start-line="187" selection-start-column="34" selection-end-line="187" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1350">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/IncubatorMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/IncubatorServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
-          <folding>
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-            <element signature="e#1875#1876#0" expanded="true" />
-            <element signature="e#1935#1936#0" expanded="true" />
-            <element signature="e#2006#2007#0" expanded="true" />
-            <element signature="e#2061#2062#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/active.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="162" column="50" selection-start-line="162" selection-start-column="50" selection-end-line="162" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="229">
+          <caret line="21" column="51" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/Incubator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="14" column="59" lean-forward="true" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+        <state relative-caret-position="-7">
+          <caret line="80" column="10" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="10" />
           <folding>
             <element signature="e#1382#1383#0" expanded="true" />
             <element signature="e#1403#1404#0" expanded="true" />
@@ -1536,37 +1133,379 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/ChangePasswordController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+        <state relative-caret-position="270">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginListenner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#1615#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/MemoryData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/WorkController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3090">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/FileLoadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="33" column="75" lean-forward="true" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/FileLoadUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/commw.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="187" column="34" selection-start-line="187" selection-start-column="34" selection-end-line="187" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/PersonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/AwardCollegeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="105" column="62" selection-start-line="105" selection-start-column="62" selection-end-line="105" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/JsonResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/router/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="89" column="57" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/TaskDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="130" column="34" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="56" lean-forward="true" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/indexPersonnel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-420">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/limited-add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/router/limited-add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-479">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="127" column="15" selection-start-line="127" selection-start-column="15" selection-end-line="127" selection-end-column="15" />
+          <folding>
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+            <element signature="e#1105#1106#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
+            <element signature="e#1240#1241#0" expanded="true" />
+            <element signature="e#1313#1314#0" expanded="true" />
+            <element signature="e#1345#1346#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/interceptor/MyInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-466">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/StringtoIntutil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/FileLogUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/industry.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/science/science.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/personnel/personnel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/changePwd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="38" column="68" lean-forward="true" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/changePwdError.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/SingleUserInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="55" column="80" selection-start-line="55" selection-start-column="72" selection-end-line="55" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/IncubatorService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="21" column="51" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="51" />
+        <state relative-caret-position="517">
+          <caret line="54" column="15" lean-forward="true" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/MinistryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-64">
+          <caret line="69" column="67" lean-forward="true" selection-start-line="69" selection-start-column="67" selection-end-line="69" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/MinistryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/MinistryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/MinistryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/util/LoginLogUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="93" lean-forward="true" selection-start-line="12" selection-start-column="93" selection-end-line="12" selection-end-column="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/domain/UserRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="59" column="18" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="18" />
+          <folding>
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/logout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardCollegeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2670">
+          <caret line="205" column="52" selection-start-line="205" selection-start-column="36" selection-end-line="205" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/测试git/ijavaboy/AsynJdbc/src/org/jdbc/async/event/UpdateEventManager.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/comm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/changePwdSuccess.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/NoChangePwdUser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/ChangePasswordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="75" column="34" lean-forward="true" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/AwardPersonalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/service/impl/AwardPersonalServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+          <folding>
+            <element signature="e#1216#1217#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardPersonalMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/controller/industryDataOverviewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="47" column="53" lean-forward="true" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+        <state relative-caret-position="84">
+          <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/industry/indexIndustry.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="157" column="35" lean-forward="true" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaii/dao/AwardPersonalMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="355" column="70" selection-start-line="355" selection-start-column="61" selection-end-line="355" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/active.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+          <folding>
+            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="240">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>

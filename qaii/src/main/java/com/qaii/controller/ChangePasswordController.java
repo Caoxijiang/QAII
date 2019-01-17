@@ -18,15 +18,15 @@ public class ChangePasswordController{
     private UserService userServivce;
 
     @RequestMapping(value = "changePwd.do", method = RequestMethod.POST)
-    public void ChangePassword(HttpServletRequest request) {
+    public String ChangePassword(HttpServletRequest request) {
         //获取用户输入信息
         String username=request.getParameter("Username");
         String oldpassword = request.getParameter("Password");
         String newpassword=request.getParameter("Confirm_Password");
-        //获取输出流
-        if(oldpassword.equals(newpassword)){
+        //获取输出流这里的前台已经判定过了后台就不用再判定了
+       /* if(oldpassword.equals(newpassword)){
             System.out.println("密码相同提示");
-        }
+        }*/
         User user=new User();
         user.setAdminAccount(username);
         user.setAdminPwd(oldpassword);
@@ -35,9 +35,17 @@ public class ChangePasswordController{
             User user1=new User();
             user1.setAdminAccount(username);
             user1.setAdminPwd(newpassword);
-            userServivce.updatePassword(user1);
+            int count=userServivce.updatePassword(user1);
+            if (count>0){
+                //到时候这里是需要根据前台页面结果做调整的
+                return "page/changePwdSuccess";
+            }else{
+                //到时候这里是需要根据前台页面结果做调整的
+                return "page/changePwdError";
+            }
         }else{
-            System.out.println("查无账号，做进一步处理,可以跳转到一个显示页面");
+            //到时候这里是需要根据前台页面结果做调整的
+            return "page/NoChangePwdUser";
         }
 
     }
