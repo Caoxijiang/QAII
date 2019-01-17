@@ -83,7 +83,7 @@
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id="ministryName"  type="checkbox" value="服务企业名称" checked="true"/><lable>服务企业名称</lable></div>
-	<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="服务企业性质" checked="flase"/><lable>服务企业性质</lable></div>
+	<%--<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="服务企业性质" checked="flase"/><lable>服务企业性质</lable></div>--%>
 	<div class="int-inline"><input id="contactPerson"  type="checkbox" value="服务企业联系人名称" checked/><lable>服务企业联系人名称</lable></div>
 	<div class="int-inline"><input id="contactMethod"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
 	<div class="int-inline"><input id="ministryLocation"  type="checkbox" value="服务企业地址" checked/><lable>服务企业地址</lable></div>
@@ -133,7 +133,7 @@ layui.use('table', function(obj){
     	{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
 		{field: 'ministryName', title: '服务企业名称',fixed: 'left',width:150},
-		{field: 'ministryProperty', title: '服务企业性质',width:150},
+		/*{field: 'ministryProperty', title: '服务企业性质',width:150},*/
 		{field: 'contactPerson', title: '服务企业联系人名称',sort: true,width:120},
 		{field: 'contactMethod', title: '联系方式',sort: true,width:100},
 		{field: 'ministryLocation', title: '服务企业地址',sort: true,width:150},
@@ -230,8 +230,6 @@ layui.use('table', function(obj){
   			 }
   			if(check=="ministryName"){
   				alert("搜索'服务企业名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="ministryProperty"){
-  				alert("搜索'服务企业性质'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="ministryLocation"){
   				alert("搜索'服务企业地址'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="ownselfUnit"){
