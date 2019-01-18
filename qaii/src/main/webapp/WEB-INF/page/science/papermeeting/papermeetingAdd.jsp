@@ -138,37 +138,37 @@
 							  <th>单位</th>
 							  <th>操作</th>
 						  </tr>
-						  <%-- <tr>
-                               <td>
-                                   <div class="layui-input-block">
-                                       <select name="patRemission" lay-search="" class="input">
-                                           <option value="">请选择作者排位</option>
-                                           <option value="第一作者">第一作者</option>
-                                           <option value="第二作者">第二作者</option>
-                                           <option value="第三作者">第三作者</option>
-                                           <option value="第四作者">第四作者</option>
-                                           <option value="第五作者">第五作者</option>
-                                           <option value="第六作者">第六作者</option>
-                                           <option value="第七作者">第七作者</option>
-                                           <option value="第八作者">第八作者</option>
-                                           <option value="通讯作者">通讯作者</option>
-                                       </select>
-                                   </div>
-                               </td>
-                               <td>
-                                   <div class="layui-input-block">
-                                       <input type="text" name="shareholderName" lay-verify="title" autocomplete="off" placeholder="请输入作者名称" style="width:100%;" class="layui-input">
-                                   </div>
-                               </td>
-                               <td>
-                                   <div class="layui-input-block">
-                                       <input type="text" name="contributionTime" lay-verify="title" autocomplete="off" placeholder="请输入作者单位" class="layui-input" style="width:100%;">
-                                   </div>
-                               </td>
-                               <td>
-                                   <div class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</div>
-                               </td>
-                           </tr>--%>
+						   <tr>
+							   <td>
+								   <div class="layui-input-block">
+									   <select name="patRemission" lay-search="" class="input" lay-verify="required">
+										   <option value="">请选择作者排位</option>
+										   <option value="第一作者">第一作者</option>
+										   <option value="通讯作者">通讯作者</option>
+										   <option value="第一作者和通讯作者">第一作者和通讯作者</option>
+										   <option value="第二作者">第二作者</option>
+										   <option value="第三作者">第三作者</option>
+										   <option value="第四作者">第四作者</option>
+										   <option value="第五作者">第五作者</option>
+										   <option value="第六作者">第六作者</option>
+										   <option value="其他作者">其他作者</option>
+									   </select>
+								   </div>
+							   </td>
+							   <td>
+								   <div class="layui-input-block">
+									   <input type="text" name="shareholderName" lay-verify="required" autocomplete="off" placeholder="请输入作者名称" style="width:100%;" class="layui-input">
+								   </div>
+							   </td>
+							   <td>
+								   <div class="layui-input-block">
+									   <input type="text" name="contributionTime" lay-verify="required" autocomplete="off" placeholder="请输入作者单位" class="layui-input" style="width:100%;">
+								   </div>
+							   </td>
+							   <td>
+
+							   </td>
+                           </tr>
 					  </table>
 					  <div class="layui-btn layui-btn-normal" style="margin-top:10px;" id="addauthor">添加作者</div>
 				  </div>
@@ -264,15 +264,16 @@
     $("#addauthor").click(function(){
         let htmls="<tr><td><div class='layui-input-block'><select name='patRemission' style='display:block' lay-search='' class='input addselect'>" +
             "<option value=''>请选择作者排位</option>" +
+            "<option value=''>请选择作者排位</option>" +
             "<option value='第一作者'>第一作者</option>" +
+            "<option value='通讯作者'>通讯作者</option>" +
+            "<option value='第一作者和通讯作者'>第一作者和通讯作者</option>" +
             "<option value='第二作者'>第二作者</option>" +
             "<option value='第三作者'>第三作者</option>" +
             "<option value='第四作者'>第四作者</option>" +
             "<option value='第五作者'>第五作者</option>" +
             "<option value='第六作者'>第六作者</option>" +
-            "<option value='第七作者'>第七作者</option>" +
-            "<option value='第八作者'>第八作者</option>" +
-            "<option value='通讯作者'>通讯作者</option>" +
+            "<option value='其他作者'>其他作者</option>" +
             "</select>" +
             /*"<div class='layui-form-select layui-form-selected'>"+
                 "<div class='layui-select-title'>"+
