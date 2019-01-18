@@ -23,47 +23,58 @@
 	<div class="techadd" style="width:330px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">合作情况管理&nbsp;—&nbsp;查看详情界面</span>
+		<span class="blue">合作情况管理&nbsp;—&nbsp;修改界面</span>
 	</div>
-	<!--		导出-->
+	<!--导出-->
 	<button onclick="srchange('innovate.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>
 </div>
 <div class="layui-container addtop">
-	<form class="layui-form" action="insertMinistry.do" method="post" enctype="multipart/form-data" lay-filter="example">
+	<form class="layui-form" action="updateCooperation.do" method="post" enctype="multipart/form-data" lay-filter="example">
 		<!-- 基本信息 -->
 		<div class="layui-row contern">
 			<h1>基本信息</h1>
+            <input id="id" name="id" type="hidden">
+            <input id="fid" name="fid" type="hidden">
+            <input id="fpath" name="fpath" type="hidden">
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">合作方向</label>
+					<label class="layui-form-label">我院/公司名称</label>
 					<div class="layui-input-block">
-						<input type="text" name="unitName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+						<input type="text" name="unitName" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">协议签订时间</label>
+					<label class="layui-form-label">合作单位名称</label>
 					<div class="layui-input-block">
-						<input type="text" name="cooperationName" lay-verify="title" autocomplete="off" class="layui-input" disabled="" >
+						<input type="text" name="cooperationName" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label" style="padding:0px 15px;">青岛智能院<br />及孵化公司</label>
+					<label class="layui-form-label">签订的协议名称</label>
 					<div class="layui-input-block">
-						<input type="text" name="protocolName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+						<input type="text" name="protocolName" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">合作单位</label>
+					<label class="layui-form-label">签订时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="signTime" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+						<input type="text" name="signTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-xs6 layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label">合作内容/方向</label>
+					<div class="layui-input-block">
+						<input type="text" name="cooperationContent" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -73,10 +84,13 @@
 			<div class="layui-col-xs10 layui-col-md10">
 				<div class="layui-form-item itemadd">
 					<label class="layui-form-label" style="width:190px;">上传附件（协议扫描件）</label>
-					<div class="layui-input-block" style="margin-left:210px;">
-						<input type="text" name="file0" lay-verify="title" autocomplete="off" class="layui-input" style="width:48%;display:inline-block;" disabled="">
-						<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline">在线预览</a>
-						<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload" >下载</a>
+					<div class="layui-input-block" style="margin-left:170px;">
+						<div class="layui-upload">
+							<input type="text" name="file0" class="layui-input input" style="width:48%;display:inline-block;" disabled="">
+							<a class="layui-btn layui-btn-tired layui-btn-xs" id="paperOnline">在线预览</a>
+							<a class="layui-btn layui-btn-xs" id="paperDownload">下载</a>
+							<a class="layui-btn layui-btn-edit layui-btn-xs" id="upload">重新上传</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -84,21 +98,22 @@
 				<div class="layui-form-item">
 					<label class="site-demo-button layui-form-label">备注</label>
 					<div class="layui-input-block">
-						<textarea class="layui-textarea" name="remark" lay-verify="content" id="LAY_demo_editor" disabled=""></textarea>
+						<textarea class="layui-textarea" name="remark" lay-verify="content" id="LAY_demo_editor"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-row">
+			<div class="layui-col-md12">
+				<div class="layui-form-item">
+					<div class="layui-input-block" style="text-align: right;">
+						<button class="layui-btn" lay-submit="" lay-filter="demo1" onSubmit="imgjudge()">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</form>
-	<div class="layui-row">
-		<div class="layui-col-md12">
-			<div class="layui-form-item">
-				<div class="layui-input-block" style="text-align: right;">
-					<button class="layui-btn" onclick="srchange('innovate.do')">返回</button>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
@@ -109,6 +124,21 @@
             laydate = layui.laydate,
             upload = layui.upload,
             table = layui.table;
+        //日期
+        laydate.render({
+            elem: '#test1'
+        });
+//上传附件
+        upload.render({
+            elem: '#test8'
+            ,url: '/upload/'
+            ,auto: false
+            ,accept: 'file' //普通文件
+            ,bindAction: '#test9'
+            ,done: function(res){
+                console.log(res)
+            }
+        });
 //表单初始赋值
         var id=${param.userId};
         if(id!=null){
@@ -122,13 +152,16 @@
                         let awardInfo=data.data;
                         //表单初始赋值 从表单中提取数据
                         form.val('example', {
+                            "id":awardInfo.id,
                             "unitName":awardInfo.unitName,
                             "cooperationName":awardInfo.cooperationName,
                             "protocolName":awardInfo.protocolName,
                             "signTime":awardInfo.signTime,
                             "cooperationContent":awardInfo.cooperationContent,
                             "remark":awardInfo.remark,
-                            "file0":awardInfo.listFile[0].fileName
+                            "file0":awardInfo.listFile[0].fileName,
+                            "fid":awardInfo.listFile[0].id,
+                            "fpath":awardInfo.listFile[0].filePath
                         })
                     }else{
                         alert("查看详情失败")
@@ -139,11 +172,13 @@
             alert("请刷新页面");
         }
     });
+</script>
+<script src="${basePath}/js/iframesrc.js"></script>
+<script type="text/javascript">
     //在线预览
     $("#paperOnline").click(function(){
         /* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
         var address=$('input[name="file0"]').val();
-        console.log(address);
         var reg1=new RegExp("jpg","i");
         var reg2=new RegExp("pdf","i");
         var reg3=new RegExp("png","i");
@@ -160,6 +195,19 @@
         /* download(ops+address); */
         download(address);
     })
+    //重新上传
+    $("#upload").click(function(){
+        var id=$('input[name="id"]').val();
+        var fid=$('input[name="fid"]').val();
+        var fpath=$('input[name="fpath"]').val();
+        layer.open({
+            type:2,
+            title:"重新上传文件",
+            content:'innovatefilereload.do?id='+id+'&fid='+fid+'&fpath='+fpath,
+            anim:0
+        });
+    })
+
     function download(src) {
         var $a = document.createElement('a');
         $a.setAttribute("href", src);
@@ -169,6 +217,5 @@
         $a.dispatchEvent(evObj);
     };
 </script>
-<script src="${basePath}/js/iframesrc.js"></script>
 </body>
 </html>
