@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.SigningAgreementMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.SigningAgreement">
+    <id column="Id" jdbcType="INTEGER" property="id" />
+    <result column="Direction_cooperation" jdbcType="VARCHAR" property="directionCooperation" />
+    <result column="Signing_time" jdbcType="TIMESTAMP" property="signingTime" />
+    <result column="Colleage_incubator" jdbcType="VARCHAR" property="colleageIncubator" />
+    <result column="Cooperation_unit" jdbcType="VARCHAR" property="cooperationUnit" />
+    <result column="Create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="Modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    Id, Direction_cooperation, Signing_time, Colleage_incubator, Cooperation_unit, Create_time, 
+    Modify_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SigningAgreement
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from SigningAgreement
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.SigningAgreement">
+    insert into SigningAgreement (Id, Direction_cooperation, Signing_time, 
+      Colleage_incubator, Cooperation_unit, Create_time, 
+      Modify_time)
+    values (#{id,jdbcType=INTEGER}, #{directionCooperation,jdbcType=VARCHAR}, #{signingTime,jdbcType=TIMESTAMP}, 
+      #{colleageIncubator,jdbcType=VARCHAR}, #{cooperationUnit,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.SigningAgreement">
+    insert into SigningAgreement
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        Id,
+      </if>
+      <if test="directionCooperation != null">
+        Direction_cooperation,
+      </if>
+      <if test="signingTime != null">
+        Signing_time,
+      </if>
+      <if test="colleageIncubator != null">
+        Colleage_incubator,
+      </if>
+      <if test="cooperationUnit != null">
+        Cooperation_unit,
+      </if>
+      <if test="createTime != null">
+        Create_time,
+      </if>
+      <if test="modifyTime != null">
+        Modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="directionCooperation != null">
+        #{directionCooperation,jdbcType=VARCHAR},
+      </if>
+      <if test="signingTime != null">
+        #{signingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="colleageIncubator != null">
+        #{colleageIncubator,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperationUnit != null">
+        #{cooperationUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.SigningAgreement">
+    update SigningAgreement
+    <set>
+      <if test="directionCooperation != null">
+        Direction_cooperation = #{directionCooperation,jdbcType=VARCHAR},
+      </if>
+      <if test="signingTime != null">
+        Signing_time = #{signingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="colleageIncubator != null">
+        Colleage_incubator = #{colleageIncubator,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperationUnit != null">
+        Cooperation_unit = #{cooperationUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        Create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        Modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.SigningAgreement">
+    update SigningAgreement
+    set Direction_cooperation = #{directionCooperation,jdbcType=VARCHAR},
+      Signing_time = #{signingTime,jdbcType=TIMESTAMP},
+      Colleage_incubator = #{colleageIncubator,jdbcType=VARCHAR},
+      Cooperation_unit = #{cooperationUnit,jdbcType=VARCHAR},
+      Create_time = #{createTime,jdbcType=TIMESTAMP},
+      Modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
