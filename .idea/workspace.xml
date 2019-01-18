@@ -2,29 +2,21 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="QAII:war" />
+      <artifact name="QAII:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ef6a496-9566-4b4f-b590-d91cc76585dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/QAII.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/QAII.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qaii/target/QAII.war" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/demonstration/dataindexIndustry.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/demonstration/dataindexIndustry.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/indexIndustry.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/indexIndustry.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/classes/jdbc.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/serviceFirm/serviceFirm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/serviceFirm/serviceFirm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/serviceFirm/serviceFirmAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/serviceFirm/serviceFirmAdd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/serviceFirm/serviceFirmCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/serviceFirm/serviceFirmCheck.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/serviceFirm/serviceFirmEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/serviceFirm/serviceFirmEdit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/logout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/logout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/personnel/adddetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/personnel/adddetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/personnel/editdetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/personnel/editdetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/indexScience.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/indexScience.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/paper/paperAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/paper/paperAdd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/paper/paperEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/paper/paperEdit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/css/stylemainrs.css" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/css/stylemainrs.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/image/personbg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/image/personbg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qaii/target/QAII/js/active.js" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/QAII/js/active.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qaii/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/qaii/target/classes/jdbc.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/qaii/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +29,7 @@
     <session id="1202389431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="36" />
+          <entry key="project.closed" value="38" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.20" value="8" />
@@ -45,24 +37,24 @@
           <entry key="project.open.time.22" value="3" />
           <entry key="project.open.time.23" value="7" />
           <entry key="project.open.time.24" value="3" />
-          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.25" value="2" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="5" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="43" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.opened" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="32" />
           <entry key="iml" value="1" />
-          <entry key="java" value="35" />
+          <entry key="java" value="40" />
           <entry key="js" value="40" />
-          <entry key="jsp" value="196" />
+          <entry key="jsp" value="202" />
           <entry key="properties" value="9" />
           <entry key="xml" value="5" />
         </counts>
@@ -71,8 +63,8 @@
         <counts>
           <entry key="CSS" value="32" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="35" />
-          <entry key="JSP" value="196" />
+          <entry key="JAVA" value="40" />
+          <entry key="JSP" value="202" />
           <entry key="JavaScript" value="40" />
           <entry key="Properties" value="9" />
           <entry key="XML" value="5" />
@@ -83,7 +75,7 @@
           <entry key="css" value="1839" />
           <entry key="java" value="315" />
           <entry key="js" value="1720" />
-          <entry key="jsp" value="4723" />
+          <entry key="jsp" value="4755" />
           <entry key="properties" value="20" />
           <entry key="xml" value="4" />
         </counts>
@@ -92,7 +84,7 @@
         <counts>
           <entry key="CSS" value="1839" />
           <entry key="JAVA" value="315" />
-          <entry key="JSP" value="4723" />
+          <entry key="JSP" value="4755" />
           <entry key="JavaScript" value="1720" />
           <entry key="Properties" value="20" />
           <entry key="XML" value="4" />
@@ -103,38 +95,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/demonstration/dataindexIndustry.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="145" column="15" lean-forward="true" selection-start-line="145" selection-start-column="15" selection-end-line="145" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/logout.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="323">
+              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/css/style.css">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/paper/paperAdd.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="215" column="16" lean-forward="true" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/paperAdd.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="285" column="50" lean-forward="true" selection-start-line="277" selection-start-column="11" selection-end-line="285" selection-end-column="50" />
+            <state relative-caret-position="133">
+              <caret line="166" column="40" lean-forward="true" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="40" />
               <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -144,12 +120,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/paperEdit.jsp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/papermeeting/papermeetingAdd.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8455">
-              <caret line="125" column="33" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
+            <state relative-caret-position="399">
+              <caret line="168" selection-start-line="168" selection-end-line="168" />
               <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
@@ -158,18 +139,30 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/js/commw.js">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/personnel/addPersonnel.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="487" column="13" lean-forward="true" selection-start-line="481" selection-start-column="12" selection-end-line="487" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/js/active.js">
+        <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/hatch/hatch.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="183" column="35" lean-forward="true" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
+            <state relative-caret-position="551">
+              <caret line="404" column="43" lean-forward="true" selection-start-line="404" selection-start-column="43" selection-end-line="404" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/personnel/adddetail.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1786">
+              <caret line="167" column="16" lean-forward="true" selection-start-line="167" selection-start-column="16" selection-end-line="167" selection-end-column="16" />
               <folding>
-                <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,7 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>edit</find>
       <find>test</find>
       <find>patentProcess</find>
       <find>addmumber</find>
@@ -209,6 +201,7 @@
       <find>IndustryName1</find>
       <find>getIndustryDatas</find>
       <find>Industry</find>
+      <find>empIdcard</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -217,11 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/qaii/src/main/webapp/js/researchdata.js" />
-        <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/patent/patentData.jsp" />
-        <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/create/createData.jsp" />
-        <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/brand/brandData.jsp" />
-        <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/fund/fundData.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/research/researchData.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/industry/hatch/hatchEdit.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/papermeeting/papermeeting.jsp" />
@@ -268,11 +256,22 @@
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/css/style.css" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/paperAdd.jsp" />
         <option value="$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/paperEdit.jsp" />
+        <option value="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/personnel/adddetail.jsp" />
+        <option value="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/personnel/addPersonnel.jsp" />
+        <option value="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/hatch/hatch.jsp" />
+        <option value="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/papermeeting/papermeetingAdd.jsp" />
+        <option value="$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/paper/paperAdd.jsp" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -294,7 +293,13 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="216" />
     <option name="y" value="-6" />
     <option name="width" value="1400" />
@@ -307,7 +312,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,45 +322,84 @@
             <path>
               <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="QAII" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="QAII" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
               <item name="qaii" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="QAII" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="QAII" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="QAII" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="industry" type="462c0819:PsiDirectoryNode" />
+              <item name="hatch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="QAII" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="personnel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAII" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qaii" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="QAII" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="science" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="insertIndustryInfo&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547704365019" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547781897215" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/qaii" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -458,10 +501,11 @@
       </method>
     </configuration>
     <configuration name="tomcatqaii" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.90" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:/Program Files/Java/jre1.8.0_121">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8088/QAII/" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="QAII:war">
+        <artifact name="QAII:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/QAII" />
           </settings>
@@ -469,7 +513,8 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_QAII_2" />
-        <option name="HTTP_PORT" value="8087" />
+        <option name="HTTP_PORT" value="8088" />
+        <option name="JNDI_PORT" value="1098" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -527,7 +572,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="QAII:war" />
+          <artifact name="QAII:war exploded" />
         </option>
       </method>
     </configuration>
@@ -588,7 +633,10 @@
       <workItem from="1547532099527" duration="7740000" />
       <workItem from="1547599640915" duration="506000" />
       <workItem from="1547600784591" duration="12477000" />
-      <workItem from="1547686589661" duration="7592000" />
+      <workItem from="1547686589661" duration="10162000" />
+      <workItem from="1547711708597" duration="1807000" />
+      <workItem from="1547715369796" duration="488000" />
+      <workItem from="1547772746341" duration="7294000" />
     </task>
     <servers />
   </component>
@@ -604,12 +652,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="309699000" />
+    <option name="totallyTimeSpent" value="321858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18869936" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19296375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -619,17 +668,17 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21911922" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22234157" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.11493018" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.10526316" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" weight="0.6047261" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Application Servers" order="11" weight="0.32975295" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.2867884" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49946696" weight="0.6047261" />
       <window_info anchor="bottom" id="Spring" order="13" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32975295" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -640,7 +689,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.041044775" />
       <window_info anchor="right" id="JSF" order="9" />
       <window_info anchor="right" id="CDI" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" />
@@ -656,76 +705,6 @@
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/AwardIncubateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/service/impl/AwardIncubateServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardIncubateMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardCollegeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="307" column="82" selection-start-line="307" selection-start-column="82" selection-end-line="307" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/dao/AwardIncubateMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="301" column="83" selection-start-line="301" selection-start-column="83" selection-end-line="301" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/papermumber.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="46" column="135" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/newsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/IndustryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5852">
-          <caret line="409" column="5" lean-forward="true" selection-start-line="409" selection-start-column="5" selection-end-line="409" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/dataindexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/indexNav.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -740,13 +719,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/hatch/hatchmumber.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1387">
-          <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/hatch/hatchmumber.jsp" />
     <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/demonstration/dataindexIndustry.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -837,13 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="274" column="50" selection-start-line="274" selection-start-column="50" selection-end-line="274" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#div#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -858,12 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="111" column="18" lean-forward="true" selection-start-line="111" selection-start-column="18" selection-end-line="111" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -906,9 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="331" column="62" lean-forward="true" selection-start-line="327" selection-start-column="32" selection-end-line="331" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -916,9 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="328" column="62" selection-start-line="328" selection-start-column="62" selection-end-line="328" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -926,9 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -971,10 +922,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/demonstration/dataindexIndustry.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2755">
+          <caret line="145" column="15" selection-start-line="145" selection-start-column="15" selection-end-line="145" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4085">
+          <caret line="215" column="16" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/paperAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5415">
+          <caret line="285" column="50" selection-start-line="277" selection-start-column="11" selection-end-line="285" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/paperEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11020">
+          <caret line="580" column="31" selection-start-line="580" selection-start-column="31" selection-end-line="580" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/EmpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/domain/Govfund.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/util/CountDatetoNowDays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -983,41 +979,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/js/active.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="183" column="35" lean-forward="true" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="3477">
+          <caret line="183" column="35" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/demonstration/dataindexIndustry.jsp">
+    <entry file="file://$PROJECT_DIR$/qaii/src/main/java/com/qaii/controller/DataOverviewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="145" column="15" lean-forward="true" selection-start-line="145" selection-start-column="15" selection-end-line="145" selection-end-column="15" />
+        <state relative-caret-position="152">
+          <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/logout.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="323">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/css/style.css">
+    <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/papermeeting/papermeeting.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="215" column="16" lean-forward="true" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
+        <state relative-caret-position="-4275" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/personnel/addPersonnel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="487" column="13" lean-forward="true" selection-start-line="481" selection-start-column="12" selection-end-line="487" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/paperAdd.jsp">
+    <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/personnel/adddetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="285" column="50" lean-forward="true" selection-start-line="277" selection-start-column="11" selection-end-line="285" selection-end-column="50" />
+        <state relative-caret-position="-1786">
+          <caret line="167" column="16" lean-forward="true" selection-start-line="167" selection-start-column="16" selection-end-line="167" selection-end-column="16" />
           <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/industry/hatch/hatch.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="404" column="43" lean-forward="true" selection-start-line="404" selection-start-column="43" selection-end-line="404" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/papermeeting/papermeetingAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="168" selection-start-line="168" selection-end-line="168" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -1026,11 +1046,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qaii/src/main/webapp/WEB-INF/page/science/paper/paperEdit.jsp">
+    <entry file="file://$PROJECT_DIR$/qaii/target/QAII/WEB-INF/page/science/paper/paperAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8455">
-          <caret line="125" column="33" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
+        <state relative-caret-position="133">
+          <caret line="166" column="40" lean-forward="true" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="40" />
           <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>

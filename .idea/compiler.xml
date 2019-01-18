@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="QAII" target="1.7" />
     </bytecodeTargetLevel>
   </component>
