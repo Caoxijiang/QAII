@@ -37,7 +37,7 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-		<span class="limit">合作情况管理( <span id="countnum"> </span> )</span>
+		<span class="limit">签订协议情况( <span id="countnum"> </span> )</span>
 		<a href="javascript:;" onclick="srchange('innovateAdd.do')">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
@@ -62,9 +62,9 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="unitName">我院/公司名称</option>
-			<option value="cooperationName">合作单位名称</option>
-			<option value="protocolName">签订的协议名称</option>
+			<option value="unitName">合作方向</option>
+			<option value="cooperationName">协议签订时间</option>
+			<option value="protocolName">青岛智能院及孵化公司</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -79,11 +79,10 @@
 	<div class="act">
 		<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 		<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-		<div class="int-inline"><input id="unitName"  type="checkbox" value="我院/公司名称" checked="flase"/><lable>我院/公司名称</lable></div>
-		<div class="int-inline"><input id="cooperationName"  type="checkbox" value="合作单位名称" checked/><lable>合作单位名称</lable></div>
-		<div class="int-inline"><input id="protocolName"  type="checkbox" value="签订的协议名称" checked/><lable>签订的协议名称</lable></div>
-		<div class="int-inline"><input id="signTime"  type="checkbox" value="签订时间" checked/><lable>签订时间</lable></div>
-		<div class="int-inline"><input id="cooperationContent"  type="checkbox" value="合作内容/方向" checked/><lable>合作内容/方向</lable></div>
+		<div class="int-inline"><input id="unitName"  type="checkbox" value="合作方向" checked="flase"/><lable>合作方向</lable></div>
+		<div class="int-inline"><input id="cooperationName"  type="checkbox" value="协议签订时间" checked/><lable>协议签订时间</lable></div>
+		<div class="int-inline"><input id="protocolName"  type="checkbox" value="青岛智能院及孵化公司" checked/><lable>青岛智能院及孵化公司</lable></div>
+		<div class="int-inline"><input id="signTime"  type="checkbox" value="合作单位" checked/><lable>合作单位</lable></div>
 		<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 	</div>
 </div>
@@ -123,14 +122,13 @@
             cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
             cols: [[ //标题栏
                 {type:'checkbox',fixed: 'left'},
-                {field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-                {field: 'unitName', title: '我院/公司名称',fixed: 'left',width:200},
-                {field: 'cooperationName', title: '合作单位名称',width:150},
-                {field: 'protocolName', title: '签订的协议名称',sort: true,width:180},
-                {field: 'signTime', title: '签订时间',sort: true,width:180},
-                {field: 'cooperationContent', title: '合作内容/方向',sort: true,width:180},
+                {field: 'id', title: '序号',type:'numbers',fixed: 'left',width:80},
+                {field: 'unitName', title: '合作方向',fixed: 'left',width:120},
+                {field: 'cooperationName', title: '协议签订时间',width:180},
+                {field: 'protocolName', title: '青岛智能院及孵化公司',sort: true,width:320},
+                {field: 'signTime', title: '合作单位',sort: true,width:180},
                 {field: 'remark', title: '备注',width:220},
-                {field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
+                {field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:200}
             ]],
             //表格数据
             data:obj.data,
@@ -216,11 +214,11 @@
                             }
                         }
                         if(check=="unitName"){
-                            alert("搜索'我院/公司名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+                            alert("搜索'合作方向'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
                         }else if(check=="cooperationName"){
-                            alert("搜索'合作单位名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+                            alert("搜索'协议签订时间'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
                         }else if(check=="protocolName"){
-                            alert("搜索'签订的协议名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+                            alert("搜索'青岛智能院及孵化公司'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
                         }
                     }
                 }//搜索结束
@@ -279,33 +277,50 @@
         });
 
         //监听顶部添加删除操作
-        var arr=[];
-        //var arr=[];
-        table.on('checkbox(demo)', function(obj){
-            var data = obj.data //获得当前行数据
-            arr.push(data.id);
+        var $ = layui.$, active = {
+            delmore: function () { //获取选中数据
+                confirm("请慎重考虑，删除数据不可恢复");
+                var checkStatus = table.checkStatus('testReload')
+                    , data = checkStatus.data;
+                var arr=[];
+                for (var id of data){
+                    var ids=id.id;
+                    arr.push(ids)
+                }
+                if(arr.length!=0){
+                    dell("deleteCooperation.do",arr);
+                }else {
+                    layer.alert("请选择要删除的内容");
+                }
+            }
+        }
 
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
         });
 
-        $("#dellist").on('click', function(){
-            alert("请慎重考虑，删除数据不可恢复");
+        function dell(url,arr) {
             $.post({
-                url:"deleteCooperation.do",
+                url:url,
                 data:{
                     "requestDate" : arr
                 },
                 success:function(data){
 
                     if(data.status == 1){
-                        alert('删除成功，请刷新查看');
+                        // alert('删除成功，请刷新查看');
+                        layer.alert("删除成功");
                         window.location.reload();
                     } else {
-                        alert('删除成功，请刷新查看'); return false;
+                        layer.alert("删除失败");
+                        //alert('删除成功，请刷新查看'); return false;
                         window.location.reload();
                     }
                 }
             })
-        });
+        }
 
     });
 </script>

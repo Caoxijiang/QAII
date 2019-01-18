@@ -200,6 +200,7 @@ ul,li{
 	right: 100px;
 	top: 30px;
 	color: #fff;
+	opacity: 0.3;
 }
 .back{
 	position:absolute;

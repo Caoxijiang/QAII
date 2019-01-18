@@ -83,7 +83,7 @@
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
 	<div class="int-inline"><input id="ministryName"  type="checkbox" value="服务企业名称" checked="true"/><lable>服务企业名称</lable></div>
-	<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="服务企业性质" checked="flase"/><lable>服务企业性质</lable></div>
+	<%--<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="服务企业性质" checked="flase"/><lable>服务企业性质</lable></div>--%>
 	<div class="int-inline"><input id="contactPerson"  type="checkbox" value="服务企业联系人名称" checked/><lable>服务企业联系人名称</lable></div>
 	<div class="int-inline"><input id="contactMethod"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
 	<div class="int-inline"><input id="ministryLocation"  type="checkbox" value="服务企业地址" checked/><lable>服务企业地址</lable></div>
@@ -133,7 +133,7 @@ layui.use('table', function(obj){
     	{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
 		{field: 'ministryName', title: '服务企业名称',fixed: 'left',width:150},
-		{field: 'ministryProperty', title: '服务企业性质',width:150},
+		/*{field: 'ministryProperty', title: '服务企业性质',width:150},*/
 		{field: 'contactPerson', title: '服务企业联系人名称',sort: true,width:120},
 		{field: 'contactMethod', title: '联系方式',sort: true,width:100},
 		{field: 'ministryLocation', title: '服务企业地址',sort: true,width:150},
@@ -230,8 +230,6 @@ layui.use('table', function(obj){
   			 }
   			if(check=="ministryName"){
   				alert("搜索'服务企业名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="ministryProperty"){
-  				alert("搜索'服务企业性质'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="ministryLocation"){
   				alert("搜索'服务企业地址'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}else if(check=="ownselfUnit"){
@@ -298,33 +296,50 @@ layui.use('table', function(obj){
   });
 
 	//监听顶部添加删除操作
-	var arr=[];
-	//var arr=[];
-	table.on('checkbox(demo)', function(obj){
-		 var data = obj.data //获得当前行数据
-		 arr.push(data.id);		 
-		 
-	  });
-	
-	$("#dellist").on('click', function(){
-		alert("请慎重考虑，删除数据不可恢复");
-		$.post({
-		  	url:"deleteMinistry.do",
-		  	data:{
-		  		"requestDate" : arr
-		  	},
-		  	success:function(data){
+    var $ = layui.$, active = {
+        delmore: function () { //获取选中数据
+            confirm("请慎重考虑，删除数据不可恢复");
+            var checkStatus = table.checkStatus('testReload')
+                , data = checkStatus.data;
+            var arr=[];
+            for (var id of data){
+                var ids=id.id;
+                arr.push(ids)
+            }
+            if(arr.length!=0){
+                dell("deleteMinistry.do",arr);
+            }else {
+                layer.alert("请选择要删除的内容");
+            }
+        }
+    }
 
-		        if(data.status == 1){
-		            alert('删除成功，请刷新查看');
-		            window.location.reload();
-		        } else {
-		            alert('删除成功，请刷新查看'); return false;
-		            window.location.reload();
-		        }
-		    }
-		  }) 
-	});
+
+    $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
+
+    function dell(url,arr) {
+        $.post({
+            url:url,
+            data:{
+                "requestDate" : arr
+            },
+            success:function(data){
+
+                if(data.status == 1){
+                    // alert('删除成功，请刷新查看');
+                    layer.alert("删除成功");
+                    window.location.reload();
+                } else {
+                    layer.alert("删除失败");
+                    //alert('删除成功，请刷新查看'); return false;
+                    window.location.reload();
+                }
+            }
+        })
+    }
 
 });
 </script>

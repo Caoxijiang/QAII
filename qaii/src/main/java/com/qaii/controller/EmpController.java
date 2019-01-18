@@ -48,43 +48,43 @@ public class EmpController {
 	@Resource
 	private EmpInfoService empInfoService;
 	@Resource
-	private EmpAvatarService empAvatarService; 
+	private EmpAvatarService empAvatarService;
 	@Resource
 	private DeptInfoService deptInfoService;
-	
+
 	//修改员工信息页面
 	@RequestMapping(value="updateEmpInfo.do",produces="application/json;charset=UTF-8")
 	public String updateEmpInfo() {
 		return "page/personnel/editdetail";
 	}
-	
+
 
 
 	@RequestMapping(value="delldellEmpInfo.do",produces="application/json;charset=UTF-8")
 	public String dellEmpInfo() {
 		return "page/personnel/delPersonnel";
 	}
-	
+
 
 	@RequestMapping(value="seeEmpInfo.do",produces="application/json;charset=UTF-8")
 	public String seeEmpInfo() {
-		
+
 		return "page/personnel/checkdetail";
-		
+
 	}
-	
-	
+
+
 	//添加员工信息接口
 	//@ResponseBody
     @RequestMapping(value="addEmpInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public String addEmpInfo(HttpServletRequest req, EmpInfo empInfo) throws ParseException {
-		 HttpSession session = req.getSession();  
-	     User user = (User)session.getAttribute("user");  
+		 HttpSession session = req.getSession();
+	     User user = (User)session.getAttribute("user");
 	     if(user!=null) {
 	    	 empInfo.setEmpReviewstatus("通过");
 	     }else {
 	    	 empInfo.setEmpReviewstatus("待审核");
-	     }		
+	     }
 
 		EmpInfo(req, empInfo);
 		empInfo.setEmpStat("1");
@@ -92,21 +92,21 @@ public class EmpController {
 		empInfo.setEmpTryStatus("1");
 		empInfo.setEmpContractStatus("1");
 		CountDatetoNowDays.TranstoStamp(empInfo);
-		
+
 		int row = empInfoService.insert(empInfo);
 		if(row>0) {
 			Map<String,String> map=new HashMap<>();
 			 map.put("url","intoPerSys.do");
 			 map.put("data", "提交成功");
-			 
+
 			//return new JsonResult();
 			 return "page/science/add-succesd";
 		}else {
-			
+
 			return "page/science/add-faild";
 			//return new JsonResult();
 		}
-		
+
 	}
 
 
@@ -117,22 +117,22 @@ public class EmpController {
 
 		//员工图片上传
 		@ResponseBody
-	 	@RequestMapping("/EmpAupload.do")  
-	    public Map<String,String> upload(@RequestParam("file") MultipartFile file , EmpAvatarinfo EMpA,HttpServletRequest request) throws Exception{  
-	  //  System.out.println(request.getParameter("name"));  
+	 	@RequestMapping("/EmpAupload.do")
+	    public Map<String,String> upload(@RequestParam("file") MultipartFile file , EmpAvatarinfo EMpA,HttpServletRequest request) throws Exception{
+	  //  System.out.println(request.getParameter("name"));
 	    Map<String,String> result=new HashMap<>();
 	    if(file.isEmpty()) {
 	    	result.put("code", "1");
 	    	result.put("msg", "文件为空");
 	    }
-        String uuid = UUID.randomUUID().toString().replaceAll("-","");    
-        //获得文件类型（可以判断如果不是图片，禁止上传）    
-        String contentType=EMpA.getFile().getContentType();    
-        //获得文件后缀名   
-        String suffixName=contentType.substring(contentType.indexOf("/")+1);  
-        //得到 文件名  
-        String fileName=uuid+"."+suffixName; 
-	    
+        String uuid = UUID.randomUUID().toString().replaceAll("-","");
+        //获得文件类型（可以判断如果不是图片，禁止上传）
+        String contentType=EMpA.getFile().getContentType();
+        //获得文件后缀名
+        String suffixName=contentType.substring(contentType.indexOf("/")+1);
+        //得到 文件名
+        String fileName=uuid+"."+suffixName;
+
 	  //  String fileName=file.getOriginalFilename();
 	    int size=(int)file.getSize();
 	  //  System.out.println(fileName+":---"+size);
@@ -159,9 +159,9 @@ public class EmpController {
 			result.put("code", "1");
 	    	result.put("msg", "上传失败");
 		}
-	    
-	    return result;  
-    
+
+	    return result;
+
 	    }
 
 
@@ -170,8 +170,8 @@ public class EmpController {
 
 
 
-	
-	
+
+
 	//获取员工信息接口
 	@ResponseBody
 	@RequestMapping(value="findAllEmpInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
@@ -180,7 +180,7 @@ public class EmpController {
 		for(EmpInfo emp:empInfo) {
 			CountDatetoNowDays.TranstoDate(emp);
 		}
-	
+
 		int count =empInfo.size();
 			if(empInfo!=null) {
 				return Layui.data(count, empInfo);
@@ -188,8 +188,8 @@ public class EmpController {
 				return Layui.data(count, empInfo);
 			}
 	}
-	
-	
+
+
 	@RequestMapping(value="getallinjobEmp.do",method=RequestMethod.POST)
 	@ResponseBody
 	public Layui getallinjobEmp(HttpServletRequest req) {
@@ -204,12 +204,12 @@ public class EmpController {
 			return Layui.data(count, empInfo);
 		}
 	}
-	
-	
+
+
 	@ResponseBody
 	@RequestMapping(value="seeEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public JsonResult seeEmpInfos(EmpInfo emp,HttpServletRequest req) {	
-		
+	public JsonResult seeEmpInfos(EmpInfo emp,HttpServletRequest req) {
+
 		int userid=Integer.parseInt(req.getParameter("userId"));
 		//emp.setId();
 		emp = empInfoService.findEmpinfoAndAvatarByid(userid);
@@ -219,14 +219,14 @@ public class EmpController {
 		}else {
 			return new JsonResult();
 		}
-		
+
 	}
-	
-	
+
+
 	//修改员工信息
 //	@ResponseBody
 	@RequestMapping(value="updateEmpInfos.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-	public String updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) throws ParseException {	
+	public String updateEmpInfos(EmpInfo empInfo,HttpServletRequest req) throws ParseException {
 		EmpInfo(req, empInfo);
 		empInfo.setEmpStat(req.getParameter("empStat"));
 		empInfo.setEmpDepartureTime(req.getParameter("empDepartureTime"));
@@ -239,35 +239,35 @@ public class EmpController {
 			//String data="更新成功";
 			 return "page/science/add-succesd";
 		}else {
-			
+
 			return "page/science/add-faild";
 			//return new JsonResult();
 		}
-		
-		
-		
+
+
+
 	}
-	
+
 	//删除员工信息
     @ResponseBody
     @RequestMapping(value="DellempInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
     public JsonResult DellempInfo(@RequestParam(value = "requestDate[]") Integer[] eid ){
-    	
+
      	int row=empInfoService.delete(eid);
     	if(row!=0) {
     		return  new JsonResult(row);
     	}else {
     		return  new JsonResult();
-    		
+
     	}
-        
+
     }
-	
+
 	//离职员工信息
     @ResponseBody
     @RequestMapping(value="dellempInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
     public JsonResult dellempInfo(@RequestParam(value = "requestDate") Integer id ){
-    	
+
     	long time=System.currentTimeMillis();
     	EmpInfo emp=new EmpInfo();
     	emp.setId(id);
@@ -277,12 +277,12 @@ public class EmpController {
     		return  new JsonResult(row);
     	}else {
     		return  new JsonResult();
-    		
+
     	}
-        
+
     }
-    
-    
+
+
 	//获取离职员工信息接口
 	@ResponseBody
 	@RequestMapping(value="dellEMpinfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
@@ -298,19 +298,19 @@ public class EmpController {
 				return Layui.data(count, empInfo);
 			}
 	}
-	
-	
+
+
 	//根据时间段查询员工列表
 	@ResponseBody
 	@RequestMapping(value="findTimpEMpinfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	public Layui findTimpEMpinfo(HttpServletRequest req) throws ParseException {
 		//EmpInfo emp=new EmpInfo();
-		
-		
+
+
 		String startTime=req.getParameter("startTime");
-		String endTime=req.getParameter("endTime");	
-		 
-		
+		String endTime=req.getParameter("endTime");
+
+
 		List<EmpInfo> empInfo=empInfoService.findTimpEMpinfo(CountDatetoNowDays.SDatetoStamp(startTime), CountDatetoNowDays.SDatetoStamp(endTime));
 		for (EmpInfo emps:empInfo) {
 			CountDatetoNowDays.TranstoDate(emps);
@@ -323,13 +323,13 @@ public class EmpController {
 				return Layui.data(count, empInfo);
 			}
 	}
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 	private void InsertEmpAvator(EmpAvatarinfo EMpA, Map<String, String> result, File dest) {
 		int row=empAvatarService.insert(EMpA);
 		if(row > 0) {
@@ -339,7 +339,7 @@ public class EmpController {
 				result.put("msg", "上传成功");
 				result.put("eid",EMpA.getId().toString() );
 				result.put("url", dest.getPath());
-				
+
 			}else {
 				result.put("code", "1");
 		    	result.put("msg", "上传失败");
@@ -348,14 +348,14 @@ public class EmpController {
 			result.put("code", "1");
 	    	result.put("msg", "上传失败");
 		}
-	}  
-	
-	
-	
+	}
+
+
+
 
 	private void EmpInfo(HttpServletRequest req, EmpInfo empInfo) throws ParseException {
 		//System.out.println("---------------:"+);
-		
+
 		empInfo.setEid(req.getParameter("imageVal"));
 		empInfo.setEmpName(req.getParameter("empName"));
 		empInfo.setEmpGender(req.getParameter("empGender"));
@@ -401,11 +401,11 @@ public class EmpController {
 		empInfo.setEmpOthereducationschool(req.getParameter("empOthereducationschool"));
 		empInfo.setEmpOthereducationpro(req.getParameter("empOthereducationpro"));
 		empInfo.setEmpOthergraduationtime(req.getParameter("empOthergraduationtime"));
-		
-		
+
+
 		//CountDatetoNowDays.TranstoStamp(empInfo);
 	}
-	
+
 	//取得每个月的新入职、离职、净增长、院总人数
 	public Map<String, Integer> geteachMonthMsg(String date) throws ParseException{
 		Map<String, Integer> result=new HashMap<>();
@@ -421,7 +421,7 @@ public class EmpController {
 		result.put("Total", empInfoService.countnumofcollege(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this"))));
 		return result;
 	}
-	
+
 	//取得人才队伍柱状图参数
 	public Map<String, Integer> gettalentsTeam(String date) throws ParseException{
 		List<DeptInfo>list=deptInfoService.findAllRoleList();
@@ -437,21 +437,21 @@ public class EmpController {
 		result.put("Incnum", empInfoService.countnumofIncubationComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this")))
 				-empInfoService.countnumofcollegeComp(CountDatetoNowDays.SDatetoStamp(map.get("last")), CountDatetoNowDays.SDatetoStamp(map.get("this")),s));
 		return result;
-		
+
 	}
-		
+
 	//取得人才队伍饼状图数据方法
 	public int gettalentsdept(String dept){
 		return empInfoService.countnumfoTalents(dept);
 	}
-	
+
 	//取得高端人才数据方法
 	public int gethighttalents(String title) {
 		return empInfoService.countHigherTalents(title);
-		
+
 	}
-		
-	//取得所有合同期到期日期小于30天的人员名单	
+
+	//取得所有合同期到期日期小于30天的人员名单
 	@RequestMapping(value="getContractMsg.do",method=RequestMethod.POST)
 	@ResponseBody
 	public List<EmpInfo> getContractEndtimePerson(@RequestParam("date") String date) throws ParseException {
@@ -462,7 +462,7 @@ public class EmpController {
 		}
 		return list;
 	}
-			
+
 	//取得所有试用期到期小于30天的人员名单
 	@RequestMapping(value="getTryMsg.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -474,16 +474,16 @@ public class EmpController {
 		}
 		return list;
 	}
-	
+
 	//获取当前包括当前月的前12个月的日期
 	@RequestMapping(value="get12Month.do",method=RequestMethod.POST)
 	@ResponseBody
 	public List<String> get12Month(@RequestParam("date")String date) throws ParseException{
 		List<String> list=new ArrayList<>();
 		list=CountDatetoNowDays.getpremonth(date, 12);
-		return list;		
+		return list;
 	}
-		
+
 	//获取包括当前年的前8年的日期
 	@RequestMapping(value="get8Years.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -493,7 +493,7 @@ public class EmpController {
 		list=CountDatetoNowDays.getpreYears(date, 8);
 		return list;
 	}
-		
+
 	//获取人事管理主页曲线图的数据（本月人数增减情况）
 	@RequestMapping(value="geteachMonthMsg.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -503,7 +503,7 @@ public class EmpController {
 			result.add(geteachMonthMsg(str));
 		}
 		return result;
-		
+
 	}
 	//获取人事管理主页柱形图的数据（人才队伍）
 	@ResponseBody
@@ -514,9 +514,9 @@ public class EmpController {
 			result.add(gettalentsTeam(str));
 		}
 		return result;
-		
+
 	}
-		
+
 	//获取高端人才数据
 	@RequestMapping(value="getTitleMsg.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	@ResponseBody
@@ -538,7 +538,7 @@ public class EmpController {
 		}
 		return result;
 	}
-	
+
 	//获取审核状态为待审核的员工信息
 	@RequestMapping(value="getstatusbyreview.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	@ResponseBody
@@ -551,7 +551,7 @@ public class EmpController {
 		return Layui.data(count, result);
 
 	}
-	
+
 	//获取身份证到期时间小于30天的员工
 	@ResponseBody
 	@RequestMapping(value="getiDexpire.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
@@ -563,9 +563,9 @@ public class EmpController {
 		}
 		int count =result.size();
 		return Layui.data(count, result);
-		
+
 	}
-	
+
 	//获取消息通知页面试用期到期员工接口
 	@RequestMapping(value="getTryemp.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
 	@ResponseBody
@@ -575,7 +575,7 @@ public class EmpController {
 		int count =result.size();
 		return Layui.data(count, result);
 	}
-	
+
 	//获取消息通知页面合同期到期员工接口
 	@ResponseBody
 	@RequestMapping(value="getConemp.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")
@@ -585,14 +585,14 @@ public class EmpController {
 		int count =result.size();
 		return Layui.data(count, result);
 	}
-	
+
 	//更新员工的审核状态为通过
 	@RequestMapping(value="upReview.do",method=RequestMethod.POST)
 	@ResponseBody
 	public int upReview(@RequestParam("msg")String msg,@RequestParam("id")int id) {
 		return empInfoService.updateReview(msg, id);
 	}
-	
+
 	//通过excel插入数据库数据的接口
 	@RequestMapping(value="getfile.do",method=RequestMethod.POST)
 	@ResponseBody
@@ -671,22 +671,22 @@ public class EmpController {
 					emp.setEmpJobtitleobtaintime(emp.getEmpJobtitleobtaintime().replace("/", "-"));
 					if(emp.getEmpDepartureTime()!=null)
 					emp.setEmpDepartureTime(emp.getEmpDepartureTime().replace("/", "-"));
-					CountDatetoNowDays.TranstoStamp(emp);				
+					CountDatetoNowDays.TranstoStamp(emp);
 					empInfoService.insert(emp);
 					result=result.data(1, null);
-					
+
 				}
 			}
 		}catch(ParseException e) {
 			wookbook.close();
 			e.printStackTrace();
-			throw new CustomException("数据库异常!请检查文件格式!");			
+			throw new CustomException("数据库异常!请检查文件格式!");
 		}
 		wookbook.close();
 		return result;
-		
+
 	}
-	
+
 	public EmpInfo setEmpInfovalue(EmpInfo empInfo,List<String> value) {
 		empInfo.setEmpNum(value.get(0));
 		empInfo.setEmpName(value.get(1));
