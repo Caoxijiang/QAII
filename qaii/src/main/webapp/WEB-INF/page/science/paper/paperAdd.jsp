@@ -73,9 +73,9 @@
 			</div>
 			<div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">卷号，期号，页码&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">卷号，期号，页码</label>
 					<div class="layui-input-block">
-						<input type="text" name="pageNumber" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="pageNumber" autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -91,7 +91,13 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">收录类别&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="recordType" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<%--<input type="text" name="recordType" lay-verify="required" autocomplete="off"  class="layui-input input">--%>
+							<select name="recordType" lay-search="" class="input">
+								<option value="">请选择</option>
+								<option value="SCI">SCI</option>
+								<option value="EI">EI</option>
+								<option value="会议期刊">会议期刊</option>
+							</select>
 					</div>
 				</div>
 		   </div>
@@ -99,7 +105,15 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="level" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<%--<input type="text" name="level" lay-verify="required" autocomplete="off"  class="layui-input input">--%>
+							<select name="level" lay-search="" class="input">
+								<option value="">请选择</option>
+								<option value="前5%">前5%</option>
+								<option value="5%-10%">5%-10%</option>
+								<option value="10%-25%">10%-25%</option>
+								<option value="国内一般">国内一般</option>
+								<option value="国外一般">国外一般</option>
+							</select>
 					</div>
 				</div>
 		   </div>
@@ -189,7 +203,7 @@
 		</div>
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
-				<label class="layui-form-label">检索证明&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">检索证明</label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
 					  <button type="button" class="layui-btn layui-btn-normal" id="test10">选择文件</button>
@@ -262,14 +276,14 @@
 	    let htmls="<tr><td><div class='layui-input-block'><select name='patRemission' lay-search='' class='input addselect'>" +
             "<option value=''>请选择作者排位</option>" +
             "<option value='第一作者'>第一作者</option>" +
+            "<option value='通讯作者'>通讯作者</option>" +
+            "<option value='第一作者和通讯作者'>第一作者和通讯作者</option>" +
             "<option value='第二作者'>第二作者</option>" +
             "<option value='第三作者'>第三作者</option>" +
             "<option value='第四作者'>第四作者</option>" +
             "<option value='第五作者'>第五作者</option>" +
             "<option value='第六作者'>第六作者</option>" +
-            "<option value='第七作者'>第七作者</option>" +
-            "<option value='第八作者'>第八作者</option>" +
-            "<option value='通讯作者'>通讯作者</option>" +
+            "<option value='其他作者'>其他作者</option>" +
             "</select>" +
 				/*"<div class='layui-form-select layui-form-selected'>"+
 					"<div class='layui-select-title'>"+

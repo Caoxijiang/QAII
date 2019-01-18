@@ -85,9 +85,9 @@
 			</div>
 			<div class="layui-col-md4">
 				<div class="layui-form-item">
-					<label class="layui-form-label">卷号，期号，页码&nbsp;<span class="star">*</span></label>
+					<label class="layui-form-label">卷号，期号，页码</label>
 					<div class="layui-input-block">
-						<input type="text" name="pageNumber" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<input type="text" name="pageNumber"  autocomplete="off"  class="layui-input input">
 					</div>
 				</div>
 		   </div>
@@ -103,7 +103,12 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">收录类别&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="recordType" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<select name="recordType" lay-search="" class="input">
+							<option value="">请选择</option>
+							<option value="SCI">SCI</option>
+							<option value="EI">EI</option>
+							<option value="会议期刊">会议期刊</option>
+						</select>
 					</div>
 				</div>
 		   </div>
@@ -111,7 +116,14 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">级别&nbsp;<span class="star">*</span></label>
 					<div class="layui-input-block">
-						<input type="text" name="level" lay-verify="required" autocomplete="off"  class="layui-input input">
+						<select name="level" lay-search="" class="input">
+							<option value="">请选择</option>
+							<option value="前5%">前5%</option>
+							<option value="5%-10%">5%-10%</option>
+							<option value="10%-25%">10%-25%</option>
+							<option value="国内一般">国内一般</option>
+							<option value="国外一般">国外一般</option>
+						</select>
 					</div>
 				</div>
 		   </div>
