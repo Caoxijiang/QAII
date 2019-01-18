@@ -150,18 +150,11 @@ public class IndustryController {
 	public String innovateAdd(){
 		return "page/industry/innovate/innovateAdd";
 	}
-
 	//合作情况管理界面重新上传
 	@RequestMapping("/innovatefilereload.do")
 	public String innovatefilereload(){
 		return "page/industry/innovate/innovatefilereload";
 	}
-	//消息管理
-	@RequestMapping("/indnews.do")
-	public String indnews(){
-		return "page/industry/indnews";
-	}
-
 	//合作情况管理界面查看详情
 	@RequestMapping("/innovateCheck.do")
 	public String innovateCheck(){
@@ -171,6 +164,65 @@ public class IndustryController {
 	@RequestMapping("/innovateEdit.do")
 	public String innovateEdit(){
 		return "page/industry/innovate/innovateEdit";
+	}
+
+	//合作情况管理界面
+	@RequestMapping("/innovateMeeting.do")
+	public String innovateMeeting(){
+		return "page/industry/innovateMeeting/innovateMeeting";
+	}
+	//合作情况管理界面添加
+	@RequestMapping("/innovateMeetingAdd.do")
+	public String innovateMeetingAdd(){
+		return "page/industry/innovateMeeting/innovateMeetingAdd";
+	}
+	//合作情况管理界面重新上传
+	@RequestMapping("/innovateMeetingfilereload.do")
+	public String innovateMeetingfilereload(){
+		return "page/industry/innovateMeeting/innovateMeetingfilereload";
+	}
+	//合作情况管理界面查看详情
+	@RequestMapping("/innovateMeetingCheck.do")
+	public String innovateMeetingCheck(){
+		return "page/industry/innovateMeeting/innovateMeetingCheck";
+	}
+	//合作情况管理界面修改
+	@RequestMapping("/innovateMeetingEdit.do")
+	public String innovateMeetingEdit(){
+		return "page/industry/innovateMeeting/innovateMeetingEdit";
+	}
+
+	//合作情况管理界面
+	@RequestMapping("/innovateDiscussion.do")
+	public String innovateDiscussion(){
+		return "page/industry/innovateDiscussion/innovateDiscussion";
+	}
+	//合作情况管理界面添加
+	@RequestMapping("/innovateDiscussionAdd.do")
+	public String innovateDiscussionAdd(){
+		return "page/industry/innovateDiscussion/innovateDiscussionAdd";
+	}
+	//合作情况管理界面重新上传
+	@RequestMapping("/innovateDiscussionfilereload.do")
+	public String innovateDiscussionfilereload(){
+		return "page/industry/innovateDiscussion/innovateDiscussionfilereload";
+	}
+	//合作情况管理界面查看详情
+	@RequestMapping("/innovateDiscussionCheck.do")
+	public String iinnovateDiscussionCheck(){
+		return "page/industry/innovateDiscussion/innovateDiscussionCheck";
+	}
+	//合作情况管理界面修改
+	@RequestMapping("/innovateDiscussionEdit.do")
+	public String innovateDiscussionEdit(){
+		return "page/industry/innovateDiscussion/innovateDiscussionEdit";
+	}
+
+
+	//消息管理
+	@RequestMapping("/indnews.do")
+	public String indnews(){
+		return "page/industry/indnews";
 	}
 
 	//院获奖情况界面
