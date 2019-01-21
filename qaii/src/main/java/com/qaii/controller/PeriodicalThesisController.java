@@ -235,8 +235,12 @@ public class PeriodicalThesisController {
 			throw new CustomException("电子版文件不能为空!");
 		}
 		if (files[1].isEmpty()) {
-//			InsertCertified thd = new InsertCertified(record);
-//			thd.start();
+			PeriodicalThesisFile file = new PeriodicalThesisFile();
+			file.setPath("null");
+			file.setName("null");
+			file.setStyle("certified");
+			file.setTid(record.getId());
+			fileService.insertMessage(file);
 		}
 		PeriodicalThesisFile file = new PeriodicalThesisFile();
 		for (int i = 0; i < files.length; i++) {

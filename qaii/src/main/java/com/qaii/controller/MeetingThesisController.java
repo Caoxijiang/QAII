@@ -205,8 +205,12 @@ public class MeetingThesisController {
             throw new CustomException("电子版文件不能为空!");
         }
         if (files[1].isEmpty()) {
-            Service.deleteMessages(new Integer[]{(record.getId()).intValue()});
-            throw new CustomException("检索文件不能为空!");
+            MeetingThesisFile file = new MeetingThesisFile();
+            file.setPath("null");
+            file.setName("null");
+            file.setStyle("certified");
+            file.setTid(record.getId());
+            fileService.insertMessage(file);
         }
         if (files[0].getSize() == 0)
             return 0;
