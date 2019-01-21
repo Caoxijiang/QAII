@@ -37,7 +37,7 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-		<span class="limit">合作情况管理( <span id="countnum"> </span> )</span>
+		<span class="limit">参加会议情况( <span id="countnum"> </span> )</span>
 		<a href="javascript:;" onclick="srchange('innovateAdd.do')">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
