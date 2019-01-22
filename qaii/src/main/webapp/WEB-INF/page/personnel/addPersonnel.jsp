@@ -218,8 +218,6 @@ layui.use(['table','laydate'], function(obj){
 		{field: 'empRemarks', title: '备注',sort: true,width:200},
 		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
     ]],
-    
-    
 	  //表格数据
     data:obj.data,
     done: function(res, curr, count){
@@ -227,9 +225,9 @@ layui.use(['table','laydate'], function(obj){
         console.log(count+"总数");
         }
   });
-  //alert(JSON.stringify(obj.cache.testReload[0]))
-	//添加筛选功能
 
+
+	//添加筛选功能
   var $ = layui.$, active = {
       delmore: function () { //获取选中数据
           confirm("请慎重考虑，删除数据不可恢复");
@@ -247,8 +245,7 @@ layui.use(['table','laydate'], function(obj){
           }
       },
       reload: function(){
-        var demoReload = $('#demoReload');
-        var key=demoReload.val();/*关键字*/
+          var demoReload = $('#demoReload');var key=demoReload.val();/*关键字*/
   	  var check=$('#switch').val();/*选择提示词*/
   	  var trlen=($(".layui-table tr").length)/3;/*行数*/
   	  var num=$(".layui-table tr:eq(0) th").length-1;/*显示的列元素个数*/
@@ -326,16 +323,30 @@ layui.use(['table','laydate'], function(obj){
   				alert("搜索'性别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}
   		  }
-  	    }//搜索结束
-
+  	    }//搜索结束	
+      },
+      delmore: function () { //获取选中数据
+          confirm("请慎重考虑，删除数据不可恢复");
+          var checkStatus = table.checkStatus('testReload')
+              , data = checkStatus.data;
+          var arr=[];
+          for (var id of data){
+              var ids=id.id;
+              arr.push(ids)
+          }
+          if(arr.length!=0){
+              dell("DellempInfo.do",arr);
+          }else {
+              layer.alert("请选择要删除的内容");
+          }
       }
     };
 
-    $('#search').on('click', function(){
-//  	window.location.reload();//刷新当前页面.
-      var type = $(this).data('type');
-      active[type] ? active[type].call(this) : '';
+    $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
     });
+
     //页面数据刷新
     $('#pelupdate').on('click', function(){
     	window.location.reload();
@@ -411,21 +422,6 @@ layui.use(['table','laydate'], function(obj){
          });
     }
   });
-
-	//监听顶部添加删除操作
-	var arr=[];
-	//var arr=[];
-	table.on('checkbox(demo)', function(obj){
-		 var data = obj.data //获得当前行数据
-		 arr.push(data.id);		 
-		 
-	  });
-
-
-    $('.demoTable .layui-btn').on('click', function(){
-        var type = $(this).data('type');
-        active[type] ? active[type].call(this) : '';
-    });
 
     function dell(url,arr) {
         $.post({

@@ -773,8 +773,8 @@ public class IndustryController {
 		incubator.setHatchingTime(CountDatetoNowDays.StringConvertToDate(list.get(9)));
 		incubator.setLimitedPeriod(list.get(10));
 		incubator.setIsThousandSailEnterprise("是".equals(list.get(11))?new Byte("1"):new Byte("0"));
-		incubator.setIsHighTechnologyEnterprise("是".equals(list.get(11))?new Byte("1"):new Byte("0"));
-		incubator.setIsBillionEnterprise("是".equals(list.get(11))?new Byte("1"):new Byte("0"));
+		incubator.setIsHighTechnologyEnterprise("是".equals(list.get(12))?new Byte("1"):new Byte("0"));
+		incubator.setIsBillionEnterprise("是".equals(list.get(13))?new Byte("1"):new Byte("0"));
 		incubator.setRemark(list.get(14));
 	}
 
