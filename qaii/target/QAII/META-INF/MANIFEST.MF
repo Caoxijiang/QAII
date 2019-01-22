@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
-Built-By: Administrator
+Built-By: wangxin
 Created-By: IntelliJ IDEA
+<<<<<<< HEAD
+Build-Jdk: 1.8.0_191
+=======
 Build-Jdk: 1.8.0_171
+>>>>>>> fbd8650645470833bbbf70e61eb96bad811a524d
 

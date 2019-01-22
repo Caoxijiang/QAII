@@ -207,6 +207,27 @@ public class PeriodicalThesisController {
 		}
 	}
 
+	class InsertCertified extends Thread{
+		private PeriodicalThesis record;
+		InsertCertified(PeriodicalThesis record){
+			this.record = record;
+		}
+		@Override
+		public void run() {
+			try {
+				this.sleep(500);
+				PeriodicalThesisFile file = new PeriodicalThesisFile();
+				file.setTid(this.record.getId());
+				file.setStyle("certified");
+				file.setName("null");
+				file.setPath("null");
+				fileService.insertMessage(file);
+				this.interrupt();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	int insertFile(PeriodicalThesis record, MultipartFile[] files) throws CustomException {
 		// TODO Auto-generated method stub
 		if (files[0].isEmpty() || files.length < 1) {
@@ -214,8 +235,12 @@ public class PeriodicalThesisController {
 			throw new CustomException("电子版文件不能为空!");
 		}
 		if (files[1].isEmpty()) {
-			Service.deleteMessages(new Integer[]{(record.getId()).intValue()});
-			throw new CustomException("检索文件不能为空!");
+			PeriodicalThesisFile file = new PeriodicalThesisFile();
+			file.setPath("null");
+			file.setName("null");
+			file.setStyle("certified");
+			file.setTid(record.getId());
+			fileService.insertMessage(file);
 		}
 		PeriodicalThesisFile file = new PeriodicalThesisFile();
 		for (int i = 0; i < files.length; i++) {
@@ -495,3 +520,4 @@ public class PeriodicalThesisController {
 	}
 	
 }
+
