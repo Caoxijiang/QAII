@@ -290,16 +290,35 @@ layui.use('table', function(){
   		  }
   	    }//搜索结束
   	
+      },
+      delmore: function () { //获取选中数据
+          confirm("请慎重考虑，删除数据不可恢复");
+          var checkStatus = table.checkStatus('testReload')
+              , data = checkStatus.data;
+          var arr=[];
+          for (var id of data){
+              var ids=id.id;
+              arr.push(ids)
+          }
+          if(arr.length!=0){
+              dell("DellempInfo.do",arr);
+          }else {
+              layer.alert("请选择要删除的内容");
+          }
       }
-    };
-    
-    
-    
-    $('#search').on('click', function(){
-//  	window.location.reload();//刷新当前页面.
-      var type = $(this).data('type');
-      active[type] ? active[type].call(this) : '';
+  };
+
+    $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
     });
+    
+    
+//     $('#search').on('click', function(){
+// //  	window.location.reload();//刷新当前页面.
+//       var type = $(this).data('type');
+//       active[type] ? active[type].call(this) : '';
+//     });
   
   //页面数据刷新
     $('#pelupdate').on('click', function(){
