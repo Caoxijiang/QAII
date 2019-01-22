@@ -168,12 +168,12 @@
 							  </td>
 							  <td>
 								  <div class="layui-input-block">
-									  <input type="text" name="shareholderName" autocomplete="off" placeholder="请输入作者名称" lay-verify="required" style="width:100%;" class="layui-input">
+									  <input type="text" name="shareholderName" lay-verify="required" autocomplete="off" placeholder="请输入作者名称" style="width:100%;" class="layui-input">
 								  </div>
 							  </td>
 							  <td>
 								  <div class="layui-input-block">
-								  	<input type="text" name="contributionTime"  autocomplete="off" placeholder="请输入作者单位" lay-verify="required" class="layui-input" style="width:100%;">
+								  	<input type="text" name="contributionTime" lay-verify="required" autocomplete="off" placeholder="请输入作者单位" class="layui-input" style="width:100%;">
 								  </div>
 							  </td>
 							  <td>
