@@ -23,10 +23,10 @@
 	<div class="techadd" style="width:330px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">合作情况管理&nbsp;—&nbsp;查看详情界面</span>
+		<span class="blue">参加会议情况&nbsp;—&nbsp;查看详情界面</span>
 	</div>
 	<!--		导出-->
-	<button onclick="srchange('innovate.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('innovateMeeting.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>
 </div>
@@ -37,7 +37,7 @@
 			<h1>基本信息</h1>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">我院/公司名称</label>
+					<label class="layui-form-label">会议类型</label>
 					<div class="layui-input-block">
 						<input type="text" name="unitName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
@@ -45,7 +45,7 @@
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">合作单位名称</label>
+					<label class="layui-form-label">参加人</label>
 					<div class="layui-input-block">
 						<input type="text" name="cooperationName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
@@ -53,7 +53,7 @@
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">签订的协议名称</label>
+					<label class="layui-form-label">会议名称</label>
 					<div class="layui-input-block">
 						<input type="text" name="protocolName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
@@ -61,7 +61,7 @@
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">签订时间</label>
+					<label class="layui-form-label">报告题目</label>
 					<div class="layui-input-block">
 						<input type="text" name="signTime" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
@@ -69,9 +69,17 @@
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">合作内容/方向</label>
+					<label class="layui-form-label">会议地址</label>
 					<div class="layui-input-block">
 						<input type="text" name="cooperationContent" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-xs6 layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label">会议时间</label>
+					<div class="layui-input-block">
+						<input type="text" name="cooperationContent2" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -102,7 +110,7 @@
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
 				<div class="layui-input-block" style="text-align: right;">
-					<button class="layui-btn" onclick="srchange('innovate.do')">返回</button>
+					<button class="layui-btn" onclick="srchange('innovateMeeting.do')">返回</button>
 				</div>
 			</div>
 		</div>
@@ -135,6 +143,7 @@
                             "protocolName":awardInfo.protocolName,
                             "signTime":awardInfo.signTime,
                             "cooperationContent":awardInfo.cooperationContent,
+                            "cooperationContent2":awardInfo.cooperationContent2,
                             "remark":awardInfo.remark,
                             "file0":awardInfo.listFile[0].fileName
                         })
