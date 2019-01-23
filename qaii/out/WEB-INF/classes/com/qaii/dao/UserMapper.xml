@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qaii.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.qaii.domain.User" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="admin_account" property="adminAccount" jdbcType="VARCHAR" />
+    <result column="admin_pwd" property="adminPwd" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, admin_account, admin_pwd
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete u,r from user u left join user_role r on u.user_id=r.uid where 
+    u.user_id in
+    <foreach item="userId" collection="array" open="(" separator="," close=")">
+    	#{userId,jdbcType=INTEGER}
+    </foreach>
+  </delete>
+  <insert id="insert"  parameterType="com.qaii.domain.User" >
+    <selectKey resultType="java.lang.Integer" keyProperty="userId" order="AFTER" >
+    SELECT LAST_INSERT_ID()
+  </selectKey>
+    insert into user (user_id,admin_account, admin_pwd
+      )
+    values (#{userId,jdbcType=INTEGER}, #{adminAccount,jdbcType=VARCHAR}, #{adminPwd,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="adminAccount != null" >
+        admin_account,
+      </if>
+      <if test="adminPwd != null" >
+        admin_pwd,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="adminAccount != null" >
+        #{adminAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPwd != null" >
+        #{adminPwd,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.User" >
+    update user
+    <set >
+      <if test="adminAccount != null" >
+        admin_account = #{adminAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPwd != null" >
+        admin_pwd = #{adminPwd,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey"  parameterType="com.qaii.domain.User" >
+    update user
+    set admin_account = #{adminAccount,jdbcType=VARCHAR},
+      admin_pwd = #{adminPwd,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+<!--新增修改密码xml-->
+  <update id="updatePassword"  parameterType="com.qaii.domain.User" >
+    update user
+    set admin_pwd = #{adminPwd,jdbcType=VARCHAR}
+    where admin_account= #{adminAccount,jdbcType=VARCHAR}
+  </update>
+
+    <select id="findWithLoginAndPassword" resultMap="BaseResultMap" parameterType="com.qaii.domain.User" >
+    select *
+    from user
+    where admin_account = #{adminAccount,jdbcType=VARCHAR} and admin_pwd=#{adminPwd,jdbcType=VARCHAR}
+  </select>
+  <!--新增逻辑判断 -->
+  <select id="findWithLogin"  resultType="java.lang.Integer" parameterType="com.qaii.domain.User" >
+    select count(*)
+    from user
+    where admin_account = #{adminAccount,jdbcType=VARCHAR} and admin_pwd=#{adminPwd,jdbcType=VARCHAR}
+  </select>
+</mapper>

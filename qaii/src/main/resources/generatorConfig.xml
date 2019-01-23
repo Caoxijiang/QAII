@@ -128,7 +128,7 @@
         <table tableName="sci_periodical_thesis_author" domainObjectName="PeriodicalThesisAuthor" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>-->
-        <table tableName="ExchangeTalks" domainObjectName="ExchangeTalks" enableCountByExample="false" enableUpdateByExample="false"
+      <!--  <table tableName="ExchangeTalks" domainObjectName="ExchangeTalks" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
         <table tableName="ExchangeTalksFiles" domainObjectName="ExchangeTalksFiles" enableCountByExample="false" enableUpdateByExample="false"
@@ -136,15 +136,15 @@
                selectByExampleQueryId="false"></table>
         <table tableName="AttendMeeting" domainObjectName="AttendMeeting" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
+               selectByExampleQueryId="false"></table>-->
         <table tableName="SigningAgreement" domainObjectName="SigningAgreement" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
-        <table tableName="AttendMeetingFiles" domainObjectName="AttendMeetingFiles" enableCountByExample="false" enableUpdateByExample="false"
+    <!--    <table tableName="AttendMeetingFiles" domainObjectName="AttendMeetingFiles" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
         <table tableName="SigningAgreementFiles" domainObjectName="SigningAgreementFiles" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
+               selectByExampleQueryId="false"></table>-->
     </context>
 </generatorConfiguration>

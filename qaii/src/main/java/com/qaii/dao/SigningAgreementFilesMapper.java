@@ -3,7 +3,7 @@ package com.qaii.dao;
 import com.qaii.domain.SigningAgreementFiles;
 
 public interface SigningAgreementFilesMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer[] id);
 
     int insert(SigningAgreementFiles record);
 

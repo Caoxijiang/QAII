@@ -2,8 +2,10 @@ package com.qaii.dao;
 
 import com.qaii.domain.SigningAgreement;
 
+import java.util.List;
+
 public interface SigningAgreementMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer[] id);
 
     int insert(SigningAgreement record);
 
@@ -14,4 +16,9 @@ public interface SigningAgreementMapper {
     int updateByPrimaryKeySelective(SigningAgreement record);
 
     int updateByPrimaryKey(SigningAgreement record);
+
+    List<SigningAgreement> listRecords();
+
+    SigningAgreement getRecord(Integer id);
+
 }

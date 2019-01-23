@@ -1,21 +1,34 @@
 package com.qaii.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class SigningAgreement {
     private Integer id;
 
     private String directionCooperation;
 
-    private Date signingTime;
+    private String signingTime;
 
     private String colleageIncubator;
 
     private String cooperationUnit;
 
+    private String remake;
+
     private Date createTime;
 
     private Date modifyTime;
+
+    private List<SigningAgreementFiles> listFile;
+
+    public List<SigningAgreementFiles> getListFile() {
+        return listFile;
+    }
+
+    public void setListFile(List<SigningAgreementFiles> listFile) {
+        this.listFile = listFile;
+    }
 
     public Integer getId() {
         return id;
@@ -33,12 +46,12 @@ public class SigningAgreement {
         this.directionCooperation = directionCooperation == null ? null : directionCooperation.trim();
     }
 
-    public Date getSigningTime() {
+    public String getSigningTime() {
         return signingTime;
     }
 
-    public void setSigningTime(Date signingTime) {
-        this.signingTime = signingTime;
+    public void setSigningTime(String signingTime) {
+        this.signingTime = signingTime == null ? null : signingTime.trim();
     }
 
     public String getColleageIncubator() {
@@ -55,6 +68,14 @@ public class SigningAgreement {
 
     public void setCooperationUnit(String cooperationUnit) {
         this.cooperationUnit = cooperationUnit == null ? null : cooperationUnit.trim();
+    }
+
+    public String getRemake() {
+        return remake;
+    }
+
+    public void setRemake(String remake) {
+        this.remake = remake == null ? null : remake.trim();
     }
 
     public Date getCreateTime() {
