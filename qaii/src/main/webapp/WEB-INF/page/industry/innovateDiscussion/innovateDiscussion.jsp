@@ -38,7 +38,7 @@
 <div class="tool">
 	<div class="layui-btn-group demoTable">
 		<span class="limit">交流座谈情况( <span id="countnum"> </span> )</span>
-		<a href="javascript:;" onclick="srchange('innovateAdd.do')">
+		<a href="javascript:;" onclick="srchange('innovateDiscussionAdd.do')">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -79,11 +79,11 @@
 	<div class="act">
 		<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 		<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-		<div class="int-inline"><input id="unitName"  type="checkbox" value="我院/公司名称" checked="flase"/><lable>我院/公司名称</lable></div>
-		<div class="int-inline"><input id="cooperationName"  type="checkbox" value="合作单位名称" checked/><lable>合作单位名称</lable></div>
-		<div class="int-inline"><input id="protocolName"  type="checkbox" value="签订的协议名称" checked/><lable>签订的协议名称</lable></div>
-		<div class="int-inline"><input id="signTime"  type="checkbox" value="签订时间" checked/><lable>签订时间</lable></div>
-		<div class="int-inline"><input id="cooperationContent"  type="checkbox" value="合作内容/方向" checked/><lable>合作内容/方向</lable></div>
+		<div class="int-inline"><input id="unitName"  type="checkbox" value="参加人"checked/><lable>参加人</lable></div>
+		<div class="int-inline"><input id="cooperationName"  type="checkbox" value="会谈对象" checked/><lable>会谈对象</lable></div>
+		<div class="int-inline"><input id="protocolName"  type="checkbox" value="会谈主题" checked/><lable>会谈主题</lable></div>
+		<div class="int-inline"><input id="signTime"  type="checkbox" value="会谈地点" checked/><lable>会谈地点</lable></div>
+		<div class="int-inline"><input id="cooperationContent"  type="checkbox" value="会谈时间" checked/><lable>会谈时间</lable></div>
 		<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 	</div>
 </div>
@@ -124,13 +124,13 @@
             cols: [[ //标题栏
                 {type:'checkbox',fixed: 'left'},
                 {field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-                {field: 'unitName', title: '我院/公司名称',fixed: 'left',width:200},
-                {field: 'cooperationName', title: '合作单位名称',width:150},
-                {field: 'protocolName', title: '签订的协议名称',sort: true,width:180},
-                {field: 'signTime', title: '签订时间',sort: true,width:180},
-                {field: 'cooperationContent', title: '合作内容/方向',sort: true,width:180},
-                {field: 'remark', title: '备注',width:220},
-                {field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
+                {field: 'unitName', title: '参加人',fixed: 'left'},
+                {field: 'cooperationName', title: '会谈对象'},
+                {field: 'protocolName', title: '会谈主题',sort: true},
+                {field: 'signTime', title: '会谈地点',sort: true},
+                {field: 'cooperationContent', title: '会谈时间',sort: true},
+                {field: 'remark', title: '备注'},
+                {field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right'}
             ]],
             //表格数据
             data:obj.data,
@@ -143,6 +143,21 @@
         //添加筛选功能
 
         var $ = layui.$, active = {
+            delmore: function () { //获取选中数据
+                confirm("请慎重考虑，删除数据不可恢复");
+                var checkStatus = table.checkStatus('testReload')
+                    , data = checkStatus.data;
+                var arr=[];
+                for (var id of data){
+                    var ids=id.id;
+                    arr.push(ids)
+                }
+                if(arr.length!=0){
+                    dell("deleteCooperation.do",arr);
+                }else {
+                    layer.alert("请选择要删除的内容");
+                }
+            },
             reload: function(){
                 var demoReload = $('#demoReload');
                 var key=demoReload.val();/*关键字*/
@@ -247,7 +262,7 @@
             console.log(data)
                 ,layEvent = obj.event; //获得 lay-event 对应的值
             if(layEvent === 'detail'){
-                var iframesrc="innovateCheck.do?userId='"+data.id+"'";
+                var iframesrc="innovateDiscussionCheck.do?userId='"+data.id+"'";
                 $("body", parent.document).find('iframe').attr('src',iframesrc);
             } else if(layEvent === 'del'){
                 layer.confirm('确定删除信息', function(index){
@@ -273,29 +288,10 @@
                     //向服务端发送删除指令
                 });
             } else if(layEvent === 'edit'){
-                var iframesrc="innovateEdit.do?userId='"+data.id+"'";
+                var iframesrc="innovateDiscussionEdit.do?userId='"+data.id+"'";
                 $("body", parent.document).find('iframe').attr('src',iframesrc);
             }
         });
-
-        //监听顶部添加删除操作
-        var $ = layui.$, active = {
-            delmore: function () { //获取选中数据
-                confirm("请慎重考虑，删除数据不可恢复");
-                var checkStatus = table.checkStatus('testReload')
-                    , data = checkStatus.data;
-                var arr=[];
-                for (var id of data){
-                    var ids=id.id;
-                    arr.push(ids)
-                }
-                if(arr.length!=0){
-                    dell("deleteCooperation.do",arr);
-                }else {
-                    layer.alert("请选择要删除的内容");
-                }
-            }
-        }
 
 
         $('.demoTable .layui-btn').on('click', function(){
