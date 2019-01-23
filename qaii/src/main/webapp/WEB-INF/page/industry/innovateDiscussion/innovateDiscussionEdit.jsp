@@ -23,10 +23,10 @@
 	<div class="techadd" style="width:330px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">合作情况管理&nbsp;—&nbsp;修改界面</span>
+		<span class="blue">交流座谈情况&nbsp;—&nbsp;修改界面</span>
 	</div>
 	<!--导出-->
-	<button onclick="srchange('innovate.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
+	<button onclick="srchange('innovateDiscussion.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
 		返回
 	</button>
 </div>
@@ -40,7 +40,7 @@
             <input id="fpath" name="fpath" type="hidden">
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">我院/公司名称</label>
+					<label class="layui-form-label">参加人</label>
 					<div class="layui-input-block">
 						<input type="text" name="unitName" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
@@ -48,7 +48,7 @@
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">合作单位名称</label>
+					<label class="layui-form-label">会谈对象</label>
 					<div class="layui-input-block">
 						<input type="text" name="cooperationName" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
@@ -56,7 +56,7 @@
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">签订的协议名称</label>
+					<label class="layui-form-label">会谈主题</label>
 					<div class="layui-input-block">
 						<input type="text" name="protocolName" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
@@ -64,17 +64,17 @@
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">签订时间</label>
+					<label class="layui-form-label">会谈地点</label>
 					<div class="layui-input-block">
-						<input type="text" name="signTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+						<input type="text" name="signTime" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
 			<div class="layui-col-xs6 layui-col-md6">
 				<div class="layui-form-item">
-					<label class="layui-form-label">合作内容/方向</label>
+					<label class="layui-form-label">会谈时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="cooperationContent" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="cooperationContent" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 					</div>
 				</div>
 			</div>
@@ -83,7 +83,7 @@
 			<h1>其他信息</h1>
 			<div class="layui-col-xs10 layui-col-md10">
 				<div class="layui-form-item itemadd">
-					<label class="layui-form-label" style="width:190px;">上传附件（协议扫描件）</label>
+					<label class="layui-form-label" style="width:190px;">上传附件</label>
 					<div class="layui-input-block" style="margin-left:170px;">
 						<div class="layui-upload">
 							<input type="text" name="file0" class="layui-input input" style="width:48%;display:inline-block;" disabled="">
@@ -203,7 +203,7 @@
         layer.open({
             type:2,
             title:"重新上传文件",
-            content:'innovatefilereload.do?id='+id+'&fid='+fid+'&fpath='+fpath,
+            content:'innovateDiscussionfilereload.do?id='+id+'&fid='+fid+'&fpath='+fpath,
             anim:0
         });
     })
