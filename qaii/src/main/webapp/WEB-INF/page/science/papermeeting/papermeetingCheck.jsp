@@ -259,7 +259,15 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                      	   trademark.listFile[1]=new Object();
                     	   trademark.listFile[1].path='';
                         }
-                        
+                        var file1 = null;
+                        var file2 = null;
+                        if(trademark.listFile[0].style == "electronic"){
+                            file1 = trademark.listFile[0].path;
+                            file2 = trademark.listFile[1].path;
+                        }else {
+                            file1 = trademark.listFile[1].path;
+                            file2 = trademark.listFile[0].path;
+                        }
                         /* console.log("afd"+JSON.stringify(trademark)); */
                         //表单初始赋值 从表单中提取数据
                           form.val('example', {
@@ -276,8 +284,8 @@ layui.use(['form', 'layedit', 'laydate','element','table','upload'], function(ob
                             "contentType":trademark.contentType,
                             "unit":trademark.unit,
                             "englishSummary":trademark.englishSummary,
-                            "paperfile":trademark.listFile[0].path,
-                            "paperfile2":trademark.listFile[1].path
+                            "paperfile":file1,
+                            "paperfile2":file2
                             // 修改此输入框的value值，此value为测试值 paperfile为测试自定义值，证明文件值
                           });
                           var domain = window.location.host;

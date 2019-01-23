@@ -145,6 +145,21 @@ layui.use('table', function(obj){
 	//添加筛选功能
 	
   var $ = layui.$, active = {
+      delmore: function () { //获取选中数据
+          confirm("请慎重考虑，删除数据不可恢复");
+          var checkStatus = table.checkStatus('testReload')
+              , data = checkStatus.data;
+          var arr=[];
+          for (var id of data){
+              var ids=id.id;
+              arr.push(ids)
+          }
+          if(arr.length!=0){
+              dell("deleteAwardIncubate.do",arr);
+          }else {
+              layer.alert("请选择要删除的内容");
+          }
+      },
       reload: function(){
         var demoReload = $('#demoReload');
         var key=demoReload.val();/*关键字*/
@@ -279,27 +294,6 @@ layui.use('table', function(obj){
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }
   });
-
-	//监听顶部添加删除操作
-
-
-    var $ = layui.$, active = {
-        delmore: function () { //获取选中数据
-            confirm("请慎重考虑，删除数据不可恢复");
-            var checkStatus = table.checkStatus('testReload')
-                , data = checkStatus.data;
-            var arr=[];
-            for (var id of data){
-                var ids=id.id;
-                arr.push(ids)
-            }
-            if(arr.length!=0){
-                dell("deleteAwardIncubate.do",arr);
-            }else {
-                layer.alert("请选择要删除的内容");
-            }
-        }
-    }
 
 
     $('.demoTable .layui-btn').on('click', function(){
