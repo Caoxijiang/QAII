@@ -71,6 +71,7 @@
 				 <mvc:mapping path="/**"/>
 				 <mvc:exclude-mapping path="/adddetail.do"/>
 				 <mvc:exclude-mapping path="/addEmpInfo.do"/>
+				 <mvc:exclude-mapping path="/findDeptInfoList.do"/>
 				 <bean class="com.qaii.util.SingleUserInterceptor"/>
 			 </mvc:interceptor>
 		 </mvc:interceptors>
