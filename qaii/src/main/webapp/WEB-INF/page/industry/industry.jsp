@@ -67,7 +67,12 @@
 	      </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('innovate.do')"><i class="layui-icon layui-icon-read" style="font-size: 22px;"></i>&nbsp;合作情况管理</a>
+            <a href="javascript:;"><i class="layui-icon layui-icon-read" style="font-size: 22px;"></i>&nbsp;合作情况管理</a>
+            <dl class="layui-nav-child">
+                <dd class="navdd"><a onclick="iframechange('innovate.do')">签订协议情况</a></dd>
+                <dd class="navdd"><a onclick="iframechange('innovateDiscussion.do')">交流座谈情况</a></dd>
+                <dd class="navdd"><a onclick="iframechange('innovateMeeting.do')">参加会议情况</a></dd>
+            </dl>
         </li>
         <li class="layui-nav-item">
           <a href="javascript:;" onclick="iframechange('indnews.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
