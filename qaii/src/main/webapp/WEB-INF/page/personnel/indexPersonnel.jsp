@@ -65,6 +65,15 @@
 </head>
 
 <body class="personalbody">
+	<div class="loading">
+		<div class="pic">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</div>
+	</div>
 	<div class="container-fluid">
 		<div class="content">
 			<div class="perhead">
