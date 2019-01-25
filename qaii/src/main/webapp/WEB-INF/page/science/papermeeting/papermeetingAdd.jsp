@@ -300,23 +300,6 @@
             "<option value='第六作者'>第六作者</option>" +
             "<option value='其他作者'>其他作者</option>" +
             "</select>" +
-            /*"<div class='layui-form-select layui-form-selected'>"+
-                "<div class='layui-select-title'>"+
-                    "<input type='text' placeholder='请选择作者排位' value='' class='layui-input'><i class='layui-edge'></i>"+
-                "</div>"+
-                "<dl class='layui-anim layui-anim-upbit' style=''>"+
-                    "<dd lay-value='' class='layui-select-tips layui-this'>请选择作者排位</dd>"+
-                    "<dd lay-value='第一作者' class=''>第一作者</dd>"+
-                    "<dd lay-value='第二作者' class=''>第二作者</dd>"+
-                    "<dd lay-value='第三作者' class=''>第三作者</dd>"+
-                    "<dd lay-value='第四作者' class=''>第四作者</dd>"+
-                    "<dd lay-value='第五作者' class=''>第五作者</dd>"+
-                    "<dd lay-value='第六作者' class=''>第六作者</dd>"+
-                    "<dd lay-value='第七作者' class=''>第七作者</dd>"+
-                    "<dd lay-value='第八作者' class=''>第八作者</dd>"+
-                    "<dd lay-value='通讯作者' class=''>通讯作者</dd>"+
-                "</dl>"+
-            "</div>"+*/
             "</div>" +
             "</td>" +
             " <td>" +
