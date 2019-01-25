@@ -21,6 +21,16 @@
     from industry_SigningAgreementFiles
     where Id = #{id,jdbcType=INTEGER}
   </select>
+
+
+  <select id="selectFilePathBysigningagreementId" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    select * from industry_SigningAgreementFiles where
+    SigningAgreement_id in
+    <foreach item="id" collection="array" open="(" separator="," close=")">
+      #{id,jdbcType=INTEGER}
+    </foreach>
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from industry_SigningAgreementFiles
     where SigningAgreement_id in

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qaii.dao.ExchangeTalksFilesMapper">
-  <resultMap id="BaseResultMap" type="com.qaii.domain.ExchangeTalksFiles">
+<mapper namespace="com.qaii.dao.IndustryExchangeTalksFilesMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.IndustryExchangeTalksFiles">
     <id column="Id" jdbcType="INTEGER" property="id" />
     <result column="File_name" jdbcType="VARCHAR" property="fileName" />
     <result column="File_path" jdbcType="VARCHAR" property="filePath" />
@@ -16,23 +16,35 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from ExchangeTalksFiles
+    from industry_ExchangeTalksFiles
     where Id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectFilePathByexchangetalksId" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    select * from industry_ExchangeTalksFiles where
+    ExchangeTalks_id in
+    <foreach item="id" collection="array" open="(" separator="," close=")">
+      #{id,jdbcType=INTEGER}
+    </foreach>
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from ExchangeTalksFiles
-    where Id = #{id,jdbcType=INTEGER}
+    delete from industry_ExchangeTalksFiles
+    where ExchangeTalks_id in
+    <foreach item="id" collection="array" open="(" separator="," close=")">
+      #{id,jdbcType=INTEGER}
+    </foreach>
   </delete>
-  <insert id="insert" parameterType="com.qaii.domain.ExchangeTalksFiles">
-    insert into ExchangeTalksFiles (Id, File_name, File_path, 
+  <insert id="insert" parameterType="com.qaii.domain.IndustryExchangeTalksFiles">
+    insert into industry_ExchangeTalksFiles (Id, File_name, File_path, 
       File_describtion, File_createtime, File_modifytime, 
       ExchangeTalks_id)
     values (#{id,jdbcType=INTEGER}, #{fileName,jdbcType=VARCHAR}, #{filePath,jdbcType=VARCHAR}, 
       #{fileDescribtion,jdbcType=VARCHAR}, #{fileCreatetime,jdbcType=TIMESTAMP}, #{fileModifytime,jdbcType=TIMESTAMP}, 
       #{exchangetalksId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.qaii.domain.ExchangeTalksFiles">
-    insert into ExchangeTalksFiles
+  <insert id="insertSelective" parameterType="com.qaii.domain.IndustryExchangeTalksFiles">
+    insert into industry_ExchangeTalksFiles
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         Id,
@@ -80,8 +92,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.ExchangeTalksFiles">
-    update ExchangeTalksFiles
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.IndustryExchangeTalksFiles">
+    update industry_ExchangeTalksFiles
     <set>
       <if test="fileName != null">
         File_name = #{fileName,jdbcType=VARCHAR},
@@ -104,8 +116,8 @@
     </set>
     where Id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.ExchangeTalksFiles">
-    update ExchangeTalksFiles
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.IndustryExchangeTalksFiles">
+    update industry_ExchangeTalksFiles
     set File_name = #{fileName,jdbcType=VARCHAR},
       File_path = #{filePath,jdbcType=VARCHAR},
       File_describtion = #{fileDescribtion,jdbcType=VARCHAR},

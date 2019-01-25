@@ -43,4 +43,9 @@ public class SigningAgreementFilesServiceImpl implements SigningAgreementFilesSe
     public int updateByPrimaryKey(SigningAgreementFiles record) {
         return signingAgreementFilesMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public SigningAgreementFiles selectFilePathBysigningagreementId(Integer[] id) {
+        return signingAgreementFilesMapper.selectFilePathBysigningagreementId(id);
+    }
 }

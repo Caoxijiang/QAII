@@ -2,7 +2,7 @@ package com.qaii.domain;
 
 import java.util.Date;
 
-public class AttendMeetingFiles {
+public class IndustryExchangeTalksFiles {
     private Integer id;
 
     private String fileName;
@@ -15,7 +15,7 @@ public class AttendMeetingFiles {
 
     private Date fileModifytime;
 
-    private Integer attendmeetingId;
+    private Integer exchangetalksId;
 
     public Integer getId() {
         return id;
@@ -65,11 +65,11 @@ public class AttendMeetingFiles {
         this.fileModifytime = fileModifytime;
     }
 
-    public Integer getAttendmeetingId() {
-        return attendmeetingId;
+    public Integer getExchangetalksId() {
+        return exchangetalksId;
     }
 
-    public void setAttendmeetingId(Integer attendmeetingId) {
-        this.attendmeetingId = attendmeetingId;
+    public void setExchangetalksId(Integer exchangetalksId) {
+        this.exchangetalksId = exchangetalksId;
     }
 }

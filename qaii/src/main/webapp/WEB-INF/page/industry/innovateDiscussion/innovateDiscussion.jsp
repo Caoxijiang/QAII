@@ -79,11 +79,11 @@
 	<div class="act">
 		<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 		<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-		<div class="int-inline"><input id="unitName"  type="checkbox" value="参加人"checked/><lable>参加人</lable></div>
-		<div class="int-inline"><input id="cooperationName"  type="checkbox" value="会谈对象" checked/><lable>会谈对象</lable></div>
-		<div class="int-inline"><input id="protocolName"  type="checkbox" value="会谈主题" checked/><lable>会谈主题</lable></div>
-		<div class="int-inline"><input id="signTime"  type="checkbox" value="会谈地点" checked/><lable>会谈地点</lable></div>
-		<div class="int-inline"><input id="cooperationContent"  type="checkbox" value="会谈时间" checked/><lable>会谈时间</lable></div>
+		<div class="int-inline"><input id="participant"  type="checkbox" value="参加人"checked/><lable>参加人</lable></div>
+		<div class="int-inline"><input id="targetAudience"  type="checkbox" value="会谈对象" checked/><lable>会谈对象</lable></div>
+		<div class="int-inline"><input id="themeTalks"  type="checkbox" value="会谈主题" checked/><lable>会谈主题</lable></div>
+		<div class="int-inline"><input id="talksAddress"  type="checkbox" value="会谈地点" checked/><lable>会谈地点</lable></div>
+		<div class="int-inline"><input id="talksTime"  type="checkbox" value="会谈时间" checked/><lable>会谈时间</lable></div>
 		<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 	</div>
 </div>
@@ -119,16 +119,16 @@
             limit:9999999,//不设置分页，最大数据量为9999999
             id: 'testReload',
 //    height: 332,
-            url: 'listCooperations.do', //数据接口
+            url: 'listExchangeTalks.do', //数据接口
             cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
             cols: [[ //标题栏
                 {type:'checkbox',fixed: 'left'},
                 {field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-                {field: 'unitName', title: '参加人',fixed: 'left'},
-                {field: 'cooperationName', title: '会谈对象'},
-                {field: 'protocolName', title: '会谈主题',sort: true},
-                {field: 'signTime', title: '会谈地点',sort: true},
-                {field: 'cooperationContent', title: '会谈时间',sort: true},
+                {field: 'participant', title: '参加人',fixed: 'left'},
+                {field: 'targetAudience', title: '会谈对象'},
+                {field: 'themeTalks', title: '会谈主题',sort: true},
+                {field: 'talksAddress', title: '会谈地点',sort: true},
+                {field: 'talksTime', title: '会谈时间',sort: true},
                 {field: 'remark', title: '备注'},
                 {field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right'}
             ]],
@@ -269,7 +269,7 @@
                     let arr=[data.id];
                     console.log(data)
                     $.post({
-                        url:"deleteCooperation.do",
+                        url:"deleteExchangeTalks.do",
                         data:{
                             "requestDate" : arr
                         },
@@ -330,7 +330,7 @@
 //指定允许上传的文件类型
         upload.render({
             elem: '#test3'
-            ,url: 'insertCooperationWithExcel.do'
+            ,url: 'insertExchangeTalksWithExcel.do'
             ,accept: 'file' //普通文件
             ,done: function(res){
                 alert("上传成功！请更新数据！");

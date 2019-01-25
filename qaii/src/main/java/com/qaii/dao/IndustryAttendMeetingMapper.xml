@@ -1,43 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qaii.dao.AttendMeetingMapper">
-  <resultMap id="BaseResultMap" type="com.qaii.domain.AttendMeeting">
+<mapper namespace="com.qaii.dao.IndustryAttendMeetingMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.IndustryAttendMeeting">
     <id column="Id" jdbcType="INTEGER" property="id" />
     <result column="Conference_type" jdbcType="VARCHAR" property="conferenceType" />
     <result column="Participant" jdbcType="VARCHAR" property="participant" />
     <result column="Conference_name" jdbcType="VARCHAR" property="conferenceName" />
     <result column="Report_topics" jdbcType="VARCHAR" property="reportTopics" />
     <result column="Meeting_address" jdbcType="VARCHAR" property="meetingAddress" />
-    <result column="Meeting_time" jdbcType="TIMESTAMP" property="meetingTime" />
+    <result column="Meeting_time" jdbcType="VARCHAR" property="meetingTime" />
+    <result column="Remark" jdbcType="VARCHAR" property="remark" />
     <result column="Create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="Modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
   </resultMap>
+
+  <resultMap id="CustomMap" type="com.qaii.domain.IndustryAttendMeeting">
+    <id column="Id" jdbcType="INTEGER" property="id" />
+    <result column="Conference_type" jdbcType="VARCHAR" property="conferenceType" />
+    <result column="Participant" jdbcType="VARCHAR" property="participant" />
+    <result column="Conference_name" jdbcType="VARCHAR" property="conferenceName" />
+    <result column="Report_topics" jdbcType="VARCHAR" property="reportTopics" />
+    <result column="Meeting_address" jdbcType="VARCHAR" property="meetingAddress" />
+    <result column="Meeting_time" jdbcType="VARCHAR" property="meetingTime" />
+    <result column="Remark" jdbcType="VARCHAR" property="remark" />
+    <result column="Create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="Modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <collection property="listFile" javaType="java.util.List" ofType="com.qaii.domain.IndustryAttendMeetingFiles">
+      <id column="fileid" jdbcType="INTEGER" property="id" />
+      <id column="File_name" jdbcType="VARCHAR" property="fileName" />
+      <id column="File_path" jdbcType="VARCHAR" property="filePath" />
+      <id column="File_describtion" jdbcType="VARCHAR" property="fileDescribtion" />
+      <id column="File_createtime" jdbcType="TIMESTAMP" property="fileCreatetime" />
+      <id column="File_modifytime" jdbcType="TIMESTAMP" property="fileModifytime" />
+    </collection>
+  </resultMap>
   <sql id="Base_Column_List">
     Id, Conference_type, Participant, Conference_name, Report_topics, Meeting_address, 
-    Meeting_time, Create_time, Modify_time
+    Meeting_time, Remark, Create_time, Modify_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from AttendMeeting
+    from industry_AttendMeeting
     where Id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="listRecords"  resultMap="BaseResultMap">
+    select * from industry_AttendMeeting
+  </select>
+
+  <select id="getRecords" resultMap="CustomMap" parameterType="java.lang.Integer">
+    select a.*, b.id AS fileid, b.File_name, b.File_path FROM industry_AttendMeeting as a
+    LEFT JOIN industry_AttendMeetingFiles as b on a.id=b.AttendMeeting_id
+    WHERE a.id = #{id,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from AttendMeeting
-    where Id = #{id,jdbcType=INTEGER}
+    delete from industry_AttendMeeting
+    where Id in
+    <foreach item="id" collection="array" open="(" separator="," close=")">
+      #{id,jdbcType=INTEGER}
+    </foreach>
   </delete>
-  <insert id="insert" parameterType="com.qaii.domain.AttendMeeting">
-    insert into AttendMeeting (Id, Conference_type, Participant, 
+  <insert id="insert" parameterType="com.qaii.domain.IndustryAttendMeeting">
+    insert into industry_AttendMeeting (Id, Conference_type, Participant, 
       Conference_name, Report_topics, Meeting_address, 
-      Meeting_time, Create_time, Modify_time
-      )
+      Meeting_time, Remark, Create_time, 
+      Modify_time)
     values (#{id,jdbcType=INTEGER}, #{conferenceType,jdbcType=VARCHAR}, #{participant,jdbcType=VARCHAR}, 
       #{conferenceName,jdbcType=VARCHAR}, #{reportTopics,jdbcType=VARCHAR}, #{meetingAddress,jdbcType=VARCHAR}, 
-      #{meetingTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}
-      )
+      #{meetingTime,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.qaii.domain.AttendMeeting">
-    insert into AttendMeeting
+  <insert id="insertSelective" parameterType="com.qaii.domain.IndustryAttendMeeting" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    insert into industry_AttendMeeting
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         Id,
@@ -59,6 +94,9 @@
       </if>
       <if test="meetingTime != null">
         Meeting_time,
+      </if>
+      <if test="remark != null">
+        Remark,
       </if>
       <if test="createTime != null">
         Create_time,
@@ -87,7 +125,10 @@
         #{meetingAddress,jdbcType=VARCHAR},
       </if>
       <if test="meetingTime != null">
-        #{meetingTime,jdbcType=TIMESTAMP},
+        #{meetingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -97,8 +138,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.AttendMeeting">
-    update AttendMeeting
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.IndustryAttendMeeting">
+    update industry_AttendMeeting
     <set>
       <if test="conferenceType != null">
         Conference_type = #{conferenceType,jdbcType=VARCHAR},
@@ -116,7 +157,10 @@
         Meeting_address = #{meetingAddress,jdbcType=VARCHAR},
       </if>
       <if test="meetingTime != null">
-        Meeting_time = #{meetingTime,jdbcType=TIMESTAMP},
+        Meeting_time = #{meetingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        Remark = #{remark,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         Create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -127,14 +171,15 @@
     </set>
     where Id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.AttendMeeting">
-    update AttendMeeting
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.IndustryAttendMeeting">
+    update industry_AttendMeeting
     set Conference_type = #{conferenceType,jdbcType=VARCHAR},
       Participant = #{participant,jdbcType=VARCHAR},
       Conference_name = #{conferenceName,jdbcType=VARCHAR},
       Report_topics = #{reportTopics,jdbcType=VARCHAR},
       Meeting_address = #{meetingAddress,jdbcType=VARCHAR},
-      Meeting_time = #{meetingTime,jdbcType=TIMESTAMP},
+      Meeting_time = #{meetingTime,jdbcType=VARCHAR},
+      Remark = #{remark,jdbcType=VARCHAR},
       Create_time = #{createTime,jdbcType=TIMESTAMP},
       Modify_time = #{modifyTime,jdbcType=TIMESTAMP}
     where Id = #{id,jdbcType=INTEGER}

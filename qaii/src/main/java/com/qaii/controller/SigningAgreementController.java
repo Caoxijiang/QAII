@@ -1,11 +1,6 @@
 package com.qaii.controller;
-
-import com.qaii.domain.Cooperation;
-import com.qaii.domain.CooperationFile;
 import com.qaii.domain.SigningAgreement;
 import com.qaii.domain.SigningAgreementFiles;
-import com.qaii.service.CooperationFileService;
-import com.qaii.service.CooperationService;
 import com.qaii.service.SigningAgreementFilesService;
 import com.qaii.service.SigningAgreementService;
 import com.qaii.util.*;
@@ -46,7 +41,7 @@ public class SigningAgreementController {
     private SigningAgreementFilesService signingAgreementFilesService;
     //文件位置//数据库中记录的路径
     private final static String BASE_PATH = "Enc/industry/SigningAgreement/";
-    //文件路径 本机路径为/Users/wangxin/File
+    //文件路径 本机路径
     private final static String FILE_PATH = ConstantUtil.FILE_UPLOAD_PATH + BASE_PATH;
 
     //插入记录
@@ -56,8 +51,6 @@ public class SigningAgreementController {
         record.setCreateTime(new Date());
         record.setModifyTime(new Date());
         int result = signingAgreementService.insertSelective(record);
-        int j = files.length;
-        System.out.println(j);
         List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
         for (int i = 0; i < files.length; i++) {
             String fileName = files[i].getOriginalFilename();
@@ -119,6 +112,7 @@ public class SigningAgreementController {
         List<String> list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
         record.setFilePath(BASE_PATH + list.get(0));
         record.setFileName(files[0].getOriginalFilename());
+        record.setFileModifytime(new Date());
         int result = signingAgreementFilesService.updateByPrimaryKey(record);
         if (result != 0) {
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
@@ -163,7 +157,6 @@ public class SigningAgreementController {
         signingAgreementService = (SigningAgreementService) wac.getBean("SigningAgreementService");
         signingAgreementFilesService = (SigningAgreementFilesService) wac.getBean("SigningAgreementFilesService");
         loadDataWithList(record, list);
-       // record.setId(null);
         signingAgreementService.insertSelective(record);
         SigningAgreementFiles  filesRecord = (SigningAgreementFiles) FileLoadToNull.getNullClass("SigningAgreementFiles");
         filesRecord.setSigningagreementId(record.getId());
@@ -187,6 +180,8 @@ public class SigningAgreementController {
     JsonResult deleteCooperation(@RequestParam("requestDate[]") Integer[] id) {
     int result=signingAgreementService.deleteByPrimaryKey(id);
     if (result !=0){
+        SigningAgreementFiles sin=signingAgreementFilesService.selectFilePathBysigningagreementId(id);
+        DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH +sin.getFilePath());
         signingAgreementFilesService.deleteByPrimaryKey(id);
         return new JsonResult("success!");
     }else{

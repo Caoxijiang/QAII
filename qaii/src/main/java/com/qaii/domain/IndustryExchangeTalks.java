@@ -1,8 +1,9 @@
 package com.qaii.domain;
 
 import java.util.Date;
+import java.util.List;
 
-public class ExchangeTalks {
+public class IndustryExchangeTalks {
     private Integer id;
 
     private String participant;
@@ -13,11 +14,23 @@ public class ExchangeTalks {
 
     private String talksAddress;
 
-    private Date talksTime;
+    private String talksTime;
+
+    private String remark;
 
     private Date createTime;
 
     private Date modifyTime;
+
+    private List<IndustryExchangeTalksFiles> listFile;
+
+    public List<IndustryExchangeTalksFiles> getListFile() {
+        return listFile;
+    }
+
+    public void setListFile(List<IndustryExchangeTalksFiles> listFile) {
+        this.listFile = listFile;
+    }
 
     public Integer getId() {
         return id;
@@ -59,12 +72,20 @@ public class ExchangeTalks {
         this.talksAddress = talksAddress == null ? null : talksAddress.trim();
     }
 
-    public Date getTalksTime() {
+    public String getTalksTime() {
         return talksTime;
     }
 
-    public void setTalksTime(Date talksTime) {
-        this.talksTime = talksTime;
+    public void setTalksTime(String talksTime) {
+        this.talksTime = talksTime == null ? null : talksTime.trim();
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
     public Date getCreateTime() {

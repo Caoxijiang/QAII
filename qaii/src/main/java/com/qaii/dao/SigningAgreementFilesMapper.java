@@ -14,4 +14,6 @@ public interface SigningAgreementFilesMapper {
     int updateByPrimaryKeySelective(SigningAgreementFiles record);
 
     int updateByPrimaryKey(SigningAgreementFiles record);
+
+    SigningAgreementFiles selectFilePathBysigningagreementId(Integer[] id);
 }

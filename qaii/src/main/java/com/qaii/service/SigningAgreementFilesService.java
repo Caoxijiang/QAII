@@ -1,5 +1,6 @@
 package com.qaii.service;
 
+import com.qaii.domain.IndustryExchangeTalksFiles;
 import com.qaii.domain.SigningAgreementFiles;
 
 /**
@@ -18,4 +19,6 @@ public interface SigningAgreementFilesService {
     int updateByPrimaryKeySelective(SigningAgreementFiles record);
 
     int updateByPrimaryKey(SigningAgreementFiles record);
+
+    SigningAgreementFiles selectFilePathBysigningagreementId(Integer[] id);
 }
