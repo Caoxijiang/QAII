@@ -31,7 +31,7 @@
 	</button>
 </div>
 <div class="layui-container addtop">
-	<form class="layui-form" action="updateCooperation.do" method="post" enctype="multipart/form-data" lay-filter="example">
+	<form class="layui-form" action="updateAttendMeeting.do" method="post" enctype="multipart/form-data" lay-filter="example">
 		<!-- 基本信息 -->
 		<div class="layui-row contern">
 			<h1>基本信息</h1>

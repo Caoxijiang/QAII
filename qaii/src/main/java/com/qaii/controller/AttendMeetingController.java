@@ -174,4 +174,18 @@ JsonResult insertExchangeTalksWithExcel(@RequestParam("file") MultipartFile file
         record.setMeetingTime(list.get(5));
         record.setRemark(list.get(6));
     }
+
+    //修改数据
+    @RequestMapping(value = "updateAttendMeeting.do")
+    String updateAttendMeeting(HttpServletRequest request, IndustryAttendMeeting record) throws Exception {
+        record.setId(Integer.parseInt(request.getParameter("id")));
+        LoadData(request, record);
+        record.setModifyTime(new Date());
+        int result=industryAttendMeetingService.updateByPrimaryKey(record);
+        if (result !=0){
+            return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
+        }else{
+            return ConstantUtil.INDUSTRY_EDIT_FAILD;
+        }
+    }
 }
