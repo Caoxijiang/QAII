@@ -109,7 +109,7 @@ public class SigningAgreementController {
         record.setId(Integer.parseInt(request.getParameter("fid")));
         String id = request.getParameter("fid");
         String path = request.getParameter("fpath");
-        DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH + request.getParameter("fpath"));
+        DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + request.getParameter("fpath"));
         List<String> list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
         record.setFilePath(BASE_PATH + list.get(0));
         record.setFileName(files[0].getOriginalFilename());
@@ -182,7 +182,7 @@ public class SigningAgreementController {
     int result=signingAgreementService.deleteByPrimaryKey(id);
     if (result !=0){
         SigningAgreementFiles sin=signingAgreementFilesService.selectFilePathBysigningagreementId(id);
-        DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH + sin.getFilePath());
+        DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + sin.getFilePath());
         signingAgreementFilesService.deleteByPrimaryKey(id);
         return new JsonResult("success!");
     }else{

@@ -115,7 +115,7 @@ public class ExchangeTalksController {
                                       IndustryExchangeTalksFiles record) throws IOException {
         record.setExchangetalksId(Integer.parseInt(request.getParameter("id")));
         record.setId(Integer.parseInt(request.getParameter("fid")));
-        DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH + request.getParameter("fpath"));
+        DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + request.getParameter("fpath"));
         List<String> list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
         record.setFilePath(BASE_PATH + list.get(0));
         record.setFileName(files[0].getOriginalFilename());
@@ -184,7 +184,7 @@ public class ExchangeTalksController {
         int result=industryExchangeTalksService.deleteByPrimaryKey(id);
         if (result !=0){
             IndustryExchangeTalksFiles in=industryExchangeTalksFilesService.selectFilePathByexchangetalksId(id);
-            DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH + in.getFilePath());
+            DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + in.getFilePath());
             industryExchangeTalksFilesService.deleteByPrimaryKey(id);
             return new JsonResult("success!");
         }else{
