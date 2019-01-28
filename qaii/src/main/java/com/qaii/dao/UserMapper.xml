@@ -86,6 +86,13 @@
     from user
     where admin_account = #{adminAccount,jdbcType=VARCHAR} and admin_pwd=#{adminPwd,jdbcType=VARCHAR}
   </select>
+
+  <select id="findPasswordByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select *
+    from user
+    where admin_account = #{UserName,jdbcType=VARCHAR}
+  </select>
+
   <!--新增逻辑判断 -->
   <select id="findWithLogin"  resultType="java.lang.Integer" parameterType="com.qaii.domain.User" >
     select count(*)

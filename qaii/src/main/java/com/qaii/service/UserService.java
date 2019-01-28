@@ -10,5 +10,6 @@ public interface UserService {
 	 int delete(Integer[] userId);
 	 int findWithLogin(User user);
 	 int updatePassword(User user);
+	 User findPasswordByUserName(String UserName);
 }
 
