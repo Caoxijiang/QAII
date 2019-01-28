@@ -6,6 +6,8 @@ public class ConstantUtil {
 
     public final static String FILE_BASE_PATH = "/Users/wangxin/File/";
 
+    public final static String FILE_UPLOAD_PATH="C:/Users/hkp/File/";
+
     public final static String INDUSTRY_INSERT_SUCCESS="page/industry/inform/addSuccesdind";
 
     public final static String INDUSTRY_INSERT_FAILD="page/industry/inform/addFaildind";
@@ -31,4 +33,5 @@ public class ConstantUtil {
     public final static String DOMAIN_PREFIX = "com.qaii.domain.";
 
     public final static String SUCCESS_MESSAGE = "SUCCESS!";
+
 }

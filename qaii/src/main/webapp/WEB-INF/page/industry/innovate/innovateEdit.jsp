@@ -23,7 +23,7 @@
 	<div class="techadd" style="width:330px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">合作情况管理&nbsp;—&nbsp;修改界面</span>
+		<span class="blue">签订协议情况&nbsp;—&nbsp;修改界面</span>
 	</div>
 	<!--导出-->
 	<button onclick="srchange('innovate.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
@@ -31,7 +31,7 @@
 	</button>
 </div>
 <div class="layui-container addtop">
-	<form class="layui-form" action="updateCooperation.do" method="post" enctype="multipart/form-data" lay-filter="example">
+	<form class="layui-form" action="updateSigningAgreement.do" method="post" enctype="multipart/form-data" lay-filter="example">
 		<!-- 基本信息 -->
 		<div class="layui-row contern">
 			<h1>基本信息</h1>
@@ -42,7 +42,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">合作方向</label>
 					<div class="layui-input-block">
-						<input type="text" name="unitName" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="directionCooperation" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -50,7 +50,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">协议签订时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="cooperationName" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+						<input type="text" name="signingTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 					</div>
 				</div>
 			</div>
@@ -58,7 +58,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label" style="padding:0px 15px;">青岛智能院<br />及孵化公司</label>
 					<div class="layui-input-block">
-						<input type="text" name="protocolName" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="colleageIncubator" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -66,7 +66,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">合作单位</label>
 					<div class="layui-input-block">
-						<input type="text" name="signTime" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="cooperationUnit" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -90,7 +90,7 @@
 				<div class="layui-form-item">
 					<label class="site-demo-button layui-form-label">备注</label>
 					<div class="layui-input-block">
-						<textarea class="layui-textarea" name="remark" lay-verify="content" id="LAY_demo_editor"></textarea>
+						<textarea class="layui-textarea" name="remake" lay-verify="content" id="LAY_demo_editor"></textarea>
 					</div>
 				</div>
 			</div>
@@ -108,7 +108,8 @@
 	</form>
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
-<script>
+<script>;
+    var address1=null;
     layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], function(){
         var form = layui.form,
             element = layui.element,
@@ -135,22 +136,22 @@
         var id=${param.userId};
         if(id!=null){
             $.post({
-                url:"getCooperation.do",
+                url:"getSigningAgreement.do",
                 data:{
                     id:id
                 },
                 success:function(data){
-                    if(data.data!=null){
-                        let awardInfo=data.data;
+                    if(data!=null){
+                        let awardInfo=data;
+                        address1=awardInfo.listFile[0].filePath;
                         //表单初始赋值 从表单中提取数据
                         form.val('example', {
                             "id":awardInfo.id,
-                            "unitName":awardInfo.unitName,
-                            "cooperationName":awardInfo.cooperationName,
-                            "protocolName":awardInfo.protocolName,
-                            "signTime":awardInfo.signTime,
-                            "cooperationContent":awardInfo.cooperationContent,
-                            "remark":awardInfo.remark,
+                            "directionCooperation":awardInfo.directionCooperation,
+                            "signingTime":awardInfo.signingTime,
+                            "colleageIncubator":awardInfo.colleageIncubator,
+                            "cooperationUnit":awardInfo.cooperationUnit,
+                            "remake":awardInfo.remake,
                             "file0":awardInfo.listFile[0].fileName,
                             "fid":awardInfo.listFile[0].id,
                             "fpath":awardInfo.listFile[0].filePath
@@ -169,23 +170,24 @@
 <script type="text/javascript">
     //在线预览
     $("#paperOnline").click(function(){
-        /* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
-        var address=$('input[name="file0"]').val();
+         var ops="http://"+window.location.host+"/"; //调整时开放此数据
+        var address=address1;
         var reg1=new RegExp("jpg","i");
         var reg2=new RegExp("pdf","i");
         var reg3=new RegExp("png","i");
         if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
             /* window.open(ops+address); */
-            window.open(address);
+            window.open(ops+address);
         }else{
             alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
         };
     })
     //下载
     $("#paperDownload").click(function(){
-        var address=$('input[name="file0"]').val();
-        /* download(ops+address); */
-        download(address);
+        var ops="http://"+window.location.host+"/"; //调整时开放此数据
+        var address=address1;
+         download(ops+address);
+        /*download(address);*/
     })
     //重新上传
     $("#upload").click(function(){
@@ -201,12 +203,20 @@
     })
 
     function download(src) {
-        var $a = document.createElement('a');
-        $a.setAttribute("href", src);
-        $a.setAttribute("download", "");
-        var evObj = document.createEvent('MouseEvents');
-        evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
-        $a.dispatchEvent(evObj);
+        var form = $("<form>");
+        form.attr("style","display:none");
+        form.attr("target","");
+        form.attr("method","post");
+        form.attr("action",  "Fileupload.do");
+        var input1 = $("<input>");
+        input1.attr("type","hidden");
+        input1.attr("dataType","json");
+        input1.attr("name","strZipPath");
+        input1.attr("value", src);
+        $("body").append(form);
+        form.append(input1);
+        form.submit();
+        form.remove();
     };
 </script>
 </body>

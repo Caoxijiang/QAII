@@ -45,7 +45,7 @@
 		   <li class="layui-nav-item">
 			<a href="javascript:;">
 			  <img src="https://t.cn/RCzsdCq" class="layui-nav-img">
-			  贤心
+                ${ sessionScope.name}
 			</a>
 			<dl class="layui-nav-child">
 			  <dd><a href="">基本资料</a></dd>
@@ -96,15 +96,14 @@
           <a href="javascript:;" onclick="iframechange('work.do')"><i class="layui-icon layui-icon-diamond" style="font-size: 22px;"></i>&nbsp;著作</a>
         </li>
        	<li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('newsScience.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>
-              &nbsp;消息管理<div id="messagenum">0</div>
+          <a href="javascript:;" onclick="iframechange('newsScience.do')" id="newsnull"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>
+              &nbsp;消息管理
           </a>
         </li>
       </ul>
     </div>
   </div>
    <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-   
    
   <!--  主要数据表格-->
   <div class="layui-body" id="layuiBody">
@@ -140,7 +139,10 @@ setTimeout(function(){
         url:"countScienceMessageNotice.do",
         success:function(data){
             messagenews=data.count;
-              $("#messagenum").html( data.count)
+            if(data.count!=0){
+                $("#newsnull").append("<div id='messagenum'>"+data.count+"</div>");
+            }
+
         }
     })
 },1000);
