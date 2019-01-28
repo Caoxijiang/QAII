@@ -306,6 +306,34 @@ $.post({
                     });
                 });
 
+                //添加作者按钮
+                $("#addmumber").click(function (){
+                    layer.open({
+                        type: 2,
+                        title: '添加作者信息',
+                        content: "papermeetingmumber.do?id=" + ${param.userId},
+                        shade: 0.3, //不显示遮罩
+                        area: ['390px', '500px'],
+                        end:function(){
+                            table.render({
+                                elem: '#testpaper'
+                                ,method:'post'
+                                ,url:'listMeetingAuthor.do?id='+id/*修改接口函数*/
+                                ,cellMinWidth: 100
+                                ,cols: [[
+                                    {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
+                                    ,{field:'authorName', title: '姓名'}
+                                    ,{field:'authorLevel',title: '排名', sort: true}
+                                    ,{field:'authorUnit',title: '单位', sort: true}
+                                    ,{fixed: 'right', title:'操作', toolbar: '#barDemopaper', width:150}
+                                ]]
+                                /*data:obj.data*/
+
+                            });
+                        }
+                    });
+                })
+
 				//开发完成日期
 			  laydate.render({
 			    elem: '#test1'
