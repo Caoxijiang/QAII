@@ -130,7 +130,7 @@ public class SigningAgreementController {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setModifyTime(new Date());
-        int result = signingAgreementService.updateByPrimaryKey(record);
+        int result = signingAgreementService.updateByPrimaryKeySelective(record);
         if (result != 0) {
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         } else {

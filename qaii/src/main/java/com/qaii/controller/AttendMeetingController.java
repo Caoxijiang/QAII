@@ -181,7 +181,7 @@ JsonResult insertExchangeTalksWithExcel(@RequestParam("file") MultipartFile file
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setModifyTime(new Date());
-        int result=industryAttendMeetingService.updateByPrimaryKey(record);
+        int result=industryAttendMeetingService.updateByPrimaryKeySelective(record);
         if (result !=0){
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         }else{
