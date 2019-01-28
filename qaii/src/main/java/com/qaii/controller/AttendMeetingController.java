@@ -67,8 +67,8 @@ public class AttendMeetingController {
         for (int i = 0; i < files.length; i++) {
             String fileName = files[i].getOriginalFilename();
             if (fileName == null || fileName.equals("")){
-                filesRecord.setAttendmeetingId(record.getId());
                 filesRecord = (IndustryAttendMeetingFiles) FileLoadToNull.getNullClass("IndustryAttendMeetingFiles");
+                filesRecord.setAttendmeetingId(record.getId());
                 industryAttendMeetingFilesService.insertSelective(filesRecord);
             }else{
                 filesRecord.setAttendmeetingId(record.getId());

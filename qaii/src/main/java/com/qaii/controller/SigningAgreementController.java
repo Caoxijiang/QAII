@@ -55,8 +55,8 @@ public class SigningAgreementController {
         for (int i = 0; i < files.length; i++) {
             String fileName = files[i].getOriginalFilename();
             if (fileName == null || fileName.equals("")) {
-                filesRecord.setSigningagreementId(record.getId());
                 filesRecord = (SigningAgreementFiles) FileLoadToNull.getNullClass("SigningAgreementFiles");
+                filesRecord.setSigningagreementId(record.getId());
                 signingAgreementFilesService.insertSelective(filesRecord);
             } else {
                 filesRecord.setSigningagreementId(record.getId())  ;
@@ -182,7 +182,7 @@ public class SigningAgreementController {
     int result=signingAgreementService.deleteByPrimaryKey(id);
     if (result !=0){
         SigningAgreementFiles sin=signingAgreementFilesService.selectFilePathBysigningagreementId(id);
-        DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH +sin.getFilePath());
+        DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH + sin.getFilePath());
         signingAgreementFilesService.deleteByPrimaryKey(id);
         return new JsonResult("success!");
     }else{

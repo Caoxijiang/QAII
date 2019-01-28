@@ -62,9 +62,9 @@ public class ExchangeTalksController {
         List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
         for (int i = 0; i < files.length; i++) {
             String fileName = files[i].getOriginalFilename();
-            if (fileName == null || fileName.equals("")){
-                filesRecord.setExchangetalksId(record.getId());
+            if (fileName==null || fileName.equals("")){
                 filesRecord = (IndustryExchangeTalksFiles) FileLoadToNull.getNullClass("IndustryExchangeTalksFiles");
+                filesRecord.setExchangetalksId(record.getId());
                 industryExchangeTalksFilesService.insertSelective(filesRecord);
             }else{
                 filesRecord.setExchangetalksId(record.getId());
@@ -184,7 +184,7 @@ public class ExchangeTalksController {
         int result=industryExchangeTalksService.deleteByPrimaryKey(id);
         if (result !=0){
             IndustryExchangeTalksFiles in=industryExchangeTalksFilesService.selectFilePathByexchangetalksId(id);
-            DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH +in.getFilePath());
+            DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH + in.getFilePath());
             industryExchangeTalksFilesService.deleteByPrimaryKey(id);
             return new JsonResult("success!");
         }else{
