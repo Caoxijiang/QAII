@@ -23,7 +23,7 @@
 	<div class="techadd" style="width:300px;">
 		<img src="${basePath}/image/home.png"  class="home"/>
 		<span>首页&nbsp;>&nbsp;</span>
-		<span class="blue">合作情况管理&nbsp;—&nbsp;添加界面</span>
+		<span class="blue">签订协议情况&nbsp;—&nbsp;添加界面</span>
 	</div>
 	<!--		导出-->
 	<button onclick="srchange('innovate.do')" class="layui-btn btn export " style="float: right;margin-right: 115px;margin-top: 12.5px;">
@@ -31,7 +31,7 @@
 	</button>
 </div>
 <div class="layui-container addtop">
-	<form class="layui-form" action="insertCooperation.do" method="post" enctype="multipart/form-data">
+	<form class="layui-form" action="insertSigningAgreement.do" method="post" enctype="multipart/form-data">
 		<!-- 基本信息 -->
 		<div class="layui-row contern">
 			<h1>基本信息</h1>
@@ -39,7 +39,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">合作方向</label>
 					<div class="layui-input-block">
-						<input type="text" name="unitName" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="directionCooperation" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">协议签订时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="cooperationName" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+						<input type="text" name="signingTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 					</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label" style="padding:0px 15px;">青岛智能院<br />及孵化公司</label>
 					<div class="layui-input-block">
-						<input type="text" name="protocolName" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="colleageIncubator" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -64,7 +64,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">合作单位</label>
 					<div class="layui-input-block">
-						<input type="text" name="signTime" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="cooperationUnit" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -85,7 +85,7 @@
 				<div class="layui-form-item">
 					<label class="site-demo-button layui-form-label">备注</label>
 					<div class="layui-input-block">
-						<textarea class="layui-textarea" name="remark" lay-verify="content" id="LAY_demo_editor"></textarea>
+						<textarea class="layui-textarea" name="remake" lay-verify="content" id="LAY_demo_editor"></textarea>
 					</div>
 				</div>
 			</div>

@@ -78,7 +78,7 @@ public class Incubator {
     private String isHighTechnology;
 
     private String isBillion;
-
+//新增字段链接地址
     private String address;
 
     public String getAddress() {
