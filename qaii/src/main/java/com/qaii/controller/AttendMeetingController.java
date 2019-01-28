@@ -2,12 +2,8 @@ package com.qaii.controller;
 
 import com.qaii.domain.IndustryAttendMeeting;
 import com.qaii.domain.IndustryAttendMeetingFiles;
-import com.qaii.domain.IndustryExchangeTalks;
-import com.qaii.domain.IndustryExchangeTalksFiles;
 import com.qaii.service.IndustryAttendMeetingFilesService;
 import com.qaii.service.IndustryAttendMeetingService;
-import com.qaii.service.IndustryExchangeTalksFilesService;
-import com.qaii.service.IndustryExchangeTalksService;
 import com.qaii.util.*;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -43,9 +39,9 @@ public class AttendMeetingController {
     private IndustryAttendMeetingFilesService industryAttendMeetingFilesService;
 
     //文件位置//数据库中记录的路径
-    private final static String BASE_PATH = "Enc/industry/AttendMeeting/";
+    private final static String BASE_PATH = "img/industry/AttendMeeting/";
     //文件路径 本机路径
-    private final static String FILE_PATH = ConstantUtil.FILE_UPLOAD_PATH + BASE_PATH;
+    private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
 
     //查询所有记录
     @RequestMapping(value = "listAttendMeeting.do")

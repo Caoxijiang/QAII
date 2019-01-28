@@ -40,9 +40,9 @@ public class SigningAgreementController {
     @Resource
     private SigningAgreementFilesService signingAgreementFilesService;
     //文件位置//数据库中记录的路径
-    private final static String BASE_PATH = "Enc/industry/SigningAgreement/";
+    private final static String BASE_PATH = "img/industry/SigningAgreement/";
     //文件路径 本机路径
-    private final static String FILE_PATH = ConstantUtil.FILE_UPLOAD_PATH + BASE_PATH;
+    private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
 
     //插入记录
     @RequestMapping(value = "insertSigningAgreement.do", produces = "text/json;charset=UTF-8")
