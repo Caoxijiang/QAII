@@ -63,6 +63,7 @@ public class SigningAgreementController {
                 filesRecord.setFileName(files[i].getOriginalFilename());
                 filesRecord.setFilePath(BASE_PATH + list.get(i));
                 filesRecord.setFileCreatetime(new Date());
+                filesRecord.setFileModifytime(new Date());
                 signingAgreementFilesService.insertSelective(filesRecord);
             }
         }
