@@ -43,6 +43,7 @@
                 ${ sessionScope.name}
 			</a>
 			<dl class="layui-nav-child">
+                <dd><a onclick="iframechange('changePassword.do')" event.returnValue=false style="color:#333 !important;"> 修改密码</a></dd>
 			  <dd><a href="">基本资料</a></dd>
 			  <dd><a href="">安全设置</a></dd>
 			</dl>

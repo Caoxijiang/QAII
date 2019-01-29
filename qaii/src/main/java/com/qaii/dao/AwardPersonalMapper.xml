@@ -352,7 +352,7 @@
   <resultMap id="CustomMap1" type="com.qaii.domain.AwardPersonalest">
     <result column="award_time" jdbcType="DATE" property="awardTime" />
     <result column="award_level" jdbcType="VARCHAR" property="awardLevel" />
-    <result column="person_name" jdbcType="VARCHAR" property="personName" />
+    <result column="person_name" jdbcType="VARCHAR" property="awardUnit" />
     <result column="award_name" jdbcType="VARCHAR" property="awardName" />
   </resultMap>
   <select id="getRecord" resultMap="CustomMap" parameterType="java.lang.Integer">

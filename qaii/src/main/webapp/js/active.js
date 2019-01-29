@@ -35,8 +35,8 @@ var awardDate=getawardAllData();//awardcollege代表院获奖情况如"awardcoll
 /*console.log(awardDate)
 console.log("huang kun peng"+awardDate.awardincubate[0].awardTime);
 console.log("huang kun peng"+awardDate.awardincubate.length);*/
+console.log(awardDate);
 var arr=awardDate.awardincubate;
-console.log(arr);
 var num=6;/*定时器循环*/
 function getawardAllData(){
     var result=null;
