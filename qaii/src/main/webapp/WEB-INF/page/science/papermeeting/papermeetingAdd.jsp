@@ -19,6 +19,19 @@
   	height:30px;
   	min-height: 30px;
     line-height: 30px;}
+	#paperwork .layui-form-select .layui-edge{margin:0px;}
+	#paperwork tr td{
+		font-size:16px;
+	}
+	.addselect{
+		display:block !important;
+		height:36px;
+		line-height:36px;
+	}
+	.addselect option{
+		height:36px;
+		line-height: 36px;
+	}
   </style>
 </head>
 <body class="layui-layout-body" style="overflow:scroll">
@@ -192,7 +205,7 @@
 		</div>
 		<div class="layui-col-md12">
 			<div class="layui-form-item">
-				<label class="layui-form-label">检索证明&nbsp;<span class="star">*</span></label>
+				<label class="layui-form-label">检索证明</label>
 				<div class="layui-input-block">
 					<div class="layui-upload">
 					  <button type="button" class="layui-btn layui-btn-normal" id="test10">选择文件</button>
@@ -248,7 +261,7 @@
    	   <div class="layui-col-md6">
 		   <div class="layui-form-item">
 			<div class="layui-input-block" style="text-align: right;">
-			  <button class="layui-btn" lay-submit="" lay-filter="demo1" onSubmit="imgjudge()">立即提交</button>
+			  <button class="layui-btn" lay-submit="" lay-filter="demo1" id="submitaa">立即提交</button>
 			  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
 			</div>
 		  </div>
@@ -260,6 +273,18 @@
 <!--  表单元素-->
 
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('#submitaa').click(function(){
+            let str=$("input[name='file']").next().html();
+            if(typeof(str) == "undefined"){
+                layer.msg('发表电子版不能为空',function() {time:2000});
+                return false;
+            }
+        });
+    });
+</script>
 <script>
     $("#addauthor").click(function(){
         let htmls="<tr><td><div class='layui-input-block'><select name='patRemission' style='display:block' lay-search='' class='input addselect'>" +
@@ -275,23 +300,6 @@
             "<option value='第六作者'>第六作者</option>" +
             "<option value='其他作者'>其他作者</option>" +
             "</select>" +
-            /*"<div class='layui-form-select layui-form-selected'>"+
-                "<div class='layui-select-title'>"+
-                    "<input type='text' placeholder='请选择作者排位' value='' class='layui-input'><i class='layui-edge'></i>"+
-                "</div>"+
-                "<dl class='layui-anim layui-anim-upbit' style=''>"+
-                    "<dd lay-value='' class='layui-select-tips layui-this'>请选择作者排位</dd>"+
-                    "<dd lay-value='第一作者' class=''>第一作者</dd>"+
-                    "<dd lay-value='第二作者' class=''>第二作者</dd>"+
-                    "<dd lay-value='第三作者' class=''>第三作者</dd>"+
-                    "<dd lay-value='第四作者' class=''>第四作者</dd>"+
-                    "<dd lay-value='第五作者' class=''>第五作者</dd>"+
-                    "<dd lay-value='第六作者' class=''>第六作者</dd>"+
-                    "<dd lay-value='第七作者' class=''>第七作者</dd>"+
-                    "<dd lay-value='第八作者' class=''>第八作者</dd>"+
-                    "<dd lay-value='通讯作者' class=''>通讯作者</dd>"+
-                "</dl>"+
-            "</div>"+*/
             "</div>" +
             "</td>" +
             " <td>" +

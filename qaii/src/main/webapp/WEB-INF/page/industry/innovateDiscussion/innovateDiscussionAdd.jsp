@@ -31,7 +31,7 @@
 	</button>
 </div>
 <div class="layui-container addtop">
-	<form class="layui-form" action="insertCooperation.do" method="post" enctype="multipart/form-data">
+	<form class="layui-form" action="insertExchangeTalks.do" method="post" enctype="multipart/form-data">
 		<!-- 基本信息 -->
 		<div class="layui-row contern">
 			<h1>基本信息</h1>
@@ -39,7 +39,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">参加人</label>
 					<div class="layui-input-block">
-						<input type="text" name="unitName" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="participant" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会谈对象</label>
 					<div class="layui-input-block">
-						<input type="text" name="cooperationName" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="targetAudience" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会谈主题</label>
 					<div class="layui-input-block">
-						<input type="text" name="protocolName" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="themeTalks" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -64,7 +64,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会谈地点</label>
 					<div class="layui-input-block">
-						<input type="text" name="signTime" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="talksAddress" lay-verify="title" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 			</div>
@@ -72,7 +72,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会谈时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="cooperationContent" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+						<input type="text" name="talksTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 					</div>
 				</div>
 			</div>

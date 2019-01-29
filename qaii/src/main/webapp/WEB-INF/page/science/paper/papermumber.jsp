@@ -30,14 +30,14 @@
 		<div class="layui-input-block wid80">
             <select name="patRemission" lay-search="" class="input">
                 <option value="第一作者">第一作者</option>
+                <option value="通讯作者">通讯作者</option>
+                <option value="第一作者和通讯作者">第一作者和通讯作者</option>
                 <option value="第二作者">第二作者</option>
                 <option value="第三作者">第三作者</option>
                 <option value="第四作者">第四作者</option>
                 <option value="第五作者">第五作者</option>
                 <option value="第六作者">第六作者</option>
-                <option value="第七作者">第七作者</option>
-                <option value="第八作者">第八作者</option>
-                <option value="通讯作者">通讯作者</option>
+                <option value="其他作者">其他作者</option>
             </select>
 		</div>
 	</div>

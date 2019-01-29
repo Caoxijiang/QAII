@@ -20,9 +20,42 @@
 	.noExl {
 	    display: none;
 	}
+	.loading{
+		width:100%;
+		height: 100%;
+		position: fixed;
+		/*background: #fff;*/
+		top: 0px;
+		left: 0px;z-index:100;
+	}
+	.loading .pic{width:50px;height: 50px;position: absolute;top:0;left: 0;bottom: 0;margin:auto;right: 0;}
+	.loading .pic i{display: block;float: left;width: 6px;height: 50px;background: #399;margin: 0px 2px;transform: scaleY(0.4);animation: load 1.2s infinite;}
+	.loading .pic i:nth-child(2){animation-delay: 0.1s;}
+	.loading .pic i:nth-child(3){animation-delay: 0.2s;}
+	.loading .pic i:nth-child(4){animation-delay: 0.3s;}
+	.loading .pic i:nth-child(5){animation-delay: 0.4s;}
+	@keyframes load{
+		0%,40%,100%{transform: scaleY(0.4);}
+		20%{transform: scaleY(1);}
+	}
   </style>
+	<script>
+        document.onreadystatechange=function(){
+            if(document.readyState=="complete"){
+                $(".loading").fadeOut();
+            }
+            //console.log(document.readyState);
+        }
+	</script>
 </head>
 <body id="bodyHei">
+<div class="loading">
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>6
+</div>
 <div class="tool">
 	<div class="layui-btn-group demoTable">
   	  <span class="limit">成员管理( <span id="countnum"> </span> )</span>

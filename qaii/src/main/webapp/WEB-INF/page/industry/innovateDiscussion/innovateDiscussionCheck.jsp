@@ -39,7 +39,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">参加人</label>
 					<div class="layui-input-block">
-						<input type="text" name="unitName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+						<input type="text" name="participant" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会谈对象</label>
 					<div class="layui-input-block">
-						<input type="text" name="cooperationName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+						<input type="text" name="targetAudience" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会谈主题</label>
 					<div class="layui-input-block">
-						<input type="text" name="protocolName" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+						<input type="text" name="themeTalks" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会谈地点</label>
 					<div class="layui-input-block">
-						<input type="text" name="signTime" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+						<input type="text" name="talksAddress" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -71,7 +71,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会谈时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="cooperationContent" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
+						<input type="text" name="talksTime" lay-verify="title" autocomplete="off" class="layui-input" disabled="">
 					</div>
 				</div>
 			</div>
@@ -110,6 +110,7 @@
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
+	var address1=null;
     layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], function(){
         var form = layui.form,
             element = layui.element,
@@ -121,20 +122,22 @@
         var id=${param.userId};
         if(id!=null){
             $.post({
-                url:"getCooperation.do",
+                url:"getExchangeTalks.do",
                 data:{
                     id:id
                 },
                 success:function(data){
-                    if(data.data!=null){
-                        let awardInfo=data.data;
+                    if(data!=null){
+                        let awardInfo=data;
+                        address1=awardInfo.listFile[0].filePath
+                        console.log(awardInfo);
                         //表单初始赋值 从表单中提取数据
                         form.val('example', {
-                            "unitName":awardInfo.unitName,
-                            "cooperationName":awardInfo.cooperationName,
-                            "protocolName":awardInfo.protocolName,
-                            "signTime":awardInfo.signTime,
-                            "cooperationContent":awardInfo.cooperationContent,
+                            "participant":awardInfo.participant,
+                            "targetAudience":awardInfo.targetAudience,
+                            "themeTalks":awardInfo.themeTalks,
+                            "talksAddress":awardInfo.talksAddress,
+                            "talksTime":awardInfo.talksTime,
                             "remark":awardInfo.remark,
                             "file0":awardInfo.listFile[0].fileName
                         })
@@ -149,32 +152,41 @@
     });
     //在线预览
     $("#paperOnline").click(function(){
-        /* var ops="http://"+window.location.host+"/"; */ //调整时开放此数据
-        var address=$('input[name="file0"]').val();
+        var ops="https://"+window.location.host+"/";  //调整时开放此数据
+        var address=address1;
         console.log(address);
         var reg1=new RegExp("jpg","i");
         var reg2=new RegExp("pdf","i");
         var reg3=new RegExp("png","i");
         if(reg1.test(address)||reg2.test(address)||reg3.test(address)){
-            /* window.open(ops+address); */
-            window.open(address);
+             window.open(ops+address);
+            /*window.open(address);*/
         }else{
             alert("系统目前暂不支持非图片和pdf文件的预览!其他文件请下载到本地预览。");
         };
     })
     //下载
     $("#paperDownload").click(function(){
-        var address=$('input[name="file0"]').val();
-        /* download(ops+address); */
-        download(address);
+        var ops="https://"+window.location.host+"/";  //调整时开放此数据
+        var address=address1;
+         download(ops+address);
+        /*download(address);*/
     })
     function download(src) {
-        var $a = document.createElement('a');
-        $a.setAttribute("href", src);
-        $a.setAttribute("download", "");
-        var evObj = document.createEvent('MouseEvents');
-        evObj.initMouseEvent( 'click', true, true, window, 0, 0, 0, 0, 0, false, false, true, false, 0, null);
-        $a.dispatchEvent(evObj);
+        var form = $("<form>");
+        form.attr("style","display:none");
+        form.attr("target","");
+        form.attr("method","post");
+        form.attr("action",  "Fileupload.do");
+        var input1 = $("<input>");
+        input1.attr("type","hidden");
+        input1.attr("dataType","json");
+        input1.attr("name","strZipPath");
+        input1.attr("value", src);
+        $("body").append(form);
+        form.append(input1);
+        form.submit();
+        form.remove();
     };
 </script>
 <script src="${basePath}/js/iframesrc.js"></script>
