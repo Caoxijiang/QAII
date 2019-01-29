@@ -48,9 +48,9 @@ public class ExchangeTalksController {
     private IndustryExchangeTalksFilesService industryExchangeTalksFilesService;
 
     //文件位置//数据库中记录的路径
-    private final static String BASE_PATH = "Enc/industry/ExchangeTalks/";
+    private final static String BASE_PATH = "img/industry/ExchangeTalks/";
     //文件路径 本机路径
-    private final static String FILE_PATH = ConstantUtil.FILE_UPLOAD_PATH + BASE_PATH;
+    private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
 
     //插入记录
     @RequestMapping(value = "insertExchangeTalks.do", produces = "text/json;charset=UTF-8")
@@ -62,9 +62,9 @@ public class ExchangeTalksController {
         List list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
         for (int i = 0; i < files.length; i++) {
             String fileName = files[i].getOriginalFilename();
-            if (fileName == null || fileName.equals("")){
-                filesRecord.setExchangetalksId(record.getId());
+            if (fileName==null || fileName.equals("")){
                 filesRecord = (IndustryExchangeTalksFiles) FileLoadToNull.getNullClass("IndustryExchangeTalksFiles");
+                filesRecord.setExchangetalksId(record.getId());
                 industryExchangeTalksFilesService.insertSelective(filesRecord);
             }else{
                 filesRecord.setExchangetalksId(record.getId());
@@ -115,7 +115,7 @@ public class ExchangeTalksController {
                                       IndustryExchangeTalksFiles record) throws IOException {
         record.setExchangetalksId(Integer.parseInt(request.getParameter("id")));
         record.setId(Integer.parseInt(request.getParameter("fid")));
-        DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH + request.getParameter("fpath"));
+        DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + request.getParameter("fpath"));
         List<String> list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
         record.setFilePath(BASE_PATH + list.get(0));
         record.setFileName(files[0].getOriginalFilename());
@@ -135,7 +135,7 @@ public class ExchangeTalksController {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setModifyTime(new Date());
-        int result=industryExchangeTalksService.updateByPrimaryKey(record);
+        int result=industryExchangeTalksService.updateByPrimaryKeySelective(record);
         if (result !=0){
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         }else{
@@ -184,7 +184,7 @@ public class ExchangeTalksController {
         int result=industryExchangeTalksService.deleteByPrimaryKey(id);
         if (result !=0){
             IndustryExchangeTalksFiles in=industryExchangeTalksFilesService.selectFilePathByexchangetalksId(id);
-            DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH +in.getFilePath());
+            DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + in.getFilePath());
             industryExchangeTalksFilesService.deleteByPrimaryKey(id);
             return new JsonResult("success!");
         }else{

@@ -40,9 +40,9 @@ public class SigningAgreementController {
     @Resource
     private SigningAgreementFilesService signingAgreementFilesService;
     //文件位置//数据库中记录的路径
-    private final static String BASE_PATH = "Enc/industry/SigningAgreement/";
+    private final static String BASE_PATH = "img/industry/SigningAgreement/";
     //文件路径 本机路径
-    private final static String FILE_PATH = ConstantUtil.FILE_UPLOAD_PATH + BASE_PATH;
+    private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
 
     //插入记录
     @RequestMapping(value = "insertSigningAgreement.do", produces = "text/json;charset=UTF-8")
@@ -55,14 +55,15 @@ public class SigningAgreementController {
         for (int i = 0; i < files.length; i++) {
             String fileName = files[i].getOriginalFilename();
             if (fileName == null || fileName.equals("")) {
-                filesRecord.setSigningagreementId(record.getId());
                 filesRecord = (SigningAgreementFiles) FileLoadToNull.getNullClass("SigningAgreementFiles");
+                filesRecord.setSigningagreementId(record.getId());
                 signingAgreementFilesService.insertSelective(filesRecord);
             } else {
                 filesRecord.setSigningagreementId(record.getId())  ;
                 filesRecord.setFileName(files[i].getOriginalFilename());
                 filesRecord.setFilePath(BASE_PATH + list.get(i));
                 filesRecord.setFileCreatetime(new Date());
+                filesRecord.setFileModifytime(new Date());
                 signingAgreementFilesService.insertSelective(filesRecord);
             }
         }
@@ -108,7 +109,7 @@ public class SigningAgreementController {
         record.setId(Integer.parseInt(request.getParameter("fid")));
         String id = request.getParameter("fid");
         String path = request.getParameter("fpath");
-        DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH + request.getParameter("fpath"));
+        DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + request.getParameter("fpath"));
         List<String> list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
         record.setFilePath(BASE_PATH + list.get(0));
         record.setFileName(files[0].getOriginalFilename());
@@ -129,7 +130,7 @@ public class SigningAgreementController {
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setModifyTime(new Date());
-        int result = signingAgreementService.updateByPrimaryKey(record);
+        int result = signingAgreementService.updateByPrimaryKeySelective(record);
         if (result != 0) {
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         } else {
@@ -181,7 +182,7 @@ public class SigningAgreementController {
     int result=signingAgreementService.deleteByPrimaryKey(id);
     if (result !=0){
         SigningAgreementFiles sin=signingAgreementFilesService.selectFilePathBysigningagreementId(id);
-        DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH +sin.getFilePath());
+        DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + sin.getFilePath());
         signingAgreementFilesService.deleteByPrimaryKey(id);
         return new JsonResult("success!");
     }else{

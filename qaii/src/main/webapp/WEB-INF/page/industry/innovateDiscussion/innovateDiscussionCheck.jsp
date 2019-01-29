@@ -152,7 +152,7 @@
     });
     //在线预览
     $("#paperOnline").click(function(){
-        var ops="http://"+window.location.host+"/";  //调整时开放此数据
+        var ops="https://"+window.location.host+"/";  //调整时开放此数据
         var address=address1;
         console.log(address);
         var reg1=new RegExp("jpg","i");
@@ -167,7 +167,7 @@
     })
     //下载
     $("#paperDownload").click(function(){
-        var ops="http://"+window.location.host+"/";  //调整时开放此数据
+        var ops="https://"+window.location.host+"/";  //调整时开放此数据
         var address=address1;
          download(ops+address);
         /*download(address);*/

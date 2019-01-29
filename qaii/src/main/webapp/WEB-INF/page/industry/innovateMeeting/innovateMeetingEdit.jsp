@@ -82,7 +82,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">会议时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="meetingTime" lay-verify="title" autocomplete="off" class="layui-input">
+						<input type="text" name="meetingTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
 					</div>
 				</div>
 			</div>
@@ -188,7 +188,7 @@
 <script type="text/javascript">
     //在线预览
     $("#paperOnline").click(function(){
-        var ops="http://"+window.location.host+"/";  //调整时开放此数据
+        var ops="https://"+window.location.host+"/";  //调整时开放此数据
         var address=address1;
         var reg1=new RegExp("jpg","i");
         var reg2=new RegExp("pdf","i");
@@ -202,7 +202,7 @@
     })
     //下载
     $("#paperDownload").click(function(){
-        var ops="http://"+window.location.host+"/";  //调整时开放此数据
+        var ops="https://"+window.location.host+"/";  //调整时开放此数据
         var address=address1;
         download(ops+address);
         /*download(address);*/

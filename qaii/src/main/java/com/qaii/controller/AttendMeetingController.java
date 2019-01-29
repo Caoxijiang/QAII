@@ -2,12 +2,8 @@ package com.qaii.controller;
 
 import com.qaii.domain.IndustryAttendMeeting;
 import com.qaii.domain.IndustryAttendMeetingFiles;
-import com.qaii.domain.IndustryExchangeTalks;
-import com.qaii.domain.IndustryExchangeTalksFiles;
 import com.qaii.service.IndustryAttendMeetingFilesService;
 import com.qaii.service.IndustryAttendMeetingService;
-import com.qaii.service.IndustryExchangeTalksFilesService;
-import com.qaii.service.IndustryExchangeTalksService;
 import com.qaii.util.*;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -43,9 +39,9 @@ public class AttendMeetingController {
     private IndustryAttendMeetingFilesService industryAttendMeetingFilesService;
 
     //文件位置//数据库中记录的路径
-    private final static String BASE_PATH = "Enc/industry/AttendMeeting/";
+    private final static String BASE_PATH = "img/industry/AttendMeeting/";
     //文件路径 本机路径
-    private final static String FILE_PATH = ConstantUtil.FILE_UPLOAD_PATH + BASE_PATH;
+    private final static String FILE_PATH = ConstantUtil.FILE_BASE_PATH + BASE_PATH;
 
     //查询所有记录
     @RequestMapping(value = "listAttendMeeting.do")
@@ -67,8 +63,8 @@ public class AttendMeetingController {
         for (int i = 0; i < files.length; i++) {
             String fileName = files[i].getOriginalFilename();
             if (fileName == null || fileName.equals("")){
-                filesRecord.setAttendmeetingId(record.getId());
                 filesRecord = (IndustryAttendMeetingFiles) FileLoadToNull.getNullClass("IndustryAttendMeetingFiles");
+                filesRecord.setAttendmeetingId(record.getId());
                 industryAttendMeetingFilesService.insertSelective(filesRecord);
             }else{
                 filesRecord.setAttendmeetingId(record.getId());
@@ -112,7 +108,7 @@ public class AttendMeetingController {
         int result=industryAttendMeetingService.deleteByPrimaryKey(id);
         if (result !=0){
             IndustryAttendMeetingFiles in=industryAttendMeetingFilesService.selectFilePathByattendmeetingId(id);
-            DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH + in.getFilePath());
+            DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + in.getFilePath());
             industryAttendMeetingFilesService.deleteByPrimaryKey(id);
             return new JsonResult("success!");
         }else{
@@ -127,7 +123,7 @@ public class AttendMeetingController {
                                    IndustryAttendMeetingFiles record) throws IOException {
         record.setAttendmeetingId(Integer.parseInt(request.getParameter("id")));
         record.setId(Integer.parseInt(request.getParameter("fid")));
-        DeleteFileUtil.delete(ConstantUtil.FILE_UPLOAD_PATH + request.getParameter("fpath"));
+        DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + request.getParameter("fpath"));
         List<String> list = FileLoadUtils.moveFileAndReturnName(files, FILE_PATH);
         record.setFileName(files[0].getOriginalFilename());
         record.setFilePath(BASE_PATH + list.get(0));
@@ -181,7 +177,7 @@ JsonResult insertExchangeTalksWithExcel(@RequestParam("file") MultipartFile file
         record.setId(Integer.parseInt(request.getParameter("id")));
         LoadData(request, record);
         record.setModifyTime(new Date());
-        int result=industryAttendMeetingService.updateByPrimaryKey(record);
+        int result=industryAttendMeetingService.updateByPrimaryKeySelective(record);
         if (result !=0){
             return ConstantUtil.INDUSTRY_EDIT_SUCCESS;
         }else{
