@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>合作情况管理</title>
+	<title>签订协议情况</title>
 	<link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
 	<link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
 	<link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
@@ -79,11 +79,11 @@
 	<div class="act">
 		<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 		<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-		<div class="int-inline"><input id="unitName"  type="checkbox" value="合作方向" checked="flase"/><lable>合作方向</lable></div>
-		<div class="int-inline"><input id="cooperationName"  type="checkbox" value="协议签订时间" checked/><lable>协议签订时间</lable></div>
-		<div class="int-inline"><input id="protocolName"  type="checkbox" value="青岛智能院及孵化公司" checked/><lable>青岛智能院及孵化公司</lable></div>
-		<div class="int-inline"><input id="signTime"  type="checkbox" value="合作单位" checked/><lable>合作单位</lable></div>
-		<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
+		<div class="int-inline"><input id="directionCooperation"  type="checkbox" value="合作方向" checked="flase"/><lable>合作方向</lable></div>
+		<div class="int-inline"><input id="signingTime"  type="checkbox" value="协议签订时间" checked/><lable>协议签订时间</lable></div>
+		<div class="int-inline"><input id="colleageIncubator"  type="checkbox" value="青岛智能院及孵化公司" checked/><lable>青岛智能院及孵化公司</lable></div>
+		<div class="int-inline"><input id="cooperationUnit"  type="checkbox" value="合作单位" checked/><lable>合作单位</lable></div>
+		<div class="int-inline"><input id="remake"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 	</div>
 </div>
 <!-- 数据展示主表格-->
@@ -118,16 +118,16 @@
             limit:9999999,//不设置分页，最大数据量为9999999
             id: 'testReload',
 //    height: 332,
-            url: 'listCooperations.do', //数据接口
+            url: 'listSigningAgreement.do', //数据接口
             cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
             cols: [[ //标题栏
                 {type:'checkbox',fixed: 'left'},
                 {field: 'id', title: '序号',type:'numbers',fixed: 'left',width:80},
-                {field: 'unitName', title: '合作方向',fixed: 'left',width:120},
-                {field: 'cooperationName', title: '协议签订时间',width:180},
-                {field: 'protocolName', title: '青岛智能院及孵化公司',sort: true,width:320},
-                {field: 'signTime', title: '合作单位',sort: true,width:180},
-                {field: 'remark', title: '备注',width:220},
+                {field: 'directionCooperation', title: '合作方向',fixed: 'left',width:120},
+                {field: 'signingTime', title: '协议签订时间',width:180},
+                {field: 'colleageIncubator', title: '青岛智能院及孵化公司',sort: true,width:320},
+                {field: 'cooperationUnit', title: '合作单位',sort: true,width:180},
+                {field: 'remake', title: '备注',width:220},
                 {field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:200}
             ]],
             //表格数据
@@ -267,7 +267,7 @@
                     let arr=[data.id];
                     console.log(data)
                     $.post({
-                        url:"deleteCooperation.do",
+                        url:"deleteSigningAgreement.do",
                         data:{
                             "requestDate" : arr
                         },
@@ -327,7 +327,7 @@
 //指定允许上传的文件类型
         upload.render({
             elem: '#test3'
-            ,url: 'insertCooperationWithExcel.do'
+            ,url: 'insertSigningAgreementWithExcel.do'
             ,accept: 'file' //普通文件
             ,done: function(res){
                 alert("上传成功！请更新数据！");

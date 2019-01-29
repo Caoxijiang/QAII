@@ -13,7 +13,7 @@
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-<form action="reloadCooperationFile.do" method="post" enctype="multipart/form-data">
+<form action="reloadSigningAgreementFile.do" method="post" enctype="multipart/form-data">
   <input type="file" name="file" id="path">
   <input type="hidden" name="id" id="id" value="${param.id}">
   <input type="hidden" name="fid" id="fid" value="${param.fid}">
