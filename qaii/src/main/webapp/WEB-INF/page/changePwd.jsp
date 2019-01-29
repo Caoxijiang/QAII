@@ -195,6 +195,22 @@
         }
 
     }
+//此处用来获取当前用户的密码
+    function getPasswordByUserName(){
+        var result=null;
+        $.ajax({
+            async:false,
+            type:"POST",
+            url:"getPasswordByUserName.do",
+            success:function(data){
+                result=data;
+            }
+        })
+        return result;
+    }
+    let User=getPasswordByUserName();
+    //此处为获取的用户密码
+    console.log(User.adminPwd);
 </script>
 </body>
 </html>

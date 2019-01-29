@@ -21,4 +21,6 @@ public interface UserMapper {
     User findWithLoginAndPassword(User user);
     int findWithLogin(User user);
     int updatePassword(User user);
+
+    User findPasswordByUserName(String UserName);
 }
