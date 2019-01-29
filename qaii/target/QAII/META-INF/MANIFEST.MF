@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
 Built-By: Administrator
 Created-By: IntelliJ IDEA
-<<<<<<< HEAD
 Build-Jdk: 1.8.0_171
-=======
-Build-Jdk: 1.8.0_91
->>>>>>> 528c87d72df8cb182c398685ea128a09b98bfd58
 
