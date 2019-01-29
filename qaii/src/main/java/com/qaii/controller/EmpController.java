@@ -743,4 +743,16 @@ public class EmpController {
 //		empInfo.setEmpTitle(value.get(44));
 		return empInfo;
 	}
+
+	//消息管理数量统计
+	@RequestMapping("countEmpNotice.do")
+	@ResponseBody
+	Layui countEmpNotice() throws ParseException {
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		int result = empInfoService.getstatusbyreview("待审核").size()
+				+ empInfoService.getIDexpire(CountDatetoNowDays.SDatetoStamp(sdf.format(new Date()),-30)).size()
+				+ getTryEndTimePerson(sdf.format(new Date())).size()
+				+ getContractEndtimePerson(sdf.format(new Date())).size();
+		return Layui.data(result, null);
+	}
 }
