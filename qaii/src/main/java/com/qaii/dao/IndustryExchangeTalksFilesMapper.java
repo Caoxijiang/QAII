@@ -2,6 +2,8 @@ package com.qaii.dao;
 
 import com.qaii.domain.IndustryExchangeTalksFiles;
 
+import java.util.List;
+
 public interface IndustryExchangeTalksFilesMapper {
     int deleteByPrimaryKey(Integer[] id);
 
@@ -15,5 +17,5 @@ public interface IndustryExchangeTalksFilesMapper {
 
     int updateByPrimaryKey(IndustryExchangeTalksFiles record);
 
-    IndustryExchangeTalksFiles selectFilePathByexchangetalksId(Integer[] id);
+    List<IndustryExchangeTalksFiles> selectFilePathByexchangetalksId(Integer[] id);
 }

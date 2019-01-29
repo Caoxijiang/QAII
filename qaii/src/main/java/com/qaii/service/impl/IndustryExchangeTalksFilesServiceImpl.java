@@ -6,6 +6,8 @@ import com.qaii.service.IndustryExchangeTalksFilesService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+
 @Service("industryExchangeTalksFilesService")
 public class IndustryExchangeTalksFilesServiceImpl implements IndustryExchangeTalksFilesService {
     @Resource
@@ -42,7 +44,7 @@ public class IndustryExchangeTalksFilesServiceImpl implements IndustryExchangeTa
     }
 
     @Override
-    public IndustryExchangeTalksFiles selectFilePathByexchangetalksId(Integer[] id) {
+    public List<IndustryExchangeTalksFiles> selectFilePathByexchangetalksId(Integer[] id) {
         return industryExchangeTalksFilesMapper.selectFilePathByexchangetalksId(id);
     }
 }

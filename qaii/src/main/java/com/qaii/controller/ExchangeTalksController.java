@@ -183,8 +183,10 @@ public class ExchangeTalksController {
     JsonResult deleteExchangeTalks(@RequestParam("requestDate[]") Integer[] id) {
         int result=industryExchangeTalksService.deleteByPrimaryKey(id);
         if (result !=0){
-            IndustryExchangeTalksFiles in=industryExchangeTalksFilesService.selectFilePathByexchangetalksId(id);
+            List<IndustryExchangeTalksFiles> list=industryExchangeTalksFilesService.selectFilePathByexchangetalksId(id);
+            for (IndustryExchangeTalksFiles in:list) {
             DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + in.getFilePath());
+            }
             industryExchangeTalksFilesService.deleteByPrimaryKey(id);
             return new JsonResult("success!");
         }else{
