@@ -6,6 +6,7 @@ import com.qaii.service.SigningAgreementFilesService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by kunpeng on 2019/1/21 11:02
@@ -45,7 +46,7 @@ public class SigningAgreementFilesServiceImpl implements SigningAgreementFilesSe
     }
 
     @Override
-    public SigningAgreementFiles selectFilePathBysigningagreementId(Integer[] id) {
+    public List<SigningAgreementFiles> selectFilePathBysigningagreementId(Integer[] id) {
         return signingAgreementFilesMapper.selectFilePathBysigningagreementId(id);
     }
 }

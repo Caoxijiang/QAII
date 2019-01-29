@@ -2,6 +2,8 @@ package com.qaii.dao;
 
 import com.qaii.domain.SigningAgreementFiles;
 
+import java.util.List;
+
 public interface SigningAgreementFilesMapper {
     int deleteByPrimaryKey(Integer[] id);
 
@@ -15,5 +17,5 @@ public interface SigningAgreementFilesMapper {
 
     int updateByPrimaryKey(SigningAgreementFiles record);
 
-    SigningAgreementFiles selectFilePathBysigningagreementId(Integer[] id);
+    List<SigningAgreementFiles> selectFilePathBysigningagreementId(Integer[] id);
 }

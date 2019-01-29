@@ -155,7 +155,7 @@
                     arr.push(ids)
                 }
                 if(arr.length!=0){
-                    dell("deleteCooperation.do",arr);
+                    dell("deleteAttendMeeting.do",arr);
                 }else {
                     layer.alert("请选择要删除的内容");
                 }

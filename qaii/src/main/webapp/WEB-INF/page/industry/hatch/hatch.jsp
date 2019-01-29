@@ -340,7 +340,6 @@ layui.use('table', function(obj){
                 "requestDate" : arr
             },
             success:function(data){
-
                 if(data.status == 1){
                     // alert('删除成功，请刷新查看');
                     layer.alert("删除成功");
