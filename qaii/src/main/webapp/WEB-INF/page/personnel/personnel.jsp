@@ -21,6 +21,18 @@
 		height:-webkit-calc( 100vh - 120px );
 		height:calc( 100vh - 120px );
 	}
+      #messagenum{
+          background: #f5343d;
+          color:#fff;
+          font-size:10px;
+          width:20px;
+          height:20px;
+          border-radius:50%;
+          line-height:20px;
+          display: inline-block;
+          text-align: center;
+          margin-left:5px;
+      }
   </style>
 </head>
 <body class="layui-layout-body">
@@ -43,6 +55,7 @@
                 ${ sessionScope.name}
 			</a>
 			<dl class="layui-nav-child">
+                <dd><a onclick="iframechange('changePassword.do')" event.returnValue=false style="color:#333 !important;"> 修改密码</a></dd>
 			  <dd><a href="">基本资料</a></dd>
 			  <dd><a href="">安全设置</a></dd>
 			</dl>
@@ -69,7 +82,7 @@
           <a href="javascript:;" onclick="iframechange('sysadmin.do')"><i class="layui-icon layui-icon-set-fill" style="font-size: 22px;"></i>&nbsp;系统管理</a>
         </li>
          <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('newsUI.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
+          <a href="javascript:;" onclick="iframechange('newsUI.do')" id="newsnull"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
         </li>
        
       </ul>
@@ -107,6 +120,20 @@ function iframechange(obj){
 	$('iframe').attr('src',obj);
 }
 
+
+//消息管理数量
+setTimeout(function(){
+    $.post({
+        url:"countEmpNotice.do",
+        success:function(data){
+            messagenews=data.count;
+            if(data.count!=0){
+                $("#newsnull").append("<div id='messagenum'>"+data.count+"</div>");
+            }
+
+        }
+    })
+},1000);
 </script>
 </body>
 </html>

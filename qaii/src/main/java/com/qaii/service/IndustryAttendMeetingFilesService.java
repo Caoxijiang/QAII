@@ -2,6 +2,8 @@ package com.qaii.service;
 
 import com.qaii.domain.IndustryAttendMeetingFiles;
 
+import java.util.List;
+
 public interface IndustryAttendMeetingFilesService {
     int deleteByPrimaryKey(Integer[] id);
 
@@ -11,7 +13,7 @@ public interface IndustryAttendMeetingFilesService {
 
     IndustryAttendMeetingFiles selectByPrimaryKey(Integer id);
 
-    IndustryAttendMeetingFiles selectFilePathByattendmeetingId(Integer[] id);
+    List<IndustryAttendMeetingFiles> selectFilePathByattendmeetingId(Integer[] id);
 
     int updateByPrimaryKeySelective(IndustryAttendMeetingFiles record);
 

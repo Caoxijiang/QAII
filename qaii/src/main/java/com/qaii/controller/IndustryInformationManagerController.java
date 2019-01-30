@@ -60,4 +60,9 @@ public class IndustryInformationManagerController {
         return new ModelAndView("page/industry/indnews");
     }
 
+    @RequestMapping("countIndustryNotice.do")
+    @ResponseBody
+    Layui countIndustryNotice() throws ParseException {
+        return Layui.data((Integer)(SelectComPanyInfo().get("count")),null);
+    }
 }

@@ -5,6 +5,7 @@ import com.qaii.service.IndustryAttendMeetingFilesService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("industryAttendMeetingFilesService")
 public class IndustryAttendMeetingFilesServiceImpl implements IndustryAttendMeetingFilesService {
@@ -42,7 +43,7 @@ public class IndustryAttendMeetingFilesServiceImpl implements IndustryAttendMeet
     }
 
     @Override
-    public IndustryAttendMeetingFiles selectFilePathByattendmeetingId(Integer[] id) {
+    public List<IndustryAttendMeetingFiles> selectFilePathByattendmeetingId(Integer[] id) {
         return industryAttendMeetingFilesMapper.selectFilePathByattendmeetingId(id);
     }
 }
