@@ -55,5 +55,16 @@ public interface EmpInfoMapper {
     List <EmpInfo> getallinjobEmp();
     
     List<EmpInfo> findTimpEMpinfo(String startTime,String endTime);
+
+    //新数据可视化高端人才新接口
+    int countDoctoral();
+
+    int countMaster();
+
+    int countJobTitle(String jobtitle);
+
+    int countTitleLevel(String title);
+
+
     
 }
