@@ -185,7 +185,7 @@ public class ExchangeTalksController {
         if (result !=0){
             List<IndustryExchangeTalksFiles> list=industryExchangeTalksFilesService.selectFilePathByexchangetalksId(id);
             for (IndustryExchangeTalksFiles in:list) {
-            DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + in.getFilePath());
+                DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + in.getFilePath());
             }
             industryExchangeTalksFilesService.deleteByPrimaryKey(id);
             return new JsonResult("success!");
