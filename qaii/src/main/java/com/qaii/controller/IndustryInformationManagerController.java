@@ -1,8 +1,6 @@
 package com.qaii.controller;
 
 import com.qaii.domain.CompanyInfo;
-import com.qaii.domain.Incubator;
-import com.qaii.domain.StockEquity;
 import com.qaii.service.IncubatorService;
 import com.qaii.service.StockEquityService;
 import com.qaii.util.CountDatetoNowDays;
@@ -60,4 +58,9 @@ public class IndustryInformationManagerController {
         return new ModelAndView("page/industry/indnews");
     }
 
+    @RequestMapping("countIndustryNotice.do")
+    @ResponseBody
+    Layui countIndustryNotice() throws ParseException {
+        return Layui.data((Integer)(SelectComPanyInfo().get("count")),null);
+    }
 }
