@@ -12,6 +12,20 @@
   <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
   <link rel="stylesheet" href="${basePath}/css/science.css">
   <script src="${basePath}/js/jquery-3.3.1.min.js"></script>
+    <style>
+        #messagenum{
+            background: #f5343d;
+            color:#fff;
+            font-size:10px;
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            line-height:20px;
+            display: inline-block;
+            text-align: center;
+            margin-left:5px;
+        }
+    </style>
 <!--  iframe样式设置-->
 </head>
 <body class="layui-layout-body">
@@ -75,7 +89,7 @@
             </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;" onclick="iframechange('indnews.do')"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
+          <a href="javascript:;" onclick="iframechange('indnews.do')" id="newsnull"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>&nbsp;消息管理</a>
         </li>
       </ul>
     </div>
@@ -112,6 +126,19 @@ function iframechange(obj){
 	$('iframe').attr('src',obj);
 }
 
+
+setTimeout(function(){
+    $.post({
+        url:"countIndustryNotice.do",
+        success:function(data){
+            messagenews=data.count;
+            if(data.count!=0){
+                $("#newsnull").append("<div id='messagenum'>"+data.count+"</div>");
+            }
+
+        }
+    })
+},1000);
 </script>
 </body>
 </html>

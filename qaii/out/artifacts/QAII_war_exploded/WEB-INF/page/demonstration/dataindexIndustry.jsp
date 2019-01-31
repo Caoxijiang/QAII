@@ -25,7 +25,7 @@
 		a{
 			text-decoration: none;
 		}
-		#rewardtable{
+		#rewardtable,#rewardtable tr td{
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
