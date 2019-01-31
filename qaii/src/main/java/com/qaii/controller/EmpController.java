@@ -755,4 +755,11 @@ public class EmpController {
 				+ getContractEndtimePerson(sdf.format(new Date())).size();
 		return Layui.data(result, null);
 	}
+
+	//新数据可视化高端人才取值
+	Map<String,Integer> getHighertalents(){
+		Map<String, Integer> result = new HashMap<>();
+		//result.put("")
+		return  null;
+	}
 }
