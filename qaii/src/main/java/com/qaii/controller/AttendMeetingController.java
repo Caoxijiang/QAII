@@ -107,8 +107,10 @@ public class AttendMeetingController {
     JsonResult deleteAttendMeeting(@RequestParam("requestDate[]") Integer[] id) {
         int result=industryAttendMeetingService.deleteByPrimaryKey(id);
         if (result !=0){
-            IndustryAttendMeetingFiles in=industryAttendMeetingFilesService.selectFilePathByattendmeetingId(id);
-            DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + in.getFilePath());
+            List<IndustryAttendMeetingFiles> list=industryAttendMeetingFilesService.selectFilePathByattendmeetingId(id);
+            for (IndustryAttendMeetingFiles in:list) {
+                DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + in.getFilePath());
+            }
             industryAttendMeetingFilesService.deleteByPrimaryKey(id);
             return new JsonResult("success!");
         }else{

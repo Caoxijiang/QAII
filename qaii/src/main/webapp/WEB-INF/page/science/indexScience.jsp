@@ -17,50 +17,60 @@
 	a{
 		text-decoration: none;
 	}
-	#rewardtable{
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-
 	.loading{
-		width:1920px;
-		height: 1080px;
+		width:100%;
+		height: 100%;
 		position: fixed;
-		/*background: #fff;*/
+		background: #003e8d;
 		top: 0px;
 		left: 0px;z-index:100;
 	}
-	.loading .pic{width:50px;height: 50px;position: absolute;top:0;left: 0;bottom: 0;margin:auto;right: 0;}
-	.loading .pic i{display: block;float: left;width: 6px;height: 50px;background: #399;margin: 0px 2px;transform: scaleY(0.4);animation: load 1.2s infinite;}
-	.loading .pic i:nth-child(2){animation-delay: 0.1s;}
-	.loading .pic i:nth-child(3){animation-delay: 0.2s;}
-	.loading .pic i:nth-child(4){animation-delay: 0.3s;}
-	.loading .pic i:nth-child(5){animation-delay: 0.4s;}
-	@keyframes load{
-		0%,40%,100%{transform: scaleY(0.4);}
-		20%{transform: scaleY(1);}
+	.pic{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		margin: auto;
+		right: 0;
+		width:99px;
+		height:99px;
+		background: url("${basePath}/image/000.png") no-repeat;
+		animation: cir00 infinite linear 5s;
+
+	}
+
+	@keyframes cir00 {
+		from{
+			transform:rotate(360deg);
+			-ms-transform:rotate(360deg); /* Internet Explorer */
+			-moz-transform:rotate(360deg); /* Firefox */
+			-webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+			-o-transform:rotate(360deg); /* Opera */
+		}
+		to{
+			transform:rotate(0deg);
+			-ms-transform:rotate(0deg); /* Internet Explorer */
+			-moz-transform:rotate(0deg); /* Firefox */
+			-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+			-o-transform:rotate(0deg); /* Opera */
+		}
 	}
 </style>
 
 <script>
-	document.onreadystatechange=function(){
-		if(document.readyState=="complete"){
-			$(".loading").fadeOut();
-		}
-	}
+    document.onreadystatechange=function(){
+        if(document.readyState=="complete"){
+            $(".loading").fadeOut();
+        }
+        //console.log(document.readyState);
+    }
 </script>
 </head>
 <body class="mainbody">
-<div class="loading">
-	<div class="pic">
-		<i></i>
-		<i></i>
-		<i></i>
-		<i></i>
-		<i></i>
+	<div class="loading">
+		<div class="pic">
+		</div>
 	</div>
-</div>
 <div class="main">
 	<div class="sciNav">
 		<a href="science.do"><div class="pageTo">进入系统</div></a>

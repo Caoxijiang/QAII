@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <h5>修改密码成功！</h5>
+    <h5>修改密码成功，请重新登录！</h5>
+    <a href="login.do" target="_top">确定</a>
 </head>
 <body>
 

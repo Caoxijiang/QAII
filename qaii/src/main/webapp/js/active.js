@@ -35,8 +35,8 @@ var awardDate=getawardAllData();//awardcollege代表院获奖情况如"awardcoll
 /*console.log(awardDate)
 console.log("huang kun peng"+awardDate.awardincubate[0].awardTime);
 console.log("huang kun peng"+awardDate.awardincubate.length);*/
+console.log(awardDate);
 var arr=awardDate.awardincubate;
-console.log(arr);
 var num=6;/*定时器循环*/
 function getawardAllData(){
     var result=null;
@@ -70,7 +70,7 @@ function tablefun(ss){
         num=6;
     }else if (ss=="gerenhuojiang") {
         arr=awardDate.awardpersonal;
-        htmltit="<tr><th>获奖时间</th><th>获奖级别</th><th>个人获奖</th><th>奖励荣誉名称</th></tr>";
+        htmltit="<tr><th>获奖时间</th><th>获奖级别</th><th>获奖人员</th><th>奖励荣誉名称</th></tr>";
         num=6;
     }
 
@@ -78,10 +78,10 @@ function tablefun(ss){
         for (let i = 0; i < 6; i++) {
             if(i%2==0){
                 htmls = "<tr><td>" + arr[i].awardTime + "</td><td>" + arr[i].awardLevel +
-                    "</td><td>" + arr[i].awardUnit + "</td><td>" + arr[i].awardName + "</td></tr>"+htmls;
+                    "</td><td><a title='"+arr[i].awardUnit+"'>" + arr[i].awardUnit + "</a></td><td><a title='"+arr[i].awardName+"'>" + arr[i].awardName + "</a></td></tr>"+htmls;
             }else{
                 htmls = "<tr style='background: rgba(115,199,206,0.1)'><td>" + arr[i].awardTime + "</td><td>" + arr[i].awardLevel +
-                    "</td><td>" + arr[i].awardUnit + "</td><td>" + arr[i].awardName + "</td></tr>"+htmls;
+                    "</td><td><a title='"+arr[i].awardUnit+"'>" + arr[i].awardUnit + "</a></td><td><a title='"+arr[i].awardName+"'>" + arr[i].awardName + "</a></td></tr>"+htmls;
             }
         }
     }else{
@@ -100,11 +100,11 @@ function gdb(){
     }
     if(num%2==0){
         $('#rewardtable tr:first').after("<tr><td>" + arr[num].awardTime + "</td><td>" + arr[num].awardLevel +
-            "</td><td>" + arr[num].awardUnit + "</td><td>" + arr[num].awardName + "</td></tr>");
+            "</td><td><a title='"+ arr[num].awardUnit +"'>" + arr[num].awardUnit + "</a></td><td><a title='"+arr[num].awardName+"'>" + arr[num].awardName + "</a></td></tr>");
         num++;
     }else{
         $('#rewardtable tr:first').after("<tr style='background: rgba(115,199,206,0.1)'><td>" + arr[num].awardTime + "</td><td>" + arr[num].awardLevel +
-            "</td><td>" + arr[num].awardUnit + "</td><td>" + arr[num].awardName + "</td></tr>");
+            "</td><td><a title='"+arr[num].awardUnit+"'>" + arr[num].awardUnit + "</a></td><td><a title='"+arr[num].awardName+"'>" + arr[num].awardName + "</a></td></tr>");
         num++;
     }
 
