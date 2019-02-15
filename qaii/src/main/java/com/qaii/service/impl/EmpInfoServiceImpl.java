@@ -125,8 +125,25 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 		return empinfoService.findTimpEMpinfo(startTime, endTime);
 	}
 
+	@Override
+	public int countDoctoral() {
+		return empinfoService.countDoctoral();
+	}
+
+	@Override
+	public int countMaster() {
+		return empinfoService.countMaster();
+	}
+
+	@Override
+	public int countJobTitle(String jobtitle) {
+		return empinfoService.countJobTitle(jobtitle);
+	}
+
+	@Override
+	public int countTitleLevel(String title) {
+		return empinfoService.countTitleLevel(title);
+	}
 
 
-
-	
 }
