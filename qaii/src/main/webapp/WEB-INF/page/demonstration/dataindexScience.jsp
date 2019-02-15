@@ -34,19 +34,39 @@
 			width:100%;
 			height: 100%;
 			position: fixed;
-			background: #fff;
+			background: #003e8d;
 			top: 0px;
 			left: 0px;z-index:100;
 		}
-		.loading .pic{width:50px;height: 50px;position: absolute;top:0;left: 0;bottom: 0;margin:auto;right: 0;}
-		.loading .pic i{display: block;float: left;width: 6px;height: 50px;background: #399;margin: 0px 2px;transform: scaleY(0.4);animation: load 1.2s infinite;}
-		.loading .pic i:nth-child(2){animation-delay: 0.1s;}
-		.loading .pic i:nth-child(3){animation-delay: 0.2s;}
-		.loading .pic i:nth-child(4){animation-delay: 0.3s;}
-		.loading .pic i:nth-child(5){animation-delay: 0.4s;}
-		@keyframes load{
-			0%,40%,100%{transform: scaleY(0.4);}
-			20%{transform: scaleY(1);}
+		.pic{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			margin: auto;
+			right: 0;
+			width:99px;
+			height:99px;
+			background: url("${basePath}/image/000.png") no-repeat;
+			animation: cir00 infinite linear 5s;
+
+		}
+
+		@keyframes cir00 {
+			from{
+				transform:rotate(360deg);
+				-ms-transform:rotate(360deg); /* Internet Explorer */
+				-moz-transform:rotate(360deg); /* Firefox */
+				-webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+				-o-transform:rotate(360deg); /* Opera */
+			}
+			to{
+				transform:rotate(0deg);
+				-ms-transform:rotate(0deg); /* Internet Explorer */
+				-moz-transform:rotate(0deg); /* Firefox */
+				-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+				-o-transform:rotate(0deg); /* Opera */
+			}
 		}
 	</style>
 
@@ -63,11 +83,6 @@
 
 <div class="loading">
 	<div class="pic">
-		<i></i>
-		<i></i>
-		<i></i>
-		<i></i>
-		<i></i>
 	</div>
 </div>
 
@@ -316,33 +331,33 @@ function getGovernmentFunding(){
         url:"GovernmentFunding.do",
         success:function(data){
             data.subject.forEach(function(e){
-            	$("<tr><td>"+e.govsubSource+"</td>"+
-            		    "<td>"+e.govsubName+"</td>"+
-            		    "<td>"+e.govsubApprovalnum+"</td>"+
-            		    "<td>"+e.govsubApprovaltime+"</td>"+
+            	$("<tr><td><a title='"+e.govsubSource+"'>"+e.govsubSource+"</a></td>"+
+            		    "<td><a title='"+e.govsubName+"'>"+e.govsubName+"</a></td>"+
+            		    "<td><a title='"+e.govsubApprovalnum+"'>"+e.govsubApprovalnum+"</a></td>"+
+            		    "<td><a title='"+e.govsubApprovaltime+"'>"+e.govsubApprovaltime+"</a></td>"+
             		   /* "<td>"+e.govsubSubvention+"</td>"+*/
             		    "</tr>").insertAfter($("#govTable1 tr:eq(0)"));
             });
             data.platform.forEach(function(e){
-                $("<tr><td>"+e.govplatSource+"</td>"+
-                        "<td>"+e.govplatName+"</td>"+
-                        "<td>"+e.govplatApprovalnum+"</td>"+
-                        "<td>"+e.govplatApprovaltime+"</td>"+
+                $("<tr><td><a title='"+e.govplatSource+"'>"+e.govplatSource+"</a></td>"+
+                        "<td><a title='"+e.govplatName+"'>"+e.govplatName+"</a></td>"+
+                        "<td><a title='"+e.govplatApprovalnum+"'>"+e.govplatApprovalnum+"</a></td>"+
+                        "<td><a title='"+e.govplatApprovaltime+"'>"+e.govplatApprovaltime+"</a></td>"+
                         /*"<td>"+e.govplatSubvention+"</td>"+*/
                         "</tr>").insertAfter($("#govTable2 tr:eq(0)"));
             });
             data.fund.forEach(function(e){
-                $("<tr><td>"+e.govfundSource+"</td>"+
-                        "<td>"+e.govfundName+"</td>"+
-                        "<td>"+e.govfundImplementtime+"</td>"+
-                        "<td>"+e.govfundWrittentime+"</td>"+
+                $("<tr><td><a title='"+e.govfundSource+"'>"+e.govfundSource+"</a></td>"+
+                        "<td><a title='"+e.govfundName+"'>"+e.govfundName+"</a></td>"+
+                        "<td><a title='"+e.govfundImplementtime+"'>"+e.govfundImplementtime+"</a></td>"+
+                        "<td><a title='"+e.govfundWrittentime+"'>"+e.govfundWrittentime+"</a></td>"+
                        /* "<td>"+e.govfundFundlimit+"</td>"+*/
                         "</tr>").insertAfter($("#govTable3 tr:eq(0)"));
             });
             data.reward.forEach(function(e){
-                $("<tr><td>"+e.rewardSource+"</td>"+
-                        "<td>"+e.rewardName+"</td>"+
-                        "<td>"+e.rewardAwardtime+"</td>"+
+                $("<tr><td><a title='"+e.rewardSource+"'>"+e.rewardSource+"</a></td>"+
+                        "<td><a title='"+e.rewardName+"'>"+e.rewardName+"</a></td>"+
+                        "<td><a title='"+e.rewardAwardtime+"'>"+e.rewardAwardtime+"</a></td>"+
                        /* "<td>"+e.rewardAwardnum+"</td>"+*/
                         "</tr>").insertAfter($("#govTable4 tr:eq(0)"));
             });
