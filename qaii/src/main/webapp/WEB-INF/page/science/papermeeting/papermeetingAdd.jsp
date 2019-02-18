@@ -55,22 +55,6 @@
 					</div>
 				</div>
 			</div>
-		    <%--<div class="layui-col-md8">
-				<div class="layui-form-item">
-					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="author" lay-verify="required" autocomplete="off" class="layui-input input">
-					</div>
-				</div>
-			</div>
-		    <div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">作者单位&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="authorUnit" class="layui-input input" id="test1">
-					  </div>
-				</div>
-			</div>--%>
 		    <div class="layui-col-md4">
 				<div class="layui-form-item">
 					<label class="layui-form-label">出版时间&nbsp;<span class="star">*</span></label>
@@ -139,7 +123,7 @@
 		   </div>
 	    </div>		 
 	  </div>
-	  <h1>期刊论文作者信息</h1>
+	  <h1>会议论文作者信息</h1>
 	  <div class="layui-row bgf7f8f8">
 		  <div class="layui-col-md12">
 			  <div class="layui-form-item">
@@ -313,7 +297,7 @@
             "</div>" +
             "</td>" +
             "<td>" +
-            "<div class='layui-btn layui-btn-xs layui-btn-danger demo-delete'>删除</div>" +
+            "<div class='layui-btn layui-btn-xs layui-btn-danger demo-delete delsbtn' >删除</div>" +
             "</td>" +
             "</tr>";
         $("#paperwork").append(htmls);
@@ -321,6 +305,12 @@
 </script>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
+//删除论文作者
+$(document).ready(function(){
+    $(".delsbtn").click(function(){
+        $(this).remove();
+    });
+});
 $.post({
 	url:"findDeptInfoList.do",
 	success:function(data){
