@@ -87,7 +87,7 @@
 	      </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;"><i class="layui-icon layui-icon-senior" style="font-size: 22px;"></i>&nbsp;论文</a>
+          <a href="javascript:;"><i class="layui-icon layui-icon-form" style="font-size: 22px;"></i>&nbsp;论文</a>
           <dl class="layui-nav-child">
 	          <dd class="navdd"><a onclick="iframechange('paper.do')">期刊论文</a></dd>
 	          <dd class="navdd"><a onclick="iframechange('papermeeting.do')">会议论文</a></dd>
@@ -95,6 +95,9 @@
         </li>
         <li class="layui-nav-item">
           <a href="javascript:;" onclick="iframechange('work.do')"><i class="layui-icon layui-icon-diamond" style="font-size: 22px;"></i>&nbsp;著作</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;" onclick="iframechange('systemScience.do')"><i class="layui-icon layui-icon-app" style="font-size: 22px;"></i>&nbsp;单位设置</a>
         </li>
        	<li class="layui-nav-item">
           <a href="javascript:;" onclick="iframechange('newsScience.do')" id="newsnull"><i class="layui-icon layui-icon-reply-fill" style="font-size: 22px;"></i>
