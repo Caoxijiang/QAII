@@ -437,17 +437,15 @@ public class MeetingThesisController {
     void loadExcelData(MeetingThesis record, List<String> list) {
         // TODO Auto-generated method stub
         record.setTopic(list.get(0));
-        record.setAuthor(list.get(1));
-        record.setAuthorUnit(list.get(2));
-        record.setPublishtime(list.get(3));
-        record.setMeetingName(list.get(4));
-        record.setMeetingLocation(list.get(5));
-        record.setKeyword(list.get(6));
-        record.setCommunicateAuthor(list.get(7));
-        record.setEnglishSummary(list.get(8));
-        record.setMeetingRecord(list.get(9));
-        record.setContentType(list.get(10));
-        record.setUnit(list.get(11));
+        record.setPublishtime(list.get(1));
+        record.setMeetingName(list.get(2));
+        record.setMeetingLocation(list.get(3));
+        record.setKeyword(list.get(4));
+        record.setCommunicateAuthor(list.get(5));
+        record.setEnglishSummary(list.get(6));
+        record.setMeetingRecord(list.get(7));
+        record.setContentType(list.get(8));
+        record.setUnit(list.get(9));
         record.setGmtCreate(new Date());
         record.setGmtModified(new Date());
         record.setIsPass(BYTE_TRUE);

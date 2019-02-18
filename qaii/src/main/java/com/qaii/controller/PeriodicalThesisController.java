@@ -467,17 +467,15 @@ public class PeriodicalThesisController {
 	
 	void loadExcelData(PeriodicalThesis record, List<String> list) {
 		record.setTopic(list.get(0));
-		record.setAuthor(list.get(1));
-		record.setAuthorUnit(list.get(2));
-		record.setPublishtime(list.get(3));
-		record.setPeriodicalName(list.get(4));
-		record.setPageNumber(list.get(5));
-		record.setKeyword(list.get(6));
-		record.setEnglishSummary(list.get(7));
-		record.setContentType(list.get(8));
-		record.setRecordType(list.get(9));
-		record.setLevel(list.get(10));
-		record.setUnit(list.get(11));
+		record.setPublishtime(list.get(1));
+		record.setPeriodicalName(list.get(2));
+		record.setPageNumber(list.get(3));
+		record.setKeyword(list.get(4));
+		record.setEnglishSummary(list.get(5));
+		record.setContentType(list.get(6));
+		record.setRecordType(list.get(7));
+		record.setLevel(list.get(8));
+		record.setUnit(list.get(9));
 		record.setGmtCreate(new Date());
 		record.setGmtModified(new Date());
 		record.setIsPass(BYTE_TRUE);
