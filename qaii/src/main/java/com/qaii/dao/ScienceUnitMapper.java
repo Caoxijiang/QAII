@@ -2,6 +2,8 @@ package com.qaii.dao;
 
 import com.qaii.domain.ScienceUnit;
 
+import java.util.List;
+
 public interface ScienceUnitMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,8 @@ public interface ScienceUnitMapper {
     int updateByPrimaryKeySelective(ScienceUnit record);
 
     int updateByPrimaryKey(ScienceUnit record);
+
+    List<ScienceUnit> listRecords();
+
+    int deleteRecords(Integer[] id);
 }

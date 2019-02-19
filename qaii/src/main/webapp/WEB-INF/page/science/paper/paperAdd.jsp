@@ -324,7 +324,7 @@ $(document).ready(function(){
 	});
 });
 $.post({
-	url:"findDeptInfoList.do",
+	url:"listScienceUnit.do",
 	success:function(data){
 		var deptInfo=data.data;
 		if(deptInfo!=null){

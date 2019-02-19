@@ -55,4 +55,13 @@
     set dept_name = #{deptName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="listRecords" resultMap="BaseResultMap">
+    select * from sci_unit
+  </select>
+  <delete id="deleteRecords" parameterType="java.lang.Integer">
+    delete from sci_unit where id in
+    <foreach collection="array" open="(" close=")" separator="," item="id">
+      #{id,jdbcType=INTEGER}
+    </foreach>
+  </delete>
 </mapper>
