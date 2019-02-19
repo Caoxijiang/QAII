@@ -2,6 +2,8 @@ package com.qaii.dao;
 
 import com.qaii.domain.IndustryAttendMeetingFiles;
 
+import java.util.List;
+
 public interface IndustryAttendMeetingFilesMapper {
     int deleteByPrimaryKey(Integer[] id);
 
@@ -15,5 +17,5 @@ public interface IndustryAttendMeetingFilesMapper {
 
     int updateByPrimaryKey(IndustryAttendMeetingFiles record);
 
-    IndustryAttendMeetingFiles selectFilePathByattendmeetingId(Integer[] id);
+    List<IndustryAttendMeetingFiles> selectFilePathByattendmeetingId(Integer[] id);
 }

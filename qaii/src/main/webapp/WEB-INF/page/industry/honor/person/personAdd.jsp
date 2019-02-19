@@ -37,17 +37,17 @@
 	  	<h1>基本信息</h1>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">获奖人员</label>
+			    <label class="layui-form-label">获奖人员&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="personName" lay-verify="title" autocomplete="off" class="layui-input">
+			      <input type="text" name="personName" lay-verify="required" autocomplete="off" class="layui-input">
 			    </div>
 			  </div>
 		</div>
 	    <div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
-			    <label class="layui-form-label">获奖时间</label>
+			    <label class="layui-form-label">获奖时间&nbsp;<span class="star">*</span></label>
 			    <div class="layui-input-block">
-			      <input type="text" name="awardTime" lay-verify="title" autocomplete="off" class="layui-input" id="test1">
+			      <input type="text" name="awardTime" lay-verify="required" autocomplete="off" class="layui-input" id="test1">
 			    </div>
 			  </div>
 		</div>

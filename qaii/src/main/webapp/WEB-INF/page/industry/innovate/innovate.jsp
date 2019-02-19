@@ -151,7 +151,7 @@
                     arr.push(ids)
                 }
                 if(arr.length!=0){
-                    dell("deleteCooperation.do",arr);
+                    dell("deleteSigningAgreement.do",arr);
                 }else {
                     layer.alert("请选择要删除的内容");
                 }
@@ -274,7 +274,7 @@
                         success:function(data){
                             if(data.data){
                                 //删除对应行（tr）的DOM结构
-                                obj.del();
+                                /*obj.del();*/
                                 layer.close(index);
                             }else{
                                 layer.alert("删除失败")

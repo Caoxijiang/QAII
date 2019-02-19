@@ -181,9 +181,11 @@ public class SigningAgreementController {
     JsonResult deleteCooperation(@RequestParam("requestDate[]") Integer[] id) {
     int result=signingAgreementService.deleteByPrimaryKey(id);
     if (result !=0){
-        SigningAgreementFiles sin=signingAgreementFilesService.selectFilePathBysigningagreementId(id);
-        DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + sin.getFilePath());
-        signingAgreementFilesService.deleteByPrimaryKey(id);
+        List<SigningAgreementFiles> list=signingAgreementFilesService.selectFilePathBysigningagreementId(id);
+        for (SigningAgreementFiles sin:list){
+            DeleteFileUtil.delete(ConstantUtil.FILE_BASE_PATH + sin.getFilePath());
+        }
+        int a=signingAgreementFilesService.deleteByPrimaryKey(id);
         return new JsonResult("success!");
     }else{
         return new JsonResult();

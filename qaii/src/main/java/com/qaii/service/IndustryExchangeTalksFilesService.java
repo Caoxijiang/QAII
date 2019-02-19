@@ -3,6 +3,8 @@ package com.qaii.service;
 import com.qaii.domain.IndustryAttendMeetingFiles;
 import com.qaii.domain.IndustryExchangeTalksFiles;
 
+import java.util.List;
+
 public interface IndustryExchangeTalksFilesService {
 
     int deleteByPrimaryKey(Integer[] id);
@@ -17,5 +19,5 @@ public interface IndustryExchangeTalksFilesService {
 
     int updateByPrimaryKey(IndustryExchangeTalksFiles record);
 
-    IndustryExchangeTalksFiles selectFilePathByexchangetalksId(Integer[] id);
+    List<IndustryExchangeTalksFiles> selectFilePathByexchangetalksId(Integer[] id);
 }

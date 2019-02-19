@@ -87,7 +87,8 @@
 			return result;
 		}
 		
-		var dept=new Array("平行工作室","人事教育处","财务处","综合管理处","产业化处");
+		//var dept=new Array("平行工作室","人事教育处","财务处","综合管理处","产业化处");
+		var dept=getdeptName();
 		var _dept=gettalentsdept(dept);
 //		function test(){
 //			$.ajax({
@@ -298,11 +299,11 @@
             type: 'pie',
             radius : '55%',
             data:[
-                {value:_dept[0], name:'平行工作室'},
-                {value:_dept[1], name:'人事教育处'},
-                {value:_dept[2], name:'财务处'},
-                {value:_dept[3], name:'综合管理处'},
-                {value:_dept[4], name:'产业化处'}
+                {value:_dept, name:dept}
+                // {value:_dept[1], name:'人事教育处'},
+                // {value:_dept[2], name:'财务处'},
+                // {value:_dept[3], name:'综合管理处'},
+                // {value:_dept[4], name:'产业化处'}
             ],
             itemStyle: {
                 emphasis: {
