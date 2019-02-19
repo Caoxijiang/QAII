@@ -72,7 +72,7 @@ layui.use('table', function(obj){
     url:'findDeptInfoList.do',
     cellMinWidth: 80,
     cols: [[
-      {field:'id', title:'ID', width:220},
+      {field:'id', title:'ID', type:'numbers',width:220},
       {field:'deptName', title:'单位', templet: '#bar'},
       {field:'sex', title:'operation', templet: '#barDemo',width:220}
     ]],

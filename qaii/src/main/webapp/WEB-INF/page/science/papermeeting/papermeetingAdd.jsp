@@ -307,8 +307,8 @@
 <script>
 //删除论文作者
 $(document).ready(function(){
-    $(".delsbtn").click(function(){
-        $(this).remove();
+    $("#paperwork").on("click", ".delsbtn", function(){
+    	$(this).parent().parent().remove();
     });
 });
 $.post({
