@@ -69,7 +69,7 @@ layui.use('table', function(obj){
   table.render({
     elem: '#systemTest',
     method:'post',
-    url:'findDeptInfoList.do',
+    url:'listScienceUnit.do',
     cellMinWidth: 80,
     cols: [[
       {field:'id', title:'ID', type:'numbers',width:220},
@@ -87,7 +87,7 @@ layui.use('table', function(obj){
       layer.confirm('真的删除行么', function(index){
           let arr=data.id;
           $.post({
-          	url:"dellDeptInfo.do",
+          	url:"deleteScienceUnit.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -123,7 +123,7 @@ layui.use('table', function(obj){
 		    var id=data.id;
 		    
 			$.post({
-				url:"uptateDeptInfo.do",
+				url:"updateScienceUnit.do",
 				data:{
 					deptName:role,
 					id:id
@@ -182,7 +182,7 @@ layui.use('layer', function(){ //独立版的layer无需执行这一句
 	    	alert("请输入内容")
 	    }else{
 			$.post({
-				url:"addDeptInfo.do",
+				url:"insertScienceUnit.do",
 				data:{
 					deptName:role
 				},
