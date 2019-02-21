@@ -134,6 +134,44 @@
 			</div>
 		</div>
 	</div>
+	  <!--股东及出资信息-->
+	  <div class="layui-row contern">
+		  <h1 style="width:180px;">股东及出资信息 </h1>
+		  <div class="layui-col-xs12 layui-col-md12">
+			  <div class="createbox">
+				  <table class="layui-table cretables" id="paperwork">
+					  <tr>
+						  <th>股东名称</th>
+						  <th>出资比例</th>
+						  <th>出资时间</th>
+						  <th>操作</th>
+					  </tr>
+				  </table>
+				  <div class="layui-btn layui-btn-normal" style="margin-top:20px;" id="addauthor">添加股东</div>
+			  </div>
+
+		  </div>
+
+	  </div>
+
+	  <!--主要人员信息-->
+	  <div class="layui-row contern">
+		  <h1 style="width:160px;">主要人员信息 </h1>
+		  <div class="layui-col-xs12 layui-col-md12">
+			  <div class="createbox">
+				  <table class="layui-table cretables" id="peoplework">
+					  <tr>
+						  <th>人员名称</th>
+						  <th>人员职务</th>
+						  <th>操作</th>
+					  </tr>
+				  </table>
+				  <div class="layui-btn layui-btn-normal" style="margin-top:20px;" id="addpeople">添加人员</div>
+			  </div>
+
+		  </div>
+
+	  </div>
 	<!-- 创新能力 -->
 	<div class="layui-row contern">
 	  	<h1>创新能力 </h1>
@@ -224,6 +262,63 @@
   	</div>
  </form>
 </div>
+<script>
+	//股东及出资信息
+    $("#addauthor").click(function(){
+        let htmls="<tr>"+
+            "<td>"+
+            "<div class='layui-input-block creatd'>"+
+            "<input type='text' name='shareholderName' lay-verify='required' autocomplete='off' placeholder='请输入股东名称' style='width:100%;' class='layui-input'>"+
+            "</div>"+
+            "</td>"+
+            "<td>"+
+            "<div class='layui-input-block creatd'>"+
+            "<input type='text' name='shareholderName' lay-verify='required' autocomplete='off' placeholder='请输入出资比例' style='width:100%;' class='layui-input'>"+
+            "</div>"+
+            "</td>"+
+            "<td>"+
+            "<div class='layui-input-block creatd'>"+
+            "<input type='text' name='contributionTime' lay-verify='required' autocomplete='off' placeholder='请输入出资时间' class='layui-input datacz' style='width:100%;' >"+
+            "</div>"+
+            "</td>"+
+            "<td>"+
+            "<div class='layui-btn layui-btn-xs layui-btn-danger demo-delete delsbtn'>删除</div>"+
+            "</td>"+
+            "</tr>";
+        $("#paperwork").append(htmls);
+    });
+    //删除股东及出资
+    $(document).ready(function(){
+        $("#paperwork").on("click", ".delsbtn", function(){
+            $(this).parent().parent().remove();
+        });
+    });
+    //主要成员信息
+    $("#addpeople").click(function(){
+        let htmls="<tr>"+
+            "<td>"+
+            "<div class='layui-input-block creatd'>"+
+            "<input type='text' name='shareholderName' lay-verify='required' autocomplete='off' placeholder='请输成员名称' style='width:100%;' class='layui-input'>"+
+            "</div>"+
+            "</td>"+
+            "<td>"+
+            "<div class='layui-input-block creatd'>"+
+            "<input type='text' name='shareholderName' lay-verify='required' autocomplete='off' placeholder='请输入成员职务' style='width:100%;' class='layui-input'>"+
+            "</div>"+
+            "</td>"+
+            "<td>"+
+            "<div class='layui-btn layui-btn-xs layui-btn-danger demo-delete delsbtn'>删除</div>"+
+            "</td>"+
+            "</tr>";
+        $("#peoplework").append(htmls);
+    });
+    //删除成员
+    $(document).ready(function(){
+        $("#peoplework").on("click", ".delsbtn", function(){
+            $(this).parent().parent().remove();
+        });
+    });
+</script>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
 layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], function(){
@@ -249,6 +344,10 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 	 laydate.render({
 	   	elem: '#test4'
 	  });
+    //日期
+    laydate.render({
+        elem: '.datacz'
+    });
 //文件上传发表电子版
  upload.render({
    elem: '#test8'

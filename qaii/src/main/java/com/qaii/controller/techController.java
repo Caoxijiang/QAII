@@ -31,6 +31,11 @@ public class techController {
 	public String science(){
 		return "page/science/science";
 	}
+	//单位添加
+	@RequestMapping("systemScience.do")
+	public String systemScience(){
+		return "page/science/systemScience";
+	}
 	//科技处数据可视化
 	@RequestMapping("indexScience.do")
 	public String indexScience(){

@@ -14,26 +14,7 @@
     <link rel="stylesheet" href="${basePath}/commen/layui/css/science.css" media="all" />
     <script src="${basePath}/js/QRcode.js"></script>
     <script src="${basePath}/router/login.js"></script>
-    <%--<script>
-        function isValidate(){
-            //获取表单信息
-           /* username=form.Username.value;
-            password=form.Password.value;
-            confirm_password=form.Confirm_Password.value;
-            //判断用户是否输入的完整的信息
-            if(username==""||password==""||confirm_password==""){
-                alert("所有信息必须填写完整");
-                return false;
-            }else if(password==confirm_password){
-                //判断用户是否输入了相同的密码
-                alert("新密码不可以与原密码一致！");
-                return false;
-            }else{
-                return true;
-            }*/
 
-        }
-    </script>--%>
     <style>
         .warmbox{
             background: rgba(242,147,74,0.1);
@@ -115,8 +96,8 @@
             <div>
                 <div class="labelpw">当前密码</div>
                 <div>
-                    <input class="admin" type="password" name="Password" />
-                    <div class="gray">当前密码强度符合要求</div>
+                    <input class="admin" type="password" name="Password" id="Old_Password"/>
+                    <div class="gray" id="oldpwd">当前密码强度符合要求</div>
                 </div>
             </div>
 
@@ -142,60 +123,12 @@
     </form>
 
 </div>
-<%--<form class="layui-form" name="changePwd" method="post" action="changePwd.do" onsubmit="return isValidate(changePwd)">
-        &nbsp;用户名<input type="text" name="Username"><br/><br/>
-        原密码<input type="password" name="Password"><br/><br/>
-        新密码<input type="password" name="Confirm_Password"><br/><br/>
-        <input type="submit" value="修改" />
-        <input type="reset" value="重置" />
-</form>--%>
+
 <script>
     var i=0;
-    $("#Confirm_Password1").blur(function(){
-        let str=$("#Confirm_Password1").val();
-        var reg = /^[A-Za-z0-9]+$/;
-        if(str.length<17){
-            if(!reg.test(str)){
-                $("#newpwd").addClass("red");
-                $("#newpwd").html("请输入数字或者字母!!!");
-                i=0;
-            }else{
-                $("#newpwd").removeClass("red");
-                $("#newpwd").html("新密码符合要求。");
-                i=1;
-            }
-        }else{
-            $("#newpwd").addClass("red");
-            $("#newpwd").html("密码长度不能超过16位!!!");
-            i=0;
-        }
-
-    });
-
-    $("#Confirm_Password2").blur(function(){
-        let str=$("#Confirm_Password2").val();
-        let pws= $("#Confirm_Password1").val();
-        if(str==pws){
-            $("#confpws").removeClass("red");
-            $("#confpws").html("与新密码输入一致。");
-            i=1;
-        }else{
-            $("#confpws").addClass("red");
-            $("#confpws").html("两次输入不一致!!!");
-            i=0;
-        }
-
-    });
-    function isValidate(){
-        if(i==1){
-            return true;
-        }else{
-            alert("输入格式错误！！");
-            return false;
-        }
-
-    }
-//此处用来获取当前用户的密码
+    var j=0;
+    var x=0;
+    //此处用来获取当前用户的密码
     function getPasswordByUserName(){
         var result=null;
         $.ajax({
@@ -209,8 +142,77 @@
         return result;
     }
     let User=getPasswordByUserName();
+
+    $("#Confirm_Password1").blur(function(){
+        let str=$("#Confirm_Password1").val();
+        var Oldstr = User.adminPwd;
+        var reg = /^[A-Za-z0-9]+$/;
+        if (str==Oldstr){
+            $("#newpwd").addClass("red");
+            $("#newpwd").html("新密码与原密码一致!!!");
+            i=1;
+        } else{
+            if(str.length<17){
+                if(!reg.test(str)){
+                    $("#newpwd").addClass("red");
+                    $("#newpwd").html("请输入数字或者字母!!!");
+                    i=1;
+                }else{
+                    $("#newpwd").removeClass("red");
+                    $("#newpwd").html("新密码符合要求。");
+                    i=0;
+                }
+            }else{
+                $("#newpwd").addClass("red");
+                $("#newpwd").html("密码长度不能超过16位!!!");
+                i=1;
+            }
+        }
+
+    });
+
+    $("#Confirm_Password2").blur(function(){
+        let str=$("#Confirm_Password2").val();
+        let pws= $("#Confirm_Password1").val();
+        if(str==pws){
+            $("#confpws").removeClass("red");
+            $("#confpws").html("与新密码输入一致。");
+            j=0;
+        }else{
+            $("#confpws").addClass("red");
+            $("#confpws").html("两次输入不一致!!!");
+            j=1;
+        }
+
+    });
+
     //此处为获取的用户密码
-    console.log(User.adminPwd);
+    $("#Old_Password").blur(function(){
+        let str=$("#Old_Password").val();
+        var reg = User.adminPwd;
+        if(str==reg){
+                $("#oldpwd").removeClass("red");
+                $("#oldpwd").html("输入密码正确。");
+                x=0;
+        }else{
+            $("#oldpwd").addClass("red");
+            $("#oldpwd").html("输入密码错误!!!");
+            x=1;
+        }
+
+    });
+    function isValidate(){
+        let sttr;
+        sttr=i+j+x;
+        console.log(sttr);
+        if(sttr==0){
+            return true;
+        }else{
+            alert("输入格式错误！！");
+            return false;
+        }
+
+    }
 </script>
 </body>
 </html>

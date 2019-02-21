@@ -136,11 +136,11 @@
                selectByExampleQueryId="false"></table>
         <table tableName="AttendMeeting" domainObjectName="AttendMeeting" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>-->
+               selectByExampleQueryId="false"></table>
         <table tableName="industry_AttendMeetingFiles" domainObjectName="IndustryAttendMeetingFiles" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
-        <table tableName="industry_AttendMeeting" domainObjectName="IndustryAttendMeeting" enableCountByExample="false" enableUpdateByExample="false"
+               selectByExampleQueryId="false"></table>-->
+        <table tableName="sci_unit" domainObjectName="ScienceUnit" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
     </context>
