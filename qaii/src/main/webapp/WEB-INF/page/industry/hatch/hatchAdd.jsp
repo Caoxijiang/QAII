@@ -156,7 +156,7 @@
 
 	  <!--主要人员信息-->
 	  <div class="layui-row contern">
-		  <h1 style="width:180px;">主要人员信息 </h1>
+		  <h1 style="width:160px;">主要人员信息 </h1>
 		  <div class="layui-col-xs12 layui-col-md12">
 			  <div class="createbox">
 				  <table class="layui-table cretables" id="peoplework">

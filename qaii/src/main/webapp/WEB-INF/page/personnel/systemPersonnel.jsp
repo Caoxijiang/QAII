@@ -40,6 +40,14 @@
 		<div class="layui-btn-group demoTable">
 		  <span class="limit">所有部门</span>
 		</div>
+        <div class="site-demo-button" id="layerDemo" style="float: right;margin-right: 115px;">
+            <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal export" >
+                添加部门
+            </button>
+        </div>
+		<%--<button class="layui-btn btn export " >
+			添加部门
+		</button>--%>
 
 	</div>
 	<div class="systemBox">
@@ -50,13 +58,14 @@
 		</script>
 		<script type="text/html" id="barDemo">
 			<a class="layui-btn layui-btn-xs button" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+            <a class="layui-btn layui-btn-xs button" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>添加二级部门</a>
 			<a class="layui-btn layui-btn-xs button" lay-event="del"><i class="layui-icon layui-icon-delete"></i>移除</a>
 		</script>
-		<div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
+		<%--<div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
 			<button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal systemAdd">
 				<img src="${basePath}/image/add.png" />
 			</button>
-		</div>
+		</div>--%>
 	</div>
 	
 
