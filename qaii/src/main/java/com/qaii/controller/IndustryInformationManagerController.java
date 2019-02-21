@@ -1,8 +1,6 @@
 package com.qaii.controller;
 
 import com.qaii.domain.CompanyInfo;
-import com.qaii.domain.Incubator;
-import com.qaii.domain.StockEquity;
 import com.qaii.service.IncubatorService;
 import com.qaii.service.StockEquityService;
 import com.qaii.util.CountDatetoNowDays;

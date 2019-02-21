@@ -29,6 +29,9 @@ public class LoginLogUtil {
             case 4:
                 System="产业化处";
                 break;
+            case 5:
+                System="外部";
+                break;
         }
 
         bw.write(sdf.format(new Date())+": "+"用户: "+userName+"在主机"+IP+"登陆了"+System+"系统");
