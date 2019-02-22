@@ -30,21 +30,18 @@ public class ChangePasswordController{
         //String currentpassword = request.getParameter("Password");
         String newpassword=request.getParameter("Confirm_Password");
         //获取输出流这里的前台已经判定过了后台就不用再判定了
-       /* if(oldpassword.equals(newpassword)){
-            System.out.println("密码相同提示");
-        }*/
             User user=new User();
             user.setAdminAccount(username);
             user.setAdminPwd(newpassword);
             int count=userServivce.updatePassword(user);
             if (count>0){
                 //到时候这里是需要根据前台页面结果做调整的
-                return "page/changePwdSuccess";
+                session.invalidate();
+                return"page/changePwdSuccess";
             }else{
                 //到时候这里是需要根据前台页面结果做调整的
                 return "page/changePwdError";
             }
-
 
     }
 
@@ -57,4 +54,5 @@ public class ChangePasswordController{
         System.out.println(user2);
         return user2;
     }
+
 }

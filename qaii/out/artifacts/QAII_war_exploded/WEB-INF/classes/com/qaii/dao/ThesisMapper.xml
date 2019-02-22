@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qaii.dao.ThesisMapper">
+  <resultMap id="BaseResultMap" type="com.qaii.domain.Thesis">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sis_Subject" jdbcType="VARCHAR" property="sisSubject" />
+    <result column="sis_Author" jdbcType="VARCHAR" property="sisAuthor" />
+    <result column="sis_Units" jdbcType="VARCHAR" property="sisUnits" />
+    <result column="sis_PublishLocation" jdbcType="VARCHAR" property="sisPublishlocation" />
+    <result column="sis_PublishTime" jdbcType="VARCHAR" property="sisPublishtime" />
+    <result column="sis_Status" jdbcType="VARCHAR" property="sisStatus" />
+    <result column="sis_Dept" jdbcType="VARCHAR" property="sisDept" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, sis_Subject, sis_Author, sis_Units, sis_PublishLocation, sis_PublishTime, sis_Status, 
+    sis_Dept
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sci_thesis
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sci_thesis
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qaii.domain.Thesis">
+    insert into sci_thesis (id, sis_Subject, sis_Author, 
+      sis_Units, sis_PublishLocation, sis_PublishTime, 
+      sis_Status, sis_Dept)
+    values (#{id,jdbcType=INTEGER}, #{sisSubject,jdbcType=VARCHAR}, #{sisAuthor,jdbcType=VARCHAR}, 
+      #{sisUnits,jdbcType=VARCHAR}, #{sisPublishlocation,jdbcType=VARCHAR}, #{sisPublishtime,jdbcType=VARCHAR}, 
+      #{sisStatus,jdbcType=VARCHAR}, #{sisDept,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qaii.domain.Thesis">
+    insert into sci_thesis
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="sisSubject != null">
+        sis_Subject,
+      </if>
+      <if test="sisAuthor != null">
+        sis_Author,
+      </if>
+      <if test="sisUnits != null">
+        sis_Units,
+      </if>
+      <if test="sisPublishlocation != null">
+        sis_PublishLocation,
+      </if>
+      <if test="sisPublishtime != null">
+        sis_PublishTime,
+      </if>
+      <if test="sisStatus != null">
+        sis_Status,
+      </if>
+      <if test="sisDept != null">
+        sis_Dept,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sisSubject != null">
+        #{sisSubject,jdbcType=VARCHAR},
+      </if>
+      <if test="sisAuthor != null">
+        #{sisAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="sisUnits != null">
+        #{sisUnits,jdbcType=VARCHAR},
+      </if>
+      <if test="sisPublishlocation != null">
+        #{sisPublishlocation,jdbcType=VARCHAR},
+      </if>
+      <if test="sisPublishtime != null">
+        #{sisPublishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="sisStatus != null">
+        #{sisStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="sisDept != null">
+        #{sisDept,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qaii.domain.Thesis">
+    update sci_thesis
+    <set>
+      <if test="sisSubject != null">
+        sis_Subject = #{sisSubject,jdbcType=VARCHAR},
+      </if>
+      <if test="sisAuthor != null">
+        sis_Author = #{sisAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="sisUnits != null">
+        sis_Units = #{sisUnits,jdbcType=VARCHAR},
+      </if>
+      <if test="sisPublishlocation != null">
+        sis_PublishLocation = #{sisPublishlocation,jdbcType=VARCHAR},
+      </if>
+      <if test="sisPublishtime != null">
+        sis_PublishTime = #{sisPublishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="sisStatus != null">
+        sis_Status = #{sisStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="sisDept != null">
+        sis_Dept = #{sisDept,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qaii.domain.Thesis">
+    update sci_thesis
+    set sis_Subject = #{sisSubject,jdbcType=VARCHAR},
+      sis_Author = #{sisAuthor,jdbcType=VARCHAR},
+      sis_Units = #{sisUnits,jdbcType=VARCHAR},
+      sis_PublishLocation = #{sisPublishlocation,jdbcType=VARCHAR},
+      sis_PublishTime = #{sisPublishtime,jdbcType=VARCHAR},
+      sis_Status = #{sisStatus,jdbcType=VARCHAR},
+      sis_Dept = #{sisDept,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getAllThesisMsg" resultMap="BaseResultMap">SELECT * from sci_thesis</select>
+  <select id="selectCountNum" resultType="int">
+    SELECT (SELECT COUNT(*) FROM sci_periodicalthesis) + (SELECT COUNT(*) FROM sci_meetingthesis)
+  </select>
+  <delete id="deleteByPrimaryKeys" parameterType="int">
+  	DELETE  FROM sci_thesis WHERE id in
+	    <foreach item="id" collection="array" open="(" separator="," close=")">
+	    	#{id,jdbcType=INTEGER}
+	    </foreach>
+  </delete>
+  <select id="countEachMonththesis" resultType="int">
+    SELECT COUNT(*) FROM sci_thesis WHERE sis_PublishTime BETWEEN #{0} AND #{1}
+  </select>
+</mapper>
