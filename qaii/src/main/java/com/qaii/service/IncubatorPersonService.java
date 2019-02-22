@@ -12,5 +12,5 @@ public interface IncubatorPersonService {
 
     int updateRecord(IncubatorPerson Record);
 
-    List<IncubatorPerson> listRecords();
+    List<IncubatorPerson> listRecords(Integer id);
 }

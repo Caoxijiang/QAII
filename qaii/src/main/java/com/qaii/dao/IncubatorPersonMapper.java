@@ -17,7 +17,7 @@ public interface IncubatorPersonMapper {
 
     int updateByPrimaryKey(IncubatorPerson record);
 
-    List<IncubatorPerson> listRecords();
+    List<IncubatorPerson> listRecords(Integer id);
 
     int deleteRecord(Integer[] Id);
 }

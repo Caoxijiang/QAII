@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service
+@Service("IncubatorPersonService")
 public class IncubatorPersonServiceImpl implements IncubatorPersonService {
 
     @Resource
@@ -30,7 +30,7 @@ public class IncubatorPersonServiceImpl implements IncubatorPersonService {
     }
 
     @Override
-    public List<IncubatorPerson> listRecords() {
-        return mapper.listRecords();
+    public List<IncubatorPerson> listRecords(Integer id) {
+        return mapper.listRecords(id);
     }
 }

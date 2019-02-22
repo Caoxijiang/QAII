@@ -324,7 +324,6 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 		      ,{field:'shareholderName', title: '股东名称'}
 		      ,{field:'contributionProportion',title: '出资比例', sort: true}
 		      ,{field:'contributionTime',title: '出资时间', sort: true}
-		      ,{field:'shareholderPosition', title: '股东职务', width: '30%', minWidth: 100}
 		      ,{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:500}
 		    ]],
 		    data:obj.data

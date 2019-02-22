@@ -80,9 +80,9 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="listRecords" resultMap="BaseResultMap" >
-    select  * from  industry_incutabor_person
+    select  * from  industry_incutabor_person where remark = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteRecord" parameterType="java.lang.Integer" lang="">
+  <delete id="deleteRecord" parameterType="java.lang.Integer">
     delete from industry_incutabor_person where  id in
     <foreach collection="array" open="(" separator="," close=")" item="id">
       #{id,jdbcType=INTEGER}
