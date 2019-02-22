@@ -135,14 +135,7 @@
 			  </div>
 		</div>
 		<div class="layui-col-xs6 layui-col-md6">
-			<%--<div class="layui-form-item itemadd">
-				<label class="layui-form-label">上传营业执照</label>
-				<div class="layui-input-block">
-					<div class="layui-upload">
-					  <input type="text" name="i1" lay-verify="title" autocomplete="off" class="layui-input" id="test3" disabled="">
-					</div>
-				</div>
-			</div>--%>
+
 			<div class="layui-form-item">
 				<label class="layui-form-label">上传营业执照</span></label>
 				<div class="layui-input-block">
@@ -155,6 +148,21 @@
 			</div>
 		</div>
 	</div>
+	<!--股东及出资信息-->
+	  <div class="layui-row contern">
+		  <h1>股东及出资信息 </h1>
+		  <div class="layui-col-xs12 layui-col-md12">
+			  <div class="createbox">
+				  <div class="layui-form-item itemadd">
+					  <label class="layui-form-label createlabel" id="isThousandSailEnterprise">是否“千帆计划”入库企业</label>
+					  <div class="layui-input-block createblock">
+						  <input type="radio" name="isThousandSailEnterprise" value="0" title="否" checked="" disabled="">
+						  <input type="radio" name="isThousandSailEnterprise" value="1" title="是" disabled="">
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
 	<!-- 创新能力 -->
 	<div class="layui-row contern">
 	  	<h1>创新能力 </h1>

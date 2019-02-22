@@ -309,7 +309,7 @@
             "</div>" +
             "</td>" +
             "<td>" +
-            "<div class='layui-btn layui-btn-xs layui-btn-danger demo-delete'>删除</div>" +
+            "<div class='layui-btn layui-btn-xs layui-btn-danger demo-delete delsbtn'>删除</div>" +
             "</td>" +
             "</tr>";
 	    $("#paperwork").append(htmls);
@@ -317,8 +317,14 @@
 </script>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
+//删除论文作者
+$(document).ready(function(){
+	$("#paperwork").on("click", ".delsbtn", function(){
+		$(this).parent().parent().remove();
+	});
+});
 $.post({
-	url:"findDeptInfoList.do",
+	url:"listScienceUnit.do",
 	success:function(data){
 		var deptInfo=data.data;
 		if(deptInfo!=null){

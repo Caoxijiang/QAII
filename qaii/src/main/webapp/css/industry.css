@@ -40,13 +40,21 @@ input[type='checkbox']:checked{
 .createbox{
 	margin: 10px;
     margin-left: 50px;
-	border: 1px solid #ccc;
-	background:#fff;
 }
 .createlabel{
 	float:none;
 	display:inline-block;
 	width:auto;
+}
+.cretables{
+    border: 1px solid #ccc;
+    background:#fff;
+}
+.cretables th{
+    text-align: center;
+}
+.creatd{
+    margin:0px;
 }
 .createblock{
 	margin-left:0px;

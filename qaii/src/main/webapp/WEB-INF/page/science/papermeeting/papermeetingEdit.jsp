@@ -59,22 +59,6 @@
 					</div>
 				</div>
 			</div>
-		    <div class="layui-col-md8">
-				<div class="layui-form-item">
-					<label class="layui-form-label">作者&nbsp;<span class="star">*</span></label>
-					<div class="layui-input-block">
-						<input type="text" name="author" lay-verify="required" autocomplete="off" class="layui-input input">
-					</div>
-				</div>
-			</div>
-		    <div class="layui-col-md4">
-				<div class="layui-form-item">
-					<label class="layui-form-label">作者单位&nbsp;<span class="star">*</span></label>
-					  <div class="layui-input-block">
-						<input type="text" name="authorUnit" class="layui-input input" id="test1">
-					  </div>
-				</div>
-			</div>
 		    <div class="layui-col-md4">
 				<div class="layui-form-item">
 					<label class="layui-form-label">出版时间&nbsp;<span class="star">*</span></label>
