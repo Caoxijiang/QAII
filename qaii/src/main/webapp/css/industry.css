@@ -73,10 +73,18 @@ input[type='checkbox']:checked{
 	width:150px;
 }
 #addmumber {
+     margin-right: 15px;
+     float: right;
+     position: absolute;
+     top: 370px;
+     right: 165px;
+     z-index: 1000;
+ }
+#addpeople {
     margin-right: 15px;
     float: right;
     position: absolute;
-    top: 370px;
+    top: 600px;
     right: 165px;
     z-index: 1000;
 }

@@ -81,9 +81,9 @@ layui.use('table', function(obj){
     url:'findDeptInfoList.do',
     cellMinWidth: 80,
     cols: [[
-      {field:'id', title:'ID', type:'numbers',width:220},
+      {field:'id', title:'ID', type:'numbers',width:80},
       {field:'deptName', title:'部门', templet: '#bar'},
-      {field:'sex', title:'operation', templet: '#barDemo',width:220}
+      {field:'sex', title:'operation', templet: '#barDemo',width:350}
     ]],
 	  data:obj//数据填充id为部门个数，department为部门名称
   });

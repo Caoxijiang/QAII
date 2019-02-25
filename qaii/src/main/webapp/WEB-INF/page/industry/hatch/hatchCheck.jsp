@@ -110,6 +110,20 @@
 			    </div>
 			  </div>
 		</div>
+			<div class="layui-col-xs12 layui-col-md12">
+				<div class="layui-form-item">
+					<div class="mumberBox">
+						<label class="layui-form-label mumber">主要人员信息</label>
+					</div>
+					<div class="layui-input-block">
+						<table class="layui-table cretables" id="peoplework" lay-filter="cydemo"></table>
+						<script type="text/html" id="cyDemo">
+							<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+						</script>
+
+					</div>
+				</div>
+			</div>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">所属孵化器</label>
@@ -305,6 +319,38 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 	    ]],
 	    data:obj.data
 	  });
+    //主要成员信息
+    table.render({
+        elem: '#peoplework'
+        ,method:'post'
+        ,url:'selectIndusStackInfo.do?id='+id
+        ,cellMinWidth: 100
+        ,cols: [[
+            {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
+            ,{field:'shareholderName', title: '人员名称'}
+            ,{field:'contributionProportion',title: '人员职务', sort: true}
+            ,{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:500}
+        ]],
+        data:obj.data
+    });
+    table.on('tool(cydemo)', function(obj){ //股东删除操作 xijiang
+        var data = obj.data;
+        if(obj.event === 'del'){
+            layer.confirm('真的删除行么', function(index){
+                $.post({
+                    url:"deleteIncubatorStockEquity.do",
+                    data:{
+                        "id" : data.id
+                    },
+                    success:function(data){
+                        obj.del();
+                        layer.alert("删除成功");
+                    }
+                })
+                layer.close(index);
+            });
+        }
+    });
   //变更信息显示
   table.render({
 	    elem: '#table2'
