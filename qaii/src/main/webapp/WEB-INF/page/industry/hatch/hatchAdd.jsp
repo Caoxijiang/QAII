@@ -273,7 +273,7 @@
             "</td>"+
             "<td>"+
             "<div class='layui-input-block creatd'>"+
-            "<input type='text' name='shareholderName' lay-verify='required' autocomplete='off' placeholder='请输入出资比例' style='width:100%;' class='layui-input'>"+
+            "<input type='text' name='contributionProportion' lay-verify='required' autocomplete='off' placeholder='请输入出资比例' style='width:100%;' class='layui-input'>"+
             "</div>"+
             "</td>"+
             "<td>"+
@@ -298,12 +298,12 @@
         let htmls="<tr>"+
             "<td>"+
             "<div class='layui-input-block creatd'>"+
-            "<input type='text' name='shareholderName' lay-verify='required' autocomplete='off' placeholder='请输成员名称' style='width:100%;' class='layui-input'>"+
+            "<input type='text' name='personalName' lay-verify='required' autocomplete='off' placeholder='请输成员名称' style='width:100%;' class='layui-input'>"+
             "</div>"+
             "</td>"+
             "<td>"+
             "<div class='layui-input-block creatd'>"+
-            "<input type='text' name='shareholderName' lay-verify='required' autocomplete='off' placeholder='请输入成员职务' style='width:100%;' class='layui-input'>"+
+            "<input type='text' name='jobPosition' lay-verify='required' autocomplete='off' placeholder='请输入成员职务' style='width:100%;' class='layui-input'>"+
             "</div>"+
             "</td>"+
             "<td>"+
