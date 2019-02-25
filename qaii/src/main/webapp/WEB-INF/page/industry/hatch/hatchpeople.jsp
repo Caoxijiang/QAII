@@ -17,18 +17,18 @@
 </head>
 <body id="bodyHei">
 <div class="layui-container" style="margin-top:15px;">
-  <form class="layui-form" action="addShareholderInfo.do" method="post" lay-filter="example">
+  <form class="layui-form" action="insertIncubatorPerson.do" method="post" lay-filter="example">
   <div class="layui-form-item">
     <label class="layui-form-label wid60">人员名称</label>
     <div class="layui-input-block wid80">
-      <input type="text" name="shareholderName" lay-verify="title" autocomplete="off" placeholder="请输入股东名称" class="layui-input">
-      <input type="hidden" name="id" value=${requestScope.Info[0]}>
+      <input type="text" name="personalName" lay-verify="title" autocomplete="off" placeholder="请输入股东名称" class="layui-input">
+      <input type="hidden" name="hid" value=${requestScope.Info[0]}>
     </div>
   </div>
 	<div class="layui-form-item">
 		<label class="layui-form-label wid60">人员职务</label>
 		<div class="layui-input-block wid80">
-			<input type="text" name="contributionProportion" lay-verify="title" autocomplete="off" placeholder="请输入出资比例" class="layui-input">
+			<input type="text" name="jobPosition" lay-verify="title" autocomplete="off" placeholder="请输入出资比例" class="layui-input">
 		</div>
 	</div>
   <div class="layui-form-item">
