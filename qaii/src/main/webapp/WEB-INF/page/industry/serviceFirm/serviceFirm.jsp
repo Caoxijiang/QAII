@@ -6,39 +6,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>纵向课题</title>
+  <title>服务企业管理</title>
   <link rel="shortcut icon" type="image/x-icon" href="${basePath}/image/icon.ico" media="screen" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layui.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/layuiAdd.css" media="all" />
   <link rel="stylesheet" href="${basePath}/commen/layui/css/style.css">
 	<script src="${basePath}/js/jquery-3.3.1.min.js"></script>
 	<script src="${basePath}/js/jquery.table2excel.js"></script>
+	<script src="${basePath}/js/jquery.globalfunction.js"></script>
   <style>
     body{margin: 10px;}
     .layui-table-body {
-	    height: -moz-calc( 100vh - 215px );
-	    height: -webkit-calc( 100vh - 215px );
-	    height: calc( 100vh - 215 px );
-	}
-	.noExl {
-    	display: none;
+	    height: -moz-calc( 100vh - 190px );
+	    height: -webkit-calc( 100vh - 190px );
+	    height: calc( 100vh - 190px );
 	}
 	@media screen and (max-width: 1600px) {
 		.layui-table-body {
-		    height: -moz-calc( 100vh - 170px );
-		    height: -webkit-calc( 100vh - 170px );
-		    height: calc( 100vh - 170 px );
+		    height: -moz-calc( 100vh - 145px );
+		    height: -webkit-calc( 100vh - 145px );
+		    height: calc( 100vh - 145 px );
 		}
-		.demo-carousel{height: 200px; line-height: 200px; text-align: center;}
 	}
-    
+    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+	.noExl {
+    	display: none;
+	}
   </style>
 </head>
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">纵向课题( <span id="countnum"> </span> )</span>
-		<a href="javascript:;" onclick="srchange('researchAdd.do')">
+  	  <span class="limit">服务企业管理( <span id="countnum"> </span> )</span>
+		<a href="javascript:;" onclick="srchange('serviceFirmAdd.do')">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
 			</button>
@@ -62,17 +62,12 @@
 	<div class="demoTable" style="float: right;margin-right: 115px;">
 		<select class="search" id="switch">
 			<option value="all">全部</option>
-			<option value="govsubSource">来源</option>
-			<option value="govsubLevel">级别</option>
-			<option value="govsubName">课题项目名称</option>
-			<option value="govsubImplementtime">项目实施期</option>
-			<option value="govsubDutyunit">承担单位</option>
-			<option value="govsubAssumedepart">承担部门</option>
-			<option value="govsubProjectper">课题项目负责人</option>
-			<option value="govsubProjectapproval">是否立项</option>
-			<option value="govsubApprovalnum">立项编号</option>
-			<option value="govsubApprovaltime">立项时间</option>
-			<option value="govsubSubvention">资助金额（万元）</option>
+			<option value="ministryName">服务企业名称</option>
+			<option value="ministryProperty">服务企业性质</option>
+			<option value="contactPerson">服务企业联系人名称</option>
+			<option value="ministryLocation">服务企业地址</option>
+			<option value="ownselfUnit">我院部门/公司</option>
+			<option value="ownselfContactPerson">联系人</option>
 		</select>
 		<div class="layui-inline" style="margin-left:-5px;margin-right:-6px;margin-top:1px;">
 			<input class="layui-input" name="id" id="demoReload" autocomplete="off">
@@ -87,41 +82,26 @@
 <div class="act">
 	<div class="int-inline"><input id="checkall"  type="checkbox" value="全选" checked="true"/><lable>全选</lable></div>
 	<div class="int-inline"><input id="id"  type="checkbox" value="序号" checked="true"/><lable>序号</lable></div>
-	<div class="int-inline"><input id=govsubApplytime  type="checkbox" value="申报时间" checked="flase"/><lable>申报时间</lable></div>
-	<div class="int-inline"><input id="govsubSource"  type="checkbox" value="来源" checked/><lable>来源</lable></div>
-	<div class="int-inline"><input id="govsubLevel"  type="checkbox" value="级别" checked/><lable>级别</lable></div>
-	<div class="int-inline"><input id="govsubName"  type="checkbox" value="课题项目名称" checked/><lable>课题项目名称</lable></div>
-	<div class="int-inline"><input id="govsubImplementtime"  type="checkbox" value="项目实施期" checked/><lable>项目实施期</lable></div>
-	<div class="int-inline"><input id="govsubDutyunit"  type="checkbox" value="承担单位" checked/><lable>承担单位</lable></div>
-	<div class="int-inline"><input id="govsubCooperationunit"  type="checkbox" value="协作单位" checked/><lable>协作单位</lable></div>
-	<div class="int-inline"><input id="govsubManagedepart"  type="checkbox" value="主管部门" checked/><lable>主管部门</lable></div>
-	<div class="int-inline"><input id="govsubApplydepart"  type="checkbox" value="申请报送部门" checked/><lable>申请报送部门</lable></div>
-	<div class="int-inline"><input id="govsubAssumedepart"  type="checkbox" value="承担部门" checked/><lable>承担部门</lable></div>
-	<div class="int-inline"><input id="govsubProjectper"  type="checkbox" value="课题项目负责人" checked/><lable>课题项目负责人</lable></div>
-	<div class="int-inline"><input id="govsubProjectapproval"  type="checkbox" value="是否立项" checked/><lable>是否立项</lable></div>
-	<div class="int-inline"><input id="govsubApprovalnum"  type="checkbox" value="立项编号" checked/><lable>立项编号</lable></div>
-	<div class="int-inline"><input id="govsubApprovaltime"  type="checkbox" value="立项时间" checked/><lable>立项时间</lable></div>
-	<div class="int-inline"><input id="govsubSubvention"  type="checkbox" value="资助金额（万元）" checked/><lable>资助金额（万元）</lable></div>
-	<div class="int-inline"><input id="govsubFundtime"  type="checkbox" value="资金到位时间" checked/><lable>资金到位时间</lable></div>
-	<div class="int-inline"><input id="govsubMiddletime"  type="checkbox" value="中期检查考核时间" checked/><lable>中期检查考核时间</lable></div>
-	<div class="int-inline"><input id="govsubMiddleresult"  type="checkbox" value="中期检查考核结果" checked/><lable>中期检查考核结果</lable></div>
-	<div class="int-inline"><input id="govsubYeartime"  type="checkbox" value="年度检查考核时间" checked/><lable>年度检查考核时间</lable></div>
-	<div class="int-inline"><input id="govsubYearresult"  type="checkbox" value="年度检查考核结果" checked/><lable>年度检查考核结果</lable></div>
-	<div class="int-inline"><input id="govsubEndtime"  type="checkbox" value="项目结题验收时间" checked/><lable>项目结题验收时间</lable></div>
-	<div class="int-inline"><input id="govsubEndresult"  type="checkbox" value="项目结题验收结果" checked/><lable>项目结题验收结果</lable></div>
-	<div class="int-inline"><input id="govsubRemark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
-	<div class="int-inline"><input id="govsubFile"  type="checkbox" value="附件" checked/><lable>附件</lable></div>
+	<div class="int-inline"><input id="ministryName"  type="checkbox" value="服务企业名称" checked="true"/><lable>服务企业名称</lable></div>
+	<%--<div class="int-inline"><input id="ministryProperty"  type="checkbox" value="服务企业性质" checked="flase"/><lable>服务企业性质</lable></div>--%>
+	<div class="int-inline"><input id="contactPerson"  type="checkbox" value="服务企业联系人名称" checked/><lable>服务企业联系人名称</lable></div>
+	<div class="int-inline"><input id="contactMethod"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
+	<div class="int-inline"><input id="ministryLocation"  type="checkbox" value="服务企业地址" checked/><lable>服务企业地址</lable></div>
+	<div class="int-inline"><input id="ministryTime"  type="checkbox" value="服务时间" checked/><lable>服务时间</lable></div>
+	<div class="int-inline"><input id="ministryProject"  type="checkbox" value="服务项目" checked/><lable>服务项目</lable></div>
+	<div class="int-inline"><input id="ownselfUnit"  type="checkbox" value="我院部门/公司" checked/><lable>我院部门/公司</lable></div>
+	<div class="int-inline"><input id="ownselfContactPerson"  type="checkbox" value="联系人" checked/><lable>联系人</lable></div>
+	<div class="int-inline"><input id="ownselfContactMethod"  type="checkbox" value="联系方式" checked/><lable>联系方式</lable></div>
+	<div class="int-inline"><input id="remark"  type="checkbox" value="备注" checked/><lable>备注</lable></div>
 </div>
 </div>  
 <!-- 数据展示主表格-->
 <div class="table2excel">
 	<table class="layui-table" id="testTable" lay-filter="demo" style="margin-top:5px;width: 100% !important;"></table>
 </div>
- <!--  <a class="layui-btn layui-btn-xs" href="seeEmpInfo.do?userId='{{d.empNum}}'" target="_blank" method="post" id="chex">查看详情</a> -->
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="detail" lay-event="detail">查看详情</a>
+  <a class="layui-btn layui-btn-xs" lay-event="detail">查看详情</a>
   <a class="layui-btn layui-btn-xs layui-btn-edit" lay-event="edit">修改</a>
-  <a class="layui-btn layui-btn-xs layui-btn-tired" lay-event="datac">资料审查</a>
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!-- 数据展示主表格-->
@@ -137,7 +117,7 @@ layui.config({
 layui.use('table', function(obj){
   var table = layui.table,form = layui.form;
 	 //监听表格复选框选择
-	console.log(JSON.stringify(obj.cache));
+	console.log("The obj data is "+JSON.stringify(obj.cache));
 	  
   //执行一个 table 实例
   table.render({
@@ -147,40 +127,24 @@ layui.use('table', function(obj){
 	limit:9999999,//不设置分页，最大数据量为9999999
 	id: 'testReload',  
 //    height: 332,
-    url: 'getAllSubjectMsg.do', //数据接口
+    url: 'listMinistries.do', //数据接口
 	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
     cols: [[ //标题栏
-		{type:'checkbox',fixed: 'left'},
+    	{type:'checkbox',fixed: 'left'},
 		{field: 'id', title: '序号',type:'numbers',fixed: 'left',width:100},
-		{field: 'govsubApplytime', title: '申报时间',fixed: 'left',width:150},
-		{field: 'govsubSource', title: '来源',fixed: 'left',width:150},
-		{field: 'govsubLevel', title: '级别',sort: true},
-		{field: 'govsubName', title: '课题项目名称',sort: true,width:200},
-		{field: 'govsubImplementtime', title: '项目实施期',sort: true,width:150},
-		{field: 'govsubDutyunit', title: '承担单位',sort: true,width:120},
-		{field: 'govsubCooperationunit', title: '协作单位',width:220},
-		{field: 'govsubManagedepart', title: '主管部门',sort: true,width:200},
-		{field: 'govsubApplydepart', title: '申请报送部门',sort: true,width:200},
-		{field: 'govsubAssumedepart', title: '承担部门',sort: true,width:150},
-		{field: 'govsubProjectper', title: '课题项目负责人',sort: true,width:200},
-		
-		{field: 'govsubProjectapproval', title: '是否立项',sort: true,width:200},
-		{field: 'govsubApprovalnum', title: '立项编号',sort: true,width:200},
-		{field: 'govsubApprovaltime', title: '立项时间',sort: true,width:200},
-		{field: 'govsubSubvention', title: '资助金额（万元）',sort: true,width:200},
-		{field: 'govsubFundtime', title: '资金到位时间',sort: true,width:230},
-		{field: 'govsubMiddletime', title: '中期检查考核时间',sort: true,width:200},
-		{field: 'govsubMiddleresult', title: '中期检查考核结果',sort: true,width:200},
-		{field: 'govsubYeartime', title: '年度检查考核时间',sort: true,width:200},
-		{field: 'govsubYearresult', title: '年度检查考核结果',sort: true,width:200},
-		{field: 'govsubEndtime', title: '项目结题验收时间',sort: true,width:200},
-		{field: 'govsubEndresult', title: '项目结题验收结果',sort: true,width:200},
-		{field: 'govsubRemark', title: '备注',sort: true,width:230},
-		{field: 'govsubFile', title: '附件',sort: true,width:200},
-		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:340}
-    ]],
-    
-    
+		{field: 'ministryName', title: '服务企业名称',fixed: 'left',width:150},
+		/*{field: 'ministryProperty', title: '服务企业性质',width:150},*/
+		{field: 'contactPerson', title: '服务企业联系人名称',sort: true,width:120},
+		{field: 'contactMethod', title: '联系方式',sort: true,width:100},
+		{field: 'ministryLocation', title: '服务企业地址',sort: true,width:150},
+		{field: 'ministryTime', title: '服务时间',sort: true,width:150},
+		{field: 'ministryProject', title: '服务项目',width:220},
+		{field: 'ownselfUnit', title: '我院部门/公司',sort: true,width:200},
+		{field: 'ownselfContactPerson', title: '联系人',sort: true,width:150},
+		{field: 'ownselfContactMethod', title: '联系方式',sort: true,width:150},
+		{field: 'remark', title: '备注',sort: true,width:200},
+		{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:320}
+    ]], 
 	  //表格数据
     data:obj.data,
     done: function(res, curr, count){
@@ -188,7 +152,6 @@ layui.use('table', function(obj){
         console.log(count+"总数");
         }
   });
-  //alert(JSON.stringify(obj.cache.testReload[0]))
  console.log(obj.cache)
 	//添加筛选功能
 	
@@ -203,7 +166,7 @@ layui.use('table', function(obj){
               arr.push(ids)
           }
           if(arr.length!=0){
-              dell("dellSubjectMsg.do",arr);
+              dell("deleteMinistry.do",arr);
           }else {
               layer.alert("请选择要删除的内容");
           }
@@ -280,28 +243,16 @@ layui.use('table', function(obj){
   					numb=numb+1;
   				}  
   			 }
-  			if(check=="govsubSource"){
-  				alert("搜索'来源'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govsubLevel"){
-  				alert("搜索'级别'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govsubName"){
-  				alert("搜索'课题项目名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govsubImplementtime"){
-  				alert("搜索'项目实施期'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govsubDutyunit"){
-  				alert("搜索'承担单位'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govsubAssumedepart"){
-  				alert("搜索'承担部门'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govsubProjectper"){
-  				alert("搜索'课题项目负责人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govsubProjectapproval"){
-  				alert("搜索'是否立项'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govsubApprovalnum"){
-  				alert("搜索'立项编号'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govsubApprovaltime"){
-  				alert("搜索'立项时间'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
-  			}else if(check=="govsubSubvention"){
-  				alert("搜索'资助金额（万元）'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			if(check=="ministryName"){
+  				alert("搜索'服务企业名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="ministryLocation"){
+  				alert("搜索'服务企业地址'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="ownselfUnit"){
+  				alert("搜索'我院部门/公司'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="contactPerson"){
+  				alert("搜索'服务企业联系人名称'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
+  			}else if(check=="ownselfContactPerson"){
+  				alert("搜索'联系人'列，中含有关键字'"+key+"'数据，共计'"+numb+"'条！");
   			}	
   		  }
   	    }//搜索结束
@@ -328,14 +279,14 @@ layui.use('table', function(obj){
     console.log(data)
     ,layEvent = obj.event; //获得 lay-event 对应的值
     if(layEvent === 'detail'){
-    	var iframesrc="researchCheck.do?userId='"+data.id+"'";
+    	var iframesrc="serviceFirmCheck.do?userId='"+data.id+"'";
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     } else if(layEvent === 'del'){
       layer.confirm('确定删除信息', function(index){
           let arr=[data.id];
           console.log(data) 
           $.post({
-          	url:"dellSubjectMsg.do",
+          	url:"deleteMinistry.do",
           	data:{
           		"requestDate" : arr
           	},
@@ -347,31 +298,14 @@ layui.use('table', function(obj){
           		}else{
           			layer.alert("删除失败")
           		}
-          		
           	}
-          }) 
-    	  
-    	  
-    	  
-    	  
+          })
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
         //向服务端发送删除指令
-        
-        
-        
-        
       });
     } else if(layEvent === 'edit'){
-    	var iframesrc="researchEdit.do?userId='"+data.id+"'";
-    	$("body", parent.document).find('iframe').attr('src',iframesrc);
-    }else if(layEvent==="datac"){
-    	//userid为当前记录id值，将会传到资料审查界面
-    	var iframesrc="researchData.do?userId='"+data.id+"'&govsubName="+data.govsubName+"&govsubSource="+data.govsubSource+"&govsubApprovalnum="+data.govsubApprovalnum;
-    	url=encodeURI(iframesrc);
-    	url=encodeURI(url);
-    	
-    	console.log(url);
+    	var iframesrc="serviceFirmEdit.do?userId='"+data.id+"'";
     	$("body", parent.document).find('iframe').attr('src',iframesrc);
     }
   });
@@ -403,7 +337,6 @@ layui.use('table', function(obj){
         })
     }
 
-
 });
 </script>
 <script src="${basePath}/commen/layui.js" charset="utf-8"></script>
@@ -414,10 +347,11 @@ layui.use('upload', function(){
 //指定允许上传的文件类型
 upload.render({
   elem: '#test3'
-  ,url: 'insertGovsubjectDatabyexcel.do'
+  ,url: 'insertMinistryWithExcel.do'
   ,accept: 'file' //普通文件
   ,done: function(res){
-    alert("导入成功");
+	  alert("上传成功！请更新数据！");
+    console.log(res)
   }
 })
 
@@ -437,7 +371,7 @@ upload.render({
 				// 导出的Excel文档的名称
 				name: "Excel Document Name",
 				// Excel文件的名称
-				filename: "纵向课题信息",
+				filename: "软著信息",
 				//文件后缀名
 				fileext: ".xls",
 				//是否排除导出图片
@@ -485,15 +419,12 @@ upload.render({
 <!--自动设置主表格可视区域-->
 <script src="${basePath}/js/iframesrc.js"></script>
 <script>
-
 	var hei=$(".action").height();
 	var ji=$(document).height();
 	var heigt=ji-hei-85;
-	$(".layui-table-body").prop("height",heigt+"px");
-	
+	$(".layui-table-body").prop("height",heigt+"px");	
 	console.log(heigt);
 
-	
 </script>
 </body>
 </html>        
