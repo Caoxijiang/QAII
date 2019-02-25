@@ -37,12 +37,6 @@
 			<input type="text" name="contributionTime" lay-verify="title" autocomplete="off" placeholder="请输入出资时间" class="layui-input" id="test1">
 		</div>
 	</div>
-	<div class="layui-form-item">
-		<label class="layui-form-label wid60">股东职务</label>
-		<div class="layui-input-block wid80">
-			<input type="text" name="shareholderPosition" lay-verify="title" autocomplete="off" placeholder="请输入股东职务" class="layui-input">
-		</div>
-	</div>
   <div class="layui-form-item">
     <div class="layui-input-block">
       <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
