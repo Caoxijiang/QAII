@@ -61,6 +61,16 @@ public class IndustryController {
 		result.add(args);
 		return new ModelAndView ("page/industry/hatch/hatchmumber","Info",result);
 	}
+
+	//孵化企业人员添加界面
+	@RequestMapping("hatchpeople.do")
+	public ModelAndView hatchpeople(HttpServletRequest req) throws UnsupportedEncodingException{
+		req.setCharacterEncoding("UTF-8");
+		List<String> result=new ArrayList<String>();
+		String args=req.getParameter("id");
+		result.add(args);
+		return new ModelAndView ("page/industry/hatch/hatchpeople","Info",result);
+	}
 	//孵化企业变更时间修改界面（修改界面之内）
 	@RequestMapping("/hatchchangetime.do")
 	public ModelAndView hatchchangetime(HttpServletRequest req) throws UnsupportedEncodingException {

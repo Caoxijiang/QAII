@@ -37,7 +37,7 @@
 <body id="bodyHei">
 <div class="tool">
 	<div class="layui-btn-group demoTable">
-  	  <span class="limit">科研项目( <span id="countnum"> </span> )</span>
+  	  <span class="limit">纵向课题( <span id="countnum"> </span> )</span>
 		<a href="javascript:;" onclick="srchange('researchAdd.do')">
 			<button class="layui-btn btn" style="margin-left:40px !important;margin-right:16px !important">
 				<i class="layui-icon layui-icon-add-1"></i>添加
