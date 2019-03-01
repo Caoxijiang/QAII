@@ -59,6 +59,7 @@ public class PatentController {
 	}
 	
 	//专利列表
+	@SystemLog(module = "科技处", method = "专利列表")
 	@ResponseBody
 	@RequestMapping(value="findPatentInfo.do",produces="application/json;charset=UTF-8")
 	public Layui findPatentInfo() {

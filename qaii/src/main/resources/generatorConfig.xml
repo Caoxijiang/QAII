@@ -140,7 +140,7 @@
         <table tableName="industry_AttendMeetingFiles" domainObjectName="IndustryAttendMeetingFiles" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>-->
-        <table tableName="industry_incutabor_person" domainObjectName="IncubatorPerson" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="commit_log" domainObjectName="CommitLog" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
     </context>
