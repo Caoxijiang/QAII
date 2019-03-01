@@ -16,6 +16,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -67,15 +70,18 @@ public class AopLogAction {
 //                log.setMethod(systemLog.method());
                 RequestMapping mapping = method.getAnnotation(RequestMapping.class);
                 log.setMethod(mapping.value()[0]);
+
                 try {
                     object = pjp.proceed();
                     log.setResponseData("" + (System.currentTimeMillis() - start));
                     log.setResult("执行成功");
-                    service.insertRecord(log);
+                    writeLog(log);
+                    //service.insertRecord(log);
                 } catch (Throwable throwable) {
                     log.setResponseData("" + (System.currentTimeMillis() - start));
                     log.setResult("执行失败");
-                    service.insertRecord(log);
+                    writeLog(log);
+                    //service.insertRecord(log);
                     throwable.printStackTrace();
                 }
             }else {
@@ -85,5 +91,22 @@ public class AopLogAction {
             object = pjp.proceed();
         }
         return object;
+    }
+    void writeLog(CommitLog log) throws IOException {
+        File file = new File("c://用户操作日志.log");
+        if (!file.exists()){
+            file.createNewFile();
+            FileWriter fw = new FileWriter(file, true);
+            fw.write("日志开始记录，当前时间为" + new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").format(new Date()) + "\r\n");
+            fw.write("时间:" + new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").format(new Date()) + "\t账号:" + log.getUserId() + "\tIP地址:" + log.getIdAddress() + "\t操作接口:" + log.getMethod()
+                    + "\t用时(ms):" + log.getResponseData() + "\t操作结果:" + log.getResult() + "\r\n");
+            fw.close();
+        }else {
+            FileWriter fw = new FileWriter(file, true);
+            fw.write("时间:" + new SimpleDateFormat("YYYY-MM-dd HH:mm:ss").format(new Date()) + "\t账号:" + log.getUserId() + "\tIP地址:" + log.getIdAddress() + "\t操作接口:" + log.getMethod()
+                    + "\t用时(ms):" + log.getResponseData() + "\t操作结果:" + log.getResult() + "\r\n");
+            fw.close();
+        }
+
     }
 }
