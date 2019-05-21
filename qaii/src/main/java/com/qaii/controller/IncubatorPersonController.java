@@ -2,6 +2,7 @@ package com.qaii.controller;
 
 import com.qaii.domain.IncubatorPerson;
 import com.qaii.service.IncubatorPersonService;
+import com.qaii.util.ConstantUtil;
 import com.qaii.util.JsonResult;
 import com.qaii.util.Layui;
 import org.springframework.stereotype.Controller;
@@ -22,12 +23,15 @@ public class IncubatorPersonController {
     private IncubatorPersonService service;
 
     @RequestMapping("insertIncubatorPerson.do")
-    @ResponseBody
-    JsonResult insertRecord(IncubatorPerson Record, HttpServletRequest request){
+    String insertRecord(IncubatorPerson Record, HttpServletRequest request){
         Record.setJobPosition(request.getParameter("jobPosition"));
         Record.setPersonalName(request.getParameter("personalName"));
         Record.setRemark(request.getParameter("hid"));
-        return new JsonResult(service.insertRecord(Record));
+        if(service.insertRecord(Record) == 1){
+            return ConstantUtil.INDUSTRY_INSERT_SUCCESS;
+        }else {
+            return ConstantUtil.INDUSTRY_INSERT_FAILD;
+        }
     }
 
     @RequestMapping("deleteIncubatorPerson.do")

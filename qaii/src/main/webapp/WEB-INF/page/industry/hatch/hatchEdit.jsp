@@ -344,10 +344,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 		      ,{field:'shareholderName', title: '股东名称'}
 		      ,{field:'contributionProportion',title: '出资比例', sort: true}
 		      ,{field:'contributionTime',title: '出资时间', sort: true}
-<<<<<<< HEAD
 		      /*,{field:'shareholderPosition', title: '股东职务', width: '30%', minWidth: 100}*/
-=======
->>>>>>> bffc3f70cab45d081198269092fc70d67ad1b53f
 		      ,{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:500}
 		    ]],
 		    data:obj.data
@@ -374,12 +371,12 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
     table.render({
         elem: '#peoplework'
         ,method:'post'
-        ,url:'selectIndusStackInfo.do?id='+id
+        ,url:'listIncubatorPerson.do?id='+id
         ,cellMinWidth: 100
         ,cols: [[
             {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
-            ,{field:'shareholderName', title: '人员名称'}
-            ,{field:'contributionProportion',title: '人员职务', sort: true}
+            ,{field:'personalName', title: '人员名称'}
+            ,{field:'jobPosition',title: '人员职务', sort: true}
             ,{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:500}
         ]],
         data:obj.data
@@ -389,7 +386,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
         if(obj.event === 'del'){
             layer.confirm('真的删除行么', function(index){
                 $.post({
-                    url:"deleteIncubatorStockEquity.do",
+                    url:"deleteIncubatorPerson.do",
                     data:{
                         "id" : data.id
                     },

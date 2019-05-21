@@ -322,13 +322,12 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
     table.render({
         elem: '#peoplework'
         ,method:'post'
-        ,url:'selectIndusStackInfo.do?id='+id
+        ,url:'listIncubatorPerson.do?id='+id
         ,cellMinWidth: 100
         ,cols: [[
             {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
-            ,{field:'shareholderName', title: '人员名称'}
-            ,{field:'contributionProportion',title: '人员职务', sort: true}
-            ,{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:500}
+            ,{field:'personalName', title: '人员名称'}
+            ,{field:'jobPosition',title: '人员职务', sort: true}
         ]],
         data:obj.data
     });
