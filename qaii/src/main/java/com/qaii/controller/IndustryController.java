@@ -9,8 +9,8 @@ import java.util.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import com.qaii.domain.IncubatorRecord;
-import com.qaii.service.IncubatorRecordService;
+import com.qaii.domain.*;
+import com.qaii.service.*;
 import com.qaii.util.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.formula.functions.T;
@@ -24,13 +24,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.qaii.domain.Incubator;
-import com.qaii.domain.IncubatorFile;
-import com.qaii.domain.StockEquity;
-import com.qaii.service.IncubatorFileService;
-import com.qaii.service.IncubatorService;
-import com.qaii.service.StockEquityService;
-
 @Controller
 public class IndustryController {
 	private static String PATH="C:/File/img/industry/";
@@ -43,6 +36,8 @@ public class IndustryController {
 	private StockEquityService stockEquityService;
 	@Resource
 	private IncubatorRecordService incubatorRecordService;
+	@Resource
+	private IncubatorPersonService personService;
 
 
 	Incubator incubator2=new Incubator();
@@ -65,6 +60,16 @@ public class IndustryController {
 		String args=req.getParameter("id");
 		result.add(args);
 		return new ModelAndView ("page/industry/hatch/hatchmumber","Info",result);
+	}
+
+	//孵化企业人员添加界面
+	@RequestMapping("hatchpeople.do")
+	public ModelAndView hatchpeople(HttpServletRequest req) throws UnsupportedEncodingException{
+		req.setCharacterEncoding("UTF-8");
+		List<String> result=new ArrayList<String>();
+		String args=req.getParameter("id");
+		result.add(args);
+		return new ModelAndView ("page/industry/hatch/hatchpeople","Info",result);
 	}
 	//孵化企业变更时间修改界面（修改界面之内）
 	@RequestMapping("/hatchchangetime.do")
@@ -346,7 +351,15 @@ public class IndustryController {
 	// 孵化企业管理添加接口
 	@SuppressWarnings("unchecked")
 	@RequestMapping("/insertIndustryInfo.do")
-	public String insertIndustryInfo(@RequestParam("file") MultipartFile[] files, HttpServletRequest req)
+	public String insertIndustryInfo(@RequestParam("file") MultipartFile[] files, HttpServletRequest req
+                                     //wangxin添加代码段 open
+                                     , @RequestParam("shareholderName")String[] shareholderName
+                                     , @RequestParam("contributionProportion")String[] contributionProportion
+                                     , @RequestParam("contributionTime")String[] contributionTime
+                                     , @RequestParam("personalName")String[] personalName
+                                     , @RequestParam("jobPosition")String[] jobPosition
+                                     //代码段end
+                                     )
 			throws UnsupportedEncodingException, ParseException {
 		req.setCharacterEncoding("utf-8");
 		Incubator incubator = new Incubator();
@@ -411,6 +424,7 @@ public class IndustryController {
 
 		if((iFlists.get(0).getFileName())!=null){
 			int row = incubatorService.insert(incubator);
+            insertShareHolderAndMajorMan(shareholderName, contributionProportion, contributionTime, personalName, jobPosition, incubator.getId());
 			if (row > 0 ) {
 				iFile.setIncubatorId(incubator.getId());
 				iFile1.setIncubatorId(incubator.getId());
@@ -430,6 +444,34 @@ public class IndustryController {
 
 
 	}
+
+	//在添加功能中同时添加股东和主要成员
+    void insertShareHolderAndMajorMan(String[] shareholderName,
+                                      String[] contributionProportion,
+                                      String[] contributionTime,
+                                      String[] personalName,
+                                      String[] jobPosition,
+                                      Integer incubatorId) throws ParseException {
+        StockEquity stockEquity=new StockEquity();
+        IncubatorPerson person = new IncubatorPerson();
+		stockEquity.setIncubatorId(incubatorId);
+		//这里为新增字段，在向股东表插入数据的时候默认值（0代表未处理，1代表已处理）
+		stockEquity.setStatus(0);
+		person.setRemark(incubatorId.toString());
+        for (int i = 0; i < shareholderName.length;i++){
+            stockEquity.setShareholderName(shareholderName[i]);
+            stockEquity.setContributionProportion(contributionProportion[i]);
+            stockEquity.setContributionTime(CountDatetoNowDays.StrconversionData(contributionTime[i]));
+
+            stockEquityService.insert(stockEquity);
+        }
+		for (int i = 0; i < personalName.length;i++){
+			person.setPersonalName(personalName[i]);
+			person.setJobPosition(jobPosition[i]);
+			personService.insertRecord(person);
+		}
+
+    }
 
 	//添加股东信息
 	@RequestMapping(value="addShareholderInfo.do",method=RequestMethod.POST,produces="application/json;charset=UTF-8")

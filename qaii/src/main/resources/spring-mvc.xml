@@ -5,6 +5,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:context="http://www.springframework.org/schema/context"
   xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:aop="http://www.springframework.org/schema/aop"
   xsi:schemaLocation="
     http://www.springframework.org/schema/task
     http://www.springframework.org/schema/task/spring-task-3.0.xsd
@@ -13,7 +14,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.2.xsd
     http://www.springframework.org/schema/mvc
-    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!-- 上传文件拦截，设置最大上传文件大小 10M=10*1024*1024(B)=10485760 bytes -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -84,8 +87,9 @@
 			 </mvc:interceptor>
 		 </mvc:interceptors>
 
+	<aop:aspectj-autoproxy proxy-target-class="true" >
+		<aop:include name="AopLogAct" />
+	</aop:aspectj-autoproxy>
+	<bean id="AopLogAct" class="com.qaii.controller.AopLogAction" />
 
-	
-	 
-	
 </beans>

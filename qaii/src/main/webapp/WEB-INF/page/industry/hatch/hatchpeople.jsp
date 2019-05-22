@@ -17,24 +17,18 @@
 </head>
 <body id="bodyHei">
 <div class="layui-container" style="margin-top:15px;">
-  <form class="layui-form" action="addShareholderInfo.do" method="post" lay-filter="example">
+  <form class="layui-form" action="insertIncubatorPerson.do" method="post" lay-filter="example">
   <div class="layui-form-item">
-    <label class="layui-form-label wid60">股东名称</label>
+    <label class="layui-form-label wid60">人员名称</label>
     <div class="layui-input-block wid80">
-      <input type="text" name="shareholderName" lay-verify="title" autocomplete="off" placeholder="请输入股东名称" class="layui-input">
-      <input type="hidden" name="id" value=${requestScope.Info[0]}>
+      <input type="text" name="personalName" lay-verify="title" autocomplete="off" placeholder="请输入股东名称" class="layui-input">
+      <input type="hidden" name="hid" value=${requestScope.Info[0]}>
     </div>
   </div>
 	<div class="layui-form-item">
-		<label class="layui-form-label wid60">出资比例</label>
+		<label class="layui-form-label wid60">人员职务</label>
 		<div class="layui-input-block wid80">
-			<input type="text" name="contributionProportion" lay-verify="title" autocomplete="off" placeholder="请输入出资比例" class="layui-input">
-		</div>
-	</div>
-	<div class="layui-form-item">
-		<label class="layui-form-label wid60">出资时间</label>
-		<div class="layui-input-block wid80">
-			<input type="text" name="contributionTime" lay-verify="title" autocomplete="off" placeholder="请输入出资时间" class="layui-input" id="test1">
+			<input type="text" name="jobPosition" lay-verify="title" autocomplete="off" placeholder="请输入出资比例" class="layui-input">
 		</div>
 	</div>
   <div class="layui-form-item">
@@ -47,26 +41,10 @@
 </div>
 <script src="${basePath}/commen/layui/layui.js"></script>
 <script>
-
-    var myDate=new Date();
-    var year=myDate.getFullYear(),    //获取完整的年份(4位,1970-????)
-        month=myDate.getMonth()-3,       //获取当前月份(0-11,0代表1月)
-        day=myDate.getDate();        //获取当前日(1-31)
-    var sqdata=year+"-"+month+"-"+day;
-layui.use(['layer','form', 'laydate'], function(){
+layui.use(['layer','form'], function(){
   var form = layui.form,
-	layer = layui.layer,
-	laydate = layui.laydate;
-	//申请日期
+	layer = layui.layer;
 
- laydate.render({
-   	elem: '#test1'
-  });
-    //表单初始赋值
-    form.val('example', {
-        "contributionTime": sqdata
-    })
-  
 });
 </script>
 </body>

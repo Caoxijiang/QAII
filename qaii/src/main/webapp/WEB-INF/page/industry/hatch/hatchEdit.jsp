@@ -32,7 +32,10 @@
 </div>
 <div class="layui-container addtop">
 	<button id="addmumber" data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">
-		<i class="layui-icon layui-icon-add-1"></i>添加成员
+		<i class="layui-icon layui-icon-add-1"></i>添加股东
+	</button>
+	<button class="layui-btn layui-btn-normal"  id="addpeople">
+		<i class="layui-icon layui-icon-add-1"></i>添加人员
 	</button>
   <form class="layui-form" method="post" lay-filter="example" action="updateIndusInfo.do" enctype="multipart/form-data">
   <!-- 基本信息 -->
@@ -112,9 +115,24 @@
 			       <script type="text/html" id="barDemo">
   					<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 				   </script>
+
 			    </div>
 			  </div>
 		</div>
+		  <div class="layui-col-xs12 layui-col-md12">
+			  <div class="layui-form-item">
+				  <div class="mumberBox">
+					  <label class="layui-form-label mumber">主要人员信息</label>
+				  </div>
+				  <div class="layui-input-block">
+					  <table class="layui-table cretables" id="peoplework" lay-filter="cydemo"></table>
+					  <script type="text/html" id="cyDemo">
+						  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+					  </script>
+
+				  </div>
+			  </div>
+		  </div>
 		<div class="layui-col-xs6 layui-col-md6">
 			 <div class="layui-form-item">
 			    <label class="layui-form-label">所属孵化器</label>
@@ -147,6 +165,8 @@
 						<input type="text" name="i1" class="layui-input input"  disabled="">
                         <input type="hidden" name="imgtype1" class="layui-input input"  disabled="">
 						<input type="hidden" name="fid1"  />
+					</div>
+					<div class="layui-upload" style="width:40%;display:inline-block;">
 						<a class="layui-btn layui-btn-edit layui-btn-xs" id="paperOnline">在线预览</a>
 						<a class="layui-btn layui-btn-xs layui-btn-tired" id="paperDownload" >下载</a>
 						<a class="layui-btn layui-btn-edit layui-btn-xs" id="upload">重新上传</a>
@@ -324,7 +344,7 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
 		      ,{field:'shareholderName', title: '股东名称'}
 		      ,{field:'contributionProportion',title: '出资比例', sort: true}
 		      ,{field:'contributionTime',title: '出资时间', sort: true}
-		      ,{field:'shareholderPosition', title: '股东职务', width: '30%', minWidth: 100}
+		      /*,{field:'shareholderPosition', title: '股东职务', width: '30%', minWidth: 100}*/
 		      ,{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:500}
 		    ]],
 		    data:obj.data
@@ -347,6 +367,38 @@ layui.use(['layer','form', 'layedit', 'laydate','element','upload','table'], fun
            });
 	    }
 	  });
+  //主要成员信息
+    table.render({
+        elem: '#peoplework'
+        ,method:'post'
+        ,url:'listIncubatorPerson.do?id='+id
+        ,cellMinWidth: 100
+        ,cols: [[
+            {field:'id', title: '序号',type:'numbers',sort: true, minWidth: 100}
+            ,{field:'personalName', title: '人员名称'}
+            ,{field:'jobPosition',title: '人员职务', sort: true}
+            ,{field: 'sex', title: '操作',toolbar: '#barDemo',fixed: 'right',width:500}
+        ]],
+        data:obj.data
+    });
+    table.on('tool(cydemo)', function(obj){ //股东删除操作 xijiang
+        var data = obj.data;
+        if(obj.event === 'del'){
+            layer.confirm('真的删除行么', function(index){
+                $.post({
+                    url:"deleteIncubatorPerson.do",
+                    data:{
+                        "id" : data.id
+                    },
+                    success:function(data){
+                        obj.del();
+                        layer.alert("删除成功");
+                    }
+                })
+                layer.close(index);
+            });
+        }
+    });
     //变更信息显示
     table.render({
         elem: '#table2'
@@ -474,7 +526,7 @@ $('#isTechnologyEnterprise').click(function(){
 		$("#isTech").hide();
 	}
 })
- /*添加成员*/
+ /*添加股东*/
  $('#addmumber').on('click', function(){
  	layer.open({
        type: 2
@@ -487,6 +539,19 @@ $('#isTechnologyEnterprise').click(function(){
        }
      });
    });
+/*添加人员*/
+$('#addpeople').on('click', function(){
+    layer.open({
+        type: 2
+        ,title: "主要人员及任职信息"
+        ,content: 'hatchpeople.do?id='+id
+        ,shade: 0.3 //不显示遮罩
+        ,area: ['390px', '380px']
+        ,yes: function(){
+            layer.closeAll();
+        }
+    });
+});
 </script>
 <script type="text/javascript">
     //在线预览
