@@ -13,4 +13,6 @@ public interface DeptInfoMapper {
 	int addDeptinfo(DeptInfo dept);
 	
 	int updateDeptInfoById(DeptInfo dept);
+
+	DeptInfo finddept(Integer id);
 }

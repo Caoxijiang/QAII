@@ -655,4 +655,24 @@
  	<select id="findTimpEMpinfo" resultMap="BaseResultMap" parameterType="java.lang.String">
  		select * from emp_info WHERE emp_inductionTime &gt;=#{0} and emp_inductionTime &lt;=#{1} and emp_stat='1' AND emp_reviewStatus='通过'
  	</select>
+
+  <select id="countDoctoral" resultType="java.lang.Integer">
+    SELECT COUNT(*) FROM emp_info WHERE emp_thirdEducation IS NOT NULL AND emp_thirdEducation != ""
+  </select>
+  <select id="countMaster" resultType="java.lang.Integer">
+    SELECT COUNT(*) FROM emp_info WHERE emp_secondEducation IS NOT NULL AND emp_secondEducation != ""
+  </select>
+  <select id="countJobTitle" resultType="java.lang.Integer" parameterType="java.lang.String">
+    SELECT COUNT(*) FROM emp_info WHERE emp_jobTitle = #{0}
+  </select>
+  <select id="countTitleLevel" resultType="java.lang.Integer" parameterType="java.lang.String">
+    SELECT COUNT(*) FROM emp_info WHERE emp_jobTitleLevel = #{0}
+  </select>
+
+  <select id="finddept" resultMap="BaseResultMap">
+        select dept_name from dept_info where id=#{id,jdbcType=INTEGER}
+    </select>
+  <update id="updateDept">
+    update emp_info set emp_dept =#{dept} where emp_dept=#{name}
+  </update>
 </mapper>

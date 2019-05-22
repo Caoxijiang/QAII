@@ -146,4 +146,9 @@ public class EmpInfoServiceImpl implements EmpInfoService{
 	}
 
 
+	@Override
+	public int updateDept(String dept,String name) {
+		return empinfoService.updateDept(dept,name);
+	}
+
 }

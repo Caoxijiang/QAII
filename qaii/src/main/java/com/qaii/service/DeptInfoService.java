@@ -12,4 +12,6 @@ public interface DeptInfoService {
 	int addDeptInfo(DeptInfo dept);
 	
 	int updateDeptInfoById(DeptInfo dept);
+
+	DeptInfo finddept(Integer id);
 }

@@ -38,4 +38,11 @@ public class DeptInfoServiceImpl implements DeptInfoService{
 		return deptInfoMapper.updateDeptInfoById(dept) ;
 	}
 
+
+	@Override
+	public DeptInfo finddept(Integer id) {
+		return deptInfoMapper.finddept(id);
+	}
+
+
 }

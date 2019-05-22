@@ -56,4 +56,6 @@ public interface EmpInfoService {
 	int countJobTitle(String jobtitle);
 
 	int countTitleLevel(String title);
+
+	int updateDept(String dept,String name);
 }

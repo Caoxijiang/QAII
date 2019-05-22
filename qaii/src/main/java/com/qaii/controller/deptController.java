@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.qaii.service.EmpInfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,8 +24,10 @@ import com.qaii.util.Layui;
 public class deptController {
 	@Resource
 	private DeptInfoService deptInfoService;
-	
-	
+	@Resource
+	private EmpInfoService empInfoService;
+
+
 	@RequestMapping("dept.do")
 	public String dept(){
 		return "page/indexNav";
@@ -74,22 +77,33 @@ public class deptController {
     	}
         
     }
-	
+
 	//修改部门信息
-    @ResponseBody
-    @RequestMapping(value="uptateDeptInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
-    public JsonResult uptateDeptInfo(HttpServletRequest req,DeptInfo dept){
-     	dept.setDeptName(req.getParameter("deptName"));
-     	dept.setId(Integer.parseInt(req.getParameter("id")));
-     	int row=deptInfoService.updateDeptInfoById(dept);
-    	if(row!=0) {
-    		return  new JsonResult(row);
-    	}else {
-    		return  new JsonResult();
-    		
-    	}
-        
-    }
+	@ResponseBody
+	@RequestMapping(value="uptateDeptInfo.do", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public JsonResult uptateDeptInfo(HttpServletRequest req,DeptInfo dept){
+		try {
+			dept.setDeptName(req.getParameter("deptName"));
+			dept.setId(Integer.parseInt(req.getParameter("id")));
+			DeptInfo de=new DeptInfo();
+			Integer id=dept.getId();
+			de =deptInfoService.finddept(id);
+			int row=deptInfoService.updateDeptInfoById(dept);
+			String nd=de.getDeptName().toString();
+			String od=dept.getDeptName().toString();
+			int rows=empInfoService.updateDept(od,nd);
+			if(row!=0 && rows!=0) {
+				return  new JsonResult(row);
+			}else {
+				return  new JsonResult();
+
+			}
+		}catch (Throwable e){
+			e.printStackTrace();
+			return new JsonResult();
+		}
+
+	}
     
     //chaxun bumen xingming 
     @RequestMapping(value="getdeptName.do",method=RequestMethod.POST)

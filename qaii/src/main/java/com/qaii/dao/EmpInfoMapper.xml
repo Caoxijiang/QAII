@@ -668,4 +668,11 @@
   <select id="countTitleLevel" resultType="java.lang.Integer" parameterType="java.lang.String">
     SELECT COUNT(*) FROM emp_info WHERE emp_jobTitleLevel = #{0}
   </select>
+
+  <select id="finddept" resultMap="BaseResultMap">
+        select dept_name from dept_info where id=#{id,jdbcType=INTEGER}
+    </select>
+  <update id="updateDept">
+    update emp_info set emp_dept =#{dept} where emp_dept=#{name}
+  </update>
 </mapper>
